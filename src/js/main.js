@@ -91,7 +91,10 @@
 
                     var offsetTop = $('.header').offset().top,
                         headerHeight = $('.header').height(),
-                        injectSpace = $('<div />', { height: headerHeight }).insertAfter(nav);
+                        // Had to change this line, results were not as expected, headerHeight was 288PX instead of 100
+                        // and when running same command from console it returned 100PX !
+                        // injectSpace = $('<div />', { height: headerHeight }).insertAfter(nav);
+                        injectSpace = $('<div />', { height: 100 }).insertAfter(nav);
                         injectSpace.hide();
 
                     $(window).on('load scroll', function(){
