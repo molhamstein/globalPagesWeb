@@ -13,6 +13,7 @@ import { FeaturedAdsComponent } from './home-screen/featured-ads/featured-ads.co
 import { VolumeComponent } from './home-screen/volume/volume.component';
 
 import {TranslateModule} from '@ngx-translate/core';
+import { HomeScreenComponent } from './home-screen/home-screen/home-screen.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {TranslateModule} from '@ngx-translate/core';
     CardHComponent,
     CardVComponent,
     FeaturedAdsComponent,
-    VolumeComponent
+    VolumeComponent,
+    HomeScreenComponent
   ],
   imports: [
     BrowserModule,
