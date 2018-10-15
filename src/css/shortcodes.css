@@ -1898,7 +1898,12 @@ overflow: auto;
 
 	display: inline-block;
 }
-
+/*AngularFix*/
+	.business-control-delete{
+		margin-right: 3px;
+		
+	}
+/*AngularFix*/
 .profile-business-list .business-text .title {
 	width: 100%;
 	display: block;
@@ -1936,6 +1941,9 @@ max-height: 100%;
 width: 57%;
 display: inline-block;
 	text-align: left;
+	/*AngularFix*/
+	margin-right: 3px;
+	/*AngularFix*/
 }
 
 /* Profile ads list
@@ -1962,6 +1970,11 @@ overflow: auto;
 
 	display: inline-block;
 }
+/*AngularFix*/
+	.ads-control-delete{
+		margin-right: 3px;
+	}
+/*AngularFix*/
 
 .profile-ads-list .business-text .title {
 	width: 100%;
@@ -2000,6 +2013,9 @@ max-height: 100%;
 width: 57%;
 display: inline-block;
 	text-align: left;
+	/*AngularFix*/
+	margin-right: 3px;
+	/*AngularFix*/
 }
 .profile-ads-list .ads .ads-text .title{
 	text-align: right!important;
@@ -3601,6 +3617,9 @@ color: white;
 .imageGallery1 img {
 	width: 150px;
 	height: 150px;
+	/*AngularFix*/
+	margin-left: 3px;
+	/*AngularFix*/
 }
 .overflow-scroll {
 	height: 600px;

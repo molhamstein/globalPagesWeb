@@ -14,6 +14,13 @@ import { VolumeComponent } from './home-screen/volume/volume.component';
 
 import {TranslateModule} from '@ngx-translate/core';
 import { HomeScreenComponent } from './home-screen/home-screen/home-screen.component';
+import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
+import { ProfileViewComponent } from './profile/profile-view/profile-view.component';
+import { AdsCardComponent } from './profile/ads-card/ads-card.component';
+import { BusinessCardComponent } from './profile/business-card/business-card.component';
+import { AdCreateComponent } from './ad/ad-create/ad-create.component';
+import { AdViewComponent } from './ad/ad-view/ad-view.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +32,13 @@ import { HomeScreenComponent } from './home-screen/home-screen/home-screen.compo
     CardVComponent,
     FeaturedAdsComponent,
     VolumeComponent,
-    HomeScreenComponent
+    HomeScreenComponent,
+    ProfileEditComponent,
+    ProfileViewComponent,
+    AdsCardComponent,
+    BusinessCardComponent,
+    AdCreateComponent,
+    AdViewComponent
   ],
   imports: [
     BrowserModule,
