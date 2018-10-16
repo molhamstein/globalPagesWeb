@@ -820,9 +820,12 @@ align-items: stretch;
 
 .featured-box-flex-text .box-content ul.category li:not(:last-child) {
 	padding-left: 20px;
-	margin-left: 17px;
+	/* margin-left: 17px; */
 	border-left: 1px solid #c2c2c2;
 	line-height: 1;
+	/*AngularFix*/
+	margin-left:20px;
+	/*AngularFix*/
 }
 
 .featured-box-flex-text. .box-content .box-desc {

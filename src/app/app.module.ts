@@ -20,6 +20,11 @@ import { AdsCardComponent } from './profile/ads-card/ads-card.component';
 import { BusinessCardComponent } from './profile/business-card/business-card.component';
 import { AdCreateComponent } from './ad/ad-create/ad-create.component';
 import { AdViewComponent } from './ad/ad-view/ad-view.component';
+import { BusinessCreateComponent } from './business/business-create/business-create.component';
+import { BusinessViewComponent } from './business/business-view/business-view.component';
+import { GuideComponent } from './business/guide/guide.component';
+import { InvolveBoxComponent } from './business/involve-box/involve-box.component';
+import { GuideCardComponent } from './business/guide-card/guide-card.component';
 
 
 @NgModule({
@@ -38,7 +43,12 @@ import { AdViewComponent } from './ad/ad-view/ad-view.component';
     AdsCardComponent,
     BusinessCardComponent,
     AdCreateComponent,
-    AdViewComponent
+    AdViewComponent,
+    BusinessCreateComponent,
+    BusinessViewComponent,
+    GuideComponent,
+    InvolveBoxComponent,
+    GuideCardComponent
   ],
   imports: [
     BrowserModule,
