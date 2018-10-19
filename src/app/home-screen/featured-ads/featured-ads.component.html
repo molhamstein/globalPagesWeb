@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="flat-row-title center">
-              <h2>إعلانات مميزة</h2>
+              <h2>{{'featuredAds' | translate}}</h2>
             </div>
             <!-- /.flat-row-title -->
           </div>
@@ -14,14 +14,9 @@
         <!-- /.row -->
         <div class="row">
           <div class="col-md-12">
-            <div class="owl-carousel">
-              <app-card-v></app-card-v>
-              <app-card-v></app-card-v>
-              <app-card-v></app-card-v>
-              <app-card-v></app-card-v>
-              <app-card-v></app-card-v>
-
-            </div>
+            <owl-carousel [items]="data" [options]="owlOptions">
+              <app-card-v  *ngFor="let item of data" [details]="item" ></app-card-v>
+            </owl-carousel>
           </div>
         </div>
       </div>

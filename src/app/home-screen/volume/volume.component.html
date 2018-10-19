@@ -2,17 +2,17 @@
   <div class="container-fluid">
     <div class="row">
       <div class="filter-wrap">
-        <h2>فلتر البحث</h2>
+        <h2>{{'searchFilter' | translate}}</h2>
         <div class="wrap-filter-search">
           <form action="#" method="get" accept-charset="utf-8">
             <span class="keyword">
-              <input type="text" placeholder="كلمة مفتاحية" name="search">
+              <input type="text" placeholder="{{'keyword'| translate}}" name="search">
             </span>
 
             <span class="categories">
               <span class="ti-angle-down"></span>
               <select name="categories">
-                <option value="">الفئة الرئيسية</option>
+                <option value="">{{'category' | translate}}</option>
                 <option value="">مطاعم</option>
                 <option value="">فنادق</option>
               </select>
@@ -20,7 +20,7 @@
             <span class="subCategories">
               <span class="ti-angle-down"></span>
               <select name="subCategories">
-                <option value="">الفئة الفرعية</option>
+                <option value="">{{'subCategory' | translate}}</option>
                 <option value="">كل الفئات</option>
                 <option value="">كل الفئات</option>
               </select>
@@ -28,7 +28,7 @@
             <span class="categories">
               <span class="ti-angle-down"></span>
               <select name="categories">
-                <option value="">اختر المدينة</option>
+                <option value="">{{'chooseCity'| translate}}</option>
                 <option value="">حماة</option>
                 <option value="">دمشق</option>
                 <option value="">حمص</option>
@@ -36,9 +36,9 @@
             </span>
             <span class="location">
               <span class="ti-location-pin"></span>
-              <input type="text" placeholder="الموقع" name="location">
+              <input type="text" placeholder="{{'location'| translate}}" name="location">
             </span>
-            <button type="submit" class="search-btn">تطبيق</button>
+            <button type="submit" class="search-btn">{{'apply'| translate}}</button>
 
           </form>
           <!-- /form -->
@@ -46,14 +46,13 @@
         <div class="col-md-12 version-arrow">
 
           <div class="left-arrow">
-            <i class="fa fa-angle-right fa-4x" aria-hidden="true"></i>
-
+            <i (click)="prev()" class="fa fa-angle-right fa-4x pointerHover" aria-hidden="true"></i>
           </div>
           <div class="title">
-            <h2> 1.0.0</h2>
+            <h2>{{title}}</h2>
           </div>
           <div class="right-arrow">
-            <i class="fa fa-angle-left fa-4x" aria-hidden="true"></i>
+            <i (click)="next()" class="fa fa-angle-left fa-4x pointerHover" aria-hidden="true"></i>
           </div>
 
         </div>
@@ -64,12 +63,7 @@
           <div class="row featured-box-flex-container">
 
 
-            <app-card-h class="col-md-5  col-xs-12 featured-box-flex" ></app-card-h>
-            <app-card-h class="col-md-5  col-xs-12 featured-box-flex" ></app-card-h>
-            <app-card-h class="col-md-5  col-xs-12 featured-box-flex" ></app-card-h>
-            <app-card-h class="col-md-5  col-xs-12 featured-box-flex" ></app-card-h>
-            <app-card-h class="col-md-5  col-xs-12 featured-box-flex" ></app-card-h>
-            <app-card-h class="col-md-5  col-xs-12 featured-box-flex" ></app-card-h>
+            <app-card-h *ngFor="let item of data.posts" [details]="item" class="col-md-5  col-xs-12 featured-box-flex"></app-card-h>
 
           </div>
           <!-- /.row -->

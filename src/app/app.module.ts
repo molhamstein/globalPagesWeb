@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import {TranslateModule} from '@ngx-translate/core';
+import {HttpClientModule} from '@angular/common/http';
+import {OwlModule} from 'ngx-owl-carousel';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent} from './shared/navigation/navigation.component';
@@ -11,8 +14,6 @@ import { CardVComponent } from './shared/card-v/card-v.component';
 import { HeaderWithSearchComponent } from './home-screen/header-with-search/header-with-search.component';
 import { FeaturedAdsComponent } from './home-screen/featured-ads/featured-ads.component';
 import { VolumeComponent } from './home-screen/volume/volume.component';
-
-import {TranslateModule} from '@ngx-translate/core';
 import { HomeScreenComponent } from './home-screen/home-screen/home-screen.component';
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 import { ProfileViewComponent } from './profile/profile-view/profile-view.component';
@@ -25,7 +26,7 @@ import { BusinessViewComponent } from './business/business-view/business-view.co
 import { GuideComponent } from './business/guide/guide.component';
 import { InvolveBoxComponent } from './business/involve-box/involve-box.component';
 import { GuideCardComponent } from './business/guide-card/guide-card.component';
-
+import { RequestsService} from './requests.service';
 
 @NgModule({
   declarations: [
@@ -53,9 +54,11 @@ import { GuideCardComponent } from './business/guide-card/guide-card.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot(),
+    HttpClientModule,
+    OwlModule
   ],
-  providers: [],
+  providers: [RequestsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
