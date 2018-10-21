@@ -28,6 +28,8 @@ import { InvolveBoxComponent } from './business/involve-box/involve-box.componen
 import { GuideCardComponent } from './business/guide-card/guide-card.component';
 import { RequestsService} from './requests.service';
 import { CommonDataService} from './common-data.service';
+import { FormValidationMessageComponent } from './shared/form-validation-message/form-validation-message.component';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -50,14 +52,16 @@ import { CommonDataService} from './common-data.service';
     BusinessViewComponent,
     GuideComponent,
     InvolveBoxComponent,
-    GuideCardComponent
+    GuideCardComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TranslateModule.forRoot(),
     HttpClientModule,
-    OwlModule
+    OwlModule,
+    SharedModule
   ],
   providers: [RequestsService,CommonDataService],
   bootstrap: [AppComponent]

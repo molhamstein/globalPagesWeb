@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="header-wrap">
           <div id="logo" class="logo">
-            <a href="index.html" title="">
+            <a routerLink="./" title="">
               Al-Mersal
             </a>
           </div>
@@ -13,28 +13,28 @@
             <nav id="mainnav" class="mainnav">
               <ul class="menu">
                 <li>
-                  <a href="#" title="">الرئيسية</a>
+                  <a routerLink="/" title="">الرئيسية</a>
                 </li>
                 <li>
-                  <a href="guide.html" title="">دليل الأعمال</a>
+                  <a routerLink="/guide" title="">دليل الأعمال</a>
                 </li>
                 <li>
-                  <a href="create-ad.html" title="">إضافة نشاط تجاري</a>
+                  <a routerLink="/business/create" title="">إضافة نشاط تجاري</a>
 
                 </li>
                 <li>
-                  <a href="create-b.html" title="">إضافة إعلان</a>
-                  <ul class="submenu">
-                    <li>
-                      <a href="index.html" title="">Index Layout</a>
-                    </li>
-                  </ul>
+                  <a routerLink="/ad/create" title="">إضافة إعلان</a>
+                  <!--<ul class="submenu">-->
+                    <!--<li>-->
+                      <!--<a href="index.html" title="">Index Layout</a>-->
+                    <!--</li>-->
+                  <!--</ul>-->
                 </li>
                 <li>
-                  <a href="login.html" title="">تسجيل الدخول</a>
+                  <a routerLink="/auth/login" title="">{{'login' | translate}}</a>
                 </li>
                 <li>
-                  <a href="login.html" title="">إنشاء حساب</a>
+                  <a routerLink="/auth/signup" title="">{{'createAccount' | translate}}</a>
                 </li>
               </ul>
 
@@ -46,10 +46,10 @@
               </a>
               <div style="display=none;" class="lang-list">
                 <li>
-                  <a href="login.html" title="">عربي</a>
+                  <a (click)="changeLang('ar')" title="">عربي</a>
                 </li>
                 <li>
-                  <a href="login.html" title="">English</a>
+                  <a (click)="changeLang('en')" title="">English</a>
                 </li>
               </div>
             </div>

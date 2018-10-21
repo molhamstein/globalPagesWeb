@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-forget-password',
@@ -7,13 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgetPasswordComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private http:HttpClient) { }
+  @ViewChild('form') form
   ngOnInit() {
   }
   submit(data)
   {
-    console.log(data)
+    if(this.form.valid)
+      this.http.post(environment.api+'users/forgotPassword',data).toPromise().then((data)=>{
+
+      })
   }
 
 }
