@@ -1698,3 +1698,7 @@ article.post-single .entry-post .entry-header .entry-meta-post li.topic {
 	direction: ltr;
 	unicode-bidi: embed;
 }
+
+button[disabled] div{
+  opacity: 0.5;
+}

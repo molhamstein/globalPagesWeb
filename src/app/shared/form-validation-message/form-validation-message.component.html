@@ -1,0 +1,10 @@
+<div *ngIf="control.invalid && (control.dirty || control.touched || control.submitted)">
+
+  <ng-container *ngFor="let m of messages">
+
+    <div class="alert alert-danger"  *ngIf="control &&control.errors&& control.errors[m[0]]"> {{m[1] | translate }}</div>
+
+  </ng-container>
+
+</div>
+

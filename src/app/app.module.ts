@@ -27,6 +27,8 @@ import { GuideComponent } from './business/guide/guide.component';
 import { InvolveBoxComponent } from './business/involve-box/involve-box.component';
 import { GuideCardComponent } from './business/guide-card/guide-card.component';
 import { RequestsService} from './requests.service';
+import { FormValidationMessageComponent } from './shared/form-validation-message/form-validation-message.component';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -49,14 +51,16 @@ import { RequestsService} from './requests.service';
     BusinessViewComponent,
     GuideComponent,
     InvolveBoxComponent,
-    GuideCardComponent
+    GuideCardComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TranslateModule.forRoot(),
     HttpClientModule,
-    OwlModule
+    OwlModule,
+    SharedModule
   ],
   providers: [RequestsService],
   bootstrap: [AppComponent]
