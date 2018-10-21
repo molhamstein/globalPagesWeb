@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {RequestsService} from '../../requests.service';
 import { TranslateService } from '@ngx-translate/core';
+import { CommonDataService } from '../../common-data.service';
 
 @Component({
   selector: 'app-volume',
@@ -9,11 +10,12 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class VolumeComponent implements OnInit {
  
-  constructor(private rs:RequestsService, private ts: TranslateService) { }
+  constructor(private rs:RequestsService, private ts: TranslateService,private cds: CommonDataService) { }
   skip:number = 0;
   data: Object = {};
   title:String = '';
-
+  categories:Object[];
+  // @Input() categories:Object[];
   getVolumeData(num:number){
     var params = {
       "filter[limit]":"1",
@@ -41,12 +43,13 @@ export class VolumeComponent implements OnInit {
   }
   
   next(){
-    this.getVolumeData(1);
+    console.warn(this.categories);
+    // this.getVolumeData(1);
   }
   
   ngOnInit() {
     this.getVolumeData(0)
-    
+    this.cds.categoriesObservable.subscribe(res => this.categories =<Object[]> res);
   }
 
 }

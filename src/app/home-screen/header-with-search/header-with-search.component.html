@@ -46,7 +46,13 @@
         <div class="col-md-12">
           <div class="highlights">
             <ul class="menu-list">
-              <li>
+              <li *ngFor="let item of categories">
+                <a href="#" (click)= "filterBy(item)"> 
+                  <img src="{{item.icon}}"/>
+                  <span>{{item.titleAr}}</span>
+                </a>
+              </li>
+              <!-- <li>
                 <a href="#" title="">
                   <img src="assets/images/page/cutlery.png" alt="">
                   <span>مطاعم</span>
@@ -101,7 +107,7 @@
                   <span>منتزهات</span>
                 </a>
   
-              </li>
+              </li> -->
             </ul>
             <!-- /.menu-list -->
           </div>

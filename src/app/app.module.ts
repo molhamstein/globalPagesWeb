@@ -27,6 +27,7 @@ import { GuideComponent } from './business/guide/guide.component';
 import { InvolveBoxComponent } from './business/involve-box/involve-box.component';
 import { GuideCardComponent } from './business/guide-card/guide-card.component';
 import { RequestsService} from './requests.service';
+import { CommonDataService} from './common-data.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { RequestsService} from './requests.service';
     HttpClientModule,
     OwlModule
   ],
-  providers: [RequestsService],
+  providers: [RequestsService,CommonDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
