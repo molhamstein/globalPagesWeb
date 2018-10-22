@@ -24,7 +24,7 @@
 <!-- Tested , fixed margin in guide cards -->
 
   <router-outlet></router-outlet>
-  <app-footer></app-footer>
+  <app-footer *ngIf="addFooter()"></app-footer>
 <!--
   to do :
   * Navigation styling is not the same as template's?

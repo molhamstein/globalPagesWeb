@@ -9,11 +9,16 @@ import {RequestsService} from './requests.service';
 })
 export class AppComponent {
   // public categories: Object={};
-  constructor(private translate:TranslateService)
+  constructor(private translate:TranslateService )
   {
+
     this.translate.setTranslation('ar',ArabicTranslation);
     this.translate.setDefaultLang('en');
     this.translate.use('ar');
   }
   title = 'globalPages';
+  addFooter(){
+    var path: string = window.location.pathname;
+    return (!path.includes('auth'))
+  }
 }

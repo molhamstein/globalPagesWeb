@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {HttpClientModule} from '@angular/common/http';
 import {OwlModule} from 'ngx-owl-carousel';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent} from './shared/navigation/navigation.component';
@@ -61,7 +62,8 @@ import {SharedModule} from './shared/shared.module';
     TranslateModule.forRoot(),
     HttpClientModule,
     OwlModule,
-    SharedModule
+    SharedModule,
+    FilterPipeModule
   ],
   providers: [RequestsService,CommonDataService],
   bootstrap: [AppComponent]

@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col-md-12">
         <div class="page-title-heading">
-         {{'homeTitle' | translate}}
+          {{'homeTitle' | translate}}
         </div>
         <div class="text-heading">
-           {{'homeSubTitle' | translate}}
+          {{'homeSubTitle' | translate}}
         </div>
         <div class="wrap-box-search">
           <form action="#" method="get" accept-charset="utf-8">
@@ -40,83 +40,27 @@
   <div class="overlay"></div>
 </section>
 
-  <section class="flat-highlights">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="highlights">
-            <ul class="menu-list">
-              <li *ngFor="let item of categories">
-                <a href="#" (click)= "filterBy(item)"> 
-                  <img src="{{item.icon}}"/>
-                  <span>{{item.titleAr}}</span>
-                </a>
-              </li>
-              <!-- <li>
-                <a href="#" title="">
-                  <img src="assets/images/page/cutlery.png" alt="">
-                  <span>مطاعم</span>
-                </a>
-  
-              </li>
-              <li>
-                <a href="#" title="">
-                  <img src="assets/images/page/double-bed.png" alt="">
-                  <span>فنادق</span>
-                </a>
-  
-              </li>
-              <li class="active">
-                <a href="#" title="">
-                  <img src="assets/images/page/guitar.png" alt="">
-                  <span>ملاعب</span>
-                </a>
-  
-              </li>
-              <li>
-                <a href="#" title="">
-                  <img src="assets/images/page/rent-a-car.png" alt="">
-                  <span>معارض</span>
-                </a>
-  
-              </li>
-              <li>
-                <a href="#" title="">
-                  <img src="assets/images/page/shopping-bag.png" alt="">
-                  <span>أسواق</span>
-                </a>
-  
-              </li>
-              <li>
-                <a href="#" title="">
-                  <img src="assets/images/page/dumbbell.png" alt="">
-                  <span>أندية</span>
-                </a>
-  
-              </li>
-              <li>
-                <a href="#" title="">
-                  <img src="assets/images/page/cocktail.png" alt="">
-                  <span>كافتيريا</span>
-                </a>
-  
-              </li>
-              <li>
-                <a href="#" title="">
-                  <img src="assets/images/page/park.png" alt="">
-                  <span>منتزهات</span>
-                </a>
-  
-              </li> -->
-            </ul>
-            <!-- /.menu-list -->
-          </div>
-          <!-- /.highlights -->
+<section class="flat-highlights">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="highlights">
+          <ul class="menu-list">
+            <li *ngFor="let item of categories" (click)="filterBy(item)" [class.active]="cds.selectedCategory==item">
+              <a href="#">
+                <img src="{{item.icon}}" />
+                <span>{{item.titleAr}}</span>
+              </a>
+            </li>
+          </ul>
+          <!-- /.menu-list -->
         </div>
-        <!-- /.col-md-12 -->
+        <!-- /.highlights -->
       </div>
-      <!-- /.row -->
+      <!-- /.col-md-12 -->
     </div>
-    <!-- /.container-fluid -->
-  </section>
-  <!-- /.flat-highlights -->
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.flat-highlights -->

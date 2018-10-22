@@ -2,7 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import {RequestsService} from '../../requests.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonDataService } from '../../common-data.service';
-
+// import { HeaderWithSearchComponent} from '../header-with-search/header-with-search.component';
 @Component({
   selector: 'app-volume',
   templateUrl: './volume.component.html',
@@ -40,16 +40,18 @@ export class VolumeComponent implements OnInit {
     if (this.skip - 1 < 0)
       return;
     this.getVolumeData(-1);
+    
   }
   
   next(){
-    console.warn(this.categories);
-    // this.getVolumeData(1);
+    // console.warn(this.categories);
+    this.getVolumeData(1);
   }
   
   ngOnInit() {
     this.getVolumeData(0)
-    this.cds.categoriesObservable.subscribe(res => this.categories =<Object[]> res);
+    // this.cds.categoriesObservable.subscribe(res => this.categories =<Object[]> res);
+    this.cds.categoriesPromise.then(res => this.categories =<Object[]> res);
   }
 
 }

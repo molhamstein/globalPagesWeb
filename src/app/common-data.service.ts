@@ -6,12 +6,11 @@ import { RequestsService } from './requests.service';
   providedIn: 'root'
 })
 export class CommonDataService {
-  categoriesObservable:Observable<Object>;
-  static count: number=0;
+  categoriesPromise;
+  selectedCategory: any;
   constructor(private requests: RequestsService) {
-    this.categoriesObservable=
-    this.requests.get('postCategories?filter={"where":{"parentCategoryId" : {"exists" : false}},"include":"subCategories"}');
-      console.warn("created an instance",CommonDataService.count++);
+    this.categoriesPromise=
+    this.requests.get('postCategories?filter={"where":{"parentCategoryId" : {"exists" : false}},"include":"subCategories"}').toPromise();
    }
 
 }

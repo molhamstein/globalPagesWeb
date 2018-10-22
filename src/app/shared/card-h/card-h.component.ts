@@ -14,6 +14,9 @@ export class CardHComponent implements OnInit {
   ngOnInit() {
     this.data['title'] = this.details['title'];
     this.data['description'] = this.details['description'];
+    this.data['img'] = 'assets/images/page/abo-alrod.jpg';
+    if (this.details['media']['0']['thumbnail'])
+      this.data['img'] = this.details['media']['0']['thumbnail'];
     if (this.tr.currentLang == 'ar') {
       this.data['category'] = this.details['category']['titleAr'];
       this.data['subCategory'] = this.details['subCategory']['titleAr'];

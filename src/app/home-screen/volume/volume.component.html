@@ -63,7 +63,7 @@
           <div class="row featured-box-flex-container">
 
 
-            <app-card-h *ngFor="let item of data.posts" [details]="item" class="col-md-5  col-xs-12 featured-box-flex"></app-card-h>
+            <app-card-h *ngFor="let item of data.posts| filterBy:{categoryId:cds?.selectedCategory?.id}" [details]="item" class="col-md-5  col-xs-12 featured-box-flex"></app-card-h>
 
           </div>
           <!-- /.row -->

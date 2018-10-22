@@ -12,14 +12,17 @@ export class HeaderWithSearchComponent implements OnInit {
   constructor(private cds: CommonDataService) { }
 
   filterBy(item:Object){
-    this.categories.unshift('s')
-    console.warn(this.categories)
+    if (item==this.cds.selectedCategory){
+      this.cds.selectedCategory = {};
+      return;
+    }
+    this.cds.selectedCategory=item;
   }
 
   ngOnInit() {
-  
-    this.cds.categoriesObservable.subscribe(res => this.categories = <Object[]>res)
     
+    // this.cds.categoriesObservable.subscribe(res => this.categories = <Object[]>res)
+    this.cds.categoriesPromise.then(res => this.categories = <Object[]>res);
   }
 
 }
