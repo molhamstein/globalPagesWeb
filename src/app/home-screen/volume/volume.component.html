@@ -1,4 +1,4 @@
-<section>
+<section id="volume">
   <div class="container-fluid">
     <div class="row">
       <div class="filter-wrap">
@@ -6,39 +6,40 @@
         <div class="wrap-filter-search">
           <form action="#" method="get" accept-charset="utf-8">
             <span class="keyword">
-              <input type="text" placeholder="{{'keyword'| translate}}" name="search">
+              <input [(ngModel)]="searchText" type="text" placeholder="{{'keyword'| translate}}" name="search">
             </span>
-
             <span class="categories">
               <span class="ti-angle-down"></span>
-              <select name="categories">
-                <option value="">{{'category' | translate}}</option>
-                <option value="">مطاعم</option>
-                <option value="">فنادق</option>
+              <select name="categories" [(ngModel)]="category" (change)="subCategory='0'">
+                <option value='0' hidden>{{'category' | translate }}</option>
+                <option *ngFor="let c of categories" [ngValue]="c">{{c.title}}</option>
               </select>
             </span>
             <span class="subCategories">
               <span class="ti-angle-down"></span>
-              <select name="subCategories">
-                <option value="">{{'subCategory' | translate}}</option>
-                <option value="">كل الفئات</option>
-                <option value="">كل الفئات</option>
+              <select [disabled]="categoryId=='0'" name="subCategories" [(ngModel)]="subCategory">
+                <option value="0" hidden>{{'subCategory' | translate}}</option>
+                <option *ngFor="let sc of category?.subCategories" [ngValue]="sc">{{sc.title}}</option>
               </select>
             </span>
             <span class="categories">
               <span class="ti-angle-down"></span>
-              <select name="categories">
-                <option value="">{{'chooseCity'| translate}}</option>
-                <option value="">حماة</option>
-                <option value="">دمشق</option>
-                <option value="">حمص</option>
+              <select name="categories" [(ngModel)]="city" (change)="location='0'">
+                <option value="0" hidden>{{'chooseCity'| translate}}</option>
+                <option *ngFor="let c of cities" [ngValue]="c">{{c.name}}</option>
               </select>
             </span>
             <span class="location">
-              <span class="ti-location-pin"></span>
-              <input type="text" placeholder="{{'location'| translate}}" name="location">
+              <!-- <span class="ti-location-pin"></span> -->
+              <span class="ti-angle-down"></span>
+
+              <!-- <input [(ngModel)]="location" type="text" placeholder="{{'location'| translate}}" name="location"> -->
+              <select name="location" [(ngModel)]="location">
+                <option value="0" hidden>{{'location'| translate}}</option>
+                <option *ngFor="let l of city?.locations" [ngValue]="l">{{l.name}}</option>
+              </select>
             </span>
-            <button type="submit" class="search-btn">{{'apply'| translate}}</button>
+            <button (click)="volumeFilter()" class="search-btn">{{'apply'| translate}}</button>
 
           </form>
           <!-- /form -->
@@ -63,7 +64,7 @@
           <div class="row featured-box-flex-container">
 
 
-            <app-card-h *ngFor="let item of data.posts| filterBy:{categoryId:cds?.selectedCategory?.id}" [details]="item" class="col-md-5  col-xs-12 featured-box-flex"></app-card-h>
+            <app-card-h *ngFor="let item of data.posts| volumeFilter:cds.filterItem " [details]="item" class="col-md-5  col-xs-12 featured-box-flex"></app-card-h>
 
           </div>
           <!-- /.row -->

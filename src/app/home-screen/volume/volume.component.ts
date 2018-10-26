@@ -15,6 +15,22 @@ export class VolumeComponent implements OnInit {
   data: Object = {};
   title:String = '';
   categories:Object[];
+  cities:Object[];
+
+  category :any= '0';
+  subCategory:any = '0';
+  city:any='0';
+  location:any ='0';
+  searchText:string = '';
+
+  volumeFilter(){
+    this.cds.filterItem['categoryId'] = this.category['id'];
+    this.cds.filterItem['subCatId'] = this.subCategory['id'];
+    this.cds.filterItem['cityId']= this.city['id'];
+    this.cds.filterItem['locationId'] = this.location['id'];
+    this.cds.filterItem['keywords'] = this.searchText;
+  }
+
   // @Input() categories:Object[];
   getVolumeData(num:number){
     var params = {
@@ -51,7 +67,8 @@ export class VolumeComponent implements OnInit {
   ngOnInit() {
     this.getVolumeData(0)
     // this.cds.categoriesObservable.subscribe(res => this.categories =<Object[]> res);
-    this.cds.categoriesPromise.then(res => this.categories =<Object[]> res);
+    this.cds.categoriesPromise.then(res => {this.categories =<Object[]> res;console.warn('3',res)});
+    this.cds.citiesPromise.then(res => this.cities = <Object[]>res)
   }
 
 }

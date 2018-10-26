@@ -7,22 +7,38 @@ import { CommonDataService } from '../../common-data.service';
   styleUrls: ['./header-with-search.component.css']
 })
 export class HeaderWithSearchComponent implements OnInit {
-  // @Input()categories:Object[];
-  categories :Object[];
+  categories: Object[];
+  cities: Object[];
+  categoryID: string = "0"; // default place holder string
+  adLocation: string = "0";
+  searchText: string = "";
+  selectedCategory;
   constructor(private cds: CommonDataService) { }
 
-  filterBy(item:Object){
-    if (item==this.cds.selectedCategory){
-      this.cds.selectedCategory = {};
+
+  filterByNavSearch() {
+    this.cds.filterItem['categoryId'] = this.categoryID;
+    this.cds.filterItem['cityId'] = this.adLocation['id'];
+    this.cds.filterItem['keywords'] = this.searchText;
+  }
+
+  filterByIcon(item: Object) {
+    // console.warn(item);
+    if (item['id'] == this.cds.filterItem['categoryId']) {
+      this.cds.filterItem['categoryId'] = '';
+      this.selectedCategory = {};
       return;
     }
-    this.cds.selectedCategory=item;
+    this.selectedCategory = item;
+    this.cds.filterItem['categoryId'] = item['id'];
   }
 
   ngOnInit() {
-    
+
     // this.cds.categoriesObservable.subscribe(res => this.categories = <Object[]>res)
-    this.cds.categoriesPromise.then(res => this.categories = <Object[]>res);
+    this.cds.categoriesPromise.then(res => { this.categories = <Object[]>res; console.warn('2', res) });
+    this.cds.citiesPromise.then(res => this.cities = <Object[]>res)
+
   }
 
 }

@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {HttpClientModule} from '@angular/common/http';
 import {OwlModule} from 'ngx-owl-carousel';
-import { FilterPipeModule } from 'ngx-filter-pipe';
+// import { FilterPipeModule } from 'ngx-filter-pipe';
+import { volumeFilter} from './volumeFilter';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent} from './shared/navigation/navigation.component';
@@ -31,6 +32,7 @@ import { RequestsService} from './requests.service';
 import { CommonDataService} from './common-data.service';
 import { FormValidationMessageComponent } from './shared/form-validation-message/form-validation-message.component';
 import {SharedModule} from './shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import {SharedModule} from './shared/shared.module';
     GuideComponent,
     InvolveBoxComponent,
     GuideCardComponent,
+    volumeFilter
 
   ],
   imports: [
@@ -63,7 +66,7 @@ import {SharedModule} from './shared/shared.module';
     HttpClientModule,
     OwlModule,
     SharedModule,
-    FilterPipeModule
+    FormsModule
   ],
   providers: [RequestsService,CommonDataService],
   bootstrap: [AppComponent]
