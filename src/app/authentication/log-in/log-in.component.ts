@@ -16,7 +16,7 @@ export class LogInComponent implements OnInit {
   submit(data)
   {
     this.http.post(environment.api+'users/login',data).toPromise().then((data)=>{
-
+      localStorage.setItem('id',data['id'])
     })
   }
 

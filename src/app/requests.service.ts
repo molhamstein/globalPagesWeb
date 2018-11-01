@@ -10,7 +10,7 @@ export class RequestsService {
   api = environment.api;
 
   constructor(private http : HttpClient) { }
-  
+
   get(name, params?){
     if (params) {
         // console.warn(params)
@@ -19,5 +19,8 @@ export class RequestsService {
     }
     return this.http.get(this.api + name);
   }
-  
+  put(name,data) {
+    return this.http.put(this.api + name,data);
+  }
+
 }

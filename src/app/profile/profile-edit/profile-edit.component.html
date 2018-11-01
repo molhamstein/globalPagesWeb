@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="page-title-heading">
-          Username
+          {{user['username']}}
         </div>
 
       </div>
@@ -19,7 +19,7 @@
 <div class="container-fluid without-padding cloudy-bg">
   <div class="col-md-12 without-padding">
     <div class="profile-image-container">
-      <div class="change-image">تعديل </div>
+      <div class="change-image">{{'edit' | translate}} </div>
       <img class="profile-img" src="http://via.placeholder.com/150x150" />
     </div>
   </div>
@@ -32,43 +32,21 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <form action="#" class="form-listing" method="get" accept-charset="utf-8">
+          <form novalidate class="form-listing" #f="ngForm" (submit)="submit(f.value)">
 
             <div class="inner-box form">
               <div class="one-half">
                 <div class="wrap-listing username">
-                  <label>اسم المستخدم</label>
-                  <input type="text" name="username" placeholder="أدخل اسم المستخدم الخاص بك">
+                  <label>{{'username' | translate}}</label>
+                  <input type="text" class="username" name="username" [(ngModel)]="user['username']" #username="ngModel"  required>
                 </div>
+                <app-form-validation-message [control]="username" [messages]="{required:'usernameIsRequired'}">
+                </app-form-validation-message>
                 <!-- /.wrap-listing -->
-                <label>تاريخ الميلاد</label>
-                <div class="wrap-listing business">
-                  <div class="year">
-                    <span class="ti-angle-down"></span>
-                    <select name="year">
-                      <option value="">1994</option>
-                      <option value="">1995</option>
-                      <option value="">1996</option>
-                    </select>
-                  </div>
-                  <div class="month">
-                    <span class="ti-angle-down"></span>
-                    <select name="month">
-                      <option value="">كانون الثاني</option>
-                      <option value="">شباط</option>
-                      <option value="">آذار</option>
-                    </select>
-                  </div>
-                  <div class="day">
-                    <span class="ti-angle-down"></span>
-                    <select name="day">
-                      <option value="">1</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
-                    </select>
-                  </div>
-                  <span class="clearfix"></span>
-                </div>
+                <label>{{'birth' | translate}}</label>
+                <input type="date"  name="birthDate" [(ngModel)]="user['birthDate']" #birth="ngModel" required>
+                <app-form-validation-message [control]="birth" [messages]="{required:'birthIsRequired'}">
+                </app-form-validation-message>
                 <!-- /.wrap-listing -->
                 <div class="clearfix"></div>
 
@@ -77,19 +55,22 @@
 
               <div class="one-half">
                 <div class="wrap-listing phone">
-                  <label>البريد الإلكتروني</label>
-                  <input type="email" name="البريد الإلكتروني" placeholder="111-222-3333">
+                  <label>{{'email' | translate}}</label>
+                  <input type="text" class="email" name="email" [(ngModel)]="user['email']" #email="ngModel" email required>
                 </div>
+                <app-form-validation-message [control]="email" [messages]="{required:'usernameIsRequired',email:'notAValidEmail'}">
+                </app-form-validation-message>
                 <div class="clearfix"></div>
                 <div class="wrap-listing category">
-                  <label>Gender</label>
+                  <label>{{'gender' | translate}}</label>
                   <span class="ti-angle-down"></span>
-                  <select name="category">
-                    <option value="">Male</option>
-                    <option value="">Female</option>
+                  <select name="gender" [(ngModel)]="user['gender']" #gender="ngModel" required>
+                    <option value="male">{{'male' | translate}} </option>
+                    <option value="female">{{'female' | translate}}</option>
                   </select>
                 </div>
-
+                <app-form-validation-message [control]="gender" [messages]="{required:'genderIsRequired'}">
+                </app-form-validation-message>
 
               </div>
               <div class="clearfix"></div>
@@ -101,9 +82,12 @@
 
               <div class="clearfix"></div>
               <div class="col-md-12">
-                <div class="btn-more submit-button">
-                  <a href="#">حفظ التغييرات</a>
-                </div>
+                <button  type="submit" [disabled]="form.invalid && form.submitted">
+                  <div class="btn-more submit-button">
+                    <a >{{'save' | translate}}</a>
+                  </div>
+                </button>
+
               </div>
               <div class="clearfix"></div>
 

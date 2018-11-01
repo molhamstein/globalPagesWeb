@@ -1,5 +1,6 @@
 export const ArabicTranslation={
   username:'اسم المستخدم',
+  email:'البريد الالكتروني',
   password:'كلمة المرور',
   newPassword:'كلمة المرور الجديدة',
   gender:'الجنس',
@@ -38,6 +39,10 @@ export const ArabicTranslation={
   subCategory:'الفئة الفرعية',
   chooseCity:'اختر المدينة',
   apply:'تطبيق',
-  preview:'معاينة'
+  editData:'تعديل البيانات',
+  edit:'تعديل',
+  save:'حفظ التغيرات',
+  preview:'معاينة',
+  addedAds:'الإعلانات المضافة'
 
 }
