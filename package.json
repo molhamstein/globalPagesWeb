@@ -22,6 +22,7 @@
     "@angular/router": "^6.1.0",
     "@ngx-translate/core": "^10.0.2",
     "core-js": "^2.5.4",
+    "date-fns": "^1.29.0",
     "ngx-filter-pipe": "^2.1.2",
     "ngx-owl-carousel": "^2.0.7",
     "ngx-pipes": "^2.3.6",

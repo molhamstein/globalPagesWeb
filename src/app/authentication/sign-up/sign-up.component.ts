@@ -17,15 +17,17 @@ export class SignUpComponent implements OnInit,AfterViewInit {
   }
   @ViewChild('form') form
   ngAfterViewInit() {
-    console.log(this.form)
     this.form.form.setValidators(passwordMatcher('password','repassword'))
 
   }
   submit(data)
   {
-    if(!this.form.invalid)
+    delete data['repassword']
+    if(!this.form.invalid){
       this.http.post(environment.api+'users',data).toPromise().then((data)=>{
 
       })
+    }
+
   }
 }

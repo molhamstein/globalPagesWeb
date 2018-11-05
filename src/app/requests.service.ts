@@ -8,17 +8,9 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 export class RequestsService {
 
   api = environment.api;
-  // header = new HttpHeaders();
-  constructor(private http : HttpClient) {
-    // let userDetails = JSON.parse(localStorage.getItem(environment.userDetails))
-    // console.warn('user Details',userDetails.id);
-    // if(userDetails && userDetails.id){
-    //   // this.header=this.header.append('Authorization',userDetails.id);
-    //   // this.header = this.header.append('Content-Type','application/json');
-    //   console.warn(this.header)
-    // }
-   }
-  
+
+  constructor(private http : HttpClient) { }
+
   get(name, params?){
     if (params) {
         // console.warn(params)
@@ -34,4 +26,8 @@ export class RequestsService {
     return this.http.post(this.api+name,data);
   }
   
+  put(name,data) {
+    return this.http.put(this.api + name,data);
+  }
+
 }

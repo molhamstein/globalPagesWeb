@@ -4,20 +4,21 @@
   </div>
   <div class="business-text">
     <div class="title">
-      <h4>مطعم Paprika</h4>
+      <h4 *ngIf="lang=='ar'">{{business['nameAr']}}</h4>
+      <h4 *ngIf="lang=='en'">{{business['nameEn']}}</h4>
     </div>
     <div class="desc">
-      مطعم شاورما عربي في دمشق
+      {{business['description']}}
     </div>
   </div>
   <div class="business-control">
     <div class="business-control-edit">
-      <a href="#">تعديل
+      <a href="#">{{'edit' | translate}}
         <i class="fa fa-pencil" aria-hidden="true"></i>
       </a>
     </div>
     <div class="business-control-delete">
-      <a href="#">حذف
+      <a href="#">{{'delete' | translate}}
         <i class="fa fa-trash-o" aria-hidden="true"></i>
       </a>
     </div>

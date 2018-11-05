@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="page-title-heading">
-          Username
+          {{user['username']}}
         </div>
 
       </div>
@@ -19,12 +19,12 @@
 <div class="container-fluid without-padding cloudy-bg">
   <div class="col-md-12 without-padding">
     <div class="profile-image-container">
-      <div class="change-image">تعديل </div>
+      <div class="change-image">{{'edit' | translate}} </div>
       <img class="profile-img" src="http://via.placeholder.com/150x150" />
     </div>
     <div class="col-md-12 text-center">
       <div class="">
-        الإعلانات المضافة
+        {{'addedAds' | translate}}
       </div>
       <div class="ads-count">
         12
@@ -45,13 +45,13 @@
             <div class="inner-box form">
               <div class="one-half">
                 <div class="wrap-listing username">
-                  <label>اسم المستخدم</label>
-                  <div class="user-name-text">بلال العبيد</div>
+                  <label>{{'username' | translate}}</label>
+                  <div class="user-name-text">{{user['username']}}</div>
                 </div>
                 <!-- /.wrap-listing -->
-                <label>تاريخ الميلاد</label>
+                <label>{{'birth' | translate}}</label>
                 <div class="wrap-listing business">
-                  <div class="user-birth-text">1 - 1 - 1995</div>
+                  <div class="user-birth-text">{{user['birthDate']}}</div>
                   <span class="clearfix"></span>
                 </div>
                 <!-- /.wrap-listing -->
@@ -60,13 +60,13 @@
               </div>
               <div class="one-half">
                 <div class="wrap-listing phone">
-                  <label>البريد الإلكتروني</label>
-                  <div class="user-email-text">Bilal.alobaid.94@gmail.com</div>
+                  <label>{{'email' | translate}}</label>
+                  <div class="user-email-text">{{user['email']}}</div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="wrap-listing category">
-                  <label>Gender</label>
-                  <div class="user-gender-text">ذكر</div>
+                  <label>{{'gender' | translate}}</label>
+                  <div class="user-gender-text">{{user['gender'] | translate}}</div>
                 </div>
                 <div class="clearfix"></div>
 
@@ -74,7 +74,7 @@
               </div>
               <div class="clearfix"></div>
               <div class="col-md-12 text-left">
-                <a href="#">تعديل البيانات</a>
+                <a [routerLink]="['/profile',id,'edit']">{{'editData' | translate}}</a>
               </div>
 
             </div>
@@ -93,11 +93,10 @@
               <h3>My Ads</h3>
             </div>
 
-            <app-ads-card></app-ads-card>
-            <app-ads-card></app-ads-card>
-            <app-ads-card></app-ads-card>
-            <app-ads-card></app-ads-card>
-            <app-ads-card></app-ads-card>
+            <ng-container *ngFor="let ad of ads">
+              <app-ads-card [ad]="ad"></app-ads-card>
+            </ng-container>
+
           </div>
         </div>
 
@@ -107,12 +106,9 @@
               <h3>My business</h3>
             </div>
 
-            <app-business-card></app-business-card>
-            <app-business-card></app-business-card>
-            <app-business-card></app-business-card>
-            <app-business-card></app-business-card>
-            <app-business-card></app-business-card>
-            <app-business-card></app-business-card>
+            <ng-container *ngFor="let business of businesses">
+              <app-business-card [business]="business"></app-business-card>
+            </ng-container>
           </div>
         </div>
 

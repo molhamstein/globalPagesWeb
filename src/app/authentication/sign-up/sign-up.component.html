@@ -7,9 +7,15 @@
           <form  novalidate (submit)="submit(form.value)" #form="ngForm" accept-charset="utf-8">
             <div class="wrap-signup">
               <label>{{'username' | translate}}</label>
-              <input type="text" class="username" name="email" ngModel #username="ngModel" email required>
+              <input type="text" class="username" name="username" ngModel #username="ngModel"  required>
             </div>
-            <app-form-validation-message [control]="username" [messages]="{required:'usernameIsRequired',email:'notAValidEmail'}">
+            <app-form-validation-message [control]="username" [messages]="{required:'usernameIsRequired'}">
+            </app-form-validation-message>
+            <div class="wrap-signup">
+              <label>{{'email' | translate}}</label>
+              <input type="text" class="email" name="email" ngModel #email="ngModel" email required>
+            </div>
+            <app-form-validation-message [control]="email" [messages]="{required:'usernameIsRequired',email:'notAValidEmail'}">
             </app-form-validation-message>
             <div class="wrap-signup">
               <label>{{'password' | translate}}</label>
@@ -26,6 +32,12 @@
             </app-form-validation-message>
             <app-form-validation-message [control]="repassword" [messages]="{required:'confirmPasswordIsRequired'}">
             </app-form-validation-message>
+            <div class="wrap-signup phone">
+              <label>{{'phoneNumber' | translate}}</label>
+              <input type="text" class="phoneNumber" name="phoneNumber" ngModel #phoneNumber="ngModel" required>
+            </div>
+            <app-form-validation-message [control]="phoneNumber" [messages]="{required:'phoneNumberIsRequired'}">
+            </app-form-validation-message>
             <div class="wrap-signup category">
               <label>{{'gender' | translate}}</label>
               <span class="ti-angle-down"></span>
@@ -38,7 +50,7 @@
             </app-form-validation-message>
             <div class="wrap-signup">
               <label>{{'birth' | translate}}</label>
-              <input type="date"  name="birth" ngModel #birth="ngModel" required>
+              <input type="date"  name="birthDate" ngModel #birth="ngModel" required>
             </div>
             <app-form-validation-message [control]="birth" [messages]="{required:'birthIsRequired'}">
             </app-form-validation-message>

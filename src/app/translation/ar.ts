@@ -1,5 +1,6 @@
 export const ArabicTranslation={
   username:'اسم المستخدم',
+  email:'البريد الالكتروني',
   password:'كلمة المرور',
   newPassword:'كلمة المرور الجديدة',
   gender:'الجنس',
@@ -25,6 +26,8 @@ export const ArabicTranslation={
   confirmPasswordAndPasswordNotSame:'كلمة المرور وتأكيد كلمة المرور غير متطابقين',
   genderIsRequired:'الرجاء ملئ الجنس',
   birthIsRequired:'الرجاء ملئ تاريخ الميلاد',
+  phoneNumberIsRequired:'الرجاء ملئ رقم الهاتف',
+  phoneNumber:'رقم الهاتف',
   featuredAds: 'إعلانات مميزة',
   homeTitle:' اكتشف أفضل الأماكن',
   homeSubTitle:'أكتشف المزيد من النشاطات',
@@ -49,6 +52,10 @@ export const ArabicTranslation={
   yourBusinessImages:'صور اعلانك',
   browseFiles:'استعرض الملفات',
   registerAd:'تسجيل الإعلان',
-  getInTouch:'تواصل معنا'
+  getInTouch:'تواصل معنا',
+  editData:'تعديل البيانات',
+  edit:'تعديل',
+  save:'حفظ التغيرات',
+  addedAds:'الإعلانات المضافة'
 
 }

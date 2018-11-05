@@ -14,9 +14,9 @@ const routes: Routes = [
   {path:'',component:HomeScreenComponent},
   {path:'business/create',component:BusinessCreateComponent},
   {path:'business',component:BusinessViewComponent},
-  {path:'profile',component:ProfileViewComponent},
-  {path:'profile/edit',component:ProfileEditComponent},
-  { path: 'ad/:id', component: AdViewComponent, resolve: { adData: AdDataResolverService}},
+  {path:'profile/:id',component:ProfileViewComponent},
+  {path:'profile/:id/edit',component:ProfileEditComponent},
+  { path: 'ad/:id', component: AdViewComponent, resolve: { adData: AdDataResolverService } },
   {path:'ad/create',component:AdCreateComponent},
   {path:'guide',component:GuideComponent},
 
