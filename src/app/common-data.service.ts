@@ -11,6 +11,9 @@ export class CommonDataService {
   citiesPromise;
   filterItem :Object= {};
 
+  bCategoryPromise;
+
+
   constructor(private requests: RequestsService, private ts: TranslateService) {
     //categories and subCategories, then adding a title attribute depending on selected language 
     this.categoriesPromise=
@@ -52,6 +55,26 @@ export class CommonDataService {
           });
         });
       }
+    })
+
+    // Business categories, then add a title attribute depending on selected language
+    this.bCategoryPromise = this.requests.get('businessCategories?filter={"where":{"parentCategoryId" : {"exists" : false}},"include":"subCategories"}').toPromise();
+    this.bCategoryPromise.then(function (res) {
+      if (ts.currentLang == 'ar') {
+        res.forEach(element => {
+          element['title'] = element['titleAr'];
+          element['subCategories'].forEach(sub => {
+            sub['title'] = sub['titleAr'];
+          });
+        });
+      } else {
+        res.forEach(element => {
+          element['title'] = element['titleEn'];
+          element['subCategories'].forEach(sub => {
+            sub['title'] = sub['titleEn'];
+          });
+        });
+      }    
     })
 
    }

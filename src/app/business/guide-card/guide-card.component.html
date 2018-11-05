@@ -1,8 +1,8 @@
 <div class="col-md-6  col-xs-12 featured-box-flex-image">
   <div class="box-header">
     <div class="box-image">
-      <img src="assets/images/page/abo-alrod.jpg" alt="">
-      <a href="#" title="">معاينة</a>
+      <img src="{{data?.img}}" alt="">
+      <a href="#" title="">{{'preview' | translate}}</a>
       <div class="overlay"></div>
     </div>
   </div>
@@ -11,17 +11,17 @@
 <div class="featured-box-flex-text">
   <div class="box-content">
     <div class="box-title ad">
-      <a href="#" title=""> سناك أبو الروض</a>
+      <a href="#" title="">{{data.name}}</a>
     </div>
     <ul class="category">
-      <li>مطعم</li>
-      <li>سناك</li>
+      <li>{{data.category}}</li>
+      <li>{{data.subCategory}}</li>
     </ul>
     <div class="box-desc">
-      سناك أبو الروض , مطعم يقدم وجبات غربية / شاورما - همبرجر
+      {{data.description}}
     </div>
     <div class="box-location">
-      دمشق - الصالحية
+      {{data.textAddress}}
     </div>
   </div>
   <!-- /.box-content -->
