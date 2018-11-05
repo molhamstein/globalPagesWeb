@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +8,16 @@ import { HttpClient} from '@angular/common/http';
 export class RequestsService {
 
   api = environment.api;
-
-  constructor(private http : HttpClient) { }
+  // header = new HttpHeaders();
+  constructor(private http : HttpClient) {
+    // let userDetails = JSON.parse(localStorage.getItem(environment.userDetails))
+    // console.warn('user Details',userDetails.id);
+    // if(userDetails && userDetails.id){
+    //   // this.header=this.header.append('Authorization',userDetails.id);
+    //   // this.header = this.header.append('Content-Type','application/json');
+    //   console.warn(this.header)
+    // }
+   }
   
   get(name, params?){
     if (params) {
@@ -18,6 +26,12 @@ export class RequestsService {
       return this.http.get(this.api + name, { params: params });
     }
     return this.http.get(this.api + name);
+  }
+  post(name,data,h?){
+    if (h){
+      return this.http.post(this.api+name,data,{headers:h});
+    }
+    return this.http.post(this.api+name,data);
   }
   
 }

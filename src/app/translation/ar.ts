@@ -38,6 +38,17 @@ export const ArabicTranslation={
   subCategory:'الفئة الفرعية',
   chooseCity:'اختر المدينة',
   apply:'تطبيق',
-  preview:'معاينة'
+  preview:'معاينة',
+  createNewAd:'إضافة إعلان جديد',
+  adName:'اسم الإعلان',
+  yourAdTitle:'اسم الإعلان الخاص بك',
+  city:'المحافظة',
+  area:'المنطقة',
+  details:'تفاصيل',
+  writeYourAdDetails:'اكتب التفاصيل الخاصة بالإعلان الخاص بك',
+  yourBusinessImages:'صور اعلانك',
+  browseFiles:'استعرض الملفات',
+  registerAd:'تسجيل الإعلان',
+  getInTouch:'تواصل معنا'
 
 }

@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   api : 'http://104.217.253.15:3000/api/',
-  server:'http://104.217.253.15:3000/'
+  server:'http://104.217.253.15:3000/',
+  userDetails:'_sxamekqdw'
 };
 
 /*

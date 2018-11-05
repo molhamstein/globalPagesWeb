@@ -12,6 +12,7 @@ export class CardVComponent implements OnInit {
   constructor(private tr:TranslateService) { }
 
   ngOnInit() {
+    this.data['id']= this.details['id'];
     this.data['title'] = this.details['title'];
     this.data['description'] = this.details['description'];
     this.data['img'] = 'assets/images/page/abo-alrod.jpg';

@@ -8,7 +8,7 @@ import {ProfileEditComponent} from './profile/profile-edit/profile-edit.componen
 import {AdViewComponent} from './ad/ad-view/ad-view.component';
 import {AdCreateComponent} from './ad/ad-create/ad-create.component';
 import {GuideComponent} from './business/guide/guide.component';
-
+import { AdDataResolverService} from './ad-data-resolver.service';
 const routes: Routes = [
   {path:'auth',loadChildren:'./authentication/authentication.module#AuthenticationModule'},
   {path:'',component:HomeScreenComponent},
@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'business',component:BusinessViewComponent},
   {path:'profile',component:ProfileViewComponent},
   {path:'profile/edit',component:ProfileEditComponent},
-  {path:'ad',component:AdViewComponent},
+  { path: 'ad/:id', component: AdViewComponent, resolve: { adData: AdDataResolverService}},
   {path:'ad/create',component:AdCreateComponent},
   {path:'guide',component:GuideComponent},
 

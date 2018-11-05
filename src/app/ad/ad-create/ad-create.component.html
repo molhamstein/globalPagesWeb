@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="page-title-heading">
-          إضافة إعلان جديد
+          {{'createNewAd'| translate}}
         </div>
 
       </div>
@@ -20,35 +20,31 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <form action="#" class="form-listing" method="get" accept-charset="utf-8">
+        <form class="form-listing"  accept-charset="utf-8">
 
           <div class="inner-box form">
             <div class="clearfix"></div>
             <div class="wrap-listing ads-name">
-              <label>اسم الإعلان</label>
-              <input type="email" name="ads-name" placeholder="اسم الإعلان الخاص بك">
+              <label> {{'adName' | translate}} </label>
+              <input [(ngModel)]="name" type="text" name="ads-name" placeholder="{{'yourAdTitle' | translate}}">
             </div>
             <!-- /.wrap-listing -->
             <div class="clearfix"></div>
             <div class="one-half">
               <div class="clearfix"></div>
               <div class="wrap-listing category">
-                <label>المحافظة</label>
+                <label>{{'city' | translate}}</label>
                 <span class="ti-angle-down"></span>
-                <select name="select-city">
-                  <option value="">Choose Your Bussines Category</option>
-                  <option value="">Choose Your Bussines Category</option>
-                  <option value="">Choose Your Bussines Category</option>
+                <select name="select-city" [(ngModel)]="city" >
+                  <option *ngFor="let c of cities" [ngValue]="c" >{{c.name}}</option>
                 </select>
               </div>
               <div class="clearfix"></div>
               <div class="wrap-listing category">
-                <label>المنطقة</label>
+                <label>{{'area'| translate}}</label>
                 <span class="ti-angle-down"></span>
-                <select name="select-area">
-                  <option value="">Choose Your Bussines Category</option>
-                  <option value="">Choose Your Bussines Category</option>
-                  <option value="">Choose Your Bussines Category</option>
+                <select name="select-area" [(ngModel)]="location">
+                  <option *ngFor= "let loc of city?.locations" [ngValue]="loc" >{{loc.name}}</option>                  
                 </select>
               </div>
               <div class="clearfix"></div>
@@ -58,42 +54,38 @@
             <div class="one-half">
               <div class="clearfix"></div>
               <div class="wrap-listing category-half">
-                <label>الفئة</label>
+                <label>{{'category' | translate}}</label>
                 <span class="ti-angle-down"></span>
-                <select name="category">
-                  <option value="">Choose Your Bussines Category</option>
-                  <option value="">Choose Your Bussines Category</option>
-                  <option value="">Choose Your Bussines Category</option>
+                <select name="category" [(ngModel)]="category">
+                 <option *ngFor = "let cat of categories" [ngValue]="cat">{{cat.title}}</option>
                 </select>
               </div>
               <div class="clearfix"></div>
               <div class="wrap-listing category-half">
-                <label>الفئة الفرعية</label>
+                <label>{{'subCategory' | translate}}</label>
                 <span class="ti-angle-down"></span>
-                <select name="subcategory">
-                  <option value="">Choose Your Bussines Category</option>
-                  <option value="">Choose Your Bussines Category</option>
-                  <option value="">Choose Your Bussines Category</option>
+                <select name="subcategory" [(ngModel)]="subCategory">
+                  <option *ngFor="let sc of category?.subCategories" [ngValue]="sc" >{{sc.title}}</option>
                 </select>
               </div>
             </div>
             <div class="clearfix"></div>
             <div class="one-half">
-              <label>تفاصيل</label>
-              <textarea placeholder="اكتب التفاصيل الخاصة بالإعلان الخاص بك"></textarea>
+              <label>{{'details' | translate}}</label>
+              <textarea [(ngModel)]="details" name="details" placeholder="{{'writeYourAdDetails'| translate}}"></textarea>
               <div class="clearfix"></div>
             </div>
             <div class="one-half">
               <div class="clearfix"></div>
               <div class="wrap-listing half">
-                <label>Your Business Images</label>
+                <label>{{'yourBusinessImages'| translate}}</label>
                 <div class="browse ">
                   <div id="preview-box" class="col-md-12 preview-box">
 
                   </div>
                   <div class="upload">
-                    <span>Browse files</span>
-                    <input name="filesToUpload[]" id="filesToUpload" type="file" multiple="" />
+                    <span>{{'browseFiles'| translate}}</span>
+                    <input name="filesToUpload[]" (change)="onSelectFile($event)" id="filesToUpload" type="file" multiple  />
                   </div>
                 </div>
               </div>
@@ -101,7 +93,7 @@
             <div class="clearfix"></div>
             <div class="col-md-12">
               <div class="btn-more submit-button">
-                <a href="#">تسجيل الإعلان</a>
+                <a class="pointerHover" (click)="registerAd()">{{'registerAd'| translate}}</a>
               </div>
             </div>
             <div class="clearfix"></div>

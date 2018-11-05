@@ -5,15 +5,11 @@
         <div class="title-left">
 
           <div class="box-title">
-            <a href="#" title="">مطعم طبلية</a>
+            <a href="#" title="">{{data.title}}</a>
           </div>
+          <span class="creation-date">{{data.creationDate}}</span>
+
           <!-- /.box-title -->
-          <ul class="box-categories">
-            <li class="category">
-              <i class="fa fa-flag" aria-hidden="true"></i>مطعم</li>
-            <li class="subcategory">
-              <i class="fa fa-filter" aria-hidden="true"></i>مشاوي </li>
-          </ul>
           <!-- /.box-address -->
         </div>
         <!-- /.title-left -->
@@ -22,7 +18,9 @@
       <div class="col-md-4">
         <div class="title-left">
           <div class="btn-more">
-            <a href="#" title="">تواصل معنا</a>
+            <a *ngIf=" toggle1" (click)="toggle1= ! toggle1" href="" title="">{{'getInTouch' | translate}}</a>
+
+            <a *ngIf="!toggle1" class="phone-arab-dir" href="tel:{{data.phone}}">{{data.phone}} <i class="fa fa-phone" style="margin-left:12px" aria-hidden="true"></i></a>
           </div>
           <div class="clearfix"></div>
         </div>
@@ -41,18 +39,19 @@
     <div class="row">
       <div class="col-md-8">
         <div class="text-box">
-          <h3>تفاصيل</h3>
+          <h3>{{'details'| translate}}</h3>
           <div class="text-desc">
-            مهما كنت جوعان تعا على طبلية وعالأكيد رح تطلع مفلل وشبعان 🤓 اطيب لقمة شرقية عالفحم مشوية بس عند طبلية وجبة XXL😍 الفرع الوحيد:
-            تنظيم كفرسوسة - دامسكينو مول الطابق الرابع
+            {{data.description}}
           </div>
         </div>
         <div class="col-md-12">
           <div class="imageGallery1">
-            <a href="assets/images/page/tb1.jpg" title="Caption for gallery item 1">
-              <img src="assets/images/page/tb1.jpg" alt="Gallery image 1" />
+
+            <a *ngFor="let i of data.images" href="{{i.url}}">
+              <img src="{{i.url}}" alt="Gallery image" />
             </a>
-            <a href="assets/images/page/tb2.jpg" title="Caption for gallery item 2">
+
+            <!-- <a href="assets/images/page/tb2.jpg" title="Caption for gallery item 2">
               <img src="assets/images/page/tb2.jpg" alt="Gallery image 2" />
             </a>
             <a href="assets/images/page/tb3.jpg" title="Caption for gallery item 3">
@@ -66,7 +65,7 @@
             </a>
             <a href="assets/images/page/tb6.jpg" title="Caption for gallery item 3">
               <img src="assets/images/page/tb6.jpg" alt="Gallery image 3" />
-            </a>
+            </a> -->
           </div>
         </div>
 
@@ -75,18 +74,28 @@
       <!-- /.col-md-8 -->
       <div class="col-md-4">
         <div class="sidebar">
-
+          <!-- <ul class="box-categories">
+                      
+                    </ul> -->
           <div class="box contact-box">
             <ul class="contact-list">
               <li class="address">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>البرامكة , دمشق</li>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>{{data.subArea}} , {{data.area}}</li>
+              <!--<li>
+                  <i class="fa fa-globe" aria-hidden="true"></i>
+                  <a href="#" title="">http://www.tableya.com.sy</a>
+                </li> -->
+              <li class="category">
+                <i class="fa fa-flag" aria-hidden="true"></i>{{data.category}}</li>
+              <li class="subcategory">
+                <i class="fa fa-filter" aria-hidden="true"></i>{{data.subCategory}}</li>
               <li>
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <a class="phone-arab-dir" href="#">0993 300 302</a>
-              </li>
-              <li>
-                <i class="fa fa-globe" aria-hidden="true"></i>
-                <a href="#" title="">http://www.tableya.com.sy</a>
+                <span class="btn-more">
+                  <a class="button-in-contact-list" *ngIf="toggle2" (click)="toggle2 = !toggle2" title="">{{'getInTouch' |
+                    translate}}</a>
+                  <a *ngIf="!toggle2" class="phone-arab-dir button-in-contact-list" href="tel:{{data.phone}}">{{data.phone}} <i
+                      class="fa fa-phone" aria-hidden="true"></i></a>
+                </span>
               </li>
             </ul>
           </div>

@@ -1159,7 +1159,7 @@
         removePreloader();
         langButton();
         $('#filesToUpload').on('change', function() {
-          console.log('aa');
+        //   console.log('aa');
         imagesPreview(this);
     });
     });
