@@ -26,6 +26,8 @@ export const ArabicTranslation={
   confirmPasswordAndPasswordNotSame:'كلمة المرور وتأكيد كلمة المرور غير متطابقين',
   genderIsRequired:'الرجاء ملئ الجنس',
   birthIsRequired:'الرجاء ملئ تاريخ الميلاد',
+  phoneNumberIsRequired:'الرجاء ملئ رقم الهاتف',
+  phoneNumber:'رقم الهاتف',
   featuredAds: 'إعلانات مميزة',
   homeTitle:' اكتشف أفضل الأماكن',
   homeSubTitle:'أكتشف المزيد من النشاطات',

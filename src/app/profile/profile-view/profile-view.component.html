@@ -93,11 +93,10 @@
               <h3>My Ads</h3>
             </div>
 
-            <app-ads-card></app-ads-card>
-            <app-ads-card></app-ads-card>
-            <app-ads-card></app-ads-card>
-            <app-ads-card></app-ads-card>
-            <app-ads-card></app-ads-card>
+            <ng-container *ngFor="let ad of ads">
+              <app-ads-card [ad]="ad"></app-ads-card>
+            </ng-container>
+
           </div>
         </div>
 
@@ -107,12 +106,9 @@
               <h3>My business</h3>
             </div>
 
-            <app-business-card></app-business-card>
-            <app-business-card></app-business-card>
-            <app-business-card></app-business-card>
-            <app-business-card></app-business-card>
-            <app-business-card></app-business-card>
-            <app-business-card></app-business-card>
+            <ng-container *ngFor="let business of businesses">
+              <app-business-card [business]="business"></app-business-card>
+            </ng-container>
           </div>
         </div>
 

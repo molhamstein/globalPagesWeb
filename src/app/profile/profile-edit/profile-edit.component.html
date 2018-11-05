@@ -55,12 +55,19 @@
 
               <div class="one-half">
                 <div class="wrap-listing phone">
-                  <label>{{'email' | translate}}</label>
-                  <input type="text" class="email" name="email" [(ngModel)]="user['email']" #email="ngModel" email required>
+                  <label>{{'phoneNumber' | translate}}</label>
+                  <input type="text" class="phoneNumber" name="phoneNumber" [(ngModel)]="user['phoneNumber']" #phoneNumber="ngModel" required>
                 </div>
-                <app-form-validation-message [control]="email" [messages]="{required:'usernameIsRequired',email:'notAValidEmail'}">
+                <app-form-validation-message [control]="phoneNumber" [messages]="{required:'phoneNumberIsRequired'}">
                 </app-form-validation-message>
                 <div class="clearfix"></div>
+                <!--<div class="wrap-listing phone">-->
+                  <!--<label>{{'email' | translate}}</label>-->
+                  <!--<input type="text" class="email" name="email" [(ngModel)]="user['email']" #email="ngModel" email required>-->
+                <!--</div>-->
+                <!--<app-form-validation-message [control]="email" [messages]="{required:'usernameIsRequired',email:'notAValidEmail'}">-->
+                <!--</app-form-validation-message>-->
+                <!--<div class="clearfix"></div>-->
                 <div class="wrap-listing category">
                   <label>{{'gender' | translate}}</label>
                   <span class="ti-angle-down"></span>

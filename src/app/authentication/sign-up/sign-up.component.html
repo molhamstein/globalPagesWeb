@@ -32,6 +32,12 @@
             </app-form-validation-message>
             <app-form-validation-message [control]="repassword" [messages]="{required:'confirmPasswordIsRequired'}">
             </app-form-validation-message>
+            <div class="wrap-signup phone">
+              <label>{{'phoneNumber' | translate}}</label>
+              <input type="text" class="phoneNumber" name="phoneNumber" ngModel #phoneNumber="ngModel" required>
+            </div>
+            <app-form-validation-message [control]="phoneNumber" [messages]="{required:'phoneNumberIsRequired'}">
+            </app-form-validation-message>
             <div class="wrap-signup category">
               <label>{{'gender' | translate}}</label>
               <span class="ti-angle-down"></span>

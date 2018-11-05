@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-business-card',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessCardComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private translteService:TranslateService) { }
+  @Input() business
+  lang
   ngOnInit() {
+    this.lang=this.translteService.currentLang
+    this.translteService.onLangChange.subscribe(()=>{
+      this.lang=this.translteService.currentLang
+    })
   }
 
 }
