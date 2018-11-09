@@ -164,7 +164,7 @@
         var langButton = function() {
             $('.lang-list').hide();
             var showlang = $('#lang-change');
-                showlang.on('mouseover',function() {
+                showlang.on('click',function() {
                 $('.lang-list').toggle();
             });
         }; // Search Button

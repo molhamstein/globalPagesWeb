@@ -11,5 +11,8 @@ export class BusinessCreateComponent implements OnInit {
 
   ngOnInit() {
   }
+  submit(data){
+
+  }
 
 }

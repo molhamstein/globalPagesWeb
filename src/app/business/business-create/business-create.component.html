@@ -21,9 +21,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <form action="#" class="form-listing" method="get" accept-charset="utf-8">
+          <form  class="form-listing" novalidate #form="ngForm" (submit)="submit(form.value)">
             <div class="inner-box form">
-  
+
               <div class="one-half">
                 <div class="wrap-listing">
                   <label>اسم الإعلان</label>
@@ -40,7 +40,7 @@
                   <input type="text" name="رقم الهاتف" placeholder="111-222-3333">
                 </div>
                 <div class="clearfix"></div>
-  
+
               </div>
               <div class="one-half">
                 <div class="clearfix"></div>
@@ -126,7 +126,7 @@
                     <span class="hour-to">22:00</span>
                     <span class="btn-close ti-close"></span>
                   </div>
-  
+
                   <div class="item">
                     <span class="date">Monday</span>
                     <span class="hour-from">09:00</span>
@@ -156,7 +156,7 @@
                     <span class="btn-close ti-close"></span>
                   </div>
                 </div>
-  
+
               </div>
               <div class="clearfix"></div>
               <div class="one-half">
@@ -187,15 +187,15 @@
                 <textarea placeholder="اكتب التفاصيل الخاصة بالإعلان الخاص بك"></textarea>
                 <div class="clearfix"></div>
               </div>
-  
-  
+
+
               <div class="one-half">
                 <div class="clearfix"></div>
                 <div class="wrap-listing half">
                   <label>Your Business Images</label>
                   <div class="browse ">
                     <div id="preview-box" class="col-md-12 preview-box">
-  
+
                     </div>
                     <div class="upload">
                       <span>Browse files</span>
@@ -204,20 +204,23 @@
                   </div>
                 </div>
               </div>
-  
+
               <div class="clearfix"></div>
               <div class="col-md-12">
-                <div class="btn-more submit-button">
-                  <a href="#">تسجيل الإعلان</a>
-                </div>
+                <button type="submit" style="display: contents;">
+                  <div class="btn-more submit-button">
+                    <a >تسجيل الإعلان</a>
+                  </div>
+                </button>
+
               </div>
-  
+
               <div class="clearfix"></div>
-  
-  
+
+
             </div>
             <!-- /.inner-box -->
-  
+
           </form>
           <!-- /.form-listing -->
         </div>

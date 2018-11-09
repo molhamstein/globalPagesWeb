@@ -26,7 +26,8 @@
               "src/css/bootstrap.min.css",
               "src/css/style.css",
               "src/css/responsive.css",
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/pretty-checkbox/dist/pretty-checkbox.css"
             ],
             "scripts": [
               "src/js/jquery.min.js",

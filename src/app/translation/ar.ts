@@ -12,6 +12,7 @@ export const ArabicTranslation={
   createAccount:'إنشاء حساب',
   login:'تسجيل الدخول',
   rememberMe:'تذكرني',
+  mySubscription:'اشتراكاتي',
   forgetPassword:'نسيت كلمة المرور',
   restorePassword:'استعادة كلمة المرور',
   changePassword:'تغيير كلمة المرور',

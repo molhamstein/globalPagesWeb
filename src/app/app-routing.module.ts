@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'auth',loadChildren:'./authentication/authentication.module#AuthenticationModule'},
   {path:'',component:HomeScreenComponent},
   {path:'business/create',component:BusinessCreateComponent},
-  {path:'business',component:BusinessViewComponent},
+  {path:'business/:id',component:BusinessViewComponent},
   {path:'profile/:id',component:ProfileViewComponent},
   {path:'profile/:id/edit',component:ProfileEditComponent},
   { path: 'ad/:id', component: AdViewComponent, resolve: { adData: AdDataResolverService } },
