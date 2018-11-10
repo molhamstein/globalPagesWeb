@@ -1,0 +1,8 @@
+.pretty .state label:before,.pretty .state label:after,.pretty input{
+  transform: translateX(-20px) !important;
+}
+.pretty
+{
+  float: left;
+  margin: 10px;
+}

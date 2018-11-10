@@ -1,8 +1,8 @@
 .pointerHover:hover{
-    cursor: pointer;
+  cursor: pointer;
 }
 .title-left  .creation-date{
-    padding-right: 46px;
+  padding-right: 46px;
 }
 .button-in-contact-list{
     padding: 3px 15px !important;

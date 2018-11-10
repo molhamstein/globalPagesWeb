@@ -5,14 +5,21 @@
         <div class="title-left">
 
           <div class="box-title">
-            <a href="#" title="">مطعم تجربة</a>
+            <a  title="" *ngIf="lang=='ar'">{{business['nameAr']}}</a>
+            <a  title="" *ngIf="lang!='ar'">{{business['nameEn']}}</a>
           </div>
           <!-- /.box-title -->
           <ul class="box-categories">
             <li class="category">
-              <i class="fa fa-flag" aria-hidden="true"></i>Category </li>
+              <i class="fa fa-flag" aria-hidden="true"></i>
+              <a  title="" *ngIf="lang=='ar'">{{business['category']['titleAr']}}</a>
+              <a  title="" *ngIf="lang!='ar'">{{business['category']['titleEn']}}</a>
+            </li>
             <li class="subcategory">
-              <i class="fa fa-filter" aria-hidden="true"></i>subcategory </li>
+              <i class="fa fa-filter" aria-hidden="true"></i>
+              <a  title="" *ngIf="lang=='ar'">{{business['subCategory']['titleAr']}}</a>
+              <a  title="" *ngIf="lang!='ar'">{{business['subCategory']['titleEn']}}</a>
+            </li>
           </ul>
           <!-- /.box-address -->
         </div>
@@ -43,9 +50,7 @@
         <div class="text-box">
           <h3>حول هذه القائمة</h3>
           <div class="text-desc">
-            <p>تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة </p>
-            <i>تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة </i>
-            <p>تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة </p>
+           {{business['description']}}
           </div>
         </div>
         <div class="col-md-12">
@@ -83,7 +88,7 @@
                 <i class="fa fa-map-marker" aria-hidden="true"></i>البرامكة , دمشق</li>
               <li>
                 <i class="fa fa-phone" aria-hidden="true"></i>
-                <a href="#">(+84) 936 736 288</a>
+                <a >{{business['phone1']}}</a>
               </li>
               <li>
                 <i class="fa fa-globe" aria-hidden="true"></i>
@@ -94,14 +99,8 @@
           <div class="involve">
             <h4>خدمات و منتجات</h4>
             <ul>
-              <li class="box">
-                <app-involve-box></app-involve-box>
-              </li>
-              <li class="box">
-                <app-involve-box></app-involve-box>
-              </li>
-              <li class="box">
-                <app-involve-box></app-involve-box>
+              <li class="box" *ngFor="let product of business['products']">
+                <app-involve-box [product]="product"></app-involve-box>
               </li>
             </ul>
           </div>

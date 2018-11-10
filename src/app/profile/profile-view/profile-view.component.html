@@ -117,68 +117,19 @@
           <div class="inner-box subscribed-list">
             <div class="subscribed">
               <div class="title">
-                <h3>My subscribed</h3>
+                <h3>{{'mySubscription' | translate}}</h3>
               </div>
-              <div class="select-filter">
-                <ul class="list-filter quarter">
-                  <li class="active">
-                    <span class="ti-check-box"></span>مطاعم
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>فنادق
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>مسابح
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>نوادي
-                  </li>
-                </ul>
-                <ul class="list-filter quarter">
-                  <li class="active">
-                    <span class="ti-check-box"></span>مطاعم
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>فنادق
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>مسابح
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>نوادي
-                  </li>
-                </ul>
-                <ul class="list-filter quarter">
-                  <li class="active">
-                    <span class="ti-check-box"></span>مطاعم
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>فنادق
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>مسابح
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>نوادي
-                  </li>
-                </ul>
-                <ul class="list-filter quarter">
-                  <li class="active">
-                    <span class="ti-check-box"></span>مطاعم
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>فنادق
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>مسابح
-                  </li>
-                  <li class="active">
-                    <span class="ti-check-box"></span>نوادي
-                  </li>
-                </ul>
-                <div class="clearfix"></div>
+              <div class="row">
+                <div class="col-xs-3" *ngFor="let cat of postCategories">
+                  <div class="pretty p-default p-thick">
+                    <input type="checkbox" [(ngModel)]="categories[cat['id']]" (change)="editCat(cat)" />
+                    <div class="state p-warning">
+                      <label *ngIf="lang=='ar'">{{cat['titleAr']}}</label>
+                      <label *ngIf="lang=='en'">{{cat['titleEn']}}</label>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <!-- /.select-filter -->
             </div>
           </div>
         </div>
