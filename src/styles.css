@@ -9,3 +9,11 @@
     position: relative;
     left: 15px;
 }
+.map {
+  height: 100%;
+  padding: 0;
+}
+
+.leaflet-control-attribution{
+    display: none;
+}

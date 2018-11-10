@@ -7,21 +7,20 @@
             <div class="wrap-box-search style2 v2">
               <form action="#" method="get" accept-charset="utf-8">
                 <span>
-                  <input type="text" placeholder="{{'searchForWhat' | translate}}" name="search">
+                  <input (keyup)="titleFilter()" [(ngModel)]="title" type="text" placeholder="{{'searchForWhat' | translate}}" name="search">
                 </span>
                 <span class="location">
                   <span class="ti-location-pin"></span>
-                  <select [(ngModel)]="location" name="location">
-                    <option value="0" hidden>{{'location' | translate}}</option>
-                    <option *ngFor="let c of cities" [ngValue]="c">{{c.name}}</option>
+                  <select [(ngModel)]="cityID" name="cityID" (change)="reFilter()">
+                    <option value="0" >{{'location' | translate}}</option>
+                    <option *ngFor="let c of cities" [value]="c.id">{{c.name}}</option>
                   </select>
                   <!-- <input type="text" placeholder="{{'location' | translate}}" name="location"> -->
                 </span>
                 <span class="categories">
                   <span class="ti-angle-down"></span>
-
-                  <select [(ngModel)]="categoryID" name="categories">
-                    <option value="0" hidden>{{'chooseCategory' | translate }}</option>
+                  <select [(ngModel)]="categoryID" name="categories" (change)="reFilter()">
+                    <option value="0" >{{'chooseCategory' | translate }}</option>
                     <option *ngFor="let c of bCategories" [value]="c.id">{{c.title}}</option>
                   </select>
 
@@ -35,13 +34,7 @@
             <div class="clearfix"></div>
             <div class="wrap-imagebox style2">
 
-              <app-guide-card *ngFor="let p of posts" [post]="p" class="col-md-5 col-xs-12 featured-box-flex guide-box "></app-guide-card>
-              <!-- <app-guide-card class="col-md-5 col-xs-12 featured-box-flex guide-box "></app-guide-card>
-              <app-guide-card class="col-md-5 col-xs-12 featured-box-flex guide-box "></app-guide-card>
-              <app-guide-card class="col-md-5 col-xs-12 featured-box-flex guide-box "></app-guide-card>
-              <app-guide-card class="col-md-5 col-xs-12 featured-box-flex guide-box "></app-guide-card>
-              <app-guide-card class="col-md-5 col-xs-12 featured-box-flex guide-box "></app-guide-card> -->
-
+              <app-guide-card *ngFor="let p of menuPosts" [post]="p" class="col-md-5 col-xs-12 featured-box-flex guide-box "></app-guide-card>
 
             </div>
             <!-- /.wrap-imagebox style2 -->
@@ -50,12 +43,17 @@
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-7 col-md-7 col-xs-12">
-          <section class="pdmap" id="flat-map">
+          <div style="height: 566px; width: 100%" 
+          leaflet 
+          [leafletOptions]="options"
+          (leafletMapReady)="onMapReady($event)">
+          </div>
+          <!-- <section class="pdmap" id="flat-map">
             <div class="flat-maps" data-name="Themesflat Map"></div>
             <div class="gm-map">
               <div class="map-4"></div>
             </div>
-          </section>
+          </section> -->
           <!-- /#flat-map -->
         </div>
         <!-- /.col-lg-8 -->

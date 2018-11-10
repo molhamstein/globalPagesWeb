@@ -19,6 +19,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/leaflet/dist/images",
+                "output": "leaflet/"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
@@ -26,6 +31,7 @@
               "src/css/bootstrap.min.css",
               "src/css/style.css",
               "src/css/responsive.css",
+              "node_modules/leaflet/dist/leaflet.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -86,6 +92,7 @@
               "src/css/bootstrap.min.css",
               "src/css/style.css",
               "src/css/responsive.css",
+              "node_modules/leaflet/dist/leaflet.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -96,8 +103,7 @@
               "src/js/parallax.js",
               "src/js/owl.carousel.js",
               "src/js/main.js"
-            ]
-            ,
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

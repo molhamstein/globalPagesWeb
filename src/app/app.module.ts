@@ -33,6 +33,8 @@ import { CommonDataService} from './common-data.service';
 import { FormValidationMessageComponent } from './shared/form-validation-message/form-validation-message.component';
 import {SharedModule} from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapMarkerComponent } from './business/map-marker/map-marker.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GuideComponent,
     InvolveBoxComponent,
     GuideCardComponent,
-    volumeFilter
+    volumeFilter,
+    MapMarkerComponent
 
   ],
   imports: [
@@ -66,8 +69,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     OwlModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    LeafletModule.forRoot()
   ],
+  entryComponents: [MapMarkerComponent],
   providers: [RequestsService,CommonDataService],
   bootstrap: [AppComponent]
 })
