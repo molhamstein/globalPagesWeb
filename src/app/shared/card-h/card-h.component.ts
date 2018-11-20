@@ -7,8 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./card-h.component.css']
 })
 export class CardHComponent implements OnInit {
-  @Input() details: Object;
-  data: Object = {};
+  @Input() details: any;
+  data: any = {};
   constructor(private tr: TranslateService) { }
 
   ngOnInit() {

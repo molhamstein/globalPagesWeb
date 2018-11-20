@@ -17,7 +17,7 @@
             </span>
             <span class="subCategories">
               <span class="ti-angle-down"></span>
-              <select [disabled]="categoryId=='0'" name="subCategories" [(ngModel)]="subCategory">
+              <select [disabled]="category=='0'" name="subCategories" [(ngModel)]="subCategory">
                 <option value="0" hidden>{{'subCategory' | translate}}</option>
                 <option *ngFor="let sc of category?.subCategories" [ngValue]="sc">{{sc.title}}</option>
               </select>
