@@ -2,8 +2,8 @@
     <div class="col-md-6  col-xs-12 featured-box-flex-image">
       <div class="box-header">
         <div class="box-image">
-          <img src="{{data.img}}" alt="">
-          <a href="ad/{{data.id}}" title="">{{'preview' | translate}}</a>
+          <img src="{{data?.img}}" alt="">
+          <a href="ad/{{data?.id}}" title="">{{'preview' | translate}}</a>
           <div class="overlay"></div>
         </div>
       </div>
@@ -12,17 +12,17 @@
     <div class="col-md-6  col-xs-12 featured-box-flex-text">
       <div class="box-content">
         <div class="box-title ad">
-          <a href="ad/{{data.id}}" title="">{{data.title}}</a>
+          <a href="ad/{{data?.id}}" title="">{{data?.title}}</a>
         </div>
         <ul class="category">
-          <li>{{data.category}}</li>
-          <li>{{data.subCategory}}</li>
+          <li>{{data?.category}}</li>
+          <li>{{data?.subCategory}}</li>
         </ul>
         <div class="box-desc">
-          {{data.description}}
+          {{data?.description}}
         </div>
         <div class="box-location">
-          {{data.location}}
+          {{data?.location}}
         </div>
       </div>
       <!-- /.box-content -->

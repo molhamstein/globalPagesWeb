@@ -67,7 +67,7 @@ export class VolumeComponent implements OnInit {
   ngOnInit() {
     this.getVolumeData(0)
     // this.cds.categoriesObservable.subscribe(res => this.categories =<Object[]> res);
-    this.cds.categoriesPromise.then(res => {this.categories =<Object[]> res;console.warn('3',res)});
+    this.cds.categoriesPromise.then(res => this.categories =<Object[]> res);
     this.cds.citiesPromise.then(res => this.cities = <Object[]>res)
   }
 

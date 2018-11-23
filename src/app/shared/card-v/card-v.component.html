@@ -2,24 +2,24 @@
 
   <div class="featured-ads-box">
     <div class="featured-ads-box-image col-md-12">
-      <img src="{{data.img}}" alt="">
+      <img src="{{data?.img}}" alt="">
     </div>
     <div class="featured-ads-box-text col-md-12">
       <div class="title">
-        <a href="ad/{{data.id}}">{{data.title}}</a>
+        <a href="ad/{{data?.id}}">{{data?.title}}</a>
       </div>
       <div class="f-category">
         <ul class="category">
-          <li>{{data.category}}</li>
-          <li>{{data.subCategory}}</li>
+          <li>{{data?.category}}</li>
+          <li>{{data?.subCategory}}</li>
         </ul>
       </div>
       <div class="desc">
-        {{data.description}}
+        {{data?.description}}
       </div>
     </div>
     <div class="featured-ads-box-location col-md-12">
-      {{data.location}}
+      {{data?.location}}
     </div>
   </div>
 

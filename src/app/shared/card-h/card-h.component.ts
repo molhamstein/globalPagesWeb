@@ -12,20 +12,40 @@ export class CardHComponent implements OnInit {
   constructor(private tr: TranslateService) { }
 
   ngOnInit() {
-    this.data['id']= this.details['id'];
-    this.data['title'] = this.details['title'];
+    if (this.details.hasOwnProperty('id'))
+      this.data['id']= this.details['id'];
+
+    if (this.details.hasOwnProperty('title'))
+      this.data['title'] = this.details['title'];
+
+    if (this.details.hasOwnProperty('description'))
     this.data['description'] = this.details['description'];
-    this.data['img'] = 'assets/images/page/abo-alrod.jpg';
-    if (this.details['media']['0']['thumbnail'])
-      this.data['img'] = this.details['media']['0']['thumbnail'];
+    
+    if (this.details.hasOwnProperty('media') && this.details['media'].length > 1 && this.details['media']['0'].hasOwnProperty('thumbnail'))
+    this.data['img'] = this.details['media']['0']['thumbnail'];
+    
     if (this.tr.currentLang == 'ar') {
-      this.data['category'] = this.details['category']['titleAr'];
-      this.data['subCategory'] = this.details['subCategory']['titleAr'];
-      this.data['location'] = this.details['location']['nameAr'];
+
+      if (this.details.hasOwnProperty('category') && this.details['category'].hasOwnProperty('titleAr'))
+        this.data['category'] = this.details['category']['titleAr'];
+      
+      if (this.details.hasOwnProperty('subCategory') && this.details['subCategory'].hasOwnProperty('titleAr'))
+        this.data['subCategory'] = this.details['subCategory']['titleAr'];
+      
+      if (this.details.hasOwnProperty('location') && this.details['location'].hasOwnProperty('nameAr'))
+        this.data['location'] = this.details['location']['nameAr'];
+      
     } else {
-      this.data['category'] = this.details['category']['titleEn'];
-      this.data['subCategory'] = this.details['subCategory']['titleEn'];
-      this.data['location'] = this.details['location']['nameEn'];
+
+      if (this.details.hasOwnProperty('category') && this.details['category'].hasOwnProperty('titleEn'))
+        this.data['category'] = this.details['category']['titleEn'];
+      
+      if (this.details.hasOwnProperty('subCategory') && this.details['subCategory'].hasOwnProperty('titleEn'))
+        this.data['subCategory'] = this.details['subCategory']['titleEn'];
+    
+      if (this.details.hasOwnProperty('location') && this.details['location'].hasOwnProperty('nameEn'))
+        this.data['location'] = this.details['location']['nameEn'];
+      
     }
   }
 
