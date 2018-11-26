@@ -17,7 +17,8 @@ export class GuideCardComponent implements OnInit {
     if (this.post.hasOwnProperty('media') && this.post['media'].length >0 && this.post['media']['0'].hasOwnProperty('url'))
     this.data['img']=this.post['media']['0']['url'];
     this.data['description'] = this.post['description'];
-    this.data['textAddress'] = this.post['textAddress'];
+    this.data['description'] = this.post['description'];
+    this.data['id'] = this.post['id'];
     if(this.tr.currentLang=='ar'){
       this.data['name'] = this.post['nameAr'];
       this.data['category']= this.post['category']['titleAr'];

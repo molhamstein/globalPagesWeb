@@ -11,7 +11,7 @@
 <div class="featured-box-flex-text">
   <div class="box-content">
     <div class="box-title ad">
-      <a href="#" title="">{{data.name}}</a>
+      <a [routerLink]="['/business',data.id]" title="">{{data.name}}</a>
     </div>
     <ul class="category">
       <li>{{data.category}}</li>

@@ -35,6 +35,7 @@ import {SharedModule} from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapMarkerComponent } from './business/map-marker/map-marker.component';
+import { WorkingHourInputComponent } from './business/working-hour-input/working-hour-input.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { MapMarkerComponent } from './business/map-marker/map-marker.component';
     InvolveBoxComponent,
     GuideCardComponent,
     volumeFilter,
-    MapMarkerComponent
+    MapMarkerComponent,
+    WorkingHourInputComponent
 
   ],
   imports: [

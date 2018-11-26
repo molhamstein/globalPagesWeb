@@ -5,20 +5,20 @@
         <div class="title-left">
 
           <div class="box-title">
-            <a  title="" *ngIf="lang=='ar'">{{business['nameAr']}}</a>
-            <a  title="" *ngIf="lang!='ar'">{{business['nameEn']}}</a>
+            <a  title="" *ngIf="lang=='ar'">{{business?.nameAr}}</a>
+            <a  title="" *ngIf="lang!='ar'">{{business?.nameEn}}</a>
           </div>
           <!-- /.box-title -->
           <ul class="box-categories">
             <li class="category">
               <i class="fa fa-flag" aria-hidden="true"></i>
-              <a  title="" *ngIf="lang=='ar'">{{business['category']['titleAr']}}</a>
-              <a  title="" *ngIf="lang!='ar'">{{business['category']['titleEn']}}</a>
+              <a  title="" *ngIf="lang=='ar'">{{business?.category?.titleAr}}</a>
+              <a  title="" *ngIf="lang!='ar'">{{business?.category?.titleEn}}</a>
             </li>
             <li class="subcategory">
               <i class="fa fa-filter" aria-hidden="true"></i>
-              <a  title="" *ngIf="lang=='ar'">{{business['subCategory']['titleAr']}}</a>
-              <a  title="" *ngIf="lang!='ar'">{{business['subCategory']['titleEn']}}</a>
+              <a  title="" *ngIf="lang=='ar'">{{business?.subCategory?.titleAr}}</a>
+              <a  title="" *ngIf="lang!='ar'">{{business?.subCategory?.titleEn}}</a>
             </li>
           </ul>
           <!-- /.box-address -->
@@ -50,28 +50,13 @@
         <div class="text-box">
           <h3>حول هذه القائمة</h3>
           <div class="text-desc">
-           {{business['description']}}
+           {{business?.description}}
           </div>
         </div>
         <div class="col-md-12">
           <div class="imageGallery1">
-            <a href="assets/images/page/1.jpg" title="Caption for gallery item 1">
-              <img src="assets/images/page/1.jpg" alt="Gallery image 1" />
-            </a>
-            <a href="assets/images/page/2.jpg" title="Caption for gallery item 2">
-              <img src="assets/images/page/2.jpg" alt="Gallery image 2" />
-            </a>
-            <a href="assets/images/page/3.jpg" title="Caption for gallery item 3">
-              <img src="assets/images/page/3.jpg" alt="Gallery image 3" />
-            </a>
-            <a href="assets/images/page/1.jpg" title="Caption for gallery item 1">
-              <img src="assets/images/page/1.jpg" alt="Gallery image 1" />
-            </a>
-            <a href="assets/images/page/2.jpg" title="Caption for gallery item 2">
-              <img src="assets/images/page/2.jpg" alt="Gallery image 2" />
-            </a>
-            <a href="assets/images/page/3.jpg" title="Caption for gallery item 3">
-              <img src="assets/images/page/3.jpg" alt="Gallery image 3" />
+            <a href="{{image?.url}}"  *ngFor="let image of business?.media" target="_blank">
+              <img src="{{image?.url}}" alt="Gallery image 1" />
             </a>
           </div>
         </div>
@@ -85,10 +70,17 @@
           <div class="box contact-box">
             <ul class="contact-list">
               <li class="address">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>البرامكة , دمشق</li>
+                <i class="fa fa-map-marker" aria-hidden="true" ></i>
+                <span *ngIf="lang=='ar' && business">{{business?.city?.nameAr}} , {{business?.location?.nameAr}}</span>
+                <span *ngIf="lang!='ar' && business">{{business?.city?.nameEn}} ,{{business?.location?.nameEn}}</span>
+              </li>
               <li>
                 <i class="fa fa-phone" aria-hidden="true"></i>
-                <a >{{business['phone1']}}</a>
+                <a >{{business?.phone1}}</a>
+              </li>
+              <li>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <a >{{business?.phone2}}</a>
               </li>
               <li>
                 <i class="fa fa-globe" aria-hidden="true"></i>
@@ -99,7 +91,7 @@
           <div class="involve">
             <h4>خدمات و منتجات</h4>
             <ul>
-              <li class="box" *ngFor="let product of business['products']">
+              <li class="box" *ngFor="let product of business?.products">
                 <app-involve-box [product]="product"></app-involve-box>
               </li>
             </ul>
