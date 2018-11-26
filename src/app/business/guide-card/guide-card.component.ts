@@ -7,8 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./guide-card.component.css']
 })
 export class GuideCardComponent implements OnInit {
-  @Input() post
-  data: Object = {};
+  @Input() post:any;
+  data: any = {};
   constructor(private tr:TranslateService) { }
 
   ngOnInit() {

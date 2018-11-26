@@ -36,7 +36,7 @@ export class HeaderWithSearchComponent implements OnInit {
   ngOnInit() {
 
     // this.cds.categoriesObservable.subscribe(res => this.categories = <Object[]>res)
-    this.cds.categoriesPromise.then(res => { this.categories = <Object[]>res; console.warn('2', res) });
+    this.cds.categoriesPromise.then(res =>  this.categories = <Object[]>res);
     this.cds.citiesPromise.then(res => this.cities = <Object[]>res)
 
   }

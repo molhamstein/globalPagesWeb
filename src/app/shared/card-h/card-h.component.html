@@ -15,14 +15,14 @@
           <a routerLink="/ad/{{data.id}}" title="">{{data.title}}</a>
         </div>
         <ul class="category">
-          <li>{{data.category}}</li>
-          <li>{{data.subCategory}}</li>
+          <li>{{data?.category}}</li>
+          <li>{{data?.subCategory}}</li>
         </ul>
         <div class="box-desc">
-          {{data.description}}
+          {{data?.description}}
         </div>
         <div class="box-location">
-          {{data.location}}
+          {{data?.location}}
         </div>
       </div>
       <!-- /.box-content -->

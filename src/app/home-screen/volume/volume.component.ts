@@ -10,12 +10,12 @@ import { CommonDataService } from '../../common-data.service';
 })
 export class VolumeComponent implements OnInit {
  
-  constructor(private rs:RequestsService, private ts: TranslateService,private cds: CommonDataService) { }
+  constructor(private rs:RequestsService, private ts: TranslateService,public cds: CommonDataService) { }
   skip:number = 0;
-  data: Object = {};
+  data: any = {};
   title:String = '';
-  categories:Object[];
-  cities:Object[];
+  categories:any[];
+  cities:any[];
 
   category :any= '0';
   subCategory:any = '0';
@@ -67,7 +67,7 @@ export class VolumeComponent implements OnInit {
   ngOnInit() {
     this.getVolumeData(0)
     // this.cds.categoriesObservable.subscribe(res => this.categories =<Object[]> res);
-    this.cds.categoriesPromise.then(res => {this.categories =<Object[]> res;console.warn('3',res)});
+    this.cds.categoriesPromise.then(res => this.categories =<Object[]> res);
     this.cds.citiesPromise.then(res => this.cities = <Object[]>res)
   }
 
