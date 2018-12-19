@@ -16,8 +16,8 @@ const routes: Routes = [
   {path:'business/:id',component:BusinessViewComponent},
   {path:'profile/:id',component:ProfileViewComponent},
   {path:'profile/:id/edit',component:ProfileEditComponent},
-  { path: 'ad/:id', component: AdViewComponent, resolve: { adData: AdDataResolverService } },
   {path:'ad/create',component:AdCreateComponent},
+  { path: 'ad/:id', component: AdViewComponent, resolve: { adData: AdDataResolverService } },
   {path:'guide',component:GuideComponent},
 
 ];
