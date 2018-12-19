@@ -57,6 +57,6 @@ export const ArabicTranslation={
   editData:'تعديل البيانات',
   edit:'تعديل',
   save:'حفظ التغيرات',
-  addedAds:'الإعلانات المضافة'
-
+  addedAds:'الإعلانات المضافة',
+  writeDetailsOfYourAd:'اكتب التفاصيل الخاصة بالإعلان الخاص بك'
 }

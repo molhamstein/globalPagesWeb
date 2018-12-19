@@ -25,47 +25,68 @@
             <div class="inner-box form">
 
               <div class="one-half">
+                <div class="clearfix"></div>
                 <div class="wrap-listing">
-                  <label>اسم الإعلان</label>
-                  <input type="email" name="ads-name" placeholder="اسم الإعلان الخاص بك">
+                  <label> {{"name" | translate}}</label>
+                  <input type="text" name="nameEn" ngModel>
+                </div>
+                <div class="wrap-listing">
+                  <label> {{"nameEn" | translate}}</label>
+                  <input type="text" name="nameUnique" ngModel>
+                </div>
+                <div class="wrap-listing">
+                  <label> {{"nameAr" | translate}}</label>
+                  <input type="text" name="nameAr" ngModel>
                 </div>
                 <!-- /.wrap-listing -->
                 <div class="clearfix"></div>
-                <div class="wrap-listing phone">
-                  <label>رقم الهاتف</label>
-                  <input type="text" name="رقم الهاتف" placeholder="111-222-3333">
-                </div>
-                <div class="wrap-listing phone">
-                  <label>رقم الهاتف</label>
-                  <input type="text" name="رقم الهاتف" placeholder="111-222-3333">
+                <div class="wrap-listing category-half">
+                  <label>{{"category" | translate}}</label>
+                  <span class="ti-angle-down"></span>
+                  <select name="categoryId" (change)="onCategoryChange()" [(ngModel)]="selectedCategory">
+                    <option [value]="cat.id" *ngFor="let cat of categories" >
+                      <ng-container *ngIf="lang=='ar'">
+                        {{cat.titleAr}}
+                      </ng-container>
+                      <ng-container *ngIf="lang!='ar'">
+                        {{cat.titleEn}}
+                      </ng-container>
+                    </option>
+                  </select>
                 </div>
                 <div class="clearfix"></div>
+
 
               </div>
               <div class="one-half">
                 <div class="clearfix"></div>
+                <div class="wrap-listing phone">
+                  <label>{{"phoneNumber1" | translate}}</label>
+                  <input type="text" name="phone1" ngModel>
+                </div>
+                <div class="wrap-listing phone">
+                  <label>{{"phoneNumber2" | translate}}</label>
+                  <input type="text" name="phone2" ngModel>
+                </div>
+                <div class="clearfix"></div>
                 <div class="wrap-listing fax">
-                  <label>رقم الفاكس</label>
-                  <input type="text" name="رقم الفاكس" placeholder="111-222-3333">
+                  <label>{{"faxNumber" | translate}}</label>
+                  <input type="text" name="fax" ngModel>
                 </div>
                 <div class="clearfix"></div>
+
                 <div class="wrap-listing category-half">
-                  <label>نوع العمل</label>
+                  <label>{{"subCategory" | translate}}</label>
                   <span class="ti-angle-down"></span>
-                  <select name="subcategory">
-                    <option value="">Choose Your Bussines Category</option>
-                    <option value="">Choose Your Bussines Category</option>
-                    <option value="">Choose Your Bussines Category</option>
-                  </select>
-                </div>
-                <div class="clearfix"></div>
-                <div class="wrap-listing category-half">
-                  <label>الفئة الفرعية</label>
-                  <span class="ti-angle-down"></span>
-                  <select name="subcategory">
-                    <option value="">Choose Your Bussines Category</option>
-                    <option value="">Choose Your Bussines Category</option>
-                    <option value="">Choose Your Bussines Category</option>
+                  <select name="subCategoryId" ngModel>
+                    <option [value]="cat.id" *ngFor="let cat of subCategories">
+                      <ng-container *ngIf="lang=='ar'">
+                        {{cat.titleAr}}
+                      </ng-container>
+                      <ng-container *ngIf="lang!='ar'">
+                        {{cat.titleEn}}
+                      </ng-container>
+                    </option>
                   </select>
                 </div>
                 <div class="clearfix"></div>
@@ -86,105 +107,46 @@
                 </div>
               </div>
               <div class="one-half">
-                <label>إضافة ساعات العمل</label>
-                <div class="wrap-listing business">
-                  <div class="day">
-                    <span class="ti-angle-down"></span>
-                    <select name="day">
-                      <option value="">Saturday</option>
-                      <option value="">Saturday</option>
-                      <option value="">Saturday</option>
-                    </select>
-                  </div>
-                  <div class="hour-from">
-                    <span class="ti-angle-down"></span>
-                    <select name="hour-from">
-                      <option value="">09:00</option>
-                      <option value="">09:00</option>
-                      <option value="">09:00</option>
-                    </select>
-                  </div>
-                  <div class="hour-to">
-                    <span class="ti-angle-down"></span>
-                    <select name="hour-to">
-                      <option value="">22:00</option>
-                      <option value="">22:00</option>
-                      <option value="">22:00</option>
-                    </select>
-                  </div>
-                  <div class="btn-business">
-                    <button class="ti-plus" type="button"></button>
-                  </div>
-                  <span class="clearfix"></span>
-                </div>
-                <!-- /.wrap-listing -->
-                <div class="info-business">
-                  <div class="item">
-                    <span class="date">Monday</span>
-                    <span class="hour-from">09:00</span>
-                    <span class="line">-</span>
-                    <span class="hour-to">22:00</span>
-                    <span class="btn-close ti-close"></span>
-                  </div>
 
-                  <div class="item">
-                    <span class="date">Monday</span>
-                    <span class="hour-from">09:00</span>
-                    <span class="line">-</span>
-                    <span class="hour-to">22:00</span>
-                    <span class="btn-close ti-close"></span>
-                  </div>
-                  <div class="item">
-                    <span class="date">Monday</span>
-                    <span class="hour-from">09:00</span>
-                    <span class="line">-</span>
-                    <span class="hour-to">22:00</span>
-                    <span class="btn-close ti-close"></span>
-                  </div>
-                  <div class="item">
-                    <span class="date">Monday</span>
-                    <span class="hour-from">09:00</span>
-                    <span class="line">-</span>
-                    <span class="hour-to">22:00</span>
-                    <span class="btn-close ti-close"></span>
-                  </div>
-                  <div class="item">
-                    <span class="date">Monday</span>
-                    <span class="hour-from">09:00</span>
-                    <span class="line">-</span>
-                    <span class="hour-to">22:00</span>
-                    <span class="btn-close ti-close"></span>
-                  </div>
-                </div>
-
+                <app-working-hour-input name="openingDays" ngModel></app-working-hour-input>
               </div>
               <div class="clearfix"></div>
               <div class="one-half">
                 <div class="wrap-listing category-half">
-                  <label>المدينة</label>
+                  <label>{{'city' | translate}}</label>
                   <span class="ti-angle-down"></span>
-                  <select name="select-city">
-                    <option value="">Choose Your Bussines Category</option>
-                    <option value="">Choose Your Bussines Category</option>
-                    <option value="">Choose Your Bussines Category</option>
+                  <select name="cityId" [(ngModel)]="selectedCity" (change)="cityChanged()">
+                    <option *ngFor="let city of cities" [value]="city.id">
+                      <ng-container *ngIf="lang=='ar'">
+                        {{city['nameAr']}}
+                      </ng-container>
+                      <ng-container *ngIf="lang!='ar'">
+                        {{city['nameEn']}}
+                      </ng-container>
+                    </option>
                   </select>
                 </div>
               </div>
               <div class="one-half">
                 <div class="wrap-listing category-half">
-                  <label>المنطقة</label>
+                  <label>{{'location' | translate}}</label>
                   <span class="ti-angle-down"></span>
-                  <select name="select-area">
-                    <option value="">Choose Your Bussines Category</option>
-                    <option value="">Choose Your Bussines Category</option>
-                    <option value="">Choose Your Bussines Category</option>
+                  <select name="locationId" ngModel>
+                    <option *ngFor="let location of locations" [value]="location.id">
+                      <ng-container *ngIf="lang=='ar'">
+                        {{location['nameAr']}}
+                      </ng-container>
+                      <ng-container *ngIf="lang!='ar'">
+                        {{location['nameEn']}}
+                      </ng-container>
+                    </option>
                   </select>
                 </div>
               </div>
               <div class="clearfix"></div>
               <div class="one-half">
-                <label>تفاصيل</label>
-                <textarea placeholder="اكتب التفاصيل الخاصة بالإعلان الخاص بك"></textarea>
+                <label>{{'details' | translate}}</label>
+                <textarea placeholder="{{'writeDetailsOfYourAd' | translate}}" name="description" ngModel></textarea>
                 <div class="clearfix"></div>
               </div>
 
@@ -199,7 +161,7 @@
                     </div>
                     <div class="upload">
                       <span>Browse files</span>
-                      <input name="filesToUpload[]" id="filesToUpload" type="file" multiple="" />
+                      <input name="media" id="filesToUpload" type="file" multiple="" (change)="onFileAdded($event.srcElement.files)" accept="image/png, image/jpeg, image/jpg" />
                     </div>
                   </div>
                 </div>
