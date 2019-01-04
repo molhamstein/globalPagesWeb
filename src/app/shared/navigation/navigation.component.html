@@ -13,17 +13,17 @@
             <nav id="mainnav" class="mainnav">
               <ul class="menu">
                 <li>
-                  <a routerLink="/" title="">الرئيسية</a>
+                  <a routerLink="/" title="">{{'homePage' | translate}}</a>
                 </li>
                 <li>
-                  <a routerLink="/guide" title="">دليل الأعمال</a>
+                  <a routerLink="/guide" title="">{{'businessGuidePage' | translate }}</a>
                 </li>
                 <li>
-                  <a routerLink="/business/create" title="">إضافة نشاط تجاري</a>
+                  <a routerLink="/business/create" title="">{{'addBusinessPage' | translate}}</a>
 
                 </li>
                 <li>
-                  <a routerLink="/ad/create" title="">إضافة إعلان</a>
+                  <a routerLink="/ad/create" title="">{{'createAdPage' | translate }}</a>
                   <!--<ul class="submenu">-->
                     <!--<li>-->
                       <!--<a href="index.html" title="">Index Layout</a>-->
@@ -41,8 +41,8 @@
             </nav>
             <!-- /.mainnav -->
             <div id="lang-change" class="button-header">
-              <a  title=""> اللغة
-                <i class="ti-angle-down"></i>
+              <a  title="{{'language' | translate}}"> {{'language' | translate}}
+                <i [ngStyle]="english && {'margin-right':'0'}" class="ti-angle-down"></i>
               </a>
               <div style="display:none;" class="lang-list">
                 <li>
@@ -54,7 +54,7 @@
               </div>
             </div>
 
-            <div class="show-search">
+            <!-- <div class="show-search">
               <button>
                 <span class="ti-search"></span>
               </button>
@@ -69,7 +69,7 @@
                 </form>
               </div>
 
-            </div>
+            </div> -->
 
             <!-- /.show-search -->
             <div class="btn-menu">

@@ -16,6 +16,7 @@ export class AdViewComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe(({adData}) =>{
       // console.warn (adData);
+      this.data['id']= adData['id'];
       this.data['phone']=adData['owner']['phoneNumber'];
       this.data['title']= adData['title'];
       this.data['creationDate'] = adData['creationDate'];

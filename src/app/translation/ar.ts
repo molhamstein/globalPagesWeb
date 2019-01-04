@@ -58,5 +58,10 @@ export const ArabicTranslation={
   edit:'تعديل',
   save:'حفظ التغيرات',
   addedAds:'الإعلانات المضافة',
-  writeDetailsOfYourAd:'اكتب التفاصيل الخاصة بالإعلان الخاص بك'
+  writeDetailsOfYourAd:'اكتب التفاصيل الخاصة بالإعلان الخاص بك',
+  language:'اللغة',
+  homePage:'الرئيسية',
+  businessGuidePage:'دليل الأعمال',
+  addBusinessPage:'إضافة نشاط تجاري',
+  createAdPage:'إضافة إعلان'
 }

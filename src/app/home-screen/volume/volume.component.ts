@@ -39,7 +39,6 @@ export class VolumeComponent implements OnInit {
     }
     this.rs.get('volumes',params)
     .subscribe(res =>{
-      // console.warn(res[0]);
       if(res[0]!=undefined){
         this.data = res[0];
         this.title = this.data['titleEn']
