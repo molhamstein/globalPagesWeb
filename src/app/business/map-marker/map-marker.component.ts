@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-map-marker',
@@ -7,9 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MapMarkerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tr: TranslateService) { }
   @Input() data;
   ngOnInit() {
+    if (this.tr.currentLang == 'ar'){
+      this.data['name']=this.data['nameAr']
+    }else{
+      this.data['name']=this.data['nameEn']
+
+    }
     // console.warn(this.data)
   }
 

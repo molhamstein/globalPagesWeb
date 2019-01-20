@@ -36,6 +36,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapMarkerComponent } from './business/map-marker/map-marker.component';
 import { WorkingHourInputComponent } from './business/working-hour-input/working-hour-input.component';
+import { LightboxModule } from 'ngx-lightbox';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { WorkingHourInputComponent } from './business/working-hour-input/working
 
   ],
   imports: [
+    LightboxModule,
     BrowserModule,
     AppRoutingModule,
     TranslateModule.forRoot(),

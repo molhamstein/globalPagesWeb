@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  api: 'http://104.217.253.15:3000/api/',
-  server: 'http://104.217.253.15:3000/',
+  api: 'http://almersal.co/api/',
+  server: 'http://almersal.co',
   userDetails: '_sxamekqdw',
   language: 'kacen_ae787'
 };

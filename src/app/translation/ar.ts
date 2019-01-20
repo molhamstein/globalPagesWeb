@@ -63,5 +63,7 @@ export const ArabicTranslation={
   homePage:'الرئيسية',
   businessGuidePage:'دليل الأعمال',
   addBusinessPage:'إضافة نشاط تجاري',
-  createAdPage:'إضافة إعلان'
+  createAdPage:'إضافة إعلان',
+  contactInfo:'معلومات الإتصال',
+  privacyAndTerms: 'اتفاقية الخصوصية والشروط'
 }
