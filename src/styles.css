@@ -23,9 +23,15 @@
 .leaflet-control-attribution{
     display: none;
 }
+
 input[hidden]{
   display: none;
 }
 .file-container{
   margin-bottom: 20px;
 }
+
+.hoverMe:hover{
+  cursor: pointer;
+}
+

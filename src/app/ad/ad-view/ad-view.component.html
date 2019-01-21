@@ -48,10 +48,12 @@
         <div class="col-md-12">
           <div class="imageGallery1">
 
-            <a *ngFor="let i of data.images" href="{{i.url}}">
+            <!-- <a *ngFor="let i of data.images" href="{{i.url}}">
               <img src="{{i.url}}" alt="Gallery image" />
-            </a>
-
+            </a> -->
+          <div class="hoverMe" style="display: inline" *ngFor="let image of _albums; let i=index">
+            <img [src]="image.thumb" (click)="open(i)" />
+          </div>
             <!-- <a href="assets/images/page/tb2.jpg" title="Caption for gallery item 2">
               <img src="assets/images/page/tb2.jpg" alt="Gallery image 2" />
             </a>

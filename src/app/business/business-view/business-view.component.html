@@ -96,24 +96,20 @@
               </li>
             </ul>
           </div>
-          <div class="box pdmap style1" id="flat-map-4">
-            <div class="flat-maps" data-address="Ngõ 178 Nguyễn Lương Bằng, Chợ Dừa, Đống Đa, Hà Nội, Việt Nam" data-image="assets/images/icon/map.png"
-              data-name="Themesflat Map"></div>
-            <div class="gm-map">
-              <div class="map-4"></div>
-            </div>
+          <div class="box pdmap style1" id="flat-map-4" *ngIf="business">
+            <app-location-picker [disabled]="true" [(ngModel)]="business.locationPoint" [options]="{center:[business?.locationPoint?.lat,business?.locationPoint?.lng]}" name="locationPoint"></app-location-picker>
           </div>
           <!-- /#flat-map -->
-          <div class="box open">
-            <p>
-              <i class="fa fa-clock-o" aria-hidden="true"></i>ساعات العمل:</p>
-            <div class="box-desc">
-              <p>الاثنين - الخميس</p>
-              <p>9:00 صباحاً - 12:00 مساءً
-                <span>مغلق الأن !</span>
-              </p>
-            </div>
-          </div>
+          <!--<div class="box open">-->
+            <!--<p>-->
+              <!--<i class="fa fa-clock-o" aria-hidden="true"></i>ساعات العمل:</p>-->
+            <!--<div class="box-desc">-->
+              <!--<p>الاثنين - الخميس</p>-->
+              <!--<p>9:00 صباحاً - 12:00 مساءً-->
+                <!--<span>مغلق الأن !</span>-->
+              <!--</p>-->
+            <!--</div>-->
+          <!--</div>-->
 
         </div>
       </div>

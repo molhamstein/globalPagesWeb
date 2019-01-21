@@ -494,6 +494,7 @@ h4 { font-size: 16px; line-height: 24px; }
 	float: right;
 	margin-top: 38px;
   margin-right: 52px;
+      width: 150px;
 }
 
 #logo a {
@@ -1059,7 +1060,9 @@ footer {
 	padding: 56px 0 59px;
 	color: #fff;
 }
-
+.logo-ft{
+	width:50%;
+}
 /* Widget About */
 .widget-about .logo-ft {
 	margin-bottom: 4px;
@@ -1110,7 +1113,8 @@ footer {
 
 .widget-contact ul.contact-infomation li {
 	font-size: 14px;
-	padding-left: 29px;
+	margin-right:20px;
+	/* padding-left: 29px; */
 	position: relative;
 }
 
@@ -1119,7 +1123,8 @@ footer {
 	position: absolute;
 	font-family: 'fontawesome';
 	top: 0px;
-    left: 1px;
+	/* left: 1px; */
+	right:-20px;
 	font-weight: 400;
 }
 

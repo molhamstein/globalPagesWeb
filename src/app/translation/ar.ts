@@ -65,6 +65,7 @@ export const ArabicTranslation={
   businessGuidePage:'دليل الأعمال',
   addBusinessPage:'إضافة نشاط تجاري',
   createAdPage:'إضافة إعلان',
+
   ServicesAndProducts:'خدمات و منتجات',
   nameEn:'الاسم الانكليزي',
   nameAr:'الاسم العربي',
@@ -72,5 +73,9 @@ export const ArabicTranslation={
   phoneNumber2:'رقم الهاتف الثاني',
   faxNumber:'رقم الفاكس',
   workingHours:'ساعات العمل',
-  address:'العنوان'
+  address:'العنوان',
+
+  contactInfo:'معلومات الإتصال',
+  privacyAndTerms: 'اتفاقية الخصوصية والشروط'
+
 }

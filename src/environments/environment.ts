@@ -5,11 +5,18 @@
 export const environment = {
   production: false,
   api : 'http://almersal.co/api/',
+
   server:'http://almersal.co/',
+
   userDetails:'_sxamekqdw',
   language: 'kacen_ae787'
 };
 
+/*
+  api : 'http://104.217.253.15:3000/api/',
+  server:'http://104.217.253.15:3000/',
+
+*/
 /*
  * In development mode, to ignore zone related error stack frames such as
  * `zone.run`, `zoneDelegate.invokeTask` for easier debugging, you can

@@ -31,6 +31,7 @@
     "material-design-icons": "^3.0.1",
     "ngx-filter-pipe": "^2.1.2",
     "ngx-input-file": "^7.0.1",
+    "ngx-lightbox": "^1.2.0",
     "ngx-owl-carousel": "^2.0.7",
     "ngx-pipes": "^2.3.6",
     "pretty-checkbox": "^3.0.3",

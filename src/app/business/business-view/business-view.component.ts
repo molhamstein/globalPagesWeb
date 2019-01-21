@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {RequestsService} from '../../requests.service';
 import {TranslateService} from '@ngx-translate/core';
 import {HttpParams} from '@angular/common/http';
-
+import { latLng } from 'leaflet';
 @Component({
   selector: 'app-business-view',
   templateUrl: './business-view.component.html',
@@ -15,6 +15,7 @@ export class BusinessViewComponent implements OnInit {
   lang
   id
   business
+
   ngOnInit() {
     this.lang=this.translteService.currentLang
     this.translteService.onLangChange.subscribe(()=>{
@@ -25,10 +26,13 @@ export class BusinessViewComponent implements OnInit {
       var p=new HttpParams();
       p=p.set('filter',JSON.stringify({
         "where":{
-          "or":[{"nameUnique" : this.id},{"id" : this.id}]}
+          "or":[{"nameUnique" : this.id},{"id" : this.id}]},
+          "include":"subCategory"
       }));
       this.api.get('businesses',p).subscribe((data)=>{
         this.business=data[0]
+        this.business.locationPoint=latLng(this.business.locationPoint)
+        console.log(this.business)
       })
     })
   }

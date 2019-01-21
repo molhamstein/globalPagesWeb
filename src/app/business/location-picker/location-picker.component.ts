@@ -1,4 +1,4 @@
-import {Component, forwardRef, OnInit} from '@angular/core';
+import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import { icon, latLng, marker,  Marker, tileLayer } from 'leaflet';
 @Component({
@@ -16,6 +16,7 @@ import { icon, latLng, marker,  Marker, tileLayer } from 'leaflet';
 export class LocationPickerComponent implements OnInit, ControlValueAccessor {
 
   constructor() { }
+  @Input("options") extendOptions
   options = {
     layers: [
       tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
@@ -28,6 +29,8 @@ export class LocationPickerComponent implements OnInit, ControlValueAccessor {
   map
   onMapReady(map){
     this.map = map;
+    if(this.marker)
+    this.marker.addTo(this.map);
   }
   _value
   set value(v){
@@ -49,7 +52,9 @@ export class LocationPickerComponent implements OnInit, ControlValueAccessor {
     this.onTouched=fn
   }
 
+  disabled
   setDisabledState(isDisabled: boolean): void {
+    this.disabled=isDisabled;
   }
 
   writeValue(obj: any): void {
@@ -57,8 +62,12 @@ export class LocationPickerComponent implements OnInit, ControlValueAccessor {
       this.refresh()
   }
   ngOnInit() {
+    if(this.extendOptions)
+      this.options=Object.assign(this.options,this.extendOptions)
+    console.log(this.options)
   }
   clicked(event){
+    if(!this.disabled)
     this.value=event.latlng;
   }
   marker
@@ -73,6 +82,7 @@ export class LocationPickerComponent implements OnInit, ControlValueAccessor {
         shadowUrl: 'leaflet/marker-shadow.png'
       })
     });
+    if(this.map)
     this.marker.addTo(this.map);
   }
 

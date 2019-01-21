@@ -9,15 +9,25 @@ import { environment } from 'src/environments/environment';
 })
 export class NavigationComponent implements OnInit {
   english = false;
+  logoAddress=''
   constructor(private translate: TranslateService) { }
 
   ngOnInit() {
+
+
+
     var selectedLanguage = localStorage.getItem(environment.language);
     if (selectedLanguage != null) {
       if (selectedLanguage=='en'){
         this.english = true;
       }
       this.translate.use(selectedLanguage)
+      
+    }
+    if (this.translate.currentLang == 'ar') {
+      this.logoAddress = 'assets/images/page/logo_arabic.svg'
+    } else {
+      this.logoAddress = 'assets/images/page/logo_english.svg'
     }
   }
   changeLang(lang) {

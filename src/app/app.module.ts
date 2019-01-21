@@ -37,9 +37,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapMarkerComponent } from './business/map-marker/map-marker.component';
 import { WorkingHourInputComponent } from './business/working-hour-input/working-hour-input.component';
+
 import {InputFileModule} from 'ngx-input-file';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocationPickerComponent } from './business/location-picker/location-picker.component';
+
+import { LightboxModule } from 'ngx-lightbox';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +74,7 @@ import { LocationPickerComponent } from './business/location-picker/location-pic
 
   ],
   imports: [
+    LightboxModule,
     BrowserModule,
     AppRoutingModule,
     TranslateModule.forRoot(),
