@@ -22,10 +22,16 @@ export class BusinessCreateComponent implements OnInit {
   locations
   ngOnInit() {
     this.lang=this.translteService.currentLang
+
+    var p=new HttpParams();
+    p=p.set('filter',JSON.stringify({
+      "where":{"parentCategoryId" : {"exists" : false}},
+      "include":"subCategories"
+    }));
     this.translteService.onLangChange.subscribe(()=>{
       this.lang=this.translteService.currentLang
     })
-    this.api.get('businessCategories').toPromise().then(data=>{
+    this.api.get('businessCategories',p).toPromise().then(data=>{
       this.categories=data
     })
     this.api.get('cities').toPromise().then(data=>{

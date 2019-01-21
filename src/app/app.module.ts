@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {HttpClientModule} from '@angular/common/http';
 import {OwlModule} from 'ngx-owl-carousel';
+import { NgSelectModule } from '@ng-select/ng-select';
 // import { FilterPipeModule } from 'ngx-filter-pipe';
 import { volumeFilter} from './volumeFilter';
 
@@ -36,7 +37,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapMarkerComponent } from './business/map-marker/map-marker.component';
 import { WorkingHourInputComponent } from './business/working-hour-input/working-hour-input.component';
-
+import {InputFileModule} from 'ngx-input-file';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocationPickerComponent } from './business/location-picker/location-picker.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +64,8 @@ import { WorkingHourInputComponent } from './business/working-hour-input/working
     GuideCardComponent,
     volumeFilter,
     MapMarkerComponent,
-    WorkingHourInputComponent
+    WorkingHourInputComponent,
+    LocationPickerComponent
 
   ],
   imports: [
@@ -72,7 +76,10 @@ import { WorkingHourInputComponent } from './business/working-hour-input/working
     OwlModule,
     SharedModule,
     FormsModule,
-    LeafletModule.forRoot()
+    LeafletModule.forRoot(),
+    BrowserAnimationsModule,
+    InputFileModule.forRoot({}),
+    NgSelectModule
   ],
   entryComponents: [MapMarkerComponent],
   providers: [RequestsService,CommonDataService],

@@ -1,84 +1,85 @@
 <label>{{'workingHours' | translate}}</label>
-<div class="wrap-listing business">
-  <div class="day">
-    <span class="ti-angle-down"></span>
-    <select name="day"  [(ngModel)]="day">
-      <option value="saturday">{{'saturday'|translate}}</option>
-      <option value="sunday">{{'sunday'|translate}}</option>
-      <option value="monday">{{'monday'|translate}}</option>
-      <option value="tuesday">{{'tuesday'|translate}}</option>
-      <option value="wednesday">{{'wednesday'|translate}}</option>
-      <option value="friday">{{'friday'|translate}}</option>
-    </select>
+<div class="wrap-listing business row">
+
+  <div class="col-12" style="float: unset;">
+    <ng-select name="day"  [(ngModel)]="day" [multiple]="true">
+      <ng-option value="0">{{'sunday'|translate}}</ng-option>
+      <ng-option value="1">{{'monday'|translate}}</ng-option>
+      <ng-option value="2">{{'tuesday'|translate}}</ng-option>
+      <ng-option value="3">{{'wednesday'|translate}}</ng-option>
+      <ng-option value="4">{{'thursday'|translate}}</ng-option>
+      <ng-option value="5">{{'friday'|translate}}</ng-option>
+      <ng-option value="6">{{'saturday'|translate}}</ng-option>
+    </ng-select>
   </div>
-  <div class="hour-from">
-    <span class="ti-angle-down"></span>
-    <select name="hour-from"  [(ngModel)]="from">
-      <option value="00:00">00:00</option>
-      <option value="01:00">01:00</option>
-      <option value="01:00">01:00</option>
-      <option value="04:00">04:00</option>
-      <option value="05:00">05:00</option>
-      <option value="06:00">06:00</option>
-      <option value="07:00">07:00</option>
-      <option value="08:00">08:00</option>
-      <option value="09:00">09:00</option>
-      <option value="10:00">10:00</option>
-      <option value="11:00">11:00</option>
-      <option value="12:00">12:00</option>
-      <option value="13:00">13:00</option>
-      <option value="14:00">14:00</option>
-      <option value="15:00">15:00</option>
-      <option value="16:00">16:00</option>
-      <option value="17:00">17:00</option>
-      <option value="18:00">18:00</option>
-      <option value="19:00">19:00</option>
-      <option value="20:00">20:00</option>
-      <option value="22:00">22:00</option>
-      <option value="23:00">23:00</option>
-    </select>
-  </div>
-  <div class="hour-to">
-    <span class="ti-angle-down"></span>
-    <select name="hour-to"  [(ngModel)]="to">
-      <option value="00:00">00:00</option>
-      <option value="01:00">01:00</option>
-      <option value="01:00">01:00</option>
-      <option value="04:00">04:00</option>
-      <option value="05:00">05:00</option>
-      <option value="06:00">06:00</option>
-      <option value="07:00">07:00</option>
-      <option value="08:00">08:00</option>
-      <option value="09:00">09:00</option>
-      <option value="10:00">10:00</option>
-      <option value="11:00">11:00</option>
-      <option value="12:00">12:00</option>
-      <option value="13:00">13:00</option>
-      <option value="14:00">14:00</option>
-      <option value="15:00">15:00</option>
-      <option value="16:00">16:00</option>
-      <option value="17:00">17:00</option>
-      <option value="18:00">18:00</option>
-      <option value="19:00">19:00</option>
-      <option value="20:00">20:00</option>
-      <option value="22:00">22:00</option>
-      <option value="23:00">23:00</option>
-    </select>
-  </div>
-  <div class="btn-business">
-    <button class="ti-plus" type="button" (click)="add()"></button>
-  </div>
-  <span class="clearfix"></span>
-</div>
-<!-- /.wrap-listing -->
-<div class="info-business">
-  <div class="item" *ngFor="let v of _value;let i = $index">
-    <span class="date">{{v.day | translate}}</span>
-    <span class="hour-from">{{v.from}}</span>
-    <span class="line">-</span>
-    <span class="hour-to">{{v.to}}</span>
-    <span class="btn-close ti-close"(click)="remove(i)"></span>
-  </div>
+  <!--<div class="hour-from">-->
+    <!--<span class="ti-angle-down"></span>-->
+    <!--<select name="hour-from"  [(ngModel)]="from">-->
+      <!--<option value="00:00">00:00</option>-->
+      <!--<option value="01:00">01:00</option>-->
+      <!--<option value="01:00">01:00</option>-->
+      <!--<option value="04:00">04:00</option>-->
+      <!--<option value="05:00">05:00</option>-->
+      <!--<option value="06:00">06:00</option>-->
+      <!--<option value="07:00">07:00</option>-->
+      <!--<option value="08:00">08:00</option>-->
+      <!--<option value="09:00">09:00</option>-->
+      <!--<option value="10:00">10:00</option>-->
+      <!--<option value="11:00">11:00</option>-->
+      <!--<option value="12:00">12:00</option>-->
+      <!--<option value="13:00">13:00</option>-->
+      <!--<option value="14:00">14:00</option>-->
+      <!--<option value="15:00">15:00</option>-->
+      <!--<option value="16:00">16:00</option>-->
+      <!--<option value="17:00">17:00</option>-->
+      <!--<option value="18:00">18:00</option>-->
+      <!--<option value="19:00">19:00</option>-->
+      <!--<option value="20:00">20:00</option>-->
+      <!--<option value="22:00">22:00</option>-->
+      <!--<option value="23:00">23:00</option>-->
+    <!--</select>-->
+  <!--</div>-->
+  <!--<div class="hour-to">-->
+    <!--<span class="ti-angle-down"></span>-->
+    <!--<select name="hour-to"  [(ngModel)]="to">-->
+      <!--<option value="00:00">00:00</option>-->
+      <!--<option value="01:00">01:00</option>-->
+      <!--<option value="01:00">01:00</option>-->
+      <!--<option value="04:00">04:00</option>-->
+      <!--<option value="05:00">05:00</option>-->
+      <!--<option value="06:00">06:00</option>-->
+      <!--<option value="07:00">07:00</option>-->
+      <!--<option value="08:00">08:00</option>-->
+      <!--<option value="09:00">09:00</option>-->
+      <!--<option value="10:00">10:00</option>-->
+      <!--<option value="11:00">11:00</option>-->
+      <!--<option value="12:00">12:00</option>-->
+      <!--<option value="13:00">13:00</option>-->
+      <!--<option value="14:00">14:00</option>-->
+      <!--<option value="15:00">15:00</option>-->
+      <!--<option value="16:00">16:00</option>-->
+      <!--<option value="17:00">17:00</option>-->
+      <!--<option value="18:00">18:00</option>-->
+      <!--<option value="19:00">19:00</option>-->
+      <!--<option value="20:00">20:00</option>-->
+      <!--<option value="22:00">22:00</option>-->
+      <!--<option value="23:00">23:00</option>-->
+    <!--</select>-->
+  <!--</div>-->
+  <!--<div class="btn-business">-->
+    <!--<button class="ti-plus" type="button" (click)="add()"></button>-->
+  <!--</div>-->
+  <!--<span class="clearfix"></span>-->
+<!--</div>-->
+<!--&lt;!&ndash; /.wrap-listing &ndash;&gt;-->
+<!--<div class="info-business">-->
+  <!--<div class="item" *ngFor="let v of _value;let i = $index">-->
+    <!--<span class="date">{{v.day | translate}}</span>-->
+    <!--<span class="hour-from">{{v.from}}</span>-->
+    <!--<span class="line">-</span>-->
+    <!--<span class="hour-to">{{v.to}}</span>-->
+    <!--<span class="btn-close ti-close"(click)="remove(i)"></span>-->
+  <!--</div>-->
 
 </div>
 

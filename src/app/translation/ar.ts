@@ -21,6 +21,7 @@ export const ArabicTranslation={
   enterCodeAndNewPassword:'أدخل الرمز و كلمة السر الجديدة',
   verificationCodeIsRequired:'الرجاء ملئ  رمز التحقق',
   usernameIsRequired:'الرجاء ملئ اسم المستخدم',
+  emailIsRequired:'الرجاء ملئ البريد الالكتروني',
   notAValidEmail:'الإيميل غير صحيح',
   passwordIsRequired:'الرجاء ملئ كلمة المرور',
   confirmPasswordIsRequired:'الرجاء ملئ تأكيد كلمة المرور',
@@ -63,5 +64,13 @@ export const ArabicTranslation={
   homePage:'الرئيسية',
   businessGuidePage:'دليل الأعمال',
   addBusinessPage:'إضافة نشاط تجاري',
-  createAdPage:'إضافة إعلان'
+  createAdPage:'إضافة إعلان',
+  ServicesAndProducts:'خدمات و منتجات',
+  nameEn:'الاسم الانكليزي',
+  nameAr:'الاسم العربي',
+  phoneNumber1:'رقم الهاتف الاول',
+  phoneNumber2:'رقم الهاتف الثاني',
+  faxNumber:'رقم الفاكس',
+  workingHours:'ساعات العمل',
+  address:'العنوان'
 }

@@ -1,8 +1,8 @@
-@import './css/bootstrap.min.css';          
-@import './css/style.css';          
-@import './css/responsive.css';                    
-@import '../node_modules/leaflet/dist/leaflet.css';          
-@import '../node_modules/pretty-checkbox/dist/pretty-checkbox.min.css';          
+@import './css/bootstrap.min.css';
+@import './css/style.css';
+@import './css/responsive.css';
+@import '../node_modules/leaflet/dist/leaflet.css';
+@import '../node_modules/pretty-checkbox/dist/pretty-checkbox.min.css';
 
 .pointerHover:hover{
   cursor: pointer;
@@ -22,4 +22,10 @@
 
 .leaflet-control-attribution{
     display: none;
+}
+input[hidden]{
+  display: none;
+}
+.file-container{
+  margin-bottom: 20px;
 }

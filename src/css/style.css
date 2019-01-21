@@ -10,6 +10,7 @@
 @import url("animate.min.css");
 @import url("owl.carousel.css");
 @import url('https://fonts.googleapis.com/css?family=Cairo:400,600,700,900');
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 /**
   *	Reset
@@ -1702,3 +1703,16 @@ article.post-single .entry-post .entry-header .entry-meta-post li.topic {
 button[disabled] div{
   opacity: 0.5;
 }
+
+.ng-select-container{
+  min-height: 50px;
+}
+ng-select div{
+  float:unset !important;
+}
+ng-select .ng-input,ng-select input{
+  height: 50px;
+  margin:0;
+  padding: 0;
+}
+

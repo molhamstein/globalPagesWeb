@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {FormGroup} from '@angular/forms';
 import {passwordMatcher} from '../../shared/passwordMatcher/password-matcher';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,13 +12,13 @@ import {passwordMatcher} from '../../shared/passwordMatcher/password-matcher';
 })
 export class SignUpComponent implements OnInit,AfterViewInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router:Router) { }
 
   ngOnInit() {
   }
   @ViewChild('form') form
   ngAfterViewInit() {
-    this.form.form.setValidators(passwordMatcher('password','repassword'))
+    // this.form.form.setValidators(passwordMatcher('password','repassword'))
 
   }
   submit(data)
@@ -25,7 +26,7 @@ export class SignUpComponent implements OnInit,AfterViewInit {
     delete data['repassword']
     if(!this.form.invalid){
       this.http.post(environment.api+'users',data).toPromise().then((data)=>{
-
+        this.router.navigate(['auth/login'])
       })
     }
 

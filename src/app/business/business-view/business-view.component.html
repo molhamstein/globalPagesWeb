@@ -82,14 +82,14 @@
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <a >{{business?.phone2}}</a>
               </li>
-              <li>
-                <i class="fa fa-globe" aria-hidden="true"></i>
-                <a href="#" title="">http://www.anrestaurant.com</a>
-              </li>
+              <!--<li>-->
+                <!--<i class="fa fa-globe" aria-hidden="true"></i>-->
+                <!--<a href="#" title="">http://www.anrestaurant.com</a>-->
+              <!--</li>-->
             </ul>
           </div>
-          <div class="involve">
-            <h4>خدمات و منتجات</h4>
+          <div class="involve" *ngIf="business?.products?.length>0">
+            <h4>{{'ServicesAndProducts' | translate}}</h4>
             <ul>
               <li class="box" *ngFor="let product of business?.products">
                 <app-involve-box [product]="product"></app-involve-box>

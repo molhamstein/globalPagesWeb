@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {RequestsService} from '../../requests.service';
 import {TranslateService} from '@ngx-translate/core';
+import {HttpParams} from '@angular/common/http';
 
 @Component({
   selector: 'app-business-view',
@@ -21,8 +22,13 @@ export class BusinessViewComponent implements OnInit {
     })
     this.route.params.subscribe((params)=>{
       this.id=params['id']
-      this.api.get('businesses/'+this.id).subscribe((data)=>{
-        this.business=data
+      var p=new HttpParams();
+      p=p.set('filter',JSON.stringify({
+        "where":{
+          "or":[{"nameUnique" : this.id},{"id" : this.id}]}
+      }));
+      this.api.get('businesses',p).subscribe((data)=>{
+        this.business=data[0]
       })
     })
   }

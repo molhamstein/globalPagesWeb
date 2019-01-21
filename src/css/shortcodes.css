@@ -1904,7 +1904,7 @@ overflow: auto;
 /*AngularFix*/
 	.business-control-delete{
 		margin-right: 3px;
-		
+
 	}
 /*AngularFix*/
 .profile-business-list .business-text .title {
@@ -2101,7 +2101,7 @@ margin: 0 auto;
 /* signup Form */
 .signup-form {
 /**	padding: 0px 0; **/
-width: 35%;
+width: 80%;
 margin: 0 auto;
 }
 
@@ -2929,7 +2929,7 @@ form.form-listing .inner-box .wrap-listing .user-email-text  {
 .wrap-signup.category span
 {
 	position: absolute;
-	bottom: 19px;
+	bottom: 40px;
 	left: 30px;
 }
 .wrap-signup select {
