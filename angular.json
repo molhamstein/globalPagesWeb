@@ -30,9 +30,8 @@
             "styles": [
 
               "src/styles.css",
-              "node_modules/material-design-icons/iconfont/material-icons.css"
+              "node_modules/material-design-icons/iconfont/material-icons.css",
               "./node_modules/ngx-lightbox/lightbox.css",
-              "src/styles.css"
 
             ],
             "scripts": [
