@@ -4,7 +4,7 @@ import { RequestsService } from 'src/app/requests.service';
 import { debounceTime } from 'rxjs/operators';
 import { icon, latLng, marker,  Marker, tileLayer } from 'leaflet';
 import { MapMarkerComponent } from '../map-marker/map-marker.component';
-
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-guide',
   templateUrl: './guide.component.html',
@@ -33,7 +33,7 @@ export class GuideComponent implements OnInit {
   title;
   params: Object = {};
 
-  constructor(private cds: CommonDataService, private requests: RequestsService, private resolver: ComponentFactoryResolver, private injector: Injector) { }
+  constructor(private ts: TranslateService,private cds: CommonDataService, private requests: RequestsService, private resolver: ComponentFactoryResolver, private injector: Injector) { }
   onMapReady(map){
     this.map = map;
   } 
@@ -82,18 +82,24 @@ export class GuideComponent implements OnInit {
     this.markers.splice(0);
   }
   titleFilter() { 
-    if (this.title.length == 0) {
-      delete this.params['filter[where][nameUnique][like]'];
+    var Lang = 'nameEn';
+    if (this.ts.currentLang == 'ar'){
+      Lang = 'nameAr'
+    }
+
+    
+    if (this.title== undefined ||  this.title.length == 0) {
+      delete this.params['filter[where]['+Lang+'][like]'];
     } else {
-      this.params['filter[where][nameUnique][like]'] = this.title;
+      this.params['filter[where]['+Lang+'][like]'] = this.title;
     }
     this.requests.get('businesses', this.params)
       .pipe(debounceTime(300))
       .subscribe(res => {
         this.posts = <Object[]>res;
-        this.menuPosts = this.posts.slice(0,20);
-        this.removeMarkers();
-        this.addMarkers();
+        this.menuPosts = this.posts;//.slice(0,20);
+        // this.removeMarkers();
+        // this.addMarkers();
       })
   }
 
@@ -117,8 +123,8 @@ export class GuideComponent implements OnInit {
     this.requests.get('businesses', params).subscribe(res => {
       this.posts = <Object[]>res;
       this.menuPosts = this.posts.slice(0, 20);
-      this.removeMarkers();
-      this.addMarkers();
+      // this.removeMarkers();
+      // this.addMarkers();
     })
   }
 
