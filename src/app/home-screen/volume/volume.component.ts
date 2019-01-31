@@ -23,6 +23,7 @@ export class VolumeComponent implements OnInit {
   location:any ='0';
   searchText:string = '';
 
+  nextDisabled=true;
   volumeFilter(){
     this.cds.filterItem['categoryId'] = this.category['id'];
     this.cds.filterItem['subCatId'] = this.subCategory['id'];
@@ -35,7 +36,8 @@ export class VolumeComponent implements OnInit {
   getVolumeData(num:number){
     var params = {
       "filter[limit]":"1",
-      "filter[skip]": (num+this.skip).toString()
+      "filter[skip]": (num+this.skip).toString(),
+      "filter[order]":"creationDate DESC"
     }
     this.rs.get('volumes',params)
     .subscribe(res =>{
@@ -51,15 +53,20 @@ export class VolumeComponent implements OnInit {
 
   }
 
-  prev(){
-    if (this.skip - 1 < 0)
+  next(){
+    if (this.skip==1){
+      this.nextDisabled = true;
+    }
+    if (this.skip - 1 < 0){
       return;
+    }
     this.getVolumeData(-1);
     
   }
   
-  next(){
+  prev(){
     // console.warn(this.categories);
+    this.nextDisabled = false;
     this.getVolumeData(1);
   }
   
