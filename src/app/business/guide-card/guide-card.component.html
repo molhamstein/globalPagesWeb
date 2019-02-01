@@ -2,7 +2,7 @@
   <div class="box-header">
     <div class="box-image">
       <img src="{{data?.img}}" alt="">
-      <a href="#" title="">{{'preview' | translate}}</a>
+      <a [routerLink]="['/business',data.id]" title="">{{'preview' | translate}}</a>
       <div class="overlay"></div>
     </div>
   </div>

@@ -47,13 +47,13 @@
         <div class="col-md-12 version-arrow">
 
           <div class="left-arrow">
-            <i (click)="prev()" class="fa fa-angle-right fa-4x pointerHover" aria-hidden="true"></i>
+            <i title="Previous" (click)="prev()" class="fa fa-angle-right fa-4x pointerHover" aria-hidden="true"></i>
           </div>
           <div class="title">
             <h2>{{title}}</h2>
           </div>
           <div class="right-arrow">
-            <i (click)="next()" class="fa fa-angle-left fa-4x pointerHover" aria-hidden="true"></i>
+            <i title="Next" (click)="next()" [ngClass]="{disabled:nextDisabled}" class="fa fa-angle-left fa-4x pointerHover" aria-hidden="true"></i>
           </div>
 
         </div>

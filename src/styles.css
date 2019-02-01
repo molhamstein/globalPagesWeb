@@ -34,4 +34,10 @@ input[hidden]{
 .hoverMe:hover{
   cursor: pointer;
 }
+.disabled{
+  color: #dadada;
 
+}
+.disabled:hover{
+  cursor: not-allowed;
+}

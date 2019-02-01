@@ -2520,7 +2520,8 @@ width: 20%;
 
 .wrap-box-search.style2 form > span > span {
     top: 17px;
-    right: 40px;
+	right: 40px;
+	/* right: 340px; */
 }
 
 .wrap-box-search.style2.v2 {
@@ -2560,7 +2561,8 @@ width: 20%;
 
 .wrap-box-search.style2 form > span > span {
     top: 17px;
-    right: 40px;
+	/* right: 40px; */
+	right: 340px;
 }
 
 .wrap-box-search.style2.v2 {
@@ -2601,7 +2603,7 @@ right: 80%;
 	right: 90%;
 }
 .guide-box {
-width: 100%;
+/* width: 100%; */
 margin: 10px auto;
 }
 
