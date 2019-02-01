@@ -43,6 +43,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocationPickerComponent } from './business/location-picker/location-picker.component';
 
 import { LightboxModule } from 'ngx-lightbox';
+import {AvatarModule} from 'ngx-avatar';
 
 
 @NgModule({
@@ -85,7 +86,8 @@ import { LightboxModule } from 'ngx-lightbox';
     LeafletModule.forRoot(),
     BrowserAnimationsModule,
     InputFileModule.forRoot({}),
-    NgSelectModule
+    NgSelectModule,
+    AvatarModule
   ],
   entryComponents: [MapMarkerComponent],
   providers: [RequestsService,CommonDataService],

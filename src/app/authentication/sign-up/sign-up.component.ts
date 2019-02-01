@@ -25,8 +25,12 @@ export class SignUpComponent implements OnInit,AfterViewInit {
   {
     delete data['repassword']
     if(!this.form.invalid){
-      this.http.post(environment.api+'users',data).toPromise().then((data)=>{
-        this.router.navigate(['auth/login'])
+      this.http.post(environment.api+'users',data).toPromise().then((data1)=>{
+        this.http.post(environment.api+'users/login',{email:data["email"],password:data["password"]}).toPromise().then((data2)=>{
+          localStorage.setItem(environment.userDetails,JSON.stringify(data2));
+          this.router.navigate(['profile',data2["userId"]]);
+        })
+        // this.router.navigate(['auth/login'])
       })
     }
 

@@ -3,14 +3,19 @@
     <div class="row">
       <div class="col-md-12">
         <div class="header-wrap">
+
           <div id="logo" class="logo">
             <a routerLink="./" title="">
               <img src="{{logoAddress}}" />
             </a>
           </div>
+          <div style="display: inline-block;margin-top: 30px;margin-right: 10px" *ngIf="isLogin && user">
+            <ngx-avatar [name]="user['username']" (clickOnAvatar)="goToProfile()"></ngx-avatar>
+          </div>
           <!-- /.logo -->
           <div class="nav-wrap">
             <nav id="mainnav" class="mainnav">
+
               <ul class="menu">
                 <li>
                   <a routerLink="/" title="">{{'homePage' | translate}}</a>
@@ -30,12 +35,13 @@
                     <!--</li>-->
                   <!--</ul>-->
                 </li>
-                <li>
+                <li *ngIf="!isLogin">
                   <a routerLink="/auth/login" title="">{{'login' | translate}}</a>
                 </li>
-                <li>
+                <li *ngIf="!isLogin">
                   <a routerLink="/auth/signup" title="">{{'createAccount' | translate}}</a>
                 </li>
+
               </ul>
 
             </nav>

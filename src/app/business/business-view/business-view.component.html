@@ -69,16 +69,16 @@
 
           <div class="box contact-box">
             <ul class="contact-list">
-              <li class="address">
+              <li class="address" *ngIf="business?.city || business?.location">
                 <i class="fa fa-map-marker" aria-hidden="true" ></i>
-                <span *ngIf="lang=='ar' && business">{{business?.city?.nameAr}} , {{business?.location?.nameAr}}</span>
-                <span *ngIf="lang!='ar' && business">{{business?.city?.nameEn}} ,{{business?.location?.nameEn}}</span>
+                <span *ngIf="lang=='ar'">{{business?.city?.nameAr}} , {{business?.location?.nameAr}}</span>
+                <span *ngIf="lang!='ar'">{{business?.city?.nameEn}} ,{{business?.location?.nameEn}}</span>
               </li>
-              <li>
-                <i class="fa fa-phone" aria-hidden="true"></i>
+              <li *ngIf="business?.phone1">
+                <i class="fa fa-phone" aria-hidden="true" ></i>
                 <a >{{business?.phone1}}</a>
               </li>
-              <li>
+              <li *ngIf="business?.phone2">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <a >{{business?.phone2}}</a>
               </li>
@@ -96,7 +96,7 @@
               </li>
             </ul>
           </div>
-          <div class="box pdmap style1" id="flat-map-4" *ngIf="business">
+          <div class="box pdmap style1" id="flat-map-4" *ngIf="business?.locationPoint">
             <app-location-picker [disabled]="true" [(ngModel)]="business.locationPoint" [options]="{center:[business?.locationPoint?.lat,business?.locationPoint?.lng]}" name="locationPoint"></app-location-picker>
           </div>
           <!-- /#flat-map -->

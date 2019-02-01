@@ -16,7 +16,10 @@ import { icon, latLng, marker,  Marker, tileLayer } from 'leaflet';
 export class LocationPickerComponent implements OnInit, ControlValueAccessor {
 
   constructor() { }
-  @Input("options") extendOptions
+  @Input("options") set extendOptions  (value){
+    if(value)
+      this.options=Object.assign(this.options,value)
+  }
   options = {
     layers: [
       tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
@@ -62,8 +65,6 @@ export class LocationPickerComponent implements OnInit, ControlValueAccessor {
       this.refresh()
   }
   ngOnInit() {
-    if(this.extendOptions)
-      this.options=Object.assign(this.options,this.extendOptions)
     console.log(this.options)
   }
   clicked(event){
@@ -74,7 +75,9 @@ export class LocationPickerComponent implements OnInit, ControlValueAccessor {
   refresh(){
     if(this.marker)
       this.marker.removeFrom(this.map);
-    this.marker = marker(new latLng(this.value), {
+    if(!this.value)
+      return ;
+    this.marker = marker([this.value.lat,this.value.lng], {
       icon: icon({
         iconSize: [25, 41],
         iconAnchor: [13, 41],

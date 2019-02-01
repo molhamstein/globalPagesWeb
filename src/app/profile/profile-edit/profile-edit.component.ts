@@ -22,7 +22,7 @@ export class ProfileEditComponent implements OnInit,AfterViewInit {
     this.route.params.subscribe((params)=>{
       this.id=params['id']
       this.api.get('users/'+params['id']).toPromise().then((data)=>{
-        data['birthDate']= new Date(format(new Date(data['birthDate']),'DD-MM-YYYY'))
+        // data['birthDate']= new Date(format(new Date(data['birthDate']),'DD-MM-YYYY'))
         this.user=data;
       })
     })

@@ -3,6 +3,8 @@ import {FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {Router} from '@angular/router';
+import {AuthService} from '../auth.service';
+import {format} from "date-fns";
 
 @Component({
   selector: 'app-log-in',
@@ -11,13 +13,14 @@ import {Router} from '@angular/router';
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private http:HttpClient,private router:Router) { }
+  constructor(private http:HttpClient,private router:Router,private auth:AuthService) { }
   ngOnInit() {
   }
   submit(data)
   {
     this.http.post(environment.api+'users/login',data).toPromise().then((data)=>{
       localStorage.setItem(environment.userDetails,JSON.stringify(data));
+      this.auth.logIn(data);
       this.router.navigate(['']);
     })
   }
