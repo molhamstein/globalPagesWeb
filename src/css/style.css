@@ -1225,6 +1225,7 @@ height: 100%;
 
 .footer-bottom ul.social-ft {
 	float: right;
+	margin: 0 50px;
 }
 
 .footer-bottom ul.social-ft li {
@@ -1233,7 +1234,7 @@ height: 100%;
 }
 
 .footer-bottom ul.social-ft li:first-child {
-	margin-left: 0px;
+	/* margin-left: 0px; */
 }
 
 .footer-bottom ul.social-ft li a:not(:hover) {

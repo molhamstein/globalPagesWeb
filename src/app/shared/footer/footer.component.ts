@@ -13,9 +13,9 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
     this.localAddress = window.location.href;
     if(this.ts.currentLang == 'ar'){
-      this.logoAddress = 'assets/images/page/logo_arabic.svg';
+      this.logoAddress = 'assets/images/page/logo_arabic_white.svg';
     }else{
-      this.logoAddress = 'assets/images/page/logo_english.svg';
+      this.logoAddress = 'assets/images/page/logo_english_white.svg';
     }
   }
 
