@@ -67,6 +67,10 @@ export class GuideComponent implements OnInit {
       }
     }
   }
+  fun(){
+    console.warn('You just clicked',this.category);
+    console.warn('and it has a sub category list of', this.category['subCategories'])
+  }
   ngDoCheck() {
     // since our components are dynamic, we need to manually iterate over them and trigger
     // change detection on them.
@@ -137,7 +141,7 @@ export class GuideComponent implements OnInit {
     // params['filter[skip]']= (num + this.skip).toString();
     this.requests.get('businesses', params).subscribe(res => {
       this.posts = <Object[]>res;
-      // console.warn(res);
+      console.warn(res);
       this.menuPosts = this.posts;//.slice(0, 20);
       // this.removeMarkers();
       // this.addMarkers();
