@@ -1,15 +1,27 @@
+<style>
+  .flat-row-title{
+    color:#2c3e50;
+  }
+</style>
 <section class="page-title style1 ">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        <div class="flat-row-title center">
+          <h2>{{'discoverActivitiesAroundYou'| translate}}</h2>
+        </div>
+      </div>
+      <div class="col-md-12">
         <div class="wrap-filter-search">
           <form action="#" method="get" accept-charset="utf-8">
             <span class="keyword">
-              <input  [(ngModel)]="title" type="text" placeholder="{{'searchForWhat' | translate}}" name="search"> <!--(keyup)="titleFilter()"-->
+              <input [(ngModel)]="title" type="text" placeholder="{{'searchForWhat' | translate}}" name="search">
+              <!--(keyup)="titleFilter()"-->
             </span>
             <span class="categories">
               <span class="ti-angle-down"></span>
-              <select [(ngModel)]="category" name="categories" (change)="subCategory='0'" > <!-- (change)="reFilter()" -->
+              <select [(ngModel)]="category" name="categories" (change)="subCategory='0';fun()">
+                <!-- (change)="reFilter()" -->
                 <option value="0">{{'chooseCategory' | translate }}</option>
                 <option *ngFor="let c of bCategories" [ngValue]="c">{{c.title}}</option>
               </select>
@@ -23,7 +35,8 @@
             </span>
             <span class="categories">
               <span class="ti-angle-down"></span>
-              <select [(ngModel)]="city" name="cityID" (change)="location='0'"> <!--(change)="reFilter()-->
+              <select [(ngModel)]="city" name="cityID" (change)="location='0'">
+                <!--(change)="reFilter()-->
                 <option value="0">{{'location' | translate}}</option>
                 <option *ngFor="let c of cities" [ngValue]="c">{{c.name}}</option>
               </select>
@@ -48,6 +61,16 @@
 
           <app-guide-card *ngFor="let p of menuPosts" [post]="p" class="col-xs-6 featured-box-flex guide-box "></app-guide-card>
 
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="b-guide-nav">
+          <button title="Next" (click)="prev()" [ngClass]="{disabled:prevDisabled}" class=" col-xs-pull-1 button-navigation">
+            <i class="fa fa-chevron-right"></i>
+          </button>
+          <button title="Previous" [ngClass]="{disabled:nextDisabled}" (click)="next()" class="col-xs-push-1 button-navigation">
+            <i class="fa fa-chevron-left"></i>
+          </button>
         </div>
       </div>
     </div>

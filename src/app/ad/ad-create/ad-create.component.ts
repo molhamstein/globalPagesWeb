@@ -3,7 +3,7 @@ import { CommonDataService } from '../../common-data.service';
 import { RequestsService } from '../../requests.service';
 import { environment } from 'src/environments/environment';
 import { HttpHeaders } from '@angular/common/http';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-ad-create',
   templateUrl: './ad-create.component.html',
@@ -18,8 +18,8 @@ export class AdCreateComponent implements OnInit {
   category: any;
   subCategory: any;
   details: any;
-  filesToUpload: Array<File> = [];
-  constructor(private cds: CommonDataService, private rs: RequestsService) { }
+  filesToUpload ;
+  constructor(private cds: CommonDataService, private rs: RequestsService, private router:Router) { }
 
   ngOnInit() {
     this.cds.categoriesPromise.then(res => this.categories = <Object[]>res);
@@ -27,13 +27,19 @@ export class AdCreateComponent implements OnInit {
 
   }
 
-  onSelectFile(evt) {
-    this.filesToUpload = <Array<File>>evt.target.files;
-  }
+  // onSelectFile() {
+  //   console.warn(this.filesToUpload );
+  // }
   registerAd() {
     const user = JSON.parse(localStorage.getItem(environment.userDetails));
     // console.warn('user',user)
-    var images: any = new FormData();
+    var images:FormData = new FormData();
+    // console.warn(this.filesToUpload);
+    for (let i = 0; i < this.filesToUpload.length; i++) {
+      images.append('file', this.filesToUpload[i].file);
+    }
+
+    // console.warn(images.getAll('file'));
     var postData: any = {
       "title": this.name,
       "description":this.details,
@@ -46,26 +52,23 @@ export class AdCreateComponent implements OnInit {
       "locationId":this.location['id'],
       "media":''
     };
-    for (let i = 0; i < this.filesToUpload.length; i++) {
-      images.append('file', this.filesToUpload[i]);
-    }
   
     let h = new HttpHeaders();
     h=h.append('Authorization', user['id']);
     h=h.append('Content-Type', 'application/json');
-    // console.warn(images);
     this.rs.post('attachments/images/upload', images)
       .subscribe(res => {
-        console.warn(res);
+        // console.warn(res);
         // this.filesLinks = <any[]>res;
         postData.media = <any[]>res;
         this.rs.post('posts', postData,h)
           .subscribe(res => {
-            console.warn('res2', res);
-            alert("Done!")
+            this.router.navigate(['/ad', res['id']])
+            // console.warn('res2', res);
+            // alert("Done!")
           })
         // console.warn(this.filesLinks);
       })
-    console.warn( this.name , this.city,this.location,this.category,this.subCategory,this.details);
+    // console.warn( this.name , this.city,this.location,this.category,this.subCategory,this.details);
   }
 }

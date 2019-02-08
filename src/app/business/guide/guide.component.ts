@@ -2,7 +2,7 @@ import { Component, OnInit, ComponentFactoryResolver, ComponentRef, Injector, Do
 import { CommonDataService } from 'src/app/common-data.service';
 import { RequestsService } from 'src/app/requests.service';
 import { debounceTime } from 'rxjs/operators';
-import { icon, latLng, marker,  Marker, tileLayer } from 'leaflet';
+import { icon, latLng, marker, Marker, tileLayer } from 'leaflet';
 import { MapMarkerComponent } from '../map-marker/map-marker.component';
 import { TranslateService } from '@ngx-translate/core';
 @Component({
@@ -18,8 +18,8 @@ export class GuideComponent implements OnInit {
       tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
     ],
     zoom: 13,
-    maxZoom:15,
-    minZoom:11,
+    maxZoom: 15,
+    minZoom: 11,
     center: latLng(33.5102, 36.29128)
   };
 
@@ -28,24 +28,28 @@ export class GuideComponent implements OnInit {
   posts: Object[];
   menuPosts: Object[];
 
+  skip: number = 0;
   city: string = "0";
   category: string = "0";
   title;
   params: Object = {};
+  nextDisabled= true;
+  prevDisabled= false;
 
-  constructor(private ts: TranslateService,private cds: CommonDataService, private requests: RequestsService, private resolver: ComponentFactoryResolver, private injector: Injector) { }
-  onMapReady(map){
+
+  constructor(private ts: TranslateService, private cds: CommonDataService, private requests: RequestsService, private resolver: ComponentFactoryResolver, private injector: Injector) { }
+  onMapReady(map) {
     this.map = map;
-  } 
+  }
   addMarkers() {
 
     for (const entry of this.posts) {
-      if (entry["locationPoint"] && entry["locationPoint"]!=null){
+      if (entry["locationPoint"] && entry["locationPoint"] != null) {
         const factory = this.resolver.resolveComponentFactory(MapMarkerComponent);
         const component = factory.create(this.injector);
         component.instance.data = entry;
         component.changeDetectorRef.detectChanges();
-  
+
         let m = marker(new latLng(entry["locationPoint"]), {
           icon: icon({
             iconSize: [25, 41],
@@ -54,7 +58,7 @@ export class GuideComponent implements OnInit {
             shadowUrl: 'leaflet/marker-shadow.png'
           })
         });
-  
+
         const popupContent = component.location.nativeElement;
         m.bindPopup(popupContent).openPopup();
         m.addTo(this.map);
@@ -67,6 +71,10 @@ export class GuideComponent implements OnInit {
       }
     }
   }
+  fun() {
+    console.warn('You just clicked', this.category);
+    console.warn('and it has a sub category list of', this.category['subCategories'])
+  }
   ngDoCheck() {
     // since our components are dynamic, we need to manually iterate over them and trigger
     // change detection on them.
@@ -75,7 +83,7 @@ export class GuideComponent implements OnInit {
     })
   }
   removeMarkers() {
-    this.markers.forEach(marker=>{
+    this.markers.forEach(marker => {
       marker.markerInstance.removeFrom(this.map);
       marker.componentInstance.destroy();
     })
@@ -87,7 +95,7 @@ export class GuideComponent implements OnInit {
   //     Lang = 'nameAr'
   //   }
 
-    
+
   //   if (this.title== undefined ||  this.title.length == 0) {
   //     delete this.params['filter[where]['+Lang+'][like]'];
   //   } else {
@@ -132,18 +140,37 @@ export class GuideComponent implements OnInit {
   }
 
   getPostsData(params) {
-    params['filter[where][status]']="activated";
-    params['filter[limit]']="20";
-    // params['filter[skip]']= (num + this.skip).toString();
+    // params['filter[where][status]'] = "activated";
+    params['filter[limit]'] = "5";
+
+    params['filter[skip]'] = (5 * this.skip).toString();
     this.requests.get('businesses', params).subscribe(res => {
       this.posts = <Object[]>res;
       // console.warn(res);
-      this.menuPosts = this.posts;//.slice(0, 20);
+      if (this.posts.length>0){
+        this.menuPosts = this.posts;//.slice(0, 20);
+      }else{
+        this.prevDisabled=true;
+      }
       // this.removeMarkers();
       // this.addMarkers();
     })
   }
-
+  prev() {
+    this.nextDisabled = false;
+    this.skip += 1;
+    this.reFilter()
+  }
+  next() {
+    if (this.skip>0){
+      if(this.skip<=1){
+        this.nextDisabled=true;
+      }
+      this.skip -= 1;
+      this.reFilter();
+      this.prevDisabled=false;
+    }
+  }
   ngOnInit() {
     this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
     this.cds.bCategoryPromise.then(res => this.bCategories = <Object[]>res);

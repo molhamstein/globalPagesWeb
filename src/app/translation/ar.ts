@@ -76,6 +76,6 @@ export const ArabicTranslation={
   address:'العنوان',
 
   contactInfo:'معلومات الإتصال',
-  privacyAndTerms: 'اتفاقية الخصوصية والشروط'
-
+  privacyAndTerms: 'اتفاقية الخصوصية والشروط',
+discoverActivitiesAroundYou:'اكتشف الفعاليات من حولك'
 }

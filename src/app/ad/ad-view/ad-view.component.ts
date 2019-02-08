@@ -30,8 +30,9 @@ export class AdViewComponent implements OnInit {
       this.data['id']= adData['id'];
       this.data['phone']=adData['owner']['phoneNumber'];
       this.data['title']= adData['title'];
-      this.data['creationDate'] = adData['creationDate'];
       this.data['description'] = adData['description'];
+      var t = new Date(adData['creationDate']);
+      this.data['creationDate'] = t.toLocaleDateString() + '-' + t.toLocaleTimeString();
       // this.data['images']= adData['media']; 
       for (let i = 0; i < adData['media'].length; i++) {
         const src = adData['media'][i]['url'];
