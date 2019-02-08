@@ -6,9 +6,9 @@
 <section class="page-title style1 ">
   <div class="container">
     <div class="row">
-      <div  class="col-md-12">
+      <div class="col-md-12">
         <div class="flat-row-title center">
-          <h2 >{{'discoverActivitiesAroundYou'| translate}}</h2>
+          <h2>{{'discoverActivitiesAroundYou'| translate}}</h2>
         </div>
       </div>
       <div class="col-md-12">
@@ -61,6 +61,16 @@
 
           <app-guide-card *ngFor="let p of menuPosts" [post]="p" class="col-xs-6 featured-box-flex guide-box "></app-guide-card>
 
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="b-guide-nav">
+          <button title="Next" (click)="prev()" [ngClass]="{disabled:prevDisabled}" class=" col-xs-pull-1 button-navigation">
+            <i class="fa fa-chevron-right"></i>
+          </button>
+          <button title="Previous" [ngClass]="{disabled:nextDisabled}" (click)="next()" class="col-xs-push-1 button-navigation">
+            <i class="fa fa-chevron-left"></i>
+          </button>
         </div>
       </div>
     </div>
