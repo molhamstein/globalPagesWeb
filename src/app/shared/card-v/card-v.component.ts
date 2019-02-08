@@ -21,8 +21,8 @@ export class CardVComponent implements OnInit {
     if (this.details.hasOwnProperty('description'))
       this.data['description'] = this.details['description'];
       
-    if (this.details.hasOwnProperty('media') && this.details['media'].length > 1 && this.details['media']['0'].hasOwnProperty('thumbnail'))
-      this.data['img'] = this.details['media']['0']['thumbnail'];
+    if (this.details.hasOwnProperty('media') && this.details['media'].length > 0 && this.details['media']['0'].hasOwnProperty('url'))
+      this.data['img'] = this.details['media']['0']['url'];
       
       if (this.tr.currentLang == 'ar') {
         if (this.details.hasOwnProperty('category') && this.details['category'].hasOwnProperty('titleAr'))
