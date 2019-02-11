@@ -8,7 +8,7 @@
             <a routerLink="/ad/{{data.id}}" title="">{{data.title}}</a> 
             <!--  -->
           </div>
-          <span class="creation-date">{{data.creationDate}}</span>
+          <span dir="ltr" class="creation-date">{{data.creationDate}}</span>
 
           <!-- /.box-title -->
           <!-- /.box-address -->
@@ -52,7 +52,7 @@
               <img src="{{i.url}}" alt="Gallery image" />
             </a> -->
           <div class="hoverMe" style="display: inline" *ngFor="let image of _albums; let i=index">
-            <img [src]="image.thumb" (click)="open(i)" />
+            <img [src]="image.src" (click)="open(i)" />
           </div>
             <!-- <a href="assets/images/page/tb2.jpg" title="Caption for gallery item 2">
               <img src="assets/images/page/tb2.jpg" alt="Gallery image 2" />

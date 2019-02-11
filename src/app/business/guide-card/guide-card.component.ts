@@ -12,10 +12,10 @@ export class GuideCardComponent implements OnInit {
   constructor(private tr:TranslateService) { }
 
   ngOnInit() {
-    // console.warn(this.post)
+    console.warn(this.post)
     // delete following condition when deployment
-    if (this.post.hasOwnProperty('media') && this.post['media'].length >0 && this.post['media']['0'].hasOwnProperty('url')){
-      this.data['img']=this.post['media']['0']['url'];
+    if (this.post.hasOwnProperty('covers') && this.post['covers'].length > 0 && this.post['covers']['0'].hasOwnProperty('url')){
+      this.data['img'] = this.post['covers']['0']['url'];
     }
 
     if (this.post.hasOwnProperty('description')) {

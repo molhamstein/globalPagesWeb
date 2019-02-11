@@ -78,6 +78,6 @@ export const ArabicTranslation={
   contactInfo:'معلومات الإتصال',
   privacyAndTerms: 'اتفاقية الخصوصية والشروط',
   requiredMessage:'الرجاء ملئ {{name}}',
-  LOGIN_FAILED:'فشل تسجيل الدخول'
-
+  LOGIN_FAILED:'فشل تسجيل الدخول',
+  discoverActivitiesAroundYou:'اكتشف الفعاليات من حولك'
 }

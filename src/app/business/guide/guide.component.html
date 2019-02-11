@@ -1,30 +1,57 @@
+<style>
+  .flat-row-title{
+    color:#2c3e50;
+  }
+</style>
 <section class="page-title style1 ">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="wrap-box-search style2">
+        <div class="flat-row-title center">
+          <h2>{{'discoverActivitiesAroundYou'| translate}}</h2>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="wrap-filter-search">
           <form action="#" method="get" accept-charset="utf-8">
-            <span>
-              <input (keyup)="titleFilter()" [(ngModel)]="title" type="text" placeholder="{{'searchForWhat' | translate}}"
-                name="search">
-            </span>
-            <span class="location">
-              <span class="ti-location-pin"></span>
-              <select [(ngModel)]="cityID" name="cityID" (change)="reFilter()">
-                <option value="0">{{'location' | translate}}</option>
-                <option *ngFor="let c of cities" [value]="c.id">{{c.name}}</option>
-              </select>
-              <!-- <input type="text" placeholder="{{'location' | translate}}" name="location"> -->
+            <span class="keyword">
+              <input [(ngModel)]="title" type="text" placeholder="{{'searchForWhat' | translate}}" name="search">
+              <!--(keyup)="titleFilter()"-->
             </span>
             <span class="categories">
               <span class="ti-angle-down"></span>
-              <select [(ngModel)]="categoryID" name="categories" (change)="reFilter()">
+              <select [(ngModel)]="category" name="categories" (change)="subCategory='0'">
+                <!-- (change)="reFilter()" -->
                 <option value="0">{{'chooseCategory' | translate }}</option>
-                <option *ngFor="let c of bCategories" [value]="c.id">{{c.title}}</option>
+                <option *ngFor="let c of bCategories" [ngValue]="c">{{c.title}}</option>
               </select>
-
             </span>
-            <div class="clearfix"></div>
+            <span class="subCategories">
+              <span class="ti-angle-down"></span>
+              <select [disabled]="category=='0'" name="subCategories" [(ngModel)]="subCategory">
+                <option value="0" hidden>{{'subCategory' | translate}}</option>
+                <option *ngFor="let sc of category?.subCategories" [ngValue]="sc">{{sc.title}}</option>
+              </select>
+            </span>
+            <span class="categories">
+              <span class="ti-angle-down"></span>
+              <select [(ngModel)]="city" name="cityID" (change)="location='0'">
+                <!--(change)="reFilter()-->
+                <option value="0">{{'location' | translate}}</option>
+                <option *ngFor="let c of cities" [ngValue]="c">{{c.name}}</option>
+              </select>
+            </span>
+            <span class="location">
+              <!-- <span class="ti-location-pin"></span> -->
+              <span class="ti-angle-down"></span>
+
+              <!-- <input [(ngModel)]="location" type="text" placeholder="{{'location'| translate}}" name="location"> -->
+              <select name="location" [(ngModel)]="location">
+                <option value="0" hidden>{{'chooseCity'| translate}}</option>
+                <option *ngFor="let l of city?.locations" [ngValue]="l">{{l.name}}</option>
+              </select>
+            </span>
+            <button (click)="reFilter()" class="search-btn">{{'apply'| translate}}</button>
 
           </form>
           <!-- /form -->
@@ -34,6 +61,16 @@
 
           <app-guide-card *ngFor="let p of menuPosts" [post]="p" class="col-xs-6 featured-box-flex guide-box "></app-guide-card>
 
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="b-guide-nav">
+          <button title="Next" (click)="prev()" [ngClass]="{disabled:prevDisabled}" class=" col-xs-pull-1 button-navigation">
+            <i class="fa fa-chevron-right"></i>
+          </button>
+          <button title="Previous" [ngClass]="{disabled:nextDisabled}" (click)="next()" class="col-xs-push-1 button-navigation">
+            <i class="fa fa-chevron-left"></i>
+          </button>
         </div>
       </div>
     </div>
