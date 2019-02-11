@@ -13,15 +13,25 @@ import {format} from "date-fns";
 })
 export class LogInComponent implements OnInit {
 
+  message
   constructor(private http:HttpClient,private router:Router,private auth:AuthService) { }
   ngOnInit() {
   }
-  submit(data)
+  submit(form)
   {
-    this.http.post(environment.api+'users/login',data).toPromise().then((data)=>{
+    if(form.invalid)
+      return
+    let data=form.value
+    this.http.post(environment.api+'users/login',data).subscribe((data)=>{
       localStorage.setItem(environment.userDetails,JSON.stringify(data));
       this.auth.logIn(data);
       this.router.navigate(['']);
+    },error => {
+      // console.log(error)
+      // if(error['error']['error']['statusCode']==401)
+      {
+        this.message=error['error']['error']['code']
+      }
     })
   }
 

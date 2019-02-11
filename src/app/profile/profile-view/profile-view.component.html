@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="page-title-heading">
-          {{user['username']}}
+          {{user?.username}}
         </div>
 
       </div>
@@ -46,12 +46,12 @@
               <div class="one-half">
                 <div class="wrap-listing username">
                   <label>{{'username' | translate}}</label>
-                  <div class="user-name-text">{{user['username']}}</div>
+                  <div class="user-name-text">{{user?.username}}</div>
                 </div>
                 <!-- /.wrap-listing -->
                 <label>{{'birth' | translate}}</label>
                 <div class="wrap-listing business">
-                  <div class="user-birth-text">{{user['birthDate']}}</div>
+                  <div class="user-birth-text">{{user?.birthDate}}</div>
                   <span class="clearfix"></span>
                 </div>
                 <!-- /.wrap-listing -->
@@ -61,12 +61,12 @@
               <div class="one-half">
                 <div class="wrap-listing phone">
                   <label>{{'email' | translate}}</label>
-                  <div class="user-email-text">{{user['email']}}</div>
+                  <div class="user-email-text">{{user?.email}}</div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="wrap-listing category">
                   <label>{{'gender' | translate}}</label>
-                  <div class="user-gender-text">{{user['gender'] | translate}}</div>
+                  <div class="user-gender-text">{{user?.gender | translate}}</div>
                 </div>
                 <div class="clearfix"></div>
 
@@ -113,22 +113,27 @@
         </div>
 
         <div class="clearfix"></div>
+        <!--<div class="col-md-12 subs">-->
+          <!--<app-category-selector></app-category-selector>-->
+        <!--</div>-->
         <div class="col-md-12 subs">
           <div class="inner-box subscribed-list">
             <div class="subscribed">
               <div class="title">
                 <h3>{{'mySubscription' | translate}}</h3>
               </div>
+              <br/>
               <div class="row">
-                <div class="col-xs-3" *ngFor="let cat of postCategories">
-                  <div class="pretty p-default p-thick">
-                    <input type="checkbox" [(ngModel)]="categories[cat['id']]" (change)="editCat(cat)" />
-                    <div class="state p-warning">
-                      <label *ngIf="lang=='ar'">{{cat['titleAr']}}</label>
-                      <label *ngIf="lang=='en'">{{cat['titleEn']}}</label>
-                    </div>
-                  </div>
-                </div>
+                <app-category-selector [categories]="postCategories" [selectedSubCategory]="user?.postCategoriesIds" (changed)="editCat($event)"></app-category-selector>
+                <!--<div class="col-xs-3" *ngFor="let cat of postCategories">-->
+                  <!--<div class="pretty p-default p-thick">-->
+                    <!--<input type="checkbox" [(ngModel)]="categories[cat['id']]" (change)="editCat(cat)" />-->
+                    <!--<div class="state p-warning">-->
+                      <!--<label *ngIf="lang=='ar'">{{cat['titleAr']}}</label>-->
+                      <!--<label *ngIf="lang=='en'">{{cat['titleEn']}}</label>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
               </div>
             </div>
           </div>

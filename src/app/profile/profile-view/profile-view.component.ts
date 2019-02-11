@@ -19,6 +19,7 @@ export class ProfileViewComponent implements OnInit {
   postCategories
   lang
   categories={}
+  selectedSubCategory=[]
   ngOnInit() {
     this.lang=this.translteService.currentLang
     this.translteService.onLangChange.subscribe(()=>{
@@ -49,14 +50,19 @@ export class ProfileViewComponent implements OnInit {
         this.businesses=data
       })
     })
-    this.api.get('postCategories').toPromise().then((data)=>{
+    let postParams=new HttpParams()
+    postParams=postParams.set('filter',JSON.stringify({
+      include:'subCategories',
+      where:{parentCategoryId:{exists:false}},
+    }))
+    this.api.get('postCategories',postParams).toPromise().then((data)=>{
       this.postCategories=data
     })
 
   }
-  editCat(){
+  editCat(data){
     var categories =Object.entries(this.categories).filter(cat => cat[1]).map(cat=>cat[0])
-    this.api.put('users/' + this.id, {postCategoriesIds:categories}).toPromise().then((data) => {
+    this.api.put('users/' + this.id, {postCategoriesIds: data}).toPromise().then((data) => {
     })
   }
 

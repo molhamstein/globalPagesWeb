@@ -2906,7 +2906,7 @@ form.form-listing .inner-box .wrap-listing.business .hour-from span,
 form.form-listing .inner-box .wrap-listing.business .month span,
 form.form-listing .inner-box .wrap-listing.business .hour-to span  {
 	position: absolute;
-	bottom: 19px;
+	top: 44px;
 	left: 30px;
 }
 
