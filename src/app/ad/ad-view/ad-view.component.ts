@@ -12,7 +12,7 @@ export class AdViewComponent implements OnInit {
   data :any={};
   toggle1 = true;
   toggle2 = true;
-  private _albums= [];
+  public _albums= [];
 
   constructor(private route: ActivatedRoute, private tr: TranslateService, private _lightbox: Lightbox) {}
   open(index: number): void {
