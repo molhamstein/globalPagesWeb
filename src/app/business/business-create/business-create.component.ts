@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {RequestsService} from '../../requests.service';
 import {TranslateService} from '@ngx-translate/core';
 import {HttpHeaders, HttpParams} from '@angular/common/http';
@@ -20,6 +20,9 @@ export class BusinessCreateComponent implements OnInit {
   cities
   selectedCity
   locations
+  locationId
+  subCategoryId
+  @ViewChild('form') form
   ngOnInit() {
     this.lang=this.translteService.currentLang
 
@@ -42,6 +45,9 @@ export class BusinessCreateComponent implements OnInit {
     })
   }
   submit(data){
+    if(this.form.invalid)
+      return
+    data['categoryId']=this.categories[this.selectedCategory]['id']
     const user = JSON.parse(localStorage.getItem(environment.userDetails));
     data['ownerId']=user['userId'];
     let images=new FormData();
@@ -56,10 +62,11 @@ export class BusinessCreateComponent implements OnInit {
             })
           })
     }
-    else
+    else{
       this.api.post('businesses',data).subscribe(data=>{
-            this.router.navigate(['business',data['id']])
-          })
+        this.router.navigate(['business',data['id']])
+      })
+    }
 
 
 
@@ -69,11 +76,12 @@ export class BusinessCreateComponent implements OnInit {
     this.files=files
   }
   onCategoryChange(){
-    this.api.get('businessCategories/'+this.selectedCategory+'/subCategories').toPromise().then(data=>{
-      this.subCategories=data
-    })
+    this.subCategoryId=null
+    console.log(this.selectedCategory)
+    this.subCategories=this.categories[this.selectedCategory]['subCategories']
   }
   cityChanged(){
+    this.locationId=null
     var p=new HttpParams()
     p=p.set('filter',JSON.stringify({
       where:{

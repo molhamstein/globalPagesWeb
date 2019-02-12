@@ -1,0 +1,21 @@
+<div class="tag-container">
+  <div class="tag" *ngFor="let cat of categories" [ngClass]="{selected:selectedCategory==cat}">
+    <span (click)="selectedCategory=cat">
+      <span *ngIf="lang=='ar'">{{cat['titleAr']}}</span>
+      <span *ngIf="lang=='en'">{{cat['titleEn']}}</span>
+    </span>
+  </div>
+</div>
+<hr/>
+<h4>{{'subCategory' | translate}}</h4>
+<br/>
+<div class="tag-container" *ngIf="selectedCategory">
+  <div class="tag" *ngFor="let cat of selectedCategory.subCategories" [ngClass]="{selected:isSelected(cat.id)}">
+    <span (click)="Select(cat.id)">
+      <span *ngIf="lang=='ar'">{{cat['titleAr']}}</span>
+      <span *ngIf="lang=='en'">{{cat['titleEn']}}</span>
+    </span>
+  </div>
+</div>
+
+
