@@ -29,8 +29,8 @@ export class GuideComponent implements OnInit {
   menuPosts: Object[];
 
   skip: number = 0;
-  city: string = "0";
-  category: string = "0";
+  city;
+  category;
   title;
   params: Object = {};
   nextDisabled= true;
@@ -107,7 +107,8 @@ export class GuideComponent implements OnInit {
   //       // this.addMarkers();
   //     })
   // }
-
+  subCategory={}
+  location=""
   reFilter() {
     var Lang = 'nameEn';
     if (this.ts.currentLang == 'ar') {

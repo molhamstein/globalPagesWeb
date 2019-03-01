@@ -1038,6 +1038,7 @@ align-items: stretch;
 .wrap-imagebox.style2 {
 	margin-left: 0px;
 	margin-right: 0px;
+	padding-top: 40px;
 }
 
 .wrap-imagebox.style2 .imagebox.style4 .box-header .box-image .queue {
@@ -2606,7 +2607,8 @@ right: 80%;
 }
 .guide-box {
 /* width: 100%; */
-margin: 10px auto;
+margin: 10px 1%;
+box-shadow: 0px 3px 12px #ccc;
 }
 
 /* Box Slider
@@ -2908,7 +2910,7 @@ form.form-listing .inner-box .wrap-listing.business .hour-from span,
 form.form-listing .inner-box .wrap-listing.business .month span,
 form.form-listing .inner-box .wrap-listing.business .hour-to span  {
 	position: absolute;
-	bottom: 19px;
+	top: 44px;
 	left: 30px;
 }
 

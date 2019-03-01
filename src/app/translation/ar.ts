@@ -77,5 +77,7 @@ export const ArabicTranslation={
 
   contactInfo:'معلومات الإتصال',
   privacyAndTerms: 'اتفاقية الخصوصية والشروط',
-discoverActivitiesAroundYou:'اكتشف الفعاليات من حولك'
+  requiredMessage:'الرجاء ملئ {{name}}',
+  LOGIN_FAILED:'فشل تسجيل الدخول',
+  discoverActivitiesAroundYou:'اكتشف الفعاليات من حولك'
 }

@@ -4,8 +4,10 @@
   </div>
   <div class="business-text">
     <div class="title">
-      <h4 *ngIf="lang=='ar'">{{business['nameAr']}}</h4>
-      <h4 *ngIf="lang=='en'">{{business['nameEn']}}</h4>
+      <a [routerLink]="['/business',business['nameUnique']]">
+        <h4 *ngIf="lang=='ar'">{{business['nameAr']}}</h4>
+        <h4 *ngIf="lang=='en'">{{business['nameEn']}}</h4>
+      </a>
     </div>
     <div class="desc">
       {{business['description']}}

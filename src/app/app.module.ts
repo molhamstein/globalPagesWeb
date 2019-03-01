@@ -44,6 +44,7 @@ import { LocationPickerComponent } from './business/location-picker/location-pic
 
 import { LightboxModule } from 'ngx-lightbox';
 import {AvatarModule} from 'ngx-avatar';
+import {CategorySelectorComponent} from './profile/category-selector/category-selector.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import {AvatarModule} from 'ngx-avatar';
     volumeFilter,
     MapMarkerComponent,
     WorkingHourInputComponent,
-    LocationPickerComponent
+    LocationPickerComponent,
+    CategorySelectorComponent
 
   ],
   imports: [

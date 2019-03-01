@@ -28,7 +28,7 @@
             </span>
             <span class="subCategories">
               <span class="ti-angle-down"></span>
-              <select [disabled]="category=='0'" name="subCategories" [(ngModel)]="subCategory">
+              <select [disabled]="category==null" name="subCategories" [(ngModel)]="subCategory">
                 <option value="0" hidden>{{'subCategory' | translate}}</option>
                 <option *ngFor="let sc of category?.subCategories" [ngValue]="sc">{{sc.title}}</option>
               </select>
@@ -36,16 +36,12 @@
             <span class="categories">
               <span class="ti-angle-down"></span>
               <select [(ngModel)]="city" name="cityID" (change)="location='0'">
-                <!--(change)="reFilter()-->
                 <option value="0">{{'location' | translate}}</option>
                 <option *ngFor="let c of cities" [ngValue]="c">{{c.name}}</option>
               </select>
             </span>
             <span class="location">
-              <!-- <span class="ti-location-pin"></span> -->
               <span class="ti-angle-down"></span>
-
-              <!-- <input [(ngModel)]="location" type="text" placeholder="{{'location'| translate}}" name="location"> -->
               <select name="location" [(ngModel)]="location">
                 <option value="0" hidden>{{'chooseCity'| translate}}</option>
                 <option *ngFor="let l of city?.locations" [ngValue]="l">{{l.name}}</option>

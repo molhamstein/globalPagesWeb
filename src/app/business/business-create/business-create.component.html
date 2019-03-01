@@ -32,11 +32,15 @@
                 <!--</div>-->
                 <div class="wrap-listing">
                   <label> {{"nameEn" | translate}}</label>
-                  <input type="text" name="nameUnique" ngModel>
+                  <input type="text" name="nameEn" ngModel #nameEn="ngModel" required>
+                  <app-form-validation-message [form]="form" [control]="nameEn" [messages]="{required:'requiredMessage'}" [params]="{name:'nameEn'}">
+                  </app-form-validation-message>
                 </div>
                 <div class="wrap-listing">
                   <label> {{"nameAr" | translate}}</label>
-                  <input type="text" name="nameAr" ngModel>
+                  <input type="text" name="nameAr" ngModel #nameAr="ngModel" required>
+                  <app-form-validation-message [form]="form" [control]="nameAr" [messages]="{required:'requiredMessage'}" [params]="{name:'nameAr'}">
+                  </app-form-validation-message>
                 </div>
                 <div class="wrap-listing location">
                   <label>{{'address'| translate}}</label>
@@ -48,8 +52,8 @@
                 <div class="wrap-listing category-half">
                   <label>{{"category" | translate}}</label>
                   <span class="ti-angle-down"></span>
-                  <select name="categoryId" (change)="onCategoryChange()" [(ngModel)]="selectedCategory">
-                    <option [value]="cat.id" *ngFor="let cat of categories" >
+                  <select name="categoryId" (change)="onCategoryChange()" [(ngModel)]="selectedCategory" #category="ngModel" required>
+                    <option [value]="i" *ngFor="let cat of categories;let i=index">
                       <ng-container *ngIf="lang=='ar'">
                         {{cat.titleAr}}
                       </ng-container>
@@ -58,6 +62,8 @@
                       </ng-container>
                     </option>
                   </select>
+                  <app-form-validation-message [form]="form" [control]="category" [messages]="{required:'requiredMessage'}" [params]="{name:'category'}">
+                  </app-form-validation-message>
                 </div>
                 <div class="clearfix"></div>
 
@@ -67,11 +73,13 @@
                 <div class="clearfix"></div>
                 <div class="wrap-listing phone">
                   <label>{{"phoneNumber1" | translate}}</label>
-                  <input type="text" name="phone1" ngModel>
+                  <input type="text" name="phone1" ngModel #phone1="ngModel" required>
+                  <app-form-validation-message [form]="form" [control]="phone1" [messages]="{required:'requiredMessage'}" [params]="{name:'phoneNumber1'}">
+                  </app-form-validation-message>
                 </div>
                 <div class="wrap-listing phone">
                   <label>{{"phoneNumber2" | translate}}</label>
-                  <input type="text" name="phone2" ngModel>
+                  <input type="text" name="phone2" ngModel [disabled]="!phone1.value">
                 </div>
                 <div class="clearfix"></div>
                 <div class="wrap-listing fax">
@@ -83,7 +91,7 @@
                 <div class="wrap-listing category-half">
                   <label>{{"subCategory" | translate}}</label>
                   <span class="ti-angle-down"></span>
-                  <select name="subCategoryId" ngModel>
+                  <select name="subCategoryId" [(ngModel)]="subCategoryId" #subCategory="ngModel" required>
                     <option [value]="cat.id" *ngFor="let cat of subCategories">
                       <ng-container *ngIf="lang=='ar'">
                         {{cat.titleAr}}
@@ -93,6 +101,8 @@
                       </ng-container>
                     </option>
                   </select>
+                  <app-form-validation-message [form]="form" [control]="subCategory" [messages]="{required:'requiredMessage'}" [params]="{name:'subCategory'}">
+                  </app-form-validation-message>
                 </div>
                 <div class="clearfix"></div>
               </div>
@@ -108,19 +118,19 @@
                   <!--</div>-->
                 <!--</div>-->
               </div>
-              <div class="one-half1">
+              <div class="one-half1" *ngIf="categories && selectedCategory && categories[selectedCategory] && categories[selectedCategory].code=='pharmacies'">
                 <label>{{'workingHours' | translate}}</label>
                 <div class="wrap-listing business">
 
 
-                    <ng-select name="openingDays"  ngModel [multiple]="true">
-                      <ng-option value="0">{{'sunday'|translate}}</ng-option>
-                      <ng-option value="1">{{'monday'|translate}}</ng-option>
-                      <ng-option value="2">{{'tuesday'|translate}}</ng-option>
-                      <ng-option value="3">{{'wednesday'|translate}}</ng-option>
-                      <ng-option value="4">{{'thursday'|translate}}</ng-option>
-                      <ng-option value="5">{{'friday'|translate}}</ng-option>
-                      <ng-option value="6">{{'saturday'|translate}}</ng-option>
+                    <ng-select name="openingDays" ngModel [multiple]="true">
+                      <ng-option value="1">{{'sunday'|translate}}</ng-option>
+                      <ng-option value="2">{{'monday'|translate}}</ng-option>
+                      <ng-option value="3">{{'tuesday'|translate}}</ng-option>
+                      <ng-option value="4">{{'wednesday'|translate}}</ng-option>
+                      <ng-option value="5">{{'thursday'|translate}}</ng-option>
+                      <ng-option value="6">{{'friday'|translate}}</ng-option>
+                      <ng-option value="7">{{'saturday'|translate}}</ng-option>
                     </ng-select>
 
                 </div>
@@ -131,7 +141,7 @@
                 <div class="wrap-listing category-half">
                   <label>{{'city' | translate}}</label>
                   <span class="ti-angle-down"></span>
-                  <select name="cityId" [(ngModel)]="selectedCity" (change)="cityChanged()">
+                  <select name="cityId" [(ngModel)]="selectedCity" (change)="cityChanged()" #cityId="ngModel" required>
                     <option *ngFor="let city of cities" [value]="city.id">
                       <ng-container *ngIf="lang=='ar'">
                         {{city['nameAr']}}
@@ -141,13 +151,15 @@
                       </ng-container>
                     </option>
                   </select>
+                  <app-form-validation-message [form]="form" [control]="cityId" [messages]="{required:'requiredMessage'}" [params]="{name:'city'}">
+                  </app-form-validation-message>
                 </div>
               </div>
               <div class="one-half">
                 <div class="wrap-listing category-half">
                   <label>{{'location' | translate}}</label>
                   <span class="ti-angle-down"></span>
-                  <select name="locationId" ngModel [disabled]="!selectedCity">
+                  <select name="locationId" [(ngModel)]="locationId" [disabled]="!selectedCity" #location="ngModel" required>
                     <option *ngFor="let location of locations" [value]="location.id">
                       <ng-container *ngIf="lang=='ar'">
                         {{location['nameAr']}}
@@ -157,6 +169,8 @@
                       </ng-container>
                     </option>
                   </select>
+                  <app-form-validation-message [form]="form" [control]="location" [messages]="{required:'requiredMessage'}" [params]="{name:'location'}">
+                  </app-form-validation-message>
                 </div>
               </div>
               <div class="clearfix"></div>
@@ -186,7 +200,7 @@
 
               <div class="clearfix"></div>
               <div class="col-md-12">
-                <button type="submit" style="display: contents;">
+                <button type="submit" style="display: contents;" [disabled]="form.submitted && form.invalid">
                   <div class="btn-more submit-button">
                     <a >تسجيل الإعلان</a>
                   </div>

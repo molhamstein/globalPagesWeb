@@ -4,7 +4,9 @@
   </div>
   <div class="ads-text">
     <div class="title">
+      <a [routerLink]="['/ad',ad['id']]">
       <h4>{{ad['title']}}</h4>
+      </a>
     </div>
     <div class="desc">
       {{ad['description']}}
