@@ -28,10 +28,15 @@ export class GuideComponent implements OnInit {
   posts: Object[];
   menuPosts: Object[];
 
-  skip: number = 0;
   city;
   category;
-  title;
+  initialValue;
+  skip: number = 0;
+  cityId="";
+  location="";
+  categoryId="";
+  subCategory="";
+  title="";
   params: Object = {};
   nextDisabled= true;
   prevDisabled= false;
@@ -107,8 +112,7 @@ export class GuideComponent implements OnInit {
   //       // this.addMarkers();
   //     })
   // }
-  subCategory={}
-  location=""
+
   reFilter() {
     var Lang = 'nameEn';
     if (this.ts.currentLang == 'ar') {
@@ -116,26 +120,36 @@ export class GuideComponent implements OnInit {
     }
 
 
-    if (this.title == undefined || this.title.length == 0) {
+    if (this.title == "" || this.title.trim().length == 0) {
       delete this.params['filter[where][' + Lang + '][like]'];
     } else {
       this.params['filter[where][' + Lang + '][like]'] = this.title;
     }
 
-    if (this.category == "0" && this.city == "0") {
-      delete this.params["filter[where][cityId]"];
-      delete this.params["filter[where][categoryId]"];
-      this.getPostsData(this.params);
-    } else {
-      if (this.category != "0") {
-        this.params['filter[where][categoryId]'] = this.category['id'];
-      }
-      if (this.city != "0") {
-        this.params['filter[where][cityId]'] = this.city['id'];
-      }
-      this.getPostsData(this.params);
+    if (this.cityId==""){
+      delete this.params["filter[where][cityId]"]
+    }else{
+      this.params["filter[where][cityId]"]= this.cityId;
     }
+    if (this.location==""){
+      delete this.params["filter[where][locationId]"]
+    }else{
+      this.params["filter[where][locationId]"]= this.location;
+    }
+    if (this.categoryId==""){
+      delete this.params["filter[where][categoryId]"]
+    }else{
+      this.params["filter[where][categoryId]"]= this.categoryId;
+    }
+    if (this.subCategory==""){
+      delete this.params["filter[where][subCategoryId]"]
+    }else{
+      this.params["filter[where][subCategoryId]"]= this.subCategory;
+    }
+
+    this.getPostsData(this.params);
   }
+
 
   getPostsData(params) {
     params['filter[where][status]'] = "activated";
@@ -145,15 +159,30 @@ export class GuideComponent implements OnInit {
     this.requests.get('businesses', params).subscribe(res => {
       this.posts = <Object[]>res;
       // console.warn(res);
-      if (this.posts.length>0){
-        this.menuPosts = this.posts;//.slice(0, 20);
-      }else{
-        this.prevDisabled=true;
-      }
+      
+      this.menuPosts = this.posts;//.slice(0, 20);
+        if (this.posts.length==0){
+          this.prevDisabled=true;
+          if (this.skip==0){
+            this.nextDisabled = true;
+          }
+        }
       // this.removeMarkers();
       // this.addMarkers();
     })
   }
+
+  setCityId(c){
+    if (c != undefined){
+      this.cityId = c['id'];
+    }
+  }
+  setCategoryId(c){
+    if (c != undefined){
+      this.categoryId = c['id'];
+    }
+  }
+
   prev() {
     this.nextDisabled = false;
     this.skip += 1;

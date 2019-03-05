@@ -59,3 +59,33 @@ input[hidden]{
 .b-guide-nav{
   margin-top: 40px;
 }
+.featured-ads-box{
+  border-radius: 7px;
+box-shadow: 0 3px 12px #666;
+overflow: hidden;
+}
+.owl-theme .owl-controls .owl-nav div.owl-next{
+  right:-40px;
+  font-weight: bold;
+}
+.owl-theme .owl-controls .owl-nav div.owl-prev{
+  left:-40px;
+  font-weight: bold;
+}
+.flat-imagebox.background{
+    background:#ecf0f1;
+    padding: 0px;
+}
+.flat-imagebox.background >div.container{
+  position: relative;
+  top:-100px;
+}
+.filter-wrap{
+  padding: 0px 40px
+}
+.wrap-filter-search{
+  margin-top: 0px
+}
+.owl-carousel .owl-item{
+  min-height: 335px;
+}

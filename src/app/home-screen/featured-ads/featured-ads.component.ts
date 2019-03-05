@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RequestsService } from '../../requests.service';
+import { HttpParams } from '@angular/common/http';
 @Component({
   selector: 'app-featured-ads',
   templateUrl: './featured-ads.component.html',
@@ -36,7 +37,16 @@ export class FeaturedAdsComponent implements OnInit {
   constructor(private rs: RequestsService) { }
   public data: Object[];
   getFeaturedAds()  {
-    return this.rs.get('posts?filter[where][isFeatured]=true');
+    var p = new HttpParams();
+    p = p.set('filter', JSON.stringify({
+      where: {
+        isFeatured: true,
+        status: 'activated'
+      }
+    }))
+    // filter[where][isFeatured] = true;
+    return this.rs.get('posts',p);
+    // this.api.get('posts', p)
   }
 
   ngOnInit() {

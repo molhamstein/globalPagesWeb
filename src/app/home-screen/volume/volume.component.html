@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="filter-wrap">
-        <h2>{{'searchFilter' | translate}}</h2>
+        <!-- <h2>{{'searchFilter' | translate}}</h2> -->
         <div class="wrap-filter-search">
           <form action="#" method="get" accept-charset="utf-8">
             <span class="keyword">
@@ -10,33 +10,33 @@
             </span>
             <span class="categories">
               <span class="ti-angle-down"></span>
-              <select name="categories" [(ngModel)]="category" (change)="subCategory='0'">
-                <option value='0' hidden>{{'category' | translate }}</option>
+              <select name="categories" [(ngModel)]="category" (change)="setCategoryId(category)">
+                <option [ngValue]="initialValue" >{{'category' | translate }}</option>
                 <option *ngFor="let c of categories" [ngValue]="c">{{c.title}}</option>
               </select>
             </span>
-            <span class="subCategories">
+            <span *ngIf="category!=undefined" class="subCategories">
               <span class="ti-angle-down"></span>
               <select [disabled]="category=='0'" name="subCategories" [(ngModel)]="subCategory">
-                <option value="0" hidden>{{'subCategory' | translate}}</option>
-                <option *ngFor="let sc of category?.subCategories" [ngValue]="sc">{{sc.title}}</option>
+                <option value="" [selected]="isSelected" hidden>{{'subCategory' | translate}}</option>
+                <option *ngFor="let sc of category?.subCategories" [ngValue]="sc.id">{{sc.title}}</option>
               </select>
             </span>
             <span class="categories">
               <span class="ti-angle-down"></span>
-              <select name="categories" [(ngModel)]="city" (change)="location='0'">
-                <option value="0" hidden>{{'chooseCity'| translate}}</option>
+              <select name="categories" [(ngModel)]="city" (change)="setCityId(city)">
+                <option [ngValue]="initialValue" >{{'chooseCity'| translate}}</option>
                 <option *ngFor="let c of cities" [ngValue]="c">{{c.name}}</option>
               </select>
             </span>
-            <span class="location">
+            <span *ngIf="city!=undefined" class="location">
               <!-- <span class="ti-location-pin"></span> -->
               <span class="ti-angle-down"></span>
 
               <!-- <input [(ngModel)]="location" type="text" placeholder="{{'location'| translate}}" name="location"> -->
               <select name="location" [(ngModel)]="location">
-                <option value="0" hidden>{{'location'| translate}}</option>
-                <option *ngFor="let l of city?.locations" [ngValue]="l">{{l.name}}</option>
+                <option hidden value="" [selected]="isSelected">{{'location'| translate}}</option>
+                <option *ngFor="let l of city?.locations" [ngValue]="l.id">{{l.name}}</option>
               </select>
             </span>
             <button (click)="volumeFilter()" class="search-btn">{{'apply'| translate}}</button>

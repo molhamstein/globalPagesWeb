@@ -17,19 +17,23 @@ export class VolumeComponent implements OnInit {
   categories:any[];
   cities:any[];
 
-  category :any= '0';
-  subCategory:any = '0';
-  city:any='0';
-  location:any ='0';
+  city;
+  category ;
+  cityId ='';
+  categoryId='';
+  initialValue;
+  subCategory="";
+  location="";
   searchText:string = '';
 
   nextDisabled=true;
   volumeFilter(){
-    this.cds.filterItem['categoryId'] = this.category['id'];
-    this.cds.filterItem['subCatId'] = this.subCategory['id'];
-    this.cds.filterItem['cityId']= this.city['id'];
-    this.cds.filterItem['locationId'] = this.location['id'];
+    this.cds.filterItem['categoryId'] = this.categoryId;
+    this.cds.filterItem['subCatId'] = this.subCategory;
+    this.cds.filterItem['cityId']= this.cityId;
+    this.cds.filterItem['locationId'] = this.location;
     this.cds.filterItem['keywords'] = this.searchText;
+    
   }
 
   // @Input() categories:Object[];
@@ -43,6 +47,7 @@ export class VolumeComponent implements OnInit {
     .subscribe(res =>{
       if(res[0]!=undefined){
         this.data = res[0];
+        this.data.posts = this.data.posts.filter(e => { return e.status == 'activated' });
         this.title = this.data['titleEn']
         if (this.ts.currentLang=='ar'){
           this.title = this.data['titleAr']
@@ -69,7 +74,22 @@ export class VolumeComponent implements OnInit {
     this.nextDisabled = false;
     this.getVolumeData(1);
   }
-  
+  setCityId(c) {
+    if (c != undefined) {
+      this.cityId = c['id'];
+    }else{
+      this.cityId='';
+      this.location='';
+    }
+  }
+  setCategoryId(c) {
+    if (c != undefined) {
+      this.categoryId = c['id'];
+    }else{
+      this.categoryId='';
+      this.subCategory='';
+    }
+  }  
   ngOnInit() {
     this.getVolumeData(0)
     // this.cds.categoriesObservable.subscribe(res => this.categories =<Object[]> res);
