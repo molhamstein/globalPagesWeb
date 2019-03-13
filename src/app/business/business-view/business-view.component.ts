@@ -15,7 +15,7 @@ export class BusinessViewComponent implements OnInit {
   lang
   id
   business
-
+  toggle1=true
   ngOnInit() {
     this.lang=this.translteService.currentLang
     this.translteService.onLangChange.subscribe(()=>{

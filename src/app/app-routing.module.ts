@@ -9,15 +9,16 @@ import {AdViewComponent} from './ad/ad-view/ad-view.component';
 import {AdCreateComponent} from './ad/ad-create/ad-create.component';
 import {GuideComponent} from './business/guide/guide.component';
 import { AdDataResolverService} from './ad-data-resolver.service';
+import {AuthService} from './authentication/auth.service';
 const routes: Routes = [
   {path:'auth',loadChildren:'./authentication/authentication.module#AuthenticationModule'},
   {path:'',component:HomeScreenComponent},
-  {path:'business/create',component:BusinessCreateComponent},
+  {path:'business/create',component:BusinessCreateComponent,canActivate:[AuthService]},
   {path:'business/:id',component:BusinessViewComponent},
-  {path:'profile/:id',component:ProfileViewComponent},
-  {path:'profile/:id/edit',component:ProfileEditComponent},
-  {path:'ad/create',component:AdCreateComponent},
-  { path: 'ad/:id', component: AdViewComponent, resolve: { adData: AdDataResolverService } },
+  {path:'profile/:id',component:ProfileViewComponent,canActivate:[AuthService]},
+  {path:'profile/:id/edit',component:ProfileEditComponent,canActivate:[AuthService]},
+  {path:'ad/create',component:AdCreateComponent,canActivate:[AuthService]},
+  { path: 'ad/:id', component: AdViewComponent, resolve: { adData: AdDataResolverService} },
   {path:'guide',component:GuideComponent},
 
 ];

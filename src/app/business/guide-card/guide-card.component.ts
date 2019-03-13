@@ -25,6 +25,9 @@ export class GuideCardComponent implements OnInit {
     if (this.post.hasOwnProperty('id')){
       this.data['id'] = this.post['id'];
     }
+    if (this.post.hasOwnProperty('nameUnique')){
+      this.data['nameUnique'] = this.post['nameUnique'];
+    }
 
     if(this.tr.currentLang=='ar'){
       if (this.post.hasOwnProperty('nameAr')){

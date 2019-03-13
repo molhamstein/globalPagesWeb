@@ -3,11 +3,19 @@ import {Observable, Subject} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {format} from "date-fns";
 import {RequestsService} from '../requests.service';
+import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements CanActivate{
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    if(!this.isLogin){
+      this.router.navigate(['auth','login'])
+      return false
+    }
+    return true;
+  }
   isLogin=false
   private _userData;
   private _userDataSubject=new Subject()
@@ -18,7 +26,7 @@ export class AuthService {
       this._userDataSubject.subscribe(o)
   });
   logInData;
-  constructor(private api:RequestsService) {
+  constructor(private api:RequestsService,private router:Router) {
     if(localStorage.getItem(environment.userDetails)){
       this.logInData=JSON.parse(localStorage.getItem(environment.userDetails))
       this.isLogin=true;
@@ -35,6 +43,7 @@ export class AuthService {
     localStorage.clear()
     this.isLogin=false
     this._login.next(false)
+    this.router.navigate(['auth','login'])
   }
 
   loginStatus=new Observable(o=>{

@@ -29,7 +29,9 @@
       <div class="col-md-4">
         <div class="title-left">
           <div class="btn-more">
-            <a href="#" title="">تواصل معنا</a>
+            <a *ngIf="toggle1" (click)="toggle1= ! toggle1" href="" title="">{{'getInTouch' | translate}}</a>
+
+            <a *ngIf="!toggle1" class="phone-arab-dir" href="tel:{{business?.phone1}}">{{business?.phone1}} <i class="fa fa-phone" style="margin-left:12px" aria-hidden="true"></i></a>
           </div>
           <div class="clearfix"></div>
         </div>
@@ -48,7 +50,7 @@
     <div class="row">
       <div class="col-md-8">
         <div class="text-box">
-          <h3>حول هذه القائمة</h3>
+          <h3>{{'about' | translate}}</h3>
           <div class="text-desc">
            {{business?.description}}
           </div>
@@ -99,17 +101,43 @@
           <div class="box pdmap style1" id="flat-map-4" *ngIf="business?.locationPoint">
             <app-location-picker [disabled]="true" [(ngModel)]="business.locationPoint" [options]="{center:[business?.locationPoint?.lat,business?.locationPoint?.lng]}" name="locationPoint"></app-location-picker>
           </div>
-          <!-- /#flat-map -->
-          <!--<div class="box open">-->
-            <!--<p>-->
-              <!--<i class="fa fa-clock-o" aria-hidden="true"></i>ساعات العمل:</p>-->
-            <!--<div class="box-desc">-->
+          <!-- /#flat-m ap -->
+          <div class="box open" *ngIf="business?.openingDaysEnabled">
+            <p><i class="fa fa-clock-o" aria-hidden="true"></i>{{'openingDays'| translate}}:</p>
+            <div class="box-desc">
+              <p>
+                <ng-container *ngFor="let day of business?.openingDays;let i=index">
+                  <div class="tag">
+                  <span *ngIf="day==0+1">
+                    {{'sunday' | translate}}
+                  </span>
+                  <span *ngIf="day==1+1">
+                    {{'monday' | translate}}
+                  </span>
+                  <span *ngIf="day==2+1">
+                    {{'tuesday' | translate}}
+                  </span>
+                  <span *ngIf="day==3+1">
+                    {{'wednesday' | translate}}
+                  </span>
+                  <span *ngIf="day==4+1">
+                    {{'thursday' | translate}}
+                  </span>
+                  <span *ngIf="day==5+1">
+                    {{'friday' | translate}}
+                  </span>
+                  <span *ngIf="day==6+1">
+                    {{'saturday' | translate}}
+                  </span>
+                  </div>
+                </ng-container>
+              </p>
               <!--<p>الاثنين - الخميس</p>-->
               <!--<p>9:00 صباحاً - 12:00 مساءً-->
                 <!--<span>مغلق الأن !</span>-->
               <!--</p>-->
-            <!--</div>-->
-          <!--</div>-->
+            </div>
+          </div>
 
         </div>
       </div>

@@ -23,11 +23,11 @@
                 <li>
                   <a routerLink="/guide" title="">{{'businessGuidePage' | translate }}</a>
                 </li>
-                <li>
-                  <a routerLink="/business/create" title="">{{'addBusinessPage' | translate}}</a>
+                <li *ngIf="isLogin">
+                  <a routerLink="/business/create"  title="">{{'addBusinessPage' | translate}}</a>
 
                 </li>
-                <li>
+                <li *ngIf="isLogin">
                   <a routerLink="/ad/create" class="pulse" title="">{{'createAdPage' | translate }}</a>
                   <!--<ul class="submenu">-->
                     <!--<li>-->
@@ -40,6 +40,9 @@
                 </li>
                 <li *ngIf="!isLogin">
                   <a routerLink="/auth/signup" title="">{{'createAccount' | translate}}</a>
+                </li>
+                <li *ngIf="isLogin">
+                  <a title="" (click)="auth.logout()">{{'logout' | translate}}</a>
                 </li>
 
               </ul>

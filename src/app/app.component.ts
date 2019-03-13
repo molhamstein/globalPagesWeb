@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {ArabicTranslation} from './translation/ar';
+import {EnglishTranslation} from './translation/en';
 import {RequestsService} from './requests.service';
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent {
   {
 
     this.translate.setTranslation('ar',ArabicTranslation);
+    this.translate.setTranslation('en',EnglishTranslation);
     this.translate.setDefaultLang('en');
     this.translate.use('ar');
   }

@@ -1,0 +1,16 @@
+.tag{
+  display: inline-block;
+  background-color: #ffd400;
+  color:whitesmoke;
+  margin: 4px;
+  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: 16px;
+  align-items: center;
+  cursor: pointer;
+  min-height: 32px;
+}
+.tag span{
+  color:whitesmoke !important;
+}

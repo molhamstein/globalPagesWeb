@@ -14,7 +14,7 @@ export class NavigationComponent implements OnInit {
   logoAddress=''
   user
   isLogin
-  constructor(private translate: TranslateService,private auth:AuthService,private router:Router) { }
+  constructor(private translate: TranslateService,public auth:AuthService,private router:Router) { }
 
   ngOnInit() {
     var selectedLanguage = localStorage.getItem(environment.language);

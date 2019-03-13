@@ -32,7 +32,7 @@ export const ArabicTranslation={
   phoneNumber:'رقم الهاتف',
   featuredAds: 'إعلانات مميزة',
   homeTitle:' اكتشف أفضل الأماكن',
-  homeSubTitle:'أكتشف المزيد من النشاطات',
+  homeSubTitle:'اكتشف المزيد من النشاطات',
   searchForWhat:'عن ماذا تبحث ؟',
   location:'الموقع',
   chooseCategory:'اختر الفئة',
@@ -79,5 +79,8 @@ export const ArabicTranslation={
   privacyAndTerms: 'اتفاقية الخصوصية والشروط',
   requiredMessage:'الرجاء ملئ {{name}}',
   LOGIN_FAILED:'فشل تسجيل الدخول',
-  discoverActivitiesAroundYou:'اكتشف الفعاليات من حولك'
+  discoverActivitiesAroundYou:'اكتشف الفعاليات من حولك',
+  logout:'تسجيل الخروج',
+  about:'حول',
+  openingDays:'أيام الدوام'
 }
