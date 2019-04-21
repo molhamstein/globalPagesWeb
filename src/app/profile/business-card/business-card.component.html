@@ -1,6 +1,6 @@
 <div class="business">
   <div class="business-icon">
-    <img src="assets/images/page/paprika.jpg" />
+    <img [src]="image" />
   </div>
   <div class="business-text">
     <div class="title">
@@ -15,7 +15,7 @@
   </div>
   <div class="business-control">
     <div class="business-control-edit">
-      <a href="#">{{'edit' | translate}}
+      <a [routerLink]="['/business',business['nameUnique'],'edit']">{{'edit' | translate}}
         <i class="fa fa-pencil" aria-hidden="true"></i>
       </a>
     </div>

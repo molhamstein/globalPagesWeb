@@ -1,0 +1,15 @@
+<div class="sidebar">
+  <div class="involve" *ngIf="products?.length>0">
+
+    <ul>
+      <li class="box" *ngFor="let product of products;let i=index">
+        <div class="col-xs-10">
+          <app-involve-box [product]="product"></app-involve-box>
+        </div>
+        <div class="col-xs-2" style="position: relative">
+          <span class="btn-close ti-close"(click)="deleteProduct(i)" style="position:absolute;top:30px"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

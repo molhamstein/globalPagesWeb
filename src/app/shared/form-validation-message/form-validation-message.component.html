@@ -1,10 +1,13 @@
-<div *ngIf="control.invalid && (control.dirty || control.touched || form.submitted)">
+<div *ngIf="control.invalid && (control.dirty || control.touched || form?.submitted)" style="position: relative">
 
-  <ng-container *ngFor="let m of messages">
+  <div class="err-container">
+    <ng-container *ngFor="let m of messages">
 
-    <div class="alert alert-danger"  *ngIf="control &&control.errors&& control.errors[m[0]]"> {{m[1] | translate:params}}</div>
+      <div class="alert alert-danger"  *ngIf="control &&control.errors&& control.errors[m[0]]"> {{m[1] | translate:params}}</div>
 
-  </ng-container>
+    </ng-container>
+  </div>
+
 
 </div>
 

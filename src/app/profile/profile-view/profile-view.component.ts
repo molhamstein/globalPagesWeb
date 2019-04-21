@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {RequestsService} from '../../requests.service';
 import {ActivatedRoute} from '@angular/router';
 import {format} from 'date-fns'
 import {HttpParams} from '@angular/common/http';
 import {TranslateService} from '@ngx-translate/core';
+import {AuthService} from '../../authentication/auth.service';
 @Component({
   selector: 'app-profile-view',
   templateUrl: './profile-view.component.html',
@@ -11,7 +12,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class ProfileViewComponent implements OnInit {
 
-  constructor(private api:RequestsService,private route:ActivatedRoute,private translteService:TranslateService) { }
+  constructor(private api:RequestsService,private route:ActivatedRoute,private translteService:TranslateService,private auth:AuthService) { }
   user
   id
   ads
@@ -20,17 +21,28 @@ export class ProfileViewComponent implements OnInit {
   lang
   categories={}
   selectedSubCategory=[]
+  @ViewChild('myModal') modal
+  ngAfterViewInit() {
+   this.route.fragment.subscribe((f)=>{
+     console.log(f)
+     if(f=="chooseCategory")
+       setTimeout(()=>{
+         this.modal.open();
+       })
+   })
+
+  }
   ngOnInit() {
     this.lang=this.translteService.currentLang
     this.translteService.onLangChange.subscribe(()=>{
       this.lang=this.translteService.currentLang
     })
-    this.route.params.subscribe((params)=>{
-      this.id=params['id']
+    this.auth.userData.subscribe((data)=>{
+      this.id=data['id']
       // this.api.get('users').toPromise().then((data)=>{
       //
       // })
-      this.api.get('users/'+params['id']).toPromise().then((data)=>{
+      this.api.get('users/'+data['id']).toPromise().then((data)=>{
         data['birthDate']= format(new Date(data['birthDate']),'DD-MM-YYYY')
         this.user=data;
         this.user['postCategoriesIds'].forEach((id)=>{

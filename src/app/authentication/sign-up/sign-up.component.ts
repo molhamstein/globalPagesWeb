@@ -4,6 +4,7 @@ import {environment} from '../../../environments/environment';
 import {FormGroup} from '@angular/forms';
 import {passwordMatcher} from '../../shared/passwordMatcher/password-matcher';
 import {Router} from '@angular/router';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,7 +13,7 @@ import {Router} from '@angular/router';
 })
 export class SignUpComponent implements OnInit,AfterViewInit {
 
-  constructor(private http:HttpClient,private router:Router) { }
+  constructor(private http:HttpClient,private router:Router,private auth:AuthService) { }
 
   ngOnInit() {
   }
@@ -27,8 +28,9 @@ export class SignUpComponent implements OnInit,AfterViewInit {
     if(!this.form.invalid){
       this.http.post(environment.api+'users',data).toPromise().then((data1)=>{
         this.http.post(environment.api+'users/login',{email:data["email"],password:data["password"]}).toPromise().then((data2)=>{
-          localStorage.setItem(environment.userDetails,JSON.stringify(data2));
-          this.router.navigate(['profile',data2["userId"]]);
+          // localStorage.setItem(environment.userDetails,JSON.stringify(data2));
+          this.auth.logIn(data2);
+          this.router.navigate(['profile'],{fragment:'chooseCategory'});
         })
         // this.router.navigate(['auth/login'])
       })

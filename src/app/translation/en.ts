@@ -82,5 +82,8 @@ export const EnglishTranslation={
   discoverActivitiesAroundYou:'discover activities around you',
   logout:'log out',
   about:'about',
-  openingDays:'opening days'
+  openingDays:'opening days',
+  checkYourEmailForLink:'An email have been sent to this email address, check your inbox',
+  businessImages:"businessImages",
+  editProducts:"edit products"
 }

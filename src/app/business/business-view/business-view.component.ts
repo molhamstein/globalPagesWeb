@@ -37,6 +37,10 @@ export class BusinessViewComponent implements OnInit {
     })
   }
 
+  productChanged(products){
+
+  }
+
 }
 // nameEn: "name", nameAr: "bla bla", nameUnique: "bla", logo: "logo.png", status: "activated",…}
 // category: {code: "default", titleAr: "مطاعم", titleEn: "Restaurants", creationDate: "2018-08-26T07:55:06.904Z",…}

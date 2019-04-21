@@ -91,13 +91,19 @@
             </ul>
           </div>
           <div class="involve" *ngIf="business?.products?.length>0">
-            <h4>{{'ServicesAndProducts' | translate}}</h4>
-            <ul>
-              <li class="box" *ngFor="let product of business?.products">
-                <app-involve-box [product]="product"></app-involve-box>
-              </li>
-            </ul>
+          <h4>{{'ServicesAndProducts' | translate}}</h4>
+          <ul>
+            <li class="box" *ngFor="let product of business?.products">
+              <app-involve-box [product]="product"></app-involve-box>
+            </li>
+          </ul>
+        </div>
+        <div class="involve" style="margin-bottom: 50px">
+          <div class="btn-more">
+            <a title="" (click)="myModal.open()">{{'editProducts' | translate}}</a>
           </div>
+        </div>
+
           <div class="box pdmap style1" id="flat-map-4" *ngIf="business?.locationPoint">
             <app-location-picker [disabled]="true" [(ngModel)]="business.locationPoint" [options]="{center:[business?.locationPoint?.lat,business?.locationPoint?.lng]}" name="locationPoint"></app-location-picker>
           </div>
@@ -148,3 +154,19 @@
   <!-- /.container -->
 </section>
 <!-- /.flat-explore-detail <-->
+
+<modal #myModal>
+  <modal-header>
+    <h3>{{'ServicesAndProducts' | translate}}</h3>
+  </modal-header>
+  <modal-content>
+    <div class="row">
+      <div class="col-xs-12">
+        <app-business-products [products]="business?.products" (productHasChanged)="productChanged($event)"></app-business-products>
+      </div>
+    </div>
+  </modal-content>
+  <modal-footer>
+      <button class="btn btn-primary" (click)="myModal.close()">{{'close'|translate}}</button>
+  </modal-footer>
+</modal>

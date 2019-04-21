@@ -37,6 +37,7 @@ export class AuthService implements CanActivate{
     localStorage.setItem(environment.userDetails,JSON.stringify(data));
     this.logInData=data
     this.isLogin=true;
+    this._login.next(true);
     this.getUserData()
   }
   logout(){
@@ -59,5 +60,9 @@ export class AuthService implements CanActivate{
       this._userDataSubject.next(data)
       this._login.next(true)
     })
+  }
+  updateUserData(userData){
+    this._userData=userData;
+    this._userDataSubject.next(userData)
   }
 }

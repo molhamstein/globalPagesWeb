@@ -19,15 +19,16 @@
 <div class="container-fluid without-padding cloudy-bg">
   <div class="col-md-12 without-padding">
     <div class="profile-image-container">
-      <div class="change-image">{{'edit' | translate}} </div>
-      <img class="profile-img" src="http://via.placeholder.com/150x150" />
+      <!--<div class="change-image">{{'edit' | translate}} </div>-->
+      <img class="profile-img" *ngIf="!user?.imageProfile" src="http://via.placeholder.com/150x150" />
+      <img class="profile-img" *ngIf="user?.imageProfile" [src]="user?.imageProfile" />
     </div>
     <div class="col-md-12 text-center">
       <div class="">
         {{'addedAds' | translate}}
       </div>
       <div class="ads-count">
-        12
+       {{ads?.length}}
       </div>
     </div>
   </div>
@@ -74,7 +75,7 @@
               </div>
               <div class="clearfix"></div>
               <div class="col-md-12 text-left">
-                <a [routerLink]="['/profile',id,'edit']">{{'editData' | translate}}</a>
+                <a [routerLink]="['/profile','edit']">{{'editData' | translate}}</a>
               </div>
 
             </div>
@@ -116,7 +117,7 @@
         <!--<div class="col-md-12 subs">-->
           <!--<app-category-selector></app-category-selector>-->
         <!--</div>-->
-        <div class="col-md-12 subs">
+        <div class="col-md-12 subs" id="chooseCategory">
           <div class="inner-box subscribed-list">
             <div class="subscribed">
               <div class="title">
@@ -145,3 +146,15 @@
   </section>
   <!-- /.flat-listing -->
 </section>
+
+<modal #myModal>
+  <modal-header>
+    <h3>{{'mySubscription' | translate}}</h3>
+  </modal-header>
+  <modal-content>
+    <app-category-selector [categories]="postCategories" [selectedSubCategory]="user?.postCategoriesIds" (changed)="editCat($event)"></app-category-selector>
+  </modal-content>
+  <modal-footer>
+    <button class="btn btn-primary" (click)="myModal.close()">{{'close'|translate}}</button>
+  </modal-footer>
+</modal>

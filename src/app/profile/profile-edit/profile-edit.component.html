@@ -19,8 +19,10 @@
 <div class="container-fluid without-padding cloudy-bg">
   <div class="col-md-12 without-padding">
     <div class="profile-image-container">
-      <div class="change-image">{{'edit' | translate}} </div>
-      <img class="profile-img" src="http://via.placeholder.com/150x150" />
+      <div class="change-image" (click)="editImage()">{{'edit' | translate}}</div>
+      <input type="file" hidden #file (change)="imageChanged()"/>
+        <img class="profile-img" *ngIf="!user['imageProfile'] || !showImage" src="http://via.placeholder.com/150x150" />
+        <img class="profile-img" *ngIf="user['imageProfile'] && showImage" [src]="user['imageProfile']" />
     </div>
   </div>
   <!-- /.col-md-12 -->
@@ -89,7 +91,7 @@
 
               <div class="clearfix"></div>
               <div class="col-md-12">
-                <button  type="submit" [disabled]="form.invalid && form.submitted">
+                <button  type="submit" [disabled]="f.invalid && f.submitted">
                   <div class="btn-more submit-button">
                     <a >{{'save' | translate}}</a>
                   </div>

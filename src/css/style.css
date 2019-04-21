@@ -1722,3 +1722,9 @@ ng-select .ng-input,ng-select input{
   padding: 0 !important;
 }
 
+img.avatar-content{
+  height:inherit;
+}
+div.modal{
+  z-index:9999999999999999999999999;
+}

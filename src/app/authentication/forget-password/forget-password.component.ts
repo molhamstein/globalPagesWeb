@@ -11,13 +11,14 @@ export class ForgetPasswordComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
   @ViewChild('form') form
+  verificationCode=false
   ngOnInit() {
   }
   submit(data)
   {
     if(this.form.valid)
       this.http.post(environment.api+'users/forgotPassword',data).toPromise().then((data)=>{
-
+        this.verificationCode=true;
       })
   }
 

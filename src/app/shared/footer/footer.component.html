@@ -11,7 +11,7 @@
           <p>
             دليلك الالكتروني الاكثر شمولا في سوريا
           </p>
-        </div> 
+        </div>
         <!-- /.widget-about -->
       </div>
       <div class="col-md-4">
@@ -34,9 +34,11 @@
       <!-- /.col-md-3 -->
       <div class="col-md-4">
         <div class="widget widget-categories">
-          <h4 class="widget-title"><a style="color:white" href="http://almersal.co/privacy">{{'privacyAndTerms' |
-              translate}}</a>
-            </h4>
+          <h4 class="widget-title">
+
+            <a *ngIf="lang=='ar'" style="color:white" target="_blank" href="http://almersal.co/privacy/policy_ar.html">{{'privacyAndTerms' |translate}}</a>
+            <a *ngIf="lang=='en'" style="color:white" target="_blank" href="http://almersal.co/privacy/policy_en.html">{{'privacyAndTerms' |translate}}</a>
+          </h4>
 
         </div>
       </div>

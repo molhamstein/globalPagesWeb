@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 import {AuthService} from '../../authentication/auth.service';
@@ -14,7 +14,7 @@ export class NavigationComponent implements OnInit {
   logoAddress=''
   user
   isLogin
-  constructor(private translate: TranslateService,public auth:AuthService,private router:Router) { }
+  constructor(private translate: TranslateService,public auth:AuthService,private router:Router,private CD:ChangeDetectorRef) { }
 
   ngOnInit() {
     var selectedLanguage = localStorage.getItem(environment.language);
@@ -35,7 +35,13 @@ export class NavigationComponent implements OnInit {
       this.isLogin=login
     })
     this.auth.userData.subscribe(data=>{
-      this.user=data;
+      this.user=null;
+      setTimeout(()=>{
+        this.user=data;
+        console.log(data)
+        this.CD.markForCheck()
+        this.CD.detectChanges()
+      })
     })
   }
   changeLang(lang) {
@@ -46,7 +52,7 @@ export class NavigationComponent implements OnInit {
     }
   }
   goToProfile(){
-    this.router.navigate(['profile',this.user['id']])
+    this.router.navigate(['profile'])
   }
 
 }

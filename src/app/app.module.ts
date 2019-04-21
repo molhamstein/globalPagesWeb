@@ -45,6 +45,9 @@ import { LocationPickerComponent } from './business/location-picker/location-pic
 import { LightboxModule } from 'ngx-lightbox';
 import {AvatarModule} from 'ngx-avatar';
 import {CategorySelectorComponent} from './profile/category-selector/category-selector.component';
+import { BusinessEditComponent } from './business/business-edit/business-edit.component';
+import {ModalModule} from 'ngx-modal';
+import { BusinessProductsComponent } from './business/business-products/business-products.component';
 
 
 @NgModule({
@@ -73,7 +76,9 @@ import {CategorySelectorComponent} from './profile/category-selector/category-se
     MapMarkerComponent,
     WorkingHourInputComponent,
     LocationPickerComponent,
-    CategorySelectorComponent
+    CategorySelectorComponent,
+    BusinessEditComponent,
+    BusinessProductsComponent
 
   ],
   imports: [
@@ -89,7 +94,8 @@ import {CategorySelectorComponent} from './profile/category-selector/category-se
     BrowserAnimationsModule,
     InputFileModule.forRoot({}),
     NgSelectModule,
-    AvatarModule
+    AvatarModule,
+    ModalModule
   ],
   entryComponents: [MapMarkerComponent],
   providers: [RequestsService,CommonDataService],

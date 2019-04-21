@@ -1,6 +1,6 @@
 <div class="ads">
   <div class="ads-icon">
-    <img src="assets/images/page/villa.jpg" />
+    <img [src]="ad['media'][0]['url']" />
   </div>
   <div class="ads-text">
     <div class="title">
@@ -14,12 +14,12 @@
   </div>
   <div class="ads-control">
     <div class="ads-control-edit">
-      <a href="#">{{'edit' | translate}}
+      <a [routerLink]="['/ad',ad['id'],'edit']">{{'edit' | translate}}
         <i class="fa fa-pencil" aria-hidden="true"></i>
       </a>
     </div>
     <div class="ads-control-delete">
-      <a href="#">{{'delete' | translate}}
+      <a >{{'delete' | translate}}
         <i class="fa fa-trash-o" aria-hidden="true"></i>
       </a>
     </div>

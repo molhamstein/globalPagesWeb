@@ -185,7 +185,7 @@
                 <div class="clearfix"></div>
                 <div class="wrap-listing half">
                   <div class="col-12">
-                    <label>Your Business Images</label>
+                    <label>{{'businessImages'| translate}}</label>
                     <input-file fileAccept="image/*" [fileLimit]="20" (change)="onFileAdded($event.srcElement.files)"></input-file>
                   </div>
                   <!--<div class="browse ">-->
@@ -202,7 +202,7 @@
               <div class="col-md-12">
                 <button type="submit" style="display: contents;" [disabled]="form.submitted && form.invalid">
                   <div class="btn-more submit-button">
-                    <a >تسجيل الإعلان</a>
+                    <a >{{'registerAd'| translate}}</a>
                   </div>
                 </button>
 

@@ -24,6 +24,8 @@
                 </label>
               </div>
               <a [routerLink]="'/auth/forget'" class="forgot" title="">{{'forgetPassword' | translate}}</a>
+
+              <a [routerLink]="'/auth/signup'" class="forgot" title="">{{'createAccount' | translate}}&nbsp; &nbsp; &nbsp;</a>
             </div>
             <button type="submit" [disabled]="form.invalid && form.submitted">
               <div class="btn-more" >

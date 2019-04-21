@@ -1,18 +1,17 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {RequestsService} from '../../requests.service';
-import {TranslateService} from '@ngx-translate/core';
-import {HttpHeaders, HttpParams} from '@angular/common/http';
+import {ActivatedRoute, Router} from '@angular/router';
 import {environment} from '../../../environments/environment';
-import {Router} from '@angular/router';
-
+import {TranslateService} from '@ngx-translate/core';
+import {RequestsService} from '../../requests.service';
+import {HttpParams} from '@angular/common/http';
+import { latLng } from 'leaflet';
 @Component({
-  selector: 'app-business-create',
-  templateUrl: './business-create.component.html',
-  styleUrls: ['./business-create.component.css']
+  selector: 'app-business-edit',
+  templateUrl: './business-edit.component.html',
+  styleUrls: ['./business-edit.component.css']
 })
-export class BusinessCreateComponent implements OnInit {
-
-  constructor(private api:RequestsService,private translteService:TranslateService,private router:Router) { }
+export class BusinessEditComponent implements OnInit {
+  constructor(private api:RequestsService,private translteService:TranslateService,private router:Router,private route:ActivatedRoute) { }
   categories
   subCategories
   selectedCategory
@@ -22,8 +21,29 @@ export class BusinessCreateComponent implements OnInit {
   locations
   locationId
   subCategoryId
+  id
+  business:any={}
   @ViewChild('form') form
   ngOnInit() {
+    // get data if there is an id
+    this.route.params.subscribe((params)=>{
+      this.id=params['id']
+      if(!this.id)
+        return
+      var p=new HttpParams();
+      p=p.set('filter',JSON.stringify({
+        "where":{
+          "or":[{"nameUnique" : this.id},{"id" : this.id}]},
+        "include":"subCategory"
+      }));
+      this.api.get('businesses',p).subscribe((data)=>{
+        this.business=data[0]
+        this.business.locationPoint=latLng(this.business.locationPoint)
+        this.cityChanged()
+        this.onCategoryChange()
+      })
+    })
+
     this.lang=this.translteService.currentLang
 
     var p=new HttpParams();
@@ -55,12 +75,12 @@ export class BusinessCreateComponent implements OnInit {
       for (let i = 0; i < this.files.length; i++) {
         images.append('file', this.files[i]);
       }
-      this.api.post('attachments/images/upload', images).subscribe(res => {
-            data['media']=res
-            this.api.post('businesses',data).subscribe(data=>{
-               this.router.navigate(['business',data['id']])
-            })
-          })
+      this.api.post('attachments/images/upload', images).subscribe((res:any) => {
+        data['media']=res.cancat(this.business['media'])
+        this.api.put('businesses/'+this.id,data).subscribe(data=>{
+          this.router.navigate(['business',data['id']])
+        })
+      })
     }
     else{
       this.api.post('businesses',data).subscribe(data=>{
@@ -76,16 +96,17 @@ export class BusinessCreateComponent implements OnInit {
     this.files=files
   }
   onCategoryChange(){
-    this.subCategoryId=null
-    console.log(this.selectedCategory)
-    this.subCategories=this.categories[this.selectedCategory]['subCategories']
+   // this.business['subCategoryId']=null
+    console.log(this.business['categoryId']);
+    var cat=this.categories.find((v)=>{if(v['id']==this.business['categoryId']) return true})
+    this.subCategories=cat['subCategories']
   }
   cityChanged(){
-    this.locationId=null
+    // this.business['locationId']=null
     var p=new HttpParams()
     p=p.set('filter',JSON.stringify({
       where:{
-        cityId:this.selectedCity
+        cityId: this.business['cityId']
       }
     }))
     this.locations=[]

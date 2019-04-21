@@ -82,5 +82,15 @@ export const ArabicTranslation={
   discoverActivitiesAroundYou:'اكتشف الفعاليات من حولك',
   logout:'تسجيل الخروج',
   about:'حول',
-  openingDays:'أيام الدوام'
+  openingDays:'أيام الدوام',
+  checkYourEmailForLink:'تم ارسال رسالةإلى هذا البريد الالكتروني, تفقد صندوق الرسائل خاصتك',
+  sunday:'الأحد',
+  monday:'الاثنين',
+  tuesday:'الثلاثاء',
+  wednesday:'الأربعاء',
+  thursday:'الخميس',
+  friday:'الجمعة',
+  saturday:'السبت',
+  businessImages:"صور النشاط التجاري",
+  editProducts:"تعديل المنتجات"
 }
