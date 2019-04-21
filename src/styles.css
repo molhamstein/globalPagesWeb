@@ -61,7 +61,7 @@ input[hidden]{
 }
 .featured-ads-box{
   border-radius: 7px;
-box-shadow: 0 3px 12px #666;
+box-shadow: 0 0px 16px #aaa;
 overflow: hidden;
 }
 .owl-theme .owl-controls .owl-nav div.owl-next{
@@ -88,4 +88,7 @@ overflow: hidden;
 }
 .owl-carousel .owl-item{
   min-height: 335px;
+}
+.owl-carousel .owl-stage {
+  padding-bottom: 20px
 }

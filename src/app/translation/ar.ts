@@ -72,7 +72,7 @@ export const ArabicTranslation={
   phoneNumber1:'رقم الهاتف الاول',
   phoneNumber2:'رقم الهاتف الثاني',
   faxNumber:'رقم الفاكس',
-  workingHours:'ساعات العمل',
+  workingHours:'أيام المناوبة',
   address:'العنوان',
 
   contactInfo:'معلومات الإتصال',
