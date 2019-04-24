@@ -20,9 +20,22 @@
       </a>
     </div>
     <div class="business-control-delete">
-      <a href="#">{{'delete' | translate}}
+      <a (click)="removeModal.open()">{{'delete' | translate}}
         <i class="fa fa-trash-o" aria-hidden="true"></i>
       </a>
     </div>
   </div>
 </div>
+
+<modal #removeModal>
+  <modal-header>
+    <h3>{{'remove' | translate}}</h3>
+  </modal-header>
+  <modal-content>
+    {{"removeConfirmation"|translate}}
+  </modal-content>
+  <modal-footer>
+    <button class="btn btn-danger" (click)="remove()">{{'remove'|translate}}</button>
+    <button class="btn btn-primary" (click)="removeModal.close()">{{'close'|translate}}</button>
+  </modal-footer>
+</modal>

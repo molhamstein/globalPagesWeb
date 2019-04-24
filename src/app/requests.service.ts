@@ -34,5 +34,10 @@ export class RequestsService {
   put(name,data) {
     return this.http.put(this.api + name,data);
   }
+  delete(name,id?){
+    if(id)
+      name+='\\'+id;
+    return this.http.delete(this.api + name);
+  }
 
 }

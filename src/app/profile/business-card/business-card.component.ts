@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -9,6 +9,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class BusinessCardComponent implements OnInit {
 
   constructor(private translteService:TranslateService) { }
+  @Output() onRemove=new EventEmitter();
   @Input('business') set setbusiness(b){
     this.business=b;
     if(b['logo'])
@@ -24,6 +25,9 @@ export class BusinessCardComponent implements OnInit {
     this.translteService.onLangChange.subscribe(()=>{
       this.lang=this.translteService.currentLang
     })
+  }
+  remove(){
+    this.onRemove.emit(this.business);
   }
 
 }

@@ -42,13 +42,14 @@ import {InputFileModule} from 'ngx-input-file';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocationPickerComponent } from './business/location-picker/location-picker.component';
 
-import { LightboxModule } from 'ngx-lightbox';
+import { LightboxModule as lb } from 'ngx-lightbox';
 import {AvatarModule} from 'ngx-avatar';
 import {CategorySelectorComponent} from './profile/category-selector/category-selector.component';
 import { BusinessEditComponent } from './business/business-edit/business-edit.component';
 import {ModalModule} from 'ngx-modal';
 import { BusinessProductsComponent } from './business/business-products/business-products.component';
-
+import {GalleryModule} from '@ngx-gallery/core';
+import { LightboxModule } from  '@ngx-gallery/lightbox';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,8 @@ import { BusinessProductsComponent } from './business/business-products/business
 
   ],
   imports: [
+    GalleryModule,
+    lb,
     LightboxModule,
     BrowserModule,
     AppRoutingModule,

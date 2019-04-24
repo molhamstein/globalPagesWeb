@@ -92,5 +92,12 @@ export const ArabicTranslation={
   friday:'الجمعة',
   saturday:'السبت',
   businessImages:"صور النشاط التجاري",
-  editProducts:"تعديل المنتجات"
+  editProducts:"تعديل المنتجات",
+  name:"الاسم",
+  description:"الوصف",
+  add:"إضافة",
+  close:"إغلاق",
+  reset:"تراجع",
+  removeConfirmation:'هل تريد الحذف ؟',
+  remove:'حذف',
 }

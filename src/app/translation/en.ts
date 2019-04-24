@@ -85,5 +85,11 @@ export const EnglishTranslation={
   openingDays:'opening days',
   checkYourEmailForLink:'An email have been sent to this email address, check your inbox',
   businessImages:"businessImages",
-  editProducts:"edit products"
+  editProducts:"edit products",
+  name:"name",
+  description:"description",
+  add:"add",
+  close:"close",
+  reset:"reset",
+  removeConfirmation:'Are you sure to remove ?'
 }

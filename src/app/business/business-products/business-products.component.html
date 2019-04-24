@@ -1,15 +1,27 @@
 <div class="sidebar">
-  <div class="involve" *ngIf="products?.length>0">
-
+  <div class="">
+    <button class="btn btn-primary" style="margin: 20px" (click)="add()">{{'add'|translate}}</button>
+  </div>
+  <div class="involve" *ngIf="_products?.length>0" style="max-height: 200px;overflow-y: scroll">
     <ul>
-      <li class="box" *ngFor="let product of products;let i=index">
+      <li class="box" *ngFor="let product of _products;let i=index">
         <div class="col-xs-10">
-          <app-involve-box [product]="product"></app-involve-box>
+          <app-involve-box [product]="product" (click)="index=i"></app-involve-box>
         </div>
         <div class="col-xs-2" style="position: relative">
           <span class="btn-close ti-close"(click)="deleteProduct(i)" style="position:absolute;top:30px"></span>
         </div>
       </li>
     </ul>
+  </div>
+  <div *ngIf="_products&&_products[index]">
+    <div class="wrap-listing">
+      <label> {{"name" | translate}}</label>
+      <input type="text" [(ngModel)]="_products[index]['name']" required>
+    </div>
+    <div class="wrap-listing">
+      <label> {{"description" | translate}}</label>
+      <input type="text"  [(ngModel)]="_products[index]['description']" required>
+    </div>
   </div>
 </div>

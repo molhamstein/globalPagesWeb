@@ -107,8 +107,8 @@
               <h3>My business</h3>
             </div>
 
-            <ng-container *ngFor="let business of businesses">
-              <app-business-card [business]="business"></app-business-card>
+            <ng-container *ngFor="let business of businesses;let i=index">
+              <app-business-card [business]="business" (onRemove)="removeBusiness(business,i)"></app-business-card>
             </ng-container>
           </div>
         </div>
@@ -158,3 +158,5 @@
     <button class="btn btn-primary" (click)="myModal.close()">{{'close'|translate}}</button>
   </modal-footer>
 </modal>
+
+

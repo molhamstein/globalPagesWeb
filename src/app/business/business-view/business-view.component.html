@@ -57,8 +57,8 @@
         </div>
         <div class="col-md-12">
           <div class="imageGallery1">
-            <a href="{{image?.url}}"  *ngFor="let image of business?.media" target="_blank">
-              <img src="{{image?.url}}" alt="Gallery image 1" />
+            <a *ngFor="let image of business?.covers;let i=index" [lightbox]="i">
+              <img src="{{image?.thumbnail}}" alt="Gallery image 1"  />
             </a>
           </div>
         </div>
@@ -98,9 +98,9 @@
             </li>
           </ul>
         </div>
-        <div class="involve" style="margin-bottom: 50px">
+        <div class="involve" style="margin-bottom: 50px" *ngIf="isOwner()">
           <div class="btn-more">
-            <a title="" (click)="myModal.open()">{{'editProducts' | translate}}</a>
+            <a title="" (click)="productsModal.open()">{{'editProducts' | translate}}</a>
           </div>
         </div>
 
@@ -155,18 +155,20 @@
 </section>
 <!-- /.flat-explore-detail <-->
 
-<modal #myModal>
+<modal #productsModal modalClass="modal-lg">
   <modal-header>
     <h3>{{'ServicesAndProducts' | translate}}</h3>
   </modal-header>
   <modal-content>
     <div class="row">
       <div class="col-xs-12">
-        <app-business-products [products]="business?.products" (productHasChanged)="productChanged($event)"></app-business-products>
+        <app-business-products [products]="business?.products" #products="products"></app-business-products>
       </div>
     </div>
   </modal-content>
   <modal-footer>
-      <button class="btn btn-primary" (click)="myModal.close()">{{'close'|translate}}</button>
+    <button class="btn btn-primary" (click)="productsModal.close();products.reset();">{{'close'|translate}}</button>
+    <!--<button class="btn btn-warning" (click)="products.reset()">{{'reset'|translate}}</button>-->
+    <button class="btn btn-success" (click)="saveProducts()">{{'save'|translate}}</button>
   </modal-footer>
 </modal>
