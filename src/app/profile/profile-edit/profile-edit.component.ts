@@ -32,7 +32,7 @@ export class ProfileEditComponent implements OnInit,AfterViewInit {
   editImage(){
     $(this.fileController.nativeElement).trigger('click')
   }
-  imageChanged(event){
+  imageChanged(){
     let images=new FormData();
     images.append('file', this.fileController.nativeElement.files[0]);
     this.api.post('attachments/images/upload', images).subscribe(res => {
