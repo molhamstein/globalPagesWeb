@@ -1,0 +1,9 @@
+<div class="notification-button">
+  <i class="fa fa-bell" (click)="showNotification=!showNotification"></i>
+  <div class="notification-counter" *ngIf="unseenCounter>0 &&!showNotification">{{unseenCounter}}</div>
+  <div [hidden]="!showNotification" class="notification-list">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let not of notifications" (click)="clickHandle(not)">{{not.message}}</li>
+    </ul>
+  </div>
+</div>

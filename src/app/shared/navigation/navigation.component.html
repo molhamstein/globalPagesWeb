@@ -9,8 +9,9 @@
               <img src="{{logoAddress}}" />
             </a>
           </div>
-          <div style="display: inline-block;margin-top: 30px;margin-right: 10px" *ngIf="isLogin && user">
+          <div style="display: inline-flex;margin-top: 30px;margin-right: 10px" *ngIf="isLogin && user">
             <ngx-avatar [name]="user['username']" [src]="user['imageProfile']" (clickOnAvatar)="goToProfile()"></ngx-avatar>
+            <app-notification></app-notification>
           </div>
           <!-- /.logo -->
           <div class="nav-wrap">

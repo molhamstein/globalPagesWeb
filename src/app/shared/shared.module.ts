@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormValidationMessageComponent} from './form-validation-message/form-validation-message.component';
 import {TranslateModule} from '@ngx-translate/core';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   imports: [
@@ -9,7 +10,7 @@ import {TranslateModule} from '@ngx-translate/core';
     TranslateModule.forChild(),
 
   ],
-  declarations: [FormValidationMessageComponent],
-  exports:[FormValidationMessageComponent]
+  declarations: [FormValidationMessageComponent, NotificationComponent],
+  exports:[FormValidationMessageComponent,NotificationComponent]
 })
 export class SharedModule { }
