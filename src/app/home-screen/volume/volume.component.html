@@ -44,7 +44,7 @@
           </form>
           <!-- /form -->
         </div>
-        <div class="col-md-12 version-arrow">
+        <div class="col-md-12 version-arrow" *ngIf="!id">
 
           <div class="left-arrow">
             <i title="Previous" (click)="prev()" class="fa fa-angle-right fa-4x pointerHover" aria-hidden="true"></i>
@@ -56,6 +56,11 @@
             <i title="Next" (click)="next()" [ngClass]="{disabled:nextDisabled}" class="fa fa-angle-left fa-4x pointerHover" aria-hidden="true"></i>
           </div>
 
+        </div>
+        <div class="col-md-12 version-arrow" *ngIf="id">
+          <div class="title " style="width: 100%">
+            <h2>{{title}}</h2>
+          </div>
         </div>
         <div class="clearfix"></div>
         <!-- /.wrap-box-search -->

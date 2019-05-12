@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import {RequestsService} from '../../requests.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonDataService } from '../../common-data.service';
+import {ActivatedRoute} from '@angular/router';
 // import { HeaderWithSearchComponent} from '../header-with-search/header-with-search.component';
 @Component({
   selector: 'app-volume',
@@ -9,14 +10,14 @@ import { CommonDataService } from '../../common-data.service';
   styleUrls: ['./volume.component.css']
 })
 export class VolumeComponent implements OnInit {
- 
-  constructor(private rs:RequestsService, private ts: TranslateService,public cds: CommonDataService) { }
+
+  constructor(private rs:RequestsService, private ts: TranslateService,public cds: CommonDataService,private route:ActivatedRoute) { }
+  id
   skip:number = 0;
   data: any = {};
   title:String = '';
   categories:any[];
   cities:any[];
-
   city;
   category ;
   cityId ='';
@@ -33,15 +34,22 @@ export class VolumeComponent implements OnInit {
     this.cds.filterItem['cityId']= this.cityId;
     this.cds.filterItem['locationId'] = this.location;
     this.cds.filterItem['keywords'] = this.searchText;
-    
+
   }
 
   // @Input() categories:Object[];
   getVolumeData(num:number){
-    var params = {
+    var params:any = {
       "filter[limit]":"1",
       "filter[skip]": (num+this.skip).toString(),
       "filter[order]":"creationDate DESC"
+    }
+    if(this.id){
+      params={
+        where:{
+          id:this.id
+        }
+      }
     }
     this.rs.get('volumes',params)
     .subscribe(res =>{
@@ -66,9 +74,9 @@ export class VolumeComponent implements OnInit {
       return;
     }
     this.getVolumeData(-1);
-    
+
   }
-  
+
   prev(){
     // console.warn(this.categories);
     this.nextDisabled = false;
@@ -89,9 +97,12 @@ export class VolumeComponent implements OnInit {
       this.categoryId='';
       this.subCategory='';
     }
-  }  
+  }
   ngOnInit() {
-    this.getVolumeData(0)
+    this.route.params.subscribe(params=>{
+      this.id=params['id']
+      this.getVolumeData(0)
+    })
     // this.cds.categoriesObservable.subscribe(res => this.categories =<Object[]> res);
     this.cds.categoriesPromise.then(res => this.categories =<Object[]> res);
     this.cds.citiesPromise.then(res => this.cities = <Object[]>res)

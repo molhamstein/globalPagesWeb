@@ -50,6 +50,7 @@ import {ModalModule} from 'ngx-modal';
 import { BusinessProductsComponent } from './business/business-products/business-products.component';
 import {GalleryModule} from '@ngx-gallery/core';
 import { LightboxModule } from  '@ngx-gallery/lightbox';
+import { VolumePageComponent } from './home-screen/volume-page/volume-page.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { LightboxModule } from  '@ngx-gallery/lightbox';
     LocationPickerComponent,
     CategorySelectorComponent,
     BusinessEditComponent,
-    BusinessProductsComponent
+    BusinessProductsComponent,
+    VolumePageComponent
 
   ],
   imports: [
