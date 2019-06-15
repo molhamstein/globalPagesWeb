@@ -14,6 +14,7 @@
   background: #fafafa;
   font-size: 15px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .notification-counter{
   position: absolute;
@@ -53,5 +54,8 @@
   background-color: #ffd400;
   outline: 1px solid slategrey;
   border-radius: 10px;
+}
+.unClicked{
+  background: #cccccc;
 }
 

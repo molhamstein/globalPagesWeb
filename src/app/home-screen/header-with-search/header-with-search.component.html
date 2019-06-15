@@ -28,7 +28,7 @@
                 <select name="categories"  [(ngModel)]="categoryID">
                   <option value="0"   >{{'chooseCategory' | translate }}</option>
                   <option *ngFor="let c of categories" [value]="c.id" >{{c.title}}</option>
-  
+
                 </select>
             </span>
             <button  (click)="filterByNavSearch()" class="search-btn">{{'search' | translate}}</button>
@@ -41,7 +41,7 @@
     <!-- /.row -->
   </div>
   <!-- /.container -->
-  <div class="overlay"></div>
+  <div class="overlay1"></div>
 </section>
 
 <!-- <section class="flat-highlights">

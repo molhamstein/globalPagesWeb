@@ -13,7 +13,7 @@ import {AuthService} from './authentication/auth.service';
 import {BusinessEditComponent} from './business/business-edit/business-edit.component';
 import {VolumeComponent} from './home-screen/volume/volume.component';
 const routes: Routes = [
-  {path:'auth',loadChildren:'./authentication/authentication.module#AuthenticationModule'},
+  {path:'auth',loadChildren:() => import('./authentication/authentication.module').then(m => m.AuthenticationModule)},
   {path:'',component:HomeScreenComponent},
   {path:'business/create',component:BusinessCreateComponent,canActivate:[AuthService]},
   {path:'business/:id',component:BusinessViewComponent},

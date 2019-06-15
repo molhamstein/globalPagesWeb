@@ -2,7 +2,7 @@
   * Name: Al-Mersal
   * Version: 1.0
 */
-
+@import "~ngx-smart-modal/ngx-smart-modal.css";
 @import url("themify-icons.css");
 @import url("font-awesome.css");
 @import url("elegant.css");
@@ -12,6 +12,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cairo:400,600,700,900');
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import "~@angular/cdk/overlay-prebuilt.css";
+
 /**
   *	Reset
   *	Repeatable Patterns
@@ -918,7 +919,7 @@ article.blog-post .featured-post a {
 	overflow: hidden;
 }
 
-article.blog-post .featured-post a .overlay {
+article.blog-post .featured-post a .overlay1 {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -943,7 +944,7 @@ article.blog-post .featured-post a img {
 			width: 100%;
 }
 
-article.blog-post:hover .featured-post a .overlay {
+article.blog-post:hover .featured-post a .overlay1 {
 	opacity: 1;
 }
 
@@ -1728,3 +1729,20 @@ img.avatar-content{
 div.modal{
   z-index:9999999999999999999999999;
 }
+.nsm-dialog{
+  top:200px;
+}
+.smart-modal-footer{
+  margin-top: 30px;
+}
+.smart-modal-header{
+  margin-right: 60px;
+  margin-top: 5px;
+}
+.smart-modal-content{
+margin:30px;
+}
+.smart-modal-footer button{
+  margin-right: 10px;
+}
+

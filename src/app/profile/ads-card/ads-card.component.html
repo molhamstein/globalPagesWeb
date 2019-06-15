@@ -19,9 +19,25 @@
       </a>
     </div>
     <div class="ads-control-delete">
-      <a >{{'delete' | translate}}
+      <a (click)="removeModal.open()">{{'delete' | translate}}
         <i class="fa fa-trash-o" aria-hidden="true"></i>
       </a>
     </div>
   </div>
 </div>
+
+<ngx-smart-modal #removeModal identifier="removeAd">
+  <div class="smart-modal-header" >
+    <h3>{{'remove' | translate}}</h3>
+  </div>
+  <div class="smart-modal-content" >
+
+    {{"removeConfirmation"|translate}}
+
+  </div>
+  <div class="smart-modal-footer">
+    <button class="btn btn-danger" (click)="remove()">{{'remove'|translate}}</button>
+    <button class="btn btn-primary" (click)="removeModal.close()">{{'close'|translate}}</button>
+  </div>
+
+</ngx-smart-modal>

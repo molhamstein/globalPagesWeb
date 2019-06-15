@@ -12,5 +12,8 @@ export class AdsCardComponent implements OnInit {
 
   ngOnInit() {
   }
+  remove(){
+
+  }
 
 }

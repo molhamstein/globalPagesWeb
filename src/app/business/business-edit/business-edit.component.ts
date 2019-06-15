@@ -23,7 +23,7 @@ export class BusinessEditComponent implements OnInit {
   subCategoryId
   id
   business:any={}
-  @ViewChild('form') form
+  @ViewChild('form',{static:false}) form
   ngOnInit() {
     // get data if there is an id
     this.route.params.subscribe((params)=>{

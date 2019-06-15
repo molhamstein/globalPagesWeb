@@ -27,15 +27,19 @@
   </div>
 </div>
 
-<modal #removeModal>
-  <modal-header>
+<ngx-smart-modal #removeModal identifier="removeBusiness">
+
+  <div class="smart-modal-header" >
     <h3>{{'remove' | translate}}</h3>
-  </modal-header>
-  <modal-content>
+  </div>
+  <div class="smart-modal-content" >
+
     {{"removeConfirmation"|translate}}
-  </modal-content>
-  <modal-footer>
+
+  </div>
+  <div class="smart-modal-footer">
     <button class="btn btn-danger" (click)="remove()">{{'remove'|translate}}</button>
     <button class="btn btn-primary" (click)="removeModal.close()">{{'close'|translate}}</button>
-  </modal-footer>
-</modal>
+  </div>
+
+</ngx-smart-modal>

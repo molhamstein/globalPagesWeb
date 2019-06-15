@@ -10,7 +10,7 @@ import {environment} from '../../../environments/environment';
 export class ForgetPasswordComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
-  @ViewChild('form') form
+  @ViewChild('form',{static:false}) form
   verificationCode=false
   ngOnInit() {
   }

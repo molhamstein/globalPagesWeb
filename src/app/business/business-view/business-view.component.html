@@ -155,20 +155,22 @@
 </section>
 <!-- /.flat-explore-detail <-->
 
-<modal #productsModal modalClass="modal-lg">
-  <modal-header>
+
+
+<ngx-smart-modal #productsModal modalClass="modal-lg" identifier="productsModal">
+  <div class="smart-modal-header" >
     <h3>{{'ServicesAndProducts' | translate}}</h3>
-  </modal-header>
-  <modal-content>
+  </div>
+  <div class="smart-modal-content" >
     <div class="row">
       <div class="col-xs-12">
         <app-business-products [products]="business?.products" #products="products"></app-business-products>
       </div>
     </div>
-  </modal-content>
-  <modal-footer>
+  </div>
+  <div class="smart-modal-footer">
     <button class="btn btn-primary" (click)="productsModal.close();products.reset();">{{'close'|translate}}</button>
     <!--<button class="btn btn-warning" (click)="products.reset()">{{'reset'|translate}}</button>-->
     <button class="btn btn-success" (click)="saveProducts()">{{'save'|translate}}</button>
-  </modal-footer>
-</modal>
+  </div>
+</ngx-smart-modal>

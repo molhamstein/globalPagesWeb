@@ -14,7 +14,7 @@ export class ResetComponent implements OnInit,AfterViewInit {
 
   ngOnInit() {
   }
-  @ViewChild('form') form
+  @ViewChild('form',{static:false}) form
   ngAfterViewInit() {
     console.log(this.form)
     this.form.form.setValidators(passwordMatcher('password','repassword'))

@@ -21,7 +21,7 @@ export class ProfileViewComponent implements OnInit {
   lang
   categories={}
   selectedSubCategory=[]
-  @ViewChild('myModal') modal
+  @ViewChild('myModal',{static:false}) modal
   ngAfterViewInit() {
    this.route.fragment.subscribe((f)=>{
      console.log(f)

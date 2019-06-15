@@ -17,7 +17,7 @@ export class SignUpComponent implements OnInit,AfterViewInit {
 
   ngOnInit() {
   }
-  @ViewChild('form') form
+  @ViewChild('form',{static:false}) form
   ngAfterViewInit() {
     // this.form.form.setValidators(passwordMatcher('password','repassword'))
 

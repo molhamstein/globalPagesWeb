@@ -42,15 +42,16 @@ import {InputFileModule} from 'ngx-input-file';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocationPickerComponent } from './business/location-picker/location-picker.component';
 
-import { LightboxModule as lb } from 'ngx-lightbox';
+// import { LightboxModule as lb } from 'ngx-lightbox';
 import {AvatarModule} from 'ngx-avatar';
 import {CategorySelectorComponent} from './profile/category-selector/category-selector.component';
 import { BusinessEditComponent } from './business/business-edit/business-edit.component';
-import {ModalModule} from 'ngx-modal';
+// import {ModalModule} from 'ngx-modal';
 import { BusinessProductsComponent } from './business/business-products/business-products.component';
 import {GalleryModule} from '@ngx-gallery/core';
 import { LightboxModule } from  '@ngx-gallery/lightbox';
 import { VolumePageComponent } from './home-screen/volume-page/volume-page.component';
+import {NgxSmartModalModule} from 'ngx-smart-modal';
 
 @NgModule({
   declarations: [
@@ -85,8 +86,8 @@ import { VolumePageComponent } from './home-screen/volume-page/volume-page.compo
 
   ],
   imports: [
-    GalleryModule,
-    lb,
+    GalleryModule.withConfig({loadingMode:'indeterminate'}),
+    // lb,
     LightboxModule,
     BrowserModule,
     AppRoutingModule,
@@ -100,7 +101,8 @@ import { VolumePageComponent } from './home-screen/volume-page/volume-page.compo
     InputFileModule.forRoot({}),
     NgSelectModule,
     AvatarModule,
-    ModalModule
+    // ModalModule,
+    NgxSmartModalModule.forRoot()
   ],
   entryComponents: [MapMarkerComponent],
   providers: [RequestsService,CommonDataService],

@@ -15,8 +15,8 @@ export class ProfileEditComponent implements OnInit,AfterViewInit {
   constructor(private api:RequestsService,private route:ActivatedRoute,private router:Router,private auth:AuthService) { }
   user={}
   id
-  @ViewChild('f') form
-  @ViewChild('file') fileController:ElementRef
+  @ViewChild('f',{static:false}) form
+  @ViewChild('file',{static:false}) fileController:ElementRef
   ngAfterViewInit() {
   }
   ngOnInit() {

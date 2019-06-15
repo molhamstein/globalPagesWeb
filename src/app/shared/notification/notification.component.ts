@@ -3,7 +3,7 @@ import {RequestsService} from '../../requests.service';
 import {HttpParams} from '@angular/common/http';
 import {AuthService} from '../../authentication/auth.service';
 import {BehaviorSubject, timer} from 'rxjs';
-import {switchMap,exhaustMap} from 'rxjs/operators';
+import {switchMap,exhaustMap,take} from 'rxjs/operators';
 import {Router} from '@angular/router';
 @Component({
   selector: 'app-notification',
@@ -33,6 +33,7 @@ export class NotificationComponent implements OnInit {
       this.refresh.pipe(
         switchMap(_=>
           timer(0,5000)
+            // .pipe(take(3))
             .pipe(exhaustMap(_=>this.$notifications))
         )
       ).subscribe((data:any[])=>{
@@ -43,12 +44,26 @@ export class NotificationComponent implements OnInit {
 
   }
   clickHandle(notification){
-    let notficationSeen=()=>{
-      return this.api.post('notifications/seenNotification',{notifications:[notification.id]}).toPromise()
+    let notficationClicked=()=>{
+      // return this.api.post('notifications/seenNotification',{notifications:[notification.id]}).toPromise()
+      notification['clicked']=true;
+      return this.api.put('notifications/'+notification.id,notification).subscribe(_=>this.refresh.next(''))
     };
     if(notification._type=="addNewVolume"){
-      this.router.navigate(['volume',notification.data.volumeId]).then(_=>notficationSeen())
+      this.router.navigate(['volume',notification.data.volumeId]).then(_=>notficationClicked())
     }
+  }
+  deleteNotification(not){
+    this.api.delete('notifications',not.id).subscribe(_=>this.refresh.next(''))
+  }
+  deleteAll(){
+    this.api.put("notifications/clear",{}).subscribe(_=>this.refresh.next(''))
+  }
+  open(){
+    if(!this.showNotification){
+      this.api.post('notifications/seenNotification',{notifications:this.notifications.map(v=>v.id)}).toPromise()
+    }
+    this.showNotification=!this.showNotification
   }
 
 }

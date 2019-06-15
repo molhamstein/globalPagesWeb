@@ -5,7 +5,7 @@
         <div class="title-left">
 
           <div class="box-title">
-            <a routerLink="/ad/{{data.id}}" title="">{{data.title}}</a> 
+            <a routerLink="/ad/{{data.id}}" title="">{{data.title}}</a>
             <!--  -->
           </div>
           <span dir="ltr" class="creation-date">{{data.creationDate}}</span>
@@ -52,7 +52,7 @@
               <img src="{{i.url}}" alt="Gallery image" />
             </a> -->
           <div class="hoverMe" style="display: inline" *ngFor="let image of _albums; let i=index">
-            <img [src]="image.src" (click)="open(i)" />
+            <img [src]="image.data.src" [lightbox]="i" />
           </div>
             <!-- <a href="assets/images/page/tb2.jpg" title="Caption for gallery item 2">
               <img src="assets/images/page/tb2.jpg" alt="Gallery image 2" />
@@ -78,7 +78,7 @@
       <div class="col-md-4">
         <div class="sidebar">
           <!-- <ul class="box-categories">
-                      
+
                     </ul> -->
           <div class="box contact-box">
             <ul class="contact-list">

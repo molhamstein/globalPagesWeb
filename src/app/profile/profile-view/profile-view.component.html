@@ -12,7 +12,7 @@
     <!-- /.row -->
   </div>
   <!-- /.container -->
-  <div class="overlay"></div>
+  <div class="overlay1"></div>
 </section>
 <!-- /.page-title -->
 
@@ -147,16 +147,18 @@
   <!-- /.flat-listing -->
 </section>
 
-<modal #myModal>
-  <modal-header>
+<ngx-smart-modal #myModal identifier="myModal">
+  <div class="smart-modal-header" >
     <h3>{{'mySubscription' | translate}}</h3>
-  </modal-header>
-  <modal-content>
+  </div>
+
+  <div class="smart-modal-content" >
     <app-category-selector [categories]="postCategories" [selectedSubCategory]="user?.postCategoriesIds" (changed)="editCat($event)"></app-category-selector>
-  </modal-content>
-  <modal-footer>
+  </div>
+  <div class="smart-modal-footer">
     <button class="btn btn-primary" (click)="myModal.close()">{{'close'|translate}}</button>
-  </modal-footer>
-</modal>
+  </div>
+
+</ngx-smart-modal>
 
 

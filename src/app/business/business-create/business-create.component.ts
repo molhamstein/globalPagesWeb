@@ -24,7 +24,7 @@ export class BusinessCreateComponent implements OnInit {
   locations
   locationId
   subCategoryId
-  @ViewChild('form') form
+  @ViewChild('form',{static:false}) form
   ngOnInit() {
     this.lang=this.translteService.currentLang
 

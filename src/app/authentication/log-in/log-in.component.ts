@@ -19,6 +19,7 @@ export class LogInComponent implements OnInit {
   }
   submit(form)
   {
+    this.message=null
     if(form.invalid)
       return
     let data=form.value

@@ -4,7 +4,7 @@ import {RequestsService} from '../../requests.service';
 import {TranslateService} from '@ngx-translate/core';
 import {HttpParams} from '@angular/common/http';
 import { latLng } from 'leaflet';
-import {Lightbox} from 'ngx-lightbox';
+// import {Lightbox} from 'ngx-lightbox';
 import {AuthService} from '../../authentication/auth.service';
 import {Gallery, GalleryItem, ImageItem, VideoItem} from '@ngx-gallery/core';
 @Component({
@@ -14,9 +14,9 @@ import {Gallery, GalleryItem, ImageItem, VideoItem} from '@ngx-gallery/core';
 })
 export class BusinessViewComponent implements OnInit {
 
-  @ViewChild('products') products;
-  @ViewChild('productsModal') productsModal;
-  constructor(private gallery: Gallery ,private route:ActivatedRoute,private api:RequestsService,private translteService:TranslateService,public lightbox: Lightbox,private auth:AuthService) { }
+  @ViewChild('products',{static:false}) products;
+  @ViewChild('productsModal',{static:false}) productsModal;
+  constructor(private gallery: Gallery ,private route:ActivatedRoute,private api:RequestsService,private translteService:TranslateService,private auth:AuthService) { }
   lang
   id
   business
