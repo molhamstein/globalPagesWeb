@@ -39,22 +39,22 @@
               <app-form-validation-message [control]="phoneNumber" [messages]="{required:'phoneNumberIsRequired'}">
               </app-form-validation-message>
             </div>
-            <div class="wrap-signup col-lg-6 col-sm-12 category">
-              <label>{{'gender' | translate}}</label>
-              <span class="ti-angle-down"></span>
-              <select name="gender" ngModel #gender="ngModel" required>
-                <option value="male">{{'male' | translate}} </option>
-                <option value="female">{{'female' | translate}}</option>
-              </select>
-              <app-form-validation-message [control]="gender" [messages]="{required:'genderIsRequired'}">
-              </app-form-validation-message>
-            </div>
-            <div class="wrap-signup col-lg-6 col-sm-12">
-              <label>{{'birth' | translate}}</label>
-              <input type="date"  name="birthDate" ngModel #birth="ngModel" required>
-              <app-form-validation-message [control]="birth" [messages]="{required:'birthIsRequired'}">
-              </app-form-validation-message>
-            </div>
+            <!--<div class="wrap-signup col-lg-6 col-sm-12 category">-->
+              <!--<label>{{'gender' | translate}}</label>-->
+              <!--<span class="ti-angle-down"></span>-->
+              <!--<select name="gender" ngModel #gender="ngModel" required>-->
+                <!--<option value="male">{{'male' | translate}} </option>-->
+                <!--<option value="female">{{'female' | translate}}</option>-->
+              <!--</select>-->
+              <!--<app-form-validation-message [control]="gender" [messages]="{required:'genderIsRequired'}">-->
+              <!--</app-form-validation-message>-->
+            <!--</div>-->
+            <!--<div class="wrap-signup col-lg-6 col-sm-12">-->
+              <!--<label>{{'birth' | translate}}</label>-->
+              <!--<input type="date"  name="birthDate" ngModel #birth="ngModel" required>-->
+              <!--<app-form-validation-message [control]="birth" [messages]="{required:'birthIsRequired'}">-->
+              <!--</app-form-validation-message>-->
+            <!--</div>-->
             <button type="submit" [disabled]="form.invalid && form.submitted">
               <div class="btn-more">
                 <a title="">{{'createAccount' | translate}}</a>

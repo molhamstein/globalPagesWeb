@@ -100,4 +100,6 @@ export const ArabicTranslation={
   reset:"تراجع",
   removeConfirmation:'هل تريد الحذف ؟',
   remove:'حذف',
+  notifications:'التنبيهات',
+
 }

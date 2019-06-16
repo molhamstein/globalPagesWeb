@@ -1746,3 +1746,7 @@ margin:30px;
   margin-right: 10px;
 }
 
+.lang-button a{
+  padding: 12px 25px;
+  display: block;
+}

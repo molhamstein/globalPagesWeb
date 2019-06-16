@@ -2,14 +2,38 @@
   <i class="fa fa-bell" (click)="open()"></i>
   <div class="notification-counter" *ngIf="unseenCounter>0 &&!showNotification">{{unseenCounter}}</div>
   <div [hidden]="!showNotification" class="notification-list">
-    <div style="text-align: center;background: #f0f0f0;font-size:30px;padding-top:10px;padding-bottom: 10px" (click)="deleteAll()"><i class="fa fa-trash"></i></div>
+    <div class="clear-button">
+      <div (click)="removeModal.open();currentNotification=null" style="background: #dadada"><i class="fa fa-trash"></i>
+      </div>
+      <div style="margin-left: auto;margin-right: auto"></div>
+      <div>
+        {{'notifications'|translate}}
+      </div>
+    </div>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let not of notifications" [ngClass]="{'unClicked':!not.clicked}">
         <div style="display: flex">
           <div style="width: 90%;text-overflow: ellipsis" (click)="clickHandle(not)">{{not.message}}</div>
-          <div class="fa fa-trash"  (click)="deleteNotification(not)" style="width: 10%;text-align: center;vertical-align: middle"></div>
+          <div class="fa fa-trash"  (click)="removeModal.open();currentNotification=not" style="width: 10%;text-align: center;vertical-align: middle"></div>
         </div>
       </li>
     </ul>
   </div>
 </div>
+
+
+<ngx-smart-modal #removeModal identifier="removeNotification">
+  <div class="smart-modal-header" >
+    <h3>{{'remove' | translate}}</h3>
+  </div>
+  <div class="smart-modal-content" >
+
+    {{"removeConfirmation"|translate}}
+
+  </div>
+  <div class="smart-modal-footer">
+    <button class="btn btn-danger" (click)="remove($event);removeModal.close();">{{'remove'|translate}}</button>
+    <button class="btn btn-primary" (click)="removeModal.close();$event.stopPropagation()">{{'close'|translate}}</button>
+  </div>
+
+</ngx-smart-modal>

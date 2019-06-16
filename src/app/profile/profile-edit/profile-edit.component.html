@@ -45,10 +45,10 @@
                 <app-form-validation-message [control]="username" [messages]="{required:'usernameIsRequired'}">
                 </app-form-validation-message>
                 <!-- /.wrap-listing -->
-                <label>{{'birth' | translate}}</label>
-                <input type="date"  name="birthDate" [(ngModel)]="user['birthDate']" #birth="ngModel" required>
-                <app-form-validation-message [control]="birth" [messages]="{required:'birthIsRequired'}">
-                </app-form-validation-message>
+                <!--<label>{{'birth' | translate}}</label>-->
+                <!--<input type="date"  name="birthDate" [(ngModel)]="user['birthDate']" #birth="ngModel" required>-->
+                <!--<app-form-validation-message [control]="birth" [messages]="{required:'birthIsRequired'}">-->
+                <!--</app-form-validation-message>-->
                 <!-- /.wrap-listing -->
                 <div class="clearfix"></div>
 
@@ -70,16 +70,16 @@
                 <!--<app-form-validation-message [control]="email" [messages]="{required:'usernameIsRequired',email:'notAValidEmail'}">-->
                 <!--</app-form-validation-message>-->
                 <!--<div class="clearfix"></div>-->
-                <div class="wrap-listing category">
-                  <label>{{'gender' | translate}}</label>
-                  <span class="ti-angle-down"></span>
-                  <select name="gender" [(ngModel)]="user['gender']" #gender="ngModel" required>
-                    <option value="male">{{'male' | translate}} </option>
-                    <option value="female">{{'female' | translate}}</option>
-                  </select>
-                </div>
-                <app-form-validation-message [control]="gender" [messages]="{required:'genderIsRequired'}">
-                </app-form-validation-message>
+                <!--<div class="wrap-listing category">-->
+                  <!--<label>{{'gender' | translate}}</label>-->
+                  <!--<span class="ti-angle-down"></span>-->
+                  <!--<select name="gender" [(ngModel)]="user['gender']" #gender="ngModel" required>-->
+                    <!--<option value="male">{{'male' | translate}} </option>-->
+                    <!--<option value="female">{{'female' | translate}}</option>-->
+                  <!--</select>-->
+                <!--</div>-->
+                <!--<app-form-validation-message [control]="gender" [messages]="{required:'genderIsRequired'}">-->
+                <!--</app-form-validation-message>-->
 
               </div>
               <div class="clearfix"></div>

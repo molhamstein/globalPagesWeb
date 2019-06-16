@@ -10,7 +10,7 @@ import { NotificationComponent } from './notification/notification.component';
     TranslateModule.forChild(),
 
   ],
-  declarations: [FormValidationMessageComponent, NotificationComponent],
-  exports:[FormValidationMessageComponent,NotificationComponent]
+  declarations: [FormValidationMessageComponent, ],
+  exports:[FormValidationMessageComponent]
 })
 export class SharedModule { }

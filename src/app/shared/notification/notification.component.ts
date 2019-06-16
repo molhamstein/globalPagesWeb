@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {RequestsService} from '../../requests.service';
 import {HttpParams} from '@angular/common/http';
 import {AuthService} from '../../authentication/auth.service';
@@ -10,10 +10,11 @@ import {Router} from '@angular/router';
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.css']
 })
-export class NotificationComponent implements OnInit {
+export class NotificationComponent implements OnInit,OnDestroy {
 
   showNotification=false
   notifications=[]
+  currentNotification
   userData
   unseenCounter=0
   $notifications
@@ -41,6 +42,11 @@ export class NotificationComponent implements OnInit {
         this.notifications=data;
       })
     })
+    $('html').on('click',(e)=>{
+      console.log($(e.target).parents('.notification-button'));
+      if(!$(e.target).parents('.notification-button')[0])
+        this.close()
+    })
 
   }
   clickHandle(notification){
@@ -53,6 +59,14 @@ export class NotificationComponent implements OnInit {
       this.router.navigate(['volume',notification.data.volumeId]).then(_=>notficationClicked())
     }
   }
+  remove(e:Event){
+    e.stopPropagation()
+    if(this.currentNotification)
+      this.deleteNotification(this.currentNotification)
+    else
+      this.deleteAll()
+    return false;
+  }
   deleteNotification(not){
     this.api.delete('notifications',not.id).subscribe(_=>this.refresh.next(''))
   }
@@ -64,6 +78,14 @@ export class NotificationComponent implements OnInit {
       this.api.post('notifications/seenNotification',{notifications:this.notifications.map(v=>v.id)}).toPromise()
     }
     this.showNotification=!this.showNotification
+  }
+
+  ngOnDestroy(): void {
+    $('html').off('click');
+  }
+  close(){
+    console.log('close')
+    this.showNotification=false
   }
 
 }

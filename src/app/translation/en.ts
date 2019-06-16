@@ -91,5 +91,6 @@ export const EnglishTranslation={
   add:"add",
   close:"close",
   reset:"reset",
-  removeConfirmation:'Are you sure to remove ?'
+  removeConfirmation:'Are you sure to remove ?',
+  notifications:'Notifications',
 }

@@ -52,6 +52,7 @@ import {GalleryModule} from '@ngx-gallery/core';
 import { LightboxModule } from  '@ngx-gallery/lightbox';
 import { VolumePageComponent } from './home-screen/volume-page/volume-page.component';
 import {NgxSmartModalModule} from 'ngx-smart-modal';
+import {NotificationComponent} from './shared/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import {NgxSmartModalModule} from 'ngx-smart-modal';
     CategorySelectorComponent,
     BusinessEditComponent,
     BusinessProductsComponent,
-    VolumePageComponent
+    VolumePageComponent,
+    NotificationComponent
 
   ],
   imports: [
