@@ -1,5 +1,5 @@
   <!-- <div class="col-md-5  col-xs-12 featured-box-flex"> -->
-    <div class="col-md-6  col-xs-12 featured-box-flex-image">
+    <div class="col-md-6  col-xs-12 featured-box-flex-image" routerLink="/ad/{{data.id}}" style="cursor: pointer">
       <div class="box-header">
         <div class="box-image">
           <img src="{{data.img}}" alt="">
@@ -9,7 +9,7 @@
       </div>
       <!-- /.box-header -->
     </div>
-    <div class="col-md-6  col-xs-12 featured-box-flex-text">
+    <div class="col-md-6  col-xs-12 featured-box-flex-text" routerLink="/ad/{{data.id}}" style="cursor: pointer">
       <div class="box-content">
         <div class="box-title ad">
           <a routerLink="/ad/{{data.id}}" title="">{{data.title}}</a>

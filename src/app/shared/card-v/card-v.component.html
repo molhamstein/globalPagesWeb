@@ -1,12 +1,12 @@
 
 
-  <div class="featured-ads-box">
+  <div class="featured-ads-box" routerLink="/ad/{{data.id}}" style="cursor: pointer">
     <div class="featured-ads-box-image col-md-12">
       <img src="{{data?.img}}" alt="">
     </div>
     <div class="featured-ads-box-text col-md-12">
       <div class="title">
-        <a routerLink="/ad/{{data.id}}">{{data.title}}</a>
+        <a >{{data.title}}</a>
       </div>
       <div class="f-category">
         <ul class="category">

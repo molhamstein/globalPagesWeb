@@ -55,27 +55,25 @@
                 <li *ngIf="isLogin">
                   <a title="" (click)="auth.logout()">{{'logout' | translate}}</a>
                 </li>
-                <li  class="lang-button">
-                    <div id="lang-change" >
-                      <a  title="{{'language' | translate}}"> {{'language' | translate}}
-                        <i [ngStyle]="english && {'margin-right':'0'}" class="ti-angle-down"></i>
-                      </a>
-                      <div style="display:none;" class="lang-list">
-                        <ul>
-                          <li>
-                            <a (click)="changeLang('ar')" title="">عربي</a>
-                          </li>
-                          <li>
-                            <a (click)="changeLang('en')" title="">English</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                </li>
-
               </ul>
-
             </nav>
+            <div  class="lang-button">
+              <div id="lang-change" >
+                <a  title="{{'language' | translate}}"> {{'language' | translate}}
+                  <i [ngStyle]="english && {'margin-right':'0'}" class="ti-angle-down"></i>
+                </a>
+                <div style="display:none;" class="lang-list">
+                  <ul>
+                    <li>
+                      <a (click)="changeLang('ar')" title="">عربي</a>
+                    </li>
+                    <li>
+                      <a (click)="changeLang('en')" title="">English</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             <!-- /.mainnav -->
             <!--<div id="lang-change" >-->
               <!--<a  title="{{'language' | translate}}"> {{'language' | translate}}-->

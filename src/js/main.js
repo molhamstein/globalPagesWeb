@@ -65,7 +65,7 @@
                         var $desktopMenu = $('#mainnav-mobi').attr('id', 'mainnav').removeAttr('style');
 
                         $desktopMenu.find('.submenu').removeAttr('style');
-                        $('.header').find('.button-header').before($desktopMenu);
+                        $('.header').find('.lang-button').before($desktopMenu);
                         $('.btn-submenu').remove();
                     }
                 }

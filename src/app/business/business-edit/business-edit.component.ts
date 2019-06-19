@@ -56,6 +56,7 @@ export class BusinessEditComponent implements OnInit {
     })
     this.api.get('businessCategories',p).toPromise().then(data=>{
       this.categories=data
+      this.onCategoryChange()
     })
     this.api.get('cities').toPromise().then(data=>{
       this.cities=data
@@ -98,6 +99,8 @@ export class BusinessEditComponent implements OnInit {
   onCategoryChange(){
    // this.business['subCategoryId']=null
     console.log(this.business['categoryId']);
+    if(!this.categories)
+      return
     var cat=this.categories.find((v)=>{if(v['id']==this.business['categoryId']) return true})
     this.subCategories=cat['subCategories']
   }

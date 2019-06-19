@@ -1750,3 +1750,32 @@ margin:30px;
   padding: 12px 25px;
   display: block;
 }
+.replace-button.mat-button{
+  background: rgba(255, 209, 0, 0.11);
+}
+.cdk-overlay-container{
+  z-index:99999999999999;
+}
+.overlay.nsm-overlay-open {
+  z-index: 99999999999999;
+}
+.lang-button{
+  display: inline-block;
+  margin:5px 20px;
+}
+.nav-wrap{
+  position: relative;
+  line-height: 50px;
+}
+.btn-menu{
+  position: initial;
+}
+#mainnav-mobi .button-header{
+  margin: 5px 30px 5px;
+}
+#mainnav-mobi .button-header a{
+  padding: 5px;
+}
+.button-header{
+  line-height: normal;
+}

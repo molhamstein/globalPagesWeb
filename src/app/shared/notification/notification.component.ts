@@ -43,7 +43,7 @@ export class NotificationComponent implements OnInit,OnDestroy {
       })
     })
     $('html').on('click',(e)=>{
-      console.log($(e.target).parents('.notification-button'));
+      // console.log($(e.target).parents('.notification-button'));
       if(!$(e.target).parents('.notification-button')[0])
         this.close()
     })
@@ -84,7 +84,7 @@ export class NotificationComponent implements OnInit,OnDestroy {
     $('html').off('click');
   }
   close(){
-    console.log('close')
+    // console.log('close')
     this.showNotification=false
   }
 

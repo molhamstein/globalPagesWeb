@@ -79,13 +79,13 @@ export class BusinessCreateComponent implements OnInit {
         data['covers']=covers;
 
             this.api.post('businesses',data).subscribe(data=>{
-              // this.router.navigate(['business',data['id']])
+               this.router.navigate(['business',data['id']])
             })
           })
     }
     else{
       this.api.post('businesses',data).subscribe(data=>{
-        // this.router.navigate(['business',data['id']])
+         this.router.navigate(['business',data['id']])
       })
     }
 

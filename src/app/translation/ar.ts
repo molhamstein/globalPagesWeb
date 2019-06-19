@@ -101,5 +101,5 @@ export const ArabicTranslation={
   removeConfirmation:'هل تريد الحذف ؟',
   remove:'حذف',
   notifications:'التنبيهات',
-
+  addNewBusiness:'إضافة نشاط تجاري جديد',
 }

@@ -93,4 +93,5 @@ export const EnglishTranslation={
   reset:"reset",
   removeConfirmation:'Are you sure to remove ?',
   notifications:'Notifications',
+  addNewBusiness:'add new business',
 }
