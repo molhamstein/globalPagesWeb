@@ -21,7 +21,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <form  class="form-listing" novalidate #form="ngForm" (submit)="submit(form.value)">
+        <form  class="form-listing" novalidate #form="ngForm" (submit)="$event.preventDefault();submit(form.value)">
           <div class="inner-box form">
 
             <div class="one-half">
@@ -45,7 +45,7 @@
               <div class="wrap-listing location">
                 <label>{{'address'| translate}}</label>
                 <span class="ti-target"></span>
-                <input name="address" placeholder="e.g.”New York”" type="text" ngModel>
+                <input name="address" placeholder="e.g.”New York”" type="text" [(ngModel)]="business['address']">
               </div>
               <!-- /.wrap-listing -->
               <div class="clearfix"></div>
@@ -84,7 +84,7 @@
               <div class="clearfix"></div>
               <div class="wrap-listing fax">
                 <label>{{"faxNumber" | translate}}</label>
-                <input type="text" name="fax" ngModel>
+                <input type="text" name="fax" [(ngModel)]="business['fax']">
               </div>
               <div class="clearfix"></div>
 
@@ -176,17 +176,25 @@
             <div class="clearfix"></div>
             <div class="one-half">
               <label>{{'details' | translate}}</label>
-              <textarea placeholder="{{'writeDetailsOfYourAd' | translate}}" name="description" ngModel></textarea>
+              <textarea placeholder="{{'writeDetailsOfYourAd' | translate}}" name="description" [(ngModel)]="business['description']"></textarea>
               <div class="clearfix"></div>
             </div>
 
 
-            <div class="one-half">
+            <div class="">
               <div class="clearfix"></div>
               <div class="wrap-listing half">
                 <div class="col-12">
                   <label>{{'businessImages'| translate}}</label>
-                  <input-file fileAccept="image/*" [fileLimit]="20" (change)="onFileAdded($event.srcElement.files)"></input-file>
+                  <div class="imageGallery1">
+                    <a *ngFor="let image of business?.covers;let i=index" style="position: relative">
+                      <button class="btn" (click)="$event.preventDefault();business?.covers.splice(i,1)">
+                          <i class="material-icons">delete</i>
+                      </button>
+                      <img src="{{image?.thumbnail}}" alt="Gallery image 1"  />
+                    </a>
+                  </div>
+                  <input-file fileAccept=".mp4,.jpg,.jpeg,.mpeg" [fileLimit]="20" (change)="onFileAdded($event.srcElement.files)"></input-file>
                 </div>
                 <!--<div class="browse ">-->
                 <!--<div class="upload">-->
@@ -196,11 +204,12 @@
                 <!--</div>-->
                 <!--</div>-->
               </div>
+
             </div>
 
             <div class="clearfix"></div>
             <div class="col-md-12">
-              <button type="submit" style="display: contents;" [disabled]="form.submitted && form.invalid">
+              <button type="submit" style="display: contents;" [disabled]="form.submitted && form.invalid" >
                 <div class="btn-more submit-button">
                   <a >{{'edit' | translate}}</a>
                 </div>

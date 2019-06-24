@@ -12,6 +12,7 @@ import { AdDataResolverService} from './ad-data-resolver.service';
 import {AuthService} from './authentication/auth.service';
 import {BusinessEditComponent} from './business/business-edit/business-edit.component';
 import {VolumeComponent} from './home-screen/volume/volume.component';
+import {AdEditComponent} from './ad/ad-edit/ad-edit.component';
 const routes: Routes = [
   {path:'auth',loadChildren:() => import('./authentication/authentication.module').then(m => m.AuthenticationModule)},
   {path:'',component:HomeScreenComponent},
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path:'profile/edit',component:ProfileEditComponent,canActivate:[AuthService]},
   {path:'ad/create',component:AdCreateComponent,canActivate:[AuthService]},
   {path: 'ad/:id', component: AdViewComponent, resolve: { adData: AdDataResolverService} },
-  {path: 'ad/:id/edit', component: AdCreateComponent, resolve: { adData: AdDataResolverService} },
+  {path: 'ad/:id/edit', component: AdEditComponent, resolve: { adData: AdDataResolverService} },
   {path:'guide',component:GuideComponent},
   {path:'volume/:id',component:VolumeComponent},
 

@@ -5,6 +5,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {RequestsService} from '../../requests.service';
 import {HttpParams} from '@angular/common/http';
 import { latLng } from 'leaflet';
+import {forkJoin, of} from 'rxjs';
 @Component({
   selector: 'app-business-edit',
   templateUrl: './business-edit.component.html',
@@ -68,23 +69,45 @@ export class BusinessEditComponent implements OnInit {
   submit(data){
     if(this.form.invalid)
       return
-    data['categoryId']=this.categories[this.selectedCategory]['id']
+    console.log(data);
+    // return;
+    // data['categoryId']=this.categories[this.selectedCategory]['id']
     const user = JSON.parse(localStorage.getItem(environment.userDetails));
     data['ownerId']=user['userId'];
-    let images=new FormData();
+    let images:FormData=new FormData();
+    let videos=new FormData();
     if(this.files && this.files.length>0){
       for (let i = 0; i < this.files.length; i++) {
-        images.append('file', this.files[i]);
+        if(this.files[i]['preview'])
+          images.append('file', this.files[i].file);
+        else
+          videos.append('file', this.files[i].file);
       }
-      this.api.post('attachments/images/upload', images).subscribe((res:any) => {
-        data['media']=res.cancat(this.business['media'])
+      let imageObservable=this.api.post('attachments/images/upload', images)//.pipe(catchError(() => of(undefined)));
+      let videoObservable=this.api.post('attachments/videos/upload', videos)//.pipe(catchError(() => of(undefined)));
+      if(images.getAll('file').length==0)
+        imageObservable=of(undefined);
+      if(videos.getAll('file').length==0)
+        videoObservable=of(undefined);
+
+      forkJoin([imageObservable, videoObservable]).subscribe((res:any) => {
+        let covers=[];
+        if(res[0])
+          covers=covers.concat(res[0])
+        if(res[1])
+          covers=covers.concat(res[1])
+
+        this.business['covers']=this.business['covers']||[]
+        data['covers']=covers.concat(this.business['covers'])
+        data= Object.assign(this.business,data);
         this.api.put('businesses/'+this.id,data).subscribe(data=>{
           this.router.navigate(['business',data['id']])
         })
       })
     }
     else{
-      this.api.post('businesses',data).subscribe(data=>{
+      data= Object.assign(this.business,data);
+      this.api.put('businesses',data).subscribe(data=>{
         this.router.navigate(['business',data['id']])
       })
     }
