@@ -21,6 +21,7 @@
 }
 .clear-button div{
   padding: 0px 5px;
+  font-size: 20px;
 }
 .notification-list{
   position: absolute;
