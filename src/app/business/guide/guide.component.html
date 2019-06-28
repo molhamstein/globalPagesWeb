@@ -36,14 +36,14 @@
             <span class="categories">
               <span class="ti-angle-down"></span>
               <select  [(ngModel)]="city" name="cityID" (change)="setCityId(city)">
-                <option [ngValue]="initialValue" >{{'location' | translate}}</option>
+                <option [ngValue]="initialValue" >{{'chooseCity' | translate}}</option>
                 <option *ngFor="let c of cities" [ngValue]="c">{{c.name}}</option>
               </select>
             </span>
             <span *ngIf="city!=undefined" class="location">
               <span class="ti-angle-down"></span>
               <select  name="location" [(ngModel)]="location">
-                <option hidden value="" [selected]="isSelected">{{'chooseCity'| translate}}</option>
+                <option hidden value="" [selected]="isSelected">{{'location'| translate}}</option>
                 <option *ngFor="let l of city?.locations" [ngValue]="l.id">{{l.name}}</option>
               </select>
             </span>
