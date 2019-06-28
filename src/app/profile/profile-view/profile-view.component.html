@@ -94,8 +94,8 @@
               <h3>My Ads</h3>
             </div>
 
-            <ng-container *ngFor="let ad of ads">
-              <app-ads-card [ad]="ad"></app-ads-card>
+            <ng-container *ngFor="let ad of ads;let i=index">
+              <app-ads-card [ad]="ad" (onRemove)="removePost($event,i)"></app-ads-card>
             </ng-container>
 
           </div>

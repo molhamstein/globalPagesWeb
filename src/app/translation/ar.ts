@@ -102,4 +102,5 @@ export const ArabicTranslation={
   remove:'حذف',
   notifications:'التنبيهات',
   addNewBusiness:'إضافة نشاط تجاري جديد',
+  addNewVolume:'تفقد الإعلانات الجديده في هذا العدد من المرسال'
 }

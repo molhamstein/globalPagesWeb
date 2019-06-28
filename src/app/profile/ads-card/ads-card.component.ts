@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-ads-card',
@@ -8,12 +8,13 @@ import {Component, Input, OnInit} from '@angular/core';
 export class AdsCardComponent implements OnInit {
 
   @Input() ad
+  @Output() onRemove=new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
   remove(){
-
+    this.onRemove.emit(this.ad);
   }
 
 }

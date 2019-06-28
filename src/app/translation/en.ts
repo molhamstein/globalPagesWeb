@@ -94,4 +94,5 @@ export const EnglishTranslation={
   removeConfirmation:'Are you sure to remove ?',
   notifications:'Notifications',
   addNewBusiness:'add new business',
+  addNewVolume:'check the new ads in this new volume',
 }

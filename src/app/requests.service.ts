@@ -19,9 +19,9 @@ export class RequestsService {
     if (params) {
         // console.warn(params)
         // Params are sent as a JSON Object
-      return this.http.get(this.api + name, { params: params });
+      return this.http.get(this.api + name, { params: params ,headers:this.header});
     }
-    return this.http.get(this.api + name);
+    return this.http.get(this.api + name,{headers:this.header});
   }
   post(name,data,h?){
     let header:HttpHeaders=this.header
@@ -32,12 +32,13 @@ export class RequestsService {
   }
 
   put(name,data) {
-    return this.http.put(this.api + name,data);
+    console.log(this.header)
+    return this.http.put(this.api + name,data,{headers:this.header});
   }
   delete(name,id?){
     if(id)
       name+='\\'+id;
-    return this.http.delete(this.api + name);
+    return this.http.delete(this.api + name,{headers:this.header});
   }
 
 }

@@ -13,7 +13,7 @@
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let not of notifications" [ngClass]="{'unClicked':!not.clicked}">
         <div style="display: flex">
-          <div style="width: 90%;text-overflow: ellipsis" (click)="clickHandle(not)">{{not.message}}</div>
+          <div style="width: 90%;text-overflow: ellipsis" (click)="clickHandle(not)">{{not._type | translate}}</div>
           <div class="fa fa-trash"  (click)="removeModal.open();currentNotification=not" style="width: 10%;text-align: center;vertical-align: middle"></div>
         </div>
       </li>

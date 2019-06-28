@@ -82,6 +82,13 @@ export class ProfileViewComponent implements OnInit {
     this.api.delete('businesses',business['id']).subscribe(data=>{
       this.businesses.splice(index,1);
     })
+
+  }
+  removePost(ad,index){
+    this.api.delete('posts',ad['id']).subscribe(data=>{
+      this.ads.splice(index,1);
+    })
+
   }
 
 
