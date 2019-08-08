@@ -28,7 +28,8 @@ export class NotificationComponent implements OnInit,OnDestroy {
       p=p.set('filter',JSON.stringify({
         where:{
           recipientId:this.userData.id
-        }
+        },
+        order:"creationDate DESC"
       }));
       this.$notifications=this.api.get('notifications',p);
       this.refresh.pipe(

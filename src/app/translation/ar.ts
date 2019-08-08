@@ -98,8 +98,8 @@ export const ArabicTranslation={
   add:"إضافة",
   close:"إغلاق",
   reset:"تراجع",
-  removeConfirmation:'هل تريد الحذف ؟',
-  remove:'حذف',
+  removeConfirmation:'هل انت متأكد من عمليه الحذف ؟',
+  remove:'حذف', 
   notifications:'التنبيهات',
   addNewBusiness:'إضافة نشاط تجاري جديد',
   addNewVolume:'تفقد الإعلانات الجديده في هذا العدد من المرسال'

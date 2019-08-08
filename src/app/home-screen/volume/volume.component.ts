@@ -42,7 +42,8 @@ export class VolumeComponent implements OnInit {
     var params:any = {
       "filter[limit]":"1",
       "filter[skip]": (num+this.skip).toString(),
-      "filter[order]":"creationDate DESC"
+      "filter[order]":"creationDate DESC",
+      "filter[where][status]":"activated"
     }
     if(this.id){
       params={
