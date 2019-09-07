@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  api : 'http://almersal.co/api/',
+  api : 'https://almersal.co/api/',
 
-  server:'http://almersal.co/',
+  server:'https://almersal.co/',
 
   userDetails:'_sxamekqdw',
   language: 'kacen_ae787'
