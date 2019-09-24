@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-server": "ng build --base-href=https://almersal.co/ --prod" 
+    "build-server": "ng build --base-href=https://almersal.co/ --prod"
   },
   "private": true,
   "dependencies": {
