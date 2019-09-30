@@ -54,6 +54,7 @@ import { VolumePageComponent } from './home-screen/volume-page/volume-page.compo
 import {NgxSmartModalModule} from 'ngx-smart-modal';
 import {NotificationComponent} from './shared/notification/notification.component';
 import { AdEditComponent } from './ad/ad-edit/ad-edit.component';
+import { PolicyComponent } from './privacy/policy/policy.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { AdEditComponent } from './ad/ad-edit/ad-edit.component';
     BusinessProductsComponent,
     VolumePageComponent,
     NotificationComponent,
-    AdEditComponent
+    AdEditComponent,
+    PolicyComponent
 
   ],
   imports: [

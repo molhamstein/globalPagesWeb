@@ -1,0 +1,21 @@
+.card{
+    box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    margin-bottom:30px; 
+}
+
+.card .paragraph{
+    padding:30px; 
+
+}
+ul  {
+    list-style: circle; 
+    font-size:1rem;
+}
+h3 , h1{
+    font-weight: bold;
+}
+.paragraph.en {
+    text-align: left;
+    direction: ltr; 
+}

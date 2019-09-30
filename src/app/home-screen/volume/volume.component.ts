@@ -1,8 +1,8 @@
-import { Component, OnInit,Input } from '@angular/core';
-import {RequestsService} from '../../requests.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { RequestsService } from '../../requests.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonDataService } from '../../common-data.service';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 // import { HeaderWithSearchComponent} from '../header-with-search/header-with-search.component';
 @Component({
   selector: 'app-volume',
@@ -11,102 +11,138 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class VolumeComponent implements OnInit {
 
-  constructor(private rs:RequestsService, private ts: TranslateService,public cds: CommonDataService,private route:ActivatedRoute) { }
-  id
-  skip:number = 0;
-  data: any = {};
-  title:String = '';
-  categories:any[];
-  cities:any[];
-  city;
-  category ;
-  cityId ='';
-  categoryId='';
-  initialValue;
-  subCategory="";
-  location="";
-  searchText:string = '';
+  constructor(private rs: RequestsService, private ts: TranslateService, public cds: CommonDataService, private route: ActivatedRoute, private router: Router) {
 
-  nextDisabled=true;
-  volumeFilter(){
+
+  }
+  id
+  skip: number = 0;
+  data: any = {};
+  title: String = '';
+  categories: any[];
+  cities: any[];
+  city;
+  category;
+  cityId = '';
+  categoryId = '';
+  initialValue;
+  subCategory = "";
+  location = "";
+  searchText: string = '';
+
+  nextDisabled = true;
+  applyFilter() {
+
     this.cds.filterItem['categoryId'] = this.categoryId;
     this.cds.filterItem['subCatId'] = this.subCategory;
-    this.cds.filterItem['cityId']= this.cityId;
+    this.cds.filterItem['cityId'] = this.cityId;
     this.cds.filterItem['locationId'] = this.location;
     this.cds.filterItem['keywords'] = this.searchText;
 
   }
+  volumeFilter() {
+    this.applyFilter();
+    this.router.navigate(["."], { queryParams: this.cds.filterItem });
+  }
 
-  // @Input() categories:Object[];
-  getVolumeData(num:number){
-    var params:any = {
-      "filter[limit]":"1",
-      "filter[skip]": (num+this.skip).toString(),
-      "filter[order]":"creationDate DESC",
-      "filter[where][status]":"activated"
+  setFilter(params) {
+
+    let { keywords, categoryId, subCatId, cityId, locationId } = params;
+    this.searchText = keywords;
+
+
+    if (subCatId) {
+      this.subCategory = subCatId;
     }
-    if(this.id){
-      params={
-        where:{
-          id:this.id
-        }
-      }
+    this.category = this.categories.find(e => e.id == categoryId);
+    this.setCategoryId(this.category);
+    if (locationId) {
+      this.location = locationId;
     }
-    this.rs.get('volumes',params)
-    .subscribe(res =>{
-      if(res[0]!=undefined){
-        this.data = res[0];
-        this.data.posts = this.data.posts.filter(e => { return e.status == 'activated' });
-        this.title = this.data['titleEn']
-        if (this.ts.currentLang=='ar'){
-          this.title = this.data['titleAr']
-        }
-        this.skip = this.skip + num;
-      }
-    })
+    this.city = this.cities.find(e => e.id == cityId);
+    this.setCityId(this.city);
+
+
+
 
   }
 
-  next(){
-    if (this.skip==1){
+  // @Input() categories:Object[];
+  getVolumeData(num: number) {
+    var params: any = {
+      "filter[limit]": "1",
+      "filter[skip]": (num + this.skip).toString(),
+      "filter[order]": "creationDate DESC",
+      "filter[where][status]": "activated"
+    }
+    if (this.id) {
+      params = {
+        where: {
+          id: this.id
+        }
+      }
+    }
+    this.rs.get('volumes', params)
+      .subscribe(res => {
+        if (res[0] != undefined) {
+          this.data = res[0];
+          this.data.posts = this.data.posts.filter(e => { return e.status == 'activated' });
+          this.title = this.data['titleEn']
+          if (this.ts.currentLang == 'ar') {
+            this.title = this.data['titleAr']
+          }
+          this.skip = this.skip + num;
+        }
+      })
+
+  }
+
+  next() {
+    if (this.skip == 1) {
       this.nextDisabled = true;
     }
-    if (this.skip - 1 < 0){
+    if (this.skip - 1 < 0) {
       return;
     }
     this.getVolumeData(-1);
 
   }
 
-  prev(){
-    // console.warn(this.categories);
+  prev() {
+
     this.nextDisabled = false;
     this.getVolumeData(1);
   }
   setCityId(c) {
     if (c != undefined) {
       this.cityId = c['id'];
-    }else{
-      this.cityId='';
-      this.location='';
+    } else {
+      this.cityId = '';
+      this.location = '';
     }
   }
   setCategoryId(c) {
     if (c != undefined) {
       this.categoryId = c['id'];
-    }else{
-      this.categoryId='';
-      this.subCategory='';
+    } else {
+      this.categoryId = '';
+      this.subCategory = '';
     }
   }
-  ngOnInit() {
-    this.route.params.subscribe(params=>{
-      this.id=params['id']
+  async ngOnInit() {
+
+    this.categories = await this.cds.categoriesPromise;
+    this.cities = await this.cds.citiesPromise;
+
+    this.route.queryParams.subscribe(params => {
+      console.log(params);
+      this.id = params['id'];
+
+      this.setFilter(params);
+      this.applyFilter();
+
       this.getVolumeData(0)
     })
-    // this.cds.categoriesObservable.subscribe(res => this.categories =<Object[]> res);
-    this.cds.categoriesPromise.then(res => this.categories =<Object[]> res);
-    this.cds.citiesPromise.then(res => this.cities = <Object[]>res)
   }
 
 }

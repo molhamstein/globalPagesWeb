@@ -53,7 +53,7 @@ export const ArabicTranslation={
   writeYourAdDetails:'اكتب التفاصيل الخاصة بالإعلان الخاص بك',
   yourBusinessImages:'صور اعلانك',
   browseFiles:'استعرض الملفات',
-  registerAd:'تسجيل الإعلان',
+  registerAd:'إضافة العمل',
   getInTouch:'تواصل معنا',
   editData:'تعديل البيانات',
   edit:'تعديل',
@@ -63,7 +63,7 @@ export const ArabicTranslation={
   language:'اللغة',
   homePage:'الرئيسية',
   businessGuidePage:'دليل الأعمال',
-  addBusinessPage:'إضافة نشاط تجاري',
+  addBusinessPage:'إضافة عمل',
   createAdPage:'إضافة إعلان',
 
   ServicesAndProducts:'خدمات و منتجات',
@@ -101,6 +101,6 @@ export const ArabicTranslation={
   removeConfirmation:'هل انت متأكد من عمليه الحذف ؟',
   remove:'حذف', 
   notifications:'التنبيهات',
-  addNewBusiness:'إضافة نشاط تجاري جديد',
+  addNewBusiness:'إضافة عمل جديد',
   addNewVolume:'تفقد الإعلانات الجديده في هذا العدد من المرسال'
 }

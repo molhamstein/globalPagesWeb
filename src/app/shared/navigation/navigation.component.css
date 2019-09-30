@@ -1,0 +1,75 @@
+.lang-button li a {
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.barear {
+    border-right: solid 1px #919497;
+}
+
+.logout-anchour {
+    font-size: 100% !important;
+}
+
+
+.menu li {
+    display: inline-block;
+}
+
+
+.lang-button {
+    display: inline-block;
+
+    margin: 0;
+    margin-right: 50px;
+}
+
+.auth-menu a {
+    margin-right: 10px;
+}
+
+.nav-button {
+    background: #ffd400;
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 #ffd400ff;
+        box-shadow: 0 0 0 0 #ffd400ff;
+    }
+
+    70% {
+        -moz-box-shadow: 0 0 0 10px #ffd40000;
+        box-shadow: 0 0 0 10px #ffd40000;
+    }
+
+    100% {
+        -moz-box-shadow: 0 0 0 0 #ffd40000;
+        box-shadow: 0 0 0 0 #ffd40000;
+    }
+}
+
+.pulse {
+    box-shadow: 0 0 0 #ffd400ff;
+    animation: pulse 2s infinite;
+}
+
+.pulse:hover{
+    animation:none; 
+}
+@media only screen and (max-width: 991px) {
+    .barear {
+        border-right: none;
+
+    }
+
+    .lang-button {
+        margin-left: 25px;
+    }
+}

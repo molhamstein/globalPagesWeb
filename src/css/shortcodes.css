@@ -2814,7 +2814,7 @@ form.form-listing .inner-box textarea {
   color: #c2c2c2;
 }
 form.form-listing .submit-button{
-	width: 60% !important;
+	width: 60% ;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;

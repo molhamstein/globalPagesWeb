@@ -10,16 +10,13 @@
             </a>
           </div>
           <div style="display: inline-flex;margin-top: 30px;margin-right: 10px" *ngIf="isLogin && user">
-            <ngx-avatar [name]="user['username']" [src]="user['imageProfile']" (clickOnAvatar)="goToProfile()"></ngx-avatar>
+            <ngx-avatar [name]="user['username']" [src]="user['imageProfile']" (clickOnAvatar)="goToProfile()">
+            </ngx-avatar>
             <app-notification></app-notification>
           </div>
-          <div style="display: inline-flex;margin-top: 30px;margin-right: 10px" *ngIf="!isLogin">
-            <div class="button-header">
-              <a routerLink="/auth/login" title="">{{'login' | translate}}</a>
-            </div>
-            <div class="button-header">
-              <a routerLink="/auth/signup" title="">{{'createAccount' | translate}}</a>
-            </div>
+          <div class="auth-menu" style="display: inline-flex;margin-top: 30px;margin-right: 10px" *ngIf="!isLogin">
+            <a class="nav-button" routerLink="/auth/login" title="">{{'login' | translate}}</a>
+            <a class="nav-button" routerLink="/auth/signup" title="">{{'createAccount' | translate}}</a>
           </div>
           <!-- /.logo -->
           <div class="nav-wrap">
@@ -33,60 +30,59 @@
                   <a routerLink="/guide" title="">{{'businessGuidePage' | translate }}</a>
                 </li>
                 <li *ngIf="isLogin">
-                  <a routerLink="/business/create"  title="">{{'addBusinessPage' | translate}}</a>
+                  <a routerLink="/business/create" title="">{{'addBusinessPage' | translate}}</a>
 
                 </li>
-                <li *ngIf="isLogin" >
-                  <div class="button-header">
-                    <a routerLink="/ad/create" class="pulse" title="">{{'createAdPage' | translate }}</a>
-                  </div>
+                <li *ngIf="isLogin">
+                  <a class="nav-button pulse" routerLink="/ad/create" title="">{{'createAdPage' | translate }}</a>
                   <!--<ul class="submenu">-->
-                    <!--<li>-->
-                      <!--<a href="index.html" title="">Index Layout</a>-->
-                    <!--</li>-->
+                  <!--<li>-->
+                  <!--<a href="index.html" title="">Index Layout</a>-->
+                  <!--</li>-->
                   <!--</ul>-->
                 </li>
                 <!--<li *ngIf="!isLogin">-->
-                  <!--<a routerLink="/auth/login" title="">{{'login' | translate}}</a>-->
+                <!--<a routerLink="/auth/login" title="">{{'login' | translate}}</a>-->
                 <!--</li>-->
                 <!--<li *ngIf="!isLogin">-->
-                  <!--<a routerLink="/auth/signup" title="">{{'createAccount' | translate}}</a>-->
+                <!--<a routerLink="/auth/signup" title="">{{'createAccount' | translate}}</a>-->
                 <!--</li>-->
-                <li *ngIf="isLogin">
-                  <a title="" (click)="auth.logout()">{{'logout' | translate}}</a>
-                </li>
+
               </ul>
             </nav>
-            <div  class="lang-button">
-              <div id="lang-change" >
-                <a  title="{{'language' | translate}}"> {{'language' | translate}}
-                  <i [ngStyle]="english && {'margin-right':'0'}" class="ti-angle-down"></i>
-                </a>
-                <div style="display:none;" class="lang-list">
-                  <ul>
-                    <li>
-                      <a (click)="changeLang('ar')" title="">عربي</a>
-                    </li>
-                    <li>
-                      <a (click)="changeLang('en')" title="">English</a>
-                    </li>
-                  </ul>
-                </div>
+            <div class="lang-button">
+              <div id="lang-change">
+
+                <ul class="menu">
+
+                  <li class="barear">
+                    <a>&nbsp;</a>
+                  </li>
+                  <li *ngIf="isLogin" class="logout-anchour">
+                    <a href="javascript:void(0)" title="" (click)="auth.logout()">{{'logout' | translate}}</a>
+                  </li>
+                  <li>
+                    <a *ngIf="english" href="javascript:void(0)" (click)="changeLang('ar')" title="">عربي</a>
+                    <a *ngIf="!english" href="javascript:void(0)" (click)="changeLang('en')" title="">English</a>
+                  </li>
+                </ul>
+
+
               </div>
             </div>
             <!-- /.mainnav -->
             <!--<div id="lang-change" >-->
-              <!--<a  title="{{'language' | translate}}"> {{'language' | translate}}-->
-                <!--<i [ngStyle]="english && {'margin-right':'0'}" class="ti-angle-down"></i>-->
-              <!--</a>-->
-              <!--<div style="display:none;" class="lang-list">-->
-                <!--<li>-->
-                  <!--<a (click)="changeLang('ar')" title="">عربي</a>-->
-                <!--</li>-->
-                <!--<li>-->
-                  <!--<a (click)="changeLang('en')" title="">English</a>-->
-                <!--</li>-->
-              <!--</div>-->
+            <!--<a  title="{{'language' | translate}}"> {{'language' | translate}}-->
+            <!--<i [ngStyle]="english && {'margin-right':'0'}" class="ti-angle-down"></i>-->
+            <!--</a>-->
+            <!--<div style="display:none;" class="lang-list">-->
+            <!--<li>-->
+            <!--<a (click)="changeLang('ar')" title="">عربي</a>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--<a (click)="changeLang('en')" title="">English</a>-->
+            <!--</li>-->
+            <!--</div>-->
             <!--</div>-->
 
             <!-- <div class="show-search">

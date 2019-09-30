@@ -11,7 +11,7 @@
             <span class="categories">
               <span class="ti-angle-down"></span>
               <select name="categories" [(ngModel)]="category" (change)="setCategoryId(category)">
-                <option [ngValue]="initialValue" >{{'category' | translate }}</option>
+                <option [ngValue]="initialValue">{{'category' | translate }}</option>
                 <option *ngFor="let c of categories" [ngValue]="c">{{c.title}}</option>
               </select>
             </span>
@@ -25,7 +25,7 @@
             <span class="categories">
               <span class="ti-angle-down"></span>
               <select name="categories" [(ngModel)]="city" (change)="setCityId(city)">
-                <option [ngValue]="initialValue" >{{'chooseCity'| translate}}</option>
+                <option [ngValue]="initialValue">{{'chooseCity'| translate}}</option>
                 <option *ngFor="let c of cities" [ngValue]="c">{{c.name}}</option>
               </select>
             </span>
@@ -53,7 +53,8 @@
             <h2>{{title}}</h2>
           </div>
           <div class="right-arrow">
-            <i title="Next" (click)="next()" [ngClass]="{disabled:nextDisabled}" class="fa fa-angle-left fa-4x pointerHover" aria-hidden="true"></i>
+            <i title="Next" (click)="next()" [ngClass]="{disabled:nextDisabled}"
+              class="fa fa-angle-left fa-4x pointerHover" aria-hidden="true"></i>
           </div>
 
         </div>
@@ -66,10 +67,11 @@
         <!-- /.wrap-box-search -->
         <div class="container p-t-60">
 
-          <div class="row featured-box-flex-container">
+          <div class="row featured-box-flex-container" *ngIf="data.posts">
 
 
-            <app-card-h *ngFor="let item of data.posts| volumeFilter:cds.filterItem " [details]="item" class="col-md-5  col-xs-12 featured-box-flex"></app-card-h>
+            <app-card-h  *ngFor="let item of data.posts| volumeFilter:cds.filterItem " [details]="item"
+              class="col-md-5  col-xs-12 featured-box-flex"></app-card-h>
 
           </div>
           <!-- /.row -->

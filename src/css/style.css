@@ -1759,10 +1759,6 @@ margin:30px;
 .overlay.nsm-overlay-open {
   z-index: 99999999999999;
 }
-.lang-button{
-  display: inline-block;
-  margin:5px 20px;
-}
 .nav-wrap{
   position: relative;
   line-height: 50px;
@@ -1778,4 +1774,15 @@ margin:30px;
 }
 .button-header{
   line-height: normal;
+}
+
+
+.display-content {
+	padding:0; 
+	background: none; 
+	margin-top:30px; 
+}
+.display-content div{
+	width:100% !important; 
+	margin:0 !important; 
 }
