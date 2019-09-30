@@ -98,9 +98,9 @@ export class VolumeComponent implements OnInit {
 
 
         let count = +headers.get('X-Total-Count');
-        if (count) 
+        if (count)
           this.count = count;
-        
+
         if (res[0] != undefined) {
           this.data = res[0];
           this.data.posts = this.data.posts.filter(e => { return e.status == 'activated' });
@@ -128,7 +128,7 @@ export class VolumeComponent implements OnInit {
     return this.skip == 0;
   }
   get prevDisabled() {
-    return this.skip == this.count;
+    return this.skip + 1 == this.count;
   }
   prev() {
 
