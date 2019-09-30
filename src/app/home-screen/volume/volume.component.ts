@@ -29,8 +29,12 @@ export class VolumeComponent implements OnInit {
   subCategory = "";
   location = "";
   searchText: string = '';
+  count = 0;
 
-  nextDisabled = true;
+  navigate() {
+    this.router.navigate(["."], { queryParams: { ... this.cds.filterItem, skip: this.skip } });
+
+  }
   applyFilter() {
 
     this.cds.filterItem['categoryId'] = this.categoryId;
@@ -42,7 +46,7 @@ export class VolumeComponent implements OnInit {
   }
   volumeFilter() {
     this.applyFilter();
-    this.router.navigate(["."], { queryParams: this.cds.filterItem });
+    this.navigate();
   }
 
   setFilter(params) {
@@ -68,13 +72,20 @@ export class VolumeComponent implements OnInit {
   }
 
   // @Input() categories:Object[];
+  requesting: boolean = false;
   getVolumeData(num: number) {
+
+    if (this.requesting) return;
+    this.requesting = true;
     var params: any = {
       "filter[limit]": "1",
       "filter[skip]": (num + this.skip).toString(),
       "filter[order]": "creationDate DESC",
       "filter[where][status]": "activated"
     }
+
+
+
     if (this.id) {
       params = {
         where: {
@@ -82,8 +93,14 @@ export class VolumeComponent implements OnInit {
         }
       }
     }
-    this.rs.get('volumes', params)
-      .subscribe(res => {
+    this.rs.getWithHeaders('volumes', params)
+      .subscribe(({ body: res, headers }) => {
+
+
+        let count = +headers.get('X-Total-Count');
+        if (count) 
+          this.count = count;
+        
         if (res[0] != undefined) {
           this.data = res[0];
           this.data.posts = this.data.posts.filter(e => { return e.status == 'activated' });
@@ -92,25 +109,30 @@ export class VolumeComponent implements OnInit {
             this.title = this.data['titleAr']
           }
           this.skip = this.skip + num;
+
+          this.navigate();
+
         }
+        this.requesting = false;
+
       })
 
   }
 
   next() {
-    if (this.skip == 1) {
-      this.nextDisabled = true;
-    }
-    if (this.skip - 1 < 0) {
-      return;
-    }
+    if (this.nextDisabled) return;
     this.getVolumeData(-1);
 
   }
-
+  get nextDisabled() {
+    return this.skip == 0;
+  }
+  get prevDisabled() {
+    return this.skip == this.count;
+  }
   prev() {
 
-    this.nextDisabled = false;
+    if (this.prevDisabled) return;
     this.getVolumeData(1);
   }
   setCityId(c) {
@@ -135,8 +157,10 @@ export class VolumeComponent implements OnInit {
     this.cities = await this.cds.citiesPromise;
 
     this.route.queryParams.subscribe(params => {
-      console.log(params);
       this.id = params['id'];
+      if (params['skip'])
+        this.skip = +params['skip'];
+
 
       this.setFilter(params);
       this.applyFilter();

@@ -47,7 +47,7 @@
         <div class="col-md-12 version-arrow" *ngIf="!id">
 
           <div class="left-arrow">
-            <i title="Previous" (click)="prev()" class="fa fa-angle-right fa-4x pointerHover" aria-hidden="true"></i>
+            <i title="Previous"  [ngClass]="{disabled:prevDisabled}"  (click)="prev()" class="fa fa-angle-right fa-4x pointerHover" aria-hidden="true"></i>
           </div>
           <div class="title">
             <h2>{{title}}</h2>
