@@ -1,6 +1,6 @@
 <div class="ads">
   <div class="ads-icon">
-    <img [src]="ad['media'][0]?.url" />
+    <img *ngIf="ad['media'][0]" [src]="ad['media'][0]?.url" />
   </div>
   <div class="ads-text">
     <div class="title">

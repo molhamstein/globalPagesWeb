@@ -21,7 +21,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <form  class="form-listing" novalidate #form="ngForm" (submit)="$event.preventDefault();submit(form.value)">
+        <form class="form-listing" novalidate #form="ngForm" (submit)="$event.preventDefault();submit(form.value)">
           <div class="inner-box form">
 
             <div class="one-half">
@@ -33,13 +33,15 @@
               <div class="wrap-listing">
                 <label> {{"nameEn" | translate}}</label>
                 <input type="text" name="nameEn" [(ngModel)]="business['nameEn']" #nameEn="ngModel" required>
-                <app-form-validation-message [form]="form" [control]="nameEn" [messages]="{required:'requiredMessage'}" [params]="{name:'nameEn'}">
+                <app-form-validation-message [form]="form" [control]="nameEn" [messages]="{required:'requiredMessage'}"
+                  [params]="{name:'nameEn'}">
                 </app-form-validation-message>
               </div>
               <div class="wrap-listing">
                 <label> {{"nameAr" | translate}}</label>
                 <input type="text" name="nameAr" [(ngModel)]="business['nameAr']" #nameAr="ngModel" required>
-                <app-form-validation-message [form]="form" [control]="nameAr" [messages]="{required:'requiredMessage'}" [params]="{name:'nameAr'}">
+                <app-form-validation-message [form]="form" [control]="nameAr" [messages]="{required:'requiredMessage'}"
+                  [params]="{name:'nameAr'}">
                 </app-form-validation-message>
               </div>
               <div class="wrap-listing location">
@@ -52,7 +54,8 @@
               <div class="wrap-listing category-half">
                 <label>{{"category" | translate}}</label>
                 <span class="ti-angle-down"></span>
-                <select name="categoryId" (change)="onCategoryChange()" [(ngModel)]="business['categoryId']" #category="ngModel" required>
+                <select name="categoryId" (change)="onCategoryChange()" [(ngModel)]="business['categoryId']"
+                  #category="ngModel" required>
                   <option [value]="cat['id']" *ngFor="let cat of categories;let i=index">
                     <ng-container *ngIf="lang=='ar'">
                       {{cat.titleAr}}
@@ -62,7 +65,8 @@
                     </ng-container>
                   </option>
                 </select>
-                <app-form-validation-message [form]="form" [control]="category" [messages]="{required:'requiredMessage'}" [params]="{name:'category'}">
+                <app-form-validation-message [form]="form" [control]="category"
+                  [messages]="{required:'requiredMessage'}" [params]="{name:'category'}">
                 </app-form-validation-message>
               </div>
               <div class="clearfix"></div>
@@ -74,7 +78,8 @@
               <div class="wrap-listing phone">
                 <label>{{"phoneNumber1" | translate}}</label>
                 <input type="text" name="phone1" [(ngModel)]="business['phone1']" #phone1="ngModel" required>
-                <app-form-validation-message [form]="form" [control]="phone1" [messages]="{required:'requiredMessage'}" [params]="{name:'phoneNumber1'}">
+                <app-form-validation-message [form]="form" [control]="phone1" [messages]="{required:'requiredMessage'}"
+                  [params]="{name:'phoneNumber1'}">
                 </app-form-validation-message>
               </div>
               <div class="wrap-listing phone">
@@ -101,13 +106,14 @@
                     </ng-container>
                   </option>
                 </select>
-                <app-form-validation-message [form]="form" [control]="subCategory" [messages]="{required:'requiredMessage'}" [params]="{name:'subCategory'}">
+                <app-form-validation-message [form]="form" [control]="subCategory"
+                  [messages]="{required:'requiredMessage'}" [params]="{name:'subCategory'}">
                 </app-form-validation-message>
               </div>
               <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>
-            <div >
+            <div>
 
               <div class="clearfix"></div>
               <app-location-picker [(ngModel)]="business['locationPoint']" name="locationPoint"></app-location-picker>
@@ -118,7 +124,7 @@
               <!--</div>-->
               <!--</div>-->
             </div>
-            <div class="one-half1" *ngIf="categories && selectedCategory && categories[selectedCategory] && categories[selectedCategory].code=='pharmacies'">
+            <div class="one-half1" *ngIf="selectedCategory && selectedCategory.code=='pharmacies'">
               <label>{{'workingHours' | translate}}</label>
               <div class="wrap-listing business">
 
@@ -141,7 +147,8 @@
               <div class="wrap-listing category-half">
                 <label>{{'city' | translate}}</label>
                 <span class="ti-angle-down"></span>
-                <select name="cityId" [(ngModel)]="business['cityId']" (change)="cityChanged()" #cityId="ngModel" required>
+                <select name="cityId" [(ngModel)]="business['cityId']" (change)="cityChanged()" #cityId="ngModel"
+                  required>
                   <option *ngFor="let city of cities" [value]="city.id">
                     <ng-container *ngIf="lang=='ar'">
                       {{city['nameAr']}}
@@ -151,7 +158,8 @@
                     </ng-container>
                   </option>
                 </select>
-                <app-form-validation-message [form]="form" [control]="cityId" [messages]="{required:'requiredMessage'}" [params]="{name:'city'}">
+                <app-form-validation-message [form]="form" [control]="cityId" [messages]="{required:'requiredMessage'}"
+                  [params]="{name:'city'}">
                 </app-form-validation-message>
               </div>
             </div>
@@ -159,7 +167,8 @@
               <div class="wrap-listing category-half">
                 <label>{{'location' | translate}}</label>
                 <span class="ti-angle-down"></span>
-                <select name="locationId" [(ngModel)]="business['locationId']" [disabled]="!business['cityId']" #location="ngModel" required>
+                <select name="locationId" [(ngModel)]="business['locationId']" [disabled]="!business['cityId']"
+                  #location="ngModel" required>
                   <option *ngFor="let location of locations" [value]="location.id">
                     <ng-container *ngIf="lang=='ar'">
                       {{location['nameAr']}}
@@ -169,14 +178,16 @@
                     </ng-container>
                   </option>
                 </select>
-                <app-form-validation-message [form]="form" [control]="location" [messages]="{required:'requiredMessage'}" [params]="{name:'location'}">
+                <app-form-validation-message [form]="form" [control]="location"
+                  [messages]="{required:'requiredMessage'}" [params]="{name:'location'}">
                 </app-form-validation-message>
               </div>
             </div>
             <div class="clearfix"></div>
             <div class="one-half">
               <label>{{'details' | translate}}</label>
-              <textarea placeholder="{{'writeDetailsOfYourAd' | translate}}" name="description" [(ngModel)]="business['description']"></textarea>
+              <textarea placeholder="{{'writeDetailsOfYourAd' | translate}}" name="description"
+                [(ngModel)]="business['description']"></textarea>
               <div class="clearfix"></div>
             </div>
 
@@ -189,12 +200,13 @@
                   <div class="imageGallery1">
                     <a *ngFor="let image of business?.covers;let i=index" style="position: relative">
                       <button class="btn" (click)="$event.preventDefault();business?.covers.splice(i,1)">
-                          <i class="material-icons">delete</i>
+                        <i class="material-icons">delete</i>
                       </button>
-                      <img src="{{image?.thumbnail}}" alt="Gallery image 1"  />
+                      <img src="{{image?.thumbnail}}" alt="Gallery image 1" />
                     </a>
                   </div>
-                  <input-file fileAccept=".mp4,.jpg,.jpeg,.mpeg" [fileLimit]="20" (change)="onFileAdded($event.srcElement.files)"></input-file>
+                  <input-file fileAccept=".mp4,.jpg,.jpeg,.mpeg" [fileLimit]="20"
+                    (change)="onFileAdded($event.srcElement.files)"></input-file>
                 </div>
                 <!--<div class="browse ">-->
                 <!--<div class="upload">-->
@@ -209,9 +221,9 @@
 
             <div class="clearfix"></div>
             <div class="col-md-12">
-              <button type="submit" class="display-content" [disabled]="form.submitted && form.invalid" >
+              <button type="submit" class="display-content" [disabled]="form.submitted && form.invalid">
                 <div class="btn-more submit-button">
-                  <a >{{'edit' | translate}}</a>
+                  <a>{{'edit' | translate}}</a>
                 </div>
               </button>
 
