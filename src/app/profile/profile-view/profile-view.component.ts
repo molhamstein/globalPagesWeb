@@ -73,7 +73,7 @@ export class ProfileViewComponent implements OnInit {
 
   }
   editCat(data){
-    var categories =Object.entries(this.categories).filter(cat => cat[1]).map(cat=>cat[0])
+    // var categories =Object.entries(this.categories).filter(cat => cat[1]).map(cat=>cat[0])
     this.api.put('users/' + this.id, {postCategoriesIds: data}).toPromise().then((data) => {
     })
   }
