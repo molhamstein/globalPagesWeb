@@ -1,0 +1,52 @@
+<div class="module">
+  <div class="headers">
+    <h4 class="mainLabel">
+      {{'add' | translate}}
+    </h4>
+    <i class="fa fa-times" (click)="close()" aria-hidden="true"></i>
+  </div>
+  <div class="contint">
+    <div class="inputDiv">
+      <h4 class="title">{{'skill'|translate}}</h4>
+      <input class="input" placeholder="{{'enter'|translate}} {{'skill'|translate}}" (focus)="inputFocus=true"
+        (keyup)="typeing($event)" [(ngModel)]="inputValue" (focusout)="foucasOut()" (keyup.enter)="addNewTag()">
+      <!-- <div class="button add">
+        {{'add'|translate}}
+      </div> -->
+      <div class="listAutoComplete" *ngIf="inputFocus==true && inputValue!=''">
+        <div class="loader" *ngIf="viewLoader">
+          <div class="bar"></div>
+        </div>
+        <div class="oneItem" *ngFor="let oneTag of resultSearsh;" (click)="addTag(oneTag)">
+          <h4>{{oneTag.name}}</h4>
+        </div>
+        <div class="oneItem addItem" (click)="addNewTag()">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          <h4>{{'addNew'|translate}}</h4>
+        </div>
+      </div>
+
+    </div>
+    <div class="inputDiv">
+      <h4 class="title">{{'skills'|translate}}</h4>
+      <div class="tags">
+        <div *ngFor="let oneTag of tags;let i=index" class="oneTag">
+          <i class="fa fa-times" (click)="removeTag(i)" aria-hidden="true"></i>
+
+          <span>
+            {{oneTag.name}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div (click)="save()" class="button save">
+      {{'saveCV'|translate}}
+    </div>
+    <!-- <div class="button delete">
+      save
+    </div> -->
+  </div>
+</div>

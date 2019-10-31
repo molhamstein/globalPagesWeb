@@ -16,7 +16,7 @@ export class RequestsService {
   }
   getWithHeaders(name, params = {}) {
 
-    return this.http.get(this.api + name, { params, headers: this.header , observe : 'response' }); 
+    return this.http.get(this.api + name, { params, headers: this.header, observe: 'response' });
   }
   get(name, params?) {
     if (params) {
@@ -34,10 +34,18 @@ export class RequestsService {
     return this.http.post(this.api + name, data, { headers: header });
   }
 
+
+
   put(name, data) {
     console.log(this.header)
     return this.http.put(this.api + name, data, { headers: this.header });
   }
+
+  patch(name, data) {
+    console.log(this.header)
+    return this.http.patch(this.api + name, data, { headers: this.header });
+  }
+
   delete(name, id?) {
     if (id)
       name += '\\' + id;

@@ -4,11 +4,11 @@
 
 export const environment = {
   production: false,
-  api : 'https://almersal.co/api/',
+  api: 'https://almersal.co/api/',
 
-  server:'https://almersal.co/',
+  server: 'https://almersal.co/',
 
-  userDetails:'_sxamekqdw',
+  userDetails: '_sxamekqdw',
   language: 'kacen_ae787'
 };
 

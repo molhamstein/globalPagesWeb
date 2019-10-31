@@ -1,0 +1,82 @@
+<div class="module" [class.moduleEduc]="type=='education'">
+  <div class="headers">
+    <h4 class="mainLabel">
+      {{(object==null? 'add':'edit') | translate}}
+    </h4>
+    <i class="fa fa-times close" (click)="close()" aria-hidden="true"></i>
+  </div>
+  <div class="contint">
+    <span class="errorMessage"
+      *ngIf="errorMessage!=''">{{'requiredMessageCV' | translate}}{{errorMessage|translate}}</span>
+    <div class="inputDiv">
+      <h4 class="title">{{'title'|translate}}</h4>
+      <input class="input" placeholder="{{'enter'|translate}} {{'title' | translate}}" [(ngModel)]="newObject.title">
+    </div>
+    <div class="inputDiv" *ngIf="type!='education'">
+      <h4 class="title">{{'companyName'| translate}}</h4>
+      <input class="input" placeholder="{{'enter'|translate}} {{'companyName' | translate}}"
+        [(ngModel)]="newObject.companyName">
+    </div>
+
+    <div class="inputDiv" *ngIf="type=='education'">
+      <h4 class="title">{{'educationalEntity'|translate}}</h4>
+      <input class="input" placeholder="{{'enter'|translate}} {{'educationalEntity' | translate}}"
+        [(ngModel)]="newObject.educationalEntity">
+    </div>
+
+    <div class="inputDiv">
+      <h4 class="title">{{'descriptionCV' | translate}}</h4>
+      <textarea class="input" placeholder="{{'enter'|translate}} {{'descriptionCV' | translate}}"
+        [(ngModel)]="newObject.description"></textarea>
+    </div>
+
+    <div class="inputDiv">
+      <h4 class="title">{{'duration'|translate}}</h4>
+      <div class="chechboxDiv" *ngIf="type=='experience'">
+        <input class="checkbox" [(ngModel)]="newObject.isPresent" type="checkbox" value="pepperoni" title="Pepperoni" />
+        <span>
+          {{'currentlyHere'|translate}}
+        </span>
+      </div>
+      <div class="dateDiv">
+        <div class="oneDate" style="float: left;">
+          <select class="select" [(ngModel)]="newObject.yearFrom">
+            <option value="-1" disabled>{{'year'|translate}}</option>
+            <option *ngFor="let year of yearArray" value="{{year}}">{{year}}</option>
+          </select>
+        </div>
+        <div class="oneDate" style="float: left;">
+          <select class="select" [(ngModel)]="newObject.monthFrom">
+            <option value="-1" disabled>{{'month'|translate}}</option>
+            <option *ngFor="let month of monthArray;let i=index" value="{{i}}">{{month}}</option>
+          </select>
+        </div>
+        <div *ngIf="newObject.isPresent==false" class="toDiv" style="float: left;">
+          <h4>{{'to'|translate}}</h4>
+        </div>
+        <div *ngIf="newObject.isPresent==false" class="oneDate" style="float: left;">
+          <select class="select" [(ngModel)]="newObject.yearTo">
+            <option value="-1" disabled>{{'year'|translate}}</option>
+            <option *ngFor="let year of yearArray" value="{{year}}">{{year}}</option>
+          </select>
+        </div>
+        <div *ngIf="newObject.isPresent==false" class="oneDate" style="float: left;">
+          <select class="select" [(ngModel)]="newObject.monthTo">
+            <option value="-1" disabled>{{'month'|translate}}</option>
+            <option *ngFor="let month of monthArray;let i= index" value="{{i}}">{{month}}</option>
+
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div type="submit" class="button save" (click)="save()">
+      {{'saveCV'|translate}}
+    </div>
+    <div class="button delete" *ngIf="object!=null" (click)="delete()">
+      {{'delete'|translate}}
+    </div>
+  </div>
+</div>

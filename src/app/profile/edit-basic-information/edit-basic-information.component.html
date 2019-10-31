@@ -1,0 +1,109 @@
+<div class="module">
+  <div class="headers">
+    <h4 class="mainLabel">
+      {{'edit' | translate}}
+    </h4>
+    <i class="fa fa-times" (click)="close()" aria-hidden="true"></i>
+  </div>
+  <div class="contint">
+    <span class="errorMessage"
+      *ngIf="errorMessage!=''">{{'requiredMessageCV' | translate}}{{errorMessage|translate}}</span>
+    <div class="basicInfo">
+
+      <div class="imageProfile">
+        <input type="file" hidden #file id="file" (change)="imageChanged()" />
+        <div class="ch-item ch-img-1" (click)="editImage()"
+          [style.backgroundImage]="'url('+ dialogInfo.imageProfile +')'">
+          <div class="ch-info">
+            <h4>{{'edit' | translate}}</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="inputDiv">
+        <h4 class="title">{{'username'|translate}}</h4>
+        <input class="input" placeholder="{{'enter'|translate}} {{'username'|translate}}"
+          [(ngModel)]="dialogInfo.username">
+      </div>
+      <div class="inputDiv">
+        <h4 class="title">{{'phoneNumber'|translate}}</h4>
+        <input class="input" placeholder="{{'enter'|translate}} {{'phoneNumber'|translate}}"
+          [(ngModel)]="dialogInfo.phoneNumber">
+      </div>
+
+
+      <!-- <div class="profile-image-container-cv">
+        <div class="change-image" (click)="editImage()">{{'edit' | translate}}</div>
+        <div [style.backgroundImage]="'url(http://via.placeholder.com/150x150)'" class="img"
+          *ngIf="!dialogInfo['imageProfile']"></div>
+        <div [style.backgroundImage]="'url('+ dialogInfo.imageProfile +')'" class="img"
+          *ngIf="dialogInfo['imageProfile']">
+          <div class="ch-info">
+            <h3>Brainiac</h3>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <div class="cvInfo">
+      <div class="inputDiv">
+        <h4 class="title">{{'primaryIdentifier'|translate}}</h4>
+        <input class="input" placeholder="{{'enter'|translate}} {{'primaryIdentifier'|translate}}"
+          [(ngModel)]="dialogInfo.primaryIdentifier">
+      </div>
+      <div class="inputDiv">
+        <h4 class="title">{{'bio'|translate}}</h4>
+        <textarea class="input" placeholder="{{'enter'|translate}} {{'bio'|translate}}"
+          [(ngModel)]="dialogInfo.bio"></textarea>
+      </div>
+      <div class="inputDiv">
+        <h4 class="title">{{'city'|translate}}</h4>
+        <select class="select" [(ngModel)]="dialogInfo.cityId">
+          <option value="-1" disabled>{{'city'|translate}}</option>
+          <option *ngFor="let city of allCity;let i= index" value="{{city.id}}">{{city.name}}</option>
+        </select>
+      </div>
+
+      <h4 class="title" style="font-weight: bold">{{'reference'|translate}}</h4>
+      <div class="socialDiv">
+        <div class="inputDiv">
+          <!-- <h4 class="title">{{'title'|translate}}</h4> -->
+          <i class="fa fa-globe" aria-hidden="true"></i>
+          <input class="input" [(ngModel)]="dialogInfo.websiteLink">
+        </div>
+        <div class="inputDiv">
+          <!-- <h4 class="title">{{'title'|translate}}</h4> -->
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+
+          <input class="input" [(ngModel)]="dialogInfo.facebookLink">
+        </div>
+        <div class="inputDiv">
+          <!-- <h4 class="title">{{'title'|translate}}</h4> -->
+          <i class="fa fa-behance-square" aria-hidden="true"></i>
+
+          <input class="input" [(ngModel)]="dialogInfo.behanceLink">
+        </div>
+        <div class="inputDiv">
+          <!-- <h4 class="title">{{'title'|translate}}</h4> -->
+          <i class="fa fa-github-square" aria-hidden="true"></i>
+
+          <input class="input" [(ngModel)]="dialogInfo.githubLink">
+        </div>
+        <div class="inputDiv">
+          <!-- <h4 class="title">{{'title'|translate}}</h4> -->
+          <i class="fa fa-twitter-square" aria-hidden="true"></i>
+
+          <input class="input" [(ngModel)]="dialogInfo.twitterLink">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer">
+    <div (click)="save()" class="button save">
+      {{'saveCV'|translate}}
+    </div>
+    <!-- <div class="button delete">
+            save
+          </div> -->
+  </div>
+</div>

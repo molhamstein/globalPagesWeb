@@ -1,0 +1,43 @@
+<div class="col-md-3  col-xs-12 featured-box-flex-image">
+  <div class="box-header">
+    <div class="box-image">
+      <div [style.backgroundImage]="'url('+ data?.img +')'" class="img"></div>
+      <a [routerLink]="['/business',data.nameUnique]" title="">{{'preview' | translate}}</a>
+      <div class="overlay1"></div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-9 col-xs-12 featured-box-flex-text">
+  <div class="box-content">
+    <div class="isNew" *ngIf="data['isNew']">
+      <span>
+        {{'new'|translate}}
+      </span>
+    </div>
+    <div class="box-title ad">
+      <a [routerLink]="['/job',data.id]" title="">{{data.name}}</a>
+    </div>
+    <div class="box-title company">
+      <a [routerLink]="['/business',data.nameUnique]" title="">{{data.nameUnique}}</a>
+    </div>
+    <div class="box-title address">
+      <span [routerLink]="['/business',data.nameUnique]" title="">{{data.address}}</span>
+    </div>
+
+    <ul class="category">
+      <div class="since">
+        <span>
+          {{data?.since}}
+        </span>
+      </div>
+      <li>{{data.category}}</li>
+      <li>{{data.subCategory}}</li>
+    </ul>
+
+
+
+
+  </div>
+  <!-- /.box-content -->
+</div>

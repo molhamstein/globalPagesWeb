@@ -1,0 +1,19 @@
+<div class="module">
+  <div class="headers">
+    <h4 class="mainLabel">
+      {{'successMessage' | translate}}
+    </h4>
+    <i class="fa fa-times" (click)="close()" aria-hidden="true"></i>
+  </div>
+  <div class="contint">
+    <p>
+      {{message|translate}}
+    </p>
+  </div>
+
+  <div class="footer">
+    <div (click)="done()" class="button save">
+      {{'done'|translate}}
+    </div>
+  </div>
+</div>

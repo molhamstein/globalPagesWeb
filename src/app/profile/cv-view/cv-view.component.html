@@ -1,0 +1,161 @@
+<section class="">
+  <div class="" style="background-color: #f9f8f3">
+    <div class="row" style="background-color: #fff;margin-bottom: 30px;">
+      <div *ngIf="user" class="col-md-12 mainHeader">
+        <div class="col-md-3 col-xs-12" style="float: left;">
+          <div class="img" [style.backgroundImage]="'url('+ user.imageProfile +')'"></div>
+        </div>
+        <div class="col-md-9 col-xs-12" style="min-height: 200px;display: table;">
+          <input type="file" hidden #file id="file" (change)="imageChanged()" />
+          <div style="vertical-align: middle;display: table-cell;">
+            <h3 class="username">{{user.username}}
+              <span class="edit" *ngIf="isMyCV" (click)="editBasicInfo()">{{'edit'|translate}}</span>
+              <span class="edit editCv" *ngIf="isMyCV" (click)="editCv()">{{'editCVFile'|translate}}</span>
+            </h3>
+            <h5 *ngIf="user.CV" class="identefire">{{user.CV.primaryIdentifier}}</h5>
+            <h5 *ngIf="user.CV" class="city">{{user.CV.city.nameEn}}</h5>
+            <p *ngIf="user.CV" class="bio">{{user.CV.bio}}</p>
+            <div *ngIf="user.CV" class="icons">
+              <div class="oneIcon" *ngIf="user.CV.websiteLink">
+                <a href="{{user.CV.websiteLink}}" target="_blank">
+                  <i class="fa fa-globe" aria-hidden="true">
+                  </i>
+                </a>
+              </div>
+              <div class="oneIcon" *ngIf="user.CV.facebookLink">
+                <a href="{{user.CV.facebookLink}}" target="_blank">
+                  <i class="fa fa-facebook-square" aria-hidden="true">
+                  </i>
+                </a>
+              </div>
+              <div class="oneIcon" *ngIf="user.CV.behanceLink">
+                <a href="{{user.CV.behanceLink}}" target="_blank">
+                  <i class="fa fa-behance-square" aria-hidden="true">
+                  </i>
+                </a>
+              </div>
+              <div class="oneIcon" *ngIf="user.CV.githubLink">
+                <a href="{{user.CV.githubLink}}" target="_blank">
+                  <i class="fa fa-github-square" aria-hidden="true">
+                  </i>
+                </a>
+              </div>
+              <div class="oneIcon" *ngIf="user.CV.twitterLink">
+                <a href="{{user.CV.twitterLink}}" target="_blank">
+                  <i class="fa fa-twitter-square" aria-hidden="true">
+                  </i>
+                </a>
+              </div>
+
+              <div class="oneIcon downloadCv">
+                <a href="{{user.CV.cvURL}}" target="_blank">
+                  <i class="fa fa-cloud-download" aria-hidden="true">
+                  </i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="direction: ltr;padding-bottom: 30px;">
+      <div style="float: left;" class="col-md-1 col-xs-0"></div>
+      <div style="float: left;" *ngIf="user && user.CV" class="col-md-7 col-xs-12 containtCV">
+        <div class="mainContent">
+          <div style="position:relative">
+            <h4 class="mainLabel">
+              {{'experience' | translate}}
+              <span class="add" (click)="editInfo('experience',null,null)">{{'add' | translate}}</span>
+            </h4>
+            <div class="listItems">
+              <div class="placeholder" *ngIf="user.CV.experience.length==0">
+                <img src="../../../assets/images/page/empty placeholder.png">
+                <h4>{{'noExperienceInCv'|translate}}</h4>
+              </div>
+              <div class="oneItem" *ngFor="let oneItem of user.CV.experience;let i=index">
+                <div class="circle"></div>
+                <span class="title">{{oneItem.title}}
+                  <span class="edit" (click)="editInfo('experience',oneItem,i)">{{'edit'|translate}}</span>
+                </span>
+                <h3 class="subTitle">{{oneItem.companyName}}</h3>
+                <p class="description">{{oneItem.description}}</p>
+                <h3 class="date">{{oneItem.from | date:'MMM dd,yy' }} -
+                  {{(oneItem.isPresent==true? 'present' :oneItem.to | date:'MMM dd,yy')| translate }}</h3>
+              </div>
+            </div>
+          </div>
+
+          <div style="position:relative">
+            <h4 class="mainLabel">
+              {{'skills' | translate}}
+              <span (click)="editSkills()" class="add">{{(user.CV.tags.length>0? 'edit': 'add') | translate}}</span>
+
+            </h4>
+
+            <div class="listItems" *ngIf="user.CV.tags.length==0">
+              <div class="placeholder">
+                <img src="../../../assets/images/page/empty placeholder.png">
+                <h4>{{'noTagsInCv'|translate}}</h4>
+              </div>
+            </div>
+            <div class="listOfTags" *ngIf="user.CV.tags.length!=0">
+              <div class="tag" *ngFor="let oneItem of user.CV.tags;let i=index">
+                <span>
+                  {{oneItem.name}}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div style="position:relative">
+
+            <h4 class="mainLabel">
+              {{'education' | translate}}
+              <span class="add" (click)="editInfo('education',null,null)">{{'add' | translate}}</span>
+
+            </h4>
+            <div class="listItems">
+              <div class="placeholder" *ngIf="user.CV.education.length==0">
+                <img src="../../../assets/images/page/empty placeholder.png">
+                <h4>{{'noEducationInCv'|translate}}</h4>
+
+              </div>
+
+              <div class="oneItem" *ngFor="let oneItem of user.CV.education;let i=index">
+                <div class="circle"></div>
+                <span class="title">{{oneItem.title}}
+                  <span class="edit" (click)="editInfo('education',oneItem,i)">{{'edit'|translate}}</span>
+                </span>
+                <h3 class="subTitle">{{oneItem.educationalEntity}}</h3>
+                <p class="description">{{oneItem.description}}</p>
+                <h3 class="date">{{oneItem.from | date:'MMM dd,yy' }} - {{oneItem.to | date:'MMM dd,yy' }}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="float: left;padding-top: 33px" class="col-md-3 col-xs-12 similerProfile">
+        <h4 class="mainLabel" *ngIf="similer.length!=0">
+          {{'similarProfile' | translate}}
+        </h4>
+
+        <div class="listOfUsers">
+          <div class="oneUsers" *ngFor="let oneItem of similer;let i=index" (click)="goToCv(oneItem.id)">
+            <div class="imgDiv">
+              <div class="img" [style.backgroundImage]="'url('+ oneItem.imageProfile +')'"></div>
+            </div>
+            <div class="contint">
+              <div style="vertical-align: middle;display: table-cell;padding-left: 5px;">
+                <span class="username">{{oneItem.username}}</span>
+                <span class="identefire">{{oneItem.CV.primaryIdentifier}}</span>
+                <span class="city">{{oneItem.CV.city.nameEn}}</span>
+              </div>
+            </div>
+            <hr class="spreater">
+          </div>
+        </div>
+      </div>
+      <div style="float: left;" class="col-md-1 col-xs-0"></div>
+    </div>
+  </div>
+</section>

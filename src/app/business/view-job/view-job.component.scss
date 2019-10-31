@@ -1,0 +1,532 @@
+.mainHeader {
+  min-height: 200px;
+  padding: 25px;
+  direction: ltr;
+}
+
+.mainHeader .img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0px auto;
+  background-position: center;
+}
+
+.containtJob {
+  padding-right: 5%;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+  .allInfo {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .mainHeader .img {
+    margin: 0px auto;
+  }
+
+  .tabs {
+    bottom: 0px !important;
+  }
+
+  .infoJob {
+    padding: 0px 5%;
+    order: 1;
+  }
+
+  .containtJob {
+    order: 2;
+    padding: 0px 5%;
+  }
+}
+
+.mainHeader .username {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.mainHeader .username .edit {
+  position: absolute;
+  right: 8%;
+  top: 15px;
+  font-size: 14px;
+  color: black;
+}
+
+.mainHeader .username .deactive {
+  top: 50px;
+}
+
+.mainHeader .username .edit:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width .3s;
+}
+
+.mainHeader .username .edit:hover {
+  color: #ffd400;
+  cursor: pointer;
+}
+
+.mainHeader .username .edit:hover:after {
+  width: 100%;
+  background-color: #ffd400;
+
+}
+
+
+
+.mainHeader .identefire {
+  color: gray;
+  font-size: 13px;
+  margin: 8px 0px;
+}
+
+.mainHeader .city {
+  margin: 8px 0px;
+  font-size: 13px;
+}
+
+.mainHeader .bio {
+  margin-top: 8px;
+}
+
+.mainHeader .icons .oneIcon {
+  float: left;
+  margin: 0px 10px;
+  font-size: 25px;
+}
+
+.mainHeader .icons .oneIcon:first-child {
+  margin-left: 0px;
+}
+
+
+.mainContent {
+  margin: 10px 1%;
+  box-shadow: 0 3px 12px #ccc;
+  width: 100%;
+  background-color: #fff;
+  align-items: stretch;
+  min-height: 218px;
+  margin: 6px auto;
+  padding: 0;
+  border-radius: 7px;
+  box-shadow: 0 0 12px #aaa;
+  padding: 30px 45px;
+  direction: ltr;
+}
+
+
+.mainLabel {
+  border-bottom: 3px solid #fbd431;
+  padding-bottom: 0px;
+  display: inline;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.mainLabel .add {
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  font-size: 12px;
+}
+
+.mainLabel .add:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width .3s;
+}
+
+.mainLabel .add:hover {
+  color: #ffd400;
+  cursor: pointer;
+}
+
+.mainLabel .add:hover:after {
+  width: 100%;
+  background-color: #ffd400;
+
+}
+
+.listItems {
+  margin-top: 40px;
+}
+
+
+.listItems .oneItem {
+  margin: 10px 15px;
+  position: relative;
+}
+
+.listItems .oneItem .circle {
+  width: 15px;
+  float: left;
+  height: 15px;
+  background-color: #fbd431;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+.listItems .oneItem:hover .title .edit {
+  display: inline;
+}
+
+.listItems .oneItem .title {
+  padding-bottom: 0px;
+  display: inline;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.listItems .oneItem .title .edit {
+  position: absolute;
+  display: none;
+  right: 0px;
+  top: 5px;
+  font-size: 12px;
+}
+
+.listItems .oneItem .title .edit:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width .3s;
+}
+
+.listItems .oneItem .title .edit:hover {
+  color: #ffd400;
+  cursor: pointer;
+}
+
+.listItems .oneItem .title .edit:hover:after {
+  width: 100%;
+  background-color: #ffd400;
+
+}
+
+.listItems .oneItem .subTitle {
+  padding-bottom: 0px;
+  font-size: 18px;
+  padding-left: 35px;
+}
+
+.description {
+  padding-top: 15px;
+  padding-left: 15px;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.listItems .oneItem .date {
+  padding-bottom: 0px;
+  font-size: 18px;
+  padding-left: 35px;
+  color: gray;
+}
+
+
+.listOfTags {
+  margin: 20px 15px;
+  display: table;
+}
+
+.listOfTags .tag {
+  width: fit-content;
+  border: 1px solid #fbd431;
+  background-color: #fbd431;
+  padding: 0px 5px;
+  border-radius: 15px;
+  float: left;
+  margin: 0px 5px;
+}
+
+.listOfTags .tag:first-child {
+  margin: 0px;
+}
+
+.listOfUsers {
+  padding-top: 30px;
+}
+
+.listOfUsers .oneUsers {}
+
+.listOfUsers .oneUsers .contint {
+  min-height: 60px;
+  display: table;
+  padding-left: 20px;
+}
+
+.listOfUsers .oneUsers .contint .username {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 18px;
+  display: block;
+}
+
+.listOfUsers .oneUsers .contint .identefire {
+  font-size: 13px;
+  font-weight: 600;
+  color: gray;
+  display: block;
+  line-height: 18px;
+}
+
+.listOfUsers .oneUsers .contint .city {
+  font-size: 13px;
+  font-weight: 600;
+
+  display: block;
+  color: #c3c3c3;
+  line-height: 18px;
+}
+
+.listOfUsers .oneUsers .imgDiv {
+  width: 60px;
+  float: left;
+}
+
+.listOfUsers .oneUsers .imgDiv .img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.spreater {
+  border: 0;
+  height: 0;
+  /* Firefox... */
+  box-shadow: 0 0 5px 1px #0000002e;
+}
+
+.spreater:after {
+  /* Not really supposed to work, but does */
+  content: "\00a0";
+  /* Prevent margin collapse */
+}
+
+.informationRow {
+  padding-left: 25px;
+  margin: 7px auto;
+  /* margin: 6px 0px; */
+  position: relative;
+}
+
+.informationRow i {
+  position: absolute;
+  top: 6px;
+  left: 0px;
+}
+
+.category {
+  padding-top: 2px;
+  direction: ltr;
+
+}
+
+.tabs {
+  width: 100%;
+  position: absolute;
+  bottom: -25px;
+  left: 15px;
+}
+
+
+.oneTab {
+  float: left;
+  min-width: 80px;
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+  margin: 0px 10px;
+}
+
+.oneTab:first-child {
+  margin-left: 0px;
+}
+
+.oneTab.active {
+  // border-bottom: 3px solid #ffd400;
+  color: black;
+  font-weight: 600;
+}
+
+.oneTab.active::after {
+  width: 100%;
+}
+
+.oneTab:hover {
+  cursor: pointer;
+  // border-bottom: 3px solid #ffd400;
+  color: black;
+  font-weight: 600;
+}
+
+
+.oneTab:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #ffd400;
+  transition: width .3s;
+}
+
+.oneTab:hover {
+  cursor: pointer;
+  color: black;
+  font-weight: 600;
+}
+
+.oneTab:hover:after {
+  width: 100%;
+  background-color: #ffd400;
+
+}
+
+ul.category {
+  width: 100%;
+  text-align: left;
+}
+
+ul.category li {
+  display: inline-block;
+  color: #c2c2c2;
+  font-weight: 300;
+}
+
+ul.category li:not(:last-child) {
+  padding-right: 20px;
+  margin-right: 17px;
+  border-right: 1px solid #c2c2c2;
+  line-height: 1;
+}
+
+
+
+
+.userCard {
+  height: 150px;
+  float: left;
+
+  .box {
+    box-shadow: 0 0 12px #aaa;
+    width: calc(100% - 30px);
+    margin: 15px;
+    padding: 10px;
+    height: calc(100% - 20px);
+    background-color: white;
+    border-radius: 10px;
+
+    .stautsDiv {
+      border-left: 2px solid #c3c3c3;
+      width: calc((100% - 110px)/3 * 1.3);
+      height: 100%;
+      float: left;
+      margin: 17.5px 0px;
+      height: calc(100% - 35px);
+      display: table;
+
+      .contain {
+        display: table-cell;
+        height: 75px;
+        width: 100%;
+        padding-right: 5px;
+
+        .oneInfo {
+          text-align: right;
+
+          select {
+            color: white;
+            font-weight: bold;
+            width: fit-content;
+            float: right;
+            margin: 10px 0px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: #ffd400;
+            padding: 0px 8px;
+            line-height: 15px;
+
+            // .module .contint .inputDiv .select {
+            background-image: linear-gradient(45deg, transparent 50%, #ffffff 50%), linear-gradient(135deg, #ffffff 50%, transparent 50%);
+            background-position: calc(100% - 13px) calc(1em + -2px), calc(100% - 6px) calc(1em + -2px), 100% 0px;
+            background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+            background-size: 7px 5px;
+            background-repeat: no-repeat;
+            // }
+
+          }
+
+        }
+      }
+    }
+
+    .imgDiv {
+      float: left;
+      width: 110px;
+      height: 110px;
+      display: table;
+      padding: 10px;
+
+      .img {
+        height: calc(100% - 20px);
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        display: table-cell;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+    }
+
+    .infoDiv {
+
+      display: table;
+      float: left;
+      height: 100%;
+      width: calc((100% - 110px)/3 * 1.7);
+
+      .contain {
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+
+        .name {
+          font-size: 22px;
+          padding: 5px 0px;
+          font-weight: bold;
+        }
+
+        .identefire {
+          font-size: 24px;
+          font-weight: 600;
+          padding: 5px 0px;
+        }
+
+        .city {
+          font-size: 15px;
+          color: lightslategray;
+          padding: 5px 0px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,337 @@
+.mainHeader {
+  min-height: 250px;
+  padding: 25px;
+  direction: ltr;
+}
+
+.mainHeader .img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0px auto;
+  background-position: center;
+}
+
+.containtCV {
+  padding-right: 5%;
+}
+
+@media only screen and (max-width: 991px) {
+  .mainHeader .img {
+    margin: 0px auto;
+  }
+
+  .similerProfile {
+    padding: 0px 6%;
+  }
+
+  .containtCV {
+
+    padding: 0px 5%;
+  }
+}
+
+.mainHeader .username {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.mainHeader .username .edit {
+  position: absolute;
+  right: 8%;
+  top: 15px;
+  font-size: 14px;
+  color: black;
+}
+
+.mainHeader .username .edit.editCv {
+  top: 50px;
+}
+
+.mainHeader .username .edit.downloadCv {
+  bottom: 0px;
+}
+
+.mainHeader .username .edit:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width .3s;
+}
+
+.mainHeader .username .edit:hover {
+  color: #ffd400;
+  cursor: pointer;
+}
+
+.mainHeader .username .edit:hover:after {
+  width: 100%;
+  background-color: #ffd400;
+
+}
+
+
+
+.mainHeader .identefire {
+  color: gray;
+  font-size: 13px;
+  margin: 8px 0px;
+}
+
+.mainHeader .city {
+  margin: 8px 0px;
+  font-size: 13px;
+}
+
+.mainHeader .bio {
+  margin-top: 8px;
+}
+
+.mainHeader .icons .oneIcon {
+  float: left;
+  margin: 0px 10px;
+  font-size: 25px;
+}
+
+
+.mainHeader .icons .oneIcon.downloadCv {
+  position: absolute;
+  right: 8%;
+}
+
+.mainHeader .icons .oneIcon:first-child {
+  margin-left: 0px;
+}
+
+
+.mainContent {
+  margin: 10px 1%;
+  box-shadow: 0 3px 12px #ccc;
+  width: 100%;
+  background-color: #fff;
+  align-items: stretch;
+  min-height: 218px;
+  margin: 6px auto;
+  padding: 0;
+  border-radius: 7px;
+  box-shadow: 0 0 12px #aaa;
+  padding: 30px 45px;
+  direction: ltr;
+}
+
+
+.mainLabel {
+  border-bottom: 3px solid #fbd431;
+  padding-bottom: 0px;
+  display: inline;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.mainLabel .add {
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  font-size: 12px;
+}
+
+.mainLabel .add:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width .3s;
+}
+
+.mainLabel .add:hover {
+  color: #ffd400;
+  cursor: pointer;
+}
+
+.mainLabel .add:hover:after {
+  width: 100%;
+  background-color: #ffd400;
+
+}
+
+.listItems {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.listItems .placeholder {
+  /* text-align: center; */
+  text-align: center;
+}
+
+.listItems .placeholder img {
+  width: 100px;
+  opacity: 0.7;
+}
+
+.placeholder h4 {
+  font-size: 20px;
+  padding-top: 10px;
+  color: #fac964;
+  text-shadow: 0px 0px 1px #717171;
+}
+
+.listItems .oneItem {
+  margin: 10px 15px;
+  position: relative;
+}
+
+.listItems .oneItem .circle {
+  width: 15px;
+  float: left;
+  height: 15px;
+  background-color: #fbd431;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+.listItems .oneItem:hover .title .edit {
+  display: inline;
+}
+
+.listItems .oneItem .title {
+  padding-bottom: 0px;
+  display: inline;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.listItems .oneItem .title .edit {
+  position: absolute;
+  display: none;
+  right: 0px;
+  top: 5px;
+  font-size: 12px;
+}
+
+.listItems .oneItem .title .edit:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width .3s;
+}
+
+.listItems .oneItem .title .edit:hover {
+  color: #ffd400;
+  cursor: pointer;
+}
+
+.listItems .oneItem .title .edit:hover:after {
+  width: 100%;
+  background-color: #ffd400;
+
+}
+
+.listItems .oneItem .subTitle {
+  padding-bottom: 0px;
+  font-size: 18px;
+  padding-left: 35px;
+}
+
+.listItems .oneItem .description {
+  padding-left: 35px;
+  color: black;
+}
+
+.listItems .oneItem .date {
+  padding-bottom: 0px;
+  font-size: 18px;
+  padding-left: 35px;
+  color: gray;
+}
+
+
+.listOfTags {
+  margin: 20px 15px;
+  display: table;
+  margin-top: 40px;
+}
+
+.listOfTags .tag {
+  width: fit-content;
+  border: 1px solid #fbd431;
+  background-color: #fbd431;
+  padding: 0px 5px;
+  border-radius: 15px;
+  float: left;
+  margin: 0px 5px;
+}
+
+.listOfTags .tag:first-child {
+  margin: 0px;
+}
+
+.listOfUsers {
+  padding-top: 30px;
+}
+
+.listOfUsers .oneUsers {}
+
+.listOfUsers .oneUsers .contint {
+  min-height: 60px;
+  display: table;
+  padding-left: 20px;
+}
+
+.listOfUsers .oneUsers .contint .username {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 18px;
+  display: block;
+}
+
+.listOfUsers .oneUsers .contint .identefire {
+  font-size: 13px;
+  font-weight: 600;
+  color: gray;
+  display: block;
+  line-height: 18px;
+}
+
+.listOfUsers .oneUsers .contint .city {
+  font-size: 13px;
+  font-weight: 600;
+
+  display: block;
+  color: #c3c3c3;
+  line-height: 18px;
+}
+
+.listOfUsers .oneUsers .imgDiv {
+  width: 60px;
+  float: left;
+}
+
+.listOfUsers .oneUsers .imgDiv .img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.spreater {
+  border: 0;
+  height: 0;
+  /* Firefox... */
+  box-shadow: 0 0 5px 1px #0000002e;
+}
+
+.spreater:after {
+  /* Not really supposed to work, but does */
+  content: "\00a0";
+  /* Prevent margin collapse */
+}

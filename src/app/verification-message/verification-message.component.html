@@ -1,0 +1,22 @@
+<div class="module">
+  <div class="headers">
+    <h4 class="mainLabel">
+      {{'verificationMessage' | translate}}
+    </h4>
+    <i class="fa fa-times" (click)="close()" aria-hidden="true"></i>
+  </div>
+  <div class="contint">
+    <p>
+      {{message|translate}}
+    </p>
+  </div>
+
+  <div class="footer">
+    <div (click)="yes()" class="button save">
+      {{'yes'|translate}}
+    </div>
+    <div (click)="close()" class="button delete">
+      {{'no'|translate}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,190 @@
+<section class="page-title parallax parallax1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-title-heading">
+          {{"addNewJobOpportunity" | translate}}
+        </div>
+
+      </div>
+      <!-- /.col-md-12 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+  <div class="overlay1"></div>
+</section>
+<!-- /.page-title -->
+
+
+<section class="flat-listing">
+  <div class="container" style="direction: ltr;">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="inner-box form">
+          <span class="errorMessage"
+            *ngIf="errorMessage!=''">{{'requiredMessageCV' | translate}}{{errorMessage|translate}}</span>
+
+          <div class="row">
+            <div class="col-md-6" style="float: left;">
+              <div class="inputDiv">
+                <h4 class="title">{{'nameAr'|translate}}</h4>
+                <input class="input" placeholder="{{'enter'|translate}}  {{'nameAr'|translate}}"
+                  [(ngModel)]="newObject.nameAr">
+              </div>
+            </div>
+            <div class="col-md-6" style="float: left;">
+              <div class="inputDiv">
+                <h4 class="title">{{'nameEn'|translate}}</h4>
+                <input class="input" placeholder="{{'enter'|translate}}  {{'nameEn'|translate}}"
+                  [(ngModel)]="newObject.nameEn">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="inputDiv">
+                <h4 class="title">{{'jobType'|translate}}</h4>
+                <select class="select" [(ngModel)]="newObject.jobType">
+                  <option value="-1" disabled>{{'jobType'|translate}}</option>
+                  <option *ngFor="let oneType of jobTypeArray;let i= index" value="{{oneType.value}}">
+                    {{oneType.title | translate}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="inputDiv">
+                <h4 class="title">{{'minimumEducationLevel'|translate}}</h4>
+                <select class="select" [(ngModel)]="newObject.minimumEducationLevel">
+                  <option value="-1" disabled>{{'minimumEducationLevel'|translate}}</option>
+                  <option *ngFor="let oneItem of minimumEducationLevelArray;let i= index" value="{{oneItem.value}}">
+                    {{oneItem.title|translate}}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="inputDiv">
+                <h4 class="title">{{'responsibilitiesAr'|translate}}</h4>
+                <textarea class="input" placeholder="{{'enter'|translate}}  {{'responsibilitiesAr'|translate}}"
+                  [(ngModel)]="newObject.responsibilitiesAr"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="inputDiv">
+                <h4 class="title">{{'responsibilitiesEn'|translate}}</h4>
+                <textarea class="input" placeholder="{{'enter'|translate}}  {{'responsibilitiesEn'|translate}}"
+                  [(ngModel)]="newObject.responsibilitiesEn"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="inputDiv">
+                <h4 class="title">{{'qualificationsAr'|translate}}</h4>
+                <textarea class="input" placeholder="{{'enter'|translate}}  {{'qualificationsAr'|translate}}"
+                  [(ngModel)]="newObject.qualificationsAr"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="inputDiv">
+                <h4 class="title">{{'qualificationsEn'|translate}}</h4>
+                <textarea class="input" placeholder="{{'enter'|translate}}  {{'qualificationsEn'|translate}}"
+                  [(ngModel)]="newObject.qualificationsEn"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="inputDiv">
+                <h4 class="title">{{'descriptionAr'|translate}}</h4>
+                <textarea class="input" placeholder="{{'enter'|translate}}  {{'descriptionAr'|translate}}"
+                  [(ngModel)]="newObject.descriptionAr"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="inputDiv">
+                <h4 class="title">{{'descriptionEn'|translate}}</h4>
+                <textarea class="input" placeholder="{{'enter'|translate}}  {{'descriptionEn'|translate}}"
+                  [(ngModel)]="newObject.descriptionEn"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="inputDiv">
+                <h4 class="title">{{'rangeSalary'|translate}}</h4>
+                <input class="input" placeholder="{{'enter'|translate}}  {{'rangeSalary'|translate}}"
+                  [(ngModel)]="newObject.rangeSalary">
+              </div>
+            </div>
+
+            <div class="col-md-6" style="float: left;">
+              <div class="inputDiv">
+                <h4 class="title">{{'category'|translate}}</h4>
+                <select class="select" (change)="onCategoryChange()" [(ngModel)]="newObject.categoryId">
+                  <option value="-1" disabled>{{'category'|translate}}</option>
+                  <option *ngFor="let category of allCategory;let i= index" value="{{category.id}}">{{category.titleEn}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6" style="float: left;">
+              <div class="inputDiv">
+                <h4 class="title">{{'subCategory'|translate}}</h4>
+                <select class="select" [(ngModel)]="newObject.subCategoryId">
+                  <option value="-1" disabled>{{'subCategory'|translate}}</option>
+                  <option *ngFor="let subCategory of allSubcategory;let i= index" value="{{subCategory.id}}">
+                    {{subCategory.titleEn}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6" style="float: left;">
+
+              <div class="inputDiv">
+                <h4 class="title">{{'skill'|translate}}</h4>
+                <input class="input" placeholder="{{'enter'|translate}} {{'skill'|translate}}" (focus)="inputFocus=true"
+                  (keyup)="typeing($event)" [(ngModel)]="inputValue" (focusout)="foucasOut()"
+                  (keyup.enter)="addNewTag()">
+                <!-- <div class="button add">
+                        {{'add'|translate}}
+                      </div> -->
+                <div class="listAutoComplete" *ngIf="inputFocus==true && inputValue!=''">
+                  <div class="loader" *ngIf="viewLoader">
+                    <div class="bar"></div>
+                  </div>
+                  <div class="oneItem" *ngFor="let oneTag of resultSearsh;" (click)="addTag(oneTag)">
+                    <h4>{{oneTag.name}}</h4>
+                  </div>
+                  <div class="oneItem addItem" (click)="addNewTag()">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <h4>{{'addNew'|translate}}</h4>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-md-6" style="float: left;">
+              <div class="inputDiv">
+                <h4 class="title">{{'skills'|translate}}</h4>
+                <div class="tags">
+                  <div *ngFor="let oneTag of tags;let i=index" class="oneTag">
+                    <i class="fa fa-times" (click)="removeTag(i)" aria-hidden="true"></i>
+
+                    <span>
+                      {{oneTag.name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12" style="text-align: right">
+              <button class="display-content" (click)="save()">
+                <div class="btn-more submit-button"><a>{{'edit'| translate}}</a></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-12 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</section>
+<!-- /.flat-listing -->

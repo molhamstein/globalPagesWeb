@@ -1,13 +1,13 @@
 <div *ngIf="control.invalid && (control.dirty || control.touched || form?.submitted)" style="position: relative">
 
-  <div class="err-container">
+  <div class="err-container" [ngStyle]="{'top': topSize}">
     <ng-container *ngFor="let m of messages">
 
-      <div class="alert alert-danger"  *ngIf="control &&control.errors&& control.errors[m[0]]"> {{m[1] | translate:params}}</div>
+      <div class="alert alert-danger" *ngIf="control &&control.errors&& control.errors[m[0]]">
+        {{m[1] | translate:params}}</div>
 
     </ng-container>
   </div>
 
 
 </div>
-

@@ -5,20 +5,20 @@
         <div class="title-left">
 
           <div class="box-title">
-            <a  title="" *ngIf="lang=='ar'">{{business?.nameAr}}</a>
-            <a  title="" *ngIf="lang!='ar'">{{business?.nameEn}}</a>
+            <a title="" *ngIf="lang=='ar'">{{business?.nameAr}}</a>
+            <a title="" *ngIf="lang!='ar'">{{business?.nameEn}}</a>
           </div>
           <!-- /.box-title -->
           <ul class="box-categories">
             <li class="category">
               <i class="fa fa-flag" aria-hidden="true"></i>
-              <a  title="" *ngIf="lang=='ar'">{{business?.category?.titleAr}}</a>
-              <a  title="" *ngIf="lang!='ar'">{{business?.category?.titleEn}}</a>
+              <a title="" *ngIf="lang=='ar'">{{business?.category?.titleAr}}</a>
+              <a title="" *ngIf="lang!='ar'">{{business?.category?.titleEn}}</a>
             </li>
             <li class="subcategory">
               <i class="fa fa-filter" aria-hidden="true"></i>
-              <a  title="" *ngIf="lang=='ar'">{{business?.subCategory?.titleAr}}</a>
-              <a  title="" *ngIf="lang!='ar'">{{business?.subCategory?.titleEn}}</a>
+              <a title="" *ngIf="lang=='ar'">{{business?.subCategory?.titleAr}}</a>
+              <a title="" *ngIf="lang!='ar'">{{business?.subCategory?.titleEn}}</a>
             </li>
           </ul>
           <!-- /.box-address -->
@@ -31,7 +31,8 @@
           <div class="btn-more">
             <a *ngIf="toggle1" (click)="toggle1= ! toggle1" href="" title="">{{'getInTouch' | translate}}</a>
 
-            <a *ngIf="!toggle1" class="phone-arab-dir" href="tel:{{business?.phone1}}">{{business?.phone1}} <i class="fa fa-phone" style="margin-left:12px" aria-hidden="true"></i></a>
+            <a *ngIf="!toggle1" class="phone-arab-dir" href="tel:{{business?.phone1}}">{{business?.phone1}} <i
+                class="fa fa-phone" style="margin-left:12px" aria-hidden="true"></i></a>
           </div>
           <div class="clearfix"></div>
         </div>
@@ -52,13 +53,13 @@
         <div class="text-box">
           <h3>{{'about' | translate}}</h3>
           <div class="text-desc">
-           {{business?.description}}
+            {{business?.description}}
           </div>
         </div>
         <div class="col-md-12">
           <div class="imageGallery1">
             <a *ngFor="let image of business?.covers;let i=index" [lightbox]="i">
-              <img src="{{image?.thumbnail}}" alt="Gallery image 1"  />
+              <img src="{{image?.thumbnail}}" alt="Gallery image 1" />
             </a>
           </div>
         </div>
@@ -72,40 +73,44 @@
           <div class="box contact-box">
             <ul class="contact-list">
               <li class="address" *ngIf="business?.city || business?.location">
-                <i class="fa fa-map-marker" aria-hidden="true" ></i>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span *ngIf="lang=='ar'">{{business?.city?.nameAr}} , {{business?.location?.nameAr}}</span>
                 <span *ngIf="lang!='ar'">{{business?.city?.nameEn}} ,{{business?.location?.nameEn}}</span>
               </li>
               <li *ngIf="business?.phone1">
-                <i class="fa fa-phone" aria-hidden="true" ></i>
-                <a >{{business?.phone1}}</a>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <a>{{business?.phone1}}</a>
               </li>
               <li *ngIf="business?.phone2">
                 <i class="fa fa-phone" aria-hidden="true"></i>
-                <a >{{business?.phone2}}</a>
+                <a>{{business?.phone2}}</a>
               </li>
               <!--<li>-->
-                <!--<i class="fa fa-globe" aria-hidden="true"></i>-->
-                <!--<a href="#" title="">http://www.anrestaurant.com</a>-->
+              <!--<i class="fa fa-globe" aria-hidden="true"></i>-->
+              <!--<a href="#" title="">http://www.anrestaurant.com</a>-->
               <!--</li>-->
             </ul>
           </div>
           <div class="involve" *ngIf="business?.products?.length>0">
-          <h4>{{'ServicesAndProducts' | translate}}</h4>
-          <ul>
-            <li class="box" *ngFor="let product of business?.products">
-              <app-involve-box [product]="product"></app-involve-box>
-            </li>
-          </ul>
-        </div>
-        <div class="involve" style="margin-bottom: 50px" *ngIf="isOwner()">
-          <div class="btn-more">
-            <a title="" (click)="productsModal.open()">{{'editProducts' | translate}}</a>
+            <h4>{{'ServicesAndProducts' | translate}}</h4>
+            <ul>
+              <li class="box" *ngFor="let product of business?.products">
+                <app-involve-box [product]="product"></app-involve-box>
+              </li>
+            </ul>
           </div>
-        </div>
+          <div class="involve" style="margin-bottom: 50px" *ngIf="isOwner()">
+            <div class="btn-more">
+              <a title="" (click)="productsModal.open()">{{'editProducts' | translate}}</a>
+              <a title=""
+                [routerLink]="'/business/'+business.id+'/addJobOpportunity'">{{'addJobOpportunity' | translate}}</a>
+            </div>
+          </div>
 
           <div class="box pdmap style1" id="flat-map-4" *ngIf="business?.locationPoint">
-            <app-location-picker [disabled]="true" [(ngModel)]="business.locationPoint" [options]="{center:[business?.locationPoint?.lat,business?.locationPoint?.lng]}" name="locationPoint"></app-location-picker>
+            <app-location-picker [disabled]="true" [(ngModel)]="business.locationPoint"
+              [options]="{center:[business?.locationPoint?.lat,business?.locationPoint?.lng]}" name="locationPoint">
+            </app-location-picker>
           </div>
           <!-- /#flat-m ap -->
           <div class="box open" *ngIf="business?.openingDaysEnabled">
@@ -114,33 +119,33 @@
               <p>
                 <ng-container *ngFor="let day of business?.openingDays;let i=index">
                   <div class="tag">
-                  <span *ngIf="day==0+1">
-                    {{'sunday' | translate}}
-                  </span>
-                  <span *ngIf="day==1+1">
-                    {{'monday' | translate}}
-                  </span>
-                  <span *ngIf="day==2+1">
-                    {{'tuesday' | translate}}
-                  </span>
-                  <span *ngIf="day==3+1">
-                    {{'wednesday' | translate}}
-                  </span>
-                  <span *ngIf="day==4+1">
-                    {{'thursday' | translate}}
-                  </span>
-                  <span *ngIf="day==5+1">
-                    {{'friday' | translate}}
-                  </span>
-                  <span *ngIf="day==6+1">
-                    {{'saturday' | translate}}
-                  </span>
+                    <span *ngIf="day==0+1">
+                      {{'sunday' | translate}}
+                    </span>
+                    <span *ngIf="day==1+1">
+                      {{'monday' | translate}}
+                    </span>
+                    <span *ngIf="day==2+1">
+                      {{'tuesday' | translate}}
+                    </span>
+                    <span *ngIf="day==3+1">
+                      {{'wednesday' | translate}}
+                    </span>
+                    <span *ngIf="day==4+1">
+                      {{'thursday' | translate}}
+                    </span>
+                    <span *ngIf="day==5+1">
+                      {{'friday' | translate}}
+                    </span>
+                    <span *ngIf="day==6+1">
+                      {{'saturday' | translate}}
+                    </span>
                   </div>
                 </ng-container>
               </p>
               <!--<p>الاثنين - الخميس</p>-->
               <!--<p>9:00 صباحاً - 12:00 مساءً-->
-                <!--<span>مغلق الأن !</span>-->
+              <!--<span>مغلق الأن !</span>-->
               <!--</p>-->
             </div>
           </div>
@@ -158,10 +163,10 @@
 
 
 <ngx-smart-modal #productsModal modalClass="modal-lg" identifier="productsModal">
-  <div class="smart-modal-header" >
+  <div class="smart-modal-header">
     <h3>{{'ServicesAndProducts' | translate}}</h3>
   </div>
-  <div class="smart-modal-content" >
+  <div class="smart-modal-content">
     <div class="row">
       <div class="col-xs-12">
         <app-business-products [products]="business?.products" #products="products"></app-business-products>
