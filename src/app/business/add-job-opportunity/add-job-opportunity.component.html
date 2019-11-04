@@ -54,7 +54,7 @@
               <div class="inputDiv">
                 <h4 class="title">{{'jobType'|translate}}</h4>
                 <select class="select" [(ngModel)]="newObject.jobType">
-                  <option value="-1" disabled>{{'jobType'|translate}}</option>
+                  <option value="null" disabled>{{'jobType'|translate}}</option>
                   <option *ngFor="let oneType of jobTypeArray;let i= index" value="{{oneType.value}}">
                     {{oneType.title | translate}}
                   </option>
@@ -65,7 +65,7 @@
               <div class="inputDiv">
                 <h4 class="title">{{'minimumEducationLevel'|translate}}</h4>
                 <select class="select" [(ngModel)]="newObject.minimumEducationLevel">
-                  <option value="-1" disabled>{{'minimumEducationLevel'|translate}}</option>
+                  <option value="null" disabled>{{'minimumEducationLevel'|translate}}</option>
                   <option *ngFor="let oneItem of minimumEducationLevelArray;let i= index" value="{{oneItem.value}}">
                     {{oneItem.title|translate}}
                   </option>
@@ -83,7 +83,8 @@
             <div class="col-md-12">
               <div class="inputDiv">
                 <h4 class="title">{{'responsibilitiesEn'|translate}}</h4>
-                <textarea class="input" placeholder="{{'enter'|translate}}  {{'responsibilitiesEn'|translate}}" [(ngModel)]="newObject.responsibilitiesEn"></textarea>
+                <textarea class="input" placeholder="{{'enter'|translate}}  {{'responsibilitiesEn'|translate}}"
+                  [(ngModel)]="newObject.responsibilitiesEn"></textarea>
               </div>
             </div>
             <div class="col-md-12">
@@ -96,7 +97,8 @@
             <div class="col-md-12">
               <div class="inputDiv">
                 <h4 class="title">{{'qualificationsEn'|translate}}</h4>
-                <textarea class="input"  placeholder="{{'enter'|translate}}  {{'qualificationsEn'|translate}}" [(ngModel)]="newObject.qualificationsEn"></textarea>
+                <textarea class="input" placeholder="{{'enter'|translate}}  {{'qualificationsEn'|translate}}"
+                  [(ngModel)]="newObject.qualificationsEn"></textarea>
               </div>
             </div>
             <div class="col-md-12">

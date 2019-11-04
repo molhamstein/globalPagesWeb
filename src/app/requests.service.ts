@@ -10,10 +10,19 @@ export class RequestsService {
   api = environment.api;
   header = new HttpHeaders();
   constructor(private http: HttpClient) {
+    this.init()
+
+  }
+
+  init() {
     const user = JSON.parse(localStorage.getItem(environment.userDetails));
     if (user)
       this.header = this.header.append('Authorization', user['id']);
+    else
+      this.header = new HttpHeaders()
+
   }
+
   getWithHeaders(name, params = {}) {
 
     return this.http.get(this.api + name, { params, headers: this.header, observe: 'response' });

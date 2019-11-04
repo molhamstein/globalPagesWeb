@@ -250,6 +250,7 @@ export class CvViewComponent implements OnInit {
   }
 
   goToCv(id) {
+    this.isMyCV = false;
     this.router.navigate(["cv/" + id]);
   }
 

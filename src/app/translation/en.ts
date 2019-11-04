@@ -119,7 +119,7 @@ export const EnglishTranslation = {
   responsibilities: "Responsibilities",
   jobInfo: "Job information",
   information: "Information",
-  employee: "employee",
+  employee: "applicants",
   verificationMessage: "verification message",
   qualifications: "Qualifications",
   rangeSalaryView: "Range Salary",

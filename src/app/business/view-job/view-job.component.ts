@@ -39,15 +39,17 @@ export class ViewJobComponent {
         })
         this.route.params.subscribe((params) => {
             this.id = params['id']
+            console.log(this.auth.getUserDataLocal())
             this.api.get('jobOpportunities/' + this.id + "/getJobOpportunity").toPromise().then((data) => {
                 this.job = data;
-                this.auth.userData.subscribe((userData) => {
-                    if (data["ownerId"] == userData['id'])
-                        this.isMyJob = true
-                    else {
-                        this.canApply = true;
-                    }
-                })
+                // this.auth.userData.subscribe((userData) => {
+                var userData = this.auth.getUserDataLocal()
+                if (data["ownerId"] == userData['id'])
+                    this.isMyJob = true
+                else {
+                    this.canApply = true;
+                }
+                // })
                 // this.api.get('users/' + this.id + "/getSimilerCV").toPromise().then((data) => {
                 //     this.similer = data;
                 // })
@@ -109,7 +111,7 @@ export class ViewJobComponent {
 
     goToCv(id) {
         this.router.navigate(["cv/" + id]);
-      }
+    }
 
     apply() {
         let self = this;

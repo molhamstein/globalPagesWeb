@@ -111,7 +111,7 @@ export const ArabicTranslation = {
   responsibilities: "المتطلبات",
   jobInfo: "معلومات التوظيف",
   information: "معلومات",
-  employee: "الموظفين",
+  employee: "المتقدمين",
   verificationMessage: "رسالة تاكيد",
   qualifications: "المؤهلات",
   addedAds: 'الإعلانات المضافة',

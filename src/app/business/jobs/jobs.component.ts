@@ -29,12 +29,12 @@ export class JobsComponent {
     ngOnInit() {
         this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
         this.cds.jCategoryPromise.then(res => this.bCategories = <Object[]>res);
-        this.getPostsData("?status=activated");
+        this.getPostsData("?status=activated&");
     }
 
     reFilter() {
 
-        this.params = "?status=activated"
+        this.params = "?status=activated&"
 
         if (this.title != "" && this.title.trim().length != 0) {
             this.params += "keyword=" + this.title + "&"

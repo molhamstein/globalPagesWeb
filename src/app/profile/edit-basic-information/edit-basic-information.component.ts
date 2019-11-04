@@ -45,13 +45,12 @@ export class EditBasicInformationComponent {
 
 
     editImage() {
-        $('#file').trigger('click')
+        $('#imageFile').trigger('click')
     }
     imageChanged() {
         let images = new FormData();
         images.append('file', this.fileController.nativeElement.files[0]);
         this.api.post('attachments/images/upload', images).subscribe(res => {
-            console.log(res)
             this.dialogInfo['imageProfile'] = res[0].url
         })
 

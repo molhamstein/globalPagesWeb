@@ -8,6 +8,7 @@ import { Component, ViewChild } from '@angular/core';
 import { RequestsService } from 'src/app/requests.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { del } from 'selenium-webdriver/http';
 
 @Component({
     selector: 'add-job-opportunity',
@@ -15,7 +16,7 @@ import { Router, ActivatedRoute } from '@angular/router';
     styleUrls: ['add-job-opportunity.component.css']
 })
 export class AddJobOpportunityComponent {
-    newObject = { "nameEn": "", "nameAr": "", "responsibilitiesAr": "", "responsibilitiesEn": "", "qualificationsAr": "", "qualificationsEn": "", "descriptionEn": "", "descriptionAr": "", "rangeSalary": "", "categoryId": -1, "subCategoryId": -1, "jobType": -1, "minimumEducationLevel": -1 }
+    newObject = { "nameEn": "", "nameAr": "", "responsibilitiesAr": "", "responsibilitiesEn": "", "qualificationsAr": "", "qualificationsEn": "", "descriptionEn": "", "descriptionAr": "", "rangeSalary": "", "categoryId": -1, "subCategoryId": -1, "jobType": null, "minimumEducationLevel": null }
     jobTypeArray = [
         { "title": "partTime", "value": "partTime" },
         { "title": "fullTime", "value": "fullTime" },
@@ -152,6 +153,10 @@ export class AddJobOpportunityComponent {
         this.tags.forEach(element => {
             this.newObject['tags'].push(element.id)
         });
+        if (this.newObject['minimumEducationLevel'] == null)
+            delete this.newObject['minimumEducationLevel']
+        if (this.newObject['jobType'] == null)
+            delete this.newObject['jobType']
         this.api.post('businesses/' + this.businessId + '/addJobOpportunity', this.newObject).toPromise().then((data) => {
             // goToLogin() {
             self.router.navigate(["job/" + data['id']]);
@@ -164,11 +169,8 @@ export class AddJobOpportunityComponent {
         if (this.businessId == null || this.businessId == -1) {
             return 'business'
         }
-        if (this.newObject['nameAr'] == null || this.newObject['nameAr'] == "") {
-            return 'nameAr'
-        }
-        else if (this.newObject['nameEn'] == null || this.newObject['nameEn'] == "") {
-            return "nameEn"
+        if ((this.newObject['nameAr'] == null || this.newObject['nameAr'] == "") && (this.newObject['nameAr'] == null || this.newObject['nameAr'] == "")) {
+            return 'name'
         }
         // else if (this.newObject['descriptionAr'] == null || this.newObject['descriptionAr'] == "") {
         //     return "descriptionAr"

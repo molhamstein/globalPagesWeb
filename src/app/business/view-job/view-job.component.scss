@@ -356,6 +356,18 @@
   font-size: 18px;
   color: gray;
   margin: 0px 10px;
+
+  .count {
+    float: left;
+    margin: 0px 5px;
+    background-color: #f8b121;
+    padding: 0px 5px;
+    color: white;
+    line-height: 19px;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-top: 3px;
+  }
 }
 
 .oneTab:first-child {
@@ -513,6 +525,11 @@ ul.category li:not(:last-child) {
           font-size: 22px;
           padding: 5px 0px;
           font-weight: bold;
+
+          &:hover {
+            color: #fbd431;
+            cursor: pointer;
+          }
         }
 
         .identefire {

@@ -89,6 +89,7 @@
 
 .mainHeader .bio {
   margin-top: 8px;
+  max-width: 700px;
 }
 
 .mainHeader .icons .oneIcon {
@@ -278,7 +279,9 @@
   padding-top: 30px;
 }
 
-.listOfUsers .oneUsers {}
+.listOfUsers .oneUsers .card:hover {
+  cursor: pointer;
+}
 
 .listOfUsers .oneUsers .contint {
   min-height: 60px;
@@ -327,7 +330,8 @@
   border: 0;
   height: 0;
   /* Firefox... */
-  box-shadow: 0 0 5px 1px #0000002e;
+  margin: 15px 0px;
+  box-shadow: 0 0 1px 1px #00000008;
 }
 
 .spreater:after {

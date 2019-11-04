@@ -11,7 +11,7 @@
     <div class="basicInfo">
 
       <div class="imageProfile">
-        <input type="file" hidden #file id="file" (change)="imageChanged()" />
+        <input type="file" hidden #file id="imageFile" (change)="imageChanged()" />
         <div class="ch-item ch-img-1" (click)="editImage()"
           [style.backgroundImage]="'url('+ dialogInfo.imageProfile +')'">
           <div class="ch-info">

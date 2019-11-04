@@ -65,7 +65,7 @@
           <div style="position:relative">
             <h4 class="mainLabel">
               {{'experience' | translate}}
-              <span class="add" (click)="editInfo('experience',null,null)">{{'add' | translate}}</span>
+              <span *ngIf="isMyCV" class="add" (click)="editInfo('experience',null,null)">{{'add' | translate}}</span>
             </h4>
             <div class="listItems">
               <div class="placeholder" *ngIf="user.CV.experience.length==0">
@@ -75,7 +75,7 @@
               <div class="oneItem" *ngFor="let oneItem of user.CV.experience;let i=index">
                 <div class="circle"></div>
                 <span class="title">{{oneItem.title}}
-                  <span class="edit" (click)="editInfo('experience',oneItem,i)">{{'edit'|translate}}</span>
+                  <span *ngIf="isMyCV" class="edit" (click)="editInfo('experience',oneItem,i)">{{'edit'|translate}}</span>
                 </span>
                 <h3 class="subTitle">{{oneItem.companyName}}</h3>
                 <p class="description">{{oneItem.description}}</p>
@@ -88,7 +88,7 @@
           <div style="position:relative">
             <h4 class="mainLabel">
               {{'skills' | translate}}
-              <span (click)="editSkills()" class="add">{{(user.CV.tags.length>0? 'edit': 'add') | translate}}</span>
+              <span *ngIf="isMyCV" (click)="editSkills()" class="add">{{(user.CV.tags.length>0? 'edit': 'add') | translate}}</span>
 
             </h4>
 
@@ -111,7 +111,7 @@
 
             <h4 class="mainLabel">
               {{'education' | translate}}
-              <span class="add" (click)="editInfo('education',null,null)">{{'add' | translate}}</span>
+              <span *ngIf="isMyCV" class="add" (click)="editInfo('education',null,null)">{{'add' | translate}}</span>
 
             </h4>
             <div class="listItems">
@@ -124,7 +124,7 @@
               <div class="oneItem" *ngFor="let oneItem of user.CV.education;let i=index">
                 <div class="circle"></div>
                 <span class="title">{{oneItem.title}}
-                  <span class="edit" (click)="editInfo('education',oneItem,i)">{{'edit'|translate}}</span>
+                  <span *ngIf="isMyCV" class="edit" (click)="editInfo('education',oneItem,i)">{{'edit'|translate}}</span>
                 </span>
                 <h3 class="subTitle">{{oneItem.educationalEntity}}</h3>
                 <p class="description">{{oneItem.description}}</p>
@@ -141,14 +141,16 @@
 
         <div class="listOfUsers">
           <div class="oneUsers" *ngFor="let oneItem of similer;let i=index" (click)="goToCv(oneItem.id)">
-            <div class="imgDiv">
-              <div class="img" [style.backgroundImage]="'url('+ oneItem.imageProfile +')'"></div>
-            </div>
-            <div class="contint">
-              <div style="vertical-align: middle;display: table-cell;padding-left: 5px;">
-                <span class="username">{{oneItem.username}}</span>
-                <span class="identefire">{{oneItem.CV.primaryIdentifier}}</span>
-                <span class="city">{{oneItem.CV.city.nameEn}}</span>
+            <div class="card">
+              <div class="imgDiv">
+                <div class="img" [style.backgroundImage]="'url('+ oneItem.imageProfile +')'"></div>
+              </div>
+              <div class="contint">
+                <div style="vertical-align: middle;display: table-cell;padding-left: 5px;">
+                  <span class="username">{{oneItem.username}}</span>
+                  <span class="identefire">{{oneItem.CV.primaryIdentifier}}</span>
+                  <span class="city">{{oneItem.CV.city.nameEn}}</span>
+                </div>
               </div>
             </div>
             <hr class="spreater">
