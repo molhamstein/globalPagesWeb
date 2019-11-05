@@ -547,3 +547,20 @@ ul.category li:not(:last-child) {
     }
   }
 }
+
+.placeholder {
+  text-align: center;
+  margin: 40px 0px;
+}
+
+.placeholder img {
+  width: 100px;
+  opacity: 0.7;
+}
+
+.placeholder h4 {
+  font-size: 20px;
+  padding-top: 10px;
+  color: #fac964;
+  text-shadow: 0px 0px 1px #717171;
+}

@@ -177,6 +177,7 @@ export const ArabicTranslation = {
   noExperienceInCv: "لا يوجد خبرات في السيرة الذاتية",
   noTagsInCv: "لا يوجد مهارات في السيرة الذاتية",
   noEducationInCv: "لا يوجد تعليم في السيرة الذاتية",
+  noApplicants:"لا يوجد متقدمين لفرصة العمل",
   successChangeStaus: "تم تغيير الحالة بنجاح",
   successMessage: "رسالة نجاح",
   successAppliy: "تم التقدم إلى الوظيفة بنجاح",

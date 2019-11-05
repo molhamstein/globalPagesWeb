@@ -167,6 +167,7 @@ export const EnglishTranslation = {
   noExperienceInCv: "No  Experience In CV",
   noTagsInCv: "No  Tag In CV",
   noEducationInCv: "No  Education In CV",
+  noApplicants:"No Applicants To Job",
   successChangeStaus: "change stautes success",
   successMessage: "Success Message",
   successAppliy: "succcess apply to this job",
@@ -174,5 +175,5 @@ export const EnglishTranslation = {
   done: "Done",
   deactive: "Deactive",
   successUpdateCV: "success update CV",
-  editCVFile: "upload CV file"
+  editCVFile: "upload CV file",
 }
