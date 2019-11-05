@@ -2708,7 +2708,7 @@ var JobCardComponent = /** @class */ (function () {
     JobCardComponent.prototype.ngOnInit = function () {
         // console.warn(this.post)
         // delete following condition when deployment
-        if (this.post.hasOwnProperty('business') && this.post['business'].hasOwnProperty('logo')) {
+        if (this.post.hasOwnProperty('business') && this.post['business'].hasOwnProperty('logo') && this.post['business']['logo'] != "") {
             this.data['img'] = this.post['business']['logo'];
         }
         else {
