@@ -13,7 +13,7 @@
               <span class="edit editCv" *ngIf="isMyCV" (click)="editCv()">{{'editCVFile'|translate}}</span>
             </h3>
             <h5 *ngIf="user.CV" class="identefire">{{user.CV.primaryIdentifier}}</h5>
-            <h5 *ngIf="user.CV" class="city">{{user.CV.city.nameEn}}</h5>
+            <h5 *ngIf="user.CV" class="city">{{user.CV.city?.nameEn}}</h5>
             <p *ngIf="user.CV" class="bio">{{user.CV.bio}}</p>
             <div *ngIf="user.CV" class="icons">
               <div class="oneIcon" *ngIf="user.CV.websiteLink">
@@ -60,7 +60,7 @@
     </div>
     <div class="row" style="direction: ltr;padding-bottom: 30px;">
       <div style="float: left;" class="col-md-1 col-xs-0"></div>
-      <div style="float: left;" *ngIf="user && user.CV" class="col-md-7 col-xs-12 containtCV">
+      <div style="float: left;" *ngIf="user" class="col-md-7 col-xs-12 containtCV">
         <div class="mainContent">
           <div style="position:relative">
             <h4 class="mainLabel">
@@ -68,19 +68,23 @@
               <span *ngIf="isMyCV" class="add" (click)="editInfo('experience',null,null)">{{'add' | translate}}</span>
             </h4>
             <div class="listItems">
-              <div class="placeholder" *ngIf="user.CV.experience.length==0">
+              <div class="placeholder" *ngIf="user.CV==null|| user.CV.experience.length==0">
                 <img src="../../../assets/images/page/empty placeholder.png">
                 <h4>{{'noExperienceInCv'|translate}}</h4>
               </div>
-              <div class="oneItem" *ngFor="let oneItem of user.CV.experience;let i=index">
-                <div class="circle"></div>
-                <span class="title">{{oneItem.title}}
-                  <span *ngIf="isMyCV" class="edit" (click)="editInfo('experience',oneItem,i)">{{'edit'|translate}}</span>
-                </span>
-                <h3 class="subTitle">{{oneItem.companyName}}</h3>
-                <p class="description">{{oneItem.description}}</p>
-                <h3 class="date">{{oneItem.from | date:'MMM dd,yy' }} -
-                  {{(oneItem.isPresent==true? 'present' :oneItem.to | date:'MMM dd,yy')| translate }}</h3>
+              <div *ngIf="user.CV">
+
+                <div class="oneItem" *ngFor="let oneItem of user.CV.experience;let i=index">
+                  <div class="circle"></div>
+                  <span class="title">{{oneItem.title}}
+                    <span *ngIf="isMyCV" class="edit"
+                      (click)="editInfo('experience',oneItem,i)">{{'edit'|translate}}</span>
+                  </span>
+                  <h3 class="subTitle">{{oneItem.companyName}}</h3>
+                  <p class="description">{{oneItem.description}}</p>
+                  <h3 class="date">{{oneItem.from | date:'MMM dd,yy' }} -
+                    {{(oneItem.isPresent==true? 'present' :oneItem.to | date:'MMM dd,yy')| translate }}</h3>
+                </div>
               </div>
             </div>
           </div>
@@ -88,17 +92,18 @@
           <div style="position:relative">
             <h4 class="mainLabel">
               {{'skills' | translate}}
-              <span *ngIf="isMyCV" (click)="editSkills()" class="add">{{(user.CV.tags.length>0? 'edit': 'add') | translate}}</span>
+              <span *ngIf="isMyCV" (click)="editSkills()"
+                class="add">{{(user.CV&& user.CV.tags.length>0? 'edit': 'add') | translate}}</span>
 
             </h4>
 
-            <div class="listItems" *ngIf="user.CV.tags.length==0">
+            <div class="listItems" *ngIf="user.CV==null|| user.CV.tags.length==0">
               <div class="placeholder">
                 <img src="../../../assets/images/page/empty placeholder.png">
                 <h4>{{'noTagsInCv'|translate}}</h4>
               </div>
             </div>
-            <div class="listOfTags" *ngIf="user.CV.tags.length!=0">
+            <div class="listOfTags" *ngIf="user.CV && user.CV.tags.length!=0">
               <div class="tag" *ngFor="let oneItem of user.CV.tags;let i=index">
                 <span>
                   {{oneItem.name}}
@@ -115,20 +120,22 @@
 
             </h4>
             <div class="listItems">
-              <div class="placeholder" *ngIf="user.CV.education.length==0">
+              <div class="placeholder" *ngIf="user.CV==null|| user.CV.education.length==0">
                 <img src="../../../assets/images/page/empty placeholder.png">
                 <h4>{{'noEducationInCv'|translate}}</h4>
 
               </div>
-
-              <div class="oneItem" *ngFor="let oneItem of user.CV.education;let i=index">
-                <div class="circle"></div>
-                <span class="title">{{oneItem.title}}
-                  <span *ngIf="isMyCV" class="edit" (click)="editInfo('education',oneItem,i)">{{'edit'|translate}}</span>
-                </span>
-                <h3 class="subTitle">{{oneItem.educationalEntity}}</h3>
-                <p class="description">{{oneItem.description}}</p>
-                <h3 class="date">{{oneItem.from | date:'MMM dd,yy' }} - {{oneItem.to | date:'MMM dd,yy' }}</h3>
+              <div *ngIf="user.CV">
+                <div class="oneItem" *ngFor="let oneItem of user.CV.education;let i=index">
+                  <div class="circle"></div>
+                  <span class="title">{{oneItem.title}}
+                    <span *ngIf="isMyCV" class="edit"
+                      (click)="editInfo('education',oneItem,i)">{{'edit'|translate}}</span>
+                  </span>
+                  <h3 class="subTitle">{{oneItem.educationalEntity}}</h3>
+                  <p class="description">{{oneItem.description}}</p>
+                  <h3 class="date">{{oneItem.from | date:'MMM dd,yy' }} - {{oneItem.to | date:'MMM dd,yy' }}</h3>
+                </div>
               </div>
             </div>
           </div>
@@ -149,7 +156,7 @@
                 <div style="vertical-align: middle;display: table-cell;padding-left: 5px;">
                   <span class="username">{{oneItem.username}}</span>
                   <span class="identefire">{{oneItem.CV.primaryIdentifier}}</span>
-                  <span class="city">{{oneItem.CV.city.nameEn}}</span>
+                  <span class="city">{{oneItem.CV.city?.nameEn}}</span>
                 </div>
               </div>
             </div>

@@ -67,6 +67,8 @@ export class CvViewComponent implements OnInit {
   changeTags(tags) {
     var cv = {};
     let mainCV = this.user.CV
+    if (mainCV == null)
+      mainCV = {}
     cv['tags'] = tags;
     cv['education'] = mainCV['education']
     cv['experience'] = mainCV['experience']
@@ -93,11 +95,17 @@ export class CvViewComponent implements OnInit {
   changeInfo(data, index) {
     var cv = {};
     let mainCV = this.user.CV
+    if (mainCV == null)
+      mainCV = {}
     if (data['action'] == "add") {
       if (data['type'] == "experience") {
+        if (mainCV['experience'] == null)
+          mainCV['experience'] = []
         mainCV['experience'].push(data['object'])
       }
       else if (data['type'] == "education") {
+        if (mainCV['education'] == null)
+          mainCV['education'] = []
         mainCV['education'].push(data['object'])
       }
     } else if (data['action'] == "edit") {
@@ -120,9 +128,10 @@ export class CvViewComponent implements OnInit {
     cv['education'] = mainCV['education']
     cv['experience'] = mainCV['experience']
     cv['tags'] = []
-    mainCV['tags'].forEach(element => {
-      cv['tags'].push(element.id)
-    });
+    if (mainCV['tags'])
+      mainCV['tags'].forEach(element => {
+        cv['tags'].push(element.id)
+      });
     cv['cityId'] = mainCV['cityId']
     if (mainCV['behanceLink'] != null)
       cv['behanceLink'] = mainCV['behanceLink']
@@ -147,15 +156,18 @@ export class CvViewComponent implements OnInit {
   changeBasicInfo(data) {
     var cv = {}
     var mainCV = this.user.CV
+    if (mainCV == null)
+      mainCV = {}
     cv['username'] = data['username']
     cv['phoneNumber'] = data['phoneNumber']
     cv['imageProfile'] = data['imageProfile']
     cv['education'] = mainCV['education']
     cv['experience'] = mainCV['experience']
     cv['tags'] = []
-    mainCV['tags'].forEach(element => {
-      cv['tags'].push(element.id)
-    });
+    if (mainCV['tags'])
+      mainCV['tags'].forEach(element => {
+        cv['tags'].push(element.id)
+      });
     if (data['cityId'] != null)
       cv['cityId'] = data['cityId']
     if (data['behanceLink'] != null)
@@ -181,12 +193,14 @@ export class CvViewComponent implements OnInit {
   changeCvUrl(url) {
     var cv = {};
     let mainCV = this.user.CV
-
+    if (mainCV == null)
+      mainCV = {}
     cv['cvURL'] = url
     cv['tags'] = []
-    mainCV['tags'].forEach(element => {
-      cv['tags'].push(element.id)
-    });
+    if (mainCV['tags'])
+      mainCV['tags'].forEach(element => {
+        cv['tags'].push(element.id)
+      });
     cv['education'] = mainCV['education']
     cv['experience'] = mainCV['experience']
     cv['cityId'] = mainCV['cityId']
