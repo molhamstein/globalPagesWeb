@@ -43,6 +43,9 @@ export class JobCardComponent {
             if (this.post.hasOwnProperty('nameAr')) {
                 this.data['name'] = this.post['nameAr'];
             }
+            else {
+                this.data['name'] = this.post['nameEn'];
+            }
             if (this.post.hasOwnProperty('business') && this.post['business'].hasOwnProperty('city') && this.post['business']['city'].hasOwnProperty('nameAr')) {
                 this.data['address'] = this.post['business']['city']['nameAr'];
             }
@@ -58,6 +61,9 @@ export class JobCardComponent {
         } else {
             if (this.post.hasOwnProperty('nameEn')) {
                 this.data['name'] = this.post['nameEn'];
+            }
+            else {
+                this.data['name'] = this.post['nameAr'];
             }
 
             if (this.post.hasOwnProperty('business') && this.post['business'].hasOwnProperty('city') && this.post['business']['city'].hasOwnProperty('nameEn')) {

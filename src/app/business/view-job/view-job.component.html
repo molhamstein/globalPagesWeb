@@ -10,7 +10,8 @@
         </div>
         <div class="col-md-9 col-xs-12" style="min-height: 150px;display: table;">
           <div style="vertical-align: middle;display: table-cell;">
-            <h3 class="username">{{lang=='ar'? job.nameAr : job.nameEn}}
+            <h3 class="username">
+              {{(lang=='ar' && job.nameAr) || (lang!='ar' && job.nameEn==null) ? job.nameAr : job.nameEn}}
               <span class="edit" *ngIf="isMyJob==true" (click)="goToEdit()">{{'edit'|translate}}</span>
               <span class="edit deactive" *ngIf="isMyJob==true && job && job.status=='activated'"
                 (click)="deactive()">{{'deactive'|translate}}</span>
@@ -45,26 +46,26 @@
       <div style="float: left;" class="col-md-1 col-xs-0"></div>
       <div style="float: left;" *ngIf="job" class="col-md-7 col-xs-12 containtJob">
         <div class="mainContent">
-          <div style="position:relative">
+          <div style="position:relative" *ngIf="job.responsibilitiesAr && job.responsibilitiesEn">
             <h4 class="mainLabel">
               {{'responsibilities' | translate}}
             </h4>
             <p class="description">{{lang=='ar'? job.responsibilitiesAr : job.responsibilitiesEn}}</p>
           </div>
 
-          <div style="position:relative">
+          <div style="position:relative" *ngIf="job.qualificationsAr && job.qualificationsEn">
             <h4 class="mainLabel">
               {{'qualifications' | translate}}
             </h4>
             <p class="description">{{lang=='ar'? job.qualificationsAr : job.qualificationsEn}}</p>
           </div>
-          <div style="position:relative">
+          <div style="position:relative" *ngIf="job.descriptionAr && job.descriptionEn">
             <h4 class="mainLabel">
               {{'descriptionCV' | translate}}
             </h4>
             <p class="description">{{lang=='ar'? job.descriptionAr : job.descriptionEn}}</p>
           </div>
-          <div style="position:relative">
+          <div style="position:relative" *ngIf="job.tags.length>0">
             <h4 class="mainLabel">
               {{'skills' | translate}}
             </h4>
