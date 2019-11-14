@@ -555,7 +555,7 @@
 .featured-box-flex .box-desc {
   text-align: right;
   text-align: center;
-  max-height: 110px;
+  max-height: 90px;
   overflow: hidden;
   color: #2c3e50;
 }
