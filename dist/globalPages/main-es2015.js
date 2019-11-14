@@ -4440,10 +4440,13 @@ let CvViewComponent = class CvViewComponent {
     }
     editSkills() {
         let self = this;
+        var tags = [];
+        if (this.user.CV)
+            tags = this.user.CV.tags;
         let dialogRef = this.dialog.open(_edit_skill_edit_skill_component__WEBPACK_IMPORTED_MODULE_10__["EditSkillComponent"], {
             //   width: '70%',
             panelClass: 'communictioDialogStyle',
-            data: { "tags": this.user.CV.tags }
+            data: { "tags": tags }
         });
         dialogRef.afterClosed().subscribe(result => {
             if (result) {
@@ -4466,7 +4469,7 @@ let CvViewComponent = class CvViewComponent {
     }
     goToCv(id) {
         this.isMyCV = false;
-        this.router.navigate(["cv/" + id]);
+        this.router.navigate(["cv/" + id, { state: { example: 'bar' } }]);
     }
     editCv() {
         $('#file').trigger('click');
@@ -6283,7 +6286,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    api: 'https://almersal.co/api/',
+    // api: 'https://almersal.co/api/',
+    api: 'http://localhost:3000/api/',
     server: 'https://almersal.co/',
     userDetails: '_sxamekqdw',
     language: 'kacen_ae787'

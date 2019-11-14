@@ -237,10 +237,13 @@ export class CvViewComponent implements OnInit {
 
   editSkills() {
     let self = this;
+    var tags = []
+    if (this.user.CV)
+      tags = this.user.CV.tags
     let dialogRef = this.dialog.open(EditSkillComponent, {
       //   width: '70%',
       panelClass: 'communictioDialogStyle',
-      data: { "tags": this.user.CV.tags }
+      data: { "tags": tags }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
@@ -265,7 +268,7 @@ export class CvViewComponent implements OnInit {
 
   goToCv(id) {
     this.isMyCV = false;
-    this.router.navigate(["cv/" + id]);
+    this.router.navigate(["cv/" + id, { state: { example: 'bar' } }]);
   }
 
   editCv() {
