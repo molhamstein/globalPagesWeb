@@ -39,6 +39,7 @@
     "ngx-owl-carousel": "^2.0.7",
     "ngx-pipes": "^2.5.1",
     "ngx-smart-modal": "^7.1.1",
+    "ngx-spinner": "^8.0.3",
     "pretty-checkbox": "^3.0.3",
     "rxjs": "^6.5.2",
     "tslib": "^1.10.0",

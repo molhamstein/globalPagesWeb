@@ -11,6 +11,7 @@
 <div class="col-md-6 col-xs-12 featured-box-flex-text">
   <div class="box-content">
     <div class="box-title ad">
+      <img *ngIf="data.vip === true" src="assets/images/icon/vip.png" style="float: left;">
       <a [routerLink]="['/business',data.nameUnique]" title="">{{data.name}}</a>
     </div>
     <ul class="category">

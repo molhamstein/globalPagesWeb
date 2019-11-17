@@ -1,4 +1,4 @@
-<div class="module" [class.moduleEduc]="type=='education'">
+<div class="module" [class.moduleEduc]="type=='education'" *ngIf="newObject">
   <div class="headers">
     <h4 class="mainLabel">
       {{(object==null? 'add':'edit') | translate}}

@@ -11,7 +11,7 @@ export class EditInfoComponent {
     type = ""
     object
     yearArray = []
-    newObject = {}
+    newObject: any;
     monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     errorMessage = ''
     constructor(private dialog: MatDialog, public thisDialog: MatDialogRef<EditInfoComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {

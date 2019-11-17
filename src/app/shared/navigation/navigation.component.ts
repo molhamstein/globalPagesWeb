@@ -38,7 +38,7 @@ export class NavigationComponent implements OnInit {
       this.user=null;
       setTimeout(()=>{
         this.user=data;
-        console.log(data)
+        //console.log(data)
         this.CD.markForCheck()
         this.CD.detectChanges()
       })

@@ -4,6 +4,7 @@
   height: 25px;
   font-size:25px;
   position: relative;
+  cursor: pointer;
 }
 .fa-bell{
   position: absolute;

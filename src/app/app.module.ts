@@ -67,6 +67,7 @@ import { MatDialogModule } from '@angular/material';
 import { EditJobOpportunityComponent } from './business/edit-job-opportunity/edit-job-opportunity.component';
 import { VerificationMessageComponent } from './verification-message/verification-message.component';
 import { SuccessMessageComponent } from './success-message/success-message.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { SuccessMessageComponent } from './success-message/success-message.compo
     EditSkillComponent,
     SuccessMessageComponent,
     VerificationMessageComponent,
-    EditBasicInformationComponent
+    EditBasicInformationComponent,
+    
   ],
   imports: [
     GalleryModule.withConfig({ loadingMode: 'indeterminate' }),
@@ -131,7 +133,8 @@ import { SuccessMessageComponent } from './success-message/success-message.compo
     NgSelectModule,
     AvatarModule,
     // ModalModule,
-    NgxSmartModalModule.forRoot()
+    NgxSmartModalModule.forRoot(),
+    NgxSpinnerModule,
   ],
   entryComponents: [MapMarkerComponent, EditInfoComponent, SuccessMessageComponent, VerificationMessageComponent, EditSkillComponent, EditBasicInformationComponent],
   providers: [RequestsService, CommonDataService],

@@ -9,7 +9,7 @@ import { RequestsService } from 'src/app/requests.service';
     styleUrls: ['edit-basic-information.component.css']
 })
 export class EditBasicInformationComponent {
-    dialogInfo = {}
+    dialogInfo: any;
     allCity: any = []
     errorMessage = ""
     @ViewChild('file', { static: false }) fileController: ElementRef

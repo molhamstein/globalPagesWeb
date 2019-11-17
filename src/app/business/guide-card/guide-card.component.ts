@@ -14,6 +14,10 @@ export class GuideCardComponent implements OnInit {
   ngOnInit() {
     // console.warn(this.post)
     // delete following condition when deployment
+    if(this.post.hasOwnProperty('vip')){
+        this.data['vip'] = this.post['vip'];
+    }
+
     if (this.post.hasOwnProperty('covers') && this.post['covers'].length > 0 && this.post['covers']['0'].hasOwnProperty('url')){
       this.data['img'] = this.post['covers']['0']['url'];
     }

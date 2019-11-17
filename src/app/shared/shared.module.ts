@@ -8,7 +8,6 @@ import { NotificationComponent } from './notification/notification.component';
   imports: [
     CommonModule,
     TranslateModule.forChild(),
-
   ],
   declarations: [FormValidationMessageComponent, ],
   exports:[FormValidationMessageComponent]
