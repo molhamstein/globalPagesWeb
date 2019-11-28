@@ -176,9 +176,11 @@
               <div class="infoDiv">
                 <div class="contain">
                   <h4 class="name" (click)="goToCv(oneEmployee.userId)"> {{oneEmployee.user?.username}}</h4>
-                  <h5 class="identefire"> {{oneEmployee.user?.CV?.primaryIdentifier	}}</h5>
-                  <h5 class="city"> {{oneEmployee.user?.CV?.city?.nameAr	}}</h5>
-                  <h5 class="city"> {{oneEmployee.user?.phoneNumber	}}</h5>
+                  <h5 class="identefire" *ngIf="oneEmployee.user?.CV?.primaryIdentifier">
+                    {{oneEmployee.user?.CV?.primaryIdentifier	}}</h5>
+                  <h5 class="city" *ngIf="oneEmployee.user?.CV?.city?.nameAr"> {{oneEmployee.user?.CV?.city?.nameAr	}}
+                  </h5>
+                  <h5 class="city" *ngIf="oneEmployee.user?.phoneNumber"> {{oneEmployee.user?.phoneNumber	}}</h5>
 
                 </div>
               </div>

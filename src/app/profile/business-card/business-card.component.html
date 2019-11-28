@@ -4,7 +4,7 @@
   </div>
   <div class="business-text">
     <div class="title">
-      <a [routerLink]="['/business',business['nameUnique']]">
+      <a [routerLink]="['/business',getBusinessId(business)]">
         <h4 *ngIf="lang=='ar'">{{business['nameAr']}}</h4>
         <h4 *ngIf="lang=='en'">{{business['nameEn']}}</h4>
       </a>
@@ -15,7 +15,7 @@
   </div>
   <div class="business-control">
     <div class="business-control-edit">
-      <a [routerLink]="['/business',business['nameUnique'],'edit']">{{'edit' | translate}}
+      <a [routerLink]="['/business',getBusinessId(business) ,'edit']">{{'edit' | translate}}
         <i class="fa fa-pencil" aria-hidden="true"></i>
       </a>
     </div>
