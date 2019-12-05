@@ -1911,8 +1911,13 @@
 /* Profile business list
 -------------------------------------------------------------- */
 .profile-business-list {
-  height: 500px;
-  overflow: auto;
+  height: 300px;
+  overflow: hidden;
+}
+
+.profile-jobs-list {
+  height: 325px;
+  overflow: hidden;
 }
 
 .profile-business-list .main-title {
@@ -1992,8 +1997,8 @@
 /* Profile ads list
 -------------------------------------------------------------- */
 .profile-ads-list {
-  height: 500px;
-  overflow: auto;
+  height: 300px;
+  overflow: hidden;
 }
 
 .profile-ads-list .main-title {

@@ -68,6 +68,7 @@ import { EditJobOpportunityComponent } from './business/edit-job-opportunity/edi
 import { VerificationMessageComponent } from './verification-message/verification-message.component';
 import { SuccessMessageComponent } from './success-message/success-message.component';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -135,6 +136,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     // ModalModule,
     NgxSmartModalModule.forRoot(),
     NgxSpinnerModule,
+    FlexLayoutModule,
   ],
   entryComponents: [MapMarkerComponent, EditInfoComponent, SuccessMessageComponent, VerificationMessageComponent, EditSkillComponent, EditBasicInformationComponent],
   providers: [RequestsService, CommonDataService],
