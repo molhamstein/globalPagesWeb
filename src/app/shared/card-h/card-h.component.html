@@ -1,31 +1,32 @@
   <!-- <div class="col-md-5  col-xs-12 featured-box-flex"> -->
-    <div class="col-md-6  col-xs-12 featured-box-flex-image" routerLink="/ad/{{data.id}}" style="cursor: pointer">
-      <div class="box-header">
-        <div class="box-image">
-          <img src="{{data.img}}" alt="">
-          <a routerLink="/ad/{{data.id}}" title="">{{'preview' | translate}}</a>
-          <div class="overlay1"></div>
-        </div>
+  <div class="col-md-6  col-xs-12 featured-box-flex-image" routerLink="/ad/{{data.id}}" style="cursor: pointer">
+    <div class="box-header">
+      <div class="box-image">
+        <!-- <img src="{{data.img}}" alt=""> -->
+        <div class="img" [style.backgroundImage]="'url('+ data.img +')'"></div>
+        <a routerLink="/ad/{{data.id}}" title="">{{'preview' | translate}}</a>
+        <div class="overlay1"></div>
       </div>
-      <!-- /.box-header -->
     </div>
-    <div class="col-md-6  col-xs-12 featured-box-flex-text" routerLink="/ad/{{data.id}}" style="cursor: pointer">
-      <div class="box-content">
-        <div class="box-title ad">
-          <a routerLink="/ad/{{data.id}}" title="">{{data.title}}</a>
-        </div>
-        <ul class="category">
-          <li>{{data?.category}}</li>
-          <li>{{data?.subCategory}}</li>
-        </ul>
-        <div class="box-desc">
-          {{data?.description}}
-        </div>
-        <div class="box-location">
-          {{data?.location}}
-        </div>
+    <!-- /.box-header -->
+  </div>
+  <div class="col-md-6  col-xs-12 featured-box-flex-text" routerLink="/ad/{{data.id}}" style="cursor: pointer">
+    <div class="box-content">
+      <div class="box-title ad">
+        <a routerLink="/ad/{{data.id}}" title="">{{data.title}}</a>
       </div>
-      <!-- /.box-content -->
+      <ul class="category">
+        <li>{{data?.category}}</li>
+        <li>{{data?.subCategory}}</li>
+      </ul>
+      <div class="box-desc">
+        {{data?.description}}
+      </div>
+      <div class="box-location">
+        {{data?.location}}
+      </div>
+    </div>
+    <!-- /.box-content -->
 
-    </div>
+  </div>
   <!-- </div> -->

@@ -468,7 +468,7 @@ ul.category li:not(:last-child) {
           select {
             color: white;
             font-weight: bold;
-            width: fit-content;
+            width: 90%;
             float: right;
             margin: 10px 0px;
             height: 30px;
@@ -512,6 +512,7 @@ ul.category li:not(:last-child) {
     .infoDiv {
 
       display: table;
+      table-layout: fixed;
       float: left;
       height: 100%;
       width: calc((100% - 110px)/3 * 1.7);
@@ -525,6 +526,10 @@ ul.category li:not(:last-child) {
           font-size: 22px;
           padding: 5px 0px;
           font-weight: bold;
+          overflow: hidden;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
 
           &:hover {
             color: #fbd431;
@@ -533,9 +538,12 @@ ul.category li:not(:last-child) {
         }
 
         .identefire {
-          font-size: 24px;
+          font-size: 19px;
           font-weight: 600;
-          padding: 5px 0px;
+          padding: 3px 0px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .city {
