@@ -1917,13 +1917,15 @@
 /* Profile business list
 -------------------------------------------------------------- */
 .profile-business-list {
-  height: 300px;
+  height: 350px;
   overflow: hidden;
+
 }
 
 .profile-jobs-list {
-  height: 325px;
+  height: 350px;
   overflow: hidden;
+
 }
 
 .profile-business-list .main-title {
@@ -2003,8 +2005,9 @@
 /* Profile ads list
 -------------------------------------------------------------- */
 .profile-ads-list {
-  height: 300px;
-  overflow: hidden;
+  height: 350px;
+  overflow: hidden ;
+
 }
 
 .profile-ads-list .main-title {

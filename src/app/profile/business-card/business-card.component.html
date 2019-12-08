@@ -1,38 +1,50 @@
-<div class="business">
-  <div class="business-icon">
-    <img [src]="image" />
-  </div>
-  <div class="business-text">
-    <div class="title">
-      <a [routerLink]="['/business',getBusinessId(business)]">
-        <h4 *ngIf="lang=='ar'">{{business['nameAr']}}</h4>
-        <h4 *ngIf="lang=='en'">{{business['nameEn']}}</h4>
-      </a>
-    </div>
-    <div class="desc">
-      {{business['description']}}
-    </div>
-  </div>
-  <div class="business-control">
-    <div class="business-control-edit">
-      <a [routerLink]="['/business',getBusinessId(business) ,'edit']">{{'edit' | translate}}
-        <i class="fa fa-pencil" aria-hidden="true"></i>
-      </a>
-    </div>
-    <div class="business-control-delete">
-      <a (click)="removeModal.open()">{{'delete' | translate}}
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
-      </a>
+<div class="col-md-4  col-xs-12 featured-box-flex-image">
+  <div class="box-header">
+    <div class="box-image">
+      <div [style.backgroundImage]="'url('+ image +')'" class="img"></div> 
+      <a [routerLink]="['/business',getBusinessId(business)]" title="">{{'preview' | translate}}</a>
+      <div class="overlay1"></div>
     </div>
   </div>
 </div>
 
+<div class="col-md-8 col-xs-12 featured-box-flex-text">
+  <div class="box-content">
+
+    <div class="box-title ad">
+      <a [routerLink]="['/business',business.id]" *ngIf="lang=='ar'">{{business['nameAr']}}</a>
+      <a [routerLink]="['/business',business.id]" *ngIf="lang=='en'">{{business['nameEn']}}</a>
+    </div>
+
+    <div class="business-text">
+      <div class="desc">
+        {{business['description']}}
+      </div>
+    </div>
+
+    <div class="business-control">
+      <div class="business-control-edit">
+        <a [routerLink]="['/business',getBusinessId(business) ,'edit']">{{'edit' | translate}}
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="business-control-delete">
+        <a (click)="removeModal.open()">{{'delete' | translate}}
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.box-content -->
+</div>
+
 <ngx-smart-modal #removeModal identifier="removeBusiness">
 
-  <div class="smart-modal-header" >
+  <div class="smart-modal-header">
     <h3>{{'remove' | translate}}</h3>
   </div>
-  <div class="smart-modal-content" >
+  <div class="smart-modal-content">
 
     {{"removeConfirmation"|translate}}
 
