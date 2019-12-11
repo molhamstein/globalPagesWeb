@@ -1937,6 +1937,10 @@
 .profile-business-list .business-control {
   padding: 5px;
   display: block;
+  position: absolute;
+  bottom: -60px;
+  left: 0 ;
+  right: 0 ;
 }
 
 .business-control-edit,
@@ -2016,9 +2020,13 @@
   margin-bottom: 20px;
 }
 
-.profile-ads-list .ads-control {
+.ads-control {
   padding: 5px;
   display: block;
+  position: absolute;
+  bottom: -60px;
+  left: 0 ;
+  right: 0 ;
 }
 
 .ads-control-edit,
