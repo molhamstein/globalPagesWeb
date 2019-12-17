@@ -12,15 +12,16 @@ export class BusinessCardComponent implements OnInit {
   @Output() onRemove = new EventEmitter();
   @Input('business') set setbusiness(b) {
     this.business = b;
-    if (b['logo'])
-      this.image = b['logo']
+
     if (b['covers'] && b['covers'].length > 0)
       this.image = b['covers'][0]['url']
+    else if (b['logo'])
+      this.image = b['logo']
+    else
+      this.image = '../../../assets/images/page/business-01.png';
   }
 
   getBusinessId(business) {
-    console.log("business")
-    console.log(business)
     if (business.nameUnique != null)
       return business.nameUnique
     else

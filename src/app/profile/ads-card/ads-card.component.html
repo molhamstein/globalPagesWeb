@@ -1,7 +1,7 @@
 <div class="col-md-4  col-xs-12 featured-box-flex-image">
   <div class="box-header">
     <div class="box-image">
-      <div [style.backgroundImage]="'url('+ ad['media'][0]?.url +')'" class="img"></div>
+      <div [style.backgroundImage]="'url('+ image +')'" class="img"></div>
       <a [routerLink]="['/ad',ad['id']]" title="">{{'preview' | translate}}</a>
       <div class="overlay1"></div>
     </div>

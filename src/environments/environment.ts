@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  api: 'https://almersal.co/api/',
+  api: 'http://almersal.co/api/',
   // api: 'http://localhost:3000/api/',
 
-  server: 'https://almersal.co/',
+  server: 'http://almersal.co/',
 
   userDetails: '_sxamekqdw',
   language: 'kacen_ae787'
