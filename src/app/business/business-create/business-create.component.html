@@ -205,21 +205,17 @@
             </div>
 
             <div class="clearfix"></div>
-            <div class="col-md-12" *ngIf="!form.invalid && form.value.locationPoint ;else invalidForm">
+            <div class="col-md-12">
               <button type="submit" class="display-content" [disabled]="form.submitted && form.invalid">
                 <div class="btn-more submit-button">
                   <a>{{'registerBusiness'| translate}}</a>
                 </div>
               </button>
+              <p *ngIf="form.submitted && !form.value.locationPoint" class="alert alert-danger">
+                Pick a location Point on the Map 
+              </p>
             </div>
-            <ng-template #invalidForm class="col-md-12 ">
-                <p *ngIf="form.invalid; else locationPointRequired" class="alert alert-danger">required filed is missing</p>
-                <ng-template #locationPointRequired>
-                      <p class="alert alert-danger">
-                         Pick a location Point on the map 
-                      </p>
-                </ng-template>
-            </ng-template>
+  
 
             <div class="clearfix"></div>
 
