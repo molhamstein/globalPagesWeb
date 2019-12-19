@@ -14,3 +14,10 @@
 .tag span{
   color:whitesmoke !important;
 }
+
+.lang-ar {
+   direction: rtl;
+}
+.lang-en {
+   direction: ltr;
+}

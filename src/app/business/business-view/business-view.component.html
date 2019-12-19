@@ -100,10 +100,14 @@
             </ul>
           </div>
           <div class="involve" style="margin-bottom: 50px" *ngIf="isOwner()">
-            <div class="btn-more">
-              <a title="" (click)="productsModal.open()">{{'editProducts' | translate}}</a>
-              <a title=""
-                [routerLink]="'/business/'+business.id+'/addJobOpportunity'">{{'addJobOpportunity' | translate}}</a>
+            <div [ngClass]="{'btn-more': true, 'lang-en': lang != 'ar', 'lang-ar' : lang == 'ar'}">
+                <a title="" (click)="productsModal.open()">
+                  {{'editProducts' | translate}}
+                </a>
+                <a title="" [routerLink]="'/business/'+business.id+'/addJobOpportunity'">
+                  {{'addJobOpportunity' | translate}}
+                </a>
+              
             </div>
           </div>
 
