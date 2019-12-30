@@ -181,4 +181,6 @@ export const EnglishTranslation = {
   deactive: "Deactive",
   successUpdateCV: "success update CV",
   editCVFile: "upload CV file",
+  productsPage: "products",
+  productsTitle: "The Products Guide",
 }

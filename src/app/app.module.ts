@@ -69,6 +69,11 @@ import { VerificationMessageComponent } from './verification-message/verificatio
 import { SuccessMessageComponent } from './success-message/success-message.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ProductsComponent } from './business/products/products.component';
+import { AddProductComponent } from './business/products/add-product/add-product.component';
+import { ViewProductComponent } from './business/products/view-product/view-product.component';
+import { EditProductComponent } from './business/products/edit-product/edit-product.component';
+import { ProductCardComponent } from './business/products/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -114,6 +119,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SuccessMessageComponent,
     VerificationMessageComponent,
     EditBasicInformationComponent,
+    ProductsComponent,
+    AddProductComponent,
+    ViewProductComponent,
+    EditProductComponent,
+    ProductCardComponent,
     
   ],
   imports: [

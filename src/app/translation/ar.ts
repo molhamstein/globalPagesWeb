@@ -190,5 +190,7 @@ export const ArabicTranslation = {
   done: "تم",
   deactive: "إلغاء تفعيل",
   successUpdateCV: "تم تحديث السيرة الذاتية بنجاح",
-  editCVFile: "رفع ملف السيرة الذاتية"
+  editCVFile: "رفع ملف السيرة الذاتية",
+  productsPage: "دليل المنتجات",
+  productsTitle: "دليل المنتجات",
 }

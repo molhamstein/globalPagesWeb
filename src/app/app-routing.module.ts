@@ -19,6 +19,10 @@ import { AdEditComponent } from './ad/ad-edit/ad-edit.component';
 import { PolicyComponent } from './privacy/policy/policy.component';
 import { CvViewComponent } from './profile/cv-view/cv-view.component';
 import { EditJobOpportunityComponent } from './business/edit-job-opportunity/edit-job-opportunity.component';
+import { ProductsComponent } from './business/products/products.component';
+import { ViewProductComponent } from './business/products/view-product/view-product.component';
+import { EditProductComponent } from './business/products/edit-product/edit-product.component';
+import { AddProductComponent } from './business/products/add-product/add-product.component';
 const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
   { path: '', component: HomeScreenComponent },
@@ -38,7 +42,11 @@ const routes: Routes = [
   { path: 'job', component: JobsComponent },
   { path: 'job/:id', component: ViewJobComponent },
   { path: 'volume/:id', component: VolumeComponent },
-  { path: 'privacy/policy', component: PolicyComponent }
+  { path: 'privacy/policy', component: PolicyComponent },
+  { path: 'products' , component: ProductsComponent },
+  { path: 'products/:id', component: ViewProductComponent },
+  { path: 'products/:id/edit', component: EditProductComponent },
+  { path: 'products/create', component: AddProductComponent },
 
 ];
 

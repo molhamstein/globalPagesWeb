@@ -32,10 +32,13 @@
                 <li>
                   <a routerLink="/job" title="">{{'businessJobPage' | translate }}</a>
                 </li>
+                <li>
+                   <a routerLink="/products" title="">{{'productsPage' | translate}}</a>
+                </li>
                 <li *ngIf="isLogin">
                   <a routerLink="/business/create" title="">{{'addBusinessPage' | translate}}</a>
-
                 </li>
+
                 <li *ngIf="isLogin">
                   <a class="nav-button pulse" routerLink="/ad/create" title="">{{'createAdPage' | translate }}</a>
                   <!--<ul class="submenu">-->

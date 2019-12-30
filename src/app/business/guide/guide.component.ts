@@ -41,40 +41,14 @@ export class GuideComponent implements OnInit {
   nextDisabled = true;
   prevDisabled = false;
 
+  constructor(private ts: TranslateService, private cds: CommonDataService,
+    private requests: RequestsService, private resolver: ComponentFactoryResolver,
+    private injector: Injector) { }
 
-  constructor(private ts: TranslateService, private cds: CommonDataService, private requests: RequestsService, private resolver: ComponentFactoryResolver, private injector: Injector) { }
-  onMapReady(map) {
-    this.map = map;
-  }
-  addMarkers() {
-
-    for (const entry of this.posts) {
-      if (entry["locationPoint"] && entry["locationPoint"] != null) {
-        const factory = this.resolver.resolveComponentFactory(MapMarkerComponent);
-        const component = factory.create(this.injector);
-        component.instance.data = entry;
-        component.changeDetectorRef.detectChanges();
-
-        let m = marker(new latLng(entry["locationPoint"]), {
-          icon: icon({
-            iconSize: [25, 41],
-            iconAnchor: [13, 41],
-            iconUrl: 'leaflet/marker-icon.png',
-            shadowUrl: 'leaflet/marker-shadow.png'
-          })
-        });
-
-        const popupContent = component.location.nativeElement;
-        m.bindPopup(popupContent).openPopup();
-        m.addTo(this.map);
-
-        this.markers.push({
-          data: entry,
-          markerInstance: m,
-          componentInstance: component
-        });
-      }
-    }
+  ngOnInit() {
+    this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
+    this.cds.bCategoryPromise.then(res => this.bCategories = <Object[]>res);
+    this.getPostsData({});
   }
 
   ngDoCheck() {
@@ -84,34 +58,10 @@ export class GuideComponent implements OnInit {
       entry.componentInstance.changeDetectorRef.detectChanges();
     })
   }
-  removeMarkers() {
-    this.markers.forEach(marker => {
-      marker.markerInstance.removeFrom(this.map);
-      marker.componentInstance.destroy();
-    })
-    this.markers.splice(0);
+
+  onMapReady(map) {
+    this.map = map;
   }
-  // titleFilter() { 
-  //   var Lang = 'nameEn';
-  //   if (this.ts.currentLang == 'ar'){
-  //     Lang = 'nameAr'
-  //   }
-
-
-  //   if (this.title== undefined ||  this.title.length == 0) {
-  //     delete this.params['filter[where]['+Lang+'][like]'];
-  //   } else {
-  //     this.params['filter[where]['+Lang+'][like]'] = this.title;
-  //   }
-  //   this.requests.get('businesses', this.params)
-  //     .pipe(debounceTime(300))
-  //     .subscribe(res => {
-  //       this.posts = <Object[]>res;
-  //       this.menuPosts = this.posts;//.slice(0,20);
-  //       // this.removeMarkers();
-  //       // this.addMarkers();
-  //     })
-  // }
 
   reFilter() {
     var Lang = 'nameEn';
@@ -160,9 +110,8 @@ export class GuideComponent implements OnInit {
     params['filter[skip]'] = (20 * this.skip).toString();
     this.requests.get('businesses', params).subscribe(res => {
       this.posts = <Object[]>res;
-      // console.warn(res);
 
-      this.menuPosts = this.posts;//.slice(0, 20);
+      this.menuPosts = this.posts;
       if (this.posts.length == 0) {
         this.prevDisabled = true;
         if (this.skip == 0) {
@@ -179,6 +128,7 @@ export class GuideComponent implements OnInit {
       this.cityId = c['id'];
     }
   }
+
   setCategoryId(c) {
     if (c != undefined) {
       this.categoryId = c['id'];
@@ -190,6 +140,7 @@ export class GuideComponent implements OnInit {
     this.skip += 1;
     this.reFilter()
   }
+
   next() {
     if (this.skip > 0) {
       if (this.skip <= 1) {
@@ -200,15 +151,66 @@ export class GuideComponent implements OnInit {
       this.prevDisabled = false;
     }
   }
-  ngOnInit() {
-    this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
-    this.cds.bCategoryPromise.then(res => this.bCategories = <Object[]>res);
-    this.getPostsData({});
-
-    // {
-    //   "filter[limit]": "20",
-    //     "filter[skip]": "0"
-    // }
-
-  }
 }
+
+
+  // addMarkers() {
+
+  //   for (const entry of this.posts) {
+  //     if (entry["locationPoint"] && entry["locationPoint"] != null) {
+  //       const factory = this.resolver.resolveComponentFactory(MapMarkerComponent);
+  //       const component = factory.create(this.injector);
+  //       component.instance.data = entry;
+  //       component.changeDetectorRef.detectChanges();
+
+  //       let m = marker(new latLng(entry["locationPoint"]), {
+  //         icon: icon({
+  //           iconSize: [25, 41],
+  //           iconAnchor: [13, 41],
+  //           iconUrl: 'leaflet/marker-icon.png',
+  //           shadowUrl: 'leaflet/marker-shadow.png'
+  //         })
+  //       });
+
+  //       const popupContent = component.location.nativeElement;
+  //       m.bindPopup(popupContent).openPopup();
+  //       m.addTo(this.map);
+
+  //       this.markers.push({
+  //         data: entry,
+  //         markerInstance: m,
+  //         componentInstance: component
+  //       });
+  //     }
+  //   }
+  // }
+
+    // removeMarkers() {
+  //   this.markers.forEach(marker => {
+  //     marker.markerInstance.removeFrom(this.map);
+  //     marker.componentInstance.destroy();
+  //   })
+  //   this.markers.splice(0);
+  // }
+
+  // titleFilter() { 
+  //   var Lang = 'nameEn';
+  //   if (this.ts.currentLang == 'ar'){
+  //     Lang = 'nameAr'
+  //   }
+
+
+  //   if (this.title== undefined ||  this.title.length == 0) {
+  //     delete this.params['filter[where]['+Lang+'][like]'];
+  //   } else {
+  //     this.params['filter[where]['+Lang+'][like]'] = this.title;
+  //   }
+  //   this.requests.get('businesses', this.params)
+  //     .pipe(debounceTime(300))
+  //     .subscribe(res => {
+  //       this.posts = <Object[]>res;
+  //       this.menuPosts = this.posts;//.slice(0,20);
+  //       // this.removeMarkers();
+  //       // this.addMarkers();
+  //     })
+  // }
