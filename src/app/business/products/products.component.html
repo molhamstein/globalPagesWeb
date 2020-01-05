@@ -48,9 +48,10 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="wrap-imagebox style2">
-<!-- 
-                    <app-guide-card *ngFor="let p of menuPosts" [post]="p"
-                        class="col-xs-6 featured-box-flex guide-box "></app-guide-card> -->
+
+                    <app-product-card *ngFor="let p of menuPosts" [details]="p"
+                        class="col-xs-6 featured-box-flex guide-box ">
+                    </app-product-card>
 
                 </div>
             </div>

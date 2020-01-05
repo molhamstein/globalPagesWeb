@@ -1,1 +1,104 @@
-<p>view-product works!</p>
+<section class="flat-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="title-left">
+
+                    <div class="box-title">
+                        <a routerLink="/products/{{data.id}}" title="">{{data.title}}</a>
+                        <!--  -->
+                    </div>
+                    <span dir="ltr" class="creation-date">{{data.creationDate}}</span>
+
+                    <!-- /.box-title -->
+                    <!-- /.box-address -->
+                </div>
+                <!-- /.title-left -->
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-4">
+                <div class="title-left">
+                    <div class="btn-more">
+                        <a href="javascript:void(0)" *ngIf=" toggle1" (click)="toggle1= ! toggle1" href=""
+                            title="">{{'getInTouch' | translate}}</a>
+
+                        <a *ngIf="!toggle1" class="phone-arab-dir" href="tel:{{data.phone}}">{{data.phone}} <i
+                                class="fa fa-phone" style="margin-left:12px" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- /.title-right -->
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.flat-title -->
+
+<section class="flat-row flat-explore-detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="text-box">
+                    <h3>{{'details'| translate}}</h3>
+                    <div class="text-desc">
+                        {{data.description}}
+                    </div>
+                    <h3>{{'Tags' | translate}}</h3>
+                    <div class="tags">
+                        <div *ngFor="let oneTag of data.tags;let i=index" class="oneTag">
+                            <i class="fa fa-times" (click)="removeTag(i)" aria-hidden="true"></i>
+
+                            <span>
+                                {{oneTag.name}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="imageGallery1">
+
+                        <div class="hoverMe" style="display: inline" *ngFor="let image of _albums; let i=index">
+                            <img [src]="image.data.src" [lightbox]="i" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-4">
+                <div class="sidebar">
+
+                    <div class="box contact-box">
+                        <ul class="contact-list">
+                            <li class="address">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>{{data.subArea}} , {{data.area}}</li>
+                            <li class="category">
+                                <i class="fa fa-flag" aria-hidden="true"></i>{{data.category}}</li>
+                            <li class="subcategory">
+                                <i class="fa fa-filter" aria-hidden="true"></i>{{data.subCategory}}</li>
+                            <li class="address">
+                                <i class="fa fa-usd" aria-hidden="true"></i>{{data.price}}</li>
+                            <li>
+                                <span class="btn-more">
+                                    <a href="javascript:void(0)" class="button-in-contact-list" *ngIf="toggle2"
+                                        (click)="toggle2 = !toggle2" title="">{{'getInTouch' |
+                      translate}}</a>
+                                    <a *ngIf="!toggle2" class="phone-arab-dir button-in-contact-list"
+                                        href="tel:{{data.phone}}">{{data.phone}} <i class="fa fa-phone"
+                                            aria-hidden="true"></i></a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.flat-explore-detail <-->

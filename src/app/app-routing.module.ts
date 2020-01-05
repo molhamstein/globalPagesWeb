@@ -44,9 +44,10 @@ const routes: Routes = [
   { path: 'volume/:id', component: VolumeComponent },
   { path: 'privacy/policy', component: PolicyComponent },
   { path: 'products' , component: ProductsComponent },
+  { path: 'products/create', component: AddProductComponent },
   { path: 'products/:id', component: ViewProductComponent },
   { path: 'products/:id/edit', component: EditProductComponent },
-  { path: 'products/create', component: AddProductComponent },
+  
 
 ];
 

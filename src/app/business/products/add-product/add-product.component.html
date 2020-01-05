@@ -1,1 +1,264 @@
-<p>add-product works!</p>
+<section class="page-title parallax parallax1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-title-heading">
+                    {{"createNewProduct" | translate}}
+                </div>
+
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <div class="overlay1"></div>
+</section>
+<!-- /.page-title -->
+
+
+<section class="flat-listing">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-listing" novalidate #form="ngForm" (submit)="submit(form.value)">
+                    <div class="inner-box form">
+
+                        <div class="one-half">
+                            <!-- titleEn -->
+                            <div class="clearfix"></div>
+
+                            <div class="wrap-listing category-half">
+                                <label> {{"nameEn" | translate}}</label>
+                                <input type="text" name="titleEn" ngModel #titleEn="ngModel" required>
+                                <app-form-validation-message [form]="form" [control]="titleEn"
+                                    [messages]="{required:'requiredMessage'}" [params]="{name:'name'}">
+                                </app-form-validation-message>
+                            </div>
+
+                            <!-- category -->
+
+                            <div class="clearfix"></div>
+
+                            <div class="wrap-listing category-half">
+                                <label>{{"category" | translate}}</label>
+                                <span class="ti-angle-down"></span>
+                                <select name="categoryId" (change)="onCategoryChange()" [(ngModel)]="selectedCategory"
+                                    #category="ngModel" required>
+                                    <option [value]="i" *ngFor="let cat of categories;let i=index">
+                                        <ng-container *ngIf="lang=='ar'">
+                                            {{cat.titleAr}}
+                                        </ng-container>
+                                        <ng-container *ngIf="lang!='ar'">
+                                            {{cat.titleEn}}
+                                        </ng-container>
+                                    </option>
+                                </select>
+                                <app-form-validation-message [form]="form" [control]="category"
+                                    [messages]="{required:'requiredMessage'}" [params]="{name:'category'}">
+                                </app-form-validation-message>
+                            </div>
+
+                            <!-- city -->
+
+                            <div class="clearfix"></div>
+
+
+                            <div class="wrap-listing category-half">
+                                <label>{{'city' | translate}}</label>
+                                <span class="ti-angle-down"></span>
+                                <select name="cityId" [(ngModel)]="selectedCity" (change)="cityChanged()"
+                                    #cityId="ngModel" required>
+                                    <option *ngFor="let city of cities" [value]="city.id">
+                                        <ng-container *ngIf="lang=='ar'">
+                                            {{city['nameAr']}}
+                                        </ng-container>
+                                        <ng-container *ngIf="lang!='ar'">
+                                            {{city['nameEn']}}
+                                        </ng-container>
+                                    </option>
+                                </select>
+                                <app-form-validation-message [form]="form" [control]="cityId"
+                                    [messages]="{required:'requiredMessage'}" [params]="{name:'city'}">
+                                </app-form-validation-message>
+                            </div>
+
+                            <!-- descriptionEn -->
+
+                            <div class="clearfix"></div>
+
+                            <div class="wrap-listing category-half">
+                                <label>{{'descriptionEn' | translate}}</label>
+                                <textarea placeholder="Write description for the product" name="descriptionEn"
+                                    ngModel></textarea>
+                            </div>
+
+                            <!-- price -->
+                            <div class="clearfix"></div>
+
+                            <div class="wrap-listing category-half">
+                                <label> {{"price" | translate}}</label>
+                                <input type="number" name="price" ngModel #price="ngModel">
+                            </div>
+
+                            <!-- Business -->
+                            <div class="clearfix"></div>
+                            <div class="wrap-listing category-half">
+                                <label>{{'business'|translate}}</label>
+                                <select class="select" [(ngModel)]="selectedBusiness" name="businessId">
+                                    <option value="-1" disabled>{{'businessId'|translate}}</option>
+                                    <option *ngFor="let business of allBusiness;let i= index" value="{{business.id}}">
+                                        {{business.nameEn}}
+                                    </option>
+                                </select>
+                            </div>
+
+
+                        </div>
+
+                        <div class="one-half">
+
+                            <!-- titleAr -->
+                            <div class="clearfix"></div>
+
+                            <div class="wrap-listing category-half">
+                                <label> {{"nameAr" | translate}}</label>
+                                <input type="text" name="titleAr" ngModel #titleAr="ngModel" required>
+                                <app-form-validation-message [form]="form" [control]="titleAr"
+                                    [messages]="{required:'requiredMessage'}" [params]="{name:'name'}">
+                                </app-form-validation-message>
+                            </div>
+
+                            <!-- subCategory -->
+                            <div class="clearfix"></div>
+
+                            <div class="wrap-listing category-half">
+                                <label>{{"subCategory" | translate}}</label>
+                                <span class="ti-angle-down"></span>
+                                <select name="subCategoryId" [(ngModel)]="subCategoryId" #subCategory="ngModel"
+                                    required>
+                                    <option [value]="cat.id" *ngFor="let cat of subCategories">
+                                        <ng-container *ngIf="lang=='ar'">
+                                            {{cat.titleAr}}
+                                        </ng-container>
+                                        <ng-container *ngIf="lang!='ar'">
+                                            {{cat.titleEn}}
+                                        </ng-container>
+                                    </option>
+                                </select>
+                                <app-form-validation-message [form]="form" [control]="subCategory"
+                                    [messages]="{required:'requiredMessage'}" [params]="{name:'subCategory'}">
+                                </app-form-validation-message>
+                            </div>
+
+
+
+                            <!-- location -->
+                            <div class="clearfix"></div>
+
+                            <div class="wrap-listing category-half">
+                                <label>{{'location' | translate}}</label>
+                                <span class="ti-angle-down"></span>
+                                <select name="locationId" [(ngModel)]="locationId" [disabled]="!selectedCity"
+                                    #location="ngModel" required>
+                                    <option *ngFor="let location of locations" [value]="location.id">
+                                        <ng-container *ngIf="lang=='ar'">
+                                            {{location['nameAr']}}
+                                        </ng-container>
+                                        <ng-container *ngIf="lang!='ar'">
+                                            {{location['nameEn']}}
+                                        </ng-container>
+                                    </option>
+                                </select>
+                                <app-form-validation-message [form]="form" [control]="location"
+                                    [messages]="{required:'requiredMessage'}" [params]="{name:'location'}">
+                                </app-form-validation-message>
+                            </div>
+
+
+                            <!-- descriptionAr -->
+                            <div class="clearfix"></div>
+                            <div class="wrap-listing category-half">
+                                <label>{{'descriptionAr' | translate}}</label>
+                                <textarea placeholder="اكتب توصيف للمنتج" name="descriptionAr" ngModel></textarea>
+                            </div>
+
+                            <!-- tags -->
+                            <div class="wrap-listing category-half">
+                                <div class="inputDiv">
+                                    <label> {{'Tags' | translate }}</label>
+                                    <input type="text" name="tags"
+                                        placeholder="{{'enter'|translate}}  {{'Tags'|translate}}"
+                                        (focus)="inputFocus=true" (keyup)="typeing($event)" [(ngModel)]="inputValue"
+                                        (focusout)="foucasOut()" (keyup.enter)="addNewTag()">
+                                    <div class="listAutoComplete" *ngIf="inputFocus==true && inputValue!=''">
+                                        <div class="loader" *ngIf="viewLoader">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="oneItem" *ngFor="let oneTag of resultSearsh;"
+                                            (click)="addTag(oneTag)">
+                                            <h4>{{oneTag.name}}</h4>
+                                        </div>
+                                        <div class="oneItem addItem" (click)="addNewTag()">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                            <h4>{{'addNew'|translate}}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="float: right;">
+                                    <div class="inputDiv">
+                                        <h4 class="title">{{'Tags'|translate}}</h4>
+                                        <div class="tags">
+                                            <div *ngFor="let oneTag of tags;let i=index" class="oneTag">
+                                                <i class="fa fa-times" (click)="removeTag(i)" aria-hidden="true"></i>
+                                                <span>
+                                                    {{oneTag.name}}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class=" clearfix"></div>
+                        <div class="one-half">
+                            <!-- media -->
+                            <div class="clearfix"></div>
+                            <div class="wrap-listing half">
+                                <div class="col-12">
+                                    <label>{{'ProductImages'| translate}}</label>
+                                    <input-file fileAccept="image/*" [fileLimit]="20" [(ngModel)]="files"
+                                        [ngModelOptions]="{standalone: true}"></input-file>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- submit -->
+                        <div class="clearfix"></div>
+                        <div class="col-md-12">
+                            <button type="submit" class="display-content" [disabled]="form.submitted && form.invalid">
+                                <div class="btn-more submit-button">
+                                    <a>{{'registerProduct'| translate}}</a>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- /.inner-box -->
+
+                </form>
+                <!-- /.form-listing -->
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.flat-listing -->
+
+<ngx-spinner></ngx-spinner>

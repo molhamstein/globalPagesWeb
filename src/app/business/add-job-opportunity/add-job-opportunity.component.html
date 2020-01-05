@@ -151,9 +151,6 @@
                 <input class="input" placeholder="{{'enter'|translate}}  {{'skill'|translate}}"
                   (focus)="inputFocus=true" (keyup)="typeing($event)" [(ngModel)]="inputValue" (focusout)="foucasOut()"
                   (keyup.enter)="addNewTag()">
-                <!-- <div class="button add">
-                  {{'add'|translate}}
-                </div> -->
                 <div class="listAutoComplete" *ngIf="inputFocus==true && inputValue!=''">
                   <div class="loader" *ngIf="viewLoader">
                     <div class="bar"></div>

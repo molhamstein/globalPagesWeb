@@ -31,7 +31,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
-    this.cds.bCategoryPromise.then(res => this.bCategories = <Object[]>res);
+    this.cds.productCategoryPromise.then(res => this.bCategories = <Object[]>res);
     this.getPostsData({});
   }
 
@@ -75,11 +75,11 @@ export class ProductsComponent implements OnInit {
   }
 
   getPostsData(params) {
-    params['filter[where][status]'] = "activated";
+   // params['filter[where][status]'] = "activated";
     params['filter[limit]'] = "20";
 
     params['filter[skip]'] = (20 * this.skip).toString();
-    this.requests.get('businesses', params).subscribe(res => {
+    this.requests.get('marketProducts', params).subscribe(res => {
       this.posts = <Object[]>res;
 
       this.menuPosts = this.posts;

@@ -193,4 +193,11 @@ export const ArabicTranslation = {
   editCVFile: "رفع ملف السيرة الذاتية",
   productsPage: "دليل المنتجات",
   productsTitle: "دليل المنتجات",
+  createNewProduct: "إضافة منتج جديد",
+  productName: "اسم المنتج",
+  Tags: "علامات",
+  price: "السعر",
+  ProductImages: "صور المنتج",
+  registerProduct:  "إضافة منتج"
+
 }
