@@ -192,12 +192,14 @@ export const ArabicTranslation = {
   successUpdateCV: "تم تحديث السيرة الذاتية بنجاح",
   editCVFile: "رفع ملف السيرة الذاتية",
   productsPage: "دليل المنتجات",
+  productCreate: "إضافة منتج" ,
   productsTitle: "دليل المنتجات",
   createNewProduct: "إضافة منتج جديد",
   productName: "اسم المنتج",
   Tags: "علامات",
   price: "السعر",
   ProductImages: "صور المنتج",
-  registerProduct:  "إضافة منتج"
+  registerProduct:  "إضافة منتج",
+  editProduct: "تعديل المنتج",
 
 }

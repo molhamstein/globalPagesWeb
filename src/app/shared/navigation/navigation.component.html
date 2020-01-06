@@ -38,6 +38,9 @@
                 <li *ngIf="isLogin">
                   <a routerLink="/business/create" title="">{{'addBusinessPage' | translate}}</a>
                 </li>
+                <li *ngIf="isLogin">
+                    <a routerLink="/products/create"> {{'productCreate' | translate}} </a>
+                </li>
 
                 <li *ngIf="isLogin">
                   <a class="nav-button pulse" routerLink="/ad/create" title="">{{'createAdPage' | translate }}</a>

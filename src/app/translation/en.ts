@@ -183,10 +183,12 @@ export const EnglishTranslation = {
   editCVFile: "upload CV file",
   productsPage: "products",
   productsTitle: "The Products Guide",
+  productCreate: "add product" ,
   createNewProduct: "Create New Product",
   productName: "Product Name",
   Tags: "Tags",
   price: "Price",
   ProductImages: "Product Images",
-  registerProduct:  "Register Product"
+  registerProduct:  "Register Product",
+  editProduct: "Edit Product",
 }

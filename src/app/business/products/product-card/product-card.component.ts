@@ -65,10 +65,6 @@ export class ProductCardComponent implements OnInit {
         this.data['location'] = this.details['location']['nameEn'];
 
     }
-
-   
-    console.log("Det ",  this.details);
-    console.log(this.data);
   }
 
 }

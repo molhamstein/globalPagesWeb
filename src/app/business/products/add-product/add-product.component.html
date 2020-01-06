@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form class="form-listing" novalidate #form="ngForm" (submit)="submit(form.value)">
+                <form class="form-listing" novalidate #form="ngForm">
                     <div class="inner-box form">
 
                         <div class="one-half">
@@ -240,7 +240,7 @@
                         <div class="clearfix"></div>
                         <div class="col-md-12">
                             <button type="submit" class="display-content" [disabled]="form.submitted && form.invalid">
-                                <div class="btn-more submit-button">
+                                <div class="btn-more submit-button" (click)="submit(form.value)">
                                     <a>{{'registerProduct'| translate}}</a>
                                 </div>
                             </button>

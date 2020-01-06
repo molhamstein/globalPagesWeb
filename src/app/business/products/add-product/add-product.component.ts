@@ -19,7 +19,7 @@ import { MatDialog } from '@angular/material';
 export class AddProductComponent implements OnInit {
 
   constructor(private api: RequestsService, private translteService: TranslateService, private router: Router,
-    private spinner: NgxSpinnerService, private auth: AuthService,  private dialog: MatDialog) { }
+    private spinner: NgxSpinnerService, private auth: AuthService, private dialog: MatDialog) { }
 
   categories: any;
   subCategories: any;
@@ -69,7 +69,7 @@ export class AddProductComponent implements OnInit {
   }
 
   submit(data) {
-    
+
 
     this.spinner.show();
 
@@ -79,13 +79,15 @@ export class AddProductComponent implements OnInit {
     data['ownerId'] = user['userId'];
 
     data['media'] = [];
-    data['tags'] = [] ;
+    data['tags'] = [];
+    data['status'] = "pending"; 
 
-    for(let tag of this.tags) { 
-        data['tags'].push(tag.id); 
+
+    for (let tag of this.tags) {
+      data['tags'].push(tag.id);
     }
 
-    if (this.selectedBusiness != null) data['businessId'] = this.allBusiness[this.selectedBusiness]['id'];
+    if (this.selectedBusiness != null) data['businessId'] = this.selectedBusiness;
 
     let images: FormData = new FormData();
 
@@ -96,19 +98,27 @@ export class AddProductComponent implements OnInit {
       }
 
       this.api.post('attachments/images/upload', images).subscribe((res: any[]) => {
+
         for (let i = 0; i < res.length; i++) {
           data['media'].push(res[i].url);
         }
+        
+        this.api.post('marketProducts', data).subscribe(data => {
+          this.spinner.hide();
+          this.router.navigate(['products']);
+        })
       });
     }
 
-    console.log(data);
+    else {
+      this.api.post('marketProducts', data).subscribe(data => {
+        this.spinner.hide();
+        this.router.navigate(['products']);
+      })
+    }
 
-    this.api.post('marketProducts', data).subscribe(data => {
-   
-         this.spinner.hide();
-         this.router.navigate(['products']);
-    })
+
+
 
   }
 
