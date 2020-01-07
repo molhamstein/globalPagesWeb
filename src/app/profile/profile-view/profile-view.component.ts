@@ -18,6 +18,7 @@ export class ProfileViewComponent implements OnInit {
   ads
   businesses
   jobs
+  products; 
   postCategories
   lang
   categories={}
@@ -65,6 +66,9 @@ export class ProfileViewComponent implements OnInit {
       this.api.get('jobOpportunities', p).toPromise().then((data) => {
           this.jobs = data ; 
       })
+      this.api.get('marketProducts', p).toPromise().then((data) => {
+          this.products = data ; 
+      });
     })
     let postParams=new HttpParams()
     postParams=postParams.set('filter',JSON.stringify({

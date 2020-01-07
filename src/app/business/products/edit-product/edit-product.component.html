@@ -242,7 +242,8 @@
                                             <img src="{{image}}" alt="Gallery image 1" />
                                         </a>
                                     </div>
-                                    <input-file fileAccept="images/*" [fileLimit]="20"   (change)="onFileAdded()"></input-file>
+                                    <input-file fileAccept="image/*" [fileLimit]="20" [(ngModel)]="files"
+                                    [ngModelOptions]="{standalone: true}"></input-file>
                                 </div>
                             </div>
                         </div>

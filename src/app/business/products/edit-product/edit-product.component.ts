@@ -67,6 +67,7 @@ export class EditProductComponent implements OnInit {
       this.api.get('marketProducts/' + this.id).subscribe(res => {
         this.product = res;
         this.images = this.product.media;
+        this.tags = this.product.tags;
         this.onCategoryChange();
         this.cityChanged();
       });
@@ -76,25 +77,52 @@ export class EditProductComponent implements OnInit {
 
   submit(data) {
 
-    console.log(data);
 
     this.spinner.show();
 
     const user = JSON.parse(localStorage.getItem(environment.userDetails));
     data['ownerId'] = user['userId'];
 
-
+    data['tags'] = [];
     for (let tag of this.tags) {
       data['tags'].push(tag.id);
     }
 
-    this.product.media = this.images;
+    if (this.files && this.files.length > 0) {
+
+      let formData: FormData = new FormData();
+      for (let i = 0; i < this.files.length; i++) {
+        formData.append('file', this.files[i].file);
+      }
+
+      this.api.post('attachments/images/upload', formData).subscribe((res: any[]) => {
+
+        for (let i = 0; i < res.length; i++) {
+          this.images.push(res[i].url);
+        }
+
+        data['media'] = this.images;
 
 
-    this.api.post('marketProducts/' + this.id, data).subscribe(data => {
-      this.spinner.hide();
-      this.router.navigate(['products']);
-    });
+        this.api.put('marketProducts/' + this.id + '/updateProduct', data).subscribe(data => {
+          this.spinner.hide();
+          this.router.navigate(['products']);
+        }, err => {
+          this.spinner.hide();
+        })
+      });
+    } else {
+
+      data['media'] = this.images;
+
+
+      this.api.put('marketProducts/' + this.id + '/updateProduct', data).subscribe(data => {
+        this.spinner.hide();
+        this.router.navigate(['products']);
+      }, err => {
+        this.spinner.hide();
+      });
+    }
 
   }
 
@@ -122,11 +150,6 @@ export class EditProductComponent implements OnInit {
 
   }
 
-  onFileAdded() {
-    console.log(this.files);
-
-  }
-
   typeing(event) {
 
     let value = event.target.value;
@@ -146,22 +169,19 @@ export class EditProductComponent implements OnInit {
   }
 
   addTag(tag) {
-    let isFind = false;
     this.tags.forEach(element => {
       if (element.id == tag.id) {
-        isFind = true;
+        // already exist   
         return;
       }
     });
-    if (isFind == false)
-      this.tags.push(tag);
+    this.tags.push(tag);
     this.inputValue = "";
   }
 
   removeTag(index) {
     let self = this;
     let dialogRef = this.dialog.open(VerificationMessageComponent, {
-      //   width: '70%',
       panelClass: 'communictioDialogStyle',
       data: { "message": "deleteSkill" }
     });

@@ -1,5 +1,5 @@
 <section class="flat-title">
-    <div class="container">
+    <div class="container mainHeader">
         <div class="row">
             <div class="col-md-8">
                 <div class="title-left">
@@ -9,6 +9,12 @@
                         <!--  -->
                     </div>
                     <span dir="ltr" class="creation-date">{{data.creationDate}}</span>
+
+                    <h3 class="username">
+                        <span class="edit" *ngIf="isMyProduct==true" (click)="goToEdit()">{{'edit'|translate}}</span>
+                        <span class="edit deactive" *ngIf="isMyProduct==true && data && (data.status=='activated' || data.status == 'active')"
+                          (click)="deactive()">{{'deactive'|translate}}</span>
+                      </h3>
 
                     <!-- /.box-title -->
                     <!-- /.box-address -->

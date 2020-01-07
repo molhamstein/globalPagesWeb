@@ -191,4 +191,5 @@ export const EnglishTranslation = {
   ProductImages: "Product Images",
   registerProduct:  "Register Product",
   editProduct: "Edit Product",
+  myProducts: "My Products",
 }

@@ -201,5 +201,6 @@ export const ArabicTranslation = {
   ProductImages: "صور المنتج",
   registerProduct:  "إضافة منتج",
   editProduct: "تعديل المنتج",
+  myProducts: "منتجاتي",
 
 }

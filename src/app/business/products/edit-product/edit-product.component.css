@@ -1,0 +1,235 @@
+.errorMessage {
+    top: 5px;
+    font-size: 12px;
+    color: #DC143C;
+    position: absolute;
+    font-weight: 700;
+  }
+  
+  .inputDiv {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  
+  .inputDiv .title {
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  
+  .inputDiv textarea {
+    height: 80px;
+    resize: none;
+    margin: 0px;
+  }
+  
+  .inputDiv .input {
+    width: calc(100% - 20px);
+    padding-left: 10px;
+    background-color: #e4e4e4;
+    border-radius: 5px;
+    box-shadow: none;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .inputDiv .input::placeholder {
+    color: #9c9c9c;
+    font-weight: bold;
+  }
+  
+  .inputDiv .input {
+    width: 100%;
+  }
+  
+  .inputDiv .dateDiv {
+    width: 100%;
+    display: inline-block;
+  }
+  
+  .inputDiv .dateDiv .oneDate {
+    width: 22.5%;
+    padding: 10px;
+  }
+  
+  .inputDiv .dateDiv .oneDate:first-child {
+    padding-right: 0px;
+  }
+  
+  
+  .inputDiv .dateDiv .toDiv {
+    width: 10%;
+  }
+  
+  .inputDiv .dateDiv .toDiv h4 {
+    text-align: center;
+    padding-top: 17px;
+    font-weight: 600;
+  
+  }
+  
+  .inputDiv .select {
+    display: block;
+    font-weight: bold;
+    color: #9c9c9c;
+    padding: 10px;
+    height: 43px;
+    width: calc(100% - 20px);
+    border: transparent;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #e4e4e4;
+  }
+  
+  .inputDiv .select {
+    background-image: linear-gradient(45deg, transparent 50%, #828282 50%), linear-gradient(135deg, #828282 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 5px), calc(100% - 12px) calc(1em + 5px), 100% 0px;
+    background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+    background-size: 10px 7px;
+    background-repeat: no-repeat;
+  }
+  
+  .inputDiv .select::-ms-expand {
+    display: none;
+  }
+  
+  .inputDiv .select:hover {
+    border-color: #888;
+  }
+  
+  .inputDiv .select:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 4px 2px #9c9c9c;
+    color: #9c9c9c;
+    outline: none;
+  }
+  
+  
+  .inputDiv .select option:checked,
+  .inputDiv .select option:hover {
+    background-color: #9c9c9c;
+    color: white;
+  }
+  
+  
+  .listAutoComplete::before,
+  .listAutoComplete::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+  }
+  
+  .listAutoComplete::after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: skew(8deg) rotate(3deg);
+    -moz-transform: skew(8deg) rotate(3deg);
+    -ms-transform: skew(8deg) rotate(3deg);
+    -o-transform: skew(8deg) rotate(3deg);
+    transform: skew(8deg) rotate(3deg);
+  }
+  
+  .listAutoComplete {
+    position: absolute;
+    overflow-x: hidden;
+    max-height: 200px;
+    width: calc(100%);
+    z-index: 5;
+    box-shadow: 0 0.5rem 1rem 0 rgba(44, 51, 73, .1);
+    top: 77px;
+    background-color: white;
+  }
+  
+  .listAutoComplete .oneItem {
+    width: 100%;
+    padding: 10px 15px;
+  }
+  
+  
+  
+  .listAutoComplete .oneItem:nth-child(odd) {
+    background-color: #f8f8f8
+  }
+  
+  .listAutoComplete .oneItem:hover {
+    cursor: pointer;
+    background-color: #e4e4e4;
+  }
+  
+  .listAutoComplete .oneItem.addItem {
+    background-color: #fbd431;
+  }
+  
+  .listAutoComplete .oneItem.addItem h4 {
+    width: 100%;
+  }
+  
+  .listAutoComplete .oneItem.addItem i {
+    padding-top: 6px;
+    float: left;
+    margin-right: 10px;
+  }
+  
+  .listAutoComplete .oneItem h4 {
+    background-color: #fbd431;
+    border: 1px solid #fbd431;
+    width: fit-content;
+    font-size: 14px;
+    padding: 1px 8px;
+    font-weight: 600;
+    border-radius: 15px;
+  }
+  
+  .tags {
+    width: 100%;
+    min-height: 160px;
+    max-height: 160px;
+    overflow-y: auto;
+    padding: 8px 10px;
+  }
+  
+  .tags .oneTag {
+    width: fit-content;
+    border: 1px solid #fbd431;
+    background-color: #fbd431;
+    padding: 0px 5px;
+    float: left;
+    margin: 5px;
+    border-radius: 15px;
+  }
+  
+  .tags .oneTag i {
+    font-size: 11px;
+  }
+  
+  form.form-listing .inner-box .wrap-listing.category-half span { 
+      position: relative;
+      top: 0px ; 
+      left: 0px; 
+  }
+  
+  .imageGallery1 button {
+    position: absolute;
+    bottom: -63px;
+    right: 0px;
+    width: 150px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .imageGallery1 .btn:focus{
+    outline: none;
+    color: white;
+  }
+  

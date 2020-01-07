@@ -103,7 +103,7 @@ export class AddProductComponent implements OnInit {
           data['media'].push(res[i].url);
         }
         
-        this.api.post('marketProducts', data).subscribe(data => {
+        this.api.post('marketProducts/addProduct', data).subscribe(data => {
           this.spinner.hide();
           this.router.navigate(['products']);
         })
@@ -111,7 +111,7 @@ export class AddProductComponent implements OnInit {
     }
 
     else {
-      this.api.post('marketProducts', data).subscribe(data => {
+      this.api.post('marketProducts/addProduct', data).subscribe(data => {
         this.spinner.hide();
         this.router.navigate(['products']);
       })

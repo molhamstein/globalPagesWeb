@@ -158,9 +158,26 @@
               <ng-container *ngFor="let job of jobs">
                 <app-job-card style="min-width: 400px; max-width: 400px; margin: 15px;" [post]="job"
                   class="featured-box-flex guide-box"></app-job-card>
-               </ng-container>
+              </ng-container>
             </div>
 
+
+          </div>
+        </div>
+
+
+        <div class="col-xs-12">
+          <div class="inner-box profile-jobs-list">
+            <div class="main-title text-center">
+              <h3>{{'myProducts' | translate}}</h3>
+            </div>
+
+            <div fxLayout="row-reverse" style="overflow-x: scroll;">
+              <ng-container *ngFor="let product of products">
+                <app-product-card style="min-width: 400px; max-width: 400px; margin: 15px;" [details]="product"
+                  class="featured-box-flex guide-box"></app-product-card>
+              </ng-container>
+            </div>
 
           </div>
         </div>
