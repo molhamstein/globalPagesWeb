@@ -16,6 +16,10 @@ export class ProductsComponent implements OnInit {
   menuPosts: Object[];
 
   skip: number = 0;
+  city;
+  isSelected;
+  initialValue;
+  category;
   cityId = "";
   location = "";
   categoryId = "";
