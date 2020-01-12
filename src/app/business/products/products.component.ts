@@ -79,7 +79,7 @@ export class ProductsComponent implements OnInit {
   }
 
   getPostsData(params) {
-   // params['filter[where][status]'] = "activated";
+    params['filter[where][status]'] = "activated";
     params['filter[limit]'] = "20";
 
     params['filter[skip]'] = (20 * this.skip).toString();

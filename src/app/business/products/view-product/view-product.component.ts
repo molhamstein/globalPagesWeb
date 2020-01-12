@@ -31,6 +31,8 @@ export class ViewProductComponent implements OnInit {
       this.api.get('marketProducts/' + this.data['id']).toPromise().then(res => {
 
 
+
+
         let userData = this.auth.getUserDataLocal();
 
         this.data['phone'] = res['owner']['phoneNumber'];

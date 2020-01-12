@@ -36,6 +36,7 @@ export class AuthService implements CanActivate {
   }
 
   getUserDataLocal() {
+    if(this.isLogin == false) return {};
     return this.logInData.user
   }
   logIn(data) {

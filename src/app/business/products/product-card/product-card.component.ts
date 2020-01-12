@@ -19,7 +19,7 @@ export class ProductCardComponent implements OnInit {
     if (this.details.hasOwnProperty('media') && this.details['media'].length > 0)
       this.data['img'] = this.details['media']['0'];
     else { 
-       this.data['img'] = '../../../assets/images/page/business-01.png' ; 
+       this.data['img'] = '../../../assets/images/page/products-01.png' ; 
     }
 
     if(this.details.hasOwnProperty('price'))
