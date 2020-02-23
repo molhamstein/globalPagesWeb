@@ -123,7 +123,7 @@ export const ArabicTranslation = {
   language: 'اللغة',
   homePage: 'الرئيسية',
   businessGuidePage: 'دليل الأعمال',
-  businessJobPage: "دليل الوظائف",
+  businessJobPage: "الوظائف",
   business: 'الأعمال',
   addBusinessPage: 'إضافة عمل',
   createAdPage: 'إضافة إعلان',
@@ -191,9 +191,9 @@ export const ArabicTranslation = {
   deactive: "إلغاء تفعيل",
   successUpdateCV: "تم تحديث السيرة الذاتية بنجاح",
   editCVFile: "رفع ملف السيرة الذاتية",
-  productsPage: "دليل المنتجات",
+  productsPage: "تسوق",
   productCreate: "إضافة منتج" ,
-  productsTitle: "دليل المنتجات",
+  productsTitle: "تسوق",
   createNewProduct: "إضافة منتج جديد",
   productName: "اسم المنتج",
   Tags: "علامات",
@@ -202,5 +202,5 @@ export const ArabicTranslation = {
   registerProduct:  "إضافة منتج",
   editProduct: "تعديل المنتج",
   myProducts: "منتجاتي",
-
+  balance: "الرصيد",
 }

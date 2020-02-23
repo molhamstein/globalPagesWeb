@@ -48,42 +48,41 @@
           <form action="#" class="form-listing" method="get" accept-charset="utf-8">
 
             <div class="inner-box form">
-              <div class="one-half">
-                <div class="wrap-listing username">
-                  <label>{{'username' | translate}}</label>
-                  <div class="user-name-text">{{user?.username}}</div>
+
+              <div style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
+                <div>
+                  <div class="wrap-listing username">
+                    <label>{{'username' | translate}}</label>
+                    <div class="user-name-text">{{user?.username}}</div>
+                  </div>
+                  <div class="clearfix"></div>
                 </div>
-                <!-- /.wrap-listing -->
-                <!--<label>{{'birth' | translate}}</label>-->
-                <!--<div class="wrap-listing business">-->
-                <!--<div class="user-birth-text">{{user?.birthDate}}</div>-->
-                <!--<span class="clearfix"></span>-->
-                <!--</div>-->
-                <!-- /.wrap-listing -->
-                <div class="clearfix"></div>
 
-              </div>
-              <div class="one-half">
-                <div class="wrap-listing phone">
-                  <label>{{'email' | translate}}</label>
-                  <div class="user-email-text">{{user?.email}}</div>
+                <div>
+                  <div class="wrap-listing phone">
+                    <label>{{'email' | translate}}</label>
+                    <div class="user-email-text">{{user?.email}}</div>
+                  </div>
+                  <div class="clearfix"></div>
                 </div>
+
+                <div>
+                  <div class="wrap-listing username">
+                    <label>{{'balance' | translate}}</label>
+                    <div class="user-name-text">{{user?.balance}}</div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+
                 <div class="clearfix"></div>
-                <!--<div class="wrap-listing category">-->
-                <!--<label>{{'gender' | translate}}</label>-->
-                <!--<div class="user-gender-text">{{user?.gender | translate}}</div>-->
-                <!--</div>-->
-                <!--<div class="clearfix"></div>-->
-
-
               </div>
-              <div class="clearfix"></div>
+
               <div class="col-md-12 text-left">
-                <!-- <a [routerLink]="['/profile','edit']">{{'editData' | translate}}</a> -->
                 <a [routerLink]="['/cv',id]">{{'CV' | translate}}</a>
               </div>
-
             </div>
+
             <!-- /.inner-box -->
 
           </form>
