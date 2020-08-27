@@ -191,16 +191,9 @@
               <div class="wrap-listing half">
                 <div class="col-12">
                   <label>{{'businessImages'| translate}}</label>
-                  <input-file fileAccept=".mp4,.jpg,.jpeg,.mpeg" [fileLimit]="20" (change)="onFileAdded($event)"
+                  <input-file fileAccept=".mp4,.jpg,.jpeg,.mpeg,.png" [fileLimit]="20"
                     [(ngModel)]="files" [ngModelOptions]="{standalone: true}"></input-file>
                 </div>
-                <!--<div class="browse ">-->
-                <!--<div class="upload">-->
-                <!--<span>Browse files</span>-->
-                <!---->
-                <!--<input name="media" id="filesToUpload" type="file" multiple="" (change)="onFileAdded($event.srcElement.files)" accept="image/png, image/jpeg, image/jpg" />-->
-                <!--</div>-->
-                <!--</div>-->
               </div>
             </div>
 

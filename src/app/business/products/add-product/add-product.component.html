@@ -230,8 +230,8 @@
                             <div class="wrap-listing half">
                                 <div class="col-12">
                                     <label>{{'ProductImages'| translate}}</label>
-                                    <input-file fileAccept="image/*" [fileLimit]="20" [(ngModel)]="files"
-                                        [ngModelOptions]="{standalone: true}"></input-file>
+                                    <input-file fileAccept=".mp4,.jpg,.jpeg,.mpeg,.png" [fileLimit]="20"
+                                    [(ngModel)]="files" [ngModelOptions]="{standalone: true}"></input-file>
                                 </div>
                             </div>
                         </div>

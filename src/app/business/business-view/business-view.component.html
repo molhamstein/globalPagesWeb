@@ -52,8 +52,8 @@
       <div class="col-md-8">
         <div class="text-box">
           <h3>{{'about' | translate}}</h3>
-          <div class="text-desc">
-            {{business?.description}}
+          <div class="text-desc" [innerHTML]="business?.description | linkify">
+      
           </div>
         </div>
         <div class="col-md-12">

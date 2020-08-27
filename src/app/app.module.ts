@@ -74,7 +74,8 @@ import { AddProductComponent } from './business/products/add-product/add-product
 import { ViewProductComponent } from './business/products/view-product/view-product.component';
 import { EditProductComponent } from './business/products/edit-product/edit-product.component';
 import { ProductCardComponent } from './business/products/product-card/product-card.component';
-
+import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
+import { SuppliersComponent } from './business/suppliers/suppliers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -124,6 +125,7 @@ import { ProductCardComponent } from './business/products/product-card/product-c
     ViewProductComponent,
     EditProductComponent,
     ProductCardComponent,
+    SuppliersComponent,
     
   ],
   imports: [
@@ -147,6 +149,7 @@ import { ProductCardComponent } from './business/products/product-card/product-c
     NgxSmartModalModule.forRoot(),
     NgxSpinnerModule,
     FlexLayoutModule,
+    NgxLinkifyjsModule.forRoot(),
   ],
   entryComponents: [MapMarkerComponent, EditInfoComponent, SuccessMessageComponent, VerificationMessageComponent, EditSkillComponent, EditBasicInformationComponent],
   providers: [RequestsService, CommonDataService],

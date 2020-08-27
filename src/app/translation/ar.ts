@@ -203,4 +203,5 @@ export const ArabicTranslation = {
   editProduct: "تعديل المنتج",
   myProducts: "منتجاتي",
   balance: "الرصيد",
+  supplierPage: "الموردون"
 }

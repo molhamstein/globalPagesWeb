@@ -50,6 +50,7 @@ export class NotificationComponent implements OnInit,OnDestroy {
     })
 
   }
+  
   clickHandle(notification){
     let notficationClicked=()=>{
       // return this.api.post('notifications/seenNotification',{notifications:[notification.id]}).toPromise()
@@ -60,6 +61,7 @@ export class NotificationComponent implements OnInit,OnDestroy {
       this.router.navigate(['volume',notification.data.volumeId]).then(_=>notficationClicked())
     }
   }
+
   remove(e:Event){
     e.stopPropagation()
     if(this.currentNotification)
@@ -68,12 +70,15 @@ export class NotificationComponent implements OnInit,OnDestroy {
       this.deleteAll()
     return false;
   }
+
   deleteNotification(not){
     this.api.delete('notifications',not.id).subscribe(_=>this.refresh.next(''))
   }
+
   deleteAll(){
     this.api.put("notifications/clear",{}).subscribe(_=>this.refresh.next(''))
   }
+
   open(){
     if(!this.showNotification){
       this.api.post('notifications/seenNotification',{notifications:this.notifications.map(v=>v.id)}).toPromise()
@@ -81,12 +86,12 @@ export class NotificationComponent implements OnInit,OnDestroy {
     this.showNotification=!this.showNotification
   }
 
+  close(){
+    this.showNotification=false
+  }
+
   ngOnDestroy(): void {
     $('html').off('click');
-  }
-  close(){
-    // console.log('close')
-    this.showNotification=false
   }
 
 }

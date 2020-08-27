@@ -23,6 +23,7 @@ import { ProductsComponent } from './business/products/products.component';
 import { ViewProductComponent } from './business/products/view-product/view-product.component';
 import { EditProductComponent } from './business/products/edit-product/edit-product.component';
 import { AddProductComponent } from './business/products/add-product/add-product.component';
+import { SuppliersComponent } from './business/suppliers/suppliers.component';
 const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
   { path: '', component: HomeScreenComponent },
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'ad/:id', component: AdViewComponent, resolve: { adData: AdDataResolverService } },
   { path: 'ad/:id/edit', component: AdEditComponent, resolve: { adData: AdDataResolverService } },
   { path: 'guide', component: GuideComponent },
+  { path: 'suppliers', component: SuppliersComponent },
   { path: 'job', component: JobsComponent },
   { path: 'job/:id', component: ViewJobComponent },
   { path: 'volume/:id', component: VolumeComponent },

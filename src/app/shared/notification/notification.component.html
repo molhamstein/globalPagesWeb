@@ -27,13 +27,10 @@
     <h3>{{'remove' | translate}}</h3>
   </div>
   <div class="smart-modal-content" >
-
     {{"removeConfirmation"|translate}}
-
   </div>
   <div class="smart-modal-footer">
     <button class="btn btn-danger" (click)="remove($event);removeModal.close();">{{'remove'|translate}}</button>
     <button class="btn btn-primary" (click)="removeModal.close();$event.stopPropagation()">{{'close'|translate}}</button>
   </div>
-
 </ngx-smart-modal>

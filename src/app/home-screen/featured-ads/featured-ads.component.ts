@@ -36,16 +36,17 @@ export class FeaturedAdsComponent implements OnInit {
 
   constructor(private rs: RequestsService) { }
   public data: Object[];
-  getFeaturedAds()  {
+  getFeaturedAds() {
     var p = new HttpParams();
     p = p.set('filter', JSON.stringify({
       where: {
         isFeatured: true,
         status: 'activated'
-      }
+      },
+      order: "creationDate DESC"
     }))
     // filter[where][isFeatured] = true;
-    return this.rs.get('posts',p);
+    return this.rs.get('posts', p);
     // this.api.get('posts', p)
   }
 

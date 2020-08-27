@@ -98,11 +98,7 @@ export class BusinessCreateComponent implements OnInit {
 
   }
   files
-  onFileAdded(files) {
-    console.log(files)
-    console.log(this.files)
-    // this.files=files
-  }
+
   onCategoryChange() {
     this.subCategoryId = null
     console.log(this.selectedCategory)

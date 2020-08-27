@@ -72,26 +72,21 @@
             <div class="clearfix"></div>
             <div class="one-half">
               <label>{{'details' | translate}}</label>
-              <textarea [(ngModel)]="details" name="details" placeholder="{{'writeYourAdDetails'| translate}}"></textarea>
+              <textarea [(ngModel)]="details" name="details"
+                placeholder="{{'writeYourAdDetails'| translate}}"></textarea>
               <div class="clearfix"></div>
             </div>
             <div class="one-half">
               <div class="clearfix"></div>
               <div class="wrap-listing half">
                 <label>{{'yourBusinessImages'| translate}}</label>
-                <!-- <div class=" "> -->
-                  <!-- <div id="preview-box" class="col-md-12 preview-box">
-
-                  </div> -->
-                  <div class="upload">
-                    <!-- <span>{{'browseFiles'| translate}}</span> -->
-                    <!-- <input name="filesToUpload[]" (change)="onSelectFile($event)" id="filesToUpload" type="file" multiple  /> -->
-                    <input-file fileAccept="image/*" name="upload" [fileLimit]="20"  [(ngModel)]="filesToUpload"></input-file>
-
-                  </div>
-                <!-- </div> -->
+                <div class="upload">
+                  <input-file fileAccept=".mp4,.jpg,.jpeg,.mpeg,.png" [fileLimit]="20"
+                    [(ngModel)]="filesToUpload" [ngModelOptions]="{standalone: true}"></input-file>
+                </div>
               </div>
             </div>
+
             <div class="clearfix"></div>
             <div class="col-md-12">
               <div class="btn-more submit-button">
@@ -99,7 +94,6 @@
               </div>
             </div>
             <div class="clearfix"></div>
-
 
           </div>
           <!-- /.inner-box -->

@@ -41,8 +41,8 @@
       <div class="col-md-8">
         <div class="text-box">
           <h3>{{'details'| translate}}</h3>
-          <div class="text-desc">
-            {{data.description}}
+          <div class="text-desc" [innerHTML]="data?.description | linkify">
+      
           </div>
         </div>
         <div class="col-md-12">

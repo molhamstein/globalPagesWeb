@@ -40,18 +40,17 @@ export class ProductsComponent implements OnInit {
   }
 
   reFilter() {
-    var Lang = 'nameEn';
-    if (this.ts.currentLang == 'ar') {
-      Lang = 'nameAr'
-    }
-
 
     if (this.title == "" || this.title.trim().length == 0) {
-      delete this.params['filter[where][or][0][nameEn][like]'];
-      delete this.params['filter[where][or][1][nameAr][like]'];
+      delete this.params['filter[where][or][0][titleEn][like]'];
+      delete this.params['filter[where][or][1][titleAr][like]'];
+      delete this.params['filter[where][or][0][titleEn][options]'];
+      delete this.params['filter[where][or][1][titleAr][options]'];
     } else {
-      this.params['filter[where][or][0][nameEn][like]'] = this.title;
-      this.params['filter[where][or][1][nameAr][like]'] = this.title;
+      this.params['filter[where][or][0][titleEn][like]'] = this.title;
+      this.params['filter[where][or][1][titleAr][like]'] = this.title;
+      this.params['filter[where][or][0][titleEn][options]'] = "i";
+      this.params['filter[where][or][1][titleAr][options]'] = "i";
     }
 
     if (this.cityId == "") {

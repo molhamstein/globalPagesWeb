@@ -73,9 +73,13 @@ export class GuideComponent implements OnInit {
     if (this.title == "" || this.title.trim().length == 0) {
       delete this.params['filter[where][or][0][nameEn][like]'];
       delete this.params['filter[where][or][1][nameAr][like]'];
+      delete this.params['filter[where][or][0][nameEn][options]'];
+      delete this.params['filter[where][or][1][nameAr][options]'];
     } else {
       this.params['filter[where][or][0][nameEn][like]'] = this.title;
       this.params['filter[where][or][1][nameAr][like]'] = this.title;
+      this.params['filter[where][or][0][nameEn][options]'] = "i";
+      this.params['filter[where][or][1][nameAr][options]'] = "i";
     }
 
     if (this.cityId == "") {
