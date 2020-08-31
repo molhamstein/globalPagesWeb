@@ -5,6 +5,7 @@ import { debounceTime } from 'rxjs/operators';
 import { icon, latLng, marker, Marker, tileLayer } from 'leaflet';
 import { MapMarkerComponent } from '../map-marker/map-marker.component';
 import { TranslateService } from '@ngx-translate/core';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-guide',
   templateUrl: './guide.component.html',
@@ -43,12 +44,13 @@ export class GuideComponent implements OnInit {
 
   constructor(private ts: TranslateService, private cds: CommonDataService,
     private requests: RequestsService, private resolver: ComponentFactoryResolver,
-    private injector: Injector) { }
+    private injector: Injector, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    const filter = this.getQueryParams();
     this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
     this.cds.bCategoryPromise.then(res => this.bCategories = <Object[]>res);
-    this.getPostsData({});
+    this.getPostsData(filter);
   }
 
   ngDoCheck() {
@@ -59,16 +61,49 @@ export class GuideComponent implements OnInit {
     })
   }
 
+  getQueryParams() {
+    let params = this.route.snapshot.queryParams;
+    let filter: Object = {};
+    if (params.title && params.title.trim().length != 0) {
+      filter['filter[where][or][0][nameEn][like]'] = params.title;
+      filter['filter[where][or][1][nameAr][like]'] = params.title;
+      filter['filter[where][or][0][nameEn][options]'] = "i";
+      filter['filter[where][or][1][nameAr][options]'] = "i";
+    }
+    if (params.cityId) {
+      filter["filter[where][cityId]"] = params.cityId;
+    }
+    if (params.location) {
+      filter["filter[where][locationId]"] = params.location;
+    }
+    if (params.categoryId) {
+      filter["filter[where][categoryId]"] = params.categoryId;
+    }
+    if (params.subCategory) {
+      filter["filter[where][subCategoryId]"] = params.subCategory;
+    }
+    return filter;
+  }
+
   onMapReady(map) {
     this.map = map;
   }
 
-  reFilter() {
-    var Lang = 'nameEn';
-    if (this.ts.currentLang == 'ar') {
-      Lang = 'nameAr'
-    }
+  addQueryParams(param: object) {
+    this.router.navigate([], {
+      queryParams: { ...param },
+    });
+  }
 
+  reFilter() {
+
+    this.addQueryParams({
+      title: this.title,
+      cityId: this.cityId,
+      location: this.location,
+      categoryId: this.categoryId,
+      subCategory: this.subCategory
+    });
 
     if (this.title == "" || this.title.trim().length == 0) {
       delete this.params['filter[where][or][0][nameEn][like]'];
@@ -122,8 +157,6 @@ export class GuideComponent implements OnInit {
           this.nextDisabled = true;
         }
       }
-      // this.removeMarkers();
-      // this.addMarkers();
     })
   }
 

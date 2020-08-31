@@ -2,6 +2,7 @@ import { Component, OnInit, ComponentFactoryResolver, Injector } from '@angular/
 import { TranslateService } from '@ngx-translate/core';
 import { CommonDataService } from 'src/app/common-data.service';
 import { RequestsService } from 'src/app/requests.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -31,15 +32,54 @@ export class ProductsComponent implements OnInit {
 
   constructor(private ts: TranslateService, private cds: CommonDataService,
     private requests: RequestsService, private resolver: ComponentFactoryResolver,
-    private injector: Injector) { }
+    private injector: Injector, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    const filter = this.getQueryParams();
     this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
     this.cds.productCategoryPromise.then(res => this.bCategories = <Object[]>res);
-    this.getPostsData({});
+    this.getPostsData(filter);
+  }
+
+  getQueryParams() {
+    let params = this.route.snapshot.queryParams;
+    let filter: Object = {};
+    if (params.title && params.title.trim().length != 0) {
+      filter['filter[where][or][0][titleEn][like]'] = params.title;
+      filter['filter[where][or][1][titleAr][like]'] = params.title;
+      filter['filter[where][or][0][titleEn][options]'] = "i";
+      filter['filter[where][or][1][titleAr][options]'] = "i";
+    }
+    if (params.cityId) {
+      filter["filter[where][cityId]"] = params.cityId;
+    }
+    if (params.location) {
+      filter["filter[where][locationId]"] = params.location;
+    }
+    if (params.categoryId) {
+      filter["filter[where][categoryId]"] = params.categoryId;
+    }
+    if (params.subCategory) {
+      filter["filter[where][subCategoryId]"] = params.subCategory;
+    }
+    return filter;
+  }
+
+  addQueryParams(param: object) {
+    this.router.navigate([], {
+      queryParams: { ...param },
+    });
   }
 
   reFilter() {
+
+    this.addQueryParams({
+      title: this.title,
+      cityId: this.cityId,
+      location: this.location,
+      categoryId: this.categoryId,
+      subCategory: this.subCategory
+    });
 
     if (this.title == "" || this.title.trim().length == 0) {
       delete this.params['filter[where][or][0][titleEn][like]'];

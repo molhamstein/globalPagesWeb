@@ -61,10 +61,10 @@
       </div>
       <div class="col-md-12">
         <div class="b-guide-nav">
-          <button title="Next" (click)="prev()" [ngClass]="{disabled:prevDisabled}" class=" col-xs-pull-1 button-navigation">
+          <button *ngIf="!prevDisabled" title="Next" (click)="prev()" [ngClass]="{disabled:prevDisabled}" class=" col-xs-pull-1 button-navigation">
             <i class="fa fa-chevron-right"></i>
           </button>
-          <button title="Previous" [ngClass]="{disabled:nextDisabled}" (click)="next()" class="col-xs-push-1 button-navigation">
+          <button *ngIf="!nextDisabled" title="Previous" [ngClass]="{disabled:nextDisabled}" (click)="next()" class="col-xs-push-1 button-navigation">
             <i class="fa fa-chevron-left"></i>
           </button>
         </div>

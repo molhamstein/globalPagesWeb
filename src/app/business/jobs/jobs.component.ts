@@ -1,6 +1,7 @@
 import { RequestsService } from 'src/app/requests.service';
 import { CommonDataService } from 'src/app/common-data.service';
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'jobs',
@@ -8,12 +9,13 @@ import { Component } from '@angular/core';
     styleUrls: ['jobs.component.scss']
 })
 export class JobsComponent {
-    constructor(private cds: CommonDataService, private requests: RequestsService) { }
+    constructor(private cds: CommonDataService, private requests: RequestsService,
+        private route: ActivatedRoute, private router: Router) { }
+
     bCategories: Object[];
     cities: Object[];
-    posts
-    menuPosts
-
+    posts;
+    menuPosts;
     city;
     category;
     initialValue;
@@ -27,31 +29,58 @@ export class JobsComponent {
     prevDisabled = false;
 
     ngOnInit() {
+        const filter = this.getQueryParams();
         this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
         this.cds.jCategoryPromise.then(res => this.bCategories = <Object[]>res);
-        this.getPostsData("?status=activated&");
+        this.getPostsData(filter);
+    }
+
+    getQueryParams() {
+        let params = this.route.snapshot.queryParams;
+        let filter = "?status=activated&";
+        if (params.keyword && params.keyword.trim().length != 0) {
+            filter += "keyword=" + params.keyword + "&"
+        }
+        if (params.cityId) {
+            filter += "cityId=" + params.cityId + "&"
+        }
+        if (params.categoryId) {
+            filter += "categoryId=" + params.categoryId + "&"
+        }
+        if (params.subCategory) {
+            filter += "subCategoryId=" + params.subCategory + "&"
+        }
+        return filter; 
+    }
+
+    addQueryParams(param: object) {
+        this.router.navigate([], {
+            queryParams: { ...param },
+        });
     }
 
     reFilter() {
 
-        this.params = "?status=activated&"
+        this.params = "?status=activated&";
+        this.addQueryParams({
+            keyword: this.title,
+            cityId: this.cityId,
+            categoryId: this.categoryId,
+            subCategory: this.subCategory
+        });
 
         if (this.title != "" && this.title.trim().length != 0) {
             this.params += "keyword=" + this.title + "&"
-            // this.params['filter[where][and]'].push({ "nameEn": { "like": this.title, "options": "i" } })
         }
-
         if (this.cityId != "") {
             this.params += "cityId=" + this.cityId + "&"
         }
         if (this.categoryId != "") {
             this.params += "categoryId=" + this.categoryId + "&"
-
         }
         if (this.subCategory != "") {
             this.params += "subCategoryId=" + this.subCategory + "&"
         }
-        console.log(this.params)
         this.getPostsData(this.params);
     }
 
@@ -60,6 +89,7 @@ export class JobsComponent {
             this.cityId = c['id'];
         }
     }
+
     setCategoryId(c) {
         if (c != undefined) {
             this.categoryId = c['id'];
@@ -67,31 +97,28 @@ export class JobsComponent {
     }
 
     getPostsData(params) {
-        // params['filter[where][status]'] = "activated";
-        // params['filter[limit]'] = "20";
 
-        // params['filter[skip]'] = (20 * this.skip).toString();
         params += "&limit=20"
         params += "&offset=" + (20 * this.skip).toString();
 
         this.requests.get('jobOpportunities/searchJob' + params).subscribe(res => {
             this.posts = <Object[]>res;
-            this.menuPosts = this.posts;//.slice(0, 20);
+            this.menuPosts = this.posts;
             if (this.posts.length == 0) {
                 this.prevDisabled = true;
                 if (this.skip == 0) {
                     this.nextDisabled = true;
                 }
             }
-        })
+        });
     }
-
 
     prev() {
         this.nextDisabled = false;
         this.skip += 1;
         this.reFilter()
     }
+
     next() {
         if (this.skip > 0) {
             if (this.skip <= 1) {

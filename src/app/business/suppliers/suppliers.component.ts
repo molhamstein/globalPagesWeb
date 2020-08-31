@@ -3,6 +3,7 @@ import { CommonDataService } from 'src/app/common-data.service';
 import { RequestsService } from 'src/app/requests.service';
 import { latLng, tileLayer } from 'leaflet';
 import { TranslateService } from '@ngx-translate/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -42,12 +43,13 @@ export class SuppliersComponent implements OnInit {
   prevDisabled = false;
 
   constructor(private ts: TranslateService, private cds: CommonDataService,
-    private requests: RequestsService) { }
+    private requests: RequestsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    const filter = this.getQueryParams();
     this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
     this.cds.bCategoryPromise.then(res => this.bCategories = <Object[]>res);
-    this.getPostsData({});
+    this.getPostsData(filter);
   }
 
   ngDoCheck() {
@@ -58,11 +60,49 @@ export class SuppliersComponent implements OnInit {
     })
   }
 
+  getQueryParams() {
+    let params = this.route.snapshot.queryParams;
+    let filter: Object = {};
+    if (params.title && params.title.trim().length != 0) {
+      filter['filter[where][or][0][nameEn][like]'] = params.title;
+      filter['filter[where][or][1][nameAr][like]'] = params.title;
+      filter['filter[where][or][0][nameEn][options]'] = "i";
+      filter['filter[where][or][1][nameAr][options]'] = "i";
+    }
+    if (params.cityId) {
+      filter["filter[where][cityId]"] = params.cityId;
+    }
+    if (params.location) {
+      filter["filter[where][locationId]"] = params.location;
+    }
+    if (params.categoryId) {
+      filter["filter[where][categoryId]"] = params.categoryId;
+    }
+    if (params.subCategory) {
+      filter["filter[where][subCategoryId]"] = params.subCategory;
+    }
+    return filter;
+  }
+
   onMapReady(map) {
     this.map = map;
   }
 
+  addQueryParams(param: object) {
+    this.router.navigate([], {
+      queryParams: { ...param },
+    });
+  }
+
   reFilter() {
+
+    this.addQueryParams({
+      title: this.title,
+      cityId: this.cityId,
+      location: this.location,
+      categoryId: this.categoryId,
+      subCategory: this.subCategory
+    });
 
     if (this.title == "" || this.title.trim().length == 0) {
       delete this.params['filter[where][or][0][nameEn][like]'];
@@ -70,7 +110,7 @@ export class SuppliersComponent implements OnInit {
       delete this.params['filter[where][or][0][nameEn][options]'];
       delete this.params['filter[where][or][1][nameAr][options]'];
     }
-     else {
+    else {
       this.params['filter[where][or][0][nameEn][like]'] = this.title;
       this.params['filter[where][or][1][nameAr][like]'] = this.title;
       this.params['filter[where][or][0][nameEn][options]'] = "i";
@@ -79,25 +119,25 @@ export class SuppliersComponent implements OnInit {
 
     if (this.cityId == "") {
       delete this.params["filter[where][cityId]"]
-    } 
+    }
     else {
       this.params["filter[where][cityId]"] = this.cityId;
     }
     if (this.location == "") {
       delete this.params["filter[where][locationId]"]
-    } 
+    }
     else {
       this.params["filter[where][locationId]"] = this.location;
     }
     if (this.categoryId == "") {
       delete this.params["filter[where][categoryId]"]
-    } 
+    }
     else {
       this.params["filter[where][categoryId]"] = this.categoryId;
     }
     if (this.subCategory == "") {
       delete this.params["filter[where][subCategoryId]"]
-    } 
+    }
     else {
       this.params["filter[where][subCategoryId]"] = this.subCategory;
     }
