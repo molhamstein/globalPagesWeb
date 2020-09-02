@@ -24,8 +24,9 @@ import { ViewProductComponent } from './business/products/view-product/view-prod
 import { EditProductComponent } from './business/products/edit-product/edit-product.component';
 import { AddProductComponent } from './business/products/add-product/add-product.component';
 import { SuppliersComponent } from './business/suppliers/suppliers.component';
+
+
 const routes: Routes = [
-  { path: 'auth', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
   { path: '', component: HomeScreenComponent },
   { path: 'business/create', component: BusinessCreateComponent, canActivate: [AuthService] },
   { path: 'business/:id', component: BusinessViewComponent },
@@ -45,12 +46,10 @@ const routes: Routes = [
   { path: 'job/:id', component: ViewJobComponent },
   { path: 'volume/:id', component: VolumeComponent },
   { path: 'privacy/policy', component: PolicyComponent },
-  { path: 'products' , component: ProductsComponent },
+  { path: 'products', component: ProductsComponent },
   { path: 'products/create', component: AddProductComponent },
   { path: 'products/:id', component: ViewProductComponent },
   { path: 'products/:id/edit', component: EditProductComponent },
-  
-
 ];
 
 const config: ExtraOptions = {

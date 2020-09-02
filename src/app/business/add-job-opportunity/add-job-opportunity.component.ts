@@ -158,9 +158,7 @@ export class AddJobOpportunityComponent {
         if (this.newObject['jobType'] == null)
             delete this.newObject['jobType']
         this.api.post('businesses/' + this.businessId + '/addJobOpportunity', this.newObject).toPromise().then((data) => {
-            // goToLogin() {
             self.router.navigate(["job/" + data['id']]);
-            // }
         })
 
     }

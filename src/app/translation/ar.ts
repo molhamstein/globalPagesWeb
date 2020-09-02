@@ -16,7 +16,7 @@ export const ArabicTranslation = {
   myAds: 'اعلاناتي',
   myBusiness: 'أعمالي',
   myJobs: 'وظائفي',
-  forgetPassword: 'نسيت كلمة المرور',
+  forgetPassword: 'نسيت كلمة المرور؟',
   restorePassword: 'استعادة كلمة المرور',
   changePassword: 'تغيير كلمة المرور',
   sendVerificationCode: 'إرسال رمز التحقق',
@@ -137,7 +137,7 @@ export const ArabicTranslation = {
   faxNumber: 'رقم الفاكس',
   workingHours: 'أيام المناوبة',
   address: 'العنوان',
-
+  ACCOUNT_IS_LOCK: "تم قفل الحساب, الرجاء المحاولة لاحقا",
   contactInfo: 'معلومات الإتصال',
   privacyAndTerms: 'اتفاقية الخصوصية والشروط',
   requiredMessage: 'الرجاء ملئ {{name}}',
@@ -203,5 +203,10 @@ export const ArabicTranslation = {
   editProduct: "تعديل المنتج",
   myProducts: "منتجاتي",
   balance: "الرصيد",
-  supplierPage: "الموردون"
+  supplierPage: "الموردون",
+  loginWithFacebook: 'تسجيل دخول من فيسبوك',
+  loginWithGoogle: 'تسجيل دخول من غوغل',
+  emailAlreadyExsit: "الايميل الاكتروني موجود مسبقا",
+  submit: "إرسال",
+  completeInformation: "إكمال معلومات المستخدم",
 }

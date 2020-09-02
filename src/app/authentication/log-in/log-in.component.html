@@ -25,11 +25,12 @@
               </div>
               <a [routerLink]="'/auth/forget'" class="forgot" title="">{{'forgetPassword' | translate}}</a>
 
-              <a [routerLink]="'/auth/signup'" class="forgot" title="">{{'createAccount' | translate}}&nbsp; &nbsp; &nbsp;</a>
+              <a [routerLink]="'/auth/signup'" class="forgot" title="">{{'createAccount' | translate}}&nbsp; &nbsp;
+                &nbsp;</a>
             </div>
             <button type="submit" [disabled]="form.invalid && form.submitted">
-              <div class="btn-more" >
-                <a title="" >{{'login' | translate}}</a>
+              <div class="btn-more">
+                <a title="">{{'login' | translate}}</a>
               </div>
             </button>
           </form><!-- /form -->
@@ -39,5 +40,6 @@
 
     </div><!-- /.row -->
   </div><!-- /.container -->
+
   <div class="overlay1"></div>
 </section><!-- /.flat-login -->

@@ -8,32 +8,6 @@
         <div class="text-heading">
           {{'homeSubTitle' | translate}}
         </div>
-        <!-- <div class="wrap-box-search">
-          <form   accept-charset="utf-8">
-            <span>
-              <input type="text" placeholder="{{'searchForWhat' | translate}}"  [(ngModel)]="searchText" name="search">
-            </span>
-
-            <span class="location">
-              <span class="ti-location-pin"></span>
-              <select [(ngModel)]="adLocation" name="location" >
-                <option value="0" hidden>{{'location' | translate}}</option>
-                <option *ngFor="let c of cities" [ngValue]="c">{{c.name}}</option>
-              </select>
-            </span>
-
-            <span class="categories">
-              <span class="ti-angle-down"></span>
-
-                <select name="categories"  [(ngModel)]="categoryID">
-                  <option value="0"   >{{'chooseCategory' | translate }}</option>
-                  <option *ngFor="let c of categories" [value]="c.id" >{{c.title}}</option>
-
-                </select>
-            </span>
-            <button  (click)="filterByNavSearch()" class="search-btn">{{'search' | translate}}</button>
-          </form>
-        </div> -->
         <!-- /.wrap-box-search -->
       </div>
       <!-- /.col-md-12 -->
@@ -44,22 +18,4 @@
   <div class="overlay1"></div>
 </section>
 
-<!-- <section class="flat-highlights">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="highlights">
-          <ul class="menu-list">
-            <li *ngFor="let item of categories" (click)="filterByIcon(item)" [class.active]="selectedCategory==item">
-              <a href="#volume">
-                <img src="{{item.icon}}" />
-                <span>{{item.title}}</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- /.flat-highlights -->
+

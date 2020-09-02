@@ -1,0 +1,52 @@
+<div class="module">
+  <div class="headers">
+    <h4 class="mainLabel">
+      {{'login' | translate}}
+    </h4>
+    <i class="fa fa-times close" (click)="close()" aria-hidden="true"></i>
+  </div>
+  <div class="contint">
+
+    <span class="errorMessage" *ngIf="errorMessage!=''">{{errorMessage|translate}}</span>
+
+    <div class="inputDiv">
+      <h4 class="title">{{'email'|translate}}</h4>
+      <input type="email" name="email" class="input" placeholder="{{'enter'|translate}} {{'email' | translate}}"
+        [(ngModel)]="user.email">
+    </div>
+
+    <div class="inputDiv">
+      <h4 class="title">{{'password'|translate}}</h4>
+      <input type="password" name="password" class="input"
+        placeholder="{{'enter'|translate}} {{'password' | translate}}" [(ngModel)]="user.password">
+    </div>
+
+    <div>
+      <a style="margin:15px; float:right; " (click)="forgotPassword()">{{'forgetPassword' | translate}}</a>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div type="submit" class="button save" (click)="login()">
+      {{'login' | translate}}
+    </div>
+    <div style="clear:both"></div>
+  </div>
+
+  <div>
+    <p style="margin:15px; margin-left: 40px;">Don't have an account? <a style="font-weight: bold;" (click)="register()">
+        {{'createAccount' | translate}}</a> </p>
+  </div>
+
+
+</div>
+
+<div style="margin-top: 20px;">
+  <div type="submit" class="loginBtn loginBtn--facebook" (click)="loginWithFacebook()">
+    {{'loginWithFacebook' | translate}}
+  </div>
+  <div type="submit" class="loginBtn loginBtn--google" (click)="loginWithGoogle()">
+    {{'loginWithGoogle' | translate}}
+  </div>
+</div>

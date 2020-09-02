@@ -76,6 +76,30 @@ import { EditProductComponent } from './business/products/edit-product/edit-prod
 import { ProductCardComponent } from './business/products/product-card/product-card.component';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 import { SuppliersComponent } from './business/suppliers/suppliers.component';
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+import { LoginComponent } from './authentication/modals/login/login.component';
+import { SignupComponent } from './authentication/modals/signup/signup.component';
+import { ResetPasswordComponent } from './authentication/modals/reset-password/reset-password.component';
+import { ForgetPasswordComponent } from './authentication/modals/forget-password/forget-password.component';
+import { CompleteInformationComponent } from './authentication/modals/complete-information/complete-information.component';
+
+
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("929370797523-269s5t1ftp86eph3hd0c41qca0rdq63i.apps.googleusercontent.com")
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider("672315350040982")
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -126,11 +150,14 @@ import { SuppliersComponent } from './business/suppliers/suppliers.component';
     EditProductComponent,
     ProductCardComponent,
     SuppliersComponent,
-    
+    LoginComponent,
+    SignupComponent,
+    ResetPasswordComponent,
+    ForgetPasswordComponent,
+    CompleteInformationComponent
   ],
   imports: [
     GalleryModule.withConfig({ loadingMode: 'indeterminate' }),
-    // lb,
     LightboxModule,
     BrowserModule,
     AppRoutingModule,
@@ -145,14 +172,32 @@ import { SuppliersComponent } from './business/suppliers/suppliers.component';
     InputFileModule.forRoot({}),
     NgSelectModule,
     AvatarModule,
-    // ModalModule,
     NgxSmartModalModule.forRoot(),
     NgxSpinnerModule,
     FlexLayoutModule,
     NgxLinkifyjsModule.forRoot(),
+    SocialLoginModule,
   ],
-  entryComponents: [MapMarkerComponent, EditInfoComponent, SuccessMessageComponent, VerificationMessageComponent, EditSkillComponent, EditBasicInformationComponent],
-  providers: [RequestsService, CommonDataService],
+  entryComponents: [
+    MapMarkerComponent,
+    EditInfoComponent,
+    SuccessMessageComponent,
+    VerificationMessageComponent,
+    EditSkillComponent,
+    EditBasicInformationComponent,
+    LoginComponent,
+    SignupComponent,
+    ResetPasswordComponent,
+    ForgetPasswordComponent
+  ],
+  providers: [
+    RequestsService,
+    CommonDataService,
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

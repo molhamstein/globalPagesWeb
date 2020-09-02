@@ -8,14 +8,15 @@
               <img src="{{logoAddress}}" />
             </a>
           </div>
-          <div style="display: inline-flex;margin-top: 30px;margin-right: 10px; cursor: pointer;" *ngIf="isLogin && user">
+          <div style="display: inline-flex;margin-top: 30px;margin-right: 10px; cursor: pointer;"
+            *ngIf="isLogin && user">
             <ngx-avatar [name]="user['username']" [src]="user['imageProfile']" (clickOnAvatar)="goToProfile()">
             </ngx-avatar>
             <app-notification style="z-index: 1000;"></app-notification>
           </div>
           <div class="auth-menu" style="display: inline-flex;margin-top: 30px;margin-right: 10px" *ngIf="!isLogin">
-            <a class="nav-button" routerLink="/auth/login" title="">{{'login' | translate}}</a>
-            <a class="nav-button" routerLink="/auth/signup" title="">{{'createAccount' | translate}}</a>
+            <a class="nav-button" (click)="onLogin()">{{'login' | translate}}</a>
+            <a class="nav-button" (click)="onSignup()">{{'createAccount' | translate}}</a>
           </div>
           <!-- /.logo -->
           <div class="nav-wrap">
@@ -32,15 +33,15 @@
                 </li>
                 <li>
                   <a routerLink="/suppliers" title="">{{'supplierPage' | translate}}</a>
-               </li>
+                </li>
                 <li>
-                   <a routerLink="/products" title="">{{'productsPage' | translate}}</a>
+                  <a routerLink="/products" title="">{{'productsPage' | translate}}</a>
                 </li>
                 <li *ngIf="isLogin">
                   <a routerLink="/business/create" title="">{{'addBusinessPage' | translate}}</a>
                 </li>
                 <li *ngIf="isLogin">
-                    <a routerLink="/products/create"> {{'productCreate' | translate}} </a>
+                  <a routerLink="/products/create"> {{'productCreate' | translate}} </a>
                 </li>
                 <li *ngIf="isLogin">
                   <a class="nav-button pulse" routerLink="/ad/create" title="">{{'createAdPage' | translate }}</a>
