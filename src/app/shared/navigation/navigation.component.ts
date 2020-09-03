@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material';
 import { LoginComponent } from 'src/app/authentication/modals/login/login.component';
 import { SignupComponent } from 'src/app/authentication/modals/signup/signup.component';
 import { ForgetPasswordComponent } from 'src/app/authentication/modals/forget-password/forget-password.component';
+import { CompleteInformationComponent } from 'src/app/authentication/modals/complete-information/complete-information.component';
 
 @Component({
   selector: 'app-navigation',
@@ -67,22 +68,40 @@ export class NavigationComponent implements OnInit {
       panelClass: 'communictioDialogStyle',
     });
     dialogRef.afterClosed().subscribe(data => {
-      if (data.event && data.event === 'register') {
-        this.dialog.open(SignupComponent, {
-          panelClass: 'communictioDialogStyle',
-        });
-      }
-      if (data.event && data.event === 'forgot') {
-        this.dialog.open(ForgetPasswordComponent, {
-          panelClass: 'communictioDialogStyle',
-        });
+      if (data) {
+        if (data.event && data.event === 'register') {
+          this.dialog.open(SignupComponent, {
+            panelClass: 'communictioDialogStyle',
+          });
+        }
+        if (data.event && data.event === 'forgot') {
+          this.dialog.open(ForgetPasswordComponent, {
+            panelClass: 'communictioDialogStyle',
+          });
+        }
+        if (data.event && data.event === 'complete') {
+          this.dialog.open(CompleteInformationComponent, {
+            panelClass: 'communictioDialogStyle',
+            data: data.data
+          });
+        }
       }
     });
   }
 
   onSignup() {
-    this.dialog.open(SignupComponent, {
+    let dialogRef = this.dialog.open(SignupComponent, {
       panelClass: 'communictioDialogStyle',
+    });
+    dialogRef.afterClosed().subscribe(data => {
+      if (data) {
+        if (data.event && data.event === 'complete') {
+          this.dialog.open(CompleteInformationComponent, {
+            panelClass: 'communictioDialogStyle',
+            data: data.data
+          });
+        }
+      }
     });
   }
 

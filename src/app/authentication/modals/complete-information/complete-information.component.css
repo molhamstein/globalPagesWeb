@@ -1,9 +1,11 @@
 .module {
-  height: 470px;
+  height: auto;
+  max-height: 400px;
   width: 400px;
   background-color: white;
   border-radius: 10px;
   position: relative;
+  padding-bottom: 20px;
 }
 
 
@@ -186,8 +188,8 @@
   font-weight: bold;
   color: #9c9c9c;
   padding: 10px;
-  height: 43px;
-  width: 100%;
+  height: auto;
+  width: calc(100% - 20px);
   border: transparent;
   max-width: 100%;
   box-sizing: border-box;

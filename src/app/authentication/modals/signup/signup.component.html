@@ -9,28 +9,44 @@
 
     <span class="errorMessage" *ngIf="errorMessage!=''">{{errorMessage|translate}}</span>
 
-    <div class="inputDiv">
-      <h4 class="title">{{'username'|translate}}</h4>
-      <input type="text" name="username" class="input" placeholder="{{'enter'|translate}} {{'username' | translate}}"
-        [(ngModel)]="user.username">
+    <div style="display: flex; flex-direction: row; justify-content: center">
+      <div class="inputDiv">
+        <h4 class="title">{{'username'|translate}}</h4>
+        <input type="text" name="username" class="input" placeholder="{{'enter'|translate}} {{'username' | translate}}"
+          [(ngModel)]="user.username">
+      </div>
+
+
+      <div class="inputDiv">
+        <h4 class="title">{{'email'|translate}}</h4>
+        <input type="email" name="email" class="input" placeholder="{{'enter'|translate}} {{'email' | translate}}"
+          [(ngModel)]="user.email">
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: row; justify-content: center">
+
+      <div class="inputDiv">
+        <h4 class="title">{{'password'|translate}}</h4>
+        <input type="password" name="password" class="input"
+          placeholder="{{'enter'|translate}} {{'password' | translate}}" [(ngModel)]="user.password">
+      </div>
+
+
+      <div class="inputDiv">
+        <h4 class="title">{{'phoneNumber'|translate}}</h4>
+        <input type="tel" name="phoneNumber" class="input"
+          placeholder="{{'enter'|translate}} {{'phoneNumber' | translate}}" [(ngModel)]="user.phoneNumber">
+      </div>
     </div>
 
     <div class="inputDiv">
-      <h4 class="title">{{'email'|translate}}</h4>
-      <input type="email" name="email" class="input" placeholder="{{'enter'|translate}} {{'email' | translate}}"
-        [(ngModel)]="user.email">
-    </div>
-
-    <div class="inputDiv">
-      <h4 class="title">{{'password'|translate}}</h4>
-      <input type="password" name="password" class="input"
-        placeholder="{{'enter'|translate}} {{'password' | translate}}" [(ngModel)]="user.password">
-    </div>
-
-    <div class="inputDiv">
-      <h4 class="title">{{'phoneNumber'|translate}}</h4>
-      <input type="tel" name="phoneNumber" class="input"
-        placeholder="{{'enter'|translate}} {{'phoneNumber' | translate}}" [(ngModel)]="user.phoneNumber">
+      <h4 class="title">{{'gender'|translate}}</h4>
+      <select name="gender" class="select" [(ngModel)]="user.gender">
+        <option value="">{{'enter'|translate}} {{'gender' | translate}}</option>
+        <option value="male"> {{'male' | translate}}</option>
+        <option value="female">{{'female' | translate}}</option>
+      </select>
     </div>
 
   </div>
@@ -44,11 +60,13 @@
 
 </div>
 
-<div style="margin-top: 20px;">
+<div style="display: flex; flex-direction: row; justify-content: center; margin-top: 20px;">
+
   <div type="submit" class="loginBtn loginBtn--facebook" (click)="loginWithFacebook()">
     {{'loginWithFacebook' | translate}}
   </div>
   <div type="submit" class="loginBtn loginBtn--google" (click)="loginWithGoogle()">
     {{'loginWithGoogle' | translate}}
   </div>
+
 </div>

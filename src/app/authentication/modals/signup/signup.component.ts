@@ -16,7 +16,7 @@ import { AuthService as SocialAuthService, SocialUser } from "angularx-social-lo
 })
 export class SignupComponent implements OnInit {
 
-  user: any = {};
+  user: any = { gender: '' };
   errorMessage: string = '';
 
   constructor(private dialog: MatDialog, public thisDialog: MatDialogRef<LoginComponent>,
@@ -39,9 +39,22 @@ export class SignupComponent implements OnInit {
         type: "facebook"
       };
       this.apiService.post('users/socialLogin', loginData).subscribe(
-        data => {
+        (user: any) => {
+          const userData = user.user;
           this.errorMessage = '';
-          // TODO Redirect to complete information
+          let data: any = {};
+          if (!userData.email) data.email = '';
+          if (!userData.phoneNumber) data.phoneNumber = '';
+          if (!userData.gender) data.gender = '';
+          data.id = userData.id;
+          if (data.email || data.phoneNumber || data.gender)
+            this.thisDialog.close({ data: data, event: 'complete' });
+          else {
+            localStorage.setItem(environment.userDetails, JSON.stringify(user));
+            this.auth.logIn(user);
+            this.router.navigate(['']);
+            this.thisDialog.close();
+          }
         },
         error => {
           this.errorMessage = 'emailAlreadyExsit';
@@ -63,9 +76,22 @@ export class SignupComponent implements OnInit {
         type: "google"
       };
       this.apiService.post('users/socialLogin', loginData).subscribe(
-        data => {
+        (user: any) => {
+          const userData = user.user;
           this.errorMessage = '';
-          // TODO Redirect to complete information
+          let data: any = {};
+          if (!userData.email) data.email = '';
+          if (!userData.phoneNumber) data.phoneNumber = '';
+          if (!userData.gender) data.gender = '';
+          data.id = userData.id;
+          if (data.email || data.phoneNumber || data.gender)
+            this.thisDialog.close({ data: data, event: 'complete' });
+          else {
+            localStorage.setItem(environment.userDetails, JSON.stringify(user));
+            this.auth.logIn(user);
+            this.router.navigate(['']);
+            this.thisDialog.close();
+          }
         },
         error => {
           this.errorMessage = 'emailAlreadyExsit';

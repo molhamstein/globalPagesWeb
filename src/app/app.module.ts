@@ -188,7 +188,8 @@ export function provideConfig() {
     LoginComponent,
     SignupComponent,
     ResetPasswordComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    CompleteInformationComponent
   ],
   providers: [
     RequestsService,

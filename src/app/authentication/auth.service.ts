@@ -74,7 +74,7 @@ export class AuthService implements CanActivate {
     this.isLogin = false;
     this._login.next(false);
     this.api.init();
-    this.router.navigate(['auth', 'login']);
+    this.router.navigate(['']);
   }
 
   getUserDataLocal() {

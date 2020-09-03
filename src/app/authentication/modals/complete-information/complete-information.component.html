@@ -10,16 +10,25 @@
     <span class="errorMessage" *ngIf="errorMessage!=''">{{errorMessage|translate}}</span>
 
 
-    <div class="inputDiv">
+    <div class="inputDiv" *ngIf="user.email != null">
       <h4 class="title">{{'email'|translate}}</h4>
       <input type="email" name="email" class="input" placeholder="{{'enter'|translate}} {{'email' | translate}}"
         [(ngModel)]="user.email">
     </div>
 
-    <div class="inputDiv">
+    <div class="inputDiv" *ngIf="user.phoneNumber != null">
       <h4 class="title">{{'phoneNumber'|translate}}</h4>
       <input type="tel" name="phoneNumber" class="input"
         placeholder="{{'enter'|translate}} {{'phoneNumber' | translate}}" [(ngModel)]="user.phoneNumber">
+    </div>
+
+    <div class="inputDiv" *ngIf="user.gender != null">
+      <h4 class="title">{{'gender'|translate}}</h4>
+      <select name="gender" class="select" [(ngModel)]="user.gender">
+        <option value="">{{'enter'|translate}} {{'gender' | translate}}</option>
+        <option value="male"> {{'male' | translate}}</option>
+        <option value="female">{{'female' | translate}}</option>
+      </select>
     </div>
 
   </div>
