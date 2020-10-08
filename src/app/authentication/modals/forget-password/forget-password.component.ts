@@ -16,7 +16,7 @@ export class ForgetPasswordComponent implements OnInit {
   errorMessage: string = '';
   verificationCode: boolean = false; 
 
-  constructor(private dialog: MatDialog, public thisDialog: MatDialogRef<LoginComponent>,
+  constructor(private dialog: MatDialog, public thisDialog: MatDialogRef<ForgetPasswordComponent>,
     private apiService: RequestsService, private auth: AuthService) { }
 
   ngOnInit() {

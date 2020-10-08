@@ -209,4 +209,5 @@ export const ArabicTranslation = {
   emailAlreadyExsit: "الايميل الاكتروني موجود مسبقا",
   submit: "إرسال",
   completeInformation: "إكمال معلومات المستخدم",
+  resetPassword: "إستعادة كلمة المرور"
 }

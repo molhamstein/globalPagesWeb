@@ -83,6 +83,7 @@ import { SignupComponent } from './authentication/modals/signup/signup.component
 import { ResetPasswordComponent } from './authentication/modals/reset-password/reset-password.component';
 import { ForgetPasswordComponent } from './authentication/modals/forget-password/forget-password.component';
 import { CompleteInformationComponent } from './authentication/modals/complete-information/complete-information.component';
+import { ResetComponent } from './authentication/reset/reset.component';
 
 
 let config = new AuthServiceConfig([
@@ -150,6 +151,7 @@ export function provideConfig() {
     EditProductComponent,
     ProductCardComponent,
     SuppliersComponent,
+    ResetComponent,
     LoginComponent,
     SignupComponent,
     ResetPasswordComponent,

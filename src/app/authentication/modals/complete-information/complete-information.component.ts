@@ -17,7 +17,7 @@ export class CompleteInformationComponent implements OnInit {
   errorMessage: string = '';
   user: any = { email: null, phoneNumber: null, gender: null };
 
-  constructor(private dialog: MatDialog, public thisDialog: MatDialogRef<LoginComponent>,
+  constructor(private dialog: MatDialog, public thisDialog: MatDialogRef<CompleteInformationComponent>,
     private apiService: RequestsService, private router: Router, private auth: AuthService,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.user = {

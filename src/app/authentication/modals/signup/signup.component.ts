@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
   user: any = { gender: '' };
   errorMessage: string = '';
 
-  constructor(private dialog: MatDialog, public thisDialog: MatDialogRef<LoginComponent>,
+  constructor(private dialog: MatDialog, public thisDialog: MatDialogRef<SignupComponent>,
     private apiService: RequestsService, private router: Router,
     private auth: AuthService, private socialAuthService: SocialAuthService) { }
 

@@ -200,4 +200,5 @@ export const EnglishTranslation = {
   emailAlreadyExsit: "Email Already Exsit",
   submit: "Submit",
   completeInformation: "Complete User Information",
+  resetPassword: "Reset Your Password",
 }

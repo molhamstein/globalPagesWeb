@@ -24,10 +24,12 @@ import { ViewProductComponent } from './business/products/view-product/view-prod
 import { EditProductComponent } from './business/products/edit-product/edit-product.component';
 import { AddProductComponent } from './business/products/add-product/add-product.component';
 import { SuppliersComponent } from './business/suppliers/suppliers.component';
+import { ResetComponent } from './authentication/reset/reset.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeScreenComponent },
+  { path: 'auth/reset', component: ResetComponent },
   { path: 'business/create', component: BusinessCreateComponent, canActivate: [AuthService] },
   { path: 'business/:id', component: BusinessViewComponent },
   { path: 'business/:id/addJobOpportunity', component: AddJobOpportunityComponent },
