@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RequestsService } from './requests.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Inject } from '@angular/core';
+import { Optional } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,8 @@ export class CommonDataService {
   jCategoryPromise;
   productCategoryPromise;
 
-  constructor(private requests: RequestsService, private ts: TranslateService) {
+  constructor(private requests: RequestsService, private ts: TranslateService, 
+     @Optional()@Inject('supplier_flag_parameter') private isSupplier: boolean) {
     //categories and subCategories, then adding a title attribute depending on selected language 
     this.categoriesPromise =
       this.requests.get('postCategories?filter={"where":{"parentCategoryId" : {"exists" : false}},"include":"subCategories"}').toPromise();
@@ -59,7 +62,9 @@ export class CommonDataService {
     })
 
     // Business categories, then add a title attribute depending on selected language
-    this.bCategoryPromise = this.requests.get('businessCategories?filter={"where":{"parentCategoryId" : {"exists" : false}},"include":"subCategories"}').toPromise();
+    console.log(this.isSupplier);
+    if (this.isSupplier) this.bCategoryPromise = this.requests.get(`businessCategories?filter={"where":{"parentCategoryId" : {"exists" : false}, "isSupplier": ${this.isSupplier}},"include":"subCategories"}`).toPromise();
+    else this.bCategoryPromise = this.requests.get(`businessCategories?filter={"where":{"parentCategoryId" : {"exists" : false}},"include":"subCategories"}`).toPromise();
     this.bCategoryPromise.then(function (res) {
       if (ts.currentLang == 'ar') {
         res.forEach(element => {
@@ -80,7 +85,7 @@ export class CommonDataService {
 
 
     // Job categories, then add a title attribute depending on selected language
-    this.jCategoryPromise = this.requests.get('jobOpportunityCategories?filter={"where":{"parentCategoryId" : {"exists" : false}},"include":"subCategories"}').toPromise();
+    this.jCategoryPromise = this.requests.get(`jobOpportunityCategories?filter={"where":{"parentCategoryId" : {"exists" : false}},"include":"subCategories"}`).toPromise();
     this.jCategoryPromise.then(function (res) {
       if (ts.currentLang == 'ar') {
         res.forEach(element => {

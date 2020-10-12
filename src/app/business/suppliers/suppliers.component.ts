@@ -9,7 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-suppliers',
   templateUrl: './suppliers.component.html',
-  styleUrls: ['./suppliers.component.css']
+  styleUrls: ['./suppliers.component.css'],
+  providers: [
+    { provide: 'supplier_flag_parameter', useValue: true },
+    { provide: CommonDataService, useClass: CommonDataService }
+  ]
 })
 export class SuppliersComponent implements OnInit {
   map;
