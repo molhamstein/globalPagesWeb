@@ -201,4 +201,5 @@ export const EnglishTranslation = {
   submit: "Submit",
   completeInformation: "Complete User Information",
   resetPassword: "Reset Your Password",
+  isSupplier: "Supplier",
 }

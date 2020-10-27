@@ -12,25 +12,29 @@ import { forkJoin, of } from 'rxjs';
   styleUrls: ['./business-edit.component.css']
 })
 export class BusinessEditComponent implements OnInit {
-  constructor(private api: RequestsService, private translteService: TranslateService, private router: Router, private route: ActivatedRoute) { }
-  categories
-  subCategories
-  selectedCategory
-  lang
-  cities
-  selectedCity
-  locations
-  locationId
-  subCategoryId
-  id
-  business: any = {}
-  @ViewChild('form', { static: false }) form
+  constructor(private api: RequestsService, private translteService: TranslateService,
+    private router: Router, private route: ActivatedRoute) { }
+
+  @ViewChild('form', { static: false }) form;
+  categories;
+  subCategories;
+  selectedCategory;
+  lang;
+  cities;
+  selectedCity;
+  locations;
+  locationId;
+  subCategoryId;
+  id;
+  business: any = {};
+  files;
+
+
   ngOnInit() {
     // get data if there is an id
     this.route.params.subscribe((params) => {
-      this.id = params['id']
-      if (!this.id)
-        return
+      this.id = params['id'];
+      if (!this.id) return;
       var p = new HttpParams();
       p = p.set('filter', JSON.stringify({
         "where": {
@@ -39,40 +43,79 @@ export class BusinessEditComponent implements OnInit {
         "include": "subCategory"
       }));
       this.api.get('businesses', p).subscribe((data) => {
-        this.business = data[0]
-        this.business.locationPoint = latLng(this.business.locationPoint)
-        this.cityChanged()
-        this.onCategoryChange()
-      })
-    })
+        this.business = data[0];
+        this.business.locationPoint = latLng(this.business.locationPoint);
+        this.cityChanged();
+        this.onCategoryChange();
+      });
+    });
 
-    this.lang = this.translteService.currentLang
+    this.lang = this.translteService.currentLang;
+    this.translteService.onLangChange.subscribe(() => {
+      this.lang = this.translteService.currentLang;
+    });
 
     var p = new HttpParams();
     p = p.set('filter', JSON.stringify({
       "where": { "parentCategoryId": { "exists": false } },
       "include": "subCategories"
     }));
-    this.translteService.onLangChange.subscribe(() => {
-      this.lang = this.translteService.currentLang
-    })
+
     this.api.get('businessCategories', p).toPromise().then(data => {
-      this.categories = data
-      this.onCategoryChange()
-    })
+      this.categories = data;
+      this.onCategoryChange();
+    });
+
     this.api.get('cities').toPromise().then(data => {
-      this.cities = data
-    })
-    // this.api.get('locations').toPromise().then(data=>{
-    //   this.locations=data
-    // })
+      this.cities = data;
+    });
   }
+
+  onFileAdded(files) {
+    this.files = files;
+  }
+
+  onSupplierChange() {
+    let p = new HttpParams();
+    p = p.set('filter', JSON.stringify({
+      "where": {
+        "parentCategoryId": {"inq":[null]},
+        "supplier": this.business['supplier']
+      },
+    }));
+    this.api.get('businessCategories', p).toPromise().then(data => {
+      this.categories = data;
+    });
+  }
+
+  onCategoryChange() {
+    let p = new HttpParams();
+    p = p.set('filter', JSON.stringify({
+      "where": {
+        "parentCategoryId": this.categories[this.selectedCategory]['id'],
+        "supplier": this.business['supplier'],
+      },
+    }));
+    this.api.get('businessCategories', p).toPromise().then(data => {
+      this.subCategories = data;
+    });
+  }
+
+  cityChanged() {
+    var p = new HttpParams();
+    p = p.set('filter', JSON.stringify({
+      where: {
+        cityId: this.business['cityId']
+      }
+    }));
+    this.locations = [];
+    this.api.get('locations', p).toPromise().then(data => {
+      this.locations = data;
+    });
+  }
+
   submit(data) {
-    if (this.form.invalid)
-      return
-    console.log(data);
-    // return;
-    // data['categoryId']=this.categories[this.selectedCategory]['id']
+    if (this.form.invalid) return;
     const user = JSON.parse(localStorage.getItem(environment.userDetails));
     data['ownerId'] = user['userId'];
     let images: FormData = new FormData();
@@ -84,8 +127,8 @@ export class BusinessEditComponent implements OnInit {
         else
           videos.append('file', this.files[i].file);
       }
-      let imageObservable = this.api.post('attachments/images/upload', images)//.pipe(catchError(() => of(undefined)));
-      let videoObservable = this.api.post('attachments/videos/upload', videos)//.pipe(catchError(() => of(undefined)));
+      let imageObservable = this.api.post('attachments/images/upload', images);
+      let videoObservable = this.api.post('attachments/videos/upload', videos);
       if (images.getAll('file').length == 0)
         imageObservable = of(undefined);
       if (videos.getAll('file').length == 0)
@@ -94,53 +137,24 @@ export class BusinessEditComponent implements OnInit {
       forkJoin([imageObservable, videoObservable]).subscribe((res: any) => {
         let covers = [];
         if (res[0])
-          covers = covers.concat(res[0])
+          covers = covers.concat(res[0]);
         if (res[1])
-          covers = covers.concat(res[1])
+          covers = covers.concat(res[1]);
 
-        this.business['covers'] = this.business['covers'] || []
-        data['covers'] = covers.concat(this.business['covers'])
+        this.business['covers'] = this.business['covers'] || [];
+        data['covers'] = covers.concat(this.business['covers']);
         data = Object.assign(this.business, data);
         this.api.put('businesses/' + this.id, data).subscribe(data => {
-          this.router.navigate(['business', data['id']])
-        })
+          this.router.navigate(['business', data['id']]);
+        });
       })
     }
     else {
       data = Object.assign(this.business, data);
       this.api.put('businesses', data).subscribe(data => {
-        this.router.navigate(['business', data['id']])
-      })
+        this.router.navigate(['business', data['id']]);
+      });
     }
-
-
-
-  }
-  files
-  onFileAdded(files) {
-    this.files = files
-  }
-  onCategoryChange() {
-    // this.business['subCategoryId']=null
-    console.log(this.business['categoryId']);
-    if (!this.categories)
-      return
-    var cat = this.categories.find((v) => { if (v['id'] == this.business['categoryId']) return true })
-    this.selectedCategory = cat;
-    this.subCategories = cat['subCategories']
-  }
-  cityChanged() {
-    // this.business['locationId']=null
-    var p = new HttpParams()
-    p = p.set('filter', JSON.stringify({
-      where: {
-        cityId: this.business['cityId']
-      }
-    }))
-    this.locations = []
-    this.api.get('locations', p).toPromise().then(data => {
-      this.locations = data
-    })
   }
 
 }

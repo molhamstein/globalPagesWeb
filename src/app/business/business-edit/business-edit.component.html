@@ -23,13 +23,9 @@
       <div class="col-md-12">
         <form class="form-listing" novalidate #form="ngForm" (submit)="$event.preventDefault();submit(form.value)">
           <div class="inner-box form">
-
             <div class="one-half">
               <div class="clearfix"></div>
-              <!--<div class="wrap-listing">-->
-              <!--<label> {{"name" | translate}}</label>-->
-              <!--<input type="text" name="nameEn" ngModel>-->
-              <!--</div>-->
+
               <div class="wrap-listing">
                 <label> {{"nameEn" | translate}}</label>
                 <input type="text" name="nameEn" [(ngModel)]="business['nameEn']" #nameEn="ngModel" required>
@@ -44,13 +40,22 @@
                   [params]="{name:'nameAr'}">
                 </app-form-validation-message>
               </div>
-              <div class="wrap-listing location">
-                <label>{{'address'| translate}}</label>
-                <span class="ti-target"></span>
-                <input name="address" placeholder="e.g.”New York”" type="text" [(ngModel)]="business['address']">
+
+
+              <div class="wrap-listing category-half">
+                <label> {{"isSupplier" | translate}}</label>
+                <span class="ti-angle-down"></span>
+                <select name="supplier" [(ngModel)]="business['supplier']" #supplier="ngModel" required
+                  (change)="onSupplierChange()">
+                  <option value=""></option>
+                  <option [value]="true"> {{ "yes" | translate }} </option>
+                  <option [value]="false"> {{ "no" | translate }} </option>
+                </select>
+                <app-form-validation-message [form]="form" [control]="supplier"
+                  [messages]="{required:'requiredMessage'}" [params]="{name:'supplier'}">
+                </app-form-validation-message>
               </div>
-              <!-- /.wrap-listing -->
-              <div class="clearfix"></div>
+
               <div class="wrap-listing category-half">
                 <label>{{"category" | translate}}</label>
                 <span class="ti-angle-down"></span>
@@ -72,6 +77,13 @@
               <div class="clearfix"></div>
 
 
+              <div class="wrap-listing location">
+                <label>{{'address'| translate}}</label>
+                <span class="ti-target"></span>
+                <input name="address" placeholder="e.g.”New York”" type="text" [(ngModel)]="business['address']">
+              </div>
+              <!-- /.wrap-listing -->
+              <div class="clearfix"></div>
             </div>
             <div class="one-half">
               <div class="clearfix"></div>
