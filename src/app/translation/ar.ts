@@ -211,4 +211,9 @@ export const ArabicTranslation = {
   completeInformation: "إكمال معلومات المستخدم",
   resetPassword: "إستعادة كلمة المرور",
   isSupplier: "مورد",
+  follow: "متابعة",
+  unFollow: "إلغاء متابعة",
+  rate: "تقييم",
+  comment: "تعليق",
+  starIsRequired: ""
 }

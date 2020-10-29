@@ -202,4 +202,9 @@ export const EnglishTranslation = {
   completeInformation: "Complete User Information",
   resetPassword: "Reset Your Password",
   isSupplier: "Supplier",
+  follow: "Follow",
+  unFollow: "Unfollow",
+  rate: "Rate",
+  commet: "Comment",
+  starIsRequired: ""
 }

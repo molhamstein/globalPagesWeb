@@ -84,6 +84,7 @@ import { ResetPasswordComponent } from './authentication/modals/reset-password/r
 import { ForgetPasswordComponent } from './authentication/modals/forget-password/forget-password.component';
 import { CompleteInformationComponent } from './authentication/modals/complete-information/complete-information.component';
 import { ResetComponent } from './authentication/reset/reset.component';
+import { AddRateComponent } from './modals/rate/add-rate/add-rate.component';
 
 
 let config = new AuthServiceConfig([
@@ -156,7 +157,8 @@ export function provideConfig() {
     SignupComponent,
     ResetPasswordComponent,
     ForgetPasswordComponent,
-    CompleteInformationComponent
+    CompleteInformationComponent,
+    AddRateComponent
   ],
   imports: [
     GalleryModule.withConfig({ loadingMode: 'indeterminate' }),
@@ -191,7 +193,8 @@ export function provideConfig() {
     SignupComponent,
     ResetPasswordComponent,
     ForgetPasswordComponent,
-    CompleteInformationComponent
+    CompleteInformationComponent,
+    AddRateComponent
   ],
   providers: [
     RequestsService,

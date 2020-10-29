@@ -50,6 +50,6 @@ export class RequestsService {
 
   delete(name, id?) {
     if (id) name += '\\' + id;
-    return this.http.delete(this.api + name, { headers: this.header });
+    return this.http.delete(this.api + name, { headers: this.header});
   }
 }

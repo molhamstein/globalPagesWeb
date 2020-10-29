@@ -32,6 +32,11 @@
             <a *ngIf="!toggle1" class="phone-arab-dir" href="tel:{{data.phone}}">{{data.phone}} <i class="fa fa-phone"
                 style="margin-left:12px" aria-hidden="true"></i></a>
           </div>
+          <div class="btn-more">
+            <a (click)="rate()" title="" data-toggle="button">
+                 {{ 'rate' | translate }}
+            </a>
+          </div>
           <div class="clearfix"></div>
         </div>
         <!-- /.title-right -->
@@ -56,7 +61,7 @@
           <h3>{{'Tags' | translate}}</h3>
           <div class="tags">
             <div *ngFor="let oneTag of data.tags;let i=index" class="oneTag">
-              <i class="fa fa-times" (click)="removeTag(i)" aria-hidden="true"></i>
+              <i class="fa fa-times" aria-hidden="true"></i>
 
               <span>
                 {{oneTag.name}}

@@ -10,6 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from '../../authentication/auth.service';
 import { MatDialog } from '@angular/material';
 import { EditSkillComponent } from '../edit-skill/edit-skill.component';
+import { FollowService } from 'src/app/services/follow.service';
 
 @Component({
   selector: 'app-cv-view',
@@ -20,12 +21,17 @@ export class CvViewComponent implements OnInit {
 
   @ViewChild('file', { static: false }) fileController: ElementRef
 
-  constructor(private dialog: MatDialog, private api: RequestsService, private router: Router, private route: ActivatedRoute, private translteService: TranslateService, private auth: AuthService) { }
+  constructor(private dialog: MatDialog, private api: RequestsService,
+    private router: Router, private route: ActivatedRoute,
+    private translteService: TranslateService, private auth: AuthService,
+    private followService: FollowService) { }
   user
   similer: any = []
   id
   lang
   isMyCV = false
+  isFollowing: boolean;
+
   ngOnInit() {
     this.lang = this.translteService.currentLang
     this.translteService.onLangChange.subscribe(() => {
@@ -44,6 +50,8 @@ export class CvViewComponent implements OnInit {
           this.similer = data;
         })
       })
+
+      this.isFollowing = this.followService.checkFollowing(this.id, "USER");
     })
   }
 
@@ -282,6 +290,19 @@ export class CvViewComponent implements OnInit {
       this.changeCvUrl(res[0].url)
     })
 
+  }
+
+  toggleFollowing() {
+    if (this.isFollowing) {
+      this.followService.makeUnfollow(this.id, "USER").then(res => {
+        (res ? this.isFollowing = !this.isFollowing : this.isFollowing);
+      });
+    }
+    else {
+      this.followService.makeFollow(this.id, "USER").then(res => {
+        (res ? this.isFollowing = !this.isFollowing : this.isFollowing);
+      });
+    }
   }
 
 

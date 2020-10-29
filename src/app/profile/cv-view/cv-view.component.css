@@ -339,3 +339,18 @@
   content: "\00a0";
   /* Prevent margin collapse */
 }
+
+
+.follow {
+  padding-top: 15px;
+  clear: both;
+}
+
+.follow .follow-button {
+  background-color: #2c3e50;
+  transition: all 0.3s ease-in-out;
+}
+
+.follow .follow-button:hover {
+  background-color: #ffd400;
+}

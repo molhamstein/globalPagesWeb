@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment';
 import { format } from "date-fns";
 import { RequestsService } from '../requests.service';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { FollowService } from '../services/follow.service';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,8 @@ export class AuthService implements CanActivate {
     o.next(this.isLogin);
   });
 
-  constructor(private api: RequestsService, private router: Router) {
+  constructor(private api: RequestsService, private router: Router,
+    private followService: FollowService) {
     if (localStorage.getItem(environment.userDetails)) {
       this.logInData = JSON.parse(localStorage.getItem(environment.userDetails))
       this.isLogin = true;
@@ -39,7 +41,7 @@ export class AuthService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (!this.isLogin) {
-      this.router.navigate(['auth', 'login']);
+      this.router.navigate(['']);
       return false;
     }
     return true;
@@ -66,6 +68,10 @@ export class AuthService implements CanActivate {
     this.getUserData();
     this._login.next(true);
     this.api.init();
+    const id = data['userId'];
+    this.followService.getUserFollower(id);
+    this.followService.getUserFollowing(id, "USER");
+    this.followService.getUserFollowing(id, "BUSINESS");
   }
 
   logout() {

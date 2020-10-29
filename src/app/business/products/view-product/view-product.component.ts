@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/authentication/auth.service';
 import { MatDialog } from '@angular/material';
 import { VerificationMessageComponent } from 'src/app/verification-message/verification-message.component';
 import { SuccessMessageComponent } from 'src/app/success-message/success-message.component';
+import { AddRateComponent } from 'src/app/modals/rate/add-rate/add-rate.component';
 
 @Component({
   selector: 'app-view-product',
@@ -29,9 +30,6 @@ export class ViewProductComponent implements OnInit {
       this.data['id'] = params.id;
 
       this.api.get('marketProducts/' + this.data['id']).toPromise().then(res => {
-
-
-
 
         let userData = this.auth.getUserDataLocal();
 
@@ -100,6 +98,13 @@ export class ViewProductComponent implements OnInit {
 
   goToEdit() {
     this.router.navigate(["products/" + this.data['id'] + "/edit"]);
+  }
+
+  rate() {
+    let dialogRef = this.dialog.open(AddRateComponent, {
+      panelClass: 'communictioDialogStyle',
+      data: { "id": this.data['id'] },
+    });
   }
 
 }

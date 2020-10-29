@@ -54,6 +54,18 @@
                 </a>
               </div>
             </div>
+
+            <div class="follow">
+              <button (click)="toggleFollowing()" class="follow-button">
+                <ng-container *ngIf="isFollowing">
+                  {{ 'unFollow' | translate}}
+                </ng-container>
+                <ng-container *ngIf="!isFollowing">
+                  {{ 'follow' | translate }}
+                </ng-container>
+              </button>
+            </div>
+
           </div>
         </div>
       </div>

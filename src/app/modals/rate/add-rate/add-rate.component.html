@@ -1,0 +1,43 @@
+<div class="module">
+  <div class="headers">
+    <h4 class="mainLabel">
+      {{'rate' | translate}}
+    </h4>
+    <i class="fa fa-times close" (click)="close()" aria-hidden="true"></i>
+  </div>
+  <div class="contint">
+
+    <span class="errorMessage" *ngIf="errorMessage!=''">{{errorMessage|translate}}</span>
+
+    <div class="rate">
+      <input type="radio" id="star5" name="rate" value="5" />
+      <label for="star5" title="text" (click)="this.rate.value = 5">5 stars</label>
+      <input type="radio" id="star4" name="rate" value="4" />
+      <label for="star4" title="text" (click)="this.rate.value = 4">4 stars</label>
+      <input type="radio" id="star3" name="rate" value="3" />
+      <label for="star3" title="text" (click)="this.rate.value = 3">3 stars</label>
+      <input type="radio" id="star2" name="rate" value="2" />
+      <label for="star2" title="text" (click)="this.rate.value = 2">2 stars</label>
+      <input type="radio" id="star1" name="rate" value="1" />
+      <label for="star1" title="text" (click)="this.rate.value = 1">1 star</label>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div class="inputDiv">
+      <h4 class="title">{{'comment'|translate}}</h4>
+      <input type="text" name="text" class="input" placeholder="{{'enter'|translate}} {{'comment' | translate}}"
+        [(ngModel)]="rate.text">
+    </div>
+
+
+  </div>
+
+  <div class="footer">
+    <div type="submit" class="button save" (click)="sendRate()">
+      {{'rate' | translate}}
+    </div>
+    <div style="clear:both"></div>
+  </div>
+
+</div>

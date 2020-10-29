@@ -1,12 +1,13 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {RequestsService} from '../../requests.service';
-import {TranslateService} from '@ngx-translate/core';
-import {HttpParams} from '@angular/common/http';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { RequestsService } from '../../requests.service';
+import { TranslateService } from '@ngx-translate/core';
+import { HttpParams } from '@angular/common/http';
 import { latLng } from 'leaflet';
 // import {Lightbox} from 'ngx-lightbox';
-import {AuthService} from '../../authentication/auth.service';
-import {Gallery, GalleryItem, ImageItem, VideoItem} from '@ngx-gallery/core';
+import { AuthService } from '../../authentication/auth.service';
+import { Gallery, GalleryItem, ImageItem, VideoItem } from '@ngx-gallery/core';
+import { FollowService } from 'src/app/services/follow.service';
 @Component({
   selector: 'app-business-view',
   templateUrl: './business-view.component.html',
@@ -14,46 +15,51 @@ import {Gallery, GalleryItem, ImageItem, VideoItem} from '@ngx-gallery/core';
 })
 export class BusinessViewComponent implements OnInit {
 
-  @ViewChild('products',{static:false}) products;
-  @ViewChild('productsModal',{static:false}) productsModal;
-  constructor(private gallery: Gallery ,private route:ActivatedRoute,private api:RequestsService,private translteService:TranslateService,private auth:AuthService) { }
+  @ViewChild('products', { static: false }) products;
+  @ViewChild('productsModal', { static: false }) productsModal;
+  constructor(private gallery: Gallery, private route: ActivatedRoute,
+    private api: RequestsService, private translteService: TranslateService,
+    private auth: AuthService, private followService: FollowService) { }
   lang
   id
   business
-  toggle1=true;
-  albums:GalleryItem[]
-  userData
+  toggle1 = true;
+  albums: GalleryItem[]
+  userData;
+  isFollowing: boolean;
   ngOnInit() {
-    this.auth.userData.subscribe((data)=>{
-      this.userData=data;
+    this.auth.userData.subscribe((data) => {
+      this.userData = data;
     })
 
-    this.lang=this.translteService.currentLang
-    this.translteService.onLangChange.subscribe(()=>{
-      this.lang=this.translteService.currentLang
+    this.lang = this.translteService.currentLang
+    this.translteService.onLangChange.subscribe(() => {
+      this.lang = this.translteService.currentLang
     })
 
-    this.route.params.subscribe((params)=>{
-      this.id=params['id']
-      var p=new HttpParams();
-      p=p.set('filter',JSON.stringify({
-        "where":{
-          "or":[{"nameUnique" : this.id},{"id" : this.id}]},
-          "include":"subCategory"
+    this.route.params.subscribe((params) => {
+      this.id = params['id']
+      var p = new HttpParams();
+      p = p.set('filter', JSON.stringify({
+        "where": {
+          "or": [{ "nameUnique": this.id }, { "id": this.id }]
+        },
+        "include": "subCategory"
       }));
-      this.api.get('businesses',p).subscribe((data)=>{
-        this.business=data[0]
-        this.albums=[];
+      this.api.get('businesses', p).subscribe((data) => {
+        this.business = data[0]
+        this.isFollowing = this.followService.checkFollowing(this.business['id'], "BUSINESS");
+        this.albums = [];
         for (let i = 0; i < this.business['covers'].length; i++) {
           const src = this.business['covers'][i]['url'];
-          const caption = 'Image' + this.business['covers'][i]['id']  ;
+          const caption = 'Image' + this.business['covers'][i]['id'];
           const thumb = this.business['covers'][i]['thumbnail'];
           const album = {
             src: src,
             title: caption,
             thumb: thumb
           };
-          if(this.business['covers'][i]['type']=='image')
+          if (this.business['covers'][i]['type'] == 'image')
             this.albums.push(new ImageItem(album));
           else
             this.albums.push(new VideoItem(album));
@@ -61,46 +67,39 @@ export class BusinessViewComponent implements OnInit {
         console.log(this.albums)
         const galleryRef = this.gallery.ref();
         galleryRef.load(this.albums)
-        this.business.locationPoint=latLng(this.business.locationPoint)
+        this.business.locationPoint = latLng(this.business.locationPoint)
       })
+
+     
     })
   }
-  saveProducts(){
-    var business={...this.business};
-    business['products']=this.products._products;
+  saveProducts() {
+    var business = { ...this.business };
+    business['products'] = this.products._products;
     delete this.business["id"];
-    this.api.put('businesses\\'+this.id,business).subscribe((data)=>{
-      this.business=data;
+    this.api.put('businesses\\' + this.id, business).subscribe((data) => {
+      this.business = data;
       this.productsModal.close();
     })
   }
-  isOwner(){
-    if(!(this.userData&&this.business))
+  isOwner() {
+    if (!(this.userData && this.business))
       return false;
-    return this.userData.id==this.business.owner.id;
+    return this.userData.id == this.business.owner.id;
+  }
+
+  toggleFollowing() {
+    if (this.isFollowing) {
+      this.followService.makeUnfollow(this.business['id'], "BUSINESS").then(res => {
+        (res ? this.isFollowing = !this.isFollowing : this.isFollowing);
+      });
+    }
+    else {
+      this.followService.makeFollow(this.business['id'], "BUSINESS").then(res => {
+        (res ? this.isFollowing = !this.isFollowing : this.isFollowing);
+      });
+    }
   }
 
 
 }
-// nameEn: "name", nameAr: "bla bla", nameUnique: "bla", logo: "logo.png", status: "activated",…}
-// category: {code: "default", titleAr: "مطاعم", titleEn: "Restaurants", creationDate: "2018-08-26T07:55:06.904Z",…}
-// categoryId: "5b825cda4892087d4b0bac95"
-// cityId: "5b825cda4892087d4b0bac87"
-// cover: "m1.jpg"
-// covers: []
-// description: "bla bla bla bla bla bla bla bla bla "
-// id: "5b825cda4892087d4b0bac9c"
-// locationId: "5b825cda4892087d4b0bac8c"
-// locationPoint: {lat: 33.513868529321854, lng: 36.276908884156455}
-// logo: "logo.png"
-// nameAr: "bla bla"
-// nameEn: "name"
-// nameUnique: "bla"
-// openingDays: [1, 2, 5]
-// openingDaysEnabled: true
-// owner: {status: "activated", birthDate: "1991-08-26T14:46:27.146Z",…}
-// ownerId: "5b8314c11960747e2397f95e"
-// products: [{name: "name1", price: 100, image: "m1.jpg", description: null, id: 1, order: 1},…]
-// status: "activated"
-// subCategory: {code: "default", titleAr: "كافتريات", titleEn: "caffe", creationDate: "2018-08-26T07:55:06.912Z",…}
-// subCategoryId: "5b825cda4892087d4b0bac99"
