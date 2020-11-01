@@ -8,6 +8,12 @@ import { MatDialog } from '@angular/material';
 import { VerificationMessageComponent } from 'src/app/verification-message/verification-message.component';
 import { SuccessMessageComponent } from 'src/app/success-message/success-message.component';
 import { AddRateComponent } from 'src/app/modals/rate/add-rate/add-rate.component';
+import { HttpParams } from '@angular/common/http';
+// import * as _swal from 'sweetalert';
+// import { SweetAlert } from 'sweetalert/typings/core';
+
+// const swal: SweetAlert = _swal as any;
+
 
 @Component({
   selector: 'app-view-product',
@@ -20,6 +26,7 @@ export class ViewProductComponent implements OnInit {
   toggle1 = true;
   toggle2 = true;
   isMyProduct: boolean = false;
+  ratings: any[] = [];
   public _albums = [];
 
   constructor(private gallery: Gallery, private route: ActivatedRoute, private router: Router,
@@ -28,7 +35,7 @@ export class ViewProductComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.data['id'] = params.id;
-
+      this.getRatings();
       this.api.get('marketProducts/' + this.data['id']).toPromise().then(res => {
 
         let userData = this.auth.getUserDataLocal();
@@ -75,6 +82,24 @@ export class ViewProductComponent implements OnInit {
     })
   }
 
+  getRatings() {
+    let p = new HttpParams();
+    p = p.set('filter', JSON.stringify({
+      "where": {
+        "productId": this.data['id'],
+      },
+    }));
+
+    this.api.get('/ratings', p).toPromise().then((res: any[]) => {
+      this.ratings = res;
+      this.ratings.map(rate => { 
+          if(rate.owner.imageProfile === '')
+              rate.owner.imageProfile = 'assets/images/page/employee.png';
+          return rate; 
+      });
+    });
+  }
+
   deactive() {
     let self = this;
     let dialogRef = this.dialog.open(VerificationMessageComponent, {
@@ -104,6 +129,20 @@ export class ViewProductComponent implements OnInit {
     let dialogRef = this.dialog.open(AddRateComponent, {
       panelClass: 'communictioDialogStyle',
       data: { "id": this.data['id'] },
+    });
+    dialogRef.afterClosed().subscribe(res => {
+      if (res) {
+        if (res.status && res.status === 601) {
+          // swal({
+          //   title: "Error",
+          //   text: "User Has Already Rated",
+          //   icon: "error",
+          // });
+        }
+        else {
+          this.getRatings();
+        }
+      }
     });
   }
 

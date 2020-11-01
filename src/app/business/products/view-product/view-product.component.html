@@ -32,11 +32,7 @@
             <a *ngIf="!toggle1" class="phone-arab-dir" href="tel:{{data.phone}}">{{data.phone}} <i class="fa fa-phone"
                 style="margin-left:12px" aria-hidden="true"></i></a>
           </div>
-          <div class="btn-more">
-            <a (click)="rate()" title="" data-toggle="button">
-                 {{ 'rate' | translate }}
-            </a>
-          </div>
+
           <div class="clearfix"></div>
         </div>
         <!-- /.title-right -->
@@ -58,7 +54,7 @@
 
           <div class="text-desc" [innerHTML]="data?.description | linkify">
           </div>
-          <h3>{{'Tags' | translate}}</h3>
+          <!-- <h3>{{'Tags' | translate}}</h3>
           <div class="tags">
             <div *ngFor="let oneTag of data.tags;let i=index" class="oneTag">
               <i class="fa fa-times" aria-hidden="true"></i>
@@ -67,7 +63,7 @@
                 {{oneTag.name}}
               </span>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="col-md-12">
           <div class="imageGallery1">
@@ -100,8 +96,47 @@
                   <a *ngIf="!toggle2" class="phone-arab-dir button-in-contact-list"
                     href="tel:{{data.phone}}">{{data.phone}} <i class="fa fa-phone" aria-hidden="true"></i></a>
                 </span>
+                <span class="btn-more">
+                  <a (click)="rate()" title="" data-toggle="button">
+                    {{ 'rate' | translate }}
+                  </a>
+                </span>
               </li>
             </ul>
+          </div>
+
+          <div class="box contact-box">
+            <div class="rate-wrapper">
+              <div *ngFor="let rate of ratings;let i = index" class="rate-box">
+                <div class="rate-image">
+                  <a [routerLink]="['/cv/' + rate.owner.id]">
+                    <img [src]="rate.owner.imageProfile" alt="user image">
+                  </a>
+                </div>
+                <div class="rate-info">
+                  <div class="rate">
+                    <input type="radio" disabled [id]="'star5' + i" [name]="'rate' + i" value="5"
+                      [checked]="rate.value == 5 ? true : false" />
+                    <label [for]="'star5' + i" title="text">5 stars</label>
+                    <input type="radio" disabled [id]="'star4' + i" [name]="'rate' + i" value="4"
+                      [checked]="rate.value == 4 ? true : false" />
+                    <label [for]="'star4' + i" title="text">4 stars</label>
+                    <input type="radio" disabled [id]="'star3' + i" [name]="'rate' + i" value="3"
+                      [checked]="rate.value == 3 ? true : false" />
+                    <label [for]="'star3' + i" title="text">3 stars</label>
+                    <input type="radio" disabled [id]="'star2' + i" [name]="'rate' + i" value="2"
+                      [checked]="rate.value == 2 ? true : false" />
+                    <label [for]="'star2' + i" title="text">2 stars</label>
+                    <input type="radio" disabled [id]="'star1' + i" [name]="'rate' + i" value="1"
+                      [checked]="rate.value == 1 ? true : false" />
+                    <label [for]="'star1' + i" title="text">1 star</label>
+                  </div>
+
+                  <p class="rate-text"> {{ rate.text }} </p>
+                  <p class="rate-text"> {{ rate.creationDate | date }} </p>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>

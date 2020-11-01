@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // api: 'https://almersal.co/api/',
-  api: "http://192.168.1.7:3006/api/",
+  api: "http://192.168.1.10:3006/api/",
   // api: 'http://localhost:3000/api/',
 
   server: 'https://almersal.co/api-valid/',

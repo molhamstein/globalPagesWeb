@@ -55,12 +55,14 @@
               </div>
             </div>
 
-            <div class="follow">
-              <button (click)="toggleFollowing()" class="follow-button">
+            <div class="follow" *ngIf="!isMyCV">
+              <button (click)="toggleFollowing()" class="follow-button" style="padding: 0px 7px;">
                 <ng-container *ngIf="isFollowing">
+                  <img src="assets/images/page/unfollow.png" alt="follow icon" class="follow-icon">
                   {{ 'unFollow' | translate}}
                 </ng-container>
                 <ng-container *ngIf="!isFollowing">
+                  <img src="assets/images/page/follow.png" alt="follow icon" class="follow-icon">
                   {{ 'follow' | translate }}
                 </ng-container>
               </button>

@@ -1,59 +1,113 @@
 .tags {
-    width: 100%;
-    min-height: 160px;
-    max-height: 160px;
-    overflow-y: auto;
-    border-radius: 5px;
-    padding: 8px 10px;
-  }
-  
-  .tags .oneTag {
-    width: fit-content;
-    border: 1px solid #fbd431;
-    background-color: #fbd431;
-    padding: 0px 5px;
-    border-radius: 15px;
-    margin: 5px;
-  }
-  
-  .tags .oneTag i {
-    font-size: 11px;
-  }
+  width: 100%;
+  min-height: 160px;
+  max-height: 160px;
+  overflow-y: auto;
+  border-radius: 5px;
+  padding: 8px 10px;
+}
 
-  .mainHeader .username {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .mainHeader .username .edit {
+.tags .oneTag {
+  width: fit-content;
+  border: 1px solid #fbd431;
+  background-color: #fbd431;
+  padding: 0px 5px;
+  border-radius: 15px;
+  margin: 5px;
+}
 
-    font-size: 14px;
-    color: black;
-  }
-  
-  .mainHeader .username .deactive {
-    top: 50px;
-  }
-  
-  .mainHeader .username .edit:after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: black;
-    transition: width .3s;
-  }
-  
-  .mainHeader .username .edit:hover {
-    color: #ffd400;
-    cursor: pointer;
-  }
-  
-  .mainHeader .username .edit:hover:after {
-    
-    background-color: #ffd400;
-  
-  }
-  
-  
+.tags .oneTag i {
+  font-size: 11px;
+}
+
+.mainHeader .username {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.mainHeader .username .edit {
+
+  font-size: 14px;
+  color: black;
+}
+
+.mainHeader .username .deactive {
+  top: 50px;
+}
+
+.mainHeader .username .edit:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width .3s;
+}
+
+.mainHeader .username .edit:hover {
+  color: #ffd400;
+  cursor: pointer;
+}
+
+.mainHeader .username .edit:hover:after {
+
+  background-color: #ffd400;
+
+}
+
+.rate {
+  float: left;
+}
+
+.rate:not(:checked)>input {
+  position: absolute;
+  top: -9999px;
+}
+
+.rate:not(:checked)>label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+  content: '★ ';
+}
+
+.rate>input:checked~label {
+  color: #ffc700;
+}
+
+.rate-wrapper {
+  height: 155px;
+  overflow-y: scroll;
+}
+
+.rate-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.rate-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 0px 5px 15px;
+  cursor: pointer;
+}
+
+.rate-text {
+  margin-right: 10px;
+}

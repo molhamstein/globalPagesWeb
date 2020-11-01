@@ -45,6 +45,7 @@
     "ngx-spinner": "^8.0.3",
     "pretty-checkbox": "^3.0.3",
     "rxjs": "^6.5.3",
+    "sweetalert": "^2.1.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

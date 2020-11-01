@@ -32,10 +32,10 @@ export class AddRateComponent implements OnInit {
   sendRate() {
     this.apiService.post('marketProducts/' + this.id + '/rateProduct', this.rate).subscribe(
       res => {
-
+        this.thisDialog.close(res);
       },
       error => {
-        // 601 Already Rated
+        this.thisDialog.close(error);
       },
     );
   }

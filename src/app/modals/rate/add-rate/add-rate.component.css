@@ -84,6 +84,7 @@
 
 .module .contint .inputDiv .title {
   font-weight: bold;
+  padding: 5px 0px ; 
 }
 
 .module .contint .inputDiv textarea {
@@ -319,9 +320,7 @@
 }
 
 .rate {
-  float: left;
-  height: 46px;
-  padding: 0 10px;
+  float: left; 
 }
 
 .rate:not(:checked)>input {

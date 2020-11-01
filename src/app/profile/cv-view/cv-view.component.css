@@ -354,3 +354,7 @@
 .follow .follow-button:hover {
   background-color: #ffd400;
 }
+
+.follow-icon { 
+  width: 25px ; 
+}
