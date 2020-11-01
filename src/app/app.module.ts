@@ -85,6 +85,7 @@ import { ForgetPasswordComponent } from './authentication/modals/forget-password
 import { CompleteInformationComponent } from './authentication/modals/complete-information/complete-information.component';
 import { ResetComponent } from './authentication/reset/reset.component';
 import { AddRateComponent } from './modals/rate/add-rate/add-rate.component';
+import { FollowListComponent } from './profile/follow-list/follow-list.component';
 
 
 let config = new AuthServiceConfig([
@@ -158,7 +159,8 @@ export function provideConfig() {
     ResetPasswordComponent,
     ForgetPasswordComponent,
     CompleteInformationComponent,
-    AddRateComponent
+    AddRateComponent,
+    FollowListComponent
   ],
   imports: [
     GalleryModule.withConfig({ loadingMode: 'indeterminate' }),

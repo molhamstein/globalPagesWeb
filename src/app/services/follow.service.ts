@@ -26,7 +26,7 @@ export class FollowService {
         }
     }
 
-    getUserFollowing(ownerId: string, type: "USER" | "BUSINESS"): void {
+    getUserFollowing(ownerId: string, type: "USER" | "BUSINESS"): Promise<any[]> {
         let params = new HttpParams();
         params = params.set('filter', JSON.stringify({
             "where": {
@@ -35,25 +35,25 @@ export class FollowService {
             },
         }));
 
-        this.api.get(`followers`, params).subscribe(
-            (res: Object[]) => {
+        return this.api.get(`followers`, params).toPromise().then(
+            (res: any[]) => {
                 switch (type) {
                     case "USER":
                         localStorage.setItem("userFollowing", JSON.stringify(res));
                         this.userFollowing = res;
-                        break;
+                        return this.userFollowing;
                     case "BUSINESS":
                         localStorage.setItem("businessFollowing", JSON.stringify(res));
                         this.businessFollowing = res;
-                        break;
+                        return this.businessFollowing;
                     default:
-                        break;
+                        return;
                 }
             }
         );
     }
 
-    getUserFollower(objectId: string): void {
+    getUserFollower(objectId: string): Promise<any[]> {
         let params = new HttpParams();
         params = params.set('filter', JSON.stringify({
             "where": {
@@ -62,10 +62,11 @@ export class FollowService {
             },
         }));
 
-        this.api.get(`followers`, params).subscribe(
-            (res: Object[]) => {
+        return this.api.get(`followers`, params).toPromise().then(
+            (res: any[]) => {
                 localStorage.setItem("userFollowers", JSON.stringify(res));
                 this.userFollowers = res;
+                return this.userFollowers;
             }
         );
     }
