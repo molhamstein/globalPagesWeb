@@ -215,5 +215,9 @@ export const ArabicTranslation = {
   unFollow: "إلغاء متابعة",
   rate: "تقييم",
   comment: "تعليق",
-  starIsRequired: ""
+  starIsRequired: "",
+  following: "المتابعون",
+  userFollowing: "المتابعة",
+  userFollowers: "المتابعون",
+  businessFollowing: "الأعمال المتابعة"
 }

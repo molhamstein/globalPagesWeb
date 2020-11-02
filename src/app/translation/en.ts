@@ -206,5 +206,9 @@ export const EnglishTranslation = {
   unFollow: "Unfollow",
   rate: "Rate",
   commet: "Comment",
-  starIsRequired: ""
+  starIsRequired: "",
+  following: "Followings",
+  userFollowing: "User Followings",
+  userFollowers: "User Followers",
+  businessFollowing: "Business Followings"
 }

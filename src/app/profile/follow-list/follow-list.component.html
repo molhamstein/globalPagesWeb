@@ -1,0 +1,159 @@
+<section>
+  <div class="container-fluid" style="background-color: #f9f8f3">
+    <div class="row">
+
+      <div class="col-md-12" style="margin: 40px 0px 10px 0px;">
+        <div class="flat-row-title center">
+          <h2>{{'following'| translate}}</h2>
+        </div>
+      </div>
+
+      <div class="col-md-1">
+
+      </div>
+
+      <div class="col-md-3">
+        <div class="user-wrapper">
+          <div class="user-image">
+            <img [src]="user.user.imageProfile || 'assets/images/page/employee.png'"
+              style="width: 125px; height: 125px; border-radius: 50%;">
+            <h3 style="margin-top: 15px;"> {{ user.user.username }} </h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="oneInfo">
+                <p class="head">{{ 'userFollowing' | translate }}</p>
+                <p class="body">{{ user.user.userFollowing }}</p>
+              </div>
+              <div class="oneInfo">
+                <p class="head">{{ 'businessFollowing' | translate }}</p>
+                <p class="body">{{ user.user.businessFollowing }}</p>
+              </div>
+              <div class="oneInfo">
+                <p class="head">{{ 'phoneNumber' | translate }}</p>
+                <p class="body">{{ user.user.phoneNumber }}</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="oneInfo">
+                <p class="head">{{ 'userFollowers' | translate }}</p>
+                <p class="body">{{ user.user.follower }}</p>
+              </div>
+              <div class="oneInfo">
+                <p class="head">{{ 'gender' | translate }}</p>
+                <p class="body">{{ user.user.gender }}</p>
+              </div>
+              <div class="oneInfo">
+                <p class="head">{{ 'email' | translate }}</p>
+                <p class="body">{{ user.user.email }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <tabset [pills]="true">
+          <tab [title]="'userFollowing' | translate">
+            <div class="follow-wrapper">
+              <div *ngFor="let follow of userFollowing;let i = index" class="follow-box">
+                <div class="follow-image">
+                  <a [routerLink]="['/cv/' + follow.user.id]">
+                    <img [src]="follow.user.imageProfile || 'assets/images/page/employee.png'" alt="user image">
+                  </a>
+                </div>
+                <div class="follow-info">
+                  <p class="follow-text"> {{ follow.user.username }} </p>
+                  <p class="follow-text"> {{ follow.user.email }} </p>
+                </div>
+
+                <div class="follow-button">
+                  <div class="btn-more" style="margin: 0px ;">
+                    <a (click)="toggleFollowing(follow.user.id, 'USER')" class="follow-button-text"
+                      style="padding: 0px 7px; font-size: 14px;" data-toggle="button">
+                      <ng-container *ngIf="isFollowing(follow.user.id, 'USER')">
+                        {{ 'unFollow' | translate}}
+                        <img src="assets/images/page/unfollow.png" alt="follow icon" class="follow-icon">
+                      </ng-container>
+                      <ng-container *ngIf="!isFollowing(follow.user.id, 'USER')">
+                        {{ 'follow' | translate }}
+                        <img src="assets/images/page/follow.png" alt="follow icon" class="follow-icon">
+                      </ng-container>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </tab>
+          <tab [title]="'businessFollowing' | translate">
+            <div class="follow-wrapper">
+              <div *ngFor="let follow of businessFollowing;let i = index" class="follow-box">
+                <div class="follow-image">
+                  <a [routerLink]="['/business/' + follow.business.id]">
+                    <img [src]="follow.business.logo || 'assets/images/page/business-01.png'" alt="business image">
+                  </a>
+                </div>
+                <div class="follow-info">
+                  <p class="follow-text"> {{ follow.business.nameUnique }} </p>
+                  <p class="follow-text"> {{ follow.business.description }} </p>
+                </div>
+
+                <div class="follow-button">
+                  <div class="btn-more" style="margin: 0px ;">
+                    <a (click)="toggleFollowing(follow.business.id, 'BUSINESS')" class="follow-button-text"
+                      style="padding: 0px 7px; font-size: 14px;" data-toggle="button">
+                      <ng-container *ngIf="isFollowing(follow.business.id, 'BUSINESS')">
+                        {{ 'unFollow' | translate}}
+                        <img src="assets/images/page/unfollow.png" alt="follow icon" class="follow-icon">
+                      </ng-container>
+                      <ng-container *ngIf="!isFollowing(follow.business.id, 'BUSINESS')">
+                        {{ 'follow' | translate }}
+                        <img src="assets/images/page/follow.png" alt="follow icon" class="follow-icon">
+                      </ng-container>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </tab>
+          <tab [title]="'userFollowers' | translate">
+            <div class="follow-wrapper">
+              <div *ngFor="let follow of userFollowers;let i = index" class="follow-box">
+                <div class="follow-image">
+                  <a [routerLink]="['/cv/' + follow.user.id]">
+                    <img [src]="follow.user.imageProfile || 'assets/images/page/employee.png'" alt="user image">
+                  </a>
+                </div>
+                <div class="follow-info">
+                  <p class="follow-text"> {{ follow.user.username }} </p>
+                  <p class="follow-text"> {{ follow.user.email }} </p>
+                </div>
+
+                <div class="follow-button">
+                  <div class="btn-more" style="margin: 0px ;">
+                    <a (click)="toggleFollowing(follow.user.id, 'USER')" class="follow-button-text"
+                      style="padding: 0px 7px; font-size: 14px;" data-toggle="button">
+                      <ng-container *ngIf="isFollowing(follow.user.id, 'USER')">
+                        {{ 'unFollow' | translate}}
+                        <img src="assets/images/page/unfollow.png" alt="follow icon" class="follow-icon">
+                      </ng-container>
+                      <ng-container *ngIf="!isFollowing(follow.user.id, 'USER')">
+                        {{ 'follow' | translate }}
+                        <img src="assets/images/page/follow.png" alt="follow icon" class="follow-icon">
+                      </ng-container>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </tab>
+        </tabset>
+
+
+      </div>
+    </div>
+  </div>
+</section>

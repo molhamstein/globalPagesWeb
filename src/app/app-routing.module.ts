@@ -25,6 +25,7 @@ import { EditProductComponent } from './business/products/edit-product/edit-prod
 import { AddProductComponent } from './business/products/add-product/add-product.component';
 import { SuppliersComponent } from './business/suppliers/suppliers.component';
 import { ResetComponent } from './authentication/reset/reset.component';
+import { FollowListComponent } from './profile/follow-list/follow-list.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,7 @@ const routes: Routes = [
   { path: 'products/create', component: AddProductComponent },
   { path: 'products/:id', component: ViewProductComponent },
   { path: 'products/:id/edit', component: EditProductComponent },
+  { path: 'following', component: FollowListComponent }
 ];
 
 const config: ExtraOptions = {

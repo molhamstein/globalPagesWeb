@@ -43,6 +43,7 @@
     "ngx-pipes": "^2.6.0",
     "ngx-smart-modal": "^7.3.0",
     "ngx-spinner": "^8.0.3",
+    "ngx-tabs": "0.0.13",
     "pretty-checkbox": "^3.0.3",
     "rxjs": "^6.5.3",
     "sweetalert": "^2.1.2",

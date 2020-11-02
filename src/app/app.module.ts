@@ -86,7 +86,7 @@ import { CompleteInformationComponent } from './authentication/modals/complete-i
 import { ResetComponent } from './authentication/reset/reset.component';
 import { AddRateComponent } from './modals/rate/add-rate/add-rate.component';
 import { FollowListComponent } from './profile/follow-list/follow-list.component';
-
+import {TabsModule} from "ngx-tabs";
 
 let config = new AuthServiceConfig([
   {
@@ -183,6 +183,7 @@ export function provideConfig() {
     FlexLayoutModule,
     NgxLinkifyjsModule.forRoot(),
     SocialLoginModule,
+    TabsModule
   ],
   entryComponents: [
     MapMarkerComponent,
