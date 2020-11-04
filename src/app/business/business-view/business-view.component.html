@@ -24,18 +24,7 @@
               </li>
             </ul>
 
-            <div class="follow">
-              <button (click)="toggleFollowing()" class="follow-button" style="padding: 0px 7px;">
-                <ng-container *ngIf="isFollowing">
-                  {{ 'unFollow' | translate}}
-                  <img src="assets/images/page/unfollow.png" alt="follow icon" class="follow-icon">
-                </ng-container>
-                <ng-container *ngIf="!isFollowing">
-                  {{ 'follow' | translate }}
-                  <img src="assets/images/page/follow.png" alt="follow icon" class="follow-icon">
-                </ng-container>
-              </button>
-            </div>
+
           </div>
 
           <!-- /.box-address -->
@@ -50,6 +39,20 @@
 
             <a *ngIf="!toggle1" class="phone-arab-dir" href="tel:{{business?.phone1}}">{{business?.phone1}} <i
                 class="fa fa-phone" style="margin-left:12px" aria-hidden="true"></i></a>
+          </div>
+          <div class="follow">
+            <div class="btn-more">
+              <a (click)="toggleFollowing()" class="follow-button-text" data-toggle="button">
+                <ng-container *ngIf="isFollowing">
+                  {{ 'unFollow' | translate}}
+                  <img src="assets/images/page/unfollow.png" alt="follow icon" class="follow-icon">
+                </ng-container>
+                <ng-container *ngIf="!isFollowing">
+                  {{ 'follow' | translate }}
+                  <img src="assets/images/page/follow.png" alt="follow icon" class="follow-icon">
+                </ng-container>
+              </a>
+            </div>
           </div>
           <!-- <div class="btn-more">
             <a (click)="toggleFollowing()" title="" data-toggle="button">

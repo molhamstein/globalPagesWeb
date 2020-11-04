@@ -55,18 +55,20 @@
               </div>
             </div>
 
-            <div class="follow" *ngIf="!isMyCV">
-              <button (click)="toggleFollowing()" class="follow-button" style="padding: 0px 7px;">
+          <div class="follow" *ngIf="!isMyCV">
+            <div class="btn-more">
+              <a (click)="toggleFollowing()" class="follow-button-text" data-toggle="button">
                 <ng-container *ngIf="isFollowing">
-                  <img src="assets/images/page/unfollow.png" alt="follow icon" class="follow-icon">
                   {{ 'unFollow' | translate}}
+                  <img src="assets/images/page/unfollow.png" alt="follow icon" class="follow-icon">
                 </ng-container>
                 <ng-container *ngIf="!isFollowing">
-                  <img src="assets/images/page/follow.png" alt="follow icon" class="follow-icon">
                   {{ 'follow' | translate }}
+                  <img src="assets/images/page/follow.png" alt="follow icon" class="follow-icon">
                 </ng-container>
-              </button>
+              </a>
             </div>
+          </div>
 
           </div>
         </div>

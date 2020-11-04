@@ -1,10 +1,10 @@
-<section class="page-title parallax parallax1">
+<section class="page-title parallax parallax1" style="padding: 40px 0 65px;">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="page-title-heading">
+        <!-- <div class="page-title-heading">
           {{user?.username}}
-        </div>
+        </div> -->
 
       </div>
       <!-- /.col-md-12 -->
@@ -16,10 +16,9 @@
 </section>
 <!-- /.page-title -->
 
-<div class="container-fluid without-padding cloudy-bg">
+<!-- <div class="container-fluid without-padding cloudy-bg">
   <div class="col-md-12 without-padding">
     <div class="profile-image-container">
-      <!--<div class="change-image">{{'edit' | translate}} </div>-->
       <img class="profile-img" *ngIf="!user?.imageProfile" src="http://via.placeholder.com/150x150" />
       <img class="profile-img" *ngIf="user?.imageProfile" [src]="user?.imageProfile" />
     </div>
@@ -32,10 +31,84 @@
       </div>
     </div>
   </div>
-  <!-- /.col-md-12 -->
-</div>
+</div> -->
 <!-- /.container -->
 
+
+<div class="container-fluid cloudy-bg">
+  <div class="row profile-row">
+    <div class="col-md-3 user-img-container">
+      <img class="user-img" *ngIf="!user?.imageProfile" src="http://via.placeholder.com/150x150" />
+      <img class="user-img" *ngIf="user?.imageProfile" [src]="user?.imageProfile" />
+    </div>
+    <div class="col-md-9">
+      <div class="row info-row" style="top: 15px;">
+        <div class="col-xs-12">
+          <div class="flex-row">
+            <div style="flex-grow: 0.8;">
+              <h3 style="font-size:19px; font-weight: bold;">{{'username' | translate}}</h3>
+              <h2 style="padding-top: 10px; color: #fff;">{{user?.username}}</h2>
+            </div>
+            <div style="flex-grow: 0.1;">
+              <h3 style="font-size:19px; font-weight: bold;">{{'userFollowing' | translate}}
+              </h3>
+              <h2 style="padding-top: 10px; color: #fff;">{{user?.userFollowing}}</h2>
+            </div>
+            <div>
+              <h3 style="font-size:19px; font-weight: bold;">{{'userFollowers' | translate}}
+              </h3>
+              <h2 style="padding-top: 10px; color: #fff;">{{user?.follower}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row info-row" style="top: 20px; margin-top: 20px;">
+        <div class="col-xs-12">
+          <div class="flex-row">
+            <div style="flex-grow: 0.2;">
+              <h3 style="font-size:19px; color: rgb(140,140,140); font-weight: bold;">{{'email' | translate}}</h3>
+              <h2 style="padding-top: 10px; color: #000000; font-size: 24px;">{{user?.email}}</h2>
+            </div>
+
+
+            <div style="flex-grow: 0.2;">
+              <h3 style="font-size:19px; color: rgb(140,140,140); font-weight: bold;">{{'addedAds' | translate}}</h3>
+              <h2 style="padding-top: 10px; color: #000000; font-size: 24px;">{{ads?.length}}</h2>
+            </div>
+            <div style="flex-grow: 0.4;">
+              <h3 style="font-size:19px; color: rgb(140,140,140); font-weight: bold;">{{'balance' | translate}}</h3>
+              <h2 style="padding-top: 10px; color: #000000; font-size: 24px;">{{user?.balance}}</h2>
+            </div>
+
+            <div>
+              <div class="follow">
+                <div class="btn-more" style="margin: 20px 0px;">
+                  <a [routerLink]="['/cv/' + user.id]" class="follow-button-text" data-toggle="button">
+                    <ng-container>
+                      {{ 'CV' | translate}}
+                    </ng-container>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="follow">
+                <div class="btn-more" style="margin: 20px 0px;">
+                  <a [routerLink]="['/following']" class="follow-button-text" data-toggle="button">
+                    <ng-container>
+                      {{ 'following' | translate}}
+                      <img src="assets/images/page/follow.png" alt="follow icon" class="follow-icon">
+                    </ng-container>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -43,7 +116,7 @@
 <section class="cloudy-bg">
   <section class="flat-profile">
     <div class="container">
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-12">
           <form action="#" class="form-listing" method="get" accept-charset="utf-8">
 
@@ -83,14 +156,13 @@
               </div>
             </div>
 
-            <!-- /.inner-box -->
+     
 
           </form>
-          <!-- /.form-listing -->
+
         </div>
 
-        <!-- /.col-md-12 -->
-      </div>
+      </div> -->
 
       <!-- <div class="col-md-12 subs" id="chooseCategory">
         <div class="inner-box subscribed-list">
@@ -206,18 +278,3 @@
   </section>
   <!-- /.flat-listing -->
 </section>
-
-<!-- <ngx-smart-modal #myModal identifier="myModal">
-  <div class="smart-modal-header">
-    <h3>{{'mySubscription' | translate}}</h3>
-  </div>
-
-  <div class="smart-modal-content">
-    <app-category-selector [categories]="postCategories" [selectedSubCategory]="user?.postCategoriesIds"
-      (changed)="editCat($event)"></app-category-selector>
-  </div>
-  <div class="smart-modal-footer">
-    <button class="btn btn-primary" (click)="myModal.close()">{{'close'|translate}}</button>
-  </div>
-
-</ngx-smart-modal> -->

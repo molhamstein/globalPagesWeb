@@ -1,8 +1,74 @@
-.pretty .state label:before,.pretty .state label:after,.pretty input{
+.pretty .state label:before,
+.pretty .state label:after,
+.pretty input {
   transform: translateX(-20px) !important;
 }
-.pretty
-{
+
+.pretty {
   float: left;
   margin: 10px;
+}
+
+.profile-row {
+  position: relative;
+  top: -85px;
+}
+
+.info-row {
+  position: relative;
+  left: 40px;
+}
+
+.user-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-img {
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+}
+
+.follow {
+  margin-right: 20px;
+  margin-top: 5px;
+  clear: both;
+}
+
+.follow-icon {
+  width: 15px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 988px) { 
+  .info-row {
+    left: 0px;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+  .info-row {
+    left: 0px;
+  }
+
+  h3 {
+    margin-top: 15px;
+  }
+
+  .follow { 
+     margin-right: 0px ;
+  }
+
+  .flex-row { 
+     margin-top: 10px; 
+  }
 }

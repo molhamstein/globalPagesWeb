@@ -67,7 +67,7 @@
               {{'descriptionCV' | translate}}
             </h4>
             <p class="description"
-              [innerHTML]="lang=='ar'? job.business.descriptionAr : job.business.descriptionEn | linkify">
+              [innerHTML]="(lang=='ar'? job.descriptionAr : job.descriptionEn) | linkify">
             </p>
 
           </div>
