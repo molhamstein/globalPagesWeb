@@ -3743,6 +3743,15 @@ form.form-listing .inner-box button.submit-form-listing:hover {
   /*AngularFix*/
 }
 
+.imageGallery1 video {
+  width: 200px;
+  height: 150px;
+  /*AngularFix*/
+  margin-left: 3px;
+  margin-right: 20px;
+  /*AngularFix*/
+}
+
 .overflow-scroll {
   height: 600px;
   overflow: auto;

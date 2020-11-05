@@ -122,6 +122,7 @@ export class ProductsComponent implements OnInit {
     params['filter[limit]'] = "20";
 
     params['filter[skip]'] = (20 * this.skip).toString();
+    params['filter[order]'] = "creationDate DESC"
     this.requests.get('marketProducts', params).subscribe(res => {
       this.posts = <Object[]>res;
 

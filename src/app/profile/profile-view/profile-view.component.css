@@ -45,9 +45,14 @@
 .flex-row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 988px) { 
+.btn-more {
+  text-align: right;
+}
+
+@media (max-width: 988px) {
   .info-row {
     left: 0px;
   }
@@ -64,11 +69,14 @@
     margin-top: 15px;
   }
 
-  .follow { 
-     margin-right: 0px ;
+  .follow {
+    margin-right: 0px;
   }
 
-  .flex-row { 
-     margin-top: 10px; 
+  .flex-row {
+    margin-top: 10px;
+    flex-direction: column;
   }
+
+
 }

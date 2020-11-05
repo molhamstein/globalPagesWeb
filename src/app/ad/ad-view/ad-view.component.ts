@@ -28,6 +28,7 @@ export class AdViewComponent implements OnInit {
       this.data['description'] = adData['description'];
       var t = new Date(adData['creationDate']);
       this.data['creationDate'] = t.toLocaleDateString();
+      this.data['viewsCount'] = adData['viewsCount'];
       // this.data['images']= adData['media'];
       for (let i = 0; i < adData['media'].length; i++) {
         const src = adData['media'][i]['url'];
@@ -42,6 +43,8 @@ export class AdViewComponent implements OnInit {
           this._albums.push(new ImageItem(album));
         else
           this._albums.push(new VideoItem(album));
+
+        console.log(this._albums);
         // this._albums.push(album);
       }
       const galleryRef = this.gallery.ref();

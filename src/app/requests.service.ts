@@ -40,8 +40,10 @@ export class RequestsService {
     return this.http.post(this.api + name, data, { headers: header });
   }
 
-  put(name, data) {
-    return this.http.put(this.api + name, data, { headers: this.header });
+  put(name, data, h?) {
+    let header: HttpHeaders = this.header;
+    if (h) header = Object.assign(this.header, h);
+    return this.http.put(this.api + name, data, { headers: header });
   }
 
   patch(name, data) {
@@ -50,6 +52,6 @@ export class RequestsService {
 
   delete(name, id?) {
     if (id) name += '\\' + id;
-    return this.http.delete(this.api + name, { headers: this.header});
+    return this.http.delete(this.api + name, { headers: this.header });
   }
 }

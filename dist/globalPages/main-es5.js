@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"page-title-heading\">\r\n          {{'createNewAd'| translate}}\r\n        </div>\r\n\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n<!-- /.page-title -->\r\n\r\n<section class=\"flat-listing\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <form class=\"form-listing\" accept-charset=\"utf-8\">\r\n\r\n          <div class=\"inner-box form\">\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"wrap-listing ads-name\">\r\n              <label> {{'adName' | translate}} </label>\r\n              <input [(ngModel)]=\"name\" type=\"text\" name=\"ads-name\" placeholder=\"{{'yourAdTitle' | translate}}\">\r\n            </div>\r\n            <!-- /.wrap-listing -->\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category\">\r\n                <label>{{'city' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"select-city\" [(ngModel)]=\"city\">\r\n                  <option *ngFor=\"let c of cities\" [ngValue]=\"c\">{{c.name}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category\">\r\n                <label>{{'area'| translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"select-area\" [(ngModel)]=\"location\">\r\n                  <option *ngFor=\"let loc of city?.locations\" [ngValue]=\"loc\">{{loc.name}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <!-- /.wrap-listing -->\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'category' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"category\" [(ngModel)]=\"category\">\r\n                  <option *ngFor=\"let cat of categories\" [ngValue]=\"cat\">{{cat.title}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'subCategory' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"subcategory\" [(ngModel)]=\"subCategory\">\r\n                  <option *ngFor=\"let sc of category?.subCategories\" [ngValue]=\"sc\">{{sc.title}}</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <label>{{'details' | translate}}</label>\r\n              <textarea [(ngModel)]=\"details\" name=\"details\"\r\n                placeholder=\"{{'writeYourAdDetails'| translate}}\"></textarea>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing half\">\r\n                <label>{{'yourBusinessImages'| translate}}</label>\r\n                <div class=\"upload\">\r\n                  <input-file fileAccept=\".mp4,.jpg,.jpeg,.mpeg,.png\" [fileLimit]=\"20\"\r\n                    [(ngModel)]=\"filesToUpload\" [ngModelOptions]=\"{standalone: true}\"></input-file>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"col-md-12\">\r\n              <div class=\"btn-more submit-button\">\r\n                <a class=\"pointerHover\" (click)=\"registerAd()\">{{'registerAd' | translate }}</a>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n\r\n          </div>\r\n          <!-- /.inner-box -->\r\n\r\n        </form>\r\n        <!-- /.form-listing -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-listing -->\r\n"
+module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"page-title-heading\">\r\n          {{'createNewAd'| translate}}\r\n        </div>\r\n\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n<!-- /.page-title -->\r\n\r\n<section class=\"flat-listing\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <form class=\"form-listing\" accept-charset=\"utf-8\">\r\n\r\n          <div class=\"inner-box form\">\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"wrap-listing ads-name\">\r\n              <label> {{'adName' | translate}} </label>\r\n              <input [(ngModel)]=\"name\" type=\"text\" name=\"ads-name\" placeholder=\"{{'yourAdTitle' | translate}}\">\r\n            </div>\r\n            <!-- /.wrap-listing -->\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category\">\r\n                <label>{{'city' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"select-city\" [(ngModel)]=\"city\">\r\n                  <option *ngFor=\"let c of cities\" [ngValue]=\"c\">{{c.name}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category\">\r\n                <label>{{'area'| translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"select-area\" [(ngModel)]=\"location\">\r\n                  <option *ngFor=\"let loc of city?.locations\" [ngValue]=\"loc\">{{loc.name}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <!-- /.wrap-listing -->\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'category' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"category\" [(ngModel)]=\"category\">\r\n                  <option *ngFor=\"let cat of categories\" [ngValue]=\"cat\">{{cat.title}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'subCategory' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"subcategory\" [(ngModel)]=\"subCategory\">\r\n                  <option *ngFor=\"let sc of category?.subCategories\" [ngValue]=\"sc\">{{sc.title}}</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <label>{{'details' | translate}}</label>\r\n              <textarea [(ngModel)]=\"details\" name=\"details\"\r\n                placeholder=\"{{'writeYourAdDetails'| translate}}\"></textarea>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing half\">\r\n                <label>{{'yourBusinessImages'| translate}}</label>\r\n                <div class=\"upload\">\r\n                  <input-file fileAccept=\".mp4,.jpg,.jpeg,.mpeg,.png\" [fileLimit]=\"20\"\r\n                    [(ngModel)]=\"filesToUpload\" [ngModelOptions]=\"{standalone: true}\"></input-file>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"col-md-12\">\r\n              <div class=\"btn-more submit-button\">\r\n                <a class=\"pointerHover\" (click)=\"registerAd()\">{{'registerAd' | translate }}</a>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n\r\n          </div>\r\n          <!-- /.inner-box -->\r\n\r\n        </form>\r\n        <!-- /.form-listing -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-listing -->\r\n"
 
 /***/ }),
 
@@ -18,7 +18,7 @@ module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div cl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"page-title-heading\">\r\n          {{'createNewAd'| translate}}\r\n        </div>\r\n\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n<!-- /.page-title -->\r\n\r\n<section class=\"flat-listing\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <form class=\"form-listing\" accept-charset=\"utf-8\">\r\n\r\n          <div class=\"inner-box form\">\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"wrap-listing ads-name\">\r\n              <label> {{'adName' | translate}} </label>\r\n              <input [(ngModel)]=\"name\" type=\"text\" name=\"ads-name\" placeholder=\"{{'yourAdTitle' | translate}}\">\r\n            </div>\r\n            <!-- /.wrap-listing -->\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category\">\r\n                <label>{{'city' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"select-city\" [(ngModel)]=\"city\">\r\n                  <option *ngFor=\"let c of cities\" [ngValue]=\"c\">{{c.name}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category\">\r\n                <label>{{'area'| translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"select-area\" [(ngModel)]=\"location\">\r\n                  <option *ngFor=\"let loc of city?.locations\" [ngValue]=\"loc\">{{loc.name}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <!-- /.wrap-listing -->\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'category' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"category\" [(ngModel)]=\"category\">\r\n                  <option *ngFor=\"let cat of categories\" [ngValue]=\"cat\">{{cat.title}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'subCategory' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"subcategory\" [(ngModel)]=\"subCategory\">\r\n                  <option *ngFor=\"let sc of category?.subCategories\" [ngValue]=\"sc\">{{sc.title}}</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <label>{{'details' | translate}}</label>\r\n              <textarea [(ngModel)]=\"details\" name=\"details\" placeholder=\"{{'writeYourAdDetails'| translate}}\"></textarea>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing half\">\r\n                <label>{{'yourBusinessImages'| translate}}</label>\r\n                <div class=\"imageGallery1\">\r\n                  <a *ngFor=\"let image of media;let i=index\" style=\"position: relative\">\r\n                    <button class=\"btn\" (click)=\"$event.preventDefault();media.splice(i,1)\">\r\n                      <i class=\"material-icons\">delete</i>\r\n                    </button>\r\n                    <img src=\"{{image?.thumbnail}}\" alt=\"Gallery image 1\"  />\r\n                  </a>\r\n                </div>\r\n                <!-- <div class=\" \"> -->\r\n                <!-- <div id=\"preview-box\" class=\"col-md-12 preview-box\">\r\n\r\n                </div> -->\r\n                <div class=\"upload\">\r\n                  <!-- <span>{{'browseFiles'| translate}}</span> -->\r\n                  <!-- <input name=\"filesToUpload[]\" (change)=\"onSelectFile($event)\" id=\"filesToUpload\" type=\"file\" multiple  /> -->\r\n                  <input-file fileAccept=\"image/*\" name=\"upload\" [fileLimit]=\"20\"  [(ngModel)]=\"filesToUpload\"></input-file>\r\n\r\n                </div>\r\n                <!-- </div> -->\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"col-md-12\">\r\n              <div class=\"btn-more submit-button\">\r\n                <a class=\"pointerHover\" (click)=\"registerAd()\">{{'registerAd'| translate}}</a>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n\r\n\r\n          </div>\r\n          <!-- /.inner-box -->\r\n\r\n        </form>\r\n        <!-- /.form-listing -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-listing -->\r\n"
+module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"page-title-heading\">\r\n          {{'createNewAd'| translate}}\r\n        </div>\r\n\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n<!-- /.page-title -->\r\n\r\n<section class=\"flat-listing\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <form class=\"form-listing\" accept-charset=\"utf-8\">\r\n\r\n          <div class=\"inner-box form\">\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"wrap-listing ads-name\">\r\n              <label> {{'adName' | translate}} </label>\r\n              <input [(ngModel)]=\"name\" type=\"text\" name=\"ads-name\" placeholder=\"{{'yourAdTitle' | translate}}\">\r\n            </div>\r\n            <!-- /.wrap-listing -->\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category\">\r\n                <label>{{'city' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"select-city\" [(ngModel)]=\"city\">\r\n                  <option *ngFor=\"let c of cities\" [ngValue]=\"c\">{{c.name}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category\">\r\n                <label>{{'area'| translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"select-area\" [(ngModel)]=\"location\">\r\n                  <option *ngFor=\"let loc of city?.locations\" [ngValue]=\"loc\">{{loc.name}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <!-- /.wrap-listing -->\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'category' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"category\" [(ngModel)]=\"category\">\r\n                  <option *ngFor=\"let cat of categories\" [ngValue]=\"cat\">{{cat.title}}</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'subCategory' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"subcategory\" [(ngModel)]=\"subCategory\">\r\n                  <option *ngFor=\"let sc of category?.subCategories\" [ngValue]=\"sc\">{{sc.title}}</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <label>{{'details' | translate}}</label>\r\n              <textarea [(ngModel)]=\"details\" name=\"details\"\r\n                placeholder=\"{{'writeYourAdDetails'| translate}}\"></textarea>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing half\">\r\n                <label>{{'yourBusinessImages'| translate}}</label>\r\n                <div class=\"imageGallery1\">\r\n                  <a *ngFor=\"let image of media;let i=index\" style=\"position: relative\">\r\n                    <button class=\"btn\" (click)=\"$event.preventDefault();media.splice(i,1)\">\r\n                      <i class=\"material-icons\">delete</i>\r\n                    </button>\r\n                    <img src=\"{{image?.thumbnail}}\" alt=\"Gallery image 1\" />\r\n                  </a>\r\n                </div>\r\n\r\n                <div class=\"upload\">\r\n                  <input-file fileAccept=\"image/*\" name=\"upload\" [fileLimit]=\"20\" [(ngModel)]=\"filesToUpload\">\r\n                  </input-file>\r\n\r\n                </div>\r\n\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"col-md-12\">\r\n              <div class=\"btn-more submit-button\">\r\n                <a class=\"pointerHover\" (click)=\"registerAd()\">{{'registerAd'| translate}}</a>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n\r\n\r\n          </div>\r\n          <!-- /.inner-box -->\r\n\r\n        </form>\r\n        <!-- /.form-listing -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-listing -->\r\n"
 
 /***/ }),
 
@@ -29,7 +29,7 @@ module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div cl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"flat-title\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-8\">\r\n        <div class=\"title-left\">\r\n\r\n          <div class=\"box-title\">\r\n            <a routerLink=\"/ad/{{data.id}}\" title=\"\">{{data.title}}</a>\r\n            <!--  -->\r\n          </div>\r\n          <span dir=\"ltr\" class=\"creation-date\">{{data.creationDate}}</span>\r\n\r\n          <!-- /.box-title -->\r\n          <!-- /.box-address -->\r\n        </div>\r\n        <!-- /.title-left -->\r\n      </div>\r\n      <!-- /.col-md-8 -->\r\n      <div class=\"col-md-4\">\r\n        <div class=\"title-left\">\r\n          <div class=\"btn-more\">\r\n            <a href=\"javascript:void(0)\" *ngIf=\" toggle1\" (click)=\"toggle1= ! toggle1\" href=\"\" title=\"\">{{'getInTouch' | translate}}</a>\r\n\r\n            <a *ngIf=\"!toggle1\" class=\"phone-arab-dir\" href=\"tel:{{data.phone}}\">{{data.phone}} <i class=\"fa fa-phone\" style=\"margin-left:12px\" aria-hidden=\"true\"></i></a>\r\n          </div>\r\n          <div class=\"clearfix\"></div>\r\n        </div>\r\n        <!-- /.title-right -->\r\n      </div>\r\n      <!-- /.col-md-4 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-title -->\r\n\r\n<section class=\"flat-row flat-explore-detail\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-8\">\r\n        <div class=\"text-box\">\r\n          <h3>{{'details'| translate}}</h3>\r\n          <div class=\"text-desc\" [innerHTML]=\"data?.description | linkify\">\r\n      \r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-12\">\r\n          <div class=\"imageGallery1\">\r\n\r\n            <!-- <a *ngFor=\"let i of data.images\" href=\"{{i.url}}\">\r\n              <img src=\"{{i.url}}\" alt=\"Gallery image\" />\r\n            </a> -->\r\n          <div class=\"hoverMe\" style=\"display: inline\" *ngFor=\"let image of _albums; let i=index\">\r\n            <img [src]=\"image.data.src\" [lightbox]=\"i\" />\r\n          </div>\r\n            <!-- <a href=\"assets/images/page/tb2.jpg\" title=\"Caption for gallery item 2\">\r\n              <img src=\"assets/images/page/tb2.jpg\" alt=\"Gallery image 2\" />\r\n            </a>\r\n            <a href=\"assets/images/page/tb3.jpg\" title=\"Caption for gallery item 3\">\r\n              <img src=\"assets/images/page/tb3.jpg\" alt=\"Gallery image 3\" />\r\n            </a>\r\n            <a href=\"assets/images/page/tb4.jpg\" title=\"Caption for gallery item 1\">\r\n              <img src=\"assets/images/page/tb4.jpg\" alt=\"Gallery image 1\" />\r\n            </a>\r\n            <a href=\"assets/images/page/tb5.jpg\" title=\"Caption for gallery item 2\">\r\n              <img src=\"assets/images/page/tb5.jpg\" alt=\"Gallery image 2\" />\r\n            </a>\r\n            <a href=\"assets/images/page/tb6.jpg\" title=\"Caption for gallery item 3\">\r\n              <img src=\"assets/images/page/tb6.jpg\" alt=\"Gallery image 3\" />\r\n            </a> -->\r\n          </div>\r\n        </div>\r\n\r\n\r\n      </div>\r\n      <!-- /.col-md-8 -->\r\n      <div class=\"col-md-4\">\r\n        <div class=\"sidebar\">\r\n          <!-- <ul class=\"box-categories\">\r\n\r\n                    </ul> -->\r\n          <div class=\"box contact-box\">\r\n            <ul class=\"contact-list\">\r\n              <li class=\"address\">\r\n                <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>{{data.subArea}} , {{data.area}}</li>\r\n              <!--<li>\r\n                  <i class=\"fa fa-globe\" aria-hidden=\"true\"></i>\r\n                  <a href=\"#\" title=\"\">http://www.tableya.com.sy</a>\r\n                </li> -->\r\n              <li class=\"category\">\r\n                <i class=\"fa fa-flag\" aria-hidden=\"true\"></i>{{data.category}}</li>\r\n              <li class=\"subcategory\">\r\n                <i class=\"fa fa-filter\" aria-hidden=\"true\"></i>{{data.subCategory}}</li>\r\n              <li>\r\n                <span class=\"btn-more\">\r\n                  <a  href=\"javascript:void(0)\" class=\"button-in-contact-list\" *ngIf=\"toggle2\" (click)=\"toggle2 = !toggle2\" title=\"\">{{'getInTouch' |\r\n                    translate}}</a>\r\n                  <a *ngIf=\"!toggle2\" class=\"phone-arab-dir button-in-contact-list\" href=\"tel:{{data.phone}}\">{{data.phone}} <i\r\n                      class=\"fa fa-phone\" aria-hidden=\"true\"></i></a>\r\n                </span>\r\n              </li>\r\n            </ul>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n      <!-- /.col-md-4 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-explore-detail <-->\r\n"
+module.exports = "<section class=\"flat-title\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-8\">\r\n        <div class=\"title-left\">\r\n\r\n          <div class=\"box-title\">\r\n            <a routerLink=\"/ad/{{data.id}}\" title=\"\">{{data.title}}</a>\r\n            <!--  -->\r\n          </div>\r\n          <span dir=\"ltr\" class=\"creation-date\">{{data.creationDate}}</span>\r\n\r\n          <!-- /.box-title -->\r\n          <!-- /.box-address -->\r\n        </div>\r\n        <!-- /.title-left -->\r\n      </div>\r\n      <!-- /.col-md-8 -->\r\n      <div class=\"col-md-4\">\r\n        <div class=\"title-left\">\r\n          <div class=\"btn-more\">\r\n            <a href=\"javascript:void(0)\" *ngIf=\" toggle1\" (click)=\"toggle1= ! toggle1\" href=\"\"\r\n              title=\"\">{{'getInTouch' | translate}}</a>\r\n\r\n            <a *ngIf=\"!toggle1\" class=\"phone-arab-dir\" href=\"tel:{{data.phone}}\">{{data.phone}} <i class=\"fa fa-phone\"\r\n                style=\"margin-left:12px\" aria-hidden=\"true\"></i></a>\r\n          </div>\r\n          <div class=\"clearfix\"></div>\r\n        </div>\r\n        <!-- /.title-right -->\r\n      </div>\r\n      <!-- /.col-md-4 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-title -->\r\n\r\n<section class=\"flat-row flat-explore-detail\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-8\">\r\n        <div class=\"text-box\">\r\n          <h3>{{'details'| translate}}</h3>\r\n          <div class=\"text-desc\" [innerHTML]=\"data?.description | linkify\">\r\n\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-12\">\r\n          <div class=\"imageGallery1\" style=\"display: flex;\">\r\n\r\n            <div class=\"hoverMe\" style=\"display: inline\" *ngFor=\"let image of _albums; let i=index\">\r\n              <ng-container *ngIf=\"image.type == 'image'\">\r\n                <img [src]=\"image.data.src\" [lightbox]=\"i\" />\r\n              </ng-container>\r\n              <ng-container *ngIf=\"image.type == 'video'\">\r\n                <video controls>\r\n                  <source [src]=\"image.data.src\" type=\"video/mp4\">\r\n                </video>\r\n              </ng-container>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n\r\n\r\n      </div>\r\n      <!-- /.col-md-8 -->\r\n      <div class=\"col-md-4\">\r\n        <div class=\"sidebar\">\r\n          <!-- <ul class=\"box-categories\">\r\n\r\n                    </ul> -->\r\n          <div class=\"box contact-box\">\r\n            <ul class=\"contact-list\">\r\n              <li class=\"address\">\r\n                <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>{{data.subArea}} , {{data.area}}</li>\r\n              <!--<li>\r\n                  <i class=\"fa fa-globe\" aria-hidden=\"true\"></i>\r\n                  <a href=\"#\" title=\"\">http://www.tableya.com.sy</a>\r\n                </li> -->\r\n              <li class=\"category\">\r\n                <i class=\"fa fa-flag\" aria-hidden=\"true\"></i>{{data.category}}</li>\r\n              <li class=\"subcategory\">\r\n                <i class=\"fa fa-filter\" aria-hidden=\"true\"></i>{{data.subCategory}}</li>\r\n              <li>\r\n              <li class=\"category\">\r\n                <i class=\"fa fa-eye\" aria-hidden=\"true\"></i>{{data.viewsCount}}</li>\r\n              <li>\r\n\r\n                <span class=\"btn-more\">\r\n                  <a href=\"javascript:void(0)\" class=\"button-in-contact-list\" *ngIf=\"toggle2\"\r\n                    (click)=\"toggle2 = !toggle2\" title=\"\">{{'getInTouch' |\r\n                    translate}}</a>\r\n                  <a *ngIf=\"!toggle2\" class=\"phone-arab-dir button-in-contact-list\"\r\n                    href=\"tel:{{data.phone}}\">{{data.phone}} <i class=\"fa fa-phone\" aria-hidden=\"true\"></i></a>\r\n                </span>\r\n              </li>\r\n            </ul>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n      <!-- /.col-md-4 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-explore-detail <-->\r\n"
 
 /***/ }),
 
@@ -41,6 +41,72 @@ module.exports = "<section class=\"flat-title\">\r\n  <div class=\"container\">\
 /***/ (function(module, exports) {
 
 module.exports = "  <app-navigation></app-navigation>\r\n  <router-outlet></router-outlet>\r\n  <app-footer *ngIf=\"addFooter()\"></app-footer>\r\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/authentication/modals/complete-information/complete-information.component.html":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/authentication/modals/complete-information/complete-information.component.html ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"module\">\n  <div class=\"headers\">\n    <h4 class=\"mainLabel\">\n      {{'completeInformation' | translate}}\n    </h4>\n    <i class=\"fa fa-times close\" (click)=\"close()\" aria-hidden=\"true\"></i>\n  </div>\n  <div class=\"contint\">\n\n    <span class=\"errorMessage\" *ngIf=\"errorMessage!=''\">{{errorMessage|translate}}</span>\n\n\n    <div class=\"inputDiv\" *ngIf=\"user.email != null\">\n      <h4 class=\"title\">{{'email'|translate}}</h4>\n      <input type=\"email\" name=\"email\" class=\"input\" placeholder=\"{{'enter'|translate}} {{'email' | translate}}\"\n        [(ngModel)]=\"user.email\">\n    </div>\n\n    <div class=\"inputDiv\" *ngIf=\"user.phoneNumber != null\">\n      <h4 class=\"title\">{{'phoneNumber'|translate}}</h4>\n      <input type=\"tel\" name=\"phoneNumber\" class=\"input\"\n        placeholder=\"{{'enter'|translate}} {{'phoneNumber' | translate}}\" [(ngModel)]=\"user.phoneNumber\">\n    </div>\n\n    <div class=\"inputDiv\" *ngIf=\"user.gender != null\">\n      <h4 class=\"title\">{{'gender'|translate}}</h4>\n      <select name=\"gender\" class=\"select\" [(ngModel)]=\"user.gender\">\n        <option value=\"\">{{'enter'|translate}} {{'gender' | translate}}</option>\n        <option value=\"male\"> {{'male' | translate}}</option>\n        <option value=\"female\">{{'female' | translate}}</option>\n      </select>\n    </div>\n\n  </div>\n\n  <div class=\"footer\">\n    <div type=\"submit\" class=\"button save\" (click)=\"submit()\">\n      {{'submit' | translate}}\n    </div>\n    <div style=\"clear:both\"></div>\n  </div>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/authentication/modals/forget-password/forget-password.component.html":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/authentication/modals/forget-password/forget-password.component.html ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"module\">\n  <div class=\"headers\">\n    <h4 class=\"mainLabel\">\n      {{'restorePassword' | translate}}\n    </h4>\n    <i class=\"fa fa-times close\" (click)=\"close()\" aria-hidden=\"true\"></i>\n  </div>\n  <div class=\"contint\">\n\n    <span class=\"errorMessage\" *ngIf=\"errorMessage!=''\">{{errorMessage|translate}}</span>\n\n    <div class=\"inputDiv\">\n      <h4 class=\"title\">{{'email'|translate}}</h4>\n      <input type=\"email\" name=\"email\" class=\"input\"\n        placeholder=\"{{'enter'|translate}} {{'email' | translate}}\" [(ngModel)]=\"user.email\">\n    </div>\n\n  </div>\n\n  <div class=\"footer\">\n    <div type=\"submit\" class=\"button save\" (click)=\"send()\">\n      {{'sendVerificationCode' | translate}}\n    </div>\n    <div style=\"clear:both\"></div>\n    <div *ngIf=\"verificationCode\" class=\"alert alert-info\" style=\"margin-top:50px\">\n      {{\"checkYourEmailForLink\"|translate}}\n    </div>\n  </div>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/authentication/modals/login/login.component.html":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/authentication/modals/login/login.component.html ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"module\">\n  <div class=\"headers\">\n    <h4 class=\"mainLabel\">\n      {{'login' | translate}}\n    </h4>\n    <i class=\"fa fa-times close\" (click)=\"close()\" aria-hidden=\"true\"></i>\n  </div>\n  <div class=\"contint\">\n\n    <span class=\"errorMessage\" *ngIf=\"errorMessage!=''\">{{errorMessage|translate}}</span>\n\n    <div class=\"inputDiv\">\n      <h4 class=\"title\">{{'email'|translate}}</h4>\n      <input type=\"email\" name=\"email\" class=\"input\" placeholder=\"{{'enter'|translate}} {{'email' | translate}}\"\n        [(ngModel)]=\"user.email\">\n    </div>\n\n    <div class=\"inputDiv\">\n      <h4 class=\"title\">{{'password'|translate}}</h4>\n      <input type=\"password\" name=\"password\" class=\"input\"\n        placeholder=\"{{'enter'|translate}} {{'password' | translate}}\" [(ngModel)]=\"user.password\">\n    </div>\n\n    <div>\n      <a style=\"margin:15px; float:right; \" (click)=\"forgotPassword()\">{{'forgetPassword' | translate}}</a>\n    </div>\n\n  </div>\n\n  <div class=\"footer\">\n    <div type=\"submit\" class=\"button save\" (click)=\"login()\">\n      {{'login' | translate}}\n    </div>\n    <div style=\"clear:both\"></div>\n  </div>\n\n  <div>\n    <p style=\"margin:15px; margin-left: 40px;\">Don't have an account? <a style=\"font-weight: bold;\" (click)=\"register()\">\n        {{'createAccount' | translate}}</a> </p>\n  </div>\n\n\n</div>\n\n<div style=\"margin-top: 20px;\">\n  <div type=\"submit\" class=\"loginBtn loginBtn--facebook\" (click)=\"loginWithFacebook()\">\n    {{'loginWithFacebook' | translate}}\n  </div>\n  <div type=\"submit\" class=\"loginBtn loginBtn--google\" (click)=\"loginWithGoogle()\">\n    {{'loginWithGoogle' | translate}}\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/authentication/modals/reset-password/reset-password.component.html":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/authentication/modals/reset-password/reset-password.component.html ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"module\">\n  <div class=\"headers\">\n    <h4 class=\"mainLabel\">\n      {{'resetPassword' | translate}}\n    </h4>\n    <i class=\"fa fa-times close\" (click)=\"close()\" aria-hidden=\"true\"></i>\n  </div>\n  <div class=\"contint\">\n\n    <span class=\"errorMessage\" *ngIf=\"errorMessage!=''\">{{errorMessage|translate}}</span>\n\n    <div class=\"inputDiv\">\n      <h4 class=\"title\">{{'verificationCode'|translate}}</h4>\n      <input type=\"text\" name=\"verificationCode\" class=\"input\"\n        placeholder=\"{{'enter'|translate}} {{'verificationCode' | translate}}\" [(ngModel)]=\"user.verificationCode\">\n    </div>\n\n    <div class=\"inputDiv\">\n      <h4 class=\"title\">{{'newPassword'|translate}}</h4>\n      <input type=\"password\" name=\"password\" class=\"input\" placeholder=\"{{'enter'|translate}} {{'newPassword' | translate}}\"\n        [(ngModel)]=\"user.password\">\n    </div>\n\n    <div class=\"inputDiv\">\n      <h4 class=\"title\">{{'confirmNewPassword'|translate}}</h4>\n      <input type=\"password\" name=\"repassword\" class=\"input\"\n        placeholder=\"{{'enter'|translate}} {{'confirmNewPassword' | translate}}\" [(ngModel)]=\"user.repassword\">\n    </div>\n\n  </div>\n\n  <div class=\"footer\">\n    <div type=\"submit\" class=\"button save\" (click)=\"send()\" style=\"margin-bottom: 10px;\">\n      {{'changePassword' | translate}}\n    </div>\n    <div style=\"clear:both\"></div>\n  </div>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/authentication/modals/signup/signup.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/authentication/modals/signup/signup.component.html ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"module\">\n  <div class=\"headers\">\n    <h4 class=\"mainLabel\">\n      {{'createAccount' | translate}}\n    </h4>\n    <i class=\"fa fa-times close\" (click)=\"close()\" aria-hidden=\"true\"></i>\n  </div>\n  <div class=\"contint\">\n\n    <span class=\"errorMessage\" *ngIf=\"errorMessage!=''\">{{errorMessage|translate}}</span>\n\n    <div style=\"display: flex; flex-direction: row; justify-content: center\">\n      <div class=\"inputDiv\">\n        <h4 class=\"title\">{{'username'|translate}}</h4>\n        <input type=\"text\" name=\"username\" class=\"input\" placeholder=\"{{'enter'|translate}} {{'username' | translate}}\"\n          [(ngModel)]=\"user.username\">\n      </div>\n\n\n      <div class=\"inputDiv\">\n        <h4 class=\"title\">{{'email'|translate}}</h4>\n        <input type=\"email\" name=\"email\" class=\"input\" placeholder=\"{{'enter'|translate}} {{'email' | translate}}\"\n          [(ngModel)]=\"user.email\">\n      </div>\n    </div>\n\n    <div style=\"display: flex; flex-direction: row; justify-content: center\">\n\n      <div class=\"inputDiv\">\n        <h4 class=\"title\">{{'password'|translate}}</h4>\n        <input type=\"password\" name=\"password\" class=\"input\"\n          placeholder=\"{{'enter'|translate}} {{'password' | translate}}\" [(ngModel)]=\"user.password\">\n      </div>\n\n\n      <div class=\"inputDiv\">\n        <h4 class=\"title\">{{'phoneNumber'|translate}}</h4>\n        <input type=\"tel\" name=\"phoneNumber\" class=\"input\"\n          placeholder=\"{{'enter'|translate}} {{'phoneNumber' | translate}}\" [(ngModel)]=\"user.phoneNumber\">\n      </div>\n    </div>\n\n    <div class=\"inputDiv\">\n      <h4 class=\"title\">{{'gender'|translate}}</h4>\n      <select name=\"gender\" class=\"select\" [(ngModel)]=\"user.gender\">\n        <option value=\"\">{{'enter'|translate}} {{'gender' | translate}}</option>\n        <option value=\"male\"> {{'male' | translate}}</option>\n        <option value=\"female\">{{'female' | translate}}</option>\n      </select>\n    </div>\n\n  </div>\n\n  <div class=\"footer\">\n    <div type=\"submit\" class=\"button save\" (click)=\"submit()\">\n      {{'createAccount' | translate}}\n    </div>\n    <div style=\"clear:both\"></div>\n  </div>\n\n</div>\n\n<div style=\"display: flex; flex-direction: row; justify-content: center; margin-top: 20px;\">\n\n  <div type=\"submit\" class=\"loginBtn loginBtn--facebook\" (click)=\"loginWithFacebook()\">\n    {{'loginWithFacebook' | translate}}\n  </div>\n  <div type=\"submit\" class=\"loginBtn loginBtn--google\" (click)=\"loginWithGoogle()\">\n    {{'loginWithGoogle' | translate}}\n  </div>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/authentication/reset/reset.component.html":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/authentication/reset/reset.component.html ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section class=\"page-title style1 parallax parallax1\" style=\"min-height: 600px;\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n\r\n\r\n\r\n<!-- \r\n<section class=\"flat-row flat-login parallax1\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 col-sm-12\">\r\n        <div class=\"reset-form\">\r\n          <h3>{{ 'enterCodeAndNewPassword' | translate}}</h3>\r\n          <form novalidate (submit)=\"submit(form.value)\" #form=\"ngForm\" accept-charset=\"utf-8\">\r\n            <div class=\"wrap-reset\">\r\n              <label>{{ 'verificationCode' | translate}}</label>\r\n              <input type=\"text\" class=\"username\" name=\"username\" ngModel #verificationCode=\"ngModel\" required>\r\n            </div>\r\n            <app-form-validation-message [control]=\"verificationCode\" [messages]=\"{required:'verificationCodeIsRequired'}\">\r\n            </app-form-validation-message>\r\n            <div class=\"wrap-reset\">\r\n              <label>{{'newPassword' | translate}}</label>\r\n              <input type=\"password\" class=\"password\" name=\"password\" ngModel #password=\"ngModel\" required>\r\n            </div>\r\n            <app-form-validation-message [control]=\"password\" [messages]=\"{required:'passwordIsRequired'}\">\r\n\r\n            </app-form-validation-message>\r\n            <div class=\"wrap-reset\">\r\n              <label>{{'confirmNewPassword' | translate}}</label>\r\n              <input type=\"password\" class=\"password\" name=\"repassword\" ngModel #repassword=\"ngModel\" required>\r\n            </div>\r\n            <app-form-validation-message [control]=\"form\" [messages]=\"{passwordMatcher:'confirmPasswordAndPasswordNotSame'}\">\r\n            </app-form-validation-message>\r\n            <app-form-validation-message [control]=\"repassword\" [messages]=\"{required:'confirmPasswordIsRequired'}\">\r\n            </app-form-validation-message>\r\n            <button type=\"submit\" [disabled]=\"form.invalid\">\r\n              <div class=\"btn-more\">\r\n                <a title=\"\">{{ 'changePassword' | translate}}</a>\r\n              </div>\r\n            </button>\r\n          </form>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n-->\r\n"
 
 /***/ }),
 
@@ -62,7 +128,7 @@ module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div cl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"page-title-heading\">\r\n          {{\"addNewBusiness\" | translate}}\r\n        </div>\r\n\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n<!-- /.page-title -->\r\n\r\n\r\n<section class=\"flat-listing\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <form class=\"form-listing\" novalidate #form=\"ngForm\">\r\n          <div class=\"inner-box form\">\r\n\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <!--<div class=\"wrap-listing\">-->\r\n              <!--<label> {{\"name\" | translate}}</label>-->\r\n              <!--<input type=\"text\" name=\"nameEn\" ngModel>-->\r\n              <!--</div>-->\r\n              <div class=\"wrap-listing\">\r\n                <label> {{\"nameEn\" | translate}}</label>\r\n                <input type=\"text\" name=\"nameEn\" ngModel #nameEn=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"nameEn\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'nameEn'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"wrap-listing\">\r\n                <label> {{\"nameAr\" | translate}}</label>\r\n                <input type=\"text\" name=\"nameAr\" ngModel #nameAr=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"nameAr\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'nameAr'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"wrap-listing location\">\r\n                <label>{{'address'| translate}}</label>\r\n                <span class=\"ti-target\"></span>\r\n                <input name=\"address\" placeholder=\"مثال.” المزة فيلات”\" type=\"text\" ngModel>\r\n              </div>\r\n              <!-- /.wrap-listing -->\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{\"category\" | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"categoryId\" (change)=\"onCategoryChange()\" [(ngModel)]=\"selectedCategory\"\r\n                  #category=\"ngModel\" required>\r\n                  <option [value]=\"i\" *ngFor=\"let cat of categories;let i=index\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{cat.titleAr}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{cat.titleEn}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"category\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'category'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n\r\n\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing phone\">\r\n                <label>{{\"phoneNumber1\" | translate}}</label>\r\n                <input type=\"text\" name=\"phone1\" ngModel #phone1=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"phone1\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'phoneNumber1'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"wrap-listing phone\">\r\n                <label>{{\"phoneNumber2\" | translate}}</label>\r\n                <input type=\"text\" name=\"phone2\" ngModel [disabled]=\"!phone1.value\">\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing fax\">\r\n                <label>{{\"faxNumber\" | translate}}</label>\r\n                <input type=\"text\" name=\"fax\" ngModel>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{\"subCategory\" | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"subCategoryId\" [(ngModel)]=\"subCategoryId\" #subCategory=\"ngModel\" required>\r\n                  <option [value]=\"cat.id\" *ngFor=\"let cat of subCategories\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{cat.titleAr}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{cat.titleEn}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"subCategory\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'subCategory'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div>\r\n\r\n              <div class=\"clearfix\"></div>\r\n              <app-location-picker ngModel name=\"locationPoint\"></app-location-picker>\r\n\r\n            </div>\r\n            <div class=\"one-half1\"\r\n              *ngIf=\"categories && selectedCategory && categories[selectedCategory] && categories[selectedCategory].code=='pharmacies'\">\r\n              <label>{{'workingHours' | translate}}</label>\r\n              <div class=\"wrap-listing business\">\r\n\r\n\r\n                <ng-select name=\"openingDays\" ngModel [multiple]=\"true\">\r\n                  <ng-option value=\"1\">{{'sunday'|translate}}</ng-option>\r\n                  <ng-option value=\"2\">{{'monday'|translate}}</ng-option>\r\n                  <ng-option value=\"3\">{{'tuesday'|translate}}</ng-option>\r\n                  <ng-option value=\"4\">{{'wednesday'|translate}}</ng-option>\r\n                  <ng-option value=\"5\">{{'thursday'|translate}}</ng-option>\r\n                  <ng-option value=\"6\">{{'friday'|translate}}</ng-option>\r\n                  <ng-option value=\"7\">{{'saturday'|translate}}</ng-option>\r\n                </ng-select>\r\n\r\n              </div>\r\n              <!--<app-working-hour-input name=\"openingDays\" ngModel></app-working-hour-input>-->\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'city' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"cityId\" [(ngModel)]=\"selectedCity\" (change)=\"cityChanged()\" #cityId=\"ngModel\" required>\r\n                  <option *ngFor=\"let city of cities\" [value]=\"city.id\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{city['nameAr']}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{city['nameEn']}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"cityId\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'city'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'location' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"locationId\" [(ngModel)]=\"locationId\" [disabled]=\"!selectedCity\" #location=\"ngModel\"\r\n                  required>\r\n                  <option *ngFor=\"let location of locations\" [value]=\"location.id\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{location['nameAr']}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{location['nameEn']}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"location\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'location'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <label>{{'details' | translate}}</label>\r\n              <textarea placeholder=\"{{'writeDetailsOfYourAd' | translate}}\" name=\"description\" ngModel></textarea>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n\r\n\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing half\">\r\n                <div class=\"col-12\">\r\n                  <label>{{'businessImages'| translate}}</label>\r\n                  <input-file fileAccept=\".mp4,.jpg,.jpeg,.mpeg,.png\" [fileLimit]=\"20\"\r\n                    [(ngModel)]=\"files\" [ngModelOptions]=\"{standalone: true}\"></input-file>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"col-md-12\">\r\n              <button type=\"submit\" class=\"display-content\" [disabled]=\"form.submitted && form.invalid\" (click)=\"submit(form.value)\">\r\n                <div class=\"btn-more submit-button\">\r\n                  <a>{{'registerBusiness'| translate}}</a>\r\n                </div>\r\n              </button>\r\n              <p *ngIf=\"form.submitted && !form.value.locationPoint\" class=\"alert alert-danger\">\r\n                Pick a location Point on the Map \r\n              </p>\r\n            </div>\r\n  \r\n\r\n            <div class=\"clearfix\"></div>\r\n\r\n\r\n          </div>\r\n          <!-- /.inner-box -->\r\n\r\n        </form>\r\n        <!-- /.form-listing -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-listing -->\r\n\r\n<ngx-spinner></ngx-spinner>"
+module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"page-title-heading\">\r\n          {{\"addNewBusiness\" | translate}}\r\n        </div>\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n<!-- /.page-title -->\r\n\r\n<section class=\"flat-listing\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <form class=\"form-listing\" novalidate #form=\"ngForm\">\r\n          <div class=\"inner-box form\">\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n\r\n              <div class=\"wrap-listing\">\r\n                <label> {{\"nameEn\" | translate}}</label>\r\n                <input type=\"text\" name=\"nameEn\" ngModel #nameEn=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"nameEn\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'nameEn'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"wrap-listing\">\r\n                <label> {{\"nameAr\" | translate}}</label>\r\n                <input type=\"text\" name=\"nameAr\" ngModel #nameAr=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"nameAr\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'nameAr'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"wrap-listing category-half\">\r\n                <label> {{\"isSupplier\" | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"supplier\" [(ngModel)]=\"isSupplier\" #supplier=\"ngModel\" required\r\n                  (change)=\"onSupplierChange()\">\r\n                  <option value=\"\"></option>\r\n                  <option [value]=\"true\"> {{ \"yes\" | translate }} </option>\r\n                  <option [value]=\"false\"> {{ \"no\" | translate }} </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"supplier\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'supplier'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{\"category\" | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"categoryId\" (change)=\"onCategoryChange()\" [(ngModel)]=\"selectedCategory\"\r\n                  #category=\"ngModel\" required>\r\n                  <option [value]=\"i\" *ngFor=\"let cat of categories;let i=index\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{cat.titleAr}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{cat.titleEn}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"category\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'category'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n\r\n              <div class=\"wrap-listing location\">\r\n                <label>{{'address'| translate}}</label>\r\n                <span class=\"ti-target\"></span>\r\n                <input name=\"address\" placeholder=\"مثال.” المزة فيلات”\" type=\"text\" ngModel>\r\n              </div>\r\n              <!-- /.wrap-listing -->\r\n              <div class=\"clearfix\"></div>\r\n\r\n\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing phone\">\r\n                <label>{{\"phoneNumber1\" | translate}}</label>\r\n                <input type=\"text\" name=\"phone1\" ngModel #phone1=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"phone1\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'phoneNumber1'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"wrap-listing phone\">\r\n                <label>{{\"phoneNumber2\" | translate}}</label>\r\n                <input type=\"text\" name=\"phone2\" ngModel [disabled]=\"!phone1.value\">\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing fax\">\r\n                <label>{{\"faxNumber\" | translate}}</label>\r\n                <input type=\"text\" name=\"fax\" ngModel>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{\"subCategory\" | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"subCategoryId\" [(ngModel)]=\"subCategoryId\" #subCategory=\"ngModel\" required>\r\n                  <option [value]=\"cat.id\" *ngFor=\"let cat of subCategories\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{cat.titleAr}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{cat.titleEn}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"subCategory\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'subCategory'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div>\r\n\r\n              <div class=\"clearfix\"></div>\r\n              <app-location-picker ngModel name=\"locationPoint\"></app-location-picker>\r\n\r\n            </div>\r\n            <div class=\"one-half1\"\r\n              *ngIf=\"categories && selectedCategory && categories[selectedCategory] && categories[selectedCategory].code=='pharmacies'\">\r\n              <label>{{'workingHours' | translate}}</label>\r\n              <div class=\"wrap-listing business\">\r\n\r\n\r\n                <ng-select name=\"openingDays\" ngModel [multiple]=\"true\">\r\n                  <ng-option value=\"1\">{{'sunday'|translate}}</ng-option>\r\n                  <ng-option value=\"2\">{{'monday'|translate}}</ng-option>\r\n                  <ng-option value=\"3\">{{'tuesday'|translate}}</ng-option>\r\n                  <ng-option value=\"4\">{{'wednesday'|translate}}</ng-option>\r\n                  <ng-option value=\"5\">{{'thursday'|translate}}</ng-option>\r\n                  <ng-option value=\"6\">{{'friday'|translate}}</ng-option>\r\n                  <ng-option value=\"7\">{{'saturday'|translate}}</ng-option>\r\n                </ng-select>\r\n\r\n              </div>\r\n              <!--<app-working-hour-input name=\"openingDays\" ngModel></app-working-hour-input>-->\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'city' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"cityId\" [(ngModel)]=\"selectedCity\" (change)=\"cityChanged()\" #cityId=\"ngModel\" required>\r\n                  <option *ngFor=\"let city of cities\" [value]=\"city.id\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{city['nameAr']}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{city['nameEn']}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"cityId\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'city'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'location' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"locationId\" [(ngModel)]=\"locationId\" [disabled]=\"!selectedCity\" #location=\"ngModel\"\r\n                  required>\r\n                  <option *ngFor=\"let location of locations\" [value]=\"location.id\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{location['nameAr']}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{location['nameEn']}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"location\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'location'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <label>{{'details' | translate}}</label>\r\n              <textarea placeholder=\"{{'writeDetailsOfYourAd' | translate}}\" name=\"description\" ngModel></textarea>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n\r\n\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing half\">\r\n                <div class=\"col-12\">\r\n                  <label>{{'businessImages'| translate}}</label>\r\n                  <input-file fileAccept=\".mp4,.jpg,.jpeg,.mpeg,.png\" [fileLimit]=\"20\" [(ngModel)]=\"files\"\r\n                    [ngModelOptions]=\"{standalone: true}\"></input-file>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"col-md-12\">\r\n              <button type=\"submit\" class=\"display-content\" [disabled]=\"form.submitted && form.invalid\"\r\n                (click)=\"submit(form.value)\">\r\n                <div class=\"btn-more submit-button\">\r\n                  <a>{{'registerBusiness'| translate}}</a>\r\n                </div>\r\n              </button>\r\n              <p *ngIf=\"form.submitted && !form.value.locationPoint\" class=\"alert alert-danger\">\r\n                Pick a location Point on the Map\r\n              </p>\r\n            </div>\r\n\r\n\r\n            <div class=\"clearfix\"></div>\r\n\r\n\r\n          </div>\r\n          <!-- /.inner-box -->\r\n\r\n        </form>\r\n        <!-- /.form-listing -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-listing -->\r\n\r\n<ngx-spinner></ngx-spinner>\r\n"
 
 /***/ }),
 
@@ -73,7 +139,7 @@ module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div cl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"page-title-heading\">\r\n          {{\"edit\" | translate}}\r\n        </div>\r\n\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n<!-- /.page-title -->\r\n\r\n\r\n<section class=\"flat-listing\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <form class=\"form-listing\" novalidate #form=\"ngForm\" (submit)=\"$event.preventDefault();submit(form.value)\">\r\n          <div class=\"inner-box form\">\r\n\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <!--<div class=\"wrap-listing\">-->\r\n              <!--<label> {{\"name\" | translate}}</label>-->\r\n              <!--<input type=\"text\" name=\"nameEn\" ngModel>-->\r\n              <!--</div>-->\r\n              <div class=\"wrap-listing\">\r\n                <label> {{\"nameEn\" | translate}}</label>\r\n                <input type=\"text\" name=\"nameEn\" [(ngModel)]=\"business['nameEn']\" #nameEn=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"nameEn\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'nameEn'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"wrap-listing\">\r\n                <label> {{\"nameAr\" | translate}}</label>\r\n                <input type=\"text\" name=\"nameAr\" [(ngModel)]=\"business['nameAr']\" #nameAr=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"nameAr\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'nameAr'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"wrap-listing location\">\r\n                <label>{{'address'| translate}}</label>\r\n                <span class=\"ti-target\"></span>\r\n                <input name=\"address\" placeholder=\"e.g.”New York”\" type=\"text\" [(ngModel)]=\"business['address']\">\r\n              </div>\r\n              <!-- /.wrap-listing -->\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{\"category\" | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"categoryId\" (change)=\"onCategoryChange()\" [(ngModel)]=\"business['categoryId']\"\r\n                  #category=\"ngModel\" required>\r\n                  <option [value]=\"cat['id']\" *ngFor=\"let cat of categories;let i=index\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{cat.titleAr}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{cat.titleEn}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"category\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'category'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n\r\n\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing phone\">\r\n                <label>{{\"phoneNumber1\" | translate}}</label>\r\n                <input type=\"text\" name=\"phone1\" [(ngModel)]=\"business['phone1']\" #phone1=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"phone1\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'phoneNumber1'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"wrap-listing phone\">\r\n                <label>{{\"phoneNumber2\" | translate}}</label>\r\n                <input type=\"text\" name=\"phone2\" [(ngModel)]=\"business['phone2']\" [disabled]=\"!phone1.value\">\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing fax\">\r\n                <label>{{\"faxNumber\" | translate}}</label>\r\n                <input type=\"text\" name=\"fax\" [(ngModel)]=\"business['fax']\">\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{\"subCategory\" | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"subCategoryId\" [(ngModel)]=\"business['subCategoryId']\" #subCategory=\"ngModel\" required>\r\n                  <option [value]=\"cat.id\" *ngFor=\"let cat of subCategories\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{cat.titleAr}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{cat.titleEn}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"subCategory\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'subCategory'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div>\r\n\r\n              <div class=\"clearfix\"></div>\r\n              <app-location-picker [(ngModel)]=\"business['locationPoint']\" name=\"locationPoint\"></app-location-picker>\r\n              <!--<div class=\"pdmap style2\" id=\"flat-map\">-->\r\n              <!--<div class=\"flat-maps\" data-address=\"Thành phố New York, Tiểu bang New York\" data-name=\"Themesflat Map\"></div>-->\r\n              <!--<div class=\"gm-map\">-->\r\n              <!--<div class=\"map-3\"></div>-->\r\n              <!--</div>-->\r\n              <!--</div>-->\r\n            </div>\r\n            <div class=\"one-half1\" *ngIf=\"selectedCategory && selectedCategory.code=='pharmacies'\">\r\n              <label>{{'workingHours' | translate}}</label>\r\n              <div class=\"wrap-listing business\">\r\n\r\n\r\n                <ng-select name=\"openingDays\" [(ngModel)]=\"business['openingDays']\" [multiple]=\"true\">\r\n                  <ng-option value=\"1\">{{'sunday'|translate}}</ng-option>\r\n                  <ng-option value=\"2\">{{'monday'|translate}}</ng-option>\r\n                  <ng-option value=\"3\">{{'tuesday'|translate}}</ng-option>\r\n                  <ng-option value=\"4\">{{'wednesday'|translate}}</ng-option>\r\n                  <ng-option value=\"5\">{{'thursday'|translate}}</ng-option>\r\n                  <ng-option value=\"6\">{{'friday'|translate}}</ng-option>\r\n                  <ng-option value=\"7\">{{'saturday'|translate}}</ng-option>\r\n                </ng-select>\r\n\r\n              </div>\r\n              <!--<app-working-hour-input name=\"openingDays\" ngModel></app-working-hour-input>-->\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'city' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"cityId\" [(ngModel)]=\"business['cityId']\" (change)=\"cityChanged()\" #cityId=\"ngModel\"\r\n                  required>\r\n                  <option *ngFor=\"let city of cities\" [value]=\"city.id\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{city['nameAr']}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{city['nameEn']}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"cityId\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'city'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'location' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"locationId\" [(ngModel)]=\"business['locationId']\" [disabled]=\"!business['cityId']\"\r\n                  #location=\"ngModel\" required>\r\n                  <option *ngFor=\"let location of locations\" [value]=\"location.id\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{location['nameAr']}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{location['nameEn']}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"location\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'location'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <label>{{'details' | translate}}</label>\r\n              <textarea placeholder=\"{{'writeDetailsOfYourAd' | translate}}\" name=\"description\"\r\n                [(ngModel)]=\"business['description']\"></textarea>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n\r\n\r\n            <div class=\"\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing half\">\r\n                <div class=\"col-12\">\r\n                  <label>{{'businessImages'| translate}}</label>\r\n                  <div class=\"imageGallery1\">\r\n                    <a *ngFor=\"let image of business?.covers;let i=index\" style=\"position: relative\">\r\n                      <button class=\"btn\" (click)=\"$event.preventDefault();business?.covers.splice(i,1)\">\r\n                        <i class=\"material-icons\">delete</i>\r\n                      </button>\r\n                      <img src=\"{{image?.thumbnail}}\" alt=\"Gallery image 1\" />\r\n                    </a>\r\n                  </div>\r\n                  <input-file fileAccept=\".mp4,.jpg,.jpeg,.mpeg\" [fileLimit]=\"20\"\r\n                    (change)=\"onFileAdded($event.srcElement.files)\"></input-file>\r\n                </div>\r\n                <!--<div class=\"browse \">-->\r\n                <!--<div class=\"upload\">-->\r\n                <!--<span>Browse files</span>-->\r\n                <!---->\r\n                <!--<input name=\"media\" id=\"filesToUpload\" type=\"file\" multiple=\"\" (change)=\"onFileAdded($event.srcElement.files)\" accept=\"image/png, image/jpeg, image/jpg\" />-->\r\n                <!--</div>-->\r\n                <!--</div>-->\r\n              </div>\r\n\r\n            </div>\r\n\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"col-md-12\">\r\n              <button type=\"submit\" class=\"display-content\" [disabled]=\"form.submitted && form.invalid\">\r\n                <div class=\"btn-more submit-button\">\r\n                  <a>{{'edit' | translate}}</a>\r\n                </div>\r\n              </button>\r\n\r\n            </div>\r\n\r\n            <div class=\"clearfix\"></div>\r\n\r\n\r\n          </div>\r\n          <!-- /.inner-box -->\r\n\r\n        </form>\r\n        <!-- /.form-listing -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-listing -->\r\n"
+module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"page-title-heading\">\r\n          {{\"edit\" | translate}}\r\n        </div>\r\n\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n<!-- /.page-title -->\r\n\r\n\r\n<section class=\"flat-listing\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <form class=\"form-listing\" novalidate #form=\"ngForm\" (submit)=\"$event.preventDefault();submit(form.value)\">\r\n          <div class=\"inner-box form\">\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n\r\n              <div class=\"wrap-listing\">\r\n                <label> {{\"nameEn\" | translate}}</label>\r\n                <input type=\"text\" name=\"nameEn\" [(ngModel)]=\"business['nameEn']\" #nameEn=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"nameEn\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'nameEn'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"wrap-listing\">\r\n                <label> {{\"nameAr\" | translate}}</label>\r\n                <input type=\"text\" name=\"nameAr\" [(ngModel)]=\"business['nameAr']\" #nameAr=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"nameAr\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'nameAr'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n\r\n\r\n              <div class=\"wrap-listing category-half\">\r\n                <label> {{\"isSupplier\" | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"supplier\" [(ngModel)]=\"business['supplier']\" #supplier=\"ngModel\" required\r\n                  (change)=\"onSupplierChange()\">\r\n                  <option value=\"\"></option>\r\n                  <option [value]=\"true\"> {{ \"yes\" | translate }} </option>\r\n                  <option [value]=\"false\"> {{ \"no\" | translate }} </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"supplier\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'supplier'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{\"category\" | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"categoryId\" (change)=\"onCategoryChange()\" [(ngModel)]=\"business['categoryId']\"\r\n                  #category=\"ngModel\" required>\r\n                  <option [value]=\"cat['id']\" *ngFor=\"let cat of categories;let i=index\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{cat.titleAr}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{cat.titleEn}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"category\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'category'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n\r\n\r\n              <div class=\"wrap-listing location\">\r\n                <label>{{'address'| translate}}</label>\r\n                <span class=\"ti-target\"></span>\r\n                <input name=\"address\" placeholder=\"e.g.”New York”\" type=\"text\" [(ngModel)]=\"business['address']\">\r\n              </div>\r\n              <!-- /.wrap-listing -->\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing phone\">\r\n                <label>{{\"phoneNumber1\" | translate}}</label>\r\n                <input type=\"text\" name=\"phone1\" [(ngModel)]=\"business['phone1']\" #phone1=\"ngModel\" required>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"phone1\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'phoneNumber1'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"wrap-listing phone\">\r\n                <label>{{\"phoneNumber2\" | translate}}</label>\r\n                <input type=\"text\" name=\"phone2\" [(ngModel)]=\"business['phone2']\" [disabled]=\"!phone1.value\">\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing fax\">\r\n                <label>{{\"faxNumber\" | translate}}</label>\r\n                <input type=\"text\" name=\"fax\" [(ngModel)]=\"business['fax']\">\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{\"subCategory\" | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"subCategoryId\" [(ngModel)]=\"business['subCategoryId']\" #subCategory=\"ngModel\" required>\r\n                  <option [value]=\"cat.id\" *ngFor=\"let cat of subCategories\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{cat.titleAr}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{cat.titleEn}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"subCategory\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'subCategory'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div>\r\n\r\n              <div class=\"clearfix\"></div>\r\n              <app-location-picker [(ngModel)]=\"business['locationPoint']\" name=\"locationPoint\"></app-location-picker>\r\n              <!--<div class=\"pdmap style2\" id=\"flat-map\">-->\r\n              <!--<div class=\"flat-maps\" data-address=\"Thành phố New York, Tiểu bang New York\" data-name=\"Themesflat Map\"></div>-->\r\n              <!--<div class=\"gm-map\">-->\r\n              <!--<div class=\"map-3\"></div>-->\r\n              <!--</div>-->\r\n              <!--</div>-->\r\n            </div>\r\n            <div class=\"one-half1\" *ngIf=\"selectedCategory && selectedCategory.code=='pharmacies'\">\r\n              <label>{{'workingHours' | translate}}</label>\r\n              <div class=\"wrap-listing business\">\r\n\r\n\r\n                <ng-select name=\"openingDays\" [(ngModel)]=\"business['openingDays']\" [multiple]=\"true\">\r\n                  <ng-option value=\"1\">{{'sunday'|translate}}</ng-option>\r\n                  <ng-option value=\"2\">{{'monday'|translate}}</ng-option>\r\n                  <ng-option value=\"3\">{{'tuesday'|translate}}</ng-option>\r\n                  <ng-option value=\"4\">{{'wednesday'|translate}}</ng-option>\r\n                  <ng-option value=\"5\">{{'thursday'|translate}}</ng-option>\r\n                  <ng-option value=\"6\">{{'friday'|translate}}</ng-option>\r\n                  <ng-option value=\"7\">{{'saturday'|translate}}</ng-option>\r\n                </ng-select>\r\n\r\n              </div>\r\n              <!--<app-working-hour-input name=\"openingDays\" ngModel></app-working-hour-input>-->\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'city' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"cityId\" [(ngModel)]=\"business['cityId']\" (change)=\"cityChanged()\" #cityId=\"ngModel\"\r\n                  required>\r\n                  <option *ngFor=\"let city of cities\" [value]=\"city.id\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{city['nameAr']}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{city['nameEn']}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"cityId\" [messages]=\"{required:'requiredMessage'}\"\r\n                  [params]=\"{name:'city'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n            </div>\r\n            <div class=\"one-half\">\r\n              <div class=\"wrap-listing category-half\">\r\n                <label>{{'location' | translate}}</label>\r\n                <span class=\"ti-angle-down\"></span>\r\n                <select name=\"locationId\" [(ngModel)]=\"business['locationId']\" [disabled]=\"!business['cityId']\"\r\n                  #location=\"ngModel\" required>\r\n                  <option *ngFor=\"let location of locations\" [value]=\"location.id\">\r\n                    <ng-container *ngIf=\"lang=='ar'\">\r\n                      {{location['nameAr']}}\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lang!='ar'\">\r\n                      {{location['nameEn']}}\r\n                    </ng-container>\r\n                  </option>\r\n                </select>\r\n                <app-form-validation-message [form]=\"form\" [control]=\"location\"\r\n                  [messages]=\"{required:'requiredMessage'}\" [params]=\"{name:'location'}\">\r\n                </app-form-validation-message>\r\n              </div>\r\n            </div>\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"one-half\">\r\n              <label>{{'details' | translate}}</label>\r\n              <textarea placeholder=\"{{'writeDetailsOfYourAd' | translate}}\" name=\"description\"\r\n                [(ngModel)]=\"business['description']\"></textarea>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n\r\n\r\n            <div class=\"\">\r\n              <div class=\"clearfix\"></div>\r\n              <div class=\"wrap-listing half\">\r\n                <div class=\"col-12\">\r\n                  <label>{{'businessImages'| translate}}</label>\r\n                  <div class=\"imageGallery1\">\r\n                    <a *ngFor=\"let image of business?.covers;let i=index\" style=\"position: relative\">\r\n                      <button class=\"btn\" (click)=\"$event.preventDefault();business?.covers.splice(i,1)\">\r\n                        <i class=\"material-icons\">delete</i>\r\n                      </button>\r\n                      <img src=\"{{image?.thumbnail}}\" alt=\"Gallery image 1\" />\r\n                    </a>\r\n                  </div>\r\n                  <input-file fileAccept=\".mp4,.jpg,.jpeg,.mpeg\" [fileLimit]=\"20\"\r\n                    (change)=\"onFileAdded($event.srcElement.files)\"></input-file>\r\n                </div>\r\n                <!--<div class=\"browse \">-->\r\n                <!--<div class=\"upload\">-->\r\n                <!--<span>Browse files</span>-->\r\n                <!---->\r\n                <!--<input name=\"media\" id=\"filesToUpload\" type=\"file\" multiple=\"\" (change)=\"onFileAdded($event.srcElement.files)\" accept=\"image/png, image/jpeg, image/jpg\" />-->\r\n                <!--</div>-->\r\n                <!--</div>-->\r\n              </div>\r\n\r\n            </div>\r\n\r\n            <div class=\"clearfix\"></div>\r\n            <div class=\"col-md-12\">\r\n              <button type=\"submit\" class=\"display-content\" [disabled]=\"form.submitted && form.invalid\">\r\n                <div class=\"btn-more submit-button\">\r\n                  <a>{{'edit' | translate}}</a>\r\n                </div>\r\n              </button>\r\n\r\n            </div>\r\n\r\n            <div class=\"clearfix\"></div>\r\n\r\n\r\n          </div>\r\n          <!-- /.inner-box -->\r\n\r\n        </form>\r\n        <!-- /.form-listing -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-listing -->\r\n"
 
 /***/ }),
 
@@ -95,7 +161,7 @@ module.exports = "<div class=\"sidebar\">\r\n  <div class=\"\">\r\n    <button c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"flat-title\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-8\">\r\n        <div class=\"title-left\">\r\n\r\n          <div class=\"box-title\">\r\n            <a title=\"\" *ngIf=\"lang=='ar'\">{{business?.nameAr}}</a>\r\n            <a title=\"\" *ngIf=\"lang!='ar'\">{{business?.nameEn}}</a>\r\n          </div>\r\n          <!-- /.box-title -->\r\n          <ul class=\"box-categories\">\r\n            <li class=\"category\">\r\n              <i class=\"fa fa-flag\" aria-hidden=\"true\"></i>\r\n              <a title=\"\" *ngIf=\"lang=='ar'\">{{business?.category?.titleAr}}</a>\r\n              <a title=\"\" *ngIf=\"lang!='ar'\">{{business?.category?.titleEn}}</a>\r\n            </li>\r\n            <li class=\"subcategory\">\r\n              <i class=\"fa fa-filter\" aria-hidden=\"true\"></i>\r\n              <a title=\"\" *ngIf=\"lang=='ar'\">{{business?.subCategory?.titleAr}}</a>\r\n              <a title=\"\" *ngIf=\"lang!='ar'\">{{business?.subCategory?.titleEn}}</a>\r\n            </li>\r\n          </ul>\r\n          <!-- /.box-address -->\r\n        </div>\r\n        <!-- /.title-left -->\r\n      </div>\r\n      <!-- /.col-md-8 -->\r\n      <div class=\"col-md-4\">\r\n        <div class=\"title-left\">\r\n          <div class=\"btn-more\">\r\n            <a *ngIf=\"toggle1\" (click)=\"toggle1= ! toggle1\" href=\"\" title=\"\">{{'getInTouch' | translate}}</a>\r\n\r\n            <a *ngIf=\"!toggle1\" class=\"phone-arab-dir\" href=\"tel:{{business?.phone1}}\">{{business?.phone1}} <i\r\n                class=\"fa fa-phone\" style=\"margin-left:12px\" aria-hidden=\"true\"></i></a>\r\n          </div>\r\n          <div class=\"clearfix\"></div>\r\n        </div>\r\n        <!-- /.title-right -->\r\n      </div>\r\n      <!-- /.col-md-4 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-title -->\r\n\r\n<section class=\"flat-row flat-explore-detail\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-8\">\r\n        <div class=\"text-box\">\r\n          <h3>{{'about' | translate}}</h3>\r\n          <div class=\"text-desc\" [innerHTML]=\"business?.description | linkify\">\r\n      \r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-12\">\r\n          <div class=\"imageGallery1\">\r\n            <a *ngFor=\"let image of business?.covers;let i=index\" [lightbox]=\"i\">\r\n              <img src=\"{{image?.thumbnail}}\" alt=\"Gallery image 1\" />\r\n            </a>\r\n          </div>\r\n        </div>\r\n\r\n\r\n      </div>\r\n      <!-- /.col-md-8 -->\r\n      <div class=\"col-md-4\">\r\n        <div class=\"sidebar\">\r\n\r\n          <div class=\"box contact-box\">\r\n            <ul class=\"contact-list\">\r\n              <li class=\"address\" *ngIf=\"business?.city || business?.location\">\r\n                <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>\r\n                <span *ngIf=\"lang=='ar'\">{{business?.city?.nameAr}} , {{business?.location?.nameAr}}</span>\r\n                <span *ngIf=\"lang!='ar'\">{{business?.city?.nameEn}} ,{{business?.location?.nameEn}}</span>\r\n              </li>\r\n              <li *ngIf=\"business?.phone1\">\r\n                <i class=\"fa fa-phone\" aria-hidden=\"true\"></i>\r\n                <a>{{business?.phone1}}</a>\r\n              </li>\r\n              <li *ngIf=\"business?.phone2\">\r\n                <i class=\"fa fa-phone\" aria-hidden=\"true\"></i>\r\n                <a>{{business?.phone2}}</a>\r\n              </li>\r\n              <!--<li>-->\r\n              <!--<i class=\"fa fa-globe\" aria-hidden=\"true\"></i>-->\r\n              <!--<a href=\"#\" title=\"\">http://www.anrestaurant.com</a>-->\r\n              <!--</li>-->\r\n            </ul>\r\n          </div>\r\n          <div class=\"involve\" *ngIf=\"business?.products?.length>0\">\r\n            <h4>{{'ServicesAndProducts' | translate}}</h4>\r\n            <ul>\r\n              <li class=\"box\" *ngFor=\"let product of business?.products\">\r\n                <app-involve-box [product]=\"product\"></app-involve-box>\r\n              </li>\r\n            </ul>\r\n          </div>\r\n          <div class=\"involve\" style=\"margin-bottom: 50px\" *ngIf=\"isOwner()\">\r\n            <div [ngClass]=\"{'btn-more': true, 'lang-en': lang != 'ar', 'lang-ar' : lang == 'ar'}\">\r\n                <a title=\"\" (click)=\"productsModal.open()\">\r\n                  {{'editProducts' | translate}}\r\n                </a>\r\n                <a title=\"\" [routerLink]=\"'/business/'+business.id+'/addJobOpportunity'\">\r\n                  {{'addJobOpportunity' | translate}}\r\n                </a>\r\n              \r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"box pdmap style1\" id=\"flat-map-4\" *ngIf=\"business?.locationPoint\">\r\n            <app-location-picker [disabled]=\"true\" [(ngModel)]=\"business.locationPoint\"\r\n              [options]=\"{center:[business?.locationPoint?.lat,business?.locationPoint?.lng]}\" name=\"locationPoint\">\r\n            </app-location-picker>\r\n          </div>\r\n          <!-- /#flat-m ap -->\r\n          <div class=\"box open\" *ngIf=\"business?.openingDaysEnabled\">\r\n            <p><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>{{'openingDays'| translate}}:</p>\r\n            <div class=\"box-desc\">\r\n              <p>\r\n                <ng-container *ngFor=\"let day of business?.openingDays;let i=index\">\r\n                  <div class=\"tag\">\r\n                    <span *ngIf=\"day==0+1\">\r\n                      {{'sunday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==1+1\">\r\n                      {{'monday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==2+1\">\r\n                      {{'tuesday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==3+1\">\r\n                      {{'wednesday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==4+1\">\r\n                      {{'thursday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==5+1\">\r\n                      {{'friday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==6+1\">\r\n                      {{'saturday' | translate}}\r\n                    </span>\r\n                  </div>\r\n                </ng-container>\r\n              </p>\r\n              <!--<p>الاثنين - الخميس</p>-->\r\n              <!--<p>9:00 صباحاً - 12:00 مساءً-->\r\n              <!--<span>مغلق الأن !</span>-->\r\n              <!--</p>-->\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n      <!-- /.col-md-4 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-explore-detail <-->\r\n\r\n\r\n\r\n<ngx-smart-modal #productsModal modalClass=\"modal-lg\" identifier=\"productsModal\">\r\n  <div class=\"smart-modal-header\">\r\n    <h3>{{'ServicesAndProducts' | translate}}</h3>\r\n  </div>\r\n  <div class=\"smart-modal-content\">\r\n    <div class=\"row\">\r\n      <div class=\"col-xs-12\">\r\n        <app-business-products [products]=\"business?.products\" #products=\"products\"></app-business-products>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"smart-modal-footer\">\r\n    <button class=\"btn btn-primary\" (click)=\"productsModal.close();products.reset();\">{{'close'|translate}}</button>\r\n    <!--<button class=\"btn btn-warning\" (click)=\"products.reset()\">{{'reset'|translate}}</button>-->\r\n    <button class=\"btn btn-success\" (click)=\"saveProducts()\">{{'save'|translate}}</button>\r\n  </div>\r\n</ngx-smart-modal>"
+module.exports = "<section class=\"flat-title\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-8\">\r\n        <div class=\"title-left\">\r\n\r\n          <div class=\"box-title\">\r\n            <a title=\"\" *ngIf=\"lang=='ar'\">{{business?.nameAr}}</a>\r\n            <a title=\"\" *ngIf=\"lang!='ar'\">{{business?.nameEn}}</a>\r\n          </div>\r\n          <!-- /.box-title -->\r\n          <div style=\"display: flex; flex-direction: row;\">\r\n\r\n            <ul class=\"box-categories\">\r\n              <li class=\"category\">\r\n                <i class=\"fa fa-flag\" aria-hidden=\"true\"></i>\r\n                <a title=\"\" *ngIf=\"lang=='ar'\">{{business?.category?.titleAr}}</a>\r\n                <a title=\"\" *ngIf=\"lang!='ar'\">{{business?.category?.titleEn}}</a>\r\n              </li>\r\n              <li class=\"subcategory\">\r\n                <i class=\"fa fa-filter\" aria-hidden=\"true\"></i>\r\n                <a title=\"\" *ngIf=\"lang=='ar'\">{{business?.subCategory?.titleAr}}</a>\r\n                <a title=\"\" *ngIf=\"lang!='ar'\">{{business?.subCategory?.titleEn}}</a>\r\n              </li>\r\n            </ul>\r\n\r\n\r\n          </div>\r\n\r\n          <!-- /.box-address -->\r\n        </div>\r\n        <!-- /.title-left -->\r\n      </div>\r\n      <!-- /.col-md-8 -->\r\n      <div class=\"col-md-4\">\r\n        <div class=\"title-left\">\r\n          <div class=\"btn-more\">\r\n            <a *ngIf=\"toggle1\" (click)=\"toggle1= ! toggle1\" href=\"\" title=\"\">{{'getInTouch' | translate}}</a>\r\n\r\n            <a *ngIf=\"!toggle1\" class=\"phone-arab-dir\" href=\"tel:{{business?.phone1}}\">{{business?.phone1}} <i\r\n                class=\"fa fa-phone\" style=\"margin-left:12px\" aria-hidden=\"true\"></i></a>\r\n          </div>\r\n          <div class=\"follow\">\r\n            <div class=\"btn-more\">\r\n              <a (click)=\"toggleFollowing()\" class=\"follow-button-text\" data-toggle=\"button\">\r\n                <ng-container *ngIf=\"isFollowing\">\r\n                  {{ 'unFollow' | translate}}\r\n                  <img src=\"assets/images/page/unfollow.png\" alt=\"follow icon\" class=\"follow-icon\">\r\n                </ng-container>\r\n                <ng-container *ngIf=\"!isFollowing\">\r\n                  {{ 'follow' | translate }}\r\n                  <img src=\"assets/images/page/follow.png\" alt=\"follow icon\" class=\"follow-icon\">\r\n                </ng-container>\r\n              </a>\r\n            </div>\r\n          </div>\r\n          <!-- <div class=\"btn-more\">\r\n            <a (click)=\"toggleFollowing()\" title=\"\" data-toggle=\"button\">\r\n              <ng-container *ngIf=\"isFollowing\">\r\n                {{ 'unFollow' | translate}}\r\n              </ng-container>\r\n              <ng-container *ngIf=\"!isFollowing\">\r\n                {{ 'follow' | translate }}\r\n              </ng-container>\r\n            </a>\r\n          </div> -->\r\n          <div class=\"clearfix\"></div>\r\n        </div>\r\n        <!-- /.title-right -->\r\n      </div>\r\n      <!-- /.col-md-4 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-title -->\r\n\r\n<section class=\"flat-row flat-explore-detail\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-8\">\r\n        <div class=\"text-box\">\r\n          <h3>{{'about' | translate}}</h3>\r\n          <div class=\"text-desc\" [innerHTML]=\"business?.description | linkify\">\r\n\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-12\">\r\n          <div class=\"imageGallery1\">\r\n            <a *ngFor=\"let image of business?.covers;let i=index\" [lightbox]=\"i\">\r\n              <img src=\"{{image?.thumbnail}}\" alt=\"Gallery image 1\" />\r\n            </a>\r\n          </div>\r\n        </div>\r\n\r\n\r\n      </div>\r\n      <!-- /.col-md-8 -->\r\n      <div class=\"col-md-4\">\r\n        <div class=\"sidebar\">\r\n\r\n          <div class=\"box contact-box\">\r\n            <ul class=\"contact-list\">\r\n              <li class=\"address\" *ngIf=\"business?.city || business?.location\">\r\n                <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>\r\n                <span *ngIf=\"lang=='ar'\">{{business?.city?.nameAr}} , {{business?.location?.nameAr}}</span>\r\n                <span *ngIf=\"lang!='ar'\">{{business?.city?.nameEn}} ,{{business?.location?.nameEn}}</span>\r\n              </li>\r\n              <li *ngIf=\"business?.phone1\">\r\n                <i class=\"fa fa-phone\" aria-hidden=\"true\"></i>\r\n                <a>{{business?.phone1}}</a>\r\n              </li>\r\n              <li *ngIf=\"business?.phone2\">\r\n                <i class=\"fa fa-phone\" aria-hidden=\"true\"></i>\r\n                <a>{{business?.phone2}}</a>\r\n              </li>\r\n              <!--<li>-->\r\n              <!--<i class=\"fa fa-globe\" aria-hidden=\"true\"></i>-->\r\n              <!--<a href=\"#\" title=\"\">http://www.anrestaurant.com</a>-->\r\n              <!--</li>-->\r\n            </ul>\r\n          </div>\r\n          <div class=\"involve\" *ngIf=\"business?.products?.length>0\">\r\n            <h4>{{'ServicesAndProducts' | translate}}</h4>\r\n            <ul>\r\n              <li class=\"box\" *ngFor=\"let product of business?.products\">\r\n                <app-involve-box [product]=\"product\"></app-involve-box>\r\n              </li>\r\n            </ul>\r\n          </div>\r\n          <div class=\"involve\" style=\"margin-bottom: 50px\" *ngIf=\"isOwner()\">\r\n            <div [ngClass]=\"{'btn-more': true, 'lang-en': lang != 'ar', 'lang-ar' : lang == 'ar'}\">\r\n              <a title=\"\" (click)=\"productsModal.open()\">\r\n                {{'editProducts' | translate}}\r\n              </a>\r\n              <a title=\"\" [routerLink]=\"'/business/'+business.id+'/addJobOpportunity'\">\r\n                {{'addJobOpportunity' | translate}}\r\n              </a>\r\n\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"box pdmap style1\" id=\"flat-map-4\" *ngIf=\"business?.locationPoint\">\r\n            <app-location-picker [disabled]=\"true\" [(ngModel)]=\"business.locationPoint\"\r\n              [options]=\"{center:[business?.locationPoint?.lat,business?.locationPoint?.lng]}\" name=\"locationPoint\">\r\n            </app-location-picker>\r\n          </div>\r\n          <!-- /#flat-m ap -->\r\n          <div class=\"box open\" *ngIf=\"business?.openingDaysEnabled\">\r\n            <p><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>{{'openingDays'| translate}}:</p>\r\n            <div class=\"box-desc\">\r\n              <p>\r\n                <ng-container *ngFor=\"let day of business?.openingDays;let i=index\">\r\n                  <div class=\"tag\">\r\n                    <span *ngIf=\"day==0+1\">\r\n                      {{'sunday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==1+1\">\r\n                      {{'monday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==2+1\">\r\n                      {{'tuesday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==3+1\">\r\n                      {{'wednesday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==4+1\">\r\n                      {{'thursday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==5+1\">\r\n                      {{'friday' | translate}}\r\n                    </span>\r\n                    <span *ngIf=\"day==6+1\">\r\n                      {{'saturday' | translate}}\r\n                    </span>\r\n                  </div>\r\n                </ng-container>\r\n              </p>\r\n              <!--<p>الاثنين - الخميس</p>-->\r\n              <!--<p>9:00 صباحاً - 12:00 مساءً-->\r\n              <!--<span>مغلق الأن !</span>-->\r\n              <!--</p>-->\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n      <!-- /.col-md-4 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</section>\r\n<!-- /.flat-explore-detail <-->\r\n\r\n\r\n\r\n<ngx-smart-modal #productsModal modalClass=\"modal-lg\" identifier=\"productsModal\">\r\n  <div class=\"smart-modal-header\">\r\n    <h3>{{'ServicesAndProducts' | translate}}</h3>\r\n  </div>\r\n  <div class=\"smart-modal-content\">\r\n    <div class=\"row\">\r\n      <div class=\"col-xs-12\">\r\n        <app-business-products [products]=\"business?.products\" #products=\"products\"></app-business-products>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"smart-modal-footer\">\r\n    <button class=\"btn btn-primary\" (click)=\"productsModal.close();products.reset();\">{{'close'|translate}}</button>\r\n    <!--<button class=\"btn btn-warning\" (click)=\"products.reset()\">{{'reset'|translate}}</button>-->\r\n    <button class=\"btn btn-success\" (click)=\"saveProducts()\">{{'save'|translate}}</button>\r\n  </div>\r\n</ngx-smart-modal>\r\n"
 
 /***/ }),
 
@@ -117,7 +183,7 @@ module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div cl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-6  col-xs-12 featured-box-flex-image\">\r\n  <div class=\"box-header\">\r\n    <div class=\"box-image\">\r\n      <img src=\"{{data?.img}}\" alt=\"\">\r\n      <a [routerLink]=\"['/business',data.nameUnique]\" title=\"\">{{'preview' | translate}}</a>\r\n      <div class=\"overlay1\"></div>\r\n    </div>\r\n  </div>\r\n  <!-- /.box-header -->\r\n</div>\r\n<div class=\"col-md-6 col-xs-12 featured-box-flex-text\">\r\n  <div class=\"box-content\">\r\n    <div class=\"box-title ad\">\r\n      <img *ngIf=\"data.vip === true\" src=\"assets/images/icon/vip.png\" style=\"float: left;\">\r\n      <a [routerLink]=\"['/business',data.nameUnique]\" title=\"\">{{data.name}}</a>\r\n    </div>\r\n    <ul class=\"category\">\r\n      <li>{{data.category}}</li>\r\n      <li>{{data.subCategory}}</li>\r\n    </ul>\r\n    <div class=\"box-desc\">\r\n      {{data.description}}\r\n    </div>\r\n    <div class=\"box-location\">\r\n      {{data.textAddress}}\r\n    </div>\r\n  </div>\r\n  <!-- /.box-content -->\r\n</div>\r\n"
+module.exports = "<div class=\"col-md-6  col-xs-12 featured-box-flex-image\">\r\n  <div class=\"box-header\">\r\n    <div class=\"box-image\">\r\n      <img src=\"{{data?.img}}\" alt=\"\" style=\"width: 100%; max-height: 100%;\">\r\n      <a [routerLink]=\"['/business',data.nameUnique]\" title=\"\">{{'preview' | translate}}</a>\r\n      <div class=\"overlay1\"></div>\r\n    </div>\r\n  </div>\r\n  <!-- /.box-header -->\r\n</div>\r\n<div class=\"col-md-6 col-xs-12 featured-box-flex-text\">\r\n  <div class=\"box-content\">\r\n    <div class=\"box-title ad\">\r\n      <img *ngIf=\"data.vip === true\" src=\"assets/images/icon/vip.png\" style=\"float: left;\">\r\n      <a [routerLink]=\"['/business',data.nameUnique]\" title=\"\">{{data.name}}</a>\r\n    </div>\r\n    <ul class=\"category\">\r\n      <li>{{data.category}}</li>\r\n      <li>{{data.subCategory}}</li>\r\n    </ul>\r\n    <div class=\"box-desc\">\r\n      {{data.description}}\r\n    </div>\r\n    <div class=\"box-location\">\r\n      {{data.textAddress}}\r\n    </div>\r\n  </div>\r\n  <!-- /.box-content -->\r\n</div>\r\n"
 
 /***/ }),
 
@@ -238,7 +304,7 @@ module.exports = "<section class=\"page-title style1 \">\n    <div class=\"conta
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"flat-title\">\n  <div class=\"container mainHeader\">\n    <div class=\"row\">\n      <div class=\"col-md-8\">\n        <div class=\"title-left\">\n\n          <div class=\"box-title\">\n            <a routerLink=\"/products/{{data.id}}\" title=\"\">{{data.title}}</a>\n            <!--  -->\n          </div>\n          <span dir=\"ltr\" class=\"creation-date\">{{data.creationDate}}</span>\n\n          <h3 class=\"username\">\n            <span class=\"edit\" *ngIf=\"isMyProduct==true\" (click)=\"goToEdit()\">{{'edit'|translate}}</span>\n            <span class=\"edit deactive\"\n              *ngIf=\"isMyProduct==true && data && (data.status=='activated' || data.status == 'active')\"\n              (click)=\"deactive()\">{{'deactive'|translate}}</span>\n          </h3>\n\n          <!-- /.box-title -->\n          <!-- /.box-address -->\n        </div>\n        <!-- /.title-left -->\n      </div>\n      <!-- /.col-md-8 -->\n      <div class=\"col-md-4\">\n        <div class=\"title-left\">\n          <div class=\"btn-more\">\n            <a href=\"javascript:void(0)\" *ngIf=\" toggle1\" (click)=\"toggle1= ! toggle1\" href=\"\"\n              title=\"\">{{'getInTouch' | translate}}</a>\n\n            <a *ngIf=\"!toggle1\" class=\"phone-arab-dir\" href=\"tel:{{data.phone}}\">{{data.phone}} <i class=\"fa fa-phone\"\n                style=\"margin-left:12px\" aria-hidden=\"true\"></i></a>\n          </div>\n          <div class=\"clearfix\"></div>\n        </div>\n        <!-- /.title-right -->\n      </div>\n      <!-- /.col-md-4 -->\n    </div>\n    <!-- /.row -->\n  </div>\n  <!-- /.container -->\n</section>\n<!-- /.flat-title -->\n\n<section class=\"flat-row flat-explore-detail\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-8\">\n        <div class=\"text-box\">\n          <h3>{{'details'| translate}}</h3>\n\n          <div class=\"text-desc\" [innerHTML]=\"data?.description | linkify\">\n          </div>\n          <h3>{{'Tags' | translate}}</h3>\n          <div class=\"tags\">\n            <div *ngFor=\"let oneTag of data.tags;let i=index\" class=\"oneTag\">\n              <i class=\"fa fa-times\" (click)=\"removeTag(i)\" aria-hidden=\"true\"></i>\n\n              <span>\n                {{oneTag.name}}\n              </span>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-md-12\">\n          <div class=\"imageGallery1\">\n\n            <div class=\"hoverMe\" style=\"display: inline\" *ngFor=\"let image of _albums; let i=index\">\n              <img [src]=\"image.data.src\" [lightbox]=\"i\" />\n            </div>\n          </div>\n        </div>\n      </div>\n      <!-- /.col-md-8 -->\n      <div class=\"col-md-4\">\n        <div class=\"sidebar\">\n\n          <div class=\"box contact-box\">\n            <ul class=\"contact-list\">\n              <li class=\"address\">\n                <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>{{data.subArea}} , {{data.area}}</li>\n              <li class=\"category\">\n                <i class=\"fa fa-flag\" aria-hidden=\"true\"></i>{{data.category}}</li>\n              <li class=\"subcategory\">\n                <i class=\"fa fa-filter\" aria-hidden=\"true\"></i>{{data.subCategory}}</li>\n              <li class=\"address\">\n                <i class=\"fa fa-usd\" aria-hidden=\"true\"></i>{{data.price}}</li>\n              <li>\n                <span class=\"btn-more\">\n                  <a href=\"javascript:void(0)\" class=\"button-in-contact-list\" *ngIf=\"toggle2\"\n                    (click)=\"toggle2 = !toggle2\" title=\"\">{{'getInTouch' |\n                      translate}}</a>\n                  <a *ngIf=\"!toggle2\" class=\"phone-arab-dir button-in-contact-list\"\n                    href=\"tel:{{data.phone}}\">{{data.phone}} <i class=\"fa fa-phone\" aria-hidden=\"true\"></i></a>\n                </span>\n              </li>\n            </ul>\n          </div>\n\n        </div>\n      </div>\n      <!-- /.col-md-4 -->\n    </div>\n    <!-- /.row -->\n  </div>\n  <!-- /.container -->\n</section>\n<!-- /.flat-explore-detail <-->\n"
+module.exports = "<section class=\"flat-title\">\n  <div class=\"container mainHeader\">\n    <div class=\"row\">\n      <div class=\"col-md-8\">\n        <div class=\"title-left\">\n\n          <div class=\"box-title\">\n            <a routerLink=\"/products/{{data.id}}\" title=\"\">{{data.title}}</a>\n            <!--  -->\n          </div>\n          <span dir=\"ltr\" class=\"creation-date\">{{data.creationDate}}</span>\n\n          <h3 class=\"username\">\n            <span class=\"edit\" *ngIf=\"isMyProduct==true\" (click)=\"goToEdit()\">{{'edit'|translate}}</span>\n            <span class=\"edit deactive\"\n              *ngIf=\"isMyProduct==true && data && (data.status=='activated' || data.status == 'active')\"\n              (click)=\"deactive()\">{{'deactive'|translate}}</span>\n          </h3>\n\n          <!-- /.box-title -->\n          <!-- /.box-address -->\n        </div>\n        <!-- /.title-left -->\n      </div>\n      <!-- /.col-md-8 -->\n      <div class=\"col-md-4\">\n        <div class=\"title-left\">\n          <div class=\"btn-more\">\n            <a href=\"javascript:void(0)\" *ngIf=\" toggle1\" (click)=\"toggle1= ! toggle1\" href=\"\"\n              title=\"\">{{'getInTouch' | translate}}</a>\n\n            <a *ngIf=\"!toggle1\" class=\"phone-arab-dir\" href=\"tel:{{data.phone}}\">{{data.phone}} <i class=\"fa fa-phone\"\n                style=\"margin-left:12px\" aria-hidden=\"true\"></i></a>\n          </div>\n\n          <div class=\"clearfix\"></div>\n        </div>\n        <!-- /.title-right -->\n      </div>\n      <!-- /.col-md-4 -->\n    </div>\n    <!-- /.row -->\n  </div>\n  <!-- /.container -->\n</section>\n<!-- /.flat-title -->\n\n<section class=\"flat-row flat-explore-detail\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-8\">\n        <div class=\"text-box\">\n          <h3>{{'details'| translate}}</h3>\n\n          <div class=\"text-desc\" [innerHTML]=\"data?.description | linkify\">\n          </div>\n          <!-- <h3>{{'Tags' | translate}}</h3>\n          <div class=\"tags\">\n            <div *ngFor=\"let oneTag of data.tags;let i=index\" class=\"oneTag\">\n              <i class=\"fa fa-times\" aria-hidden=\"true\"></i>\n\n              <span>\n                {{oneTag.name}}\n              </span>\n            </div>\n          </div> -->\n        </div>\n        <div class=\"col-md-12\">\n          <div class=\"imageGallery1\">\n\n            <div class=\"hoverMe\" style=\"display: inline\" *ngFor=\"let image of _albums; let i=index\">\n              <img [src]=\"image.data.src\" [lightbox]=\"i\" />\n            </div>\n          </div>\n        </div>\n      </div>\n      <!-- /.col-md-8 -->\n      <div class=\"col-md-4\">\n        <div class=\"sidebar\">\n\n          <div class=\"box contact-box\">\n            <ul class=\"contact-list\">\n              <li class=\"address\">\n                <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>{{data.subArea}} , {{data.area}}</li>\n              <li class=\"category\">\n                <i class=\"fa fa-flag\" aria-hidden=\"true\"></i>{{data.category}}</li>\n              <li class=\"subcategory\">\n                <i class=\"fa fa-filter\" aria-hidden=\"true\"></i>{{data.subCategory}}</li>\n              <li class=\"address\">\n                <i class=\"fa fa-usd\" aria-hidden=\"true\"></i>{{data.price}}</li>\n              <li>\n                <span class=\"btn-more\">\n                  <a href=\"javascript:void(0)\" class=\"button-in-contact-list\" *ngIf=\"toggle2\"\n                    (click)=\"toggle2 = !toggle2\" title=\"\">{{'getInTouch' |\n                      translate}}</a>\n                  <a *ngIf=\"!toggle2\" class=\"phone-arab-dir button-in-contact-list\"\n                    href=\"tel:{{data.phone}}\">{{data.phone}} <i class=\"fa fa-phone\" aria-hidden=\"true\"></i></a>\n                </span>\n                <span class=\"btn-more\">\n                  <a (click)=\"rate()\" title=\"\" data-toggle=\"button\">\n                    {{ 'rate' | translate }}\n                  </a>\n                </span>\n              </li>\n            </ul>\n          </div>\n\n          <div class=\"box contact-box\">\n            <div class=\"rate-wrapper\">\n              <div *ngFor=\"let rate of ratings;let i = index\" class=\"rate-box\">\n                <div class=\"rate-image\">\n                  <a [routerLink]=\"['/cv/' + rate.owner.id]\">\n                    <img [src]=\"rate.owner.imageProfile\" alt=\"user image\">\n                  </a>\n                </div>\n                <div class=\"rate-info\">\n                  <div class=\"rate\">\n                    <input type=\"radio\" disabled [id]=\"'star5' + i\" [name]=\"'rate' + i\" value=\"5\"\n                      [checked]=\"rate.value == 5 ? true : false\" />\n                    <label [for]=\"'star5' + i\" title=\"text\">5 stars</label>\n                    <input type=\"radio\" disabled [id]=\"'star4' + i\" [name]=\"'rate' + i\" value=\"4\"\n                      [checked]=\"rate.value == 4 ? true : false\" />\n                    <label [for]=\"'star4' + i\" title=\"text\">4 stars</label>\n                    <input type=\"radio\" disabled [id]=\"'star3' + i\" [name]=\"'rate' + i\" value=\"3\"\n                      [checked]=\"rate.value == 3 ? true : false\" />\n                    <label [for]=\"'star3' + i\" title=\"text\">3 stars</label>\n                    <input type=\"radio\" disabled [id]=\"'star2' + i\" [name]=\"'rate' + i\" value=\"2\"\n                      [checked]=\"rate.value == 2 ? true : false\" />\n                    <label [for]=\"'star2' + i\" title=\"text\">2 stars</label>\n                    <input type=\"radio\" disabled [id]=\"'star1' + i\" [name]=\"'rate' + i\" value=\"1\"\n                      [checked]=\"rate.value == 1 ? true : false\" />\n                    <label [for]=\"'star1' + i\" title=\"text\">1 star</label>\n                  </div>\n\n                  <p class=\"rate-text\"> {{ rate.text }} </p>\n                  <p class=\"rate-text\"> {{ rate.creationDate | date }} </p>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        </div>\n      </div>\n      <!-- /.col-md-4 -->\n    </div>\n    <!-- /.row -->\n  </div>\n  <!-- /.container -->\n</section>\n<!-- /.flat-explore-detail <-->\n"
 
 /***/ }),
 
@@ -260,7 +326,7 @@ module.exports = "<style>\n    .flat-row-title{\n      color:#2c3e50;\n    }\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"\">\r\n  <div class=\"\" style=\"background-color: #f9f8f3\">\r\n    <div class=\"row\" style=\"background-color: #fff;margin-bottom: 30px;\">\r\n      <div *ngIf=\"job\" class=\"col-md-12 mainHeader\">\r\n        <!-- {{job | json}} -->\r\n        <div class=\"col-md-3 col-xs-12\" style=\"float: left;\">\r\n          <div class=\"img\"\r\n            [style.backgroundImage]=\"'url('+ (job.business.logo ? job.business.logo : '../../../assets/images/page/business-01.png')  +')'\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-9 col-xs-12\" style=\"min-height: 150px;display: table;\">\r\n          <div style=\"vertical-align: middle;display: table-cell;\">\r\n            <h3 class=\"username\">\r\n              {{(lang=='ar' && job.nameAr) || (lang!='ar' && job.nameEn==null) ? job.nameAr : job.nameEn}}\r\n              <span class=\"edit\" *ngIf=\"isMyJob==true\" (click)=\"goToEdit()\">{{'edit'|translate}}</span>\r\n              <span class=\"edit deactive\" *ngIf=\"isMyJob==true && job && job.status=='activated'\"\r\n                (click)=\"deactive()\">{{'deactive'|translate}}</span>\r\n            </h3>\r\n            <h5 *ngIf=\"job.business\" class=\"identefire\">\r\n              {{lang=='ar'? job.business.nameAr : job.business.nameEn}}\r\n            </h5>\r\n\r\n            <p *ngIf=\"job\" class=\"bio\"\r\n              [innerHTML]=\"lang=='ar'? job.business.descriptionAr : job.business.descriptionEn | linkify\">\r\n            </p>\r\n\r\n            <h5 *ngIf=\"job.business\" class=\"city\">\r\n              {{lang=='ar'? job.business.city.nameAr : job.business.city.nameEn}}\r\n              <!-- ,\r\n                    {{lang=='ar'? job.business.location.nameAr : job.business.location.nameEn}} -->\r\n\r\n            </h5>\r\n          </div>\r\n          <div class=\"tabs\" *ngIf=\"isMyJob==true\">\r\n            <h3 class=\"oneTab\" [ngClass]=\"{'active': currentTab=='home'}\" (click)=\"changeTab('home')\">\r\n              {{'information'|translate}}</h3>\r\n            <h3 class=\"oneTab\" (click)=\"changeTab('users')\" [ngClass]=\"{'active': currentTab=='users'}\">\r\n              {{'employee'|translate}}\r\n              <div class=\"count\">\r\n                {{job.NumberOfApplicants}}\r\n              </div>\r\n            </h3>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row allInfo\" id=\"homeTab\" style=\"direction: ltr;padding-bottom: 30px;\">\r\n      <div style=\"float: left;\" class=\"col-md-1 col-xs-0\"></div>\r\n      <div style=\"float: left;\" *ngIf=\"job\" class=\"col-md-7 col-xs-12 containtJob\">\r\n        <div class=\"mainContent\">\r\n          <div style=\"position:relative\" *ngIf=\"job.responsibilitiesAr && job.responsibilitiesEn\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'responsibilities' | translate}}\r\n            </h4>\r\n            <p class=\"description\">{{lang=='ar'? job.responsibilitiesAr : job.responsibilitiesEn}}</p>\r\n          </div>\r\n\r\n          <div style=\"position:relative\" *ngIf=\"job.qualificationsAr && job.qualificationsEn\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'qualifications' | translate}}\r\n            </h4>\r\n            <p class=\"description\">{{lang=='ar'? job.qualificationsAr : job.qualificationsEn}}</p>\r\n          </div>\r\n          <div style=\"position:relative\" *ngIf=\"job.descriptionAr && job.descriptionEn\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'descriptionCV' | translate}}\r\n            </h4>\r\n            <p class=\"description\"\r\n              [innerHTML]=\"lang=='ar'? job.business.descriptionAr : job.business.descriptionEn | linkify\">\r\n            </p>\r\n\r\n          </div>\r\n          <div style=\"position:relative\" *ngIf=\"job.tags.length>0\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'skills' | translate}}\r\n            </h4>\r\n            <div class=\"listOfTags\">\r\n              <div class=\"tag\" *ngFor=\"let oneItem of job.tags;let i=index\">\r\n                <span>\r\n                  {{oneItem.name}}\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: left;\" *ngIf=\"job\" class=\"col-md-3 col-xs-12 infoJob\">\r\n        <div class=\"mainContent\">\r\n          <h4 class=\"mainLabel\">\r\n            {{'jobInfo' | translate}}\r\n          </h4>\r\n          <div class=\"row\">\r\n            <div class=\"col-xs-12\">\r\n              <div style=\"margin-top: 25px\" class=\"informationRow\">\r\n                <i class=\"fa fa-flag\" aria-hidden=\"true\"></i>\r\n                <ul class=\"category\">\r\n                  <li>{{lang=='ar'? job.category.titleAr:job.category.titleEn}}</li>\r\n                  <li>{{lang=='ar'? job.subCategory.titleAr:job.subCategory.titleEn}}</li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12\" *ngIf=\"job.rangeSalary\">\r\n              <div class=\"informationRow\">\r\n                <i class=\"fa fa-usd\" aria-hidden=\"true\"></i>\r\n                <ul class=\"category\">\r\n                  <li>{{job.rangeSalary}}</li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n\r\n\r\n            <div class=\"col-xs-12\" *ngIf=\"job.minimumEducationLevel\">\r\n              <div class=\"informationRow\">\r\n                <i class=\"fa fa-university\" aria-hidden=\"true\"></i>\r\n                <ul class=\"category\">\r\n                  <li>{{job.minimumEducationLevel | translate}}</li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12\" *ngIf=\"job.jobType\">\r\n              <div class=\"informationRow\">\r\n                <i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>\r\n                <ul class=\"category\">\r\n                  <li>{{job.jobType | translate}}</li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12\">\r\n              <div class=\"informationRow\">\r\n                <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>\r\n                <ul class=\"category\">\r\n                  <li>{{lang=='ar'? job.business.city.nameAr : job.business.city.nameEn}}</li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n            <div class=\"col-xs-12\" *ngIf=\"isMyJob==false\">\r\n              <div class=\"informationRow\" style=\"padding-left: 0px;padding-top: 17px;\">\r\n\r\n                <div class=\"btn-more\" *ngIf=\"canApply==true && job.userIsApplied==false\"\r\n                  style=\"margin-top:0px;text-align: center;\">\r\n                  <a title=\"\" (click)=\"apply()\">{{'applyJob' | translate}}</a>\r\n                </div>\r\n\r\n\r\n                <div class=\"btn-more\" *ngIf=\"canApply==true && job.userIsApplied==true\"\r\n                  style=\"margin-top:0px;text-align: center;\">\r\n                  <a title=\"\">{{'userIsApplied' | translate}}</a>\r\n                </div>\r\n\r\n                <div class=\"btn-more\" *ngIf=\"canApply==false\" style=\"margin-top:0px;text-align: center;\">\r\n                  <a title=\"\" (click)=\"goToLogin()\">{{'loginToApply' | translate}}</a>\r\n                </div>\r\n\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: left;\" class=\"col-md-1 col-xs-0\"></div>\r\n    </div>\r\n\r\n    <div class=\"row\" id=\"usersTab\" style=\"direction: ltr;padding-bottom: 30px;\">\r\n      <div class=\"col-sm-1\">\r\n\r\n      </div>\r\n      <div class=\"col-sm-10\">\r\n        <div class=\"row\">\r\n          <div class=\"col-xs-12 placeholder\" *ngIf=\"employee==null || employee.length==0\">\r\n            <img src=\"../../../assets/images/page/employee.png\">\r\n            <h4>{{'noApplicants'|translate}}</h4>\r\n          </div>\r\n          <div class=\"col-md-6 col-xs-12 userCard\" *ngFor=\"let oneEmployee of employee;let i = index\">\r\n            <div class=\"box\">\r\n              <div class=\"imgDiv\">\r\n                <div class=\"img\" [style.backgroundImage]=\"'url('+ oneEmployee.user?.imageProfile +')'\"></div>\r\n              </div>\r\n              <div class=\"infoDiv\">\r\n                <div class=\"contain\">\r\n                  <h4 class=\"name\" (click)=\"goToCv(oneEmployee.userId)\"> {{oneEmployee.user?.username}}</h4>\r\n                  <h5 class=\"identefire\" *ngIf=\"oneEmployee.user?.CV?.primaryIdentifier\">\r\n                    {{oneEmployee.user?.CV?.primaryIdentifier\t}}</h5>\r\n                  <h5 class=\"city\" *ngIf=\"oneEmployee.user?.CV?.city?.nameAr\"> {{oneEmployee.user?.CV?.city?.nameAr\t}}\r\n                  </h5>\r\n                  <h5 class=\"city\" *ngIf=\"oneEmployee.user?.phoneNumber\"> {{oneEmployee.user?.phoneNumber\t}}</h5>\r\n\r\n                </div>\r\n              </div>\r\n              <div class=\"stautsDiv\">\r\n                <div class=\"contain\">\r\n                  <div class=\"oneInfo\">\r\n                    <!-- <span>Applied : </span> -->\r\n                    <span>{{oneEmployee.createdAt | date:'MMM dd,yy' }} </span>\r\n                  </div>\r\n                  <div class=\"oneInfo\">\r\n                    <select (change)=\"changeStauts(i)\" class=\"select\" [(ngModel)]=\"employee[i].status\">\r\n                      <option *ngFor=\"let oneItem of statusArray;let i= index\" value=\"{{oneItem.value}}\">\r\n                        {{oneItem.view|translate}}</option>\r\n                    </select>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-sm-1\">\r\n\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
+module.exports = "<section class=\"\">\r\n  <div class=\"\" style=\"background-color: #f9f8f3\">\r\n    <div class=\"row\" style=\"background-color: #fff;margin-bottom: 30px;\">\r\n      <div *ngIf=\"job\" class=\"col-md-12 mainHeader\">\r\n        <!-- {{job | json}} -->\r\n        <div class=\"col-md-3 col-xs-12\" style=\"float: left;\">\r\n          <div class=\"img\"\r\n            [style.backgroundImage]=\"'url('+ (job.business.logo ? job.business.logo : '../../../assets/images/page/business-01.png')  +')'\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-9 col-xs-12\" style=\"min-height: 150px;display: table;\">\r\n          <div style=\"vertical-align: middle;display: table-cell;\">\r\n            <h3 class=\"username\">\r\n              {{(lang=='ar' && job.nameAr) || (lang!='ar' && job.nameEn==null) ? job.nameAr : job.nameEn}}\r\n              <span class=\"edit\" *ngIf=\"isMyJob==true\" (click)=\"goToEdit()\">{{'edit'|translate}}</span>\r\n              <span class=\"edit deactive\" *ngIf=\"isMyJob==true && job && job.status=='activated'\"\r\n                (click)=\"deactive()\">{{'deactive'|translate}}</span>\r\n            </h3>\r\n            <h5 *ngIf=\"job.business\" class=\"identefire\">\r\n              {{lang=='ar'? job.business.nameAr : job.business.nameEn}}\r\n            </h5>\r\n\r\n            <p *ngIf=\"job\" class=\"bio\"\r\n              [innerHTML]=\"lang=='ar'? job.business.descriptionAr : job.business.descriptionEn | linkify\">\r\n            </p>\r\n\r\n            <h5 *ngIf=\"job.business\" class=\"city\">\r\n              {{lang=='ar'? job.business.city.nameAr : job.business.city.nameEn}}\r\n              <!-- ,\r\n                    {{lang=='ar'? job.business.location.nameAr : job.business.location.nameEn}} -->\r\n\r\n            </h5>\r\n          </div>\r\n          <div class=\"tabs\" *ngIf=\"isMyJob==true\">\r\n            <h3 class=\"oneTab\" [ngClass]=\"{'active': currentTab=='home'}\" (click)=\"changeTab('home')\">\r\n              {{'information'|translate}}</h3>\r\n            <h3 class=\"oneTab\" (click)=\"changeTab('users')\" [ngClass]=\"{'active': currentTab=='users'}\">\r\n              {{'employee'|translate}}\r\n              <div class=\"count\">\r\n                {{job.NumberOfApplicants}}\r\n              </div>\r\n            </h3>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row allInfo\" id=\"homeTab\" style=\"direction: ltr;padding-bottom: 30px;\">\r\n      <div style=\"float: left;\" class=\"col-md-1 col-xs-0\"></div>\r\n      <div style=\"float: left;\" *ngIf=\"job\" class=\"col-md-7 col-xs-12 containtJob\">\r\n        <div class=\"mainContent\">\r\n          <div style=\"position:relative\" *ngIf=\"job.responsibilitiesAr && job.responsibilitiesEn\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'responsibilities' | translate}}\r\n            </h4>\r\n            <p class=\"description\">{{lang=='ar'? job.responsibilitiesAr : job.responsibilitiesEn}}</p>\r\n          </div>\r\n\r\n          <div style=\"position:relative\" *ngIf=\"job.qualificationsAr && job.qualificationsEn\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'qualifications' | translate}}\r\n            </h4>\r\n            <p class=\"description\">{{lang=='ar'? job.qualificationsAr : job.qualificationsEn}}</p>\r\n          </div>\r\n          <div style=\"position:relative\" *ngIf=\"job.descriptionAr && job.descriptionEn\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'descriptionCV' | translate}}\r\n            </h4>\r\n            <p class=\"description\"\r\n              [innerHTML]=\"(lang=='ar'? job.descriptionAr : job.descriptionEn) | linkify\">\r\n            </p>\r\n\r\n          </div>\r\n          <div style=\"position:relative\" *ngIf=\"job.tags.length>0\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'skills' | translate}}\r\n            </h4>\r\n            <div class=\"listOfTags\">\r\n              <div class=\"tag\" *ngFor=\"let oneItem of job.tags;let i=index\">\r\n                <span>\r\n                  {{oneItem.name}}\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"float: left;\" *ngIf=\"job\" class=\"col-md-3 col-xs-12 infoJob\">\r\n        <div class=\"mainContent\">\r\n          <h4 class=\"mainLabel\">\r\n            {{'jobInfo' | translate}}\r\n          </h4>\r\n          <div class=\"row\">\r\n            <div class=\"col-xs-12\">\r\n              <div style=\"margin-top: 25px\" class=\"informationRow\">\r\n                <i class=\"fa fa-flag\" aria-hidden=\"true\"></i>\r\n                <ul class=\"category\">\r\n                  <li>{{lang=='ar'? job.category.titleAr:job.category.titleEn}}</li>\r\n                  <li>{{lang=='ar'? job.subCategory.titleAr:job.subCategory.titleEn}}</li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12\" *ngIf=\"job.rangeSalary\">\r\n              <div class=\"informationRow\">\r\n                <i class=\"fa fa-usd\" aria-hidden=\"true\"></i>\r\n                <ul class=\"category\">\r\n                  <li>{{job.rangeSalary}}</li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n\r\n\r\n            <div class=\"col-xs-12\" *ngIf=\"job.minimumEducationLevel\">\r\n              <div class=\"informationRow\">\r\n                <i class=\"fa fa-university\" aria-hidden=\"true\"></i>\r\n                <ul class=\"category\">\r\n                  <li>{{job.minimumEducationLevel | translate}}</li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12\" *ngIf=\"job.jobType\">\r\n              <div class=\"informationRow\">\r\n                <i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>\r\n                <ul class=\"category\">\r\n                  <li>{{job.jobType | translate}}</li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-xs-12\">\r\n              <div class=\"informationRow\">\r\n                <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>\r\n                <ul class=\"category\">\r\n                  <li>{{lang=='ar'? job.business.city.nameAr : job.business.city.nameEn}}</li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n            <div class=\"col-xs-12\" *ngIf=\"isMyJob==false\">\r\n              <div class=\"informationRow\" style=\"padding-left: 0px;padding-top: 17px;\">\r\n\r\n                <div class=\"btn-more\" *ngIf=\"canApply==true && job.userIsApplied==false\"\r\n                  style=\"margin-top:0px;text-align: center;\">\r\n                  <a title=\"\" (click)=\"apply()\">{{'applyJob' | translate}}</a>\r\n                </div>\r\n\r\n\r\n                <div class=\"btn-more\" *ngIf=\"canApply==true && job.userIsApplied==true\"\r\n                  style=\"margin-top:0px;text-align: center;\">\r\n                  <a title=\"\">{{'userIsApplied' | translate}}</a>\r\n                </div>\r\n\r\n                <div class=\"btn-more\" *ngIf=\"canApply==false\" style=\"margin-top:0px;text-align: center;\">\r\n                  <a title=\"\" (click)=\"goToLogin()\">{{'loginToApply' | translate}}</a>\r\n                </div>\r\n\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: left;\" class=\"col-md-1 col-xs-0\"></div>\r\n    </div>\r\n\r\n    <div class=\"row\" id=\"usersTab\" style=\"direction: ltr;padding-bottom: 30px;\">\r\n      <div class=\"col-sm-1\">\r\n\r\n      </div>\r\n      <div class=\"col-sm-10\">\r\n        <div class=\"row\">\r\n          <div class=\"col-xs-12 placeholder\" *ngIf=\"employee==null || employee.length==0\">\r\n            <img src=\"../../../assets/images/page/employee.png\">\r\n            <h4>{{'noApplicants'|translate}}</h4>\r\n          </div>\r\n          <div class=\"col-md-6 col-xs-12 userCard\" *ngFor=\"let oneEmployee of employee;let i = index\">\r\n            <div class=\"box\">\r\n              <div class=\"imgDiv\">\r\n                <div class=\"img\" [style.backgroundImage]=\"'url('+ oneEmployee.user?.imageProfile +')'\"></div>\r\n              </div>\r\n              <div class=\"infoDiv\">\r\n                <div class=\"contain\">\r\n                  <h4 class=\"name\" (click)=\"goToCv(oneEmployee.userId)\"> {{oneEmployee.user?.username}}</h4>\r\n                  <h5 class=\"identefire\" *ngIf=\"oneEmployee.user?.CV?.primaryIdentifier\">\r\n                    {{oneEmployee.user?.CV?.primaryIdentifier\t}}</h5>\r\n                  <h5 class=\"city\" *ngIf=\"oneEmployee.user?.CV?.city?.nameAr\"> {{oneEmployee.user?.CV?.city?.nameAr\t}}\r\n                  </h5>\r\n                  <h5 class=\"city\" *ngIf=\"oneEmployee.user?.phoneNumber\"> {{oneEmployee.user?.phoneNumber\t}}</h5>\r\n\r\n                </div>\r\n              </div>\r\n              <div class=\"stautsDiv\">\r\n                <div class=\"contain\">\r\n                  <div class=\"oneInfo\">\r\n                    <!-- <span>Applied : </span> -->\r\n                    <span>{{oneEmployee.createdAt | date:'MMM dd,yy' }} </span>\r\n                  </div>\r\n                  <div class=\"oneInfo\">\r\n                    <select (change)=\"changeStauts(i)\" class=\"select\" [(ngModel)]=\"employee[i].status\">\r\n                      <option *ngFor=\"let oneItem of statusArray;let i= index\" value=\"{{oneItem.value}}\">\r\n                        {{oneItem.view|translate}}</option>\r\n                    </select>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-sm-1\">\r\n\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -293,7 +359,7 @@ module.exports = "<section class=\"flat-row flat-imagebox background\">\r\n  <di
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"page-title style1 parallax parallax1\" style=\"min-height: 300px;\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"page-title-heading\">\r\n          {{'homeTitle' | translate}}\r\n        </div>\r\n        <div class=\"text-heading\">\r\n          {{'homeSubTitle' | translate}}\r\n        </div>\r\n        <!-- <div class=\"wrap-box-search\">\r\n          <form   accept-charset=\"utf-8\">\r\n            <span>\r\n              <input type=\"text\" placeholder=\"{{'searchForWhat' | translate}}\"  [(ngModel)]=\"searchText\" name=\"search\">\r\n            </span>\r\n\r\n            <span class=\"location\">\r\n              <span class=\"ti-location-pin\"></span>\r\n              <select [(ngModel)]=\"adLocation\" name=\"location\" >\r\n                <option value=\"0\" hidden>{{'location' | translate}}</option>\r\n                <option *ngFor=\"let c of cities\" [ngValue]=\"c\">{{c.name}}</option>\r\n              </select>\r\n            </span>\r\n\r\n            <span class=\"categories\">\r\n              <span class=\"ti-angle-down\"></span>\r\n\r\n                <select name=\"categories\"  [(ngModel)]=\"categoryID\">\r\n                  <option value=\"0\"   >{{'chooseCategory' | translate }}</option>\r\n                  <option *ngFor=\"let c of categories\" [value]=\"c.id\" >{{c.title}}</option>\r\n\r\n                </select>\r\n            </span>\r\n            <button  (click)=\"filterByNavSearch()\" class=\"search-btn\">{{'search' | translate}}</button>\r\n          </form>\r\n        </div> -->\r\n        <!-- /.wrap-box-search -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n\r\n<!-- <section class=\"flat-highlights\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"highlights\">\r\n          <ul class=\"menu-list\">\r\n            <li *ngFor=\"let item of categories\" (click)=\"filterByIcon(item)\" [class.active]=\"selectedCategory==item\">\r\n              <a href=\"#volume\">\r\n                <img src=\"{{item.icon}}\" />\r\n                <span>{{item.title}}</span>\r\n              </a>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section> -->\r\n<!-- /.flat-highlights -->\r\n"
+module.exports = "<section class=\"page-title style1 parallax parallax1\" style=\"min-height: 300px;\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"page-title-heading\">\r\n          {{'homeTitle' | translate}}\r\n        </div>\r\n        <div class=\"text-heading\">\r\n          {{'homeSubTitle' | translate}}\r\n        </div>\r\n        <!-- /.wrap-box-search -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -327,6 +393,17 @@ module.exports = ""
 /***/ (function(module, exports) {
 
 module.exports = "<section id=\"volume\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n      <div class=\"filter-wrap\">\r\n        <!-- <h2>{{'searchFilter' | translate}}</h2> -->\r\n        <div class=\"wrap-filter-search\">\r\n          <form action=\"#\" method=\"get\" accept-charset=\"utf-8\">\r\n            <span class=\"keyword\">\r\n              <input [(ngModel)]=\"searchText\" type=\"text\" placeholder=\"{{'keyword'| translate}}\" name=\"search\">\r\n            </span>\r\n            <span class=\"categories\">\r\n              <span class=\"ti-angle-down\"></span>\r\n              <select name=\"categories\" [(ngModel)]=\"category\" (change)=\"setCategoryId(category)\">\r\n                <option [ngValue]=\"initialValue\">{{'category' | translate }}</option>\r\n                <option *ngFor=\"let c of categories\" [ngValue]=\"c\">{{c.title}}</option>\r\n              </select>\r\n            </span>\r\n            <span *ngIf=\"category!=undefined\" class=\"subCategories\">\r\n              <span class=\"ti-angle-down\"></span>\r\n              <select [disabled]=\"category=='0'\" name=\"subCategories\" [(ngModel)]=\"subCategory\">\r\n                <option value=\"\" [selected]=\"isSelected\" hidden>{{'subCategory' | translate}}</option>\r\n                <option *ngFor=\"let sc of category?.subCategories\" [ngValue]=\"sc.id\">{{sc.title}}</option>\r\n              </select>\r\n            </span>\r\n            <span class=\"categories\">\r\n              <span class=\"ti-angle-down\"></span>\r\n              <select name=\"categories\" [(ngModel)]=\"city\" (change)=\"setCityId(city)\">\r\n                <option [ngValue]=\"initialValue\">{{'chooseCity'| translate}}</option>\r\n                <option *ngFor=\"let c of cities\" [ngValue]=\"c\">{{c.name}}</option>\r\n              </select>\r\n            </span>\r\n            <span *ngIf=\"city!=undefined\" class=\"location\">\r\n              <!-- <span class=\"ti-location-pin\"></span> -->\r\n              <span class=\"ti-angle-down\"></span>\r\n\r\n              <!-- <input [(ngModel)]=\"location\" type=\"text\" placeholder=\"{{'location'| translate}}\" name=\"location\"> -->\r\n              <select name=\"location\" [(ngModel)]=\"location\">\r\n                <option hidden value=\"\" [selected]=\"isSelected\">{{'location'| translate}}</option>\r\n                <option *ngFor=\"let l of city?.locations\" [ngValue]=\"l.id\">{{l.name}}</option>\r\n              </select>\r\n            </span>\r\n            <button (click)=\"volumeFilter()\" class=\"search-btn\">{{'apply'| translate}}</button>\r\n\r\n          </form>\r\n          <!-- /form -->\r\n        </div>\r\n        <div class=\"col-md-12 version-arrow\" *ngIf=\"!id\">\r\n\r\n          <div class=\"left-arrow\">\r\n            <i title=\"Previous\"  [ngClass]=\"{disabled:prevDisabled}\"  (click)=\"prev()\" class=\"fa fa-angle-right fa-4x pointerHover\" aria-hidden=\"true\"></i>\r\n          </div>\r\n          <div class=\"title\">\r\n            <h2>{{title}}</h2>\r\n          </div>\r\n          <div class=\"right-arrow\">\r\n            <i title=\"Next\" (click)=\"next()\" [ngClass]=\"{disabled:nextDisabled}\"\r\n              class=\"fa fa-angle-left fa-4x pointerHover\" aria-hidden=\"true\"></i>\r\n          </div>\r\n\r\n        </div>\r\n        <div class=\"col-md-12 version-arrow\" *ngIf=\"id\">\r\n          <div class=\"title \" style=\"width: 100%\">\r\n            <h2>{{title}}</h2>\r\n          </div>\r\n        </div>\r\n        <div class=\"clearfix\"></div>\r\n        <!-- /.wrap-box-search -->\r\n        <div class=\"container p-t-60\">\r\n\r\n          <div class=\"row featured-box-flex-container\" *ngIf=\"data.posts\">\r\n\r\n\r\n            <app-card-h  *ngFor=\"let item of data.posts| volumeFilter:cds.filterItem \" [details]=\"item\"\r\n              class=\"col-md-5  col-xs-12 featured-box-flex\"></app-card-h>\r\n\r\n          </div>\r\n          <!-- /.row -->\r\n        </div>\r\n        <!-- /.container -->\r\n      </div>\r\n      <!-- /.highlights -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container-fluid -->\r\n</section>\r\n<!-- /.flat-highlights -->"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/modals/rate/add-rate/add-rate.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/modals/rate/add-rate/add-rate.component.html ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"module\">\n  <div class=\"headers\">\n    <h4 class=\"mainLabel\">\n      {{'rate' | translate}}\n    </h4>\n    <i class=\"fa fa-times close\" (click)=\"close()\" aria-hidden=\"true\"></i>\n  </div>\n  <div class=\"contint\">\n\n    <span class=\"errorMessage\" *ngIf=\"errorMessage!=''\">{{errorMessage|translate}}</span>\n\n    <div class=\"rate\">\n      <input type=\"radio\" id=\"star5\" name=\"rate\" value=\"5\" />\n      <label for=\"star5\" title=\"text\" (click)=\"this.rate.value = 5\">5 stars</label>\n      <input type=\"radio\" id=\"star4\" name=\"rate\" value=\"4\" />\n      <label for=\"star4\" title=\"text\" (click)=\"this.rate.value = 4\">4 stars</label>\n      <input type=\"radio\" id=\"star3\" name=\"rate\" value=\"3\" />\n      <label for=\"star3\" title=\"text\" (click)=\"this.rate.value = 3\">3 stars</label>\n      <input type=\"radio\" id=\"star2\" name=\"rate\" value=\"2\" />\n      <label for=\"star2\" title=\"text\" (click)=\"this.rate.value = 2\">2 stars</label>\n      <input type=\"radio\" id=\"star1\" name=\"rate\" value=\"1\" />\n      <label for=\"star1\" title=\"text\" (click)=\"this.rate.value = 1\">1 star</label>\n    </div>\n\n    <div style=\"clear: both;\"></div>\n\n    <div class=\"inputDiv\">\n      <h4 class=\"title\">{{'comment'|translate}}</h4>\n      <input type=\"text\" name=\"text\" class=\"input\" placeholder=\"{{'enter'|translate}} {{'comment' | translate}}\"\n        [(ngModel)]=\"rate.text\">\n    </div>\n\n\n  </div>\n\n  <div class=\"footer\">\n    <div type=\"submit\" class=\"button save\" (click)=\"sendRate()\">\n      {{'rate' | translate}}\n    </div>\n    <div style=\"clear:both\"></div>\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -381,7 +458,7 @@ module.exports = "<div class=\"tag-container\">\r\n  <div class=\"tag\" *ngFor=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"\">\r\n  <div class=\"\" style=\"background-color: #f9f8f3\">\r\n    <div class=\"row\" style=\"background-color: #fff;margin-bottom: 30px;\">\r\n      <div *ngIf=\"user\" class=\"col-md-12 mainHeader\">\r\n        <div class=\"col-md-3 col-xs-12\" style=\"float: left;\">\r\n          <div class=\"img\" [style.backgroundImage]=\"'url('+ user.imageProfile +')'\"></div>\r\n        </div>\r\n        <div class=\"col-md-9 col-xs-12\" style=\"min-height: 200px;display: table;\">\r\n          <input type=\"file\" hidden #file id=\"file\" (change)=\"imageChanged()\" />\r\n          <div style=\"vertical-align: middle;display: table-cell;\">\r\n            <h3 class=\"username\">{{user.username}}\r\n              <span class=\"edit\" *ngIf=\"isMyCV\" (click)=\"editBasicInfo()\">{{'edit'|translate}}</span>\r\n              <span class=\"edit editCv\" *ngIf=\"isMyCV\" (click)=\"editCv()\">{{'editCVFile'|translate}}</span>\r\n            </h3>\r\n            <h5 *ngIf=\"user.CV\" class=\"identefire\">{{user.CV.primaryIdentifier}}</h5>\r\n            <h5 *ngIf=\"user.CV\" class=\"city\">{{user.CV.city?.nameEn}}</h5>\r\n            <p *ngIf=\"user.CV\" class=\"bio\">{{user.CV.bio}}</p>\r\n            <div *ngIf=\"user.CV\" class=\"icons\">\r\n              <div class=\"oneIcon\" *ngIf=\"user.CV.websiteLink\">\r\n                <a href=\"{{user.CV.websiteLink}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-globe\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n              <div class=\"oneIcon\" *ngIf=\"user.CV.facebookLink\">\r\n                <a href=\"{{user.CV.facebookLink}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-facebook-square\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n              <div class=\"oneIcon\" *ngIf=\"user.CV.behanceLink\">\r\n                <a href=\"{{user.CV.behanceLink}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-behance-square\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n              <div class=\"oneIcon\" *ngIf=\"user.CV.githubLink\">\r\n                <a href=\"{{user.CV.githubLink}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-github-square\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n              <div class=\"oneIcon\" *ngIf=\"user.CV.twitterLink\">\r\n                <a href=\"{{user.CV.twitterLink}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-twitter-square\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n\r\n              <div class=\"oneIcon downloadCv\">\r\n                <a href=\"{{user.CV.cvURL}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-cloud-download\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\" style=\"direction: ltr;padding-bottom: 30px;\">\r\n      <div style=\"float: left;\" class=\"col-md-1 col-xs-0\"></div>\r\n      <div style=\"float: left;\" *ngIf=\"user\" class=\"col-md-7 col-xs-12 containtCV\">\r\n        <div class=\"mainContent\">\r\n          <div style=\"position:relative\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'experience' | translate}}\r\n              <span *ngIf=\"isMyCV\" class=\"add\" (click)=\"editInfo('experience',null,null)\">{{'add' | translate}}</span>\r\n            </h4>\r\n            <div class=\"listItems\">\r\n              <div class=\"placeholder\" *ngIf=\"user.CV==null|| user.CV.experience.length==0\">\r\n                <img src=\"../../../assets/images/page/empty placeholder.png\">\r\n                <h4>{{'noExperienceInCv'|translate}}</h4>\r\n              </div>\r\n              <div *ngIf=\"user.CV\">\r\n\r\n                <div class=\"oneItem\" *ngFor=\"let oneItem of user.CV.experience;let i=index\">\r\n                  <div class=\"circle\"></div>\r\n                  <span class=\"title\">{{oneItem.title}}\r\n                    <span *ngIf=\"isMyCV\" class=\"edit\"\r\n                      (click)=\"editInfo('experience',oneItem,i)\">{{'edit'|translate}}</span>\r\n                  </span>\r\n                  <h3 class=\"subTitle\">{{oneItem.companyName}}</h3>\r\n                  <p class=\"description\">{{oneItem.description}}</p>\r\n                  <h3 class=\"date\">{{oneItem.from | date:'MMM dd,yy' }} -\r\n                    {{(oneItem.isPresent==true? 'present' :oneItem.to | date:'MMM dd,yy')| translate }}</h3>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div style=\"position:relative\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'skills' | translate}}\r\n              <span *ngIf=\"isMyCV\" (click)=\"editSkills()\"\r\n                class=\"add\">{{(user.CV&& user.CV.tags.length>0? 'edit': 'add') | translate}}</span>\r\n\r\n            </h4>\r\n\r\n            <div class=\"listItems\" *ngIf=\"user.CV==null|| user.CV.tags.length==0\">\r\n              <div class=\"placeholder\">\r\n                <img src=\"../../../assets/images/page/empty placeholder.png\">\r\n                <h4>{{'noTagsInCv'|translate}}</h4>\r\n              </div>\r\n            </div>\r\n            <div class=\"listOfTags\" *ngIf=\"user.CV && user.CV.tags.length!=0\">\r\n              <div class=\"tag\" *ngFor=\"let oneItem of user.CV.tags;let i=index\">\r\n                <span>\r\n                  {{oneItem.name}}\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div style=\"position:relative\">\r\n\r\n            <h4 class=\"mainLabel\">\r\n              {{'education' | translate}}\r\n              <span *ngIf=\"isMyCV\" class=\"add\" (click)=\"editInfo('education',null,null)\">{{'add' | translate}}</span>\r\n\r\n            </h4>\r\n            <div class=\"listItems\">\r\n              <div class=\"placeholder\" *ngIf=\"user.CV==null|| user.CV.education.length==0\">\r\n                <img src=\"../../../assets/images/page/empty placeholder.png\">\r\n                <h4>{{'noEducationInCv'|translate}}</h4>\r\n\r\n              </div>\r\n              <div *ngIf=\"user.CV\">\r\n                <div class=\"oneItem\" *ngFor=\"let oneItem of user.CV.education;let i=index\">\r\n                  <div class=\"circle\"></div>\r\n                  <span class=\"title\">{{oneItem.title}}\r\n                    <span *ngIf=\"isMyCV\" class=\"edit\"\r\n                      (click)=\"editInfo('education',oneItem,i)\">{{'edit'|translate}}</span>\r\n                  </span>\r\n                  <h3 class=\"subTitle\">{{oneItem.educationalEntity}}</h3>\r\n                  <p class=\"description\">{{oneItem.description}}</p>\r\n                  <h3 class=\"date\">{{oneItem.from | date:'MMM dd,yy' }} - {{oneItem.to | date:'MMM dd,yy' }}</h3>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: left;padding-top: 33px\" class=\"col-md-3 col-xs-12 similerProfile\">\r\n        <h4 class=\"mainLabel\" *ngIf=\"similer.length!=0\">\r\n          {{'similarProfile' | translate}}\r\n        </h4>\r\n\r\n        <div class=\"listOfUsers\">\r\n          <div class=\"oneUsers\" *ngFor=\"let oneItem of similer;let i=index\" (click)=\"goToCv(oneItem.id)\">\r\n            <div class=\"card\">\r\n              <div class=\"imgDiv\">\r\n                <div class=\"img\" [style.backgroundImage]=\"'url('+ oneItem.imageProfile +')'\"></div>\r\n              </div>\r\n              <div class=\"contint\">\r\n                <div style=\"vertical-align: middle;display: table-cell;padding-left: 5px;\">\r\n                  <span class=\"username\">{{oneItem.username}}</span>\r\n                  <span class=\"identefire\">{{oneItem.CV.primaryIdentifier}}</span>\r\n                  <span class=\"city\">{{oneItem.CV.city?.nameEn}}</span>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <hr class=\"spreater\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: left;\" class=\"col-md-1 col-xs-0\"></div>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
+module.exports = "<section class=\"\">\r\n  <div class=\"\" style=\"background-color: #f9f8f3\">\r\n    <div class=\"row\" style=\"background-color: #fff;margin-bottom: 30px;\">\r\n      <div *ngIf=\"user\" class=\"col-md-12 mainHeader\">\r\n        <div class=\"col-md-3 col-xs-12\" style=\"float: left;\">\r\n          <div class=\"img\" [style.backgroundImage]=\"'url('+ user.imageProfile +')'\"></div>\r\n        </div>\r\n        <div class=\"col-md-9 col-xs-12\" style=\"min-height: 200px;display: table;\">\r\n          <input type=\"file\" hidden #file id=\"file\" (change)=\"imageChanged()\" />\r\n          <div style=\"vertical-align: middle;display: table-cell;\">\r\n            <h3 class=\"username\">{{user.username}}\r\n              <span class=\"edit\" *ngIf=\"isMyCV\" (click)=\"editBasicInfo()\">{{'edit'|translate}}</span>\r\n              <span class=\"edit editCv\" *ngIf=\"isMyCV\" (click)=\"editCv()\">{{'editCVFile'|translate}}</span>\r\n            </h3>\r\n            <h5 *ngIf=\"user.CV\" class=\"identefire\">{{user.CV.primaryIdentifier}}</h5>\r\n            <h5 *ngIf=\"user.CV\" class=\"city\">{{user.CV.city?.nameEn}}</h5>\r\n            <p *ngIf=\"user.CV\" class=\"bio\">{{user.CV.bio}}</p>\r\n            <div *ngIf=\"user.CV\" class=\"icons\">\r\n              <div class=\"oneIcon\" *ngIf=\"user.CV.websiteLink\">\r\n                <a href=\"{{user.CV.websiteLink}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-globe\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n              <div class=\"oneIcon\" *ngIf=\"user.CV.facebookLink\">\r\n                <a href=\"{{user.CV.facebookLink}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-facebook-square\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n              <div class=\"oneIcon\" *ngIf=\"user.CV.behanceLink\">\r\n                <a href=\"{{user.CV.behanceLink}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-behance-square\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n              <div class=\"oneIcon\" *ngIf=\"user.CV.githubLink\">\r\n                <a href=\"{{user.CV.githubLink}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-github-square\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n              <div class=\"oneIcon\" *ngIf=\"user.CV.twitterLink\">\r\n                <a href=\"{{user.CV.twitterLink}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-twitter-square\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n\r\n              <div class=\"oneIcon downloadCv\">\r\n                <a href=\"{{user.CV.cvURL}}\" target=\"_blank\">\r\n                  <i class=\"fa fa-cloud-download\" aria-hidden=\"true\">\r\n                  </i>\r\n                </a>\r\n              </div>\r\n            </div>\r\n\r\n          <div class=\"follow\" *ngIf=\"!isMyCV\">\r\n            <div class=\"btn-more\">\r\n              <a (click)=\"toggleFollowing()\" class=\"follow-button-text\" data-toggle=\"button\">\r\n                <ng-container *ngIf=\"isFollowing\">\r\n                  {{ 'unFollow' | translate}}\r\n                  <img src=\"assets/images/page/unfollow.png\" alt=\"follow icon\" class=\"follow-icon\">\r\n                </ng-container>\r\n                <ng-container *ngIf=\"!isFollowing\">\r\n                  {{ 'follow' | translate }}\r\n                  <img src=\"assets/images/page/follow.png\" alt=\"follow icon\" class=\"follow-icon\">\r\n                </ng-container>\r\n              </a>\r\n            </div>\r\n          </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\" style=\"direction: ltr;padding-bottom: 30px;\">\r\n      <div style=\"float: left;\" class=\"col-md-1 col-xs-0\"></div>\r\n      <div style=\"float: left;\" *ngIf=\"user\" class=\"col-md-7 col-xs-12 containtCV\">\r\n        <div class=\"mainContent\">\r\n          <div style=\"position:relative\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'experience' | translate}}\r\n              <span *ngIf=\"isMyCV\" class=\"add\" (click)=\"editInfo('experience',null,null)\">{{'add' | translate}}</span>\r\n            </h4>\r\n            <div class=\"listItems\">\r\n              <div class=\"placeholder\" *ngIf=\"user.CV==null|| user.CV.experience.length==0\">\r\n                <img src=\"../../../assets/images/page/empty placeholder.png\">\r\n                <h4>{{'noExperienceInCv'|translate}}</h4>\r\n              </div>\r\n              <div *ngIf=\"user.CV\">\r\n\r\n                <div class=\"oneItem\" *ngFor=\"let oneItem of user.CV.experience;let i=index\">\r\n                  <div class=\"circle\"></div>\r\n                  <span class=\"title\">{{oneItem.title}}\r\n                    <span *ngIf=\"isMyCV\" class=\"edit\"\r\n                      (click)=\"editInfo('experience',oneItem,i)\">{{'edit'|translate}}</span>\r\n                  </span>\r\n                  <h3 class=\"subTitle\">{{oneItem.companyName}}</h3>\r\n                  <p class=\"description\">{{oneItem.description}}</p>\r\n                  <h3 class=\"date\">{{oneItem.from | date:'MMM dd,yy' }} -\r\n                    {{(oneItem.isPresent==true? 'present' :oneItem.to | date:'MMM dd,yy')| translate }}</h3>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div style=\"position:relative\">\r\n            <h4 class=\"mainLabel\">\r\n              {{'skills' | translate}}\r\n              <span *ngIf=\"isMyCV\" (click)=\"editSkills()\"\r\n                class=\"add\">{{(user.CV&& user.CV.tags.length>0? 'edit': 'add') | translate}}</span>\r\n\r\n            </h4>\r\n\r\n            <div class=\"listItems\" *ngIf=\"user.CV==null|| user.CV.tags.length==0\">\r\n              <div class=\"placeholder\">\r\n                <img src=\"../../../assets/images/page/empty placeholder.png\">\r\n                <h4>{{'noTagsInCv'|translate}}</h4>\r\n              </div>\r\n            </div>\r\n            <div class=\"listOfTags\" *ngIf=\"user.CV && user.CV.tags.length!=0\">\r\n              <div class=\"tag\" *ngFor=\"let oneItem of user.CV.tags;let i=index\">\r\n                <span>\r\n                  {{oneItem.name}}\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div style=\"position:relative\">\r\n\r\n            <h4 class=\"mainLabel\">\r\n              {{'education' | translate}}\r\n              <span *ngIf=\"isMyCV\" class=\"add\" (click)=\"editInfo('education',null,null)\">{{'add' | translate}}</span>\r\n\r\n            </h4>\r\n            <div class=\"listItems\">\r\n              <div class=\"placeholder\" *ngIf=\"user.CV==null|| user.CV.education.length==0\">\r\n                <img src=\"../../../assets/images/page/empty placeholder.png\">\r\n                <h4>{{'noEducationInCv'|translate}}</h4>\r\n\r\n              </div>\r\n              <div *ngIf=\"user.CV\">\r\n                <div class=\"oneItem\" *ngFor=\"let oneItem of user.CV.education;let i=index\">\r\n                  <div class=\"circle\"></div>\r\n                  <span class=\"title\">{{oneItem.title}}\r\n                    <span *ngIf=\"isMyCV\" class=\"edit\"\r\n                      (click)=\"editInfo('education',oneItem,i)\">{{'edit'|translate}}</span>\r\n                  </span>\r\n                  <h3 class=\"subTitle\">{{oneItem.educationalEntity}}</h3>\r\n                  <p class=\"description\">{{oneItem.description}}</p>\r\n                  <h3 class=\"date\">{{oneItem.from | date:'MMM dd,yy' }} - {{oneItem.to | date:'MMM dd,yy' }}</h3>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: left;padding-top: 33px\" class=\"col-md-3 col-xs-12 similerProfile\">\r\n        <h4 class=\"mainLabel\" *ngIf=\"similer.length!=0\">\r\n          {{'similarProfile' | translate}}\r\n        </h4>\r\n\r\n        <div class=\"listOfUsers\">\r\n          <div class=\"oneUsers\" *ngFor=\"let oneItem of similer;let i=index\" (click)=\"goToCv(oneItem.id)\">\r\n            <div class=\"card\">\r\n              <div class=\"imgDiv\">\r\n                <div class=\"img\" [style.backgroundImage]=\"'url('+ oneItem.imageProfile +')'\"></div>\r\n              </div>\r\n              <div class=\"contint\">\r\n                <div style=\"vertical-align: middle;display: table-cell;padding-left: 5px;\">\r\n                  <span class=\"username\">{{oneItem.username}}</span>\r\n                  <span class=\"identefire\">{{oneItem.CV.primaryIdentifier}}</span>\r\n                  <span class=\"city\">{{oneItem.CV.city?.nameEn}}</span>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <hr class=\"spreater\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div style=\"float: left;\" class=\"col-md-1 col-xs-0\"></div>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -418,6 +495,17 @@ module.exports = "<div class=\"module\">\r\n  <div class=\"headers\">\r\n    <h4
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/profile/follow-list/follow-list.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/profile/follow-list/follow-list.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section>\r\n  <div class=\"container-fluid\" style=\"background-color: #f9f8f3\">\r\n    <div class=\"row\">\r\n\r\n      <div class=\"col-md-12\" style=\"margin: 40px 0px 10px 0px;\">\r\n        <div class=\"flat-row-title center\">\r\n          <h2>{{'following'| translate}}</h2>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-md-1\">\r\n\r\n      </div>\r\n\r\n      <div class=\"col-md-3\">\r\n        <div class=\"user-wrapper\">\r\n          <div class=\"user-image\">\r\n            <img [src]=\"user.user.imageProfile || 'assets/images/page/employee.png'\"\r\n              style=\"width: 125px; height: 125px; border-radius: 50%;\">\r\n            <h3 style=\"margin-top: 15px;\"> {{ user.user.username }} </h3>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-lg-6\">\r\n              <div class=\"oneInfo\">\r\n                <p class=\"head\">{{ 'userFollowing' | translate }}</p>\r\n                <p class=\"body\">{{ user.user.userFollowing }}</p>\r\n              </div>\r\n              <div class=\"oneInfo\">\r\n                <p class=\"head\">{{ 'businessFollowing' | translate }}</p>\r\n                <p class=\"body\">{{ user.user.businessFollowing }}</p>\r\n              </div>\r\n              <div class=\"oneInfo\">\r\n                <p class=\"head\">{{ 'phoneNumber' | translate }}</p>\r\n                <p class=\"body\">{{ user.user.phoneNumber }}</p>\r\n              </div>\r\n            </div>\r\n            <div class=\"col-lg-6\">\r\n              <div class=\"oneInfo\">\r\n                <p class=\"head\">{{ 'userFollowers' | translate }}</p>\r\n                <p class=\"body\">{{ user.user.follower }}</p>\r\n              </div>\r\n              <div class=\"oneInfo\">\r\n                <p class=\"head\">{{ 'gender' | translate }}</p>\r\n                <p class=\"body\">{{ user.user.gender }}</p>\r\n              </div>\r\n              <div class=\"oneInfo\">\r\n                <p class=\"head\">{{ 'email' | translate }}</p>\r\n                <p class=\"body\">{{ user.user.email }}</p>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-md-7\">\r\n        <tabset [pills]=\"true\">\r\n          <tab [title]=\"'userFollowing' | translate\">\r\n            <div class=\"follow-wrapper\">\r\n              <div *ngFor=\"let follow of userFollowing;let i = index\" class=\"follow-box\">\r\n                <div class=\"follow-image\">\r\n                  <a [routerLink]=\"['/cv/' + follow.user.id]\">\r\n                    <img [src]=\"follow.user.imageProfile || 'assets/images/page/employee.png'\" alt=\"user image\">\r\n                  </a>\r\n                </div>\r\n                <div class=\"follow-info\">\r\n                  <p class=\"follow-text\"> {{ follow.user.username }} </p>\r\n                  <p class=\"follow-text\"> {{ follow.user.email }} </p>\r\n                </div>\r\n\r\n                <div class=\"follow-button\">\r\n                  <div class=\"btn-more\" style=\"margin: 0px ;\">\r\n                    <a (click)=\"toggleFollowing(follow.user.id, 'USER')\" class=\"follow-button-text\"\r\n                      style=\"padding: 0px 7px; font-size: 14px;\" data-toggle=\"button\">\r\n                      <ng-container *ngIf=\"isFollowing(follow.user.id, 'USER')\">\r\n                        {{ 'unFollow' | translate}}\r\n                        <img src=\"assets/images/page/unfollow.png\" alt=\"follow icon\" class=\"follow-icon\">\r\n                      </ng-container>\r\n                      <ng-container *ngIf=\"!isFollowing(follow.user.id, 'USER')\">\r\n                        {{ 'follow' | translate }}\r\n                        <img src=\"assets/images/page/follow.png\" alt=\"follow icon\" class=\"follow-icon\">\r\n                      </ng-container>\r\n                    </a>\r\n                  </div>\r\n                </div>\r\n\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab [title]=\"'businessFollowing' | translate\">\r\n            <div class=\"follow-wrapper\">\r\n              <div *ngFor=\"let follow of businessFollowing;let i = index\" class=\"follow-box\">\r\n                <div class=\"follow-image\">\r\n                  <a [routerLink]=\"['/business/' + follow.business.id]\">\r\n                    <img [src]=\"follow.business.logo || 'assets/images/page/business-01.png'\" alt=\"business image\">\r\n                  </a>\r\n                </div>\r\n                <div class=\"follow-info\">\r\n                  <p class=\"follow-text\"> {{ follow.business.nameUnique }} </p>\r\n                  <p class=\"follow-text\"> {{ follow.business.description }} </p>\r\n                </div>\r\n\r\n                <div class=\"follow-button\">\r\n                  <div class=\"btn-more\" style=\"margin: 0px ;\">\r\n                    <a (click)=\"toggleFollowing(follow.business.id, 'BUSINESS')\" class=\"follow-button-text\"\r\n                      style=\"padding: 0px 7px; font-size: 14px;\" data-toggle=\"button\">\r\n                      <ng-container *ngIf=\"isFollowing(follow.business.id, 'BUSINESS')\">\r\n                        {{ 'unFollow' | translate}}\r\n                        <img src=\"assets/images/page/unfollow.png\" alt=\"follow icon\" class=\"follow-icon\">\r\n                      </ng-container>\r\n                      <ng-container *ngIf=\"!isFollowing(follow.business.id, 'BUSINESS')\">\r\n                        {{ 'follow' | translate }}\r\n                        <img src=\"assets/images/page/follow.png\" alt=\"follow icon\" class=\"follow-icon\">\r\n                      </ng-container>\r\n                    </a>\r\n                  </div>\r\n                </div>\r\n\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab [title]=\"'userFollowers' | translate\">\r\n            <div class=\"follow-wrapper\">\r\n              <div *ngFor=\"let follow of userFollowers;let i = index\" class=\"follow-box\">\r\n                <div class=\"follow-image\">\r\n                  <a [routerLink]=\"['/cv/' + follow.owner.id]\">\r\n                    <img [src]=\"follow.owner.imageProfile || 'assets/images/page/employee.png'\" alt=\"user image\">\r\n                  </a>\r\n                </div>\r\n                <div class=\"follow-info\">\r\n                  <p class=\"follow-text\"> {{ follow.owner.username }} </p>\r\n                  <p class=\"follow-text\"> {{ follow.owner.email }} </p>\r\n                </div>\r\n\r\n                <div class=\"follow-button\">\r\n                  <div class=\"btn-more\" style=\"margin: 0px ;\">\r\n                    <a (click)=\"toggleFollowing(follow.owner.id, 'USER')\" class=\"follow-button-text\"\r\n                      style=\"padding: 0px 7px; font-size: 14px;\" data-toggle=\"button\">\r\n                      <ng-container *ngIf=\"isFollowing(follow.owner.id, 'USER')\">\r\n                        {{ 'unFollow' | translate}}\r\n                        <img src=\"assets/images/page/unfollow.png\" alt=\"follow icon\" class=\"follow-icon\">\r\n                      </ng-container>\r\n                      <ng-container *ngIf=\"!isFollowing(follow.owner.id, 'USER')\">\r\n                        {{ 'follow' | translate }}\r\n                        <img src=\"assets/images/page/follow.png\" alt=\"follow icon\" class=\"follow-icon\">\r\n                      </ng-container>\r\n                    </a>\r\n                  </div>\r\n                </div>\r\n\r\n              </div>\r\n            </div>\r\n          </tab>\r\n        </tabset>\r\n\r\n\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/profile/profile-edit/profile-edit.component.html":
 /*!********************************************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/profile/profile-edit/profile-edit.component.html ***!
@@ -436,7 +524,7 @@ module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div cl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"page-title parallax parallax1\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"page-title-heading\">\r\n          {{user?.username}}\r\n        </div>\r\n\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n<!-- /.page-title -->\r\n\r\n<div class=\"container-fluid without-padding cloudy-bg\">\r\n  <div class=\"col-md-12 without-padding\">\r\n    <div class=\"profile-image-container\">\r\n      <!--<div class=\"change-image\">{{'edit' | translate}} </div>-->\r\n      <img class=\"profile-img\" *ngIf=\"!user?.imageProfile\" src=\"http://via.placeholder.com/150x150\" />\r\n      <img class=\"profile-img\" *ngIf=\"user?.imageProfile\" [src]=\"user?.imageProfile\" />\r\n    </div>\r\n    <div class=\"col-md-12 text-center\">\r\n      <div class=\"\">\r\n        {{'addedAds' | translate}}\r\n      </div>\r\n      <div class=\"ads-count\">\r\n        {{ads?.length}}\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <!-- /.col-md-12 -->\r\n</div>\r\n<!-- /.container -->\r\n\r\n\r\n\r\n\r\n\r\n<section class=\"cloudy-bg\">\r\n  <section class=\"flat-profile\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <form action=\"#\" class=\"form-listing\" method=\"get\" accept-charset=\"utf-8\">\r\n\r\n            <div class=\"inner-box form\">\r\n\r\n              <div style=\"display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;\">\r\n                <div>\r\n                  <div class=\"wrap-listing username\">\r\n                    <label>{{'username' | translate}}</label>\r\n                    <div class=\"user-name-text\">{{user?.username}}</div>\r\n                  </div>\r\n                  <div class=\"clearfix\"></div>\r\n                </div>\r\n\r\n                <div>\r\n                  <div class=\"wrap-listing phone\">\r\n                    <label>{{'email' | translate}}</label>\r\n                    <div class=\"user-email-text\">{{user?.email}}</div>\r\n                  </div>\r\n                  <div class=\"clearfix\"></div>\r\n                </div>\r\n\r\n                <div>\r\n                  <div class=\"wrap-listing username\">\r\n                    <label>{{'balance' | translate}}</label>\r\n                    <div class=\"user-name-text\">{{user?.balance}}</div>\r\n                  </div>\r\n                  <div class=\"clearfix\"></div>\r\n                </div>\r\n\r\n\r\n                <div class=\"clearfix\"></div>\r\n              </div>\r\n\r\n              <div class=\"col-md-12 text-left\">\r\n                <a [routerLink]=\"['/cv',id]\">{{'CV' | translate}}</a>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- /.inner-box -->\r\n\r\n          </form>\r\n          <!-- /.form-listing -->\r\n        </div>\r\n\r\n        <!-- /.col-md-12 -->\r\n      </div>\r\n\r\n      <div class=\"col-md-12 subs\" id=\"chooseCategory\">\r\n        <div class=\"inner-box subscribed-list\">\r\n          <div class=\"subscribed\">\r\n            <div class=\"title\">\r\n              <h3>{{'mySubscription' | translate}}</h3>\r\n            </div>\r\n            <br />\r\n            <div class=\"row\">\r\n              <app-category-selector [categories]=\"postCategories\" [selectedSubCategory]=\"user?.postCategoriesIds\"\r\n                (changed)=\"editCat($event)\"></app-category-selector>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"row\">\r\n\r\n\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"inner-box profile-business-list\">\r\n\r\n            <div class=\"main-title\">\r\n              <h3>{{'myAds' | translate}}</h3>\r\n              <button style=\"display: block; position: relative; right:0px; bottom:35px;\" title=\"Add Ad\"\r\n                class=\" col-xs-pull-1 button-navigation\" (click)=\"navigateTo('/ad/create')\">\r\n                <i class=\"fa fa-plus\"></i>\r\n              </button>\r\n            </div>\r\n\r\n\r\n\r\n            <div fxLayout=\"row-reverse\" style=\"overflow-x: scroll;\">\r\n              <ng-container *ngFor=\"let ad of ads;let i=index\">\r\n                <app-ads-card style=\"min-width: 400px; max-width: 400px; margin:0px 15px 15px;\" [ad]=\"ad\"\r\n                  (onRemove)=\"removePost($event,i)\" class=\"featured-box-flex guide-box\">\r\n                </app-ads-card>\r\n              </ng-container>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"inner-box profile-business-list\">\r\n            <div class=\"main-title\">\r\n              <h3>{{'myBusiness' | translate}}</h3>\r\n              <button style=\"display: block; position: relative; right:0px; bottom:35px;\" title=\"Add Business\"\r\n                class=\" col-xs-pull-1 button-navigation\" (click)=\"navigateTo('/business/create')\">\r\n                <i class=\"fa fa-plus\"></i>\r\n              </button>\r\n            </div>\r\n\r\n            <div fxLayout=\"row-reverse\" style=\"overflow-x: scroll;\">\r\n              <ng-container *ngFor=\"let business of businesses;let i=index\">\r\n                <app-business-card style=\"min-width: 400px; max-width: 400px; margin: 0px 15px 15px;\"\r\n                  [business]=\"business\" (onRemove)=\"removeBusiness(business,i)\" class=\"featured-box-flex guide-box\">\r\n                </app-business-card>\r\n              </ng-container>\r\n            </div>\r\n\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"inner-box profile-jobs-list\">\r\n            <div class=\"main-title text-center\">\r\n              <h3>{{'myJobs' | translate}}</h3>\r\n              <button style=\"display: block; position: relative; right:0px; bottom:35px;\" title=\"Add Job\"\r\n                class=\" col-xs-pull-1 button-navigation\" (click)=\"navigateTo('/addJobOpportunity')\">\r\n                <i class=\"fa fa-plus\"></i>\r\n              </button>\r\n            </div>\r\n\r\n            <div fxLayout=\"row-reverse\" style=\"overflow-x: scroll;\">\r\n              <ng-container *ngFor=\"let job of jobs\">\r\n                <app-job-card style=\"min-width: 400px; max-width: 400px; margin: 15px;\" [post]=\"job\"\r\n                  class=\"featured-box-flex guide-box\"></app-job-card>\r\n              </ng-container>\r\n            </div>\r\n\r\n\r\n          </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"inner-box profile-jobs-list\">\r\n            <div class=\"main-title text-center\">\r\n              <h3>{{'myProducts' | translate}}</h3>\r\n              <button style=\"display: block; position: relative; right:0px; bottom:35px;\" title=\"Add Product\"\r\n                class=\" col-xs-pull-1 button-navigation\" (click)=\"navigateTo('/products/create')\">\r\n                <i class=\"fa fa-plus\"></i>\r\n              </button>\r\n            </div>\r\n\r\n            <div fxLayout=\"row-reverse\" style=\"overflow-x: scroll;\">\r\n              <ng-container *ngFor=\"let product of products\">\r\n                <app-product-card style=\"min-width: 400px; max-width: 400px; margin: 15px;\" [details]=\"product\"\r\n                  class=\"featured-box-flex guide-box\"></app-product-card>\r\n              </ng-container>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n\r\n\r\n      </div>\r\n      <!-- /.row -->\r\n    </div>\r\n    <!-- /.container -->\r\n  </section>\r\n  <!-- /.flat-listing -->\r\n</section>\r\n\r\n<ngx-smart-modal #myModal identifier=\"myModal\">\r\n  <div class=\"smart-modal-header\">\r\n    <h3>{{'mySubscription' | translate}}</h3>\r\n  </div>\r\n\r\n  <div class=\"smart-modal-content\">\r\n    <app-category-selector [categories]=\"postCategories\" [selectedSubCategory]=\"user?.postCategoriesIds\"\r\n      (changed)=\"editCat($event)\"></app-category-selector>\r\n  </div>\r\n  <div class=\"smart-modal-footer\">\r\n    <button class=\"btn btn-primary\" (click)=\"myModal.close()\">{{'close'|translate}}</button>\r\n  </div>\r\n\r\n</ngx-smart-modal>\r\n"
+module.exports = "<section class=\"page-title parallax parallax1\" style=\"padding: 40px 0 65px;\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <!-- <div class=\"page-title-heading\">\r\n          {{user?.username}}\r\n        </div> -->\r\n\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n  <div class=\"overlay1\"></div>\r\n</section>\r\n<!-- /.page-title -->\r\n\r\n<!-- <div class=\"container-fluid without-padding cloudy-bg\">\r\n  <div class=\"col-md-12 without-padding\">\r\n    <div class=\"profile-image-container\">\r\n      <img class=\"profile-img\" *ngIf=\"!user?.imageProfile\" src=\"http://via.placeholder.com/150x150\" />\r\n      <img class=\"profile-img\" *ngIf=\"user?.imageProfile\" [src]=\"user?.imageProfile\" />\r\n    </div>\r\n    <div class=\"col-md-12 text-center\">\r\n      <div class=\"\">\r\n        {{'addedAds' | translate}}\r\n      </div>\r\n      <div class=\"ads-count\">\r\n        {{ads?.length}}\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div> -->\r\n<!-- /.container -->\r\n\r\n\r\n<div class=\"container-fluid cloudy-bg\">\r\n  <div class=\"row profile-row\">\r\n    <div class=\"col-md-3 user-img-container\">\r\n      <img class=\"user-img\" *ngIf=\"!user?.imageProfile\" src=\"http://via.placeholder.com/150x150\" />\r\n      <img class=\"user-img\" *ngIf=\"user?.imageProfile\" [src]=\"user?.imageProfile\" />\r\n    </div>\r\n    <div class=\"col-md-9\">\r\n      <div class=\"row info-row\" style=\"top: 15px;\">\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"flex-row\">\r\n            <div style=\"flex-grow: 0.8;\">\r\n              <h3 style=\"font-size:19px; font-weight: bold;\">{{'username' | translate}}</h3>\r\n              <h2 style=\"padding-top: 10px; color: #fff;\">{{user?.username}}</h2>\r\n            </div>\r\n            <div style=\"flex-grow: 0.1;\">\r\n              <h3 style=\"font-size:19px; font-weight: bold;\">{{'userFollowing' | translate}}\r\n              </h3>\r\n              <h2 style=\"padding-top: 10px; color: #fff;\">{{user?.userFollowing}}</h2>\r\n            </div>\r\n            <div>\r\n              <h3 style=\"font-size:19px; font-weight: bold;\">{{'userFollowers' | translate}}\r\n              </h3>\r\n              <h2 style=\"padding-top: 10px; color: #fff;\">{{user?.follower}}</h2>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"row info-row\" style=\"top: 20px; margin-top: 20px;\">\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"flex-row\">\r\n            <div style=\"flex-grow: 0.2;\">\r\n              <h3 style=\"font-size:19px; color: rgb(140,140,140); font-weight: bold;\">{{'email' | translate}}</h3>\r\n              <h2 style=\"padding-top: 10px; color: #000000; font-size: 24px;\">{{user?.email}}</h2>\r\n            </div>\r\n\r\n\r\n            <div style=\"flex-grow: 0.2;\">\r\n              <h3 style=\"font-size:19px; color: rgb(140,140,140); font-weight: bold;\">{{'addedAds' | translate}}</h3>\r\n              <h2 style=\"padding-top: 10px; color: #000000; font-size: 24px;\">{{ads?.length}}</h2>\r\n            </div>\r\n            <div style=\"flex-grow: 0.4;\">\r\n              <h3 style=\"font-size:19px; color: rgb(140,140,140); font-weight: bold;\">{{'balance' | translate}}</h3>\r\n              <h2 style=\"padding-top: 10px; color: #000000; font-size: 24px;\">{{user?.balance}}</h2>\r\n            </div>\r\n\r\n            <div>\r\n              <div class=\"follow\">\r\n                <div class=\"btn-more\" style=\"margin: 20px 0px;\">\r\n                  <a [routerLink]=\"['/cv/' + user?.id]\" class=\"follow-button-text\" data-toggle=\"button\">\r\n                    <ng-container>\r\n                      {{ 'CV' | translate}}\r\n                    </ng-container>\r\n                  </a>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div>\r\n              <div class=\"follow\">\r\n                <div class=\"btn-more\" style=\"margin: 20px 0px;\">\r\n                  <a [routerLink]=\"['/following']\" class=\"follow-button-text\" data-toggle=\"button\">\r\n                    <ng-container>\r\n                      {{ 'following' | translate}}\r\n                      <img src=\"assets/images/page/follow.png\" alt=\"follow icon\" class=\"follow-icon\">\r\n                    </ng-container>\r\n                  </a>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n<section class=\"cloudy-bg\">\r\n  <section class=\"flat-profile\">\r\n    <div class=\"container\">\r\n      <!-- <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <form action=\"#\" class=\"form-listing\" method=\"get\" accept-charset=\"utf-8\">\r\n\r\n            <div class=\"inner-box form\">\r\n\r\n              <div style=\"display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;\">\r\n                <div>\r\n                  <div class=\"wrap-listing username\">\r\n                    <label>{{'username' | translate}}</label>\r\n                    <div class=\"user-name-text\">{{user?.username}}</div>\r\n                  </div>\r\n                  <div class=\"clearfix\"></div>\r\n                </div>\r\n\r\n                <div>\r\n                  <div class=\"wrap-listing phone\">\r\n                    <label>{{'email' | translate}}</label>\r\n                    <div class=\"user-email-text\">{{user?.email}}</div>\r\n                  </div>\r\n                  <div class=\"clearfix\"></div>\r\n                </div>\r\n\r\n                <div>\r\n                  <div class=\"wrap-listing username\">\r\n                    <label>{{'balance' | translate}}</label>\r\n                    <div class=\"user-name-text\">{{user?.balance}}</div>\r\n                  </div>\r\n                  <div class=\"clearfix\"></div>\r\n                </div>\r\n\r\n\r\n                <div class=\"clearfix\"></div>\r\n              </div>\r\n\r\n              <div class=\"col-md-12 text-left\">\r\n                <a [routerLink]=\"['/cv',id]\">{{'CV' | translate}}</a>\r\n              </div>\r\n            </div>\r\n\r\n     \r\n\r\n          </form>\r\n\r\n        </div>\r\n\r\n      </div> -->\r\n\r\n      <!-- <div class=\"col-md-12 subs\" id=\"chooseCategory\">\r\n        <div class=\"inner-box subscribed-list\">\r\n          <div class=\"subscribed\">\r\n            <div class=\"title\">\r\n              <h3>{{'mySubscription' | translate}}</h3>\r\n            </div>\r\n            <br />\r\n            <div class=\"row\">\r\n              <app-category-selector [categories]=\"postCategories\" [selectedSubCategory]=\"user?.postCategoriesIds\"\r\n                (changed)=\"editCat($event)\"></app-category-selector>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div> -->\r\n\r\n      <div class=\"row\">\r\n\r\n\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"inner-box profile-business-list\">\r\n\r\n            <div class=\"main-title\">\r\n              <h3>{{'myAds' | translate}}</h3>\r\n              <button style=\"display: block; position: relative; right:0px; bottom:35px;\" title=\"Add Ad\"\r\n                class=\" col-xs-pull-1 button-navigation\" (click)=\"navigateTo('/ad/create')\">\r\n                <i class=\"fa fa-plus\"></i>\r\n              </button>\r\n            </div>\r\n\r\n\r\n\r\n            <div fxLayout=\"row-reverse\" style=\"overflow-x: scroll;\">\r\n              <ng-container *ngFor=\"let ad of ads;let i=index\">\r\n                <app-ads-card style=\"min-width: 400px; max-width: 400px; margin:0px 15px 15px;\" [ad]=\"ad\"\r\n                  (onRemove)=\"removePost($event,i)\" class=\"featured-box-flex guide-box\">\r\n                </app-ads-card>\r\n              </ng-container>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"inner-box profile-business-list\">\r\n            <div class=\"main-title\">\r\n              <h3>{{'myBusiness' | translate}}</h3>\r\n              <button style=\"display: block; position: relative; right:0px; bottom:35px;\" title=\"Add Business\"\r\n                class=\" col-xs-pull-1 button-navigation\" (click)=\"navigateTo('/business/create')\">\r\n                <i class=\"fa fa-plus\"></i>\r\n              </button>\r\n            </div>\r\n\r\n            <div fxLayout=\"row-reverse\" style=\"overflow-x: scroll;\">\r\n              <ng-container *ngFor=\"let business of businesses;let i=index\">\r\n                <app-business-card style=\"min-width: 400px; max-width: 400px; margin: 0px 15px 15px;\"\r\n                  [business]=\"business\" (onRemove)=\"removeBusiness(business,i)\" class=\"featured-box-flex guide-box\">\r\n                </app-business-card>\r\n              </ng-container>\r\n            </div>\r\n\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"inner-box profile-jobs-list\">\r\n            <div class=\"main-title text-center\">\r\n              <h3>{{'myJobs' | translate}}</h3>\r\n              <button style=\"display: block; position: relative; right:0px; bottom:35px;\" title=\"Add Job\"\r\n                class=\" col-xs-pull-1 button-navigation\" (click)=\"navigateTo('/addJobOpportunity')\">\r\n                <i class=\"fa fa-plus\"></i>\r\n              </button>\r\n            </div>\r\n\r\n            <div fxLayout=\"row-reverse\" style=\"overflow-x: scroll;\">\r\n              <ng-container *ngFor=\"let job of jobs\">\r\n                <app-job-card style=\"min-width: 400px; max-width: 400px; margin: 15px;\" [post]=\"job\"\r\n                  class=\"featured-box-flex guide-box\"></app-job-card>\r\n              </ng-container>\r\n            </div>\r\n\r\n\r\n          </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"col-xs-12\">\r\n          <div class=\"inner-box profile-jobs-list\">\r\n            <div class=\"main-title text-center\">\r\n              <h3>{{'myProducts' | translate}}</h3>\r\n              <button style=\"display: block; position: relative; right:0px; bottom:35px;\" title=\"Add Product\"\r\n                class=\" col-xs-pull-1 button-navigation\" (click)=\"navigateTo('/products/create')\">\r\n                <i class=\"fa fa-plus\"></i>\r\n              </button>\r\n            </div>\r\n\r\n            <div fxLayout=\"row-reverse\" style=\"overflow-x: scroll;\">\r\n              <ng-container *ngFor=\"let product of products\">\r\n                <app-product-card style=\"min-width: 400px; max-width: 400px; margin: 15px;\" [details]=\"product\"\r\n                  class=\"featured-box-flex guide-box\"></app-product-card>\r\n              </ng-container>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n\r\n\r\n      </div>\r\n      <!-- /.row -->\r\n    </div>\r\n    <!-- /.container -->\r\n  </section>\r\n  <!-- /.flat-listing -->\r\n</section>\r\n"
 
 /***/ }),
 
@@ -469,7 +557,7 @@ module.exports = "\r\n\r\n  <div class=\"featured-ads-box\" routerLink=\"/ad/{{d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<footer>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4\">\r\n        <div class=\"widget widget-about\">\r\n          <div class=\"logo-ft\">\r\n            <a href=\"{{localAddress}}\" title=\"\">\r\n              <img src=\"{{logoAddress}}\" />\r\n            </a>\r\n          </div>\r\n          <p>\r\n            دليلك الالكتروني الاكثر شمولا للخدمات و الاعلانات المبوبة من حولك\r\n          </p>\r\n        </div>\r\n        <!-- /.widget-about -->\r\n      </div>\r\n      <div class=\"col-md-4\">\r\n        <div class=\"widget widget-contact\">\r\n          <h3 class=\"widget-title\">{{'contactInfo' | translate}}</h3>\r\n          <ul class=\"contact-infomation\">\r\n            <li class=\"phone\">\r\n              9753\r\n            </li>\r\n            <li class=\"email\">\r\n              info@almersal.co\r\n            </li>\r\n          </ul>\r\n        </div>\r\n        <!-- /.widget-contact -->\r\n      </div>\r\n      <!-- /.col-md-3 -->\r\n      <div class=\"col-md-4\">\r\n        <div class=\"widget widget-categories\">\r\n          <h4 class=\"widget-title\">\r\n            <a style=\"color:white\" target=\"_blank\" routerLink=\"privacy/policy\">{{'privacyAndTerms' |translate}}</a>\r\n          </h4>\r\n\r\n        </div>\r\n      </div>\r\n      <!-- /.widget-categories -->\r\n      <!-- /.col-md-3 -->\r\n\r\n\r\n      <!-- /.col-md-3 -->\r\n      <!-- <div class=\"col-md-3\">\r\n        <div class=\"widget widget-map\">\r\n          <img src=\"assets/images/page/bg-ft.png\" alt=\"\">\r\n        </div>\r\n      </div> -->\r\n      <!-- /.widget-map -->\r\n      <!-- /.col-md-3 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</footer>\r\n<!-- /footer -->\r\n<div class=\"footer-bottom\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <ul class=\"social-ft\">\r\n          <li>\r\n            <a href=\"https://www.facebook.com/%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%B1%D8%B3%D8%A7%D9%84-113410746699366/\"\r\n              target=\"_blank\" title=\"\">\r\n              <i class=\"ti-facebook\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"https://twitter.com/mersal_al\" target=\"_blank\" title=\"\">\r\n              <i class=\"ti-twitter-alt\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"https://www.instagram.com/almersalgroupe/\" target=\"_blank\" title=\"\">\r\n              <i class=\"ti-instagram\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"https://www.linkedin.com/in/almersal-group-90508a193/\" target=\"_blank\" title=\"\">\r\n              <i class=\"ti-linkedin\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"https://www.youtube.com/channel/UCpHpvdOVziLJqmWdMezjEiQ\" target=\"_blank\" title=\"\">\r\n              <i class=\"ti-youtube\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"mailto:info@almersal.co\" title=\"\">\r\n              <i class=\"ti-email\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n        </ul>\r\n        <!-- /.social-ft -->\r\n        <div class=\"copyright\">\r\n          © All rights reserved by Al-Mersal 2019\r\n\r\n        </div>\r\n        <!-- /.copyright -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</div>\r\n<!-- /.footer-bottom -->"
+module.exports = "<footer>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4\">\r\n        <div class=\"widget widget-about\">\r\n          <div class=\"logo-ft\">\r\n            <a href=\"{{localAddress}}\" title=\"\">\r\n              <img src=\"{{logoAddress}}\" />\r\n            </a>\r\n          </div>\r\n          <p>\r\n            دليلك الالكتروني الاكثر شمولا للخدمات و الاعلانات المبوبة من حولك\r\n          </p>\r\n        </div>\r\n        <!-- /.widget-about -->\r\n      </div>\r\n      <div class=\"col-md-4\">\r\n        <div class=\"widget widget-contact\">\r\n          <h3 class=\"widget-title\">{{'contactInfo' | translate}}</h3>\r\n          <ul class=\"contact-infomation\">\r\n            <li class=\"phone\">\r\n              9753\r\n            </li>\r\n            <li class=\"email\">\r\n              info@almersal.co\r\n            </li>\r\n          </ul>\r\n        </div>\r\n        <!-- /.widget-contact -->\r\n      </div>\r\n      <!-- /.col-md-3 -->\r\n      <div class=\"col-md-4\">\r\n        <div class=\"widget widget-categories\">\r\n          <h4 class=\"widget-title\">\r\n            <a style=\"color:white\" target=\"_blank\" routerLink=\"privacy/policy\">{{'privacyAndTerms' |translate}}</a>\r\n          </h4>\r\n\r\n        </div>\r\n      </div>\r\n      <!-- /.widget-categories -->\r\n      <!-- /.col-md-3 -->\r\n\r\n\r\n      <!-- /.col-md-3 -->\r\n      <!-- <div class=\"col-md-3\">\r\n        <div class=\"widget widget-map\">\r\n          <img src=\"assets/images/page/bg-ft.png\" alt=\"\">\r\n        </div>\r\n      </div> -->\r\n      <!-- /.widget-map -->\r\n      <!-- /.col-md-3 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</footer>\r\n<!-- /footer -->\r\n<div class=\"footer-bottom\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <ul class=\"social-ft\">\r\n          <li>\r\n            <a href=\"https://www.facebook.com/%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%B1%D8%B3%D8%A7%D9%84-113410746699366/\"\r\n              target=\"_blank\" title=\"\">\r\n              <i class=\"ti-facebook\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"https://twitter.com/mersal_al\" target=\"_blank\" title=\"\">\r\n              <i class=\"ti-twitter-alt\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"https://www.instagram.com/almersalgroupe/\" target=\"_blank\" title=\"\">\r\n              <i class=\"ti-instagram\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"https://www.linkedin.com/in/almersal-group-90508a193/\" target=\"_blank\" title=\"\">\r\n              <i class=\"ti-linkedin\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"https://www.youtube.com/channel/UCpHpvdOVziLJqmWdMezjEiQ\" target=\"_blank\" title=\"\">\r\n              <i class=\"ti-youtube\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"mailto:info@almersal.co\" title=\"\">\r\n              <i class=\"ti-email\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"https://play.google.com/store/apps/details?id=com.almersal.android&hl=ar&gl=US\" target=\"_blank\" title=\"\">\r\n              <i class=\"ti-android\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n          <li>\r\n            <a href=\"https://apps.apple.com/us/app/al-mersal/id1497438335\" target=\"_blank\" title=\"\">\r\n              <i class=\"ti-apple\" aria-hidden=\"true\"></i>\r\n            </a>\r\n          </li>\r\n        </ul>\r\n        <!-- /.social-ft -->\r\n        <div class=\"copyright\">\r\n          © All rights reserved by Al-Mersal 2019\r\n\r\n        </div>\r\n        <!-- /.copyright -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container -->\r\n</div>\r\n<!-- /.footer-bottom -->"
 
 /***/ }),
 
@@ -491,7 +579,7 @@ module.exports = "<div *ngIf=\"control.invalid && (control.dirty || control.touc
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"header-wrap\">\r\n          <div id=\"logo\" class=\"logo\">\r\n            <a routerLink=\"./\" title=\"\">\r\n              <img src=\"{{logoAddress}}\" />\r\n            </a>\r\n          </div>\r\n          <div style=\"display: inline-flex;margin-top: 30px;margin-right: 10px; cursor: pointer;\" *ngIf=\"isLogin && user\">\r\n            <ngx-avatar [name]=\"user['username']\" [src]=\"user['imageProfile']\" (clickOnAvatar)=\"goToProfile()\">\r\n            </ngx-avatar>\r\n            <app-notification style=\"z-index: 1000;\"></app-notification>\r\n          </div>\r\n          <div class=\"auth-menu\" style=\"display: inline-flex;margin-top: 30px;margin-right: 10px\" *ngIf=\"!isLogin\">\r\n            <a class=\"nav-button\" routerLink=\"/auth/login\" title=\"\">{{'login' | translate}}</a>\r\n            <a class=\"nav-button\" routerLink=\"/auth/signup\" title=\"\">{{'createAccount' | translate}}</a>\r\n          </div>\r\n          <!-- /.logo -->\r\n          <div class=\"nav-wrap\">\r\n            <nav id=\"mainnav\" class=\"mainnav\">\r\n              <ul class=\"menu\">\r\n                <li>\r\n                  <a routerLink=\"/\" title=\"\">{{'homePage' | translate}}</a>\r\n                </li>\r\n                <li>\r\n                  <a routerLink=\"/guide\" title=\"\">{{'businessGuidePage' | translate }}</a>\r\n                </li>\r\n                <li>\r\n                  <a routerLink=\"/job\" title=\"\">{{'businessJobPage' | translate }}</a>\r\n                </li>\r\n                <li>\r\n                  <a routerLink=\"/suppliers\" title=\"\">{{'supplierPage' | translate}}</a>\r\n               </li>\r\n                <li>\r\n                   <a routerLink=\"/products\" title=\"\">{{'productsPage' | translate}}</a>\r\n                </li>\r\n                <li *ngIf=\"isLogin\">\r\n                  <a routerLink=\"/business/create\" title=\"\">{{'addBusinessPage' | translate}}</a>\r\n                </li>\r\n                <li *ngIf=\"isLogin\">\r\n                    <a routerLink=\"/products/create\"> {{'productCreate' | translate}} </a>\r\n                </li>\r\n                <li *ngIf=\"isLogin\">\r\n                  <a class=\"nav-button pulse\" routerLink=\"/ad/create\" title=\"\">{{'createAdPage' | translate }}</a>\r\n                </li>\r\n              </ul>\r\n            </nav>\r\n            <div class=\"lang-button\">\r\n              <div id=\"lang-change\">\r\n                <ul class=\"menu\">\r\n                  <li class=\"barear\">\r\n                    <a>&nbsp;</a>\r\n                  </li>\r\n                  <li *ngIf=\"isLogin\" class=\"logout-anchour\">\r\n                    <a href=\"javascript:void(0)\" title=\"\" (click)=\"auth.logout()\">{{'logout' | translate}}</a>\r\n                  </li>\r\n                  <li>\r\n                    <a *ngIf=\"english\" href=\"javascript:void(0)\" (click)=\"changeLang('ar')\" title=\"\">عربي</a>\r\n                    <a *ngIf=\"!english\" href=\"javascript:void(0)\" (click)=\"changeLang('en')\" title=\"\">English</a>\r\n                  </li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n            <!-- /.show-search -->\r\n            <div class=\"btn-menu\">\r\n              <span></span>\r\n            </div>\r\n            <!-- //mobile menu button -->\r\n          </div>\r\n          <!-- /.nav-wrap -->\r\n        </div>\r\n        <!-- /.header-wrap -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container-fluid -->\r\n</div>\r\n"
+module.exports = "<div class=\"header\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <div class=\"header-wrap\">\r\n          <div id=\"logo\" class=\"logo\">\r\n            <a routerLink=\"./\" title=\"\">\r\n              <img src=\"{{logoAddress}}\" />\r\n            </a>\r\n          </div>\r\n          <div style=\"display: inline-flex;margin-top: 30px;margin-right: 10px; cursor: pointer;\"\r\n            *ngIf=\"isLogin && user\">\r\n            <ngx-avatar [name]=\"user['username']\" [src]=\"user['imageProfile']\" (clickOnAvatar)=\"goToProfile()\">\r\n            </ngx-avatar>\r\n            <app-notification style=\"z-index: 1000;\"></app-notification>\r\n          </div>\r\n          <div class=\"auth-menu\" style=\"display: inline-flex;margin-top: 30px;margin-right: 10px\" *ngIf=\"!isLogin\">\r\n            <a class=\"nav-button\" (click)=\"onLogin()\">{{'login' | translate}}</a>\r\n            <a class=\"nav-button\" (click)=\"onSignup()\">{{'createAccount' | translate}}</a>\r\n          </div>\r\n          <!-- /.logo -->\r\n          <div class=\"nav-wrap\">\r\n            <nav id=\"mainnav\" class=\"mainnav\">\r\n              <ul class=\"menu\">\r\n                <li>\r\n                  <a routerLink=\"/\" title=\"\">{{'homePage' | translate}}</a>\r\n                </li>\r\n                <li>\r\n                  <a routerLink=\"/guide\" title=\"\">{{'businessGuidePage' | translate }}</a>\r\n                </li>\r\n                <li>\r\n                  <a routerLink=\"/job\" title=\"\">{{'businessJobPage' | translate }}</a>\r\n                </li>\r\n                <li>\r\n                  <a routerLink=\"/suppliers\" title=\"\">{{'supplierPage' | translate}}</a>\r\n                </li>\r\n                <li>\r\n                  <a routerLink=\"/products\" title=\"\">{{'productsPage' | translate}}</a>\r\n                </li>\r\n                <li *ngIf=\"isLogin\">\r\n                  <a routerLink=\"/business/create\" title=\"\">{{'addBusinessPage' | translate}}</a>\r\n                </li>\r\n                <li *ngIf=\"isLogin\">\r\n                  <a routerLink=\"/products/create\"> {{'productCreate' | translate}} </a>\r\n                </li>\r\n                <li *ngIf=\"isLogin\">\r\n                  <a class=\"nav-button pulse\" routerLink=\"/ad/create\" title=\"\">{{'createAdPage' | translate }}</a>\r\n                </li>\r\n              </ul>\r\n            </nav>\r\n            <div class=\"lang-button\">\r\n              <div id=\"lang-change\">\r\n                <ul class=\"menu\">\r\n                  <li class=\"barear\">\r\n                    <a>&nbsp;</a>\r\n                  </li>\r\n                  <li *ngIf=\"isLogin\" class=\"logout-anchour\">\r\n                    <a href=\"javascript:void(0)\" title=\"\" (click)=\"auth.logout()\">{{'logout' | translate}}</a>\r\n                  </li>\r\n                  <li>\r\n                    <a *ngIf=\"english\" href=\"javascript:void(0)\" (click)=\"changeLang('ar')\" title=\"\">عربي</a>\r\n                    <a *ngIf=\"!english\" href=\"javascript:void(0)\" (click)=\"changeLang('en')\" title=\"\">English</a>\r\n                  </li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n            <!-- /.show-search -->\r\n            <div class=\"btn-menu\">\r\n              <span></span>\r\n            </div>\r\n            <!-- //mobile menu button -->\r\n          </div>\r\n          <!-- /.nav-wrap -->\r\n        </div>\r\n        <!-- /.header-wrap -->\r\n      </div>\r\n      <!-- /.col-md-12 -->\r\n    </div>\r\n    <!-- /.row -->\r\n  </div>\r\n  <!-- /.container-fluid -->\r\n</div>\r\n"
 
 /***/ }),
 
@@ -642,8 +730,15 @@ var AdCreateComponent = /** @class */ (function () {
         var _this = this;
         var user = JSON.parse(localStorage.getItem(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].userDetails));
         var images = new FormData();
+        var videos = new FormData();
+        var imageCnt = 0;
+        var vidoeCnt = 0;
         for (var i = 0; i < this.filesToUpload.length; i++) {
-            images.append('file', this.filesToUpload[i].file);
+            console.log(this.filesToUpload[i].file.type);
+            if (this.filesToUpload[i].file.type !== 'video/mp4')
+                images.append('file', this.filesToUpload[i].file), imageCnt += 1;
+            else
+                videos.append('file', this.filesToUpload[i].file), vidoeCnt += 1;
         }
         var postData = {
             "title": this.name,
@@ -655,19 +750,48 @@ var AdCreateComponent = /** @class */ (function () {
             "subCategoryId": this.subCategory['id'],
             "cityId": this.city['id'],
             "locationId": this.location['id'],
-            "media": ''
+            "media": []
         };
         var h = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpHeaders"]();
         h = h.append('Authorization', user['id']);
         h = h.append('Content-Type', 'application/json');
-        this.rs.post('attachments/images/upload', images)
-            .subscribe(function (res) {
-            postData.media = res;
-            _this.rs.post('posts', postData, h)
-                .subscribe(function (res) {
-                _this.router.navigate(['/ad', res['id']]);
+        if (imageCnt) {
+            this.rs.post('attachments/images/upload', images).subscribe(function (res) {
+                if (vidoeCnt) {
+                    _this.rs.post('attachments/videos/upload', videos).subscribe(function (res_video) {
+                        var media = res.concat(res_video);
+                        console.log(media);
+                        postData.media = media;
+                        _this.rs.post('posts', postData, h)
+                            .subscribe(function (res) {
+                            _this.router.navigate(['/ad', res['id']]);
+                        });
+                    });
+                }
+                else {
+                    postData.media = res;
+                    _this.rs.post('posts', postData, h).subscribe(function (res) {
+                        _this.router.navigate(['/ad', res['id']]);
+                    });
+                }
             });
-        });
+        }
+        else {
+            if (vidoeCnt) {
+                this.rs.post('attachments/videos/upload', videos).subscribe(function (res) {
+                    postData.media = res;
+                    _this.rs.post('posts', postData, h)
+                        .subscribe(function (res) {
+                        _this.router.navigate(['/ad', res['id']]);
+                    });
+                });
+            }
+            else {
+                this.rs.post('posts', postData, h).subscribe(function (res) {
+                    _this.router.navigate(['/ad', res['id']]);
+                });
+            }
+        }
     };
     AdCreateComponent.ctorParameters = function () { return [
         { type: _common_data_service__WEBPACK_IMPORTED_MODULE_2__["CommonDataService"] },
@@ -752,19 +876,20 @@ var AdEditComponent = /** @class */ (function () {
             });
         });
     };
-    // onSelectFile() {
-    //   console.warn(this.filesToUpload );
-    // }
     AdEditComponent.prototype.registerAd = function () {
         var _this = this;
         var user = JSON.parse(localStorage.getItem(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].userDetails));
-        // console.warn('user',user)
         var images = new FormData();
-        // console.warn(this.filesToUpload);
+        var videos = new FormData();
+        var imageCnt = 0;
+        var vidoeCnt = 0;
         for (var i = 0; i < this.filesToUpload.length; i++) {
-            images.append('file', this.filesToUpload[i].file);
+            console.log(this.filesToUpload[i].file.type);
+            if (this.filesToUpload[i].file.type !== 'video/mp4')
+                images.append('file', this.filesToUpload[i].file), imageCnt += 1;
+            else
+                videos.append('file', this.filesToUpload[i].file), vidoeCnt += 1;
         }
-        // console.warn(images.getAll('file'));
         var postData = {
             "title": this.name,
             "description": this.details,
@@ -776,25 +901,46 @@ var AdEditComponent = /** @class */ (function () {
             "media": this.media
         };
         postData = Object.assign(this.adData, postData);
+        var id = postData.id;
         delete postData.id;
         var h = new _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpHeaders"]();
         h = h.append('Authorization', user['id']);
         h = h.append('Content-Type', 'application/json');
-        this.rs.post('attachments/images/upload', images)
-            .subscribe(function (res) {
-            // console.warn(res);
-            // this.filesLinks = <any[]>res;
-            postData.media = postData.media || [];
-            postData.media = postData.media.concat(res);
-            _this.rs.post('posts', postData, h)
-                .subscribe(function (res) {
-                _this.router.navigate(['/ad', res['id']]);
-                // console.warn('res2', res);
-                // alert("Done!")
+        if (imageCnt) {
+            this.rs.post('attachments/images/upload', images).subscribe(function (res) {
+                if (vidoeCnt) {
+                    _this.rs.post('attachments/videos/upload', videos).subscribe(function (res_video) {
+                        var media = res.concat(res_video);
+                        console.log(media);
+                        postData.media = media;
+                        _this.rs.put('posts/' + id, postData, h).subscribe(function (res) {
+                            _this.router.navigate(['/ad', res['id']]);
+                        });
+                    });
+                }
+                else {
+                    postData.media = res;
+                    _this.rs.put('posts/' + id, postData, h).subscribe(function (res) {
+                        _this.router.navigate(['/ad', res['id']]);
+                    });
+                }
             });
-            // console.warn(this.filesLinks);
-        });
-        // console.warn( this.name , this.city,this.location,this.category,this.subCategory,this.details);
+        }
+        else {
+            if (vidoeCnt) {
+                this.rs.post('attachments/videos/upload', videos).subscribe(function (res) {
+                    postData.media = res;
+                    _this.rs.put('posts/' + id, postData, h).subscribe(function (res) {
+                        _this.router.navigate(['/ad', res['id']]);
+                    });
+                });
+            }
+            else {
+                this.rs.put('posts/' + id, postData, h).subscribe(function (res) {
+                    _this.router.navigate(['/ad', res['id']]);
+                });
+            }
+        }
     };
     AdEditComponent.ctorParameters = function () { return [
         { type: _common_data_service__WEBPACK_IMPORTED_MODULE_3__["CommonDataService"] },
@@ -869,6 +1015,7 @@ var AdViewComponent = /** @class */ (function () {
             _this.data['description'] = adData['description'];
             var t = new Date(adData['creationDate']);
             _this.data['creationDate'] = t.toLocaleDateString();
+            _this.data['viewsCount'] = adData['viewsCount'];
             // this.data['images']= adData['media'];
             for (var i = 0; i < adData['media'].length; i++) {
                 var src = adData['media'][i]['url'];
@@ -883,6 +1030,7 @@ var AdViewComponent = /** @class */ (function () {
                     _this._albums.push(new _ngx_gallery_core__WEBPACK_IMPORTED_MODULE_4__["ImageItem"](album));
                 else
                     _this._albums.push(new _ngx_gallery_core__WEBPACK_IMPORTED_MODULE_4__["VideoItem"](album));
+                console.log(_this._albums);
                 // this._albums.push(album);
             }
             var galleryRef = _this.gallery.ref();
@@ -958,6 +1106,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _business_products_edit_product_edit_product_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./business/products/edit-product/edit-product.component */ "./src/app/business/products/edit-product/edit-product.component.ts");
 /* harmony import */ var _business_products_add_product_add_product_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./business/products/add-product/add-product.component */ "./src/app/business/products/add-product/add-product.component.ts");
 /* harmony import */ var _business_suppliers_suppliers_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./business/suppliers/suppliers.component */ "./src/app/business/suppliers/suppliers.component.ts");
+/* harmony import */ var _authentication_reset_reset_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./authentication/reset/reset.component */ "./src/app/authentication/reset/reset.component.ts");
+/* harmony import */ var _profile_follow_list_follow_list_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./profile/follow-list/follow-list.component */ "./src/app/profile/follow-list/follow-list.component.ts");
+
+
 
 
 
@@ -986,8 +1138,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: 'auth', loadChildren: function () { return __webpack_require__.e(/*! import() | authentication-authentication-module */ "authentication-authentication-module").then(__webpack_require__.bind(null, /*! ./authentication/authentication.module */ "./src/app/authentication/authentication.module.ts")).then(function (m) { return m.AuthenticationModule; }); } },
     { path: '', component: _home_screen_home_screen_home_screen_component__WEBPACK_IMPORTED_MODULE_6__["HomeScreenComponent"] },
+    { path: 'auth/reset', component: _authentication_reset_reset_component__WEBPACK_IMPORTED_MODULE_27__["ResetComponent"] },
     { path: 'business/create', component: _business_business_create_business_create_component__WEBPACK_IMPORTED_MODULE_7__["BusinessCreateComponent"], canActivate: [_authentication_auth_service__WEBPACK_IMPORTED_MODULE_15__["AuthService"]] },
     { path: 'business/:id', component: _business_business_view_business_view_component__WEBPACK_IMPORTED_MODULE_8__["BusinessViewComponent"] },
     { path: 'business/:id/addJobOpportunity', component: _business_add_job_opportunity_add_job_opportunity_component__WEBPACK_IMPORTED_MODULE_3__["AddJobOpportunityComponent"] },
@@ -1010,6 +1162,7 @@ var routes = [
     { path: 'products/create', component: _business_products_add_product_add_product_component__WEBPACK_IMPORTED_MODULE_25__["AddProductComponent"] },
     { path: 'products/:id', component: _business_products_view_product_view_product_component__WEBPACK_IMPORTED_MODULE_23__["ViewProductComponent"] },
     { path: 'products/:id/edit', component: _business_products_edit_product_edit_product_component__WEBPACK_IMPORTED_MODULE_24__["EditProductComponent"] },
+    { path: 'following', component: _profile_follow_list_follow_list_component__WEBPACK_IMPORTED_MODULE_28__["FollowListComponent"] }
 ];
 var config = {
     useHash: false,
@@ -1097,11 +1250,12 @@ var AppComponent = /** @class */ (function () {
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
-/*! exports provided: AppModule */
+/*! exports provided: provideConfig, AppModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "provideConfig", function() { return provideConfig; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _business_view_job_view_job_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./business/view-job/view-job.component */ "./src/app/business/view-job/view-job.component.ts");
@@ -1175,6 +1329,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _business_products_product_card_product_card_component__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! ./business/products/product-card/product-card.component */ "./src/app/business/products/product-card/product-card.component.ts");
 /* harmony import */ var ngx_linkifyjs__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! ngx-linkifyjs */ "./node_modules/ngx-linkifyjs/esm5/ngx-linkifyjs.es5.js");
 /* harmony import */ var _business_suppliers_suppliers_component__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! ./business/suppliers/suppliers.component */ "./src/app/business/suppliers/suppliers.component.ts");
+/* harmony import */ var angularx_social_login__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! angularx-social-login */ "./node_modules/angularx-social-login/angularx-social-login.es5.js");
+/* harmony import */ var _authentication_modals_login_login_component__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! ./authentication/modals/login/login.component */ "./src/app/authentication/modals/login/login.component.ts");
+/* harmony import */ var _authentication_modals_signup_signup_component__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(/*! ./authentication/modals/signup/signup.component */ "./src/app/authentication/modals/signup/signup.component.ts");
+/* harmony import */ var _authentication_modals_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(/*! ./authentication/modals/reset-password/reset-password.component */ "./src/app/authentication/modals/reset-password/reset-password.component.ts");
+/* harmony import */ var _authentication_modals_forget_password_forget_password_component__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(/*! ./authentication/modals/forget-password/forget-password.component */ "./src/app/authentication/modals/forget-password/forget-password.component.ts");
+/* harmony import */ var _authentication_modals_complete_information_complete_information_component__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(/*! ./authentication/modals/complete-information/complete-information.component */ "./src/app/authentication/modals/complete-information/complete-information.component.ts");
+/* harmony import */ var _authentication_reset_reset_component__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(/*! ./authentication/reset/reset.component */ "./src/app/authentication/reset/reset.component.ts");
+/* harmony import */ var _modals_rate_add_rate_add_rate_component__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(/*! ./modals/rate/add-rate/add-rate.component */ "./src/app/modals/rate/add-rate/add-rate.component.ts");
+/* harmony import */ var _profile_follow_list_follow_list_component__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(/*! ./profile/follow-list/follow-list.component */ "./src/app/profile/follow-list/follow-list.component.ts");
+/* harmony import */ var ngx_tabs__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(/*! ngx-tabs */ "./node_modules/ngx-tabs/index.js");
+/* harmony import */ var ngx_tabs__WEBPACK_IMPORTED_MODULE_80___default = /*#__PURE__*/__webpack_require__.n(ngx_tabs__WEBPACK_IMPORTED_MODULE_80__);
 
 
 
@@ -1249,6 +1414,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+var config = new angularx_social_login__WEBPACK_IMPORTED_MODULE_71__["AuthServiceConfig"]([
+    {
+        id: angularx_social_login__WEBPACK_IMPORTED_MODULE_71__["GoogleLoginProvider"].PROVIDER_ID,
+        provider: new angularx_social_login__WEBPACK_IMPORTED_MODULE_71__["GoogleLoginProvider"]("929370797523-269s5t1ftp86eph3hd0c41qca0rdq63i.apps.googleusercontent.com")
+    },
+    {
+        id: angularx_social_login__WEBPACK_IMPORTED_MODULE_71__["FacebookLoginProvider"].PROVIDER_ID,
+        provider: new angularx_social_login__WEBPACK_IMPORTED_MODULE_71__["FacebookLoginProvider"]("672315350040982")
+    }
+]);
+function provideConfig() {
+    return config;
+}
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -1303,10 +1492,17 @@ var AppModule = /** @class */ (function () {
                 _business_products_edit_product_edit_product_component__WEBPACK_IMPORTED_MODULE_67__["EditProductComponent"],
                 _business_products_product_card_product_card_component__WEBPACK_IMPORTED_MODULE_68__["ProductCardComponent"],
                 _business_suppliers_suppliers_component__WEBPACK_IMPORTED_MODULE_70__["SuppliersComponent"],
+                _authentication_reset_reset_component__WEBPACK_IMPORTED_MODULE_77__["ResetComponent"],
+                _authentication_modals_login_login_component__WEBPACK_IMPORTED_MODULE_72__["LoginComponent"],
+                _authentication_modals_signup_signup_component__WEBPACK_IMPORTED_MODULE_73__["SignupComponent"],
+                _authentication_modals_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_74__["ResetPasswordComponent"],
+                _authentication_modals_forget_password_forget_password_component__WEBPACK_IMPORTED_MODULE_75__["ForgetPasswordComponent"],
+                _authentication_modals_complete_information_complete_information_component__WEBPACK_IMPORTED_MODULE_76__["CompleteInformationComponent"],
+                _modals_rate_add_rate_add_rate_component__WEBPACK_IMPORTED_MODULE_78__["AddRateComponent"],
+                _profile_follow_list_follow_list_component__WEBPACK_IMPORTED_MODULE_79__["FollowListComponent"]
             ],
             imports: [
                 _ngx_gallery_core__WEBPACK_IMPORTED_MODULE_50__["GalleryModule"].withConfig({ loadingMode: 'indeterminate' }),
-                // lb,
                 _ngx_gallery_lightbox__WEBPACK_IMPORTED_MODULE_51__["LightboxModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_10__["AppRoutingModule"],
@@ -1321,14 +1517,35 @@ var AppModule = /** @class */ (function () {
                 ngx_input_file__WEBPACK_IMPORTED_MODULE_43__["InputFileModule"].forRoot({}),
                 _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_14__["NgSelectModule"],
                 ngx_avatar__WEBPACK_IMPORTED_MODULE_46__["AvatarModule"],
-                // ModalModule,
                 ngx_smart_modal__WEBPACK_IMPORTED_MODULE_53__["NgxSmartModalModule"].forRoot(),
                 ngx_spinner__WEBPACK_IMPORTED_MODULE_62__["NgxSpinnerModule"],
                 _angular_flex_layout__WEBPACK_IMPORTED_MODULE_63__["FlexLayoutModule"],
                 ngx_linkifyjs__WEBPACK_IMPORTED_MODULE_69__["NgxLinkifyjsModule"].forRoot(),
+                angularx_social_login__WEBPACK_IMPORTED_MODULE_71__["SocialLoginModule"],
+                ngx_tabs__WEBPACK_IMPORTED_MODULE_80__["TabsModule"]
             ],
-            entryComponents: [_business_map_marker_map_marker_component__WEBPACK_IMPORTED_MODULE_41__["MapMarkerComponent"], _profile_edit_info_edit_info_component__WEBPACK_IMPORTED_MODULE_7__["EditInfoComponent"], _success_message_success_message_component__WEBPACK_IMPORTED_MODULE_61__["SuccessMessageComponent"], _verification_message_verification_message_component__WEBPACK_IMPORTED_MODULE_60__["VerificationMessageComponent"], _profile_edit_skill_edit_skill_component__WEBPACK_IMPORTED_MODULE_6__["EditSkillComponent"], _profile_edit_basic_information_edit_basic_information_component__WEBPACK_IMPORTED_MODULE_5__["EditBasicInformationComponent"]],
-            providers: [_requests_service__WEBPACK_IMPORTED_MODULE_36__["RequestsService"], _common_data_service__WEBPACK_IMPORTED_MODULE_37__["CommonDataService"]],
+            entryComponents: [
+                _business_map_marker_map_marker_component__WEBPACK_IMPORTED_MODULE_41__["MapMarkerComponent"],
+                _profile_edit_info_edit_info_component__WEBPACK_IMPORTED_MODULE_7__["EditInfoComponent"],
+                _success_message_success_message_component__WEBPACK_IMPORTED_MODULE_61__["SuccessMessageComponent"],
+                _verification_message_verification_message_component__WEBPACK_IMPORTED_MODULE_60__["VerificationMessageComponent"],
+                _profile_edit_skill_edit_skill_component__WEBPACK_IMPORTED_MODULE_6__["EditSkillComponent"],
+                _profile_edit_basic_information_edit_basic_information_component__WEBPACK_IMPORTED_MODULE_5__["EditBasicInformationComponent"],
+                _authentication_modals_login_login_component__WEBPACK_IMPORTED_MODULE_72__["LoginComponent"],
+                _authentication_modals_signup_signup_component__WEBPACK_IMPORTED_MODULE_73__["SignupComponent"],
+                _authentication_modals_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_74__["ResetPasswordComponent"],
+                _authentication_modals_forget_password_forget_password_component__WEBPACK_IMPORTED_MODULE_75__["ForgetPasswordComponent"],
+                _authentication_modals_complete_information_complete_information_component__WEBPACK_IMPORTED_MODULE_76__["CompleteInformationComponent"],
+                _modals_rate_add_rate_add_rate_component__WEBPACK_IMPORTED_MODULE_78__["AddRateComponent"]
+            ],
+            providers: [
+                _requests_service__WEBPACK_IMPORTED_MODULE_36__["RequestsService"],
+                _common_data_service__WEBPACK_IMPORTED_MODULE_37__["CommonDataService"],
+                {
+                    provide: angularx_social_login__WEBPACK_IMPORTED_MODULE_71__["AuthServiceConfig"],
+                    useFactory: provideConfig
+                }
+            ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_16__["AppComponent"]]
         })
     ], AppModule);
@@ -1357,6 +1574,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(date_fns__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _requests_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../requests.service */ "./src/app/requests.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_follow_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../services/follow.service */ "./src/app/services/follow.service.ts");
+
 
 
 
@@ -1365,12 +1584,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AuthService = /** @class */ (function () {
-    function AuthService(api, router) {
+    function AuthService(api, router, followService) {
         var _this = this;
         this.api = api;
         this.router = router;
+        this.followService = followService;
         this.isLogin = false;
         this._userDataSubject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this._login = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
         this.userData = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"](function (o) {
             if (_this._userData)
                 o.next(_this._userData);
@@ -1381,7 +1602,6 @@ var AuthService = /** @class */ (function () {
             _this._login.subscribe(o);
             o.next(_this.isLogin);
         });
-        this._login = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
         if (localStorage.getItem(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].userDetails)) {
             this.logInData = JSON.parse(localStorage.getItem(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].userDetails));
             this.isLogin = true;
@@ -1390,31 +1610,10 @@ var AuthService = /** @class */ (function () {
     }
     AuthService.prototype.canActivate = function (route, state) {
         if (!this.isLogin) {
-            this.router.navigate(['auth', 'login']);
+            this.router.navigate(['']);
             return false;
         }
         return true;
-    };
-    AuthService.prototype.getUserDataLocal = function () {
-        if (this.isLogin == false)
-            return {};
-        return this.logInData.user;
-    };
-    AuthService.prototype.logIn = function (data) {
-        localStorage.setItem(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].userDetails, JSON.stringify(data));
-        this.logInData = data;
-        this.isLogin = true;
-        this.getUserData();
-        this._login.next(true);
-        this.api.init();
-    };
-    AuthService.prototype.logout = function () {
-        localStorage.clear();
-        this.logInData = {};
-        this.isLogin = false;
-        this._login.next(false);
-        this.api.init();
-        this.router.navigate(['auth', 'login']);
     };
     AuthService.prototype.getUserData = function () {
         var _this = this;
@@ -1429,17 +1628,786 @@ var AuthService = /** @class */ (function () {
         this._userData = userData;
         this._userDataSubject.next(userData);
     };
+    AuthService.prototype.logIn = function (data) {
+        localStorage.setItem(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].userDetails, JSON.stringify(data));
+        this.logInData = data;
+        this.isLogin = true;
+        this.getUserData();
+        this._login.next(true);
+        this.api.init();
+        var id = data['userId'];
+        this.followService.getUserFollower(id);
+        this.followService.getUserFollowing(id, "USER");
+        this.followService.getUserFollowing(id, "BUSINESS");
+    };
+    AuthService.prototype.logout = function () {
+        localStorage.clear();
+        this.logInData = {};
+        this.isLogin = false;
+        this._login.next(false);
+        this.api.init();
+        this.router.navigate(['']);
+    };
+    AuthService.prototype.getUserDataLocal = function () {
+        if (this.isLogin == false)
+            return {};
+        return this.logInData.user;
+    };
     AuthService.ctorParameters = function () { return [
         { type: _requests_service__WEBPACK_IMPORTED_MODULE_5__["RequestsService"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] }
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
+        { type: _services_follow_service__WEBPACK_IMPORTED_MODULE_7__["FollowService"] }
     ]; };
     AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_requests_service__WEBPACK_IMPORTED_MODULE_5__["RequestsService"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_requests_service__WEBPACK_IMPORTED_MODULE_5__["RequestsService"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"],
+            _services_follow_service__WEBPACK_IMPORTED_MODULE_7__["FollowService"]])
     ], AuthService);
     return AuthService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/authentication/modals/complete-information/complete-information.component.css":
+/*!***********************************************************************************************!*\
+  !*** ./src/app/authentication/modals/complete-information/complete-information.component.css ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".module {\r\n  height: auto;\r\n  max-height: 400px;\r\n  width: 400px;\r\n  background-color: white;\r\n  border-radius: 10px;\r\n  position: relative;\r\n  padding-bottom: 20px;\r\n}\r\n\r\n\r\n.module .headers {\r\n  width: 100%;\r\n  top: 0px;\r\n  padding-top: 19px;\r\n  padding-bottom: 10px;\r\n}\r\n\r\n\r\n.headers .mainLabel {\r\n  border-bottom: 3px solid #fbd431;\r\n  padding-bottom: 0px;\r\n  display: inline;\r\n  font-weight: bold;\r\n  margin: 10px 30px;\r\n  font-size: 22px;\r\n}\r\n\r\n\r\n.module .headers i {\r\n  float: right;\r\n  margin: 10px 30px;\r\n  font-size: 23px;\r\n  color: #9b9b9b;\r\n  font-weight: 100;\r\n}\r\n\r\n\r\n.module .headers i:hover {\r\n  cursor: pointer;\r\n  color: #fbd431;\r\n  -webkit-animation: fa-spin 3s;\r\n          animation: fa-spin 3s;\r\n}\r\n\r\n\r\n@-webkit-keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg)\r\n  }\r\n\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg)\r\n  }\r\n}\r\n\r\n\r\n@keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg)\r\n  }\r\n\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg)\r\n  }\r\n}\r\n\r\n\r\n.module .contint {\r\n  padding: 20px 40px;\r\n  width: 100%;\r\n  position: relative;\r\n}\r\n\r\n\r\n.module .contint .inputDiv {\r\n  width: 100%;\r\n  padding: 10px 0;\r\n}\r\n\r\n\r\n.module .contint .inputDiv:first-child {\r\n  padding-top: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv:last-child {\r\n  padding-bottom: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .title {\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n.module .contint .inputDiv textarea {\r\n  height: 80px;\r\n  resize: none;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input {\r\n  width: calc(100% - 20px);\r\n  height: auto;\r\n  padding: 10px;\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"email\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  height: auto;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"password\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px;\r\n  height: auto;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"text\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px;\r\n  height: auto;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-webkit-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-moz-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input:-ms-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-ms-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.chechboxDiv span {\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv {\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .oneDate {\r\n  width: 22.5%;\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .oneDate:first-child {\r\n  padding-right: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .toDiv {\r\n  width: 10%;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .toDiv h4 {\r\n  text-align: center;\r\n  padding-top: 17px;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select {\r\n  display: block;\r\n  font-weight: bold;\r\n  color: #9c9c9c;\r\n  padding: 10px;\r\n  height: auto;\r\n  width: calc(100% - 20px);\r\n  border: transparent;\r\n  max-width: 100%;\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  border-radius: .5em;\r\n  -moz-appearance: none;\r\n  -webkit-appearance: none;\r\n  appearance: none;\r\n  background-color: #e4e4e4;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select {\r\n  background-image: linear-gradient(45deg, transparent 50%, #828282 50%), linear-gradient(135deg, #828282 50%, transparent 50%);\r\n  background-position: calc(100% - 20px) calc(1em + 5px), calc(100% - 12px) calc(1em + 5px), 100% 0px;\r\n  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;\r\n  background-size: 10px 7px;\r\n  background-repeat: no-repeat;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select::-ms-expand {\r\n  display: none;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select:hover {\r\n  border-color: #888;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select:focus {\r\n  border-color: #aaa;\r\n  box-shadow: 0 0 4px 2px #9c9c9c;\r\n  color: #9c9c9c;\r\n  outline: none;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select option:checked,\r\n.module .contint .inputDiv .select option:hover {\r\n  background-color: #9c9c9c;\r\n  color: white;\r\n}\r\n\r\n\r\n.module .footer {\r\n  padding: 0px 20px;\r\n  clear: both;\r\n}\r\n\r\n\r\n.module .footer .button {\r\n  padding: 3px;\r\n  width: 83%;\r\n  text-align: center;\r\n  color: #FFF;\r\n  margin-left: 20px;\r\n  border-radius: 5px;\r\n  font-weight: 600;\r\n  border: 1px solid;\r\n  position: relative;\r\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;\r\n}\r\n\r\n\r\n.module .footer .button:before,\r\n.module .footer .button:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 10px;\r\n  right: 10px;\r\n  border-radius: 100px / 10px;\r\n}\r\n\r\n\r\n.module .footer .button:after {\r\n  right: 10px;\r\n  left: auto;\r\n  -webkit-transform: skew(8deg) rotate(3deg);\r\n  transform: skew(8deg) rotate(3deg);\r\n}\r\n\r\n\r\n.module .footer .button.save {\r\n  border-color: #fbd431;\r\n  background-color: #fbd431;\r\n}\r\n\r\n\r\n.module .footer .button.delete {\r\n  border-color: #9c9c9c;\r\n}\r\n\r\n\r\n.button:hover {\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n.errorMessage {\r\n  top: 5px;\r\n  font-size: 12px;\r\n  color: #DC143C;\r\n  position: absolute;\r\n  font-weight: 700;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0aGVudGljYXRpb24vbW9kYWxzL2NvbXBsZXRlLWluZm9ybWF0aW9uL2NvbXBsZXRlLWluZm9ybWF0aW9uLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLFlBQVk7RUFDWix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixvQkFBb0I7QUFDdEI7OztBQUdBO0VBQ0UsV0FBVztFQUNYLFFBQVE7RUFDUixpQkFBaUI7RUFDakIsb0JBQW9CO0FBQ3RCOzs7QUFFQTtFQUNFLGdDQUFnQztFQUNoQyxtQkFBbUI7RUFDbkIsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixpQkFBaUI7RUFDakIsZUFBZTtBQUNqQjs7O0FBRUE7RUFDRSxZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZixjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOzs7QUFFQTtFQUNFLGVBQWU7RUFDZixjQUFjO0VBQ2QsNkJBQXFCO1VBQXJCLHFCQUFxQjtBQUN2Qjs7O0FBRUE7RUFDRTtJQUNFLCtCQUErQjtJQUMvQjtFQUNGOztFQUVBO0lBQ0UsaUNBQWlDO0lBQ2pDO0VBQ0Y7QUFDRjs7O0FBRUE7RUFDRTtJQUNFLCtCQUErQjtJQUMvQjtFQUNGOztFQUVBO0lBQ0UsaUNBQWlDO0lBQ2pDO0VBQ0Y7QUFDRjs7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGtCQUFrQjtBQUNwQjs7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsZUFBZTtBQUNqQjs7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7OztBQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCOzs7QUFJQTtFQUNFLGlCQUFpQjtBQUNuQjs7O0FBRUE7RUFDRSxZQUFZO0VBQ1osWUFBWTtFQUNaLFdBQVc7QUFDYjs7O0FBRUE7RUFDRSx3QkFBd0I7RUFDeEIsWUFBWTtFQUNaLGFBQWE7RUFDYixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLFlBQVk7O0VBRVosV0FBVztBQUNiOzs7QUFFQTtFQUNFLHdCQUF3QjtFQUN4QixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixZQUFZO0VBQ1osYUFBYTtFQUNiLFdBQVc7QUFDYjs7O0FBRUE7RUFDRSx3QkFBd0I7RUFDeEIsa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixZQUFZO0VBQ1osYUFBYTtFQUNiLFlBQVk7RUFDWixXQUFXO0FBQ2I7OztBQUdBO0VBQ0Usd0JBQXdCO0VBQ3hCLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2YsWUFBWTtFQUNaLGFBQWE7RUFDYixZQUFZO0VBQ1osV0FBVztBQUNiOzs7QUFHQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7OztBQUhBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7O0FBSEE7RUFDRSxjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOzs7QUFIQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7OztBQUhBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7OztBQUVBO0VBQ0UsV0FBVztFQUNYLHFCQUFxQjtBQUN2Qjs7O0FBRUE7RUFDRSxZQUFZO0VBQ1osYUFBYTtBQUNmOzs7QUFFQTtFQUNFLGtCQUFrQjtBQUNwQjs7O0FBR0E7RUFDRSxVQUFVO0FBQ1o7OztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixnQkFBZ0I7QUFDbEI7OztBQUVBO0VBQ0UsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixjQUFjO0VBQ2QsYUFBYTtFQUNiLFlBQVk7RUFDWix3QkFBd0I7RUFDeEIsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixzQkFBc0I7RUFDdEIsU0FBUztFQUNULG1CQUFtQjtFQUNuQixxQkFBcUI7RUFDckIsd0JBQXdCO0VBQ3hCLGdCQUFnQjtFQUNoQix5QkFBeUI7QUFDM0I7OztBQUVBO0VBQ0UsNkhBQTZIO0VBQzdILG1HQUFtRztFQUNuRyw4Q0FBOEM7RUFDOUMseUJBQXlCO0VBQ3pCLDRCQUE0QjtBQUM5Qjs7O0FBR0E7RUFDRSxhQUFhO0FBQ2Y7OztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQiwrQkFBK0I7RUFDL0IsY0FBYztFQUNkLGFBQWE7QUFDZjs7O0FBR0E7O0VBRUUseUJBQXlCO0VBQ3pCLFlBQVk7QUFDZDs7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsV0FBVztBQUNiOzs7QUFFQTtFQUNFLFlBQVk7RUFDWixVQUFVO0VBQ1Ysa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxpQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsa0JBQWtCO0VBR2xCLDJFQUEyRTtBQUM3RTs7O0FBRUE7O0VBRUUsV0FBVztFQUNYLGtCQUFrQjtFQUNsQixXQUFXO0VBR1gsdUNBQXVDO0VBQ3ZDLE1BQU07RUFDTixTQUFTO0VBQ1QsVUFBVTtFQUNWLFdBQVc7RUFFWCwyQkFBMkI7QUFDN0I7OztBQUVBO0VBQ0UsV0FBVztFQUNYLFVBQVU7RUFDViwwQ0FBMEM7RUFJMUMsa0NBQWtDO0FBQ3BDOzs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQix5QkFBeUI7QUFDM0I7OztBQUVBO0VBQ0UscUJBQXFCO0FBQ3ZCOzs7QUFFQTtFQUNFLGVBQWU7QUFDakI7OztBQUVBO0VBQ0UsUUFBUTtFQUNSLGVBQWU7RUFDZixjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2F1dGhlbnRpY2F0aW9uL21vZGFscy9jb21wbGV0ZS1pbmZvcm1hdGlvbi9jb21wbGV0ZS1pbmZvcm1hdGlvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1vZHVsZSB7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIG1heC1oZWlnaHQ6IDQwMHB4O1xyXG4gIHdpZHRoOiA0MDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBwYWRkaW5nLWJvdHRvbTogMjBweDtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmhlYWRlcnMge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHRvcDogMHB4O1xyXG4gIHBhZGRpbmctdG9wOiAxOXB4O1xyXG4gIHBhZGRpbmctYm90dG9tOiAxMHB4O1xyXG59XHJcblxyXG4uaGVhZGVycyAubWFpbkxhYmVsIHtcclxuICBib3JkZXItYm90dG9tOiAzcHggc29saWQgI2ZiZDQzMTtcclxuICBwYWRkaW5nLWJvdHRvbTogMHB4O1xyXG4gIGRpc3BsYXk6IGlubGluZTtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBtYXJnaW46IDEwcHggMzBweDtcclxuICBmb250LXNpemU6IDIycHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmhlYWRlcnMgaSB7XHJcbiAgZmxvYXQ6IHJpZ2h0O1xyXG4gIG1hcmdpbjogMTBweCAzMHB4O1xyXG4gIGZvbnQtc2l6ZTogMjNweDtcclxuICBjb2xvcjogIzliOWI5YjtcclxuICBmb250LXdlaWdodDogMTAwO1xyXG59XHJcblxyXG4ubW9kdWxlIC5oZWFkZXJzIGk6aG92ZXIge1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBjb2xvcjogI2ZiZDQzMTtcclxuICBhbmltYXRpb246IGZhLXNwaW4gM3M7XHJcbn1cclxuXHJcbkAtd2Via2l0LWtleWZyYW1lcyBmYS1zcGluIHtcclxuICAwJSB7XHJcbiAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZylcclxuICB9XHJcblxyXG4gIDEwMCUge1xyXG4gICAgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNTlkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKVxyXG4gIH1cclxufVxyXG5cclxuQGtleWZyYW1lcyBmYS1zcGluIHtcclxuICAwJSB7XHJcbiAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZylcclxuICB9XHJcblxyXG4gIDEwMCUge1xyXG4gICAgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNTlkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKVxyXG4gIH1cclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCB7XHJcbiAgcGFkZGluZzogMjBweCA0MHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBhZGRpbmc6IDEwcHggMDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXY6Zmlyc3QtY2hpbGQge1xyXG4gIHBhZGRpbmctdG9wOiAwcHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2Omxhc3QtY2hpbGQge1xyXG4gIHBhZGRpbmctYm90dG9tOiAwcHg7XHJcbn1cclxuXHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnRpdGxlIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgdGV4dGFyZWEge1xyXG4gIGhlaWdodDogODBweDtcclxuICByZXNpemU6IG5vbmU7XHJcbiAgbWFyZ2luOiAwcHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5pbnB1dCB7XHJcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDIwcHgpO1xyXG4gIGhlaWdodDogYXV0bztcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIHBhZGRpbmctbGVmdDogMTBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTRlNGU0O1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBib3gtc2hhZG93OiBub25lO1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBib3JkZXI6IG5vbmU7XHJcblxyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiBpbnB1dFt0eXBlPVwiZW1haWxcIl0ge1xyXG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAyMHB4KTtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGJveC1zaGFkb3c6IG5vbmU7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiBpbnB1dFt0eXBlPVwicGFzc3dvcmRcIl0ge1xyXG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAyMHB4KTtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2U0ZTRlNDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgYm94LXNoYWRvdzogbm9uZTtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgaW5wdXRbdHlwZT1cInRleHRcIl0ge1xyXG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAyMHB4KTtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2U0ZTRlNDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgYm94LXNoYWRvdzogbm9uZTtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmlucHV0OjpwbGFjZWhvbGRlciB7XHJcbiAgY29sb3I6ICM5YzljOWM7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxufVxyXG5cclxuLmNoZWNoYm94RGl2IHNwYW4ge1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IHtcclxuICB3aWR0aDogMTAwJTtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IC5vbmVEYXRlIHtcclxuICB3aWR0aDogMjIuNSU7XHJcbiAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmRhdGVEaXYgLm9uZURhdGU6Zmlyc3QtY2hpbGQge1xyXG4gIHBhZGRpbmctcmlnaHQ6IDBweDtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IC50b0RpdiB7XHJcbiAgd2lkdGg6IDEwJTtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmRhdGVEaXYgLnRvRGl2IGg0IHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgcGFkZGluZy10b3A6IDE3cHg7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdCB7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgY29sb3I6ICM5YzljOWM7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBoZWlnaHQ6IGF1dG87XHJcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDIwcHgpO1xyXG4gIGJvcmRlcjogdHJhbnNwYXJlbnQ7XHJcbiAgbWF4LXdpZHRoOiAxMDAlO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgbWFyZ2luOiAwO1xyXG4gIGJvcmRlci1yYWRpdXM6IC41ZW07XHJcbiAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcclxuICBhcHBlYXJhbmNlOiBub25lO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qge1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCg0NWRlZywgdHJhbnNwYXJlbnQgNTAlLCAjODI4MjgyIDUwJSksIGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICM4MjgyODIgNTAlLCB0cmFuc3BhcmVudCA1MCUpO1xyXG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNhbGMoMTAwJSAtIDIwcHgpIGNhbGMoMWVtICsgNXB4KSwgY2FsYygxMDAlIC0gMTJweCkgY2FsYygxZW0gKyA1cHgpLCAxMDAlIDBweDtcclxuICBiYWNrZ3JvdW5kLXNpemU6IDVweCA1cHgsIDVweCA1cHgsIDIuNWVtIDIuNWVtO1xyXG4gIGJhY2tncm91bmQtc2l6ZTogMTBweCA3cHg7XHJcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Q6Oi1tcy1leHBhbmQge1xyXG4gIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Q6aG92ZXIge1xyXG4gIGJvcmRlci1jb2xvcjogIzg4ODtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdDpmb2N1cyB7XHJcbiAgYm9yZGVyLWNvbG9yOiAjYWFhO1xyXG4gIGJveC1zaGFkb3c6IDAgMCA0cHggMnB4ICM5YzljOWM7XHJcbiAgY29sb3I6ICM5YzljOWM7XHJcbiAgb3V0bGluZTogbm9uZTtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qgb3B0aW9uOmNoZWNrZWQsXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qgb3B0aW9uOmhvdmVyIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjOWM5YzljO1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIHtcclxuICBwYWRkaW5nOiAwcHggMjBweDtcclxuICBjbGVhcjogYm90aDtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIC5idXR0b24ge1xyXG4gIHBhZGRpbmc6IDNweDtcclxuICB3aWR0aDogODMlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBjb2xvcjogI0ZGRjtcclxuICBtYXJnaW4tbGVmdDogMjBweDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICBib3JkZXI6IDFweCBzb2xpZDtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgLXdlYmtpdC1ib3gtc2hhZG93OiAwIDFweCA0cHggcmdiYSgwLCAwLCAwLCAwLjMpLCAwIDAgNDBweCByZ2JhKDAsIDAsIDAsIDAuMSkgaW5zZXQ7XHJcbiAgLW1vei1ib3gtc2hhZG93OiAwIDFweCA0cHggcmdiYSgwLCAwLCAwLCAwLjMpLCAwIDAgNDBweCByZ2JhKDAsIDAsIDAsIDAuMSkgaW5zZXQ7XHJcbiAgYm94LXNoYWRvdzogMCAxcHggNHB4IHJnYmEoMCwgMCwgMCwgMC4zKSwgMCAwIDQwcHggcmdiYSgwLCAwLCAwLCAwLjEpIGluc2V0O1xyXG59XHJcblxyXG4ubW9kdWxlIC5mb290ZXIgLmJ1dHRvbjpiZWZvcmUsXHJcbi5tb2R1bGUgLmZvb3RlciAuYnV0dG9uOmFmdGVyIHtcclxuICBjb250ZW50OiBcIlwiO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB6LWluZGV4OiAtMTtcclxuICAtd2Via2l0LWJveC1zaGFkb3c6IDAgMCAyMHB4IHJnYmEoMCwgMCwgMCwgMC44KTtcclxuICAtbW96LWJveC1zaGFkb3c6IDAgMCAyMHB4IHJnYmEoMCwgMCwgMCwgMC44KTtcclxuICBib3gtc2hhZG93OiAwIDAgMjBweCByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgdG9wOiAwO1xyXG4gIGJvdHRvbTogMDtcclxuICBsZWZ0OiAxMHB4O1xyXG4gIHJpZ2h0OiAxMHB4O1xyXG4gIC1tb3otYm9yZGVyLXJhZGl1czogMTAwcHggLyAxMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDEwMHB4IC8gMTBweDtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIC5idXR0b246YWZ0ZXIge1xyXG4gIHJpZ2h0OiAxMHB4O1xyXG4gIGxlZnQ6IGF1dG87XHJcbiAgLXdlYmtpdC10cmFuc2Zvcm06IHNrZXcoOGRlZykgcm90YXRlKDNkZWcpO1xyXG4gIC1tb3otdHJhbnNmb3JtOiBza2V3KDhkZWcpIHJvdGF0ZSgzZGVnKTtcclxuICAtbXMtdHJhbnNmb3JtOiBza2V3KDhkZWcpIHJvdGF0ZSgzZGVnKTtcclxuICAtby10cmFuc2Zvcm06IHNrZXcoOGRlZykgcm90YXRlKDNkZWcpO1xyXG4gIHRyYW5zZm9ybTogc2tldyg4ZGVnKSByb3RhdGUoM2RlZyk7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmZvb3RlciAuYnV0dG9uLnNhdmUge1xyXG4gIGJvcmRlci1jb2xvcjogI2ZiZDQzMTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmJkNDMxO1xyXG59XHJcblxyXG4ubW9kdWxlIC5mb290ZXIgLmJ1dHRvbi5kZWxldGUge1xyXG4gIGJvcmRlci1jb2xvcjogIzljOWM5YztcclxufVxyXG5cclxuLmJ1dHRvbjpob3ZlciB7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4uZXJyb3JNZXNzYWdlIHtcclxuICB0b3A6IDVweDtcclxuICBmb250LXNpemU6IDEycHg7XHJcbiAgY29sb3I6ICNEQzE0M0M7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbn1cclxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/authentication/modals/complete-information/complete-information.component.ts":
+/*!**********************************************************************************************!*\
+  !*** ./src/app/authentication/modals/complete-information/complete-information.component.ts ***!
+  \**********************************************************************************************/
+/*! exports provided: CompleteInformationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompleteInformationComponent", function() { return CompleteInformationComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/requests.service */ "./src/app/requests.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../auth.service */ "./src/app/authentication/auth.service.ts");
+
+
+
+
+
+
+
+var CompleteInformationComponent = /** @class */ (function () {
+    function CompleteInformationComponent(dialog, thisDialog, apiService, router, auth, data) {
+        this.dialog = dialog;
+        this.thisDialog = thisDialog;
+        this.apiService = apiService;
+        this.router = router;
+        this.auth = auth;
+        this.data = data;
+        this.errorMessage = '';
+        this.user = { email: null, phoneNumber: null, gender: null };
+        this.user = tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, this.user, data);
+    }
+    CompleteInformationComponent.prototype.ngOnInit = function () {
+    };
+    CompleteInformationComponent.prototype.submit = function () {
+        var _this = this;
+        var value = this.checkForm();
+        if (value != true) {
+            this.errorMessage = value;
+            return;
+        }
+        if (this.user.email === null)
+            delete this.user.email;
+        if (this.user.phoneNumber === null)
+            delete this.user.phoneNumber;
+        if (this.user.gender === null)
+            delete this.user.gender;
+        this.apiService.put('users/' + this.user.id, this.user).subscribe(function (res) {
+            res.userId = res.id;
+            localStorage.setItem(src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].userDetails, JSON.stringify(res));
+            _this.auth.logIn(res);
+            _this.router.navigate(['']);
+            _this.thisDialog.close();
+        }, function (error) {
+            _this.errorMessage = 'LOGIN_FAILED';
+        });
+    };
+    CompleteInformationComponent.prototype.checkForm = function () {
+        if (this.user.email != null && this.user.email === '') {
+            return 'emailIsRequired';
+        }
+        if (this.user.phoneNumber != null && this.user.phoneNumber === "") {
+            return 'phoneNumberIsRequired';
+        }
+        if (this.user.gender != null && this.user.gender === "") {
+            return 'genderIsRequired';
+        }
+        return true;
+    };
+    CompleteInformationComponent.prototype.close = function () {
+        this.thisDialog.close();
+    };
+    CompleteInformationComponent.ctorParameters = function () { return [
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+        { type: src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+        { type: _auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"] },
+        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+    ]; };
+    CompleteInformationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-complete-information',
+            template: __webpack_require__(/*! raw-loader!./complete-information.component.html */ "./node_modules/raw-loader/index.js!./src/app/authentication/modals/complete-information/complete-information.component.html"),
+            styles: [__webpack_require__(/*! ./complete-information.component.css */ "./src/app/authentication/modals/complete-information/complete-information.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](5, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"], Object])
+    ], CompleteInformationComponent);
+    return CompleteInformationComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/authentication/modals/forget-password/forget-password.component.css":
+/*!*************************************************************************************!*\
+  !*** ./src/app/authentication/modals/forget-password/forget-password.component.css ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".module {\r\n  height: auto;\r\n  min-height: 220px;\r\n  width: 376px;\r\n  padding: 1px; \r\n  background-color: white;\r\n  border-radius: 10px;\r\n  position: relative;\r\n}\r\n\r\n\r\n.module .headers {\r\n  width: 100%;\r\n  top: 0px;\r\n  padding-top: 19px;\r\n  padding-bottom: 10px;\r\n}\r\n\r\n\r\n.headers .mainLabel {\r\n  border-bottom: 3px solid #fbd431;\r\n  padding-bottom: 0px;\r\n  display: inline;\r\n  font-weight: bold;\r\n  margin: 10px 30px;\r\n  font-size: 22px;\r\n}\r\n\r\n\r\n.module .headers i {\r\n  float: right;\r\n  margin: 10px 30px;\r\n  font-size: 23px;\r\n  color: #9b9b9b;\r\n  font-weight: 100;\r\n}\r\n\r\n\r\n.module .headers i:hover {\r\n  cursor: pointer;\r\n  color: #fbd431;\r\n  -webkit-animation: fa-spin 3s;\r\n          animation: fa-spin 3s;\r\n}\r\n\r\n\r\n@-webkit-keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg)\r\n  }\r\n\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg)\r\n  }\r\n}\r\n\r\n\r\n@keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg)\r\n  }\r\n\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg)\r\n  }\r\n}\r\n\r\n\r\n.module .contint {\r\n  padding: 20px 40px;\r\n  width: 100%;\r\n  position: relative;\r\n}\r\n\r\n\r\n.module .contint .inputDiv {\r\n  width: 100%;\r\n  padding: 10px 0;\r\n}\r\n\r\n\r\n.module .contint .inputDiv:first-child {\r\n  padding-top: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv:last-child {\r\n  padding-bottom: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .title {\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n.module .contint .inputDiv textarea {\r\n  height: 80px;\r\n  resize: none;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input {\r\n  width: calc(100% - 20px);\r\n  height: auto;\r\n  padding: 10px;\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"email\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  height: auto;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"password\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px;\r\n  height: auto;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-webkit-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-moz-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input:-ms-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-ms-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.chechboxDiv span {\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv {\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .oneDate {\r\n  width: 22.5%;\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .oneDate:first-child {\r\n  padding-right: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .toDiv {\r\n  width: 10%;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .toDiv h4 {\r\n  text-align: center;\r\n  padding-top: 17px;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select {\r\n  display: block;\r\n  font-weight: bold;\r\n  color: #9c9c9c;\r\n  padding: 10px;\r\n  height: 43px;\r\n  width: 100%;\r\n  border: transparent;\r\n  max-width: 100%;\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  border-radius: .5em;\r\n  -moz-appearance: none;\r\n  -webkit-appearance: none;\r\n  appearance: none;\r\n  background-color: #e4e4e4;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select {\r\n  background-image: linear-gradient(45deg, transparent 50%, #828282 50%), linear-gradient(135deg, #828282 50%, transparent 50%);\r\n  background-position: calc(100% - 20px) calc(1em + 5px), calc(100% - 12px) calc(1em + 5px), 100% 0px;\r\n  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;\r\n  background-size: 10px 7px;\r\n  background-repeat: no-repeat;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select::-ms-expand {\r\n  display: none;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select:hover {\r\n  border-color: #888;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select:focus {\r\n  border-color: #aaa;\r\n  box-shadow: 0 0 4px 2px #9c9c9c;\r\n  color: #9c9c9c;\r\n  outline: none;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select option:checked,\r\n.module .contint .inputDiv .select option:hover {\r\n  background-color: #9c9c9c;\r\n  color: white;\r\n}\r\n\r\n\r\n.module .footer {\r\n  padding: 0px 20px;\r\n  clear: both;\r\n}\r\n\r\n\r\n.module .footer .button {\r\n  padding: 3px;\r\n  width: 83%;\r\n  text-align: center;\r\n  color: #FFF;\r\n  margin-left: 20px;\r\n  border-radius: 5px;\r\n  font-weight: 600;\r\n  border: 1px solid;\r\n  position: relative;\r\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;\r\n}\r\n\r\n\r\n.module .footer .button:before,\r\n.module .footer .button:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 10px;\r\n  right: 10px;\r\n  border-radius: 100px / 10px;\r\n}\r\n\r\n\r\n.module .footer .button:after {\r\n  right: 10px;\r\n  left: auto;\r\n  -webkit-transform: skew(8deg) rotate(3deg);\r\n  transform: skew(8deg) rotate(3deg);\r\n}\r\n\r\n\r\n.module .footer .button.save {\r\n  border-color: #fbd431;\r\n  background-color: #fbd431;\r\n}\r\n\r\n\r\n.module .footer .button.delete {\r\n  border-color: #9c9c9c;\r\n}\r\n\r\n\r\n.button:hover {\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n.errorMessage {\r\n  top: 5px;\r\n  font-size: 12px;\r\n  color: #DC143C;\r\n  position: absolute;\r\n  font-weight: 700;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0aGVudGljYXRpb24vbW9kYWxzL2ZvcmdldC1wYXNzd29yZC9mb3JnZXQtcGFzc3dvcmQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsWUFBWTtFQUNaLFlBQVk7RUFDWix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGtCQUFrQjtBQUNwQjs7O0FBR0E7RUFDRSxXQUFXO0VBQ1gsUUFBUTtFQUNSLGlCQUFpQjtFQUNqQixvQkFBb0I7QUFDdEI7OztBQUVBO0VBQ0UsZ0NBQWdDO0VBQ2hDLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGlCQUFpQjtFQUNqQixlQUFlO0FBQ2pCOzs7QUFFQTtFQUNFLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsZUFBZTtFQUNmLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7OztBQUVBO0VBQ0UsZUFBZTtFQUNmLGNBQWM7RUFDZCw2QkFBcUI7VUFBckIscUJBQXFCO0FBQ3ZCOzs7QUFFQTtFQUNFO0lBQ0UsK0JBQStCO0lBQy9CO0VBQ0Y7O0VBRUE7SUFDRSxpQ0FBaUM7SUFDakM7RUFDRjtBQUNGOzs7QUFFQTtFQUNFO0lBQ0UsK0JBQStCO0lBQy9CO0VBQ0Y7O0VBRUE7SUFDRSxpQ0FBaUM7SUFDakM7RUFDRjtBQUNGOzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsa0JBQWtCO0FBQ3BCOzs7QUFFQTtFQUNFLFdBQVc7RUFDWCxlQUFlO0FBQ2pCOzs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQjs7O0FBRUE7RUFDRSxtQkFBbUI7QUFDckI7OztBQUlBO0VBQ0UsaUJBQWlCO0FBQ25COzs7QUFFQTtFQUNFLFlBQVk7RUFDWixZQUFZO0VBQ1osV0FBVztBQUNiOzs7QUFFQTtFQUNFLHdCQUF3QjtFQUN4QixZQUFZO0VBQ1osYUFBYTtFQUNiLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2YsWUFBWTs7RUFFWixXQUFXO0FBQ2I7OztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLFlBQVk7RUFDWixhQUFhO0VBQ2IsV0FBVztBQUNiOzs7QUFFQTtFQUNFLHdCQUF3QjtFQUN4QixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLFlBQVk7RUFDWixhQUFhO0VBQ2IsWUFBWTtFQUNaLFdBQVc7QUFDYjs7O0FBSUE7RUFDRSxjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOzs7QUFIQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7OztBQUhBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7O0FBSEE7RUFDRSxjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOzs7QUFIQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7OztBQUVBO0VBQ0UsZ0JBQWdCO0FBQ2xCOzs7QUFFQTtFQUNFLFdBQVc7RUFDWCxxQkFBcUI7QUFDdkI7OztBQUVBO0VBQ0UsWUFBWTtFQUNaLGFBQWE7QUFDZjs7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7OztBQUdBO0VBQ0UsVUFBVTtBQUNaOzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsZ0JBQWdCO0FBQ2xCOzs7QUFFQTtFQUNFLGNBQWM7RUFDZCxpQkFBaUI7RUFDakIsY0FBYztFQUNkLGFBQWE7RUFDYixZQUFZO0VBQ1osV0FBVztFQUNYLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2Ysc0JBQXNCO0VBQ3RCLFNBQVM7RUFDVCxtQkFBbUI7RUFDbkIscUJBQXFCO0VBQ3JCLHdCQUF3QjtFQUN4QixnQkFBZ0I7RUFDaEIseUJBQXlCO0FBQzNCOzs7QUFFQTtFQUNFLDZIQUE2SDtFQUM3SCxtR0FBbUc7RUFDbkcsOENBQThDO0VBQzlDLHlCQUF5QjtFQUN6Qiw0QkFBNEI7QUFDOUI7OztBQUdBO0VBQ0UsYUFBYTtBQUNmOzs7QUFFQTtFQUNFLGtCQUFrQjtBQUNwQjs7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsK0JBQStCO0VBQy9CLGNBQWM7RUFDZCxhQUFhO0FBQ2Y7OztBQUdBOztFQUVFLHlCQUF5QjtFQUN6QixZQUFZO0FBQ2Q7OztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLFdBQVc7QUFDYjs7O0FBRUE7RUFDRSxZQUFZO0VBQ1osVUFBVTtFQUNWLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUdsQiwyRUFBMkU7QUFDN0U7OztBQUVBOztFQUVFLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsV0FBVztFQUdYLHVDQUF1QztFQUN2QyxNQUFNO0VBQ04sU0FBUztFQUNULFVBQVU7RUFDVixXQUFXO0VBRVgsMkJBQTJCO0FBQzdCOzs7QUFFQTtFQUNFLFdBQVc7RUFDWCxVQUFVO0VBQ1YsMENBQTBDO0VBSTFDLGtDQUFrQztBQUNwQzs7O0FBRUE7RUFDRSxxQkFBcUI7RUFDckIseUJBQXlCO0FBQzNCOzs7QUFFQTtFQUNFLHFCQUFxQjtBQUN2Qjs7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOzs7QUFFQTtFQUNFLFFBQVE7RUFDUixlQUFlO0VBQ2YsY0FBYztFQUNkLGtCQUFrQjtFQUNsQixnQkFBZ0I7QUFDbEIiLCJmaWxlIjoic3JjL2FwcC9hdXRoZW50aWNhdGlvbi9tb2RhbHMvZm9yZ2V0LXBhc3N3b3JkL2ZvcmdldC1wYXNzd29yZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1vZHVsZSB7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIG1pbi1oZWlnaHQ6IDIyMHB4O1xyXG4gIHdpZHRoOiAzNzZweDtcclxuICBwYWRkaW5nOiAxcHg7IFxyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG5cclxuLm1vZHVsZSAuaGVhZGVycyB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgdG9wOiAwcHg7XHJcbiAgcGFkZGluZy10b3A6IDE5cHg7XHJcbiAgcGFkZGluZy1ib3R0b206IDEwcHg7XHJcbn1cclxuXHJcbi5oZWFkZXJzIC5tYWluTGFiZWwge1xyXG4gIGJvcmRlci1ib3R0b206IDNweCBzb2xpZCAjZmJkNDMxO1xyXG4gIHBhZGRpbmctYm90dG9tOiAwcHg7XHJcbiAgZGlzcGxheTogaW5saW5lO1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIG1hcmdpbjogMTBweCAzMHB4O1xyXG4gIGZvbnQtc2l6ZTogMjJweDtcclxufVxyXG5cclxuLm1vZHVsZSAuaGVhZGVycyBpIHtcclxuICBmbG9hdDogcmlnaHQ7XHJcbiAgbWFyZ2luOiAxMHB4IDMwcHg7XHJcbiAgZm9udC1zaXplOiAyM3B4O1xyXG4gIGNvbG9yOiAjOWI5YjliO1xyXG4gIGZvbnQtd2VpZ2h0OiAxMDA7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmhlYWRlcnMgaTpob3ZlciB7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGNvbG9yOiAjZmJkNDMxO1xyXG4gIGFuaW1hdGlvbjogZmEtc3BpbiAzcztcclxufVxyXG5cclxuQC13ZWJraXQta2V5ZnJhbWVzIGZhLXNwaW4ge1xyXG4gIDAlIHtcclxuICAgIC13ZWJraXQtdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XHJcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKVxyXG4gIH1cclxuXHJcbiAgMTAwJSB7XHJcbiAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDM1OWRlZyk7XHJcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgzNTlkZWcpXHJcbiAgfVxyXG59XHJcblxyXG5Aa2V5ZnJhbWVzIGZhLXNwaW4ge1xyXG4gIDAlIHtcclxuICAgIC13ZWJraXQtdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XHJcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKVxyXG4gIH1cclxuXHJcbiAgMTAwJSB7XHJcbiAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDM1OWRlZyk7XHJcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgzNTlkZWcpXHJcbiAgfVxyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IHtcclxuICBwYWRkaW5nOiAyMHB4IDQwcHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgcGFkZGluZzogMTBweCAwO1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdjpmaXJzdC1jaGlsZCB7XHJcbiAgcGFkZGluZy10b3A6IDBweDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXY6bGFzdC1jaGlsZCB7XHJcbiAgcGFkZGluZy1ib3R0b206IDBweDtcclxufVxyXG5cclxuXHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAudGl0bGUge1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiB0ZXh0YXJlYSB7XHJcbiAgaGVpZ2h0OiA4MHB4O1xyXG4gIHJlc2l6ZTogbm9uZTtcclxuICBtYXJnaW46IDBweDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmlucHV0IHtcclxuICB3aWR0aDogY2FsYygxMDAlIC0gMjBweCk7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbiAgcGFkZGluZy1sZWZ0OiAxMHB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGJveC1zaGFkb3c6IG5vbmU7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGJvcmRlcjogbm9uZTtcclxuXHJcbiAgbWFyZ2luOiAwcHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IGlucHV0W3R5cGU9XCJlbWFpbFwiXSB7XHJcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDIwcHgpO1xyXG4gIHBhZGRpbmctbGVmdDogMTBweDtcclxuICBoZWlnaHQ6IGF1dG87XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2U0ZTRlNDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgYm94LXNoYWRvdzogbm9uZTtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbiAgbWFyZ2luOiAwcHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IGlucHV0W3R5cGU9XCJwYXNzd29yZFwiXSB7XHJcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDIwcHgpO1xyXG4gIHBhZGRpbmctbGVmdDogMTBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTRlNGU0O1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBib3gtc2hhZG93OiBub25lO1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBoZWlnaHQ6IGF1dG87XHJcbiAgbWFyZ2luOiAwcHg7XHJcbn1cclxuXHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmlucHV0OjpwbGFjZWhvbGRlciB7XHJcbiAgY29sb3I6ICM5YzljOWM7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxufVxyXG5cclxuLmNoZWNoYm94RGl2IHNwYW4ge1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IHtcclxuICB3aWR0aDogMTAwJTtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IC5vbmVEYXRlIHtcclxuICB3aWR0aDogMjIuNSU7XHJcbiAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmRhdGVEaXYgLm9uZURhdGU6Zmlyc3QtY2hpbGQge1xyXG4gIHBhZGRpbmctcmlnaHQ6IDBweDtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IC50b0RpdiB7XHJcbiAgd2lkdGg6IDEwJTtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmRhdGVEaXYgLnRvRGl2IGg0IHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgcGFkZGluZy10b3A6IDE3cHg7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdCB7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgY29sb3I6ICM5YzljOWM7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBoZWlnaHQ6IDQzcHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgYm9yZGVyOiB0cmFuc3BhcmVudDtcclxuICBtYXgtd2lkdGg6IDEwMCU7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICBtYXJnaW46IDA7XHJcbiAgYm9yZGVyLXJhZGl1czogLjVlbTtcclxuICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gIGFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2U0ZTRlNDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdCB7XHJcbiAgYmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KDQ1ZGVnLCB0cmFuc3BhcmVudCA1MCUsICM4MjgyODIgNTAlKSwgbGluZWFyLWdyYWRpZW50KDEzNWRlZywgIzgyODI4MiA1MCUsIHRyYW5zcGFyZW50IDUwJSk7XHJcbiAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2FsYygxMDAlIC0gMjBweCkgY2FsYygxZW0gKyA1cHgpLCBjYWxjKDEwMCUgLSAxMnB4KSBjYWxjKDFlbSArIDVweCksIDEwMCUgMHB4O1xyXG4gIGJhY2tncm91bmQtc2l6ZTogNXB4IDVweCwgNXB4IDVweCwgMi41ZW0gMi41ZW07XHJcbiAgYmFja2dyb3VuZC1zaXplOiAxMHB4IDdweDtcclxuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG59XHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdDo6LW1zLWV4cGFuZCB7XHJcbiAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdDpob3ZlciB7XHJcbiAgYm9yZGVyLWNvbG9yOiAjODg4O1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuc2VsZWN0OmZvY3VzIHtcclxuICBib3JkZXItY29sb3I6ICNhYWE7XHJcbiAgYm94LXNoYWRvdzogMCAwIDRweCAycHggIzljOWM5YztcclxuICBjb2xvcjogIzljOWM5YztcclxuICBvdXRsaW5lOiBub25lO1xyXG59XHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdCBvcHRpb246Y2hlY2tlZCxcclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdCBvcHRpb246aG92ZXIge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICM5YzljOWM7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4ubW9kdWxlIC5mb290ZXIge1xyXG4gIHBhZGRpbmc6IDBweCAyMHB4O1xyXG4gIGNsZWFyOiBib3RoO1xyXG59XHJcblxyXG4ubW9kdWxlIC5mb290ZXIgLmJ1dHRvbiB7XHJcbiAgcGFkZGluZzogM3B4O1xyXG4gIHdpZHRoOiA4MyU7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGNvbG9yOiAjRkZGO1xyXG4gIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAtd2Via2l0LWJveC1zaGFkb3c6IDAgMXB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMyksIDAgMCA0MHB4IHJnYmEoMCwgMCwgMCwgMC4xKSBpbnNldDtcclxuICAtbW96LWJveC1zaGFkb3c6IDAgMXB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMyksIDAgMCA0MHB4IHJnYmEoMCwgMCwgMCwgMC4xKSBpbnNldDtcclxuICBib3gtc2hhZG93OiAwIDFweCA0cHggcmdiYSgwLCAwLCAwLCAwLjMpLCAwIDAgNDBweCByZ2JhKDAsIDAsIDAsIDAuMSkgaW5zZXQ7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmZvb3RlciAuYnV0dG9uOmJlZm9yZSxcclxuLm1vZHVsZSAuZm9vdGVyIC5idXR0b246YWZ0ZXIge1xyXG4gIGNvbnRlbnQ6IFwiXCI7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHotaW5kZXg6IC0xO1xyXG4gIC13ZWJraXQtYm94LXNoYWRvdzogMCAwIDIwcHggcmdiYSgwLCAwLCAwLCAwLjgpO1xyXG4gIC1tb3otYm94LXNoYWRvdzogMCAwIDIwcHggcmdiYSgwLCAwLCAwLCAwLjgpO1xyXG4gIGJveC1zaGFkb3c6IDAgMCAyMHB4IHJnYmEoMCwgMCwgMCwgMC44KTtcclxuICB0b3A6IDA7XHJcbiAgYm90dG9tOiAwO1xyXG4gIGxlZnQ6IDEwcHg7XHJcbiAgcmlnaHQ6IDEwcHg7XHJcbiAgLW1vei1ib3JkZXItcmFkaXVzOiAxMDBweCAvIDEwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMTAwcHggLyAxMHB4O1xyXG59XHJcblxyXG4ubW9kdWxlIC5mb290ZXIgLmJ1dHRvbjphZnRlciB7XHJcbiAgcmlnaHQ6IDEwcHg7XHJcbiAgbGVmdDogYXV0bztcclxuICAtd2Via2l0LXRyYW5zZm9ybTogc2tldyg4ZGVnKSByb3RhdGUoM2RlZyk7XHJcbiAgLW1vei10cmFuc2Zvcm06IHNrZXcoOGRlZykgcm90YXRlKDNkZWcpO1xyXG4gIC1tcy10cmFuc2Zvcm06IHNrZXcoOGRlZykgcm90YXRlKDNkZWcpO1xyXG4gIC1vLXRyYW5zZm9ybTogc2tldyg4ZGVnKSByb3RhdGUoM2RlZyk7XHJcbiAgdHJhbnNmb3JtOiBza2V3KDhkZWcpIHJvdGF0ZSgzZGVnKTtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIC5idXR0b24uc2F2ZSB7XHJcbiAgYm9yZGVyLWNvbG9yOiAjZmJkNDMxO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmYmQ0MzE7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmZvb3RlciAuYnV0dG9uLmRlbGV0ZSB7XHJcbiAgYm9yZGVyLWNvbG9yOiAjOWM5YzljO1xyXG59XHJcblxyXG4uYnV0dG9uOmhvdmVyIHtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5lcnJvck1lc3NhZ2Uge1xyXG4gIHRvcDogNXB4O1xyXG4gIGZvbnQtc2l6ZTogMTJweDtcclxuICBjb2xvcjogI0RDMTQzQztcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgZm9udC13ZWlnaHQ6IDcwMDtcclxufVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/authentication/modals/forget-password/forget-password.component.ts":
+/*!************************************************************************************!*\
+  !*** ./src/app/authentication/modals/forget-password/forget-password.component.ts ***!
+  \************************************************************************************/
+/*! exports provided: ForgetPasswordComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ForgetPasswordComponent", function() { return ForgetPasswordComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/requests.service */ "./src/app/requests.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../auth.service */ "./src/app/authentication/auth.service.ts");
+
+
+
+
+
+var ForgetPasswordComponent = /** @class */ (function () {
+    function ForgetPasswordComponent(dialog, thisDialog, apiService, auth) {
+        this.dialog = dialog;
+        this.thisDialog = thisDialog;
+        this.apiService = apiService;
+        this.auth = auth;
+        this.user = {};
+        this.errorMessage = '';
+        this.verificationCode = false;
+    }
+    ForgetPasswordComponent.prototype.ngOnInit = function () {
+    };
+    ForgetPasswordComponent.prototype.send = function () {
+        var _this = this;
+        var value = this.checkForm();
+        if (value != true) {
+            this.errorMessage = value;
+            return;
+        }
+        this.apiService.post('users/forgotPassword', this.user).subscribe(function (res) {
+            _this.verificationCode = true;
+            _this.errorMessage = '';
+        }, function (error) {
+            _this.errorMessage = error['error']['error']['code'];
+        });
+    };
+    ForgetPasswordComponent.prototype.checkForm = function () {
+        if (!this.user.email || this.user.email === '') {
+            return 'emailIsRequired';
+        }
+        return true;
+    };
+    ForgetPasswordComponent.prototype.close = function () {
+        this.thisDialog.close();
+    };
+    ForgetPasswordComponent.ctorParameters = function () { return [
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+        { type: src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"] },
+        { type: _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] }
+    ]; };
+    ForgetPasswordComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-forget-password',
+            template: __webpack_require__(/*! raw-loader!./forget-password.component.html */ "./node_modules/raw-loader/index.js!./src/app/authentication/modals/forget-password/forget-password.component.html"),
+            styles: [__webpack_require__(/*! ./forget-password.component.css */ "./src/app/authentication/modals/forget-password/forget-password.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"], _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]])
+    ], ForgetPasswordComponent);
+    return ForgetPasswordComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/authentication/modals/login/login.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/authentication/modals/login/login.component.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".module {\r\n  height: 390px;\r\n  width: 376px;\r\n  background-color: white;\r\n  border-radius: 10px;\r\n  position: relative;\r\n}\r\n\r\n\r\n.module .headers {\r\n  width: 100%;\r\n  top: 0px;\r\n  padding-top: 19px;\r\n  padding-bottom: 10px;\r\n}\r\n\r\n\r\n.headers .mainLabel {\r\n  border-bottom: 3px solid #fbd431;\r\n  padding-bottom: 0px;\r\n  display: inline;\r\n  font-weight: bold;\r\n  margin: 10px 30px;\r\n  font-size: 22px;\r\n}\r\n\r\n\r\n.module .headers i {\r\n  float: right;\r\n  margin: 10px 30px;\r\n  font-size: 23px;\r\n  color: #9b9b9b;\r\n  font-weight: 100;\r\n}\r\n\r\n\r\n.module .headers i:hover {\r\n  cursor: pointer;\r\n  color: #fbd431;\r\n  -webkit-animation: fa-spin 3s;\r\n          animation: fa-spin 3s;\r\n}\r\n\r\n\r\n@-webkit-keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg)\r\n  }\r\n\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg)\r\n  }\r\n}\r\n\r\n\r\n@keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg)\r\n  }\r\n\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg)\r\n  }\r\n}\r\n\r\n\r\n.module .contint {\r\n  padding: 20px 40px;\r\n  width: 100%;\r\n  position: relative;\r\n}\r\n\r\n\r\n.module .contint .inputDiv {\r\n  width: 100%;\r\n  padding: 10px 0;\r\n}\r\n\r\n\r\n.module .contint .inputDiv:first-child {\r\n  padding-top: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv:last-child {\r\n  padding-bottom: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .title {\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n.module .contint .inputDiv textarea {\r\n  height: 80px;\r\n  resize: none;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input {\r\n  width: calc(100% - 20px);\r\n  height: auto;\r\n  padding: 10px ;\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n\r\n  margin: 0px;  \r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"email\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  height: auto;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px ;\r\n  margin: 0px;  \r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"password\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px ;\r\n  height: auto;\r\n  margin: 0px;  \r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-webkit-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-moz-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input:-ms-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-ms-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.chechboxDiv span {\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv {\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .oneDate {\r\n  width: 22.5%;\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .oneDate:first-child {\r\n  padding-right: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .toDiv {\r\n  width: 10%;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .toDiv h4 {\r\n  text-align: center;\r\n  padding-top: 17px;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select {\r\n  display: block;\r\n  font-weight: bold;\r\n  color: #9c9c9c;\r\n  padding: 10px;\r\n  height: 43px;\r\n  width: 100%;\r\n  border: transparent;\r\n  max-width: 100%;\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  border-radius: .5em;\r\n  -moz-appearance: none;\r\n  -webkit-appearance: none;\r\n  appearance: none;\r\n  background-color: #e4e4e4;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select {\r\n  background-image: linear-gradient(45deg, transparent 50%, #828282 50%), linear-gradient(135deg, #828282 50%, transparent 50%);\r\n  background-position: calc(100% - 20px) calc(1em + 5px), calc(100% - 12px) calc(1em + 5px), 100% 0px;\r\n  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;\r\n  background-size: 10px 7px;\r\n  background-repeat: no-repeat;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select::-ms-expand {\r\n  display: none;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select:hover {\r\n  border-color: #888;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select:focus {\r\n  border-color: #aaa;\r\n  box-shadow: 0 0 4px 2px #9c9c9c;\r\n  color: #9c9c9c;\r\n  outline: none;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select option:checked,\r\n.module .contint .inputDiv .select option:hover {\r\n  background-color: #9c9c9c;\r\n  color: white;\r\n}\r\n\r\n\r\n.module .footer {\r\n  padding: 0px 20px;\r\n  clear: both;\r\n}\r\n\r\n\r\n.module .footer .button {\r\n  padding: 3px;\r\n  width: 83%;\r\n  text-align: center;\r\n  color: #FFF;\r\n  margin-left: 20px;\r\n  border-radius: 5px;\r\n  font-weight: 600;\r\n  border: 1px solid;\r\n  position: relative;\r\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;\r\n}\r\n\r\n\r\n.module .footer .button:before,\r\n.module .footer .button:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 10px;\r\n  right: 10px;\r\n  border-radius: 100px / 10px;\r\n}\r\n\r\n\r\n.module .footer .button:after {\r\n  right: 10px;\r\n  left: auto;\r\n  -webkit-transform: skew(8deg) rotate(3deg);\r\n  transform: skew(8deg) rotate(3deg);\r\n}\r\n\r\n\r\n.module .footer .button.save {\r\n  border-color: #fbd431;\r\n  background-color: #fbd431;\r\n}\r\n\r\n\r\n.module .footer .button.delete {\r\n  border-color: #9c9c9c;\r\n}\r\n\r\n\r\n.button:hover {\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n.errorMessage {\r\n  top: 5px;\r\n  font-size: 12px;\r\n  color: #DC143C;\r\n  position: absolute;\r\n  font-weight: 700;\r\n}\r\n\r\n\r\n.loginBtn {\r\n  box-sizing: border-box;\r\n  position: relative;\r\n  text-align: center !important;\r\n  margin: 0.2em;\r\n  padding: 0 15px 0 46px;\r\n  border: none;\r\n  text-align: left;\r\n  line-height: 34px;\r\n  white-space: nowrap;\r\n  border-radius: 0.2em;\r\n  font-size: 16px;\r\n  color: #FFF;\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n.loginBtn:before {\r\n  content: \"\";\r\n  box-sizing: border-box;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 34px;\r\n  height: 100%;\r\n}\r\n\r\n\r\n.loginBtn:focus {\r\n  outline: none;\r\n}\r\n\r\n\r\n.loginBtn:active {\r\n  box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n\r\n/* Facebook */\r\n\r\n\r\n.loginBtn--facebook {\r\n  background-color: #4C69BA;\r\n  background-image: linear-gradient(#4C69BA, #3B55A0);\r\n  /*font-family: \"Helvetica neue\", Helvetica Neue, Helvetica, Arial, sans-serif;*/\r\n  text-shadow: 0 -1px 0 #354C8C;\r\n}\r\n\r\n\r\n.loginBtn--facebook:before {\r\n  border-right: #364e92 1px solid;\r\n  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;\r\n}\r\n\r\n\r\n.loginBtn--facebook:hover,\r\n.loginBtn--facebook:focus {\r\n  background-color: #5B7BD5;\r\n  background-image: linear-gradient(#5B7BD5, #4864B1);\r\n}\r\n\r\n\r\n/* Google */\r\n\r\n\r\n.loginBtn--google {\r\n  /*font-family: \"Roboto\", Roboto, arial, sans-serif;*/\r\n  background: #DD4B39;\r\n}\r\n\r\n\r\n.loginBtn--google:before {\r\n  border-right: #BB3F30 1px solid;\r\n  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;\r\n}\r\n\r\n\r\n.loginBtn--google:hover,\r\n.loginBtn--google:focus {\r\n  background: #E74B37;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0aGVudGljYXRpb24vbW9kYWxzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhO0VBQ2IsWUFBWTtFQUNaLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsa0JBQWtCO0FBQ3BCOzs7QUFHQTtFQUNFLFdBQVc7RUFDWCxRQUFRO0VBQ1IsaUJBQWlCO0VBQ2pCLG9CQUFvQjtBQUN0Qjs7O0FBRUE7RUFDRSxnQ0FBZ0M7RUFDaEMsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsaUJBQWlCO0VBQ2pCLGVBQWU7QUFDakI7OztBQUVBO0VBQ0UsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2YsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsY0FBYztFQUNkLDZCQUFxQjtVQUFyQixxQkFBcUI7QUFDdkI7OztBQUVBO0VBQ0U7SUFDRSwrQkFBK0I7SUFDL0I7RUFDRjs7RUFFQTtJQUNFLGlDQUFpQztJQUNqQztFQUNGO0FBQ0Y7OztBQUVBO0VBQ0U7SUFDRSwrQkFBK0I7SUFDL0I7RUFDRjs7RUFFQTtJQUNFLGlDQUFpQztJQUNqQztFQUNGO0FBQ0Y7OztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxrQkFBa0I7QUFDcEI7OztBQUVBO0VBQ0UsV0FBVztFQUNYLGVBQWU7QUFDakI7OztBQUVBO0VBQ0UsZ0JBQWdCO0FBQ2xCOzs7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjs7O0FBSUE7RUFDRSxpQkFBaUI7QUFDbkI7OztBQUVBO0VBQ0UsWUFBWTtFQUNaLFlBQVk7RUFDWixXQUFXO0FBQ2I7OztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLFlBQVk7RUFDWixjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixZQUFZOztFQUVaLFdBQVc7QUFDYjs7O0FBRUE7RUFDRSx3QkFBd0I7RUFDeEIsa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2YsWUFBWTtFQUNaLGNBQWM7RUFDZCxXQUFXO0FBQ2I7OztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2YsWUFBWTtFQUNaLGNBQWM7RUFDZCxZQUFZO0VBQ1osV0FBVztBQUNiOzs7QUFJQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7OztBQUhBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7O0FBSEE7RUFDRSxjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOzs7QUFIQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7OztBQUhBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7OztBQUVBO0VBQ0UsV0FBVztFQUNYLHFCQUFxQjtBQUN2Qjs7O0FBRUE7RUFDRSxZQUFZO0VBQ1osYUFBYTtBQUNmOzs7QUFFQTtFQUNFLGtCQUFrQjtBQUNwQjs7O0FBR0E7RUFDRSxVQUFVO0FBQ1o7OztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixnQkFBZ0I7QUFDbEI7OztBQUVBO0VBQ0UsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixjQUFjO0VBQ2QsYUFBYTtFQUNiLFlBQVk7RUFDWixXQUFXO0VBQ1gsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixzQkFBc0I7RUFDdEIsU0FBUztFQUNULG1CQUFtQjtFQUNuQixxQkFBcUI7RUFDckIsd0JBQXdCO0VBQ3hCLGdCQUFnQjtFQUNoQix5QkFBeUI7QUFDM0I7OztBQUVBO0VBQ0UsNkhBQTZIO0VBQzdILG1HQUFtRztFQUNuRyw4Q0FBOEM7RUFDOUMseUJBQXlCO0VBQ3pCLDRCQUE0QjtBQUM5Qjs7O0FBR0E7RUFDRSxhQUFhO0FBQ2Y7OztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQiwrQkFBK0I7RUFDL0IsY0FBYztFQUNkLGFBQWE7QUFDZjs7O0FBR0E7O0VBRUUseUJBQXlCO0VBQ3pCLFlBQVk7QUFDZDs7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsV0FBVztBQUNiOzs7QUFFQTtFQUNFLFlBQVk7RUFDWixVQUFVO0VBQ1Ysa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxpQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsa0JBQWtCO0VBR2xCLDJFQUEyRTtBQUM3RTs7O0FBRUE7O0VBRUUsV0FBVztFQUNYLGtCQUFrQjtFQUNsQixXQUFXO0VBR1gsdUNBQXVDO0VBQ3ZDLE1BQU07RUFDTixTQUFTO0VBQ1QsVUFBVTtFQUNWLFdBQVc7RUFFWCwyQkFBMkI7QUFDN0I7OztBQUVBO0VBQ0UsV0FBVztFQUNYLFVBQVU7RUFDViwwQ0FBMEM7RUFJMUMsa0NBQWtDO0FBQ3BDOzs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQix5QkFBeUI7QUFDM0I7OztBQUVBO0VBQ0UscUJBQXFCO0FBQ3ZCOzs7QUFFQTtFQUNFLGVBQWU7QUFDakI7OztBQUVBO0VBQ0UsUUFBUTtFQUNSLGVBQWU7RUFDZixjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGdCQUFnQjtBQUNsQjs7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsa0JBQWtCO0VBQ2xCLDZCQUE2QjtFQUM3QixhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQixvQkFBb0I7RUFDcEIsZUFBZTtFQUNmLFdBQVc7RUFDWCxlQUFlO0FBQ2pCOzs7QUFFQTtFQUNFLFdBQVc7RUFDWCxzQkFBc0I7RUFDdEIsa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixPQUFPO0VBQ1AsV0FBVztFQUNYLFlBQVk7QUFDZDs7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7OztBQUVBO0VBQ0UsK0NBQStDO0FBQ2pEOzs7QUFHQSxhQUFhOzs7QUFDYjtFQUNFLHlCQUF5QjtFQUN6QixtREFBbUQ7RUFDbkQsK0VBQStFO0VBQy9FLDZCQUE2QjtBQUMvQjs7O0FBRUE7RUFDRSwrQkFBK0I7RUFDL0IseUdBQXlHO0FBQzNHOzs7QUFFQTs7RUFFRSx5QkFBeUI7RUFDekIsbURBQW1EO0FBQ3JEOzs7QUFHQSxXQUFXOzs7QUFDWDtFQUNFLG9EQUFvRDtFQUNwRCxtQkFBbUI7QUFDckI7OztBQUVBO0VBQ0UsK0JBQStCO0VBQy9CLHVHQUF1RztBQUN6Rzs7O0FBRUE7O0VBRUUsbUJBQW1CO0FBQ3JCIiwiZmlsZSI6InNyYy9hcHAvYXV0aGVudGljYXRpb24vbW9kYWxzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubW9kdWxlIHtcclxuICBoZWlnaHQ6IDM5MHB4O1xyXG4gIHdpZHRoOiAzNzZweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmhlYWRlcnMge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHRvcDogMHB4O1xyXG4gIHBhZGRpbmctdG9wOiAxOXB4O1xyXG4gIHBhZGRpbmctYm90dG9tOiAxMHB4O1xyXG59XHJcblxyXG4uaGVhZGVycyAubWFpbkxhYmVsIHtcclxuICBib3JkZXItYm90dG9tOiAzcHggc29saWQgI2ZiZDQzMTtcclxuICBwYWRkaW5nLWJvdHRvbTogMHB4O1xyXG4gIGRpc3BsYXk6IGlubGluZTtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBtYXJnaW46IDEwcHggMzBweDtcclxuICBmb250LXNpemU6IDIycHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmhlYWRlcnMgaSB7XHJcbiAgZmxvYXQ6IHJpZ2h0O1xyXG4gIG1hcmdpbjogMTBweCAzMHB4O1xyXG4gIGZvbnQtc2l6ZTogMjNweDtcclxuICBjb2xvcjogIzliOWI5YjtcclxuICBmb250LXdlaWdodDogMTAwO1xyXG59XHJcblxyXG4ubW9kdWxlIC5oZWFkZXJzIGk6aG92ZXIge1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBjb2xvcjogI2ZiZDQzMTtcclxuICBhbmltYXRpb246IGZhLXNwaW4gM3M7XHJcbn1cclxuXHJcbkAtd2Via2l0LWtleWZyYW1lcyBmYS1zcGluIHtcclxuICAwJSB7XHJcbiAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZylcclxuICB9XHJcblxyXG4gIDEwMCUge1xyXG4gICAgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNTlkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKVxyXG4gIH1cclxufVxyXG5cclxuQGtleWZyYW1lcyBmYS1zcGluIHtcclxuICAwJSB7XHJcbiAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZylcclxuICB9XHJcblxyXG4gIDEwMCUge1xyXG4gICAgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNTlkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKVxyXG4gIH1cclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCB7XHJcbiAgcGFkZGluZzogMjBweCA0MHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBhZGRpbmc6IDEwcHggMDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXY6Zmlyc3QtY2hpbGQge1xyXG4gIHBhZGRpbmctdG9wOiAwcHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2Omxhc3QtY2hpbGQge1xyXG4gIHBhZGRpbmctYm90dG9tOiAwcHg7XHJcbn1cclxuXHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnRpdGxlIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgdGV4dGFyZWEge1xyXG4gIGhlaWdodDogODBweDtcclxuICByZXNpemU6IG5vbmU7XHJcbiAgbWFyZ2luOiAwcHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5pbnB1dCB7XHJcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDIwcHgpO1xyXG4gIGhlaWdodDogYXV0bztcclxuICBwYWRkaW5nOiAxMHB4IDtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2U0ZTRlNDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgYm94LXNoYWRvdzogbm9uZTtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgYm9yZGVyOiBub25lO1xyXG5cclxuICBtYXJnaW46IDBweDsgIFxyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiBpbnB1dFt0eXBlPVwiZW1haWxcIl0ge1xyXG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAyMHB4KTtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGJveC1zaGFkb3c6IG5vbmU7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBwYWRkaW5nOiAxMHB4IDtcclxuICBtYXJnaW46IDBweDsgIFxyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiBpbnB1dFt0eXBlPVwicGFzc3dvcmRcIl0ge1xyXG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAyMHB4KTtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2U0ZTRlNDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgYm94LXNoYWRvdzogbm9uZTtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIHBhZGRpbmc6IDEwcHggO1xyXG4gIGhlaWdodDogYXV0bztcclxuICBtYXJnaW46IDBweDsgIFxyXG59XHJcblxyXG5cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5pbnB1dDo6cGxhY2Vob2xkZXIge1xyXG4gIGNvbG9yOiAjOWM5YzljO1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuXHJcbi5jaGVjaGJveERpdiBzcGFuIHtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuZGF0ZURpdiB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuZGF0ZURpdiAub25lRGF0ZSB7XHJcbiAgd2lkdGg6IDIyLjUlO1xyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IC5vbmVEYXRlOmZpcnN0LWNoaWxkIHtcclxuICBwYWRkaW5nLXJpZ2h0OiAwcHg7XHJcbn1cclxuXHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuZGF0ZURpdiAudG9EaXYge1xyXG4gIHdpZHRoOiAxMCU7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IC50b0RpdiBoNCB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIHBhZGRpbmctdG9wOiAxN3B4O1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qge1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIGNvbG9yOiAjOWM5YzljO1xyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbiAgaGVpZ2h0OiA0M3B4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGJvcmRlcjogdHJhbnNwYXJlbnQ7XHJcbiAgbWF4LXdpZHRoOiAxMDAlO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgbWFyZ2luOiAwO1xyXG4gIGJvcmRlci1yYWRpdXM6IC41ZW07XHJcbiAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcclxuICBhcHBlYXJhbmNlOiBub25lO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qge1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCg0NWRlZywgdHJhbnNwYXJlbnQgNTAlLCAjODI4MjgyIDUwJSksIGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICM4MjgyODIgNTAlLCB0cmFuc3BhcmVudCA1MCUpO1xyXG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNhbGMoMTAwJSAtIDIwcHgpIGNhbGMoMWVtICsgNXB4KSwgY2FsYygxMDAlIC0gMTJweCkgY2FsYygxZW0gKyA1cHgpLCAxMDAlIDBweDtcclxuICBiYWNrZ3JvdW5kLXNpemU6IDVweCA1cHgsIDVweCA1cHgsIDIuNWVtIDIuNWVtO1xyXG4gIGJhY2tncm91bmQtc2l6ZTogMTBweCA3cHg7XHJcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Q6Oi1tcy1leHBhbmQge1xyXG4gIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Q6aG92ZXIge1xyXG4gIGJvcmRlci1jb2xvcjogIzg4ODtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdDpmb2N1cyB7XHJcbiAgYm9yZGVyLWNvbG9yOiAjYWFhO1xyXG4gIGJveC1zaGFkb3c6IDAgMCA0cHggMnB4ICM5YzljOWM7XHJcbiAgY29sb3I6ICM5YzljOWM7XHJcbiAgb3V0bGluZTogbm9uZTtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qgb3B0aW9uOmNoZWNrZWQsXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qgb3B0aW9uOmhvdmVyIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjOWM5YzljO1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIHtcclxuICBwYWRkaW5nOiAwcHggMjBweDtcclxuICBjbGVhcjogYm90aDtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIC5idXR0b24ge1xyXG4gIHBhZGRpbmc6IDNweDtcclxuICB3aWR0aDogODMlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBjb2xvcjogI0ZGRjtcclxuICBtYXJnaW4tbGVmdDogMjBweDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICBib3JkZXI6IDFweCBzb2xpZDtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgLXdlYmtpdC1ib3gtc2hhZG93OiAwIDFweCA0cHggcmdiYSgwLCAwLCAwLCAwLjMpLCAwIDAgNDBweCByZ2JhKDAsIDAsIDAsIDAuMSkgaW5zZXQ7XHJcbiAgLW1vei1ib3gtc2hhZG93OiAwIDFweCA0cHggcmdiYSgwLCAwLCAwLCAwLjMpLCAwIDAgNDBweCByZ2JhKDAsIDAsIDAsIDAuMSkgaW5zZXQ7XHJcbiAgYm94LXNoYWRvdzogMCAxcHggNHB4IHJnYmEoMCwgMCwgMCwgMC4zKSwgMCAwIDQwcHggcmdiYSgwLCAwLCAwLCAwLjEpIGluc2V0O1xyXG59XHJcblxyXG4ubW9kdWxlIC5mb290ZXIgLmJ1dHRvbjpiZWZvcmUsXHJcbi5tb2R1bGUgLmZvb3RlciAuYnV0dG9uOmFmdGVyIHtcclxuICBjb250ZW50OiBcIlwiO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB6LWluZGV4OiAtMTtcclxuICAtd2Via2l0LWJveC1zaGFkb3c6IDAgMCAyMHB4IHJnYmEoMCwgMCwgMCwgMC44KTtcclxuICAtbW96LWJveC1zaGFkb3c6IDAgMCAyMHB4IHJnYmEoMCwgMCwgMCwgMC44KTtcclxuICBib3gtc2hhZG93OiAwIDAgMjBweCByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgdG9wOiAwO1xyXG4gIGJvdHRvbTogMDtcclxuICBsZWZ0OiAxMHB4O1xyXG4gIHJpZ2h0OiAxMHB4O1xyXG4gIC1tb3otYm9yZGVyLXJhZGl1czogMTAwcHggLyAxMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDEwMHB4IC8gMTBweDtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIC5idXR0b246YWZ0ZXIge1xyXG4gIHJpZ2h0OiAxMHB4O1xyXG4gIGxlZnQ6IGF1dG87XHJcbiAgLXdlYmtpdC10cmFuc2Zvcm06IHNrZXcoOGRlZykgcm90YXRlKDNkZWcpO1xyXG4gIC1tb3otdHJhbnNmb3JtOiBza2V3KDhkZWcpIHJvdGF0ZSgzZGVnKTtcclxuICAtbXMtdHJhbnNmb3JtOiBza2V3KDhkZWcpIHJvdGF0ZSgzZGVnKTtcclxuICAtby10cmFuc2Zvcm06IHNrZXcoOGRlZykgcm90YXRlKDNkZWcpO1xyXG4gIHRyYW5zZm9ybTogc2tldyg4ZGVnKSByb3RhdGUoM2RlZyk7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmZvb3RlciAuYnV0dG9uLnNhdmUge1xyXG4gIGJvcmRlci1jb2xvcjogI2ZiZDQzMTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmJkNDMxO1xyXG59XHJcblxyXG4ubW9kdWxlIC5mb290ZXIgLmJ1dHRvbi5kZWxldGUge1xyXG4gIGJvcmRlci1jb2xvcjogIzljOWM5YztcclxufVxyXG5cclxuLmJ1dHRvbjpob3ZlciB7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4uZXJyb3JNZXNzYWdlIHtcclxuICB0b3A6IDVweDtcclxuICBmb250LXNpemU6IDEycHg7XHJcbiAgY29sb3I6ICNEQzE0M0M7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbn1cclxuXHJcbi5sb2dpbkJ0biB7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyICFpbXBvcnRhbnQ7XHJcbiAgbWFyZ2luOiAwLjJlbTtcclxuICBwYWRkaW5nOiAwIDE1cHggMCA0NnB4O1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIGxpbmUtaGVpZ2h0OiAzNHB4O1xyXG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XHJcbiAgYm9yZGVyLXJhZGl1czogMC4yZW07XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGNvbG9yOiAjRkZGO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLmxvZ2luQnRuOmJlZm9yZSB7XHJcbiAgY29udGVudDogXCJcIjtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB0b3A6IDA7XHJcbiAgbGVmdDogMDtcclxuICB3aWR0aDogMzRweDtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbi5sb2dpbkJ0bjpmb2N1cyB7XHJcbiAgb3V0bGluZTogbm9uZTtcclxufVxyXG5cclxuLmxvZ2luQnRuOmFjdGl2ZSB7XHJcbiAgYm94LXNoYWRvdzogaW5zZXQgMCAwIDAgMzJweCByZ2JhKDAsIDAsIDAsIDAuMSk7XHJcbn1cclxuXHJcblxyXG4vKiBGYWNlYm9vayAqL1xyXG4ubG9naW5CdG4tLWZhY2Vib29rIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNEM2OUJBO1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCgjNEM2OUJBLCAjM0I1NUEwKTtcclxuICAvKmZvbnQtZmFtaWx5OiBcIkhlbHZldGljYSBuZXVlXCIsIEhlbHZldGljYSBOZXVlLCBIZWx2ZXRpY2EsIEFyaWFsLCBzYW5zLXNlcmlmOyovXHJcbiAgdGV4dC1zaGFkb3c6IDAgLTFweCAwICMzNTRDOEM7XHJcbn1cclxuXHJcbi5sb2dpbkJ0bi0tZmFjZWJvb2s6YmVmb3JlIHtcclxuICBib3JkZXItcmlnaHQ6ICMzNjRlOTIgMXB4IHNvbGlkO1xyXG4gIGJhY2tncm91bmQ6IHVybCgnaHR0cHM6Ly9zMy11cy13ZXN0LTIuYW1hem9uYXdzLmNvbS9zLmNkcG4uaW8vMTQwODIvaWNvbl9mYWNlYm9vay5wbmcnKSA2cHggNnB4IG5vLXJlcGVhdDtcclxufVxyXG5cclxuLmxvZ2luQnRuLS1mYWNlYm9vazpob3ZlcixcclxuLmxvZ2luQnRuLS1mYWNlYm9vazpmb2N1cyB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzVCN0JENTtcclxuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoIzVCN0JENSwgIzQ4NjRCMSk7XHJcbn1cclxuXHJcblxyXG4vKiBHb29nbGUgKi9cclxuLmxvZ2luQnRuLS1nb29nbGUge1xyXG4gIC8qZm9udC1mYW1pbHk6IFwiUm9ib3RvXCIsIFJvYm90bywgYXJpYWwsIHNhbnMtc2VyaWY7Ki9cclxuICBiYWNrZ3JvdW5kOiAjREQ0QjM5O1xyXG59XHJcblxyXG4ubG9naW5CdG4tLWdvb2dsZTpiZWZvcmUge1xyXG4gIGJvcmRlci1yaWdodDogI0JCM0YzMCAxcHggc29saWQ7XHJcbiAgYmFja2dyb3VuZDogdXJsKCdodHRwczovL3MzLXVzLXdlc3QtMi5hbWF6b25hd3MuY29tL3MuY2Rwbi5pby8xNDA4Mi9pY29uX2dvb2dsZS5wbmcnKSA2cHggNnB4IG5vLXJlcGVhdDtcclxufVxyXG5cclxuLmxvZ2luQnRuLS1nb29nbGU6aG92ZXIsXHJcbi5sb2dpbkJ0bi0tZ29vZ2xlOmZvY3VzIHtcclxuICBiYWNrZ3JvdW5kOiAjRTc0QjM3O1xyXG59XHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/authentication/modals/login/login.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/authentication/modals/login/login.component.ts ***!
+  \****************************************************************/
+/*! exports provided: LoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/requests.service */ "./src/app/requests.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../auth.service */ "./src/app/authentication/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angularx_social_login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angularx-social-login */ "./node_modules/angularx-social-login/angularx-social-login.es5.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+
+
+
+
+
+var LoginComponent = /** @class */ (function () {
+    function LoginComponent(dialog, thisDialog, apiService, router, auth, socialAuthService) {
+        this.dialog = dialog;
+        this.thisDialog = thisDialog;
+        this.apiService = apiService;
+        this.router = router;
+        this.auth = auth;
+        this.socialAuthService = socialAuthService;
+        this.user = {};
+        this.errorMessage = '';
+    }
+    LoginComponent.prototype.ngOnInit = function () {
+    };
+    LoginComponent.prototype.loginWithFacebook = function () {
+        var _this = this;
+        this.socialAuthService.signIn(angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["FacebookLoginProvider"].PROVIDER_ID).then(function (res) {
+            _this.errorMessage = '';
+            var loginData = {
+                data: {
+                    socialId: res.id,
+                    image: res.facebook.picture.data.url,
+                    email: res.email,
+                    username: res.name,
+                },
+                type: "facebook"
+            };
+            _this.apiService.post('users/socialLogin', loginData).subscribe(function (user) {
+                var userData = user.user;
+                _this.errorMessage = '';
+                var data = {};
+                if (!userData.email)
+                    data.email = '';
+                if (!userData.phoneNumber)
+                    data.phoneNumber = '';
+                if (!userData.gender)
+                    data.gender = '';
+                data.id = userData.id;
+                if (data.email || data.phoneNumber || data.gender)
+                    _this.thisDialog.close({ data: data, event: 'complete' });
+                else {
+                    localStorage.setItem(src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].userDetails, JSON.stringify(user));
+                    _this.auth.logIn(user);
+                    _this.router.navigate(['']);
+                    _this.thisDialog.close();
+                }
+            }, function (error) {
+                _this.errorMessage = 'emailAlreadyExsit';
+            });
+        });
+    };
+    LoginComponent.prototype.loginWithGoogle = function () {
+        var _this = this;
+        this.socialAuthService.signIn(angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["GoogleLoginProvider"].PROVIDER_ID).then(function (res) {
+            _this.errorMessage = '';
+            var loginData = {
+                data: {
+                    socialId: res.id,
+                    image: res.photoUrl,
+                    email: res.email,
+                    username: res.name,
+                },
+                type: "google"
+            };
+            _this.apiService.post('users/socialLogin', loginData).subscribe(function (user) {
+                var userData = user.user;
+                _this.errorMessage = '';
+                var data = {};
+                if (!userData.email)
+                    data.email = '';
+                if (!userData.phoneNumber)
+                    data.phoneNumber = '';
+                if (!userData.gender)
+                    data.gender = '';
+                data.id = userData.id;
+                if (data.email || data.phoneNumber || data.gender)
+                    _this.thisDialog.close({ data: data, event: 'complete' });
+                else {
+                    localStorage.setItem(src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].userDetails, JSON.stringify(user));
+                    _this.auth.logIn(user);
+                    _this.router.navigate(['']);
+                    _this.thisDialog.close();
+                }
+            }, function (error) {
+                _this.errorMessage = 'emailAlreadyExsit';
+            });
+        });
+    };
+    LoginComponent.prototype.login = function () {
+        var _this = this;
+        var value = this.checkForm();
+        if (value != true) {
+            this.errorMessage = value;
+            return;
+        }
+        this.apiService.post('users/login', this.user).subscribe(function (res) {
+            _this.errorMessage = '';
+            localStorage.setItem(src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].userDetails, JSON.stringify(res));
+            _this.auth.logIn(res);
+            _this.router.navigate(['']);
+            _this.thisDialog.close();
+        }, function (error) {
+            _this.errorMessage = error['error']['error']['code'];
+        });
+    };
+    LoginComponent.prototype.register = function () {
+        this.thisDialog.close({ event: 'register' });
+    };
+    LoginComponent.prototype.forgotPassword = function () {
+        this.thisDialog.close({ event: 'forgot' });
+    };
+    LoginComponent.prototype.checkForm = function () {
+        if (!this.user.email || this.user.email === '') {
+            return 'emailIsRequired';
+        }
+        if (!this.user.password || this.user.password === '') {
+            return 'passwordIsRequired';
+        }
+        return true;
+    };
+    LoginComponent.prototype.close = function () {
+        this.thisDialog.close();
+    };
+    LoginComponent.ctorParameters = function () { return [
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+        { type: src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+        { type: _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
+        { type: angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthService"] }
+    ]; };
+    LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-login',
+            template: __webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/index.js!./src/app/authentication/modals/login/login.component.html"),
+            styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/authentication/modals/login/login.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
+            _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"], angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthService"]])
+    ], LoginComponent);
+    return LoginComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/authentication/modals/reset-password/reset-password.component.css":
+/*!***********************************************************************************!*\
+  !*** ./src/app/authentication/modals/reset-password/reset-password.component.css ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".module {\r\n    height: auto;\r\n    min-height: 220px;\r\n    width: 376px;\r\n    padding: 6px; \r\n    background-color: white;\r\n    border-radius: 10px;\r\n    position: relative;\r\n  }\r\n  \r\n  \r\n  .module .headers {\r\n    width: 100%;\r\n    top: 0px;\r\n    padding-top: 19px;\r\n    padding-bottom: 10px;\r\n  }\r\n  \r\n  \r\n  .headers .mainLabel {\r\n    border-bottom: 3px solid #fbd431;\r\n    padding-bottom: 0px;\r\n    display: inline;\r\n    font-weight: bold;\r\n    margin: 10px 30px;\r\n    font-size: 22px;\r\n  }\r\n  \r\n  \r\n  .module .headers i {\r\n    float: right;\r\n    margin: 10px 30px;\r\n    font-size: 23px;\r\n    color: #9b9b9b;\r\n    font-weight: 100;\r\n  }\r\n  \r\n  \r\n  .module .headers i:hover {\r\n    cursor: pointer;\r\n    color: #fbd431;\r\n    -webkit-animation: fa-spin 3s;\r\n            animation: fa-spin 3s;\r\n  }\r\n  \r\n  \r\n  @-webkit-keyframes fa-spin {\r\n    0% {\r\n      -webkit-transform: rotate(0deg);\r\n      transform: rotate(0deg)\r\n    }\r\n  \r\n    100% {\r\n      -webkit-transform: rotate(359deg);\r\n      transform: rotate(359deg)\r\n    }\r\n  }\r\n  \r\n  \r\n  @keyframes fa-spin {\r\n    0% {\r\n      -webkit-transform: rotate(0deg);\r\n      transform: rotate(0deg)\r\n    }\r\n  \r\n    100% {\r\n      -webkit-transform: rotate(359deg);\r\n      transform: rotate(359deg)\r\n    }\r\n  }\r\n  \r\n  \r\n  .module .contint {\r\n    padding: 20px 40px;\r\n    width: 100%;\r\n    position: relative;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv {\r\n    width: 100%;\r\n    padding: 10px 0;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv:first-child {\r\n    padding-top: 0px;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv:last-child {\r\n    padding-bottom: 0px;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .title {\r\n    font-weight: bold;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv textarea {\r\n    height: 80px;\r\n    resize: none;\r\n    margin: 0px;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .input {\r\n    width: calc(100% - 20px);\r\n    height: auto;\r\n    padding: 10px;\r\n    padding-left: 10px;\r\n    background-color: #e4e4e4;\r\n    border-radius: 5px;\r\n    box-shadow: none;\r\n    font-size: 16px;\r\n    border: none;\r\n  \r\n    margin: 0px;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv input[type=\"email\"] {\r\n    width: calc(100% - 20px);\r\n    padding-left: 10px;\r\n    height: auto;\r\n    background-color: #e4e4e4;\r\n    border-radius: 5px;\r\n    box-shadow: none;\r\n    font-size: 16px;\r\n    border: none;\r\n    padding: 10px;\r\n    margin: 0px;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv input[type=\"password\"] {\r\n    width: calc(100% - 20px);\r\n    padding-left: 10px;\r\n    background-color: #e4e4e4;\r\n    border-radius: 5px;\r\n    box-shadow: none;\r\n    font-size: 16px;\r\n    border: none;\r\n    padding: 10px;\r\n    height: auto;\r\n    margin: 0px;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .input::-webkit-input-placeholder {\r\n    color: #9c9c9c;\r\n    font-weight: 600;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .input::-moz-placeholder {\r\n    color: #9c9c9c;\r\n    font-weight: 600;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .input:-ms-input-placeholder {\r\n    color: #9c9c9c;\r\n    font-weight: 600;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .input::-ms-input-placeholder {\r\n    color: #9c9c9c;\r\n    font-weight: 600;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .input::placeholder {\r\n    color: #9c9c9c;\r\n    font-weight: 600;\r\n  }\r\n  \r\n  \r\n  .chechboxDiv span {\r\n    font-weight: 600;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .dateDiv {\r\n    width: 100%;\r\n    display: inline-block;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .dateDiv .oneDate {\r\n    width: 22.5%;\r\n    padding: 10px;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .dateDiv .oneDate:first-child {\r\n    padding-right: 0px;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .dateDiv .toDiv {\r\n    width: 10%;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .dateDiv .toDiv h4 {\r\n    text-align: center;\r\n    padding-top: 17px;\r\n    font-weight: 600;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .select {\r\n    display: block;\r\n    font-weight: bold;\r\n    color: #9c9c9c;\r\n    padding: 10px;\r\n    height: 43px;\r\n    width: 100%;\r\n    border: transparent;\r\n    max-width: 100%;\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    border-radius: .5em;\r\n    -moz-appearance: none;\r\n    -webkit-appearance: none;\r\n    appearance: none;\r\n    background-color: #e4e4e4;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .select {\r\n    background-image: linear-gradient(45deg, transparent 50%, #828282 50%), linear-gradient(135deg, #828282 50%, transparent 50%);\r\n    background-position: calc(100% - 20px) calc(1em + 5px), calc(100% - 12px) calc(1em + 5px), 100% 0px;\r\n    background-size: 5px 5px, 5px 5px, 2.5em 2.5em;\r\n    background-size: 10px 7px;\r\n    background-repeat: no-repeat;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .select::-ms-expand {\r\n    display: none;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .select:hover {\r\n    border-color: #888;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .select:focus {\r\n    border-color: #aaa;\r\n    box-shadow: 0 0 4px 2px #9c9c9c;\r\n    color: #9c9c9c;\r\n    outline: none;\r\n  }\r\n  \r\n  \r\n  .module .contint .inputDiv .select option:checked,\r\n  .module .contint .inputDiv .select option:hover {\r\n    background-color: #9c9c9c;\r\n    color: white;\r\n  }\r\n  \r\n  \r\n  .module .footer {\r\n    padding: 0px 20px;\r\n    clear: both;\r\n  }\r\n  \r\n  \r\n  .module .footer .button {\r\n    padding: 3px;\r\n    width: 83%;\r\n    text-align: center;\r\n    color: #FFF;\r\n    margin-left: 20px;\r\n    border-radius: 5px;\r\n    font-weight: 600;\r\n    border: 1px solid;\r\n    position: relative;\r\n    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;\r\n  }\r\n  \r\n  \r\n  .module .footer .button:before,\r\n  .module .footer .button:after {\r\n    content: \"\";\r\n    position: absolute;\r\n    z-index: -1;\r\n    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 10px;\r\n    right: 10px;\r\n    border-radius: 100px / 10px;\r\n  }\r\n  \r\n  \r\n  .module .footer .button:after {\r\n    right: 10px;\r\n    left: auto;\r\n    -webkit-transform: skew(8deg) rotate(3deg);\r\n    transform: skew(8deg) rotate(3deg);\r\n  }\r\n  \r\n  \r\n  .module .footer .button.save {\r\n    border-color: #fbd431;\r\n    background-color: #fbd431;\r\n  }\r\n  \r\n  \r\n  .module .footer .button.delete {\r\n    border-color: #9c9c9c;\r\n  }\r\n  \r\n  \r\n  .button:hover {\r\n    cursor: pointer;\r\n  }\r\n  \r\n  \r\n  .errorMessage {\r\n    top: 5px;\r\n    font-size: 12px;\r\n    color: #DC143C;\r\n    position: absolute;\r\n    font-weight: 700;\r\n  }\r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0aGVudGljYXRpb24vbW9kYWxzL3Jlc2V0LXBhc3N3b3JkL3Jlc2V0LXBhc3N3b3JkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osaUJBQWlCO0lBQ2pCLFlBQVk7SUFDWixZQUFZO0lBQ1osdUJBQXVCO0lBQ3ZCLG1CQUFtQjtJQUNuQixrQkFBa0I7RUFDcEI7OztFQUdBO0lBQ0UsV0FBVztJQUNYLFFBQVE7SUFDUixpQkFBaUI7SUFDakIsb0JBQW9CO0VBQ3RCOzs7RUFFQTtJQUNFLGdDQUFnQztJQUNoQyxtQkFBbUI7SUFDbkIsZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixpQkFBaUI7SUFDakIsZUFBZTtFQUNqQjs7O0VBRUE7SUFDRSxZQUFZO0lBQ1osaUJBQWlCO0lBQ2pCLGVBQWU7SUFDZixjQUFjO0lBQ2QsZ0JBQWdCO0VBQ2xCOzs7RUFFQTtJQUNFLGVBQWU7SUFDZixjQUFjO0lBQ2QsNkJBQXFCO1lBQXJCLHFCQUFxQjtFQUN2Qjs7O0VBRUE7SUFDRTtNQUNFLCtCQUErQjtNQUMvQjtJQUNGOztJQUVBO01BQ0UsaUNBQWlDO01BQ2pDO0lBQ0Y7RUFDRjs7O0VBRUE7SUFDRTtNQUNFLCtCQUErQjtNQUMvQjtJQUNGOztJQUVBO01BQ0UsaUNBQWlDO01BQ2pDO0lBQ0Y7RUFDRjs7O0VBRUE7SUFDRSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLGtCQUFrQjtFQUNwQjs7O0VBRUE7SUFDRSxXQUFXO0lBQ1gsZUFBZTtFQUNqQjs7O0VBRUE7SUFDRSxnQkFBZ0I7RUFDbEI7OztFQUVBO0lBQ0UsbUJBQW1CO0VBQ3JCOzs7RUFJQTtJQUNFLGlCQUFpQjtFQUNuQjs7O0VBRUE7SUFDRSxZQUFZO0lBQ1osWUFBWTtJQUNaLFdBQVc7RUFDYjs7O0VBRUE7SUFDRSx3QkFBd0I7SUFDeEIsWUFBWTtJQUNaLGFBQWE7SUFDYixrQkFBa0I7SUFDbEIseUJBQXlCO0lBQ3pCLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsZUFBZTtJQUNmLFlBQVk7O0lBRVosV0FBVztFQUNiOzs7RUFFQTtJQUNFLHdCQUF3QjtJQUN4QixrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLHlCQUF5QjtJQUN6QixrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLGVBQWU7SUFDZixZQUFZO0lBQ1osYUFBYTtJQUNiLFdBQVc7RUFDYjs7O0VBRUE7SUFDRSx3QkFBd0I7SUFDeEIsa0JBQWtCO0lBQ2xCLHlCQUF5QjtJQUN6QixrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLGVBQWU7SUFDZixZQUFZO0lBQ1osYUFBYTtJQUNiLFlBQVk7SUFDWixXQUFXO0VBQ2I7OztFQUlBO0lBQ0UsY0FBYztJQUNkLGdCQUFnQjtFQUNsQjs7O0VBSEE7SUFDRSxjQUFjO0lBQ2QsZ0JBQWdCO0VBQ2xCOzs7RUFIQTtJQUNFLGNBQWM7SUFDZCxnQkFBZ0I7RUFDbEI7OztFQUhBO0lBQ0UsY0FBYztJQUNkLGdCQUFnQjtFQUNsQjs7O0VBSEE7SUFDRSxjQUFjO0lBQ2QsZ0JBQWdCO0VBQ2xCOzs7RUFFQTtJQUNFLGdCQUFnQjtFQUNsQjs7O0VBRUE7SUFDRSxXQUFXO0lBQ1gscUJBQXFCO0VBQ3ZCOzs7RUFFQTtJQUNFLFlBQVk7SUFDWixhQUFhO0VBQ2Y7OztFQUVBO0lBQ0Usa0JBQWtCO0VBQ3BCOzs7RUFHQTtJQUNFLFVBQVU7RUFDWjs7O0VBRUE7SUFDRSxrQkFBa0I7SUFDbEIsaUJBQWlCO0lBQ2pCLGdCQUFnQjtFQUNsQjs7O0VBRUE7SUFDRSxjQUFjO0lBQ2QsaUJBQWlCO0lBQ2pCLGNBQWM7SUFDZCxhQUFhO0lBQ2IsWUFBWTtJQUNaLFdBQVc7SUFDWCxtQkFBbUI7SUFDbkIsZUFBZTtJQUNmLHNCQUFzQjtJQUN0QixTQUFTO0lBQ1QsbUJBQW1CO0lBQ25CLHFCQUFxQjtJQUNyQix3QkFBd0I7SUFDeEIsZ0JBQWdCO0lBQ2hCLHlCQUF5QjtFQUMzQjs7O0VBRUE7SUFDRSw2SEFBNkg7SUFDN0gsbUdBQW1HO0lBQ25HLDhDQUE4QztJQUM5Qyx5QkFBeUI7SUFDekIsNEJBQTRCO0VBQzlCOzs7RUFHQTtJQUNFLGFBQWE7RUFDZjs7O0VBRUE7SUFDRSxrQkFBa0I7RUFDcEI7OztFQUVBO0lBQ0Usa0JBQWtCO0lBQ2xCLCtCQUErQjtJQUMvQixjQUFjO0lBQ2QsYUFBYTtFQUNmOzs7RUFHQTs7SUFFRSx5QkFBeUI7SUFDekIsWUFBWTtFQUNkOzs7RUFFQTtJQUNFLGlCQUFpQjtJQUNqQixXQUFXO0VBQ2I7OztFQUVBO0lBQ0UsWUFBWTtJQUNaLFVBQVU7SUFDVixrQkFBa0I7SUFDbEIsV0FBVztJQUNYLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFHbEIsMkVBQTJFO0VBQzdFOzs7RUFFQTs7SUFFRSxXQUFXO0lBQ1gsa0JBQWtCO0lBQ2xCLFdBQVc7SUFHWCx1Q0FBdUM7SUFDdkMsTUFBTTtJQUNOLFNBQVM7SUFDVCxVQUFVO0lBQ1YsV0FBVztJQUVYLDJCQUEyQjtFQUM3Qjs7O0VBRUE7SUFDRSxXQUFXO0lBQ1gsVUFBVTtJQUNWLDBDQUEwQztJQUkxQyxrQ0FBa0M7RUFDcEM7OztFQUVBO0lBQ0UscUJBQXFCO0lBQ3JCLHlCQUF5QjtFQUMzQjs7O0VBRUE7SUFDRSxxQkFBcUI7RUFDdkI7OztFQUVBO0lBQ0UsZUFBZTtFQUNqQjs7O0VBRUE7SUFDRSxRQUFRO0lBQ1IsZUFBZTtJQUNmLGNBQWM7SUFDZCxrQkFBa0I7SUFDbEIsZ0JBQWdCO0VBQ2xCIiwiZmlsZSI6InNyYy9hcHAvYXV0aGVudGljYXRpb24vbW9kYWxzL3Jlc2V0LXBhc3N3b3JkL3Jlc2V0LXBhc3N3b3JkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubW9kdWxlIHtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIG1pbi1oZWlnaHQ6IDIyMHB4O1xyXG4gICAgd2lkdGg6IDM3NnB4O1xyXG4gICAgcGFkZGluZzogNnB4OyBcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICB9XHJcbiAgXHJcbiAgXHJcbiAgLm1vZHVsZSAuaGVhZGVycyB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHRvcDogMHB4O1xyXG4gICAgcGFkZGluZy10b3A6IDE5cHg7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMTBweDtcclxuICB9XHJcbiAgXHJcbiAgLmhlYWRlcnMgLm1haW5MYWJlbCB7XHJcbiAgICBib3JkZXItYm90dG9tOiAzcHggc29saWQgI2ZiZDQzMTtcclxuICAgIHBhZGRpbmctYm90dG9tOiAwcHg7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIG1hcmdpbjogMTBweCAzMHB4O1xyXG4gICAgZm9udC1zaXplOiAyMnB4O1xyXG4gIH1cclxuICBcclxuICAubW9kdWxlIC5oZWFkZXJzIGkge1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgbWFyZ2luOiAxMHB4IDMwcHg7XHJcbiAgICBmb250LXNpemU6IDIzcHg7XHJcbiAgICBjb2xvcjogIzliOWI5YjtcclxuICAgIGZvbnQtd2VpZ2h0OiAxMDA7XHJcbiAgfVxyXG4gIFxyXG4gIC5tb2R1bGUgLmhlYWRlcnMgaTpob3ZlciB7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBjb2xvcjogI2ZiZDQzMTtcclxuICAgIGFuaW1hdGlvbjogZmEtc3BpbiAzcztcclxuICB9XHJcbiAgXHJcbiAgQC13ZWJraXQta2V5ZnJhbWVzIGZhLXNwaW4ge1xyXG4gICAgMCUge1xyXG4gICAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xyXG4gICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKVxyXG4gICAgfVxyXG4gIFxyXG4gICAgMTAwJSB7XHJcbiAgICAgIC13ZWJraXQtdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKTtcclxuICAgICAgdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKVxyXG4gICAgfVxyXG4gIH1cclxuICBcclxuICBAa2V5ZnJhbWVzIGZhLXNwaW4ge1xyXG4gICAgMCUge1xyXG4gICAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xyXG4gICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKVxyXG4gICAgfVxyXG4gIFxyXG4gICAgMTAwJSB7XHJcbiAgICAgIC13ZWJraXQtdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKTtcclxuICAgICAgdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKVxyXG4gICAgfVxyXG4gIH1cclxuICBcclxuICAubW9kdWxlIC5jb250aW50IHtcclxuICAgIHBhZGRpbmc6IDIwcHggNDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIH1cclxuICBcclxuICAubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHBhZGRpbmc6IDEwcHggMDtcclxuICB9XHJcbiAgXHJcbiAgLm1vZHVsZSAuY29udGludCAuaW5wdXREaXY6Zmlyc3QtY2hpbGQge1xyXG4gICAgcGFkZGluZy10b3A6IDBweDtcclxuICB9XHJcbiAgXHJcbiAgLm1vZHVsZSAuY29udGludCAuaW5wdXREaXY6bGFzdC1jaGlsZCB7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMHB4O1xyXG4gIH1cclxuICBcclxuICBcclxuICBcclxuICAubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAudGl0bGUge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgfVxyXG4gIFxyXG4gIC5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IHRleHRhcmVhIHtcclxuICAgIGhlaWdodDogODBweDtcclxuICAgIHJlc2l6ZTogbm9uZTtcclxuICAgIG1hcmdpbjogMHB4O1xyXG4gIH1cclxuICBcclxuICAubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuaW5wdXQge1xyXG4gICAgd2lkdGg6IGNhbGMoMTAwJSAtIDIwcHgpO1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgcGFkZGluZzogMTBweDtcclxuICAgIHBhZGRpbmctbGVmdDogMTBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICBib3gtc2hhZG93OiBub25lO1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gIFxyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IGlucHV0W3R5cGU9XCJlbWFpbFwiXSB7XHJcbiAgICB3aWR0aDogY2FsYygxMDAlIC0gMjBweCk7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTRlNGU0O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgYm94LXNoYWRvdzogbm9uZTtcclxuICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIHBhZGRpbmc6IDEwcHg7XHJcbiAgICBtYXJnaW46IDBweDtcclxuICB9XHJcbiAgXHJcbiAgLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgaW5wdXRbdHlwZT1cInBhc3N3b3JkXCJdIHtcclxuICAgIHdpZHRoOiBjYWxjKDEwMCUgLSAyMHB4KTtcclxuICAgIHBhZGRpbmctbGVmdDogMTBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICBib3gtc2hhZG93OiBub25lO1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgcGFkZGluZzogMTBweDtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIG1hcmdpbjogMHB4O1xyXG4gIH1cclxuICBcclxuICBcclxuICBcclxuICAubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuaW5wdXQ6OnBsYWNlaG9sZGVyIHtcclxuICAgIGNvbG9yOiAjOWM5YzljO1xyXG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICB9XHJcbiAgXHJcbiAgLmNoZWNoYm94RGl2IHNwYW4ge1xyXG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICB9XHJcbiAgXHJcbiAgLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmRhdGVEaXYge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgfVxyXG4gIFxyXG4gIC5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IC5vbmVEYXRlIHtcclxuICAgIHdpZHRoOiAyMi41JTtcclxuICAgIHBhZGRpbmc6IDEwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IC5vbmVEYXRlOmZpcnN0LWNoaWxkIHtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDBweDtcclxuICB9XHJcbiAgXHJcbiAgXHJcbiAgLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmRhdGVEaXYgLnRvRGl2IHtcclxuICAgIHdpZHRoOiAxMCU7XHJcbiAgfVxyXG4gIFxyXG4gIC5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IC50b0RpdiBoNCB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nLXRvcDogMTdweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgfVxyXG4gIFxyXG4gIC5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIGNvbG9yOiAjOWM5YzljO1xyXG4gICAgcGFkZGluZzogMTBweDtcclxuICAgIGhlaWdodDogNDNweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgYm9yZGVyOiB0cmFuc3BhcmVudDtcclxuICAgIG1heC13aWR0aDogMTAwJTtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICBtYXJnaW46IDA7XHJcbiAgICBib3JkZXItcmFkaXVzOiAuNWVtO1xyXG4gICAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgYXBwZWFyYW5jZTogbm9uZTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XHJcbiAgfVxyXG4gIFxyXG4gIC5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qge1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KDQ1ZGVnLCB0cmFuc3BhcmVudCA1MCUsICM4MjgyODIgNTAlKSwgbGluZWFyLWdyYWRpZW50KDEzNWRlZywgIzgyODI4MiA1MCUsIHRyYW5zcGFyZW50IDUwJSk7XHJcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjYWxjKDEwMCUgLSAyMHB4KSBjYWxjKDFlbSArIDVweCksIGNhbGMoMTAwJSAtIDEycHgpIGNhbGMoMWVtICsgNXB4KSwgMTAwJSAwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLXNpemU6IDVweCA1cHgsIDVweCA1cHgsIDIuNWVtIDIuNWVtO1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiAxMHB4IDdweDtcclxuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgfVxyXG4gIFxyXG4gIFxyXG4gIC5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Q6Oi1tcy1leHBhbmQge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxuICB9XHJcbiAgXHJcbiAgLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdDpob3ZlciB7XHJcbiAgICBib3JkZXItY29sb3I6ICM4ODg7XHJcbiAgfVxyXG4gIFxyXG4gIC5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Q6Zm9jdXMge1xyXG4gICAgYm9yZGVyLWNvbG9yOiAjYWFhO1xyXG4gICAgYm94LXNoYWRvdzogMCAwIDRweCAycHggIzljOWM5YztcclxuICAgIGNvbG9yOiAjOWM5YzljO1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICB9XHJcbiAgXHJcbiAgXHJcbiAgLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdCBvcHRpb246Y2hlY2tlZCxcclxuICAubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuc2VsZWN0IG9wdGlvbjpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjOWM5YzljO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gIH1cclxuICBcclxuICAubW9kdWxlIC5mb290ZXIge1xyXG4gICAgcGFkZGluZzogMHB4IDIwcHg7XHJcbiAgICBjbGVhcjogYm90aDtcclxuICB9XHJcbiAgXHJcbiAgLm1vZHVsZSAuZm9vdGVyIC5idXR0b24ge1xyXG4gICAgcGFkZGluZzogM3B4O1xyXG4gICAgd2lkdGg6IDgzJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yOiAjRkZGO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDIwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQ7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAtd2Via2l0LWJveC1zaGFkb3c6IDAgMXB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMyksIDAgMCA0MHB4IHJnYmEoMCwgMCwgMCwgMC4xKSBpbnNldDtcclxuICAgIC1tb3otYm94LXNoYWRvdzogMCAxcHggNHB4IHJnYmEoMCwgMCwgMCwgMC4zKSwgMCAwIDQwcHggcmdiYSgwLCAwLCAwLCAwLjEpIGluc2V0O1xyXG4gICAgYm94LXNoYWRvdzogMCAxcHggNHB4IHJnYmEoMCwgMCwgMCwgMC4zKSwgMCAwIDQwcHggcmdiYSgwLCAwLCAwLCAwLjEpIGluc2V0O1xyXG4gIH1cclxuICBcclxuICAubW9kdWxlIC5mb290ZXIgLmJ1dHRvbjpiZWZvcmUsXHJcbiAgLm1vZHVsZSAuZm9vdGVyIC5idXR0b246YWZ0ZXIge1xyXG4gICAgY29udGVudDogXCJcIjtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHotaW5kZXg6IC0xO1xyXG4gICAgLXdlYmtpdC1ib3gtc2hhZG93OiAwIDAgMjBweCByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgICAtbW96LWJveC1zaGFkb3c6IDAgMCAyMHB4IHJnYmEoMCwgMCwgMCwgMC44KTtcclxuICAgIGJveC1zaGFkb3c6IDAgMCAyMHB4IHJnYmEoMCwgMCwgMCwgMC44KTtcclxuICAgIHRvcDogMDtcclxuICAgIGJvdHRvbTogMDtcclxuICAgIGxlZnQ6IDEwcHg7XHJcbiAgICByaWdodDogMTBweDtcclxuICAgIC1tb3otYm9yZGVyLXJhZGl1czogMTAwcHggLyAxMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTAwcHggLyAxMHB4O1xyXG4gIH1cclxuICBcclxuICAubW9kdWxlIC5mb290ZXIgLmJ1dHRvbjphZnRlciB7XHJcbiAgICByaWdodDogMTBweDtcclxuICAgIGxlZnQ6IGF1dG87XHJcbiAgICAtd2Via2l0LXRyYW5zZm9ybTogc2tldyg4ZGVnKSByb3RhdGUoM2RlZyk7XHJcbiAgICAtbW96LXRyYW5zZm9ybTogc2tldyg4ZGVnKSByb3RhdGUoM2RlZyk7XHJcbiAgICAtbXMtdHJhbnNmb3JtOiBza2V3KDhkZWcpIHJvdGF0ZSgzZGVnKTtcclxuICAgIC1vLXRyYW5zZm9ybTogc2tldyg4ZGVnKSByb3RhdGUoM2RlZyk7XHJcbiAgICB0cmFuc2Zvcm06IHNrZXcoOGRlZykgcm90YXRlKDNkZWcpO1xyXG4gIH1cclxuICBcclxuICAubW9kdWxlIC5mb290ZXIgLmJ1dHRvbi5zYXZlIHtcclxuICAgIGJvcmRlci1jb2xvcjogI2ZiZDQzMTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYmQ0MzE7XHJcbiAgfVxyXG4gIFxyXG4gIC5tb2R1bGUgLmZvb3RlciAuYnV0dG9uLmRlbGV0ZSB7XHJcbiAgICBib3JkZXItY29sb3I6ICM5YzljOWM7XHJcbiAgfVxyXG4gIFxyXG4gIC5idXR0b246aG92ZXIge1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIH1cclxuICBcclxuICAuZXJyb3JNZXNzYWdlIHtcclxuICAgIHRvcDogNXB4O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgY29sb3I6ICNEQzE0M0M7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBmb250LXdlaWdodDogNzAwO1xyXG4gIH1cclxuICAiXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/authentication/modals/reset-password/reset-password.component.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/app/authentication/modals/reset-password/reset-password.component.ts ***!
+  \**********************************************************************************/
+/*! exports provided: ResetPasswordComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResetPasswordComponent", function() { return ResetPasswordComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var src_app_requests_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/requests.service */ "./src/app/requests.service.ts");
+
+
+
+
+
+var ResetPasswordComponent = /** @class */ (function () {
+    function ResetPasswordComponent(dialog, thisDialog, apiService, router) {
+        this.dialog = dialog;
+        this.thisDialog = thisDialog;
+        this.apiService = apiService;
+        this.router = router;
+        this.user = {};
+        this.errorMessage = '';
+        this.verificationCode = false;
+    }
+    ResetPasswordComponent.prototype.ngOnInit = function () {
+    };
+    ResetPasswordComponent.prototype.send = function () {
+        var _this = this;
+        var value = this.checkForm();
+        if (value != true) {
+            this.errorMessage = value;
+            return;
+        }
+        this.apiService.post('users/resetPassword', this.user).subscribe(function (res) {
+            _this.errorMessage = '';
+            _this.router.navigate(['/']);
+        }, function (error) {
+            _this.errorMessage = error['error']['error']['code'];
+        });
+    };
+    ResetPasswordComponent.prototype.checkForm = function () {
+        if (!this.user.verificationCode || this.user.verificationCode === '') {
+            return 'verificationCodeIsRequired';
+        }
+        if (!this.user.password || this.user.password === '') {
+            return 'passwordIsRequired';
+        }
+        if (!this.user.repassword || this.user.repassword === '') {
+            return 'confirmPasswordIsRequired';
+        }
+        if (this.user.password && this.user.repassword
+            && this.user.password !== this.user.repassword) {
+            return 'confirmPasswordAndPasswordNotSame';
+        }
+        return true;
+    };
+    ResetPasswordComponent.prototype.close = function () {
+        this.thisDialog.close();
+    };
+    ResetPasswordComponent.ctorParameters = function () { return [
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+        { type: src_app_requests_service__WEBPACK_IMPORTED_MODULE_4__["RequestsService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    ]; };
+    ResetPasswordComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-reset-password',
+            template: __webpack_require__(/*! raw-loader!./reset-password.component.html */ "./node_modules/raw-loader/index.js!./src/app/authentication/modals/reset-password/reset-password.component.html"),
+            styles: [__webpack_require__(/*! ./reset-password.component.css */ "./src/app/authentication/modals/reset-password/reset-password.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            src_app_requests_service__WEBPACK_IMPORTED_MODULE_4__["RequestsService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], ResetPasswordComponent);
+    return ResetPasswordComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/authentication/modals/signup/signup.component.css":
+/*!*******************************************************************!*\
+  !*** ./src/app/authentication/modals/signup/signup.component.css ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".module {\r\n  height: 430px;\r\n  width: 500px;\r\n  background-color: white;\r\n  border-radius: 10px;\r\n  position: relative;\r\n}\r\n\r\n\r\n.module .headers {\r\n  width: 100%;\r\n  top: 0px;\r\n  padding-top: 19px;\r\n  padding-bottom: 10px;\r\n}\r\n\r\n\r\n.headers .mainLabel {\r\n  border-bottom: 3px solid #fbd431;\r\n  padding-bottom: 0px;\r\n  display: inline;\r\n  font-weight: bold;\r\n  margin: 10px 30px;\r\n  font-size: 22px;\r\n}\r\n\r\n\r\n.module .headers i {\r\n  float: right;\r\n  margin: 10px 30px;\r\n  font-size: 23px;\r\n  color: #9b9b9b;\r\n  font-weight: 100;\r\n}\r\n\r\n\r\n.module .headers i:hover {\r\n  cursor: pointer;\r\n  color: #fbd431;\r\n  -webkit-animation: fa-spin 3s;\r\n          animation: fa-spin 3s;\r\n}\r\n\r\n\r\n@-webkit-keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg)\r\n  }\r\n\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg)\r\n  }\r\n}\r\n\r\n\r\n@keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg)\r\n  }\r\n\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg)\r\n  }\r\n}\r\n\r\n\r\n.module .contint {\r\n  padding: 20px 40px;\r\n  width: 100%;\r\n  position: relative;\r\n}\r\n\r\n\r\n.module .contint .inputDiv {\r\n  width: 100%;\r\n  padding: 10px 0;\r\n}\r\n\r\n\r\n.module .contint .inputDiv:last-child {\r\n  padding-bottom: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .title {\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n.module .contint .inputDiv textarea {\r\n  height: 80px;\r\n  resize: none;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input {\r\n  width: calc(100% - 20px);\r\n  height: auto;\r\n  padding: 10px;\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"email\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  height: auto;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"password\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px;\r\n  height: auto;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"text\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px;\r\n  height: auto;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-webkit-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-moz-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input:-ms-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-ms-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.chechboxDiv span {\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv {\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .oneDate {\r\n  width: 22.5%;\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .oneDate:first-child {\r\n  padding-right: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .toDiv {\r\n  width: 10%;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .toDiv h4 {\r\n  text-align: center;\r\n  padding-top: 17px;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select {\r\n  display: block;\r\n  font-weight: bold;\r\n  color: #9c9c9c;\r\n  padding: 10px;\r\n  height: auto;\r\n  width: calc(100% - 20px);\r\n  border: transparent;\r\n  max-width: 100%;\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  border-radius: .5em;\r\n  -moz-appearance: none;\r\n  -webkit-appearance: none;\r\n  appearance: none;\r\n  background-color: #e4e4e4;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select {\r\n  background-image: linear-gradient(45deg, transparent 50%, #828282 50%), linear-gradient(135deg, #828282 50%, transparent 50%);\r\n  background-position: calc(100% - 20px) calc(1em + 5px), calc(100% - 12px) calc(1em + 5px), 100% 0px;\r\n  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;\r\n  background-size: 10px 7px;\r\n  background-repeat: no-repeat;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select::-ms-expand {\r\n  display: none;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select:hover {\r\n  border-color: #888;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select:focus {\r\n  border-color: #aaa;\r\n  box-shadow: 0 0 4px 2px #9c9c9c;\r\n  color: #9c9c9c;\r\n  outline: none;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select option:checked,\r\n.module .contint .inputDiv .select option:hover {\r\n  background-color: #9c9c9c;\r\n  color: white;\r\n}\r\n\r\n\r\n.module .footer {\r\n  padding: 0px 20px;\r\n  clear: both;\r\n}\r\n\r\n\r\n.module .footer .button {\r\n  padding: 3px;\r\n  width: 87%;\r\n  text-align: center;\r\n  color: #FFF;\r\n  margin-left: 20px;\r\n  border-radius: 5px;\r\n  font-weight: 600;\r\n  border: 1px solid;\r\n  position: relative;\r\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;\r\n}\r\n\r\n\r\n.module .footer .button:before,\r\n.module .footer .button:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 10px;\r\n  right: 10px;\r\n  border-radius: 100px / 10px;\r\n}\r\n\r\n\r\n.module .footer .button:after {\r\n  right: 10px;\r\n  left: auto;\r\n  -webkit-transform: skew(8deg) rotate(3deg);\r\n  transform: skew(8deg) rotate(3deg);\r\n}\r\n\r\n\r\n.module .footer .button.save {\r\n  border-color: #fbd431;\r\n  background-color: #fbd431;\r\n}\r\n\r\n\r\n.module .footer .button.delete {\r\n  border-color: #9c9c9c;\r\n}\r\n\r\n\r\n.button:hover {\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n.errorMessage {\r\n  top: 5px;\r\n  font-size: 12px;\r\n  color: #DC143C;\r\n  position: absolute;\r\n  font-weight: 700;\r\n}\r\n\r\n\r\n.loginBtn {\r\n  box-sizing: border-box;\r\n  position: relative;\r\n  text-align: center !important;\r\n  margin: 0.2em;\r\n  padding: 0 15px 0 46px;\r\n  border: none;\r\n  text-align: left;\r\n  line-height: 34px;\r\n  white-space: nowrap;\r\n  border-radius: 0.2em;\r\n  font-size: 16px;\r\n  color: #FFF;\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n.loginBtn:before {\r\n  content: \"\";\r\n  box-sizing: border-box;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 34px;\r\n  height: 100%;\r\n}\r\n\r\n\r\n.loginBtn:focus {\r\n  outline: none;\r\n}\r\n\r\n\r\n.loginBtn:active {\r\n  box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n\r\n/* Facebook */\r\n\r\n\r\n.loginBtn--facebook {\r\n  background-color: #4C69BA;\r\n  background-image: linear-gradient(#4C69BA, #3B55A0);\r\n  /*font-family: \"Helvetica neue\", Helvetica Neue, Helvetica, Arial, sans-serif;*/\r\n  text-shadow: 0 -1px 0 #354C8C;\r\n}\r\n\r\n\r\n.loginBtn--facebook:before {\r\n  border-right: #364e92 1px solid;\r\n  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;\r\n}\r\n\r\n\r\n.loginBtn--facebook:hover,\r\n.loginBtn--facebook:focus {\r\n  background-color: #5B7BD5;\r\n  background-image: linear-gradient(#5B7BD5, #4864B1);\r\n}\r\n\r\n\r\n/* Google */\r\n\r\n\r\n.loginBtn--google {\r\n  /*font-family: \"Roboto\", Roboto, arial, sans-serif;*/\r\n  background: #DD4B39;\r\n}\r\n\r\n\r\n.loginBtn--google:before {\r\n  border-right: #BB3F30 1px solid;\r\n  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;\r\n}\r\n\r\n\r\n.loginBtn--google:hover,\r\n.loginBtn--google:focus {\r\n  background: #E74B37;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0aGVudGljYXRpb24vbW9kYWxzL3NpZ251cC9zaWdudXAuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7RUFDYixZQUFZO0VBQ1osdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7QUFDcEI7OztBQUdBO0VBQ0UsV0FBVztFQUNYLFFBQVE7RUFDUixpQkFBaUI7RUFDakIsb0JBQW9CO0FBQ3RCOzs7QUFFQTtFQUNFLGdDQUFnQztFQUNoQyxtQkFBbUI7RUFDbkIsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixpQkFBaUI7RUFDakIsZUFBZTtBQUNqQjs7O0FBRUE7RUFDRSxZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZixjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOzs7QUFFQTtFQUNFLGVBQWU7RUFDZixjQUFjO0VBQ2QsNkJBQXFCO1VBQXJCLHFCQUFxQjtBQUN2Qjs7O0FBRUE7RUFDRTtJQUNFLCtCQUErQjtJQUMvQjtFQUNGOztFQUVBO0lBQ0UsaUNBQWlDO0lBQ2pDO0VBQ0Y7QUFDRjs7O0FBRUE7RUFDRTtJQUNFLCtCQUErQjtJQUMvQjtFQUNGOztFQUVBO0lBQ0UsaUNBQWlDO0lBQ2pDO0VBQ0Y7QUFDRjs7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGtCQUFrQjtBQUNwQjs7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsZUFBZTtBQUNqQjs7O0FBRUE7RUFDRSxtQkFBbUI7QUFDckI7OztBQUlBO0VBQ0UsaUJBQWlCO0FBQ25COzs7QUFFQTtFQUNFLFlBQVk7RUFDWixZQUFZO0VBQ1osV0FBVztBQUNiOzs7QUFFQTtFQUNFLHdCQUF3QjtFQUN4QixZQUFZO0VBQ1osYUFBYTtFQUNiLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2YsWUFBWTs7RUFFWixXQUFXO0FBQ2I7OztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLFlBQVk7RUFDWixhQUFhO0VBQ2IsV0FBVztBQUNiOzs7QUFFQTtFQUNFLHdCQUF3QjtFQUN4QixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLFlBQVk7RUFDWixhQUFhO0VBQ2IsWUFBWTtFQUNaLFdBQVc7QUFDYjs7O0FBR0E7RUFDRSx3QkFBd0I7RUFDeEIsa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixZQUFZO0VBQ1osYUFBYTtFQUNiLFlBQVk7RUFDWixXQUFXO0FBQ2I7OztBQUdBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7O0FBSEE7RUFDRSxjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOzs7QUFIQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7OztBQUhBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7O0FBSEE7RUFDRSxjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOzs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQjs7O0FBRUE7RUFDRSxXQUFXO0VBQ1gscUJBQXFCO0FBQ3ZCOzs7QUFFQTtFQUNFLFlBQVk7RUFDWixhQUFhO0FBQ2Y7OztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOzs7QUFHQTtFQUNFLFVBQVU7QUFDWjs7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLGdCQUFnQjtBQUNsQjs7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCxhQUFhO0VBQ2IsWUFBWTtFQUNaLHdCQUF3QjtFQUN4QixtQkFBbUI7RUFDbkIsZUFBZTtFQUNmLHNCQUFzQjtFQUN0QixTQUFTO0VBQ1QsbUJBQW1CO0VBQ25CLHFCQUFxQjtFQUNyQix3QkFBd0I7RUFDeEIsZ0JBQWdCO0VBQ2hCLHlCQUF5QjtBQUMzQjs7O0FBRUE7RUFDRSw2SEFBNkg7RUFDN0gsbUdBQW1HO0VBQ25HLDhDQUE4QztFQUM5Qyx5QkFBeUI7RUFDekIsNEJBQTRCO0FBQzlCOzs7QUFHQTtFQUNFLGFBQWE7QUFDZjs7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7OztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLCtCQUErQjtFQUMvQixjQUFjO0VBQ2QsYUFBYTtBQUNmOzs7QUFHQTs7RUFFRSx5QkFBeUI7RUFDekIsWUFBWTtBQUNkOzs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixXQUFXO0FBQ2I7OztBQUVBO0VBQ0UsWUFBWTtFQUNaLFVBQVU7RUFDVixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFHbEIsMkVBQTJFO0FBQzdFOzs7QUFFQTs7RUFFRSxXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLFdBQVc7RUFHWCx1Q0FBdUM7RUFDdkMsTUFBTTtFQUNOLFNBQVM7RUFDVCxVQUFVO0VBQ1YsV0FBVztFQUVYLDJCQUEyQjtBQUM3Qjs7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsVUFBVTtFQUNWLDBDQUEwQztFQUkxQyxrQ0FBa0M7QUFDcEM7OztBQUVBO0VBQ0UscUJBQXFCO0VBQ3JCLHlCQUF5QjtBQUMzQjs7O0FBRUE7RUFDRSxxQkFBcUI7QUFDdkI7OztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7O0FBRUE7RUFDRSxRQUFRO0VBQ1IsZUFBZTtFQUNmLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIsZ0JBQWdCO0FBQ2xCOzs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QixrQkFBa0I7RUFDbEIsNkJBQTZCO0VBQzdCLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsWUFBWTtFQUNaLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLG9CQUFvQjtFQUNwQixlQUFlO0VBQ2YsV0FBVztFQUNYLGVBQWU7QUFDakI7OztBQUVBO0VBQ0UsV0FBVztFQUNYLHNCQUFzQjtFQUN0QixrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLE9BQU87RUFDUCxXQUFXO0VBQ1gsWUFBWTtBQUNkOzs7QUFFQTtFQUNFLGFBQWE7QUFDZjs7O0FBRUE7RUFDRSwrQ0FBK0M7QUFDakQ7OztBQUdBLGFBQWE7OztBQUNiO0VBQ0UseUJBQXlCO0VBQ3pCLG1EQUFtRDtFQUNuRCwrRUFBK0U7RUFDL0UsNkJBQTZCO0FBQy9COzs7QUFFQTtFQUNFLCtCQUErQjtFQUMvQix5R0FBeUc7QUFDM0c7OztBQUVBOztFQUVFLHlCQUF5QjtFQUN6QixtREFBbUQ7QUFDckQ7OztBQUdBLFdBQVc7OztBQUNYO0VBQ0Usb0RBQW9EO0VBQ3BELG1CQUFtQjtBQUNyQjs7O0FBRUE7RUFDRSwrQkFBK0I7RUFDL0IsdUdBQXVHO0FBQ3pHOzs7QUFFQTs7RUFFRSxtQkFBbUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9hdXRoZW50aWNhdGlvbi9tb2RhbHMvc2lnbnVwL3NpZ251cC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1vZHVsZSB7XHJcbiAgaGVpZ2h0OiA0MzBweDtcclxuICB3aWR0aDogNTAwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuXHJcblxyXG4ubW9kdWxlIC5oZWFkZXJzIHtcclxuICB3aWR0aDogMTAwJTtcclxuICB0b3A6IDBweDtcclxuICBwYWRkaW5nLXRvcDogMTlweDtcclxuICBwYWRkaW5nLWJvdHRvbTogMTBweDtcclxufVxyXG5cclxuLmhlYWRlcnMgLm1haW5MYWJlbCB7XHJcbiAgYm9yZGVyLWJvdHRvbTogM3B4IHNvbGlkICNmYmQ0MzE7XHJcbiAgcGFkZGluZy1ib3R0b206IDBweDtcclxuICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgbWFyZ2luOiAxMHB4IDMwcHg7XHJcbiAgZm9udC1zaXplOiAyMnB4O1xyXG59XHJcblxyXG4ubW9kdWxlIC5oZWFkZXJzIGkge1xyXG4gIGZsb2F0OiByaWdodDtcclxuICBtYXJnaW46IDEwcHggMzBweDtcclxuICBmb250LXNpemU6IDIzcHg7XHJcbiAgY29sb3I6ICM5YjliOWI7XHJcbiAgZm9udC13ZWlnaHQ6IDEwMDtcclxufVxyXG5cclxuLm1vZHVsZSAuaGVhZGVycyBpOmhvdmVyIHtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgY29sb3I6ICNmYmQ0MzE7XHJcbiAgYW5pbWF0aW9uOiBmYS1zcGluIDNzO1xyXG59XHJcblxyXG5ALXdlYmtpdC1rZXlmcmFtZXMgZmEtc3BpbiB7XHJcbiAgMCUge1xyXG4gICAgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcclxuICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpXHJcbiAgfVxyXG5cclxuICAxMDAlIHtcclxuICAgIC13ZWJraXQtdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKTtcclxuICAgIHRyYW5zZm9ybTogcm90YXRlKDM1OWRlZylcclxuICB9XHJcbn1cclxuXHJcbkBrZXlmcmFtZXMgZmEtc3BpbiB7XHJcbiAgMCUge1xyXG4gICAgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcclxuICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpXHJcbiAgfVxyXG5cclxuICAxMDAlIHtcclxuICAgIC13ZWJraXQtdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKTtcclxuICAgIHRyYW5zZm9ybTogcm90YXRlKDM1OWRlZylcclxuICB9XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQge1xyXG4gIHBhZGRpbmc6IDIwcHggNDBweDtcclxuICB3aWR0aDogMTAwJTtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IHtcclxuICB3aWR0aDogMTAwJTtcclxuICBwYWRkaW5nOiAxMHB4IDA7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2Omxhc3QtY2hpbGQge1xyXG4gIHBhZGRpbmctYm90dG9tOiAwcHg7XHJcbn1cclxuXHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnRpdGxlIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgdGV4dGFyZWEge1xyXG4gIGhlaWdodDogODBweDtcclxuICByZXNpemU6IG5vbmU7XHJcbiAgbWFyZ2luOiAwcHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5pbnB1dCB7XHJcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDIwcHgpO1xyXG4gIGhlaWdodDogYXV0bztcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIHBhZGRpbmctbGVmdDogMTBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTRlNGU0O1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBib3gtc2hhZG93OiBub25lO1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBib3JkZXI6IG5vbmU7XHJcblxyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiBpbnB1dFt0eXBlPVwiZW1haWxcIl0ge1xyXG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAyMHB4KTtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGJveC1zaGFkb3c6IG5vbmU7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiBpbnB1dFt0eXBlPVwicGFzc3dvcmRcIl0ge1xyXG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAyMHB4KTtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2U0ZTRlNDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgYm94LXNoYWRvdzogbm9uZTtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgaW5wdXRbdHlwZT1cInRleHRcIl0ge1xyXG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAyMHB4KTtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2U0ZTRlNDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgYm94LXNoYWRvdzogbm9uZTtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIHBhZGRpbmc6IDEwcHg7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmlucHV0OjpwbGFjZWhvbGRlciB7XHJcbiAgY29sb3I6ICM5YzljOWM7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxufVxyXG5cclxuLmNoZWNoYm94RGl2IHNwYW4ge1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IHtcclxuICB3aWR0aDogMTAwJTtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IC5vbmVEYXRlIHtcclxuICB3aWR0aDogMjIuNSU7XHJcbiAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmRhdGVEaXYgLm9uZURhdGU6Zmlyc3QtY2hpbGQge1xyXG4gIHBhZGRpbmctcmlnaHQ6IDBweDtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5kYXRlRGl2IC50b0RpdiB7XHJcbiAgd2lkdGg6IDEwJTtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmRhdGVEaXYgLnRvRGl2IGg0IHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgcGFkZGluZy10b3A6IDE3cHg7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdCB7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgY29sb3I6ICM5YzljOWM7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBoZWlnaHQ6IGF1dG87XHJcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDIwcHgpO1xyXG4gIGJvcmRlcjogdHJhbnNwYXJlbnQ7XHJcbiAgbWF4LXdpZHRoOiAxMDAlO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgbWFyZ2luOiAwO1xyXG4gIGJvcmRlci1yYWRpdXM6IC41ZW07XHJcbiAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xyXG4gIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcclxuICBhcHBlYXJhbmNlOiBub25lO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qge1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCg0NWRlZywgdHJhbnNwYXJlbnQgNTAlLCAjODI4MjgyIDUwJSksIGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICM4MjgyODIgNTAlLCB0cmFuc3BhcmVudCA1MCUpO1xyXG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNhbGMoMTAwJSAtIDIwcHgpIGNhbGMoMWVtICsgNXB4KSwgY2FsYygxMDAlIC0gMTJweCkgY2FsYygxZW0gKyA1cHgpLCAxMDAlIDBweDtcclxuICBiYWNrZ3JvdW5kLXNpemU6IDVweCA1cHgsIDVweCA1cHgsIDIuNWVtIDIuNWVtO1xyXG4gIGJhY2tncm91bmQtc2l6ZTogMTBweCA3cHg7XHJcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Q6Oi1tcy1leHBhbmQge1xyXG4gIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Q6aG92ZXIge1xyXG4gIGJvcmRlci1jb2xvcjogIzg4ODtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnNlbGVjdDpmb2N1cyB7XHJcbiAgYm9yZGVyLWNvbG9yOiAjYWFhO1xyXG4gIGJveC1zaGFkb3c6IDAgMCA0cHggMnB4ICM5YzljOWM7XHJcbiAgY29sb3I6ICM5YzljOWM7XHJcbiAgb3V0bGluZTogbm9uZTtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qgb3B0aW9uOmNoZWNrZWQsXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Qgb3B0aW9uOmhvdmVyIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjOWM5YzljO1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIHtcclxuICBwYWRkaW5nOiAwcHggMjBweDtcclxuICBjbGVhcjogYm90aDtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIC5idXR0b24ge1xyXG4gIHBhZGRpbmc6IDNweDtcclxuICB3aWR0aDogODclO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBjb2xvcjogI0ZGRjtcclxuICBtYXJnaW4tbGVmdDogMjBweDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICBib3JkZXI6IDFweCBzb2xpZDtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgLXdlYmtpdC1ib3gtc2hhZG93OiAwIDFweCA0cHggcmdiYSgwLCAwLCAwLCAwLjMpLCAwIDAgNDBweCByZ2JhKDAsIDAsIDAsIDAuMSkgaW5zZXQ7XHJcbiAgLW1vei1ib3gtc2hhZG93OiAwIDFweCA0cHggcmdiYSgwLCAwLCAwLCAwLjMpLCAwIDAgNDBweCByZ2JhKDAsIDAsIDAsIDAuMSkgaW5zZXQ7XHJcbiAgYm94LXNoYWRvdzogMCAxcHggNHB4IHJnYmEoMCwgMCwgMCwgMC4zKSwgMCAwIDQwcHggcmdiYSgwLCAwLCAwLCAwLjEpIGluc2V0O1xyXG59XHJcblxyXG4ubW9kdWxlIC5mb290ZXIgLmJ1dHRvbjpiZWZvcmUsXHJcbi5tb2R1bGUgLmZvb3RlciAuYnV0dG9uOmFmdGVyIHtcclxuICBjb250ZW50OiBcIlwiO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB6LWluZGV4OiAtMTtcclxuICAtd2Via2l0LWJveC1zaGFkb3c6IDAgMCAyMHB4IHJnYmEoMCwgMCwgMCwgMC44KTtcclxuICAtbW96LWJveC1zaGFkb3c6IDAgMCAyMHB4IHJnYmEoMCwgMCwgMCwgMC44KTtcclxuICBib3gtc2hhZG93OiAwIDAgMjBweCByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgdG9wOiAwO1xyXG4gIGJvdHRvbTogMDtcclxuICBsZWZ0OiAxMHB4O1xyXG4gIHJpZ2h0OiAxMHB4O1xyXG4gIC1tb3otYm9yZGVyLXJhZGl1czogMTAwcHggLyAxMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDEwMHB4IC8gMTBweDtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIC5idXR0b246YWZ0ZXIge1xyXG4gIHJpZ2h0OiAxMHB4O1xyXG4gIGxlZnQ6IGF1dG87XHJcbiAgLXdlYmtpdC10cmFuc2Zvcm06IHNrZXcoOGRlZykgcm90YXRlKDNkZWcpO1xyXG4gIC1tb3otdHJhbnNmb3JtOiBza2V3KDhkZWcpIHJvdGF0ZSgzZGVnKTtcclxuICAtbXMtdHJhbnNmb3JtOiBza2V3KDhkZWcpIHJvdGF0ZSgzZGVnKTtcclxuICAtby10cmFuc2Zvcm06IHNrZXcoOGRlZykgcm90YXRlKDNkZWcpO1xyXG4gIHRyYW5zZm9ybTogc2tldyg4ZGVnKSByb3RhdGUoM2RlZyk7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmZvb3RlciAuYnV0dG9uLnNhdmUge1xyXG4gIGJvcmRlci1jb2xvcjogI2ZiZDQzMTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmJkNDMxO1xyXG59XHJcblxyXG4ubW9kdWxlIC5mb290ZXIgLmJ1dHRvbi5kZWxldGUge1xyXG4gIGJvcmRlci1jb2xvcjogIzljOWM5YztcclxufVxyXG5cclxuLmJ1dHRvbjpob3ZlciB7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4uZXJyb3JNZXNzYWdlIHtcclxuICB0b3A6IDVweDtcclxuICBmb250LXNpemU6IDEycHg7XHJcbiAgY29sb3I6ICNEQzE0M0M7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbn1cclxuXHJcbi5sb2dpbkJ0biB7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyICFpbXBvcnRhbnQ7XHJcbiAgbWFyZ2luOiAwLjJlbTtcclxuICBwYWRkaW5nOiAwIDE1cHggMCA0NnB4O1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIGxpbmUtaGVpZ2h0OiAzNHB4O1xyXG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XHJcbiAgYm9yZGVyLXJhZGl1czogMC4yZW07XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGNvbG9yOiAjRkZGO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLmxvZ2luQnRuOmJlZm9yZSB7XHJcbiAgY29udGVudDogXCJcIjtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB0b3A6IDA7XHJcbiAgbGVmdDogMDtcclxuICB3aWR0aDogMzRweDtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbi5sb2dpbkJ0bjpmb2N1cyB7XHJcbiAgb3V0bGluZTogbm9uZTtcclxufVxyXG5cclxuLmxvZ2luQnRuOmFjdGl2ZSB7XHJcbiAgYm94LXNoYWRvdzogaW5zZXQgMCAwIDAgMzJweCByZ2JhKDAsIDAsIDAsIDAuMSk7XHJcbn1cclxuXHJcblxyXG4vKiBGYWNlYm9vayAqL1xyXG4ubG9naW5CdG4tLWZhY2Vib29rIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNEM2OUJBO1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCgjNEM2OUJBLCAjM0I1NUEwKTtcclxuICAvKmZvbnQtZmFtaWx5OiBcIkhlbHZldGljYSBuZXVlXCIsIEhlbHZldGljYSBOZXVlLCBIZWx2ZXRpY2EsIEFyaWFsLCBzYW5zLXNlcmlmOyovXHJcbiAgdGV4dC1zaGFkb3c6IDAgLTFweCAwICMzNTRDOEM7XHJcbn1cclxuXHJcbi5sb2dpbkJ0bi0tZmFjZWJvb2s6YmVmb3JlIHtcclxuICBib3JkZXItcmlnaHQ6ICMzNjRlOTIgMXB4IHNvbGlkO1xyXG4gIGJhY2tncm91bmQ6IHVybCgnaHR0cHM6Ly9zMy11cy13ZXN0LTIuYW1hem9uYXdzLmNvbS9zLmNkcG4uaW8vMTQwODIvaWNvbl9mYWNlYm9vay5wbmcnKSA2cHggNnB4IG5vLXJlcGVhdDtcclxufVxyXG5cclxuLmxvZ2luQnRuLS1mYWNlYm9vazpob3ZlcixcclxuLmxvZ2luQnRuLS1mYWNlYm9vazpmb2N1cyB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzVCN0JENTtcclxuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoIzVCN0JENSwgIzQ4NjRCMSk7XHJcbn1cclxuXHJcblxyXG4vKiBHb29nbGUgKi9cclxuLmxvZ2luQnRuLS1nb29nbGUge1xyXG4gIC8qZm9udC1mYW1pbHk6IFwiUm9ib3RvXCIsIFJvYm90bywgYXJpYWwsIHNhbnMtc2VyaWY7Ki9cclxuICBiYWNrZ3JvdW5kOiAjREQ0QjM5O1xyXG59XHJcblxyXG4ubG9naW5CdG4tLWdvb2dsZTpiZWZvcmUge1xyXG4gIGJvcmRlci1yaWdodDogI0JCM0YzMCAxcHggc29saWQ7XHJcbiAgYmFja2dyb3VuZDogdXJsKCdodHRwczovL3MzLXVzLXdlc3QtMi5hbWF6b25hd3MuY29tL3MuY2Rwbi5pby8xNDA4Mi9pY29uX2dvb2dsZS5wbmcnKSA2cHggNnB4IG5vLXJlcGVhdDtcclxufVxyXG5cclxuLmxvZ2luQnRuLS1nb29nbGU6aG92ZXIsXHJcbi5sb2dpbkJ0bi0tZ29vZ2xlOmZvY3VzIHtcclxuICBiYWNrZ3JvdW5kOiAjRTc0QjM3O1xyXG59XHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/authentication/modals/signup/signup.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/authentication/modals/signup/signup.component.ts ***!
+  \******************************************************************/
+/*! exports provided: SignupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupComponent", function() { return SignupComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var src_app_requests_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/requests.service */ "./src/app/requests.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../auth.service */ "./src/app/authentication/auth.service.ts");
+/* harmony import */ var angularx_social_login__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! angularx-social-login */ "./node_modules/angularx-social-login/angularx-social-login.es5.js");
+
+
+
+
+
+
+
+
+
+var SignupComponent = /** @class */ (function () {
+    function SignupComponent(dialog, thisDialog, apiService, router, auth, socialAuthService) {
+        this.dialog = dialog;
+        this.thisDialog = thisDialog;
+        this.apiService = apiService;
+        this.router = router;
+        this.auth = auth;
+        this.socialAuthService = socialAuthService;
+        this.user = { gender: '' };
+        this.errorMessage = '';
+    }
+    SignupComponent.prototype.ngOnInit = function () {
+    };
+    SignupComponent.prototype.loginWithFacebook = function () {
+        var _this = this;
+        this.socialAuthService.signIn(angularx_social_login__WEBPACK_IMPORTED_MODULE_7__["FacebookLoginProvider"].PROVIDER_ID).then(function (res) {
+            _this.errorMessage = '';
+            var loginData = {
+                data: {
+                    socialId: res.id,
+                    image: res.facebook.picture.data.url,
+                    email: res.email,
+                    username: res.name,
+                },
+                type: "facebook"
+            };
+            _this.apiService.post('users/socialLogin', loginData).subscribe(function (user) {
+                var userData = user.user;
+                _this.errorMessage = '';
+                var data = {};
+                if (!userData.email)
+                    data.email = '';
+                if (!userData.phoneNumber)
+                    data.phoneNumber = '';
+                if (!userData.gender)
+                    data.gender = '';
+                data.id = userData.id;
+                if (data.email || data.phoneNumber || data.gender)
+                    _this.thisDialog.close({ data: data, event: 'complete' });
+                else {
+                    localStorage.setItem(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].userDetails, JSON.stringify(user));
+                    _this.auth.logIn(user);
+                    _this.router.navigate(['']);
+                    _this.thisDialog.close();
+                }
+            }, function (error) {
+                _this.errorMessage = 'emailAlreadyExsit';
+            });
+        });
+    };
+    SignupComponent.prototype.loginWithGoogle = function () {
+        var _this = this;
+        this.socialAuthService.signIn(angularx_social_login__WEBPACK_IMPORTED_MODULE_7__["GoogleLoginProvider"].PROVIDER_ID).then(function (res) {
+            _this.errorMessage = '';
+            var loginData = {
+                data: {
+                    socialId: res.id,
+                    image: res.photoUrl,
+                    email: res.email,
+                    username: res.name,
+                },
+                type: "google"
+            };
+            _this.apiService.post('users/socialLogin', loginData).subscribe(function (user) {
+                var userData = user.user;
+                _this.errorMessage = '';
+                var data = {};
+                if (!userData.email)
+                    data.email = '';
+                if (!userData.phoneNumber)
+                    data.phoneNumber = '';
+                if (!userData.gender)
+                    data.gender = '';
+                data.id = userData.id;
+                if (data.email || data.phoneNumber || data.gender)
+                    _this.thisDialog.close({ data: data, event: 'complete' });
+                else {
+                    localStorage.setItem(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].userDetails, JSON.stringify(user));
+                    _this.auth.logIn(user);
+                    _this.router.navigate(['']);
+                    _this.thisDialog.close();
+                }
+            }, function (error) {
+                _this.errorMessage = 'emailAlreadyExsit';
+            });
+        });
+    };
+    SignupComponent.prototype.submit = function () {
+        var _this = this;
+        var value = this.checkForm();
+        if (value != true) {
+            this.errorMessage = value;
+            return;
+        }
+        this.apiService.post('users', this.user).subscribe(function (data) {
+            _this.apiService.post('users/login', { email: _this.user.email, password: _this.user.password }).subscribe(function (res) {
+                _this.errorMessage = '';
+                localStorage.setItem(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].userDetails, JSON.stringify(res));
+                _this.auth.logIn(res);
+                _this.router.navigate(['profile'], { fragment: 'chooseCategory' });
+                _this.thisDialog.close();
+            }, function (error) {
+                _this.errorMessage = error['error']['error']['code'];
+            });
+        }, function (error) {
+            _this.errorMessage = error['error']['error']['code'];
+        });
+    };
+    SignupComponent.prototype.checkForm = function () {
+        if (!this.user.email || this.user.email === '') {
+            return 'emailIsRequired';
+        }
+        if (!this.user.password || this.user.password === '') {
+            return 'passwordIsRequired';
+        }
+        if (!this.user.username || this.user.username === '') {
+            return 'usernameIsRequired';
+        }
+        if (!this.user.phoneNumber || this.user.phoneNumber === '') {
+            return 'phoneNumberIsRequired';
+        }
+        return true;
+    };
+    SignupComponent.prototype.close = function () {
+        this.thisDialog.close();
+    };
+    SignupComponent.ctorParameters = function () { return [
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"] },
+        { type: src_app_requests_service__WEBPACK_IMPORTED_MODULE_4__["RequestsService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+        { type: _auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"] },
+        { type: angularx_social_login__WEBPACK_IMPORTED_MODULE_7__["AuthService"] }
+    ]; };
+    SignupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-signup',
+            template: __webpack_require__(/*! raw-loader!./signup.component.html */ "./node_modules/raw-loader/index.js!./src/app/authentication/modals/signup/signup.component.html"),
+            styles: [__webpack_require__(/*! ./signup.component.css */ "./src/app/authentication/modals/signup/signup.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"],
+            src_app_requests_service__WEBPACK_IMPORTED_MODULE_4__["RequestsService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
+            _auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"], angularx_social_login__WEBPACK_IMPORTED_MODULE_7__["AuthService"]])
+    ], SignupComponent);
+    return SignupComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/authentication/reset/reset.component.css":
+/*!**********************************************************!*\
+  !*** ./src/app/authentication/reset/reset.component.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "button{\r\n  display: contents;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0aGVudGljYXRpb24vcmVzZXQvcmVzZXQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGlCQUFpQjtBQUNuQiIsImZpbGUiOiJzcmMvYXBwL2F1dGhlbnRpY2F0aW9uL3Jlc2V0L3Jlc2V0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJidXR0b257XHJcbiAgZGlzcGxheTogY29udGVudHM7XHJcbn1cclxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/authentication/reset/reset.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/authentication/reset/reset.component.ts ***!
+  \*********************************************************/
+/*! exports provided: ResetComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResetComponent", function() { return ResetComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _modals_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modals/reset-password/reset-password.component */ "./src/app/authentication/modals/reset-password/reset-password.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+var ResetComponent = /** @class */ (function () {
+    function ResetComponent(dialog, router) {
+        this.dialog = dialog;
+        this.router = router;
+    }
+    ResetComponent.prototype.ngAfterViewInit = function () {
+        this.onReset();
+    };
+    ResetComponent.prototype.ngOnInit = function () {
+    };
+    ResetComponent.prototype.onReset = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(_modals_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_3__["ResetPasswordComponent"], {
+            panelClass: 'communictioDialogStyle',
+        });
+        dialogRef.afterClosed().subscribe(function (data) {
+            _this.router.navigate(['/']);
+        });
+    };
+    ResetComponent.ctorParameters = function () { return [
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+    ]; };
+    ResetComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-reset',
+            template: __webpack_require__(/*! raw-loader!./reset.component.html */ "./node_modules/raw-loader/index.js!./src/app/authentication/reset/reset.component.html"),
+            styles: [__webpack_require__(/*! ./reset.component.css */ "./src/app/authentication/reset/reset.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+    ], ResetComponent);
+    return ResetComponent;
 }());
 
 
@@ -1625,9 +2593,7 @@ var AddJobOpportunityComponent = /** @class */ (function () {
         if (this.newObject['jobType'] == null)
             delete this.newObject['jobType'];
         this.api.post('businesses/' + this.businessId + '/addJobOpportunity', this.newObject).toPromise().then(function (data) {
-            // goToLogin() {
             self.router.navigate(["job/" + data['id']]);
-            // }
         });
     };
     AddJobOpportunityComponent.prototype.checkForm = function () {
@@ -1722,27 +2688,63 @@ var BusinessCreateComponent = /** @class */ (function () {
         this.translteService = translteService;
         this.router = router;
         this.spinner = spinner;
+        this.isSupplier = false;
     }
     BusinessCreateComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.lang = this.translteService.currentLang;
+        this.translteService.onLangChange.subscribe(function () {
+            _this.lang = _this.translteService.currentLang;
+        });
         var p = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]();
         p = p.set('filter', JSON.stringify({
             "where": { "parentCategoryId": { "exists": false } },
             "include": "subCategories"
         }));
-        this.translteService.onLangChange.subscribe(function () {
-            _this.lang = _this.translteService.currentLang;
-        });
         this.api.get('businessCategories', p).toPromise().then(function (data) {
             _this.categories = data;
         });
         this.api.get('cities').toPromise().then(function (data) {
             _this.cities = data;
         });
-        // this.api.get('locations').toPromise().then(data=>{
-        //   this.locations=data
-        // })
+    };
+    BusinessCreateComponent.prototype.onSupplierChange = function () {
+        var _this = this;
+        var p = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]();
+        p = p.set('filter', JSON.stringify({
+            "where": {
+                "parentCategoryId": { "inq": [null] },
+                "supplier": this.isSupplier
+            },
+        }));
+        this.api.get('businessCategories', p).toPromise().then(function (data) {
+            _this.categories = data;
+        });
+    };
+    BusinessCreateComponent.prototype.onCategoryChange = function () {
+        var _this = this;
+        var p = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]();
+        p = p.set('filter', JSON.stringify({
+            "where": {
+                "parentCategoryId": this.categories[this.selectedCategory]['id'],
+                "supplier": this.isSupplier,
+            },
+        }));
+        this.api.get('businessCategories', p).toPromise().then(function (data) {
+            _this.subCategories = data;
+        });
+    };
+    BusinessCreateComponent.prototype.cityChanged = function () {
+        var _this = this;
+        this.locationId = null;
+        var p = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]();
+        p = p.set('filter', JSON.stringify({
+            where: { cityId: this.selectedCity }
+        }));
+        this.locations = [];
+        this.api.get('locations', p).toPromise().then(function (data) {
+            _this.locations = data;
+        });
     };
     BusinessCreateComponent.prototype.submit = function (data) {
         var _this = this;
@@ -1761,14 +2763,13 @@ var BusinessCreateComponent = /** @class */ (function () {
                 else
                     videos.append('file', this.files[i].file);
             }
-            var imageObservable = this.api.post('attachments/images/upload', images); //.pipe(catchError(() => of(undefined)));
-            var videoObservable = this.api.post('attachments/videos/upload', videos); //.pipe(catchError(() => of(undefined)));
+            var imageObservable = this.api.post('attachments/images/upload', images);
+            var videoObservable = this.api.post('attachments/videos/upload', videos);
             if (images.getAll('file').length == 0)
                 imageObservable = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])(undefined);
             if (videos.getAll('file').length == 0)
                 videoObservable = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])(undefined);
             Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["forkJoin"])([imageObservable, videoObservable]).subscribe(function (res) {
-                console.log(res);
                 var covers = [];
                 if (res[0])
                     covers = covers.concat(res[0]);
@@ -1788,25 +2789,6 @@ var BusinessCreateComponent = /** @class */ (function () {
             });
         }
     };
-    BusinessCreateComponent.prototype.onCategoryChange = function () {
-        this.subCategoryId = null;
-        console.log(this.selectedCategory);
-        this.subCategories = this.categories[this.selectedCategory]['subCategories'];
-    };
-    BusinessCreateComponent.prototype.cityChanged = function () {
-        var _this = this;
-        this.locationId = null;
-        var p = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]();
-        p = p.set('filter', JSON.stringify({
-            where: {
-                cityId: this.selectedCity
-            }
-        }));
-        this.locations = [];
-        this.api.get('locations', p).toPromise().then(function (data) {
-            _this.locations = data;
-        });
-    };
     BusinessCreateComponent.ctorParameters = function () { return [
         { type: _requests_service__WEBPACK_IMPORTED_MODULE_2__["RequestsService"] },
         { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"] },
@@ -1823,8 +2805,8 @@ var BusinessCreateComponent = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./business-create.component.html */ "./node_modules/raw-loader/index.js!./src/app/business/business-create/business-create.component.html"),
             styles: [__webpack_require__(/*! ./business-create.component.css */ "./src/app/business/business-create/business-create.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_requests_service__WEBPACK_IMPORTED_MODULE_2__["RequestsService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_8__["NgxSpinnerService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_requests_service__WEBPACK_IMPORTED_MODULE_2__["RequestsService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"], ngx_spinner__WEBPACK_IMPORTED_MODULE_8__["NgxSpinnerService"]])
     ], BusinessCreateComponent);
     return BusinessCreateComponent;
 }());
@@ -1903,14 +2885,14 @@ var BusinessEditComponent = /** @class */ (function () {
             });
         });
         this.lang = this.translteService.currentLang;
+        this.translteService.onLangChange.subscribe(function () {
+            _this.lang = _this.translteService.currentLang;
+        });
         var p = new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpParams"]();
         p = p.set('filter', JSON.stringify({
             "where": { "parentCategoryId": { "exists": false } },
             "include": "subCategories"
         }));
-        this.translteService.onLangChange.subscribe(function () {
-            _this.lang = _this.translteService.currentLang;
-        });
         this.api.get('businessCategories', p).toPromise().then(function (data) {
             _this.categories = data;
             _this.onCategoryChange();
@@ -1918,17 +2900,53 @@ var BusinessEditComponent = /** @class */ (function () {
         this.api.get('cities').toPromise().then(function (data) {
             _this.cities = data;
         });
-        // this.api.get('locations').toPromise().then(data=>{
-        //   this.locations=data
-        // })
+    };
+    BusinessEditComponent.prototype.onFileAdded = function (files) {
+        this.files = files;
+    };
+    BusinessEditComponent.prototype.onSupplierChange = function () {
+        var _this = this;
+        var p = new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpParams"]();
+        p = p.set('filter', JSON.stringify({
+            "where": {
+                "parentCategoryId": { "inq": [null] },
+                "supplier": this.business['supplier']
+            },
+        }));
+        this.api.get('businessCategories', p).toPromise().then(function (data) {
+            _this.categories = data;
+        });
+    };
+    BusinessEditComponent.prototype.onCategoryChange = function () {
+        var _this = this;
+        var p = new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpParams"]();
+        p = p.set('filter', JSON.stringify({
+            "where": {
+                "parentCategoryId": this.categories[this.selectedCategory]['id'],
+                "supplier": this.business['supplier'],
+            },
+        }));
+        this.api.get('businessCategories', p).toPromise().then(function (data) {
+            _this.subCategories = data;
+        });
+    };
+    BusinessEditComponent.prototype.cityChanged = function () {
+        var _this = this;
+        var p = new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpParams"]();
+        p = p.set('filter', JSON.stringify({
+            where: {
+                cityId: this.business['cityId']
+            }
+        }));
+        this.locations = [];
+        this.api.get('locations', p).toPromise().then(function (data) {
+            _this.locations = data;
+        });
     };
     BusinessEditComponent.prototype.submit = function (data) {
         var _this = this;
         if (this.form.invalid)
             return;
-        console.log(data);
-        // return;
-        // data['categoryId']=this.categories[this.selectedCategory]['id']
         var user = JSON.parse(localStorage.getItem(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].userDetails));
         data['ownerId'] = user['userId'];
         var images = new FormData();
@@ -1940,8 +2958,8 @@ var BusinessEditComponent = /** @class */ (function () {
                 else
                     videos.append('file', this.files[i].file);
             }
-            var imageObservable = this.api.post('attachments/images/upload', images); //.pipe(catchError(() => of(undefined)));
-            var videoObservable = this.api.post('attachments/videos/upload', videos); //.pipe(catchError(() => of(undefined)));
+            var imageObservable = this.api.post('attachments/images/upload', images);
+            var videoObservable = this.api.post('attachments/videos/upload', videos);
             if (images.getAll('file').length == 0)
                 imageObservable = Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["of"])(undefined);
             if (videos.getAll('file').length == 0)
@@ -1967,34 +2985,6 @@ var BusinessEditComponent = /** @class */ (function () {
             });
         }
     };
-    BusinessEditComponent.prototype.onFileAdded = function (files) {
-        this.files = files;
-    };
-    BusinessEditComponent.prototype.onCategoryChange = function () {
-        var _this = this;
-        // this.business['subCategoryId']=null
-        console.log(this.business['categoryId']);
-        if (!this.categories)
-            return;
-        var cat = this.categories.find(function (v) { if (v['id'] == _this.business['categoryId'])
-            return true; });
-        this.selectedCategory = cat;
-        this.subCategories = cat['subCategories'];
-    };
-    BusinessEditComponent.prototype.cityChanged = function () {
-        var _this = this;
-        // this.business['locationId']=null
-        var p = new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpParams"]();
-        p = p.set('filter', JSON.stringify({
-            where: {
-                cityId: this.business['cityId']
-            }
-        }));
-        this.locations = [];
-        this.api.get('locations', p).toPromise().then(function (data) {
-            _this.locations = data;
-        });
-    };
     BusinessEditComponent.ctorParameters = function () { return [
         { type: _requests_service__WEBPACK_IMPORTED_MODULE_5__["RequestsService"] },
         { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"] },
@@ -2011,7 +3001,8 @@ var BusinessEditComponent = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./business-edit.component.html */ "./node_modules/raw-loader/index.js!./src/app/business/business-edit/business-edit.component.html"),
             styles: [__webpack_require__(/*! ./business-edit.component.css */ "./src/app/business/business-edit/business-edit.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_requests_service__WEBPACK_IMPORTED_MODULE_5__["RequestsService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_requests_service__WEBPACK_IMPORTED_MODULE_5__["RequestsService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], BusinessEditComponent);
     return BusinessEditComponent;
 }());
@@ -2107,7 +3098,7 @@ var BusinessProductsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".tag{\r\n  display: inline-block;\r\n  background-color: #ffd400;\r\n  color:whitesmoke;\r\n  margin: 4px;\r\n  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);\r\n  display: inline-flex;\r\n  padding: 7px 12px;\r\n  border-radius: 16px;\r\n  align-items: center;\r\n  cursor: pointer;\r\n  min-height: 32px;\r\n}\r\n.tag span{\r\n  color:whitesmoke !important;\r\n}\r\n.lang-ar {\r\n   direction: rtl;\r\n}\r\n.lang-en {\r\n   direction: ltr;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYnVzaW5lc3MvYnVzaW5lc3Mtdmlldy9idXNpbmVzcy12aWV3LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxxQkFBcUI7RUFDckIseUJBQXlCO0VBQ3pCLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsb0RBQW9EO0VBQ3BELG9CQUFvQjtFQUNwQixpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2YsZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSwyQkFBMkI7QUFDN0I7QUFFQTtHQUNHLGNBQWM7QUFDakI7QUFDQTtHQUNHLGNBQWM7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9idXNpbmVzcy9idXNpbmVzcy12aWV3L2J1c2luZXNzLXZpZXcuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50YWd7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmQ0MDA7XHJcbiAgY29sb3I6d2hpdGVzbW9rZTtcclxuICBtYXJnaW46IDRweDtcclxuICB0cmFuc2l0aW9uOiBib3gtc2hhZG93IDI4MG1zIGN1YmljLWJlemllciguNCwwLC4yLDEpO1xyXG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xyXG4gIHBhZGRpbmc6IDdweCAxMnB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDE2cHg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgbWluLWhlaWdodDogMzJweDtcclxufVxyXG4udGFnIHNwYW57XHJcbiAgY29sb3I6d2hpdGVzbW9rZSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4ubGFuZy1hciB7XHJcbiAgIGRpcmVjdGlvbjogcnRsO1xyXG59XHJcbi5sYW5nLWVuIHtcclxuICAgZGlyZWN0aW9uOiBsdHI7XHJcbn1cclxuIl19 */"
+module.exports = ".tag{\r\n  display: inline-block;\r\n  background-color: #ffd400;\r\n  color:whitesmoke;\r\n  margin: 4px;\r\n  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);\r\n  display: inline-flex;\r\n  padding: 7px 12px;\r\n  border-radius: 16px;\r\n  align-items: center;\r\n  cursor: pointer;\r\n  min-height: 32px;\r\n}\r\n.tag span{\r\n  color:whitesmoke !important;\r\n}\r\n.lang-ar {\r\n   direction: rtl;\r\n}\r\n.lang-en {\r\n   direction: ltr;\r\n}\r\n.follow {\r\n  margin-right: 20px;\r\n  margin-top: 5px;\r\n  clear: both;\r\n}\r\n.follow-icon { \r\n  width: 15px ; \r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYnVzaW5lc3MvYnVzaW5lc3Mtdmlldy9idXNpbmVzcy12aWV3LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxxQkFBcUI7RUFDckIseUJBQXlCO0VBQ3pCLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsb0RBQW9EO0VBQ3BELG9CQUFvQjtFQUNwQixpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2YsZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSwyQkFBMkI7QUFDN0I7QUFFQTtHQUNHLGNBQWM7QUFDakI7QUFDQTtHQUNHLGNBQWM7QUFDakI7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2YsV0FBVztBQUNiO0FBRUE7RUFDRSxZQUFZO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9idXNpbmVzcy9idXNpbmVzcy12aWV3L2J1c2luZXNzLXZpZXcuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50YWd7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmQ0MDA7XHJcbiAgY29sb3I6d2hpdGVzbW9rZTtcclxuICBtYXJnaW46IDRweDtcclxuICB0cmFuc2l0aW9uOiBib3gtc2hhZG93IDI4MG1zIGN1YmljLWJlemllciguNCwwLC4yLDEpO1xyXG4gIGRpc3BsYXk6IGlubGluZS1mbGV4O1xyXG4gIHBhZGRpbmc6IDdweCAxMnB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDE2cHg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgbWluLWhlaWdodDogMzJweDtcclxufVxyXG4udGFnIHNwYW57XHJcbiAgY29sb3I6d2hpdGVzbW9rZSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4ubGFuZy1hciB7XHJcbiAgIGRpcmVjdGlvbjogcnRsO1xyXG59XHJcbi5sYW5nLWVuIHtcclxuICAgZGlyZWN0aW9uOiBsdHI7XHJcbn1cclxuXHJcbi5mb2xsb3cge1xyXG4gIG1hcmdpbi1yaWdodDogMjBweDtcclxuICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgY2xlYXI6IGJvdGg7XHJcbn1cclxuXHJcbi5mb2xsb3ctaWNvbiB7IFxyXG4gIHdpZHRoOiAxNXB4IDsgXHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -2131,6 +3122,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _authentication_auth_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../authentication/auth.service */ "./src/app/authentication/auth.service.ts");
 /* harmony import */ var _ngx_gallery_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ngx-gallery/core */ "./node_modules/@ngx-gallery/core/fesm5/ngx-gallery-core.js");
+/* harmony import */ var src_app_services_follow_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/services/follow.service */ "./src/app/services/follow.service.ts");
 
 
 
@@ -2141,13 +3133,15 @@ __webpack_require__.r(__webpack_exports__);
 // import {Lightbox} from 'ngx-lightbox';
 
 
+
 var BusinessViewComponent = /** @class */ (function () {
-    function BusinessViewComponent(gallery, route, api, translteService, auth) {
+    function BusinessViewComponent(gallery, route, api, translteService, auth, followService) {
         this.gallery = gallery;
         this.route = route;
         this.api = api;
         this.translteService = translteService;
         this.auth = auth;
+        this.followService = followService;
         this.toggle1 = true;
     }
     BusinessViewComponent.prototype.ngOnInit = function () {
@@ -2170,6 +3164,7 @@ var BusinessViewComponent = /** @class */ (function () {
             }));
             _this.api.get('businesses', p).subscribe(function (data) {
                 _this.business = data[0];
+                _this.isFollowing = _this.followService.checkFollowing(_this.business['id'], "BUSINESS");
                 _this.albums = [];
                 for (var i = 0; i < _this.business['covers'].length; i++) {
                     var src = _this.business['covers'][i]['url'];
@@ -2207,12 +3202,26 @@ var BusinessViewComponent = /** @class */ (function () {
             return false;
         return this.userData.id == this.business.owner.id;
     };
+    BusinessViewComponent.prototype.toggleFollowing = function () {
+        var _this = this;
+        if (this.isFollowing) {
+            this.followService.makeUnfollow(this.business['id'], "BUSINESS").then(function (res) {
+                (res ? _this.isFollowing = !_this.isFollowing : _this.isFollowing);
+            });
+        }
+        else {
+            this.followService.makeFollow(this.business['id'], "BUSINESS").then(function (res) {
+                (res ? _this.isFollowing = !_this.isFollowing : _this.isFollowing);
+            });
+        }
+    };
     BusinessViewComponent.ctorParameters = function () { return [
         { type: _ngx_gallery_core__WEBPACK_IMPORTED_MODULE_8__["Gallery"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
         { type: _requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"] },
         { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"] },
-        { type: _authentication_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"] }
+        { type: _authentication_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"] },
+        { type: src_app_services_follow_service__WEBPACK_IMPORTED_MODULE_9__["FollowService"] }
     ]; };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('products', { static: false }),
@@ -2228,33 +3237,13 @@ var BusinessViewComponent = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./business-view.component.html */ "./node_modules/raw-loader/index.js!./src/app/business/business-view/business-view.component.html"),
             styles: [__webpack_require__(/*! ./business-view.component.css */ "./src/app/business/business-view/business-view.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_gallery_core__WEBPACK_IMPORTED_MODULE_8__["Gallery"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"], _authentication_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_gallery_core__WEBPACK_IMPORTED_MODULE_8__["Gallery"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"],
+            _authentication_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"], src_app_services_follow_service__WEBPACK_IMPORTED_MODULE_9__["FollowService"]])
     ], BusinessViewComponent);
     return BusinessViewComponent;
 }());
 
-// nameEn: "name", nameAr: "bla bla", nameUnique: "bla", logo: "logo.png", status: "activated",…}
-// category: {code: "default", titleAr: "مطاعم", titleEn: "Restaurants", creationDate: "2018-08-26T07:55:06.904Z",…}
-// categoryId: "5b825cda4892087d4b0bac95"
-// cityId: "5b825cda4892087d4b0bac87"
-// cover: "m1.jpg"
-// covers: []
-// description: "bla bla bla bla bla bla bla bla bla "
-// id: "5b825cda4892087d4b0bac9c"
-// locationId: "5b825cda4892087d4b0bac8c"
-// locationPoint: {lat: 33.513868529321854, lng: 36.276908884156455}
-// logo: "logo.png"
-// nameAr: "bla bla"
-// nameEn: "name"
-// nameUnique: "bla"
-// openingDays: [1, 2, 5]
-// openingDaysEnabled: true
-// owner: {status: "activated", birthDate: "1991-08-26T14:46:27.146Z",…}
-// ownerId: "5b8314c11960747e2397f95e"
-// products: [{name: "name1", price: 100, image: "m1.jpg", description: null, id: 1, order: 1},…]
-// status: "activated"
-// subCategory: {code: "default", titleAr: "كافتريات", titleEn: "caffe", creationDate: "2018-08-26T07:55:06.912Z",…}
-// subCategoryId: "5b825cda4892087d4b0bac99"
 
 
 /***/ }),
@@ -4083,6 +5072,7 @@ var ProductsComponent = /** @class */ (function () {
         params['filter[where][status]'] = "activated";
         params['filter[limit]'] = "20";
         params['filter[skip]'] = (20 * this.skip).toString();
+        params['filter[order]'] = "creationDate DESC";
         this.requests.get('marketProducts', params).subscribe(function (res) {
             _this.posts = res;
             _this.menuPosts = _this.posts;
@@ -4152,7 +5142,7 @@ var ProductsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".tags {\r\n    width: 100%;\r\n    min-height: 160px;\r\n    max-height: 160px;\r\n    overflow-y: auto;\r\n    border-radius: 5px;\r\n    padding: 8px 10px;\r\n  }\r\n  \r\n  .tags .oneTag {\r\n    width: -webkit-fit-content;\r\n    width: -moz-fit-content;\r\n    width: fit-content;\r\n    border: 1px solid #fbd431;\r\n    background-color: #fbd431;\r\n    padding: 0px 5px;\r\n    border-radius: 15px;\r\n    margin: 5px;\r\n  }\r\n  \r\n  .tags .oneTag i {\r\n    font-size: 11px;\r\n  }\r\n  \r\n  .mainHeader .username {\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n    margin-bottom: 8px;\r\n  }\r\n  \r\n  .mainHeader .username .edit {\r\n\r\n    font-size: 14px;\r\n    color: black;\r\n  }\r\n  \r\n  .mainHeader .username .deactive {\r\n    top: 50px;\r\n  }\r\n  \r\n  .mainHeader .username .edit:after {\r\n    content: '';\r\n    display: block;\r\n    width: 0;\r\n    height: 2px;\r\n    background: black;\r\n    transition: width .3s;\r\n  }\r\n  \r\n  .mainHeader .username .edit:hover {\r\n    color: #ffd400;\r\n    cursor: pointer;\r\n  }\r\n  \r\n  .mainHeader .username .edit:hover:after {\r\n    \r\n    background-color: #ffd400;\r\n  \r\n  }\r\n  \r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYnVzaW5lc3MvcHJvZHVjdHMvdmlldy1wcm9kdWN0L3ZpZXctcHJvZHVjdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztJQUNYLGlCQUFpQjtJQUNqQixpQkFBaUI7SUFDakIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtJQUNsQixpQkFBaUI7RUFDbkI7O0VBRUE7SUFDRSwwQkFBa0I7SUFBbEIsdUJBQWtCO0lBQWxCLGtCQUFrQjtJQUNsQix5QkFBeUI7SUFDekIseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixtQkFBbUI7SUFDbkIsV0FBVztFQUNiOztFQUVBO0lBQ0UsZUFBZTtFQUNqQjs7RUFFQTtJQUNFLGVBQWU7SUFDZixpQkFBaUI7SUFDakIsa0JBQWtCO0VBQ3BCOztFQUVBOztJQUVFLGVBQWU7SUFDZixZQUFZO0VBQ2Q7O0VBRUE7SUFDRSxTQUFTO0VBQ1g7O0VBRUE7SUFDRSxXQUFXO0lBQ1gsY0FBYztJQUNkLFFBQVE7SUFDUixXQUFXO0lBQ1gsaUJBQWlCO0lBQ2pCLHFCQUFxQjtFQUN2Qjs7RUFFQTtJQUNFLGNBQWM7SUFDZCxlQUFlO0VBQ2pCOztFQUVBOztJQUVFLHlCQUF5Qjs7RUFFM0IiLCJmaWxlIjoic3JjL2FwcC9idXNpbmVzcy9wcm9kdWN0cy92aWV3LXByb2R1Y3Qvdmlldy1wcm9kdWN0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGFncyB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG1pbi1oZWlnaHQ6IDE2MHB4O1xyXG4gICAgbWF4LWhlaWdodDogMTYwcHg7XHJcbiAgICBvdmVyZmxvdy15OiBhdXRvO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgcGFkZGluZzogOHB4IDEwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC50YWdzIC5vbmVUYWcge1xyXG4gICAgd2lkdGg6IGZpdC1jb250ZW50O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2ZiZDQzMTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYmQ0MzE7XHJcbiAgICBwYWRkaW5nOiAwcHggNXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTVweDtcclxuICAgIG1hcmdpbjogNXB4O1xyXG4gIH1cclxuICBcclxuICAudGFncyAub25lVGFnIGkge1xyXG4gICAgZm9udC1zaXplOiAxMXB4O1xyXG4gIH1cclxuXHJcbiAgLm1haW5IZWFkZXIgLnVzZXJuYW1lIHtcclxuICAgIGZvbnQtc2l6ZTogMjhweDtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogOHB4O1xyXG4gIH1cclxuICBcclxuICAubWFpbkhlYWRlciAudXNlcm5hbWUgLmVkaXQge1xyXG5cclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIGNvbG9yOiBibGFjaztcclxuICB9XHJcbiAgXHJcbiAgLm1haW5IZWFkZXIgLnVzZXJuYW1lIC5kZWFjdGl2ZSB7XHJcbiAgICB0b3A6IDUwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5tYWluSGVhZGVyIC51c2VybmFtZSAuZWRpdDphZnRlciB7XHJcbiAgICBjb250ZW50OiAnJztcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6IDA7XHJcbiAgICBoZWlnaHQ6IDJweDtcclxuICAgIGJhY2tncm91bmQ6IGJsYWNrO1xyXG4gICAgdHJhbnNpdGlvbjogd2lkdGggLjNzO1xyXG4gIH1cclxuICBcclxuICAubWFpbkhlYWRlciAudXNlcm5hbWUgLmVkaXQ6aG92ZXIge1xyXG4gICAgY29sb3I6ICNmZmQ0MDA7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgfVxyXG4gIFxyXG4gIC5tYWluSGVhZGVyIC51c2VybmFtZSAuZWRpdDpob3ZlcjphZnRlciB7XHJcbiAgICBcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmQ0MDA7XHJcbiAgXHJcbiAgfVxyXG4gIFxyXG4gICJdfQ== */"
+module.exports = ".tags {\r\n  width: 100%;\r\n  min-height: 160px;\r\n  max-height: 160px;\r\n  overflow-y: auto;\r\n  border-radius: 5px;\r\n  padding: 8px 10px;\r\n}\r\n\r\n.tags .oneTag {\r\n  width: -webkit-fit-content;\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n  border: 1px solid #fbd431;\r\n  background-color: #fbd431;\r\n  padding: 0px 5px;\r\n  border-radius: 15px;\r\n  margin: 5px;\r\n}\r\n\r\n.tags .oneTag i {\r\n  font-size: 11px;\r\n}\r\n\r\n.mainHeader .username {\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.mainHeader .username .edit {\r\n\r\n  font-size: 14px;\r\n  color: black;\r\n}\r\n\r\n.mainHeader .username .deactive {\r\n  top: 50px;\r\n}\r\n\r\n.mainHeader .username .edit:after {\r\n  content: '';\r\n  display: block;\r\n  width: 0;\r\n  height: 2px;\r\n  background: black;\r\n  transition: width .3s;\r\n}\r\n\r\n.mainHeader .username .edit:hover {\r\n  color: #ffd400;\r\n  cursor: pointer;\r\n}\r\n\r\n.mainHeader .username .edit:hover:after {\r\n\r\n  background-color: #ffd400;\r\n\r\n}\r\n\r\n.rate {\r\n  float: left;\r\n}\r\n\r\n.rate:not(:checked)>input {\r\n  position: absolute;\r\n  top: -9999px;\r\n}\r\n\r\n.rate:not(:checked)>label {\r\n  float: right;\r\n  width: 1em;\r\n  overflow: hidden;\r\n  white-space: nowrap;\r\n  cursor: pointer;\r\n  font-size: 30px;\r\n  color: #ccc;\r\n}\r\n\r\n.rate:not(:checked)>label:before {\r\n  content: '★ ';\r\n}\r\n\r\n.rate>input:checked~label {\r\n  color: #ffc700;\r\n}\r\n\r\n.rate-wrapper {\r\n  height: 155px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n.rate-box {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: flex-start;\r\n  align-items: center;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.rate-image {\r\n  width: 60px;\r\n  height: 60px;\r\n  border-radius: 50%;\r\n  overflow: hidden;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  margin: 5px 0px 5px 15px;\r\n  cursor: pointer;\r\n}\r\n\r\n.rate-text {\r\n  margin-right: 10px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYnVzaW5lc3MvcHJvZHVjdHMvdmlldy1wcm9kdWN0L3ZpZXctcHJvZHVjdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVztFQUNYLGlCQUFpQjtFQUNqQixpQkFBaUI7RUFDakIsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSwwQkFBa0I7RUFBbEIsdUJBQWtCO0VBQWxCLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIseUJBQXlCO0VBQ3pCLGdCQUFnQjtFQUNoQixtQkFBbUI7RUFDbkIsV0FBVztBQUNiOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCOztBQUVBOztFQUVFLGVBQWU7RUFDZixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxTQUFTO0FBQ1g7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsY0FBYztFQUNkLFFBQVE7RUFDUixXQUFXO0VBQ1gsaUJBQWlCO0VBQ2pCLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxlQUFlO0FBQ2pCOztBQUVBOztFQUVFLHlCQUF5Qjs7QUFFM0I7O0FBRUE7RUFDRSxXQUFXO0FBQ2I7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsWUFBWTtBQUNkOztBQUVBO0VBQ0UsWUFBWTtFQUNaLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixlQUFlO0VBQ2YsV0FBVztBQUNiOztBQUVBO0VBQ0UsYUFBYTtBQUNmOztBQUVBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGFBQWE7RUFDYixrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLDJCQUEyQjtFQUMzQixtQkFBbUI7RUFDbkIsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsbUJBQW1CO0VBQ25CLHdCQUF3QjtFQUN4QixlQUFlO0FBQ2pCOztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCIiwiZmlsZSI6InNyYy9hcHAvYnVzaW5lc3MvcHJvZHVjdHMvdmlldy1wcm9kdWN0L3ZpZXctcHJvZHVjdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRhZ3Mge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1pbi1oZWlnaHQ6IDE2MHB4O1xyXG4gIG1heC1oZWlnaHQ6IDE2MHB4O1xyXG4gIG92ZXJmbG93LXk6IGF1dG87XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIHBhZGRpbmc6IDhweCAxMHB4O1xyXG59XHJcblxyXG4udGFncyAub25lVGFnIHtcclxuICB3aWR0aDogZml0LWNvbnRlbnQ7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgI2ZiZDQzMTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmJkNDMxO1xyXG4gIHBhZGRpbmc6IDBweCA1cHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMTVweDtcclxuICBtYXJnaW46IDVweDtcclxufVxyXG5cclxuLnRhZ3MgLm9uZVRhZyBpIHtcclxuICBmb250LXNpemU6IDExcHg7XHJcbn1cclxuXHJcbi5tYWluSGVhZGVyIC51c2VybmFtZSB7XHJcbiAgZm9udC1zaXplOiAyOHB4O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIG1hcmdpbi1ib3R0b206IDhweDtcclxufVxyXG5cclxuLm1haW5IZWFkZXIgLnVzZXJuYW1lIC5lZGl0IHtcclxuXHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG4gIGNvbG9yOiBibGFjaztcclxufVxyXG5cclxuLm1haW5IZWFkZXIgLnVzZXJuYW1lIC5kZWFjdGl2ZSB7XHJcbiAgdG9wOiA1MHB4O1xyXG59XHJcblxyXG4ubWFpbkhlYWRlciAudXNlcm5hbWUgLmVkaXQ6YWZ0ZXIge1xyXG4gIGNvbnRlbnQ6ICcnO1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIHdpZHRoOiAwO1xyXG4gIGhlaWdodDogMnB4O1xyXG4gIGJhY2tncm91bmQ6IGJsYWNrO1xyXG4gIHRyYW5zaXRpb246IHdpZHRoIC4zcztcclxufVxyXG5cclxuLm1haW5IZWFkZXIgLnVzZXJuYW1lIC5lZGl0OmhvdmVyIHtcclxuICBjb2xvcjogI2ZmZDQwMDtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5tYWluSGVhZGVyIC51c2VybmFtZSAuZWRpdDpob3ZlcjphZnRlciB7XHJcblxyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmQ0MDA7XHJcblxyXG59XHJcblxyXG4ucmF0ZSB7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbi5yYXRlOm5vdCg6Y2hlY2tlZCk+aW5wdXQge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB0b3A6IC05OTk5cHg7XHJcbn1cclxuXHJcbi5yYXRlOm5vdCg6Y2hlY2tlZCk+bGFiZWwge1xyXG4gIGZsb2F0OiByaWdodDtcclxuICB3aWR0aDogMWVtO1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgZm9udC1zaXplOiAzMHB4O1xyXG4gIGNvbG9yOiAjY2NjO1xyXG59XHJcblxyXG4ucmF0ZTpub3QoOmNoZWNrZWQpPmxhYmVsOmJlZm9yZSB7XHJcbiAgY29udGVudDogJ+KYhSAnO1xyXG59XHJcblxyXG4ucmF0ZT5pbnB1dDpjaGVja2VkfmxhYmVsIHtcclxuICBjb2xvcjogI2ZmYzcwMDtcclxufVxyXG5cclxuLnJhdGUtd3JhcHBlciB7XHJcbiAgaGVpZ2h0OiAxNTVweDtcclxuICBvdmVyZmxvdy15OiBzY3JvbGw7XHJcbn1cclxuXHJcbi5yYXRlLWJveCB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gIGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIG1hcmdpbi1ib3R0b206IDE1cHg7XHJcbn1cclxuXHJcbi5yYXRlLWltYWdlIHtcclxuICB3aWR0aDogNjBweDtcclxuICBoZWlnaHQ6IDYwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgbWFyZ2luOiA1cHggMHB4IDVweCAxNXB4O1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLnJhdGUtdGV4dCB7XHJcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -4176,6 +5166,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var src_app_verification_message_verification_message_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/verification-message/verification-message.component */ "./src/app/verification-message/verification-message.component.ts");
 /* harmony import */ var src_app_success_message_success_message_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/success-message/success-message.component */ "./src/app/success-message/success-message.component.ts");
+/* harmony import */ var src_app_modals_rate_add_rate_add_rate_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/modals/rate/add-rate/add-rate.component */ "./src/app/modals/rate/add-rate/add-rate.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 
 
 
@@ -4186,6 +5178,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+// import * as _swal from 'sweetalert';
+// import { SweetAlert } from 'sweetalert/typings/core';
+// const swal: SweetAlert = _swal as any;
 var ViewProductComponent = /** @class */ (function () {
     function ViewProductComponent(gallery, route, router, tr, api, auth, dialog) {
         this.gallery = gallery;
@@ -4199,12 +5196,14 @@ var ViewProductComponent = /** @class */ (function () {
         this.toggle1 = true;
         this.toggle2 = true;
         this.isMyProduct = false;
+        this.ratings = [];
         this._albums = [];
     }
     ViewProductComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.subscribe(function (params) {
             _this.data['id'] = params.id;
+            _this.getRatings();
             _this.api.get('marketProducts/' + _this.data['id']).toPromise().then(function (res) {
                 var userData = _this.auth.getUserDataLocal();
                 _this.data['phone'] = res['owner']['phoneNumber'];
@@ -4242,6 +5241,23 @@ var ViewProductComponent = /** @class */ (function () {
             });
         });
     };
+    ViewProductComponent.prototype.getRatings = function () {
+        var _this = this;
+        var p = new _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpParams"]();
+        p = p.set('filter', JSON.stringify({
+            "where": {
+                "productId": this.data['id'],
+            },
+        }));
+        this.api.get('/ratings', p).toPromise().then(function (res) {
+            _this.ratings = res;
+            _this.ratings.map(function (rate) {
+                if (rate.owner.imageProfile === '')
+                    rate.owner.imageProfile = 'assets/images/page/employee.png';
+                return rate;
+            });
+        });
+    };
     ViewProductComponent.prototype.deactive = function () {
         var _this = this;
         var self = this;
@@ -4265,6 +5281,27 @@ var ViewProductComponent = /** @class */ (function () {
     };
     ViewProductComponent.prototype.goToEdit = function () {
         this.router.navigate(["products/" + this.data['id'] + "/edit"]);
+    };
+    ViewProductComponent.prototype.rate = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(src_app_modals_rate_add_rate_add_rate_component__WEBPACK_IMPORTED_MODULE_10__["AddRateComponent"], {
+            panelClass: 'communictioDialogStyle',
+            data: { "id": this.data['id'] },
+        });
+        dialogRef.afterClosed().subscribe(function (res) {
+            if (res) {
+                if (res.status && res.status === 601) {
+                    // swal({
+                    //   title: "Error",
+                    //   text: "User Has Already Rated",
+                    //   icon: "error",
+                    // });
+                }
+                else {
+                    _this.getRatings();
+                }
+            }
+        });
     };
     ViewProductComponent.ctorParameters = function () { return [
         { type: _ngx_gallery_core__WEBPACK_IMPORTED_MODULE_4__["Gallery"] },
@@ -4498,6 +5535,10 @@ var SuppliersComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-suppliers',
             template: __webpack_require__(/*! raw-loader!./suppliers.component.html */ "./node_modules/raw-loader/index.js!./src/app/business/suppliers/suppliers.component.html"),
+            providers: [
+                { provide: 'supplier_flag_parameter', useValue: true },
+                { provide: src_app_common_data_service__WEBPACK_IMPORTED_MODULE_2__["CommonDataService"], useClass: src_app_common_data_service__WEBPACK_IMPORTED_MODULE_2__["CommonDataService"] }
+            ],
             styles: [__webpack_require__(/*! ./suppliers.component.css */ "./src/app/business/suppliers/suppliers.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_5__["TranslateService"], src_app_common_data_service__WEBPACK_IMPORTED_MODULE_2__["CommonDataService"],
@@ -4835,10 +5876,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var CommonDataService = /** @class */ (function () {
-    function CommonDataService(requests, ts) {
+    function CommonDataService(requests, ts, isSupplier) {
         this.requests = requests;
         this.ts = ts;
+        this.isSupplier = isSupplier;
         this.filterItem = {};
         //categories and subCategories, then adding a title attribute depending on selected language 
         this.categoriesPromise =
@@ -4883,7 +5927,11 @@ var CommonDataService = /** @class */ (function () {
             }
         });
         // Business categories, then add a title attribute depending on selected language
-        this.bCategoryPromise = this.requests.get('businessCategories?filter={"where":{"parentCategoryId" : {"exists" : false}},"include":"subCategories"}').toPromise();
+        console.log(this.isSupplier);
+        if (this.isSupplier)
+            this.bCategoryPromise = this.requests.get("businessCategories?filter={\"where\":{\"parentCategoryId\" : {\"exists\" : false}, \"isSupplier\": " + this.isSupplier + "},\"include\":\"subCategories\"}").toPromise();
+        else
+            this.bCategoryPromise = this.requests.get("businessCategories?filter={\"where\":{\"parentCategoryId\" : {\"exists\" : false}},\"include\":\"subCategories\"}").toPromise();
         this.bCategoryPromise.then(function (res) {
             if (ts.currentLang == 'ar') {
                 res.forEach(function (element) {
@@ -4903,7 +5951,7 @@ var CommonDataService = /** @class */ (function () {
             }
         });
         // Job categories, then add a title attribute depending on selected language
-        this.jCategoryPromise = this.requests.get('jobOpportunityCategories?filter={"where":{"parentCategoryId" : {"exists" : false}},"include":"subCategories"}').toPromise();
+        this.jCategoryPromise = this.requests.get("jobOpportunityCategories?filter={\"where\":{\"parentCategoryId\" : {\"exists\" : false}},\"include\":\"subCategories\"}").toPromise();
         this.jCategoryPromise.then(function (res) {
             if (ts.currentLang == 'ar') {
                 res.forEach(function (element) {
@@ -4945,13 +5993,15 @@ var CommonDataService = /** @class */ (function () {
     }
     CommonDataService.ctorParameters = function () { return [
         { type: _requests_service__WEBPACK_IMPORTED_MODULE_2__["RequestsService"] },
-        { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"] }
+        { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"] },
+        { type: Boolean, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: ['supplier_flag_parameter',] }] }
     ]; };
     CommonDataService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_requests_service__WEBPACK_IMPORTED_MODULE_2__["RequestsService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"])()), tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])('supplier_flag_parameter')),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_requests_service__WEBPACK_IMPORTED_MODULE_2__["RequestsService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"], Boolean])
     ], CommonDataService);
     return CommonDataService;
 }());
@@ -5414,6 +6464,88 @@ var VolumeComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/modals/rate/add-rate/add-rate.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/modals/rate/add-rate/add-rate.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".module {\r\n  height: 275px;\r\n  width: 376px;\r\n  background-color: white;\r\n  border-radius: 10px;\r\n  position: relative;\r\n}\r\n\r\n\r\n.module .headers {\r\n  width: 100%;\r\n  top: 0px;\r\n  padding-top: 19px;\r\n  padding-bottom: 10px;\r\n}\r\n\r\n\r\n.headers .mainLabel {\r\n  border-bottom: 3px solid #fbd431;\r\n  padding-bottom: 0px;\r\n  display: inline;\r\n  font-weight: bold;\r\n  margin: 10px 30px;\r\n  font-size: 22px;\r\n}\r\n\r\n\r\n.module .headers i {\r\n  float: right;\r\n  margin: 10px 30px;\r\n  font-size: 23px;\r\n  color: #9b9b9b;\r\n  font-weight: 100;\r\n}\r\n\r\n\r\n.module .headers i:hover {\r\n  cursor: pointer;\r\n  color: #fbd431;\r\n  -webkit-animation: fa-spin 3s;\r\n          animation: fa-spin 3s;\r\n}\r\n\r\n\r\n@-webkit-keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg)\r\n  }\r\n\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg)\r\n  }\r\n}\r\n\r\n\r\n@keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg)\r\n  }\r\n\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg)\r\n  }\r\n}\r\n\r\n\r\n.module .contint {\r\n  padding: 20px 40px;\r\n  width: 100%;\r\n  position: relative;\r\n}\r\n\r\n\r\n.module .contint .inputDiv {\r\n  width: 100%;\r\n  padding: 10px 0;\r\n}\r\n\r\n\r\n.module .contint .inputDiv:first-child {\r\n  padding-top: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv:last-child {\r\n  padding-bottom: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .title {\r\n  font-weight: bold;\r\n  padding: 5px 0px ; \r\n}\r\n\r\n\r\n.module .contint .inputDiv textarea {\r\n  height: 80px;\r\n  resize: none;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input {\r\n  width: calc(100% - 20px);\r\n  height: auto;\r\n  padding: 10px;\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"email\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  height: auto;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv input[type=\"password\"] {\r\n  width: calc(100% - 20px);\r\n  padding-left: 10px;\r\n  background-color: #e4e4e4;\r\n  border-radius: 5px;\r\n  box-shadow: none;\r\n  font-size: 16px;\r\n  border: none;\r\n  padding: 10px;\r\n  height: auto;\r\n  margin: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-webkit-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-moz-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input:-ms-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::-ms-input-placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .input::placeholder {\r\n  color: #9c9c9c;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.chechboxDiv span {\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv {\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .oneDate {\r\n  width: 22.5%;\r\n  padding: 10px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .oneDate:first-child {\r\n  padding-right: 0px;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .toDiv {\r\n  width: 10%;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .dateDiv .toDiv h4 {\r\n  text-align: center;\r\n  padding-top: 17px;\r\n  font-weight: 600;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select {\r\n  display: block;\r\n  font-weight: bold;\r\n  color: #9c9c9c;\r\n  padding: 10px;\r\n  height: 43px;\r\n  width: 100%;\r\n  border: transparent;\r\n  max-width: 100%;\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  border-radius: .5em;\r\n  -moz-appearance: none;\r\n  -webkit-appearance: none;\r\n  appearance: none;\r\n  background-color: #e4e4e4;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select {\r\n  background-image: linear-gradient(45deg, transparent 50%, #828282 50%), linear-gradient(135deg, #828282 50%, transparent 50%);\r\n  background-position: calc(100% - 20px) calc(1em + 5px), calc(100% - 12px) calc(1em + 5px), 100% 0px;\r\n  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;\r\n  background-size: 10px 7px;\r\n  background-repeat: no-repeat;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select::-ms-expand {\r\n  display: none;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select:hover {\r\n  border-color: #888;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select:focus {\r\n  border-color: #aaa;\r\n  box-shadow: 0 0 4px 2px #9c9c9c;\r\n  color: #9c9c9c;\r\n  outline: none;\r\n}\r\n\r\n\r\n.module .contint .inputDiv .select option:checked,\r\n.module .contint .inputDiv .select option:hover {\r\n  background-color: #9c9c9c;\r\n  color: white;\r\n}\r\n\r\n\r\n.module .footer {\r\n  padding: 0px 20px;\r\n  clear: both;\r\n}\r\n\r\n\r\n.module .footer .button {\r\n  padding: 3px;\r\n  width: 83%;\r\n  text-align: center;\r\n  color: #FFF;\r\n  margin-left: 20px;\r\n  border-radius: 5px;\r\n  font-weight: 600;\r\n  border: 1px solid;\r\n  position: relative;\r\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;\r\n}\r\n\r\n\r\n.module .footer .button:before,\r\n.module .footer .button:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 10px;\r\n  right: 10px;\r\n  border-radius: 100px / 10px;\r\n}\r\n\r\n\r\n.module .footer .button:after {\r\n  right: 10px;\r\n  left: auto;\r\n  -webkit-transform: skew(8deg) rotate(3deg);\r\n  transform: skew(8deg) rotate(3deg);\r\n}\r\n\r\n\r\n.module .footer .button.save {\r\n  border-color: #fbd431;\r\n  background-color: #fbd431;\r\n}\r\n\r\n\r\n.module .footer .button.delete {\r\n  border-color: #9c9c9c;\r\n}\r\n\r\n\r\n.button:hover {\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n.errorMessage {\r\n  top: 5px;\r\n  font-size: 12px;\r\n  color: #DC143C;\r\n  position: absolute;\r\n  font-weight: 700;\r\n}\r\n\r\n\r\n.loginBtn {\r\n  box-sizing: border-box;\r\n  position: relative;\r\n  text-align: center !important;\r\n  margin: 0.2em;\r\n  padding: 0 15px 0 46px;\r\n  border: none;\r\n  text-align: left;\r\n  line-height: 34px;\r\n  white-space: nowrap;\r\n  border-radius: 0.2em;\r\n  font-size: 16px;\r\n  color: #FFF;\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n.loginBtn:before {\r\n  content: \"\";\r\n  box-sizing: border-box;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 34px;\r\n  height: 100%;\r\n}\r\n\r\n\r\n.loginBtn:focus {\r\n  outline: none;\r\n}\r\n\r\n\r\n.loginBtn:active {\r\n  box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n\r\n.rate {\r\n  float: left; \r\n}\r\n\r\n\r\n.rate:not(:checked)>input {\r\n  position: absolute;\r\n  top: -9999px;\r\n}\r\n\r\n\r\n.rate:not(:checked)>label {\r\n  float: right;\r\n  width: 1em;\r\n  overflow: hidden;\r\n  white-space: nowrap;\r\n  cursor: pointer;\r\n  font-size: 30px;\r\n  color: #ccc;\r\n}\r\n\r\n\r\n.rate:not(:checked)>label:before {\r\n  content: '★ ';\r\n}\r\n\r\n\r\n.rate>input:checked~label {\r\n  color: #ffc700;\r\n}\r\n\r\n\r\n.rate:not(:checked)>label:hover,\r\n.rate:not(:checked)>label:hover~label {\r\n  color: #deb217;\r\n}\r\n\r\n\r\n.rate>input:checked+label:hover,\r\n.rate>input:checked+label:hover~label,\r\n.rate>input:checked~label:hover,\r\n.rate>input:checked~label:hover~label,\r\n.rate>label:hover~input:checked~label {\r\n  color: #c59b08;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWxzL3JhdGUvYWRkLXJhdGUvYWRkLXJhdGUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7RUFDYixZQUFZO0VBQ1osdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7QUFDcEI7OztBQUdBO0VBQ0UsV0FBVztFQUNYLFFBQVE7RUFDUixpQkFBaUI7RUFDakIsb0JBQW9CO0FBQ3RCOzs7QUFFQTtFQUNFLGdDQUFnQztFQUNoQyxtQkFBbUI7RUFDbkIsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixpQkFBaUI7RUFDakIsZUFBZTtBQUNqQjs7O0FBRUE7RUFDRSxZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZixjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOzs7QUFFQTtFQUNFLGVBQWU7RUFDZixjQUFjO0VBQ2QsNkJBQXFCO1VBQXJCLHFCQUFxQjtBQUN2Qjs7O0FBRUE7RUFDRTtJQUNFLCtCQUErQjtJQUMvQjtFQUNGOztFQUVBO0lBQ0UsaUNBQWlDO0lBQ2pDO0VBQ0Y7QUFDRjs7O0FBRUE7RUFDRTtJQUNFLCtCQUErQjtJQUMvQjtFQUNGOztFQUVBO0lBQ0UsaUNBQWlDO0lBQ2pDO0VBQ0Y7QUFDRjs7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGtCQUFrQjtBQUNwQjs7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsZUFBZTtBQUNqQjs7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7OztBQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCOzs7QUFJQTtFQUNFLGlCQUFpQjtFQUNqQixpQkFBaUI7QUFDbkI7OztBQUVBO0VBQ0UsWUFBWTtFQUNaLFlBQVk7RUFDWixXQUFXO0FBQ2I7OztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixZQUFZOztFQUVaLFdBQVc7QUFDYjs7O0FBRUE7RUFDRSx3QkFBd0I7RUFDeEIsa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2YsWUFBWTtFQUNaLGFBQWE7RUFDYixXQUFXO0FBQ2I7OztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2YsWUFBWTtFQUNaLGFBQWE7RUFDYixZQUFZO0VBQ1osV0FBVztBQUNiOzs7QUFJQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7OztBQUhBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7O0FBSEE7RUFDRSxjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOzs7QUFIQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7OztBQUhBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7OztBQUVBO0VBQ0UsV0FBVztFQUNYLHFCQUFxQjtBQUN2Qjs7O0FBRUE7RUFDRSxZQUFZO0VBQ1osYUFBYTtBQUNmOzs7QUFFQTtFQUNFLGtCQUFrQjtBQUNwQjs7O0FBR0E7RUFDRSxVQUFVO0FBQ1o7OztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixnQkFBZ0I7QUFDbEI7OztBQUVBO0VBQ0UsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixjQUFjO0VBQ2QsYUFBYTtFQUNiLFlBQVk7RUFDWixXQUFXO0VBQ1gsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixzQkFBc0I7RUFDdEIsU0FBUztFQUNULG1CQUFtQjtFQUNuQixxQkFBcUI7RUFDckIsd0JBQXdCO0VBQ3hCLGdCQUFnQjtFQUNoQix5QkFBeUI7QUFDM0I7OztBQUVBO0VBQ0UsNkhBQTZIO0VBQzdILG1HQUFtRztFQUNuRyw4Q0FBOEM7RUFDOUMseUJBQXlCO0VBQ3pCLDRCQUE0QjtBQUM5Qjs7O0FBR0E7RUFDRSxhQUFhO0FBQ2Y7OztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOzs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQiwrQkFBK0I7RUFDL0IsY0FBYztFQUNkLGFBQWE7QUFDZjs7O0FBR0E7O0VBRUUseUJBQXlCO0VBQ3pCLFlBQVk7QUFDZDs7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsV0FBVztBQUNiOzs7QUFFQTtFQUNFLFlBQVk7RUFDWixVQUFVO0VBQ1Ysa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxpQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsa0JBQWtCO0VBR2xCLDJFQUEyRTtBQUM3RTs7O0FBRUE7O0VBRUUsV0FBVztFQUNYLGtCQUFrQjtFQUNsQixXQUFXO0VBR1gsdUNBQXVDO0VBQ3ZDLE1BQU07RUFDTixTQUFTO0VBQ1QsVUFBVTtFQUNWLFdBQVc7RUFFWCwyQkFBMkI7QUFDN0I7OztBQUVBO0VBQ0UsV0FBVztFQUNYLFVBQVU7RUFDViwwQ0FBMEM7RUFJMUMsa0NBQWtDO0FBQ3BDOzs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQix5QkFBeUI7QUFDM0I7OztBQUVBO0VBQ0UscUJBQXFCO0FBQ3ZCOzs7QUFFQTtFQUNFLGVBQWU7QUFDakI7OztBQUVBO0VBQ0UsUUFBUTtFQUNSLGVBQWU7RUFDZixjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGdCQUFnQjtBQUNsQjs7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsa0JBQWtCO0VBQ2xCLDZCQUE2QjtFQUM3QixhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQixvQkFBb0I7RUFDcEIsZUFBZTtFQUNmLFdBQVc7RUFDWCxlQUFlO0FBQ2pCOzs7QUFFQTtFQUNFLFdBQVc7RUFDWCxzQkFBc0I7RUFDdEIsa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixPQUFPO0VBQ1AsV0FBVztFQUNYLFlBQVk7QUFDZDs7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7OztBQUVBO0VBQ0UsK0NBQStDO0FBQ2pEOzs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsWUFBWTtBQUNkOzs7QUFFQTtFQUNFLFlBQVk7RUFDWixVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2YsZUFBZTtFQUNmLFdBQVc7QUFDYjs7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7OztBQUVBO0VBQ0UsY0FBYztBQUNoQjs7O0FBRUE7O0VBRUUsY0FBYztBQUNoQjs7O0FBRUE7Ozs7O0VBS0UsY0FBYztBQUNoQiIsImZpbGUiOiJzcmMvYXBwL21vZGFscy9yYXRlL2FkZC1yYXRlL2FkZC1yYXRlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubW9kdWxlIHtcclxuICBoZWlnaHQ6IDI3NXB4O1xyXG4gIHdpZHRoOiAzNzZweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuXHJcbi5tb2R1bGUgLmhlYWRlcnMge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHRvcDogMHB4O1xyXG4gIHBhZGRpbmctdG9wOiAxOXB4O1xyXG4gIHBhZGRpbmctYm90dG9tOiAxMHB4O1xyXG59XHJcblxyXG4uaGVhZGVycyAubWFpbkxhYmVsIHtcclxuICBib3JkZXItYm90dG9tOiAzcHggc29saWQgI2ZiZDQzMTtcclxuICBwYWRkaW5nLWJvdHRvbTogMHB4O1xyXG4gIGRpc3BsYXk6IGlubGluZTtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBtYXJnaW46IDEwcHggMzBweDtcclxuICBmb250LXNpemU6IDIycHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmhlYWRlcnMgaSB7XHJcbiAgZmxvYXQ6IHJpZ2h0O1xyXG4gIG1hcmdpbjogMTBweCAzMHB4O1xyXG4gIGZvbnQtc2l6ZTogMjNweDtcclxuICBjb2xvcjogIzliOWI5YjtcclxuICBmb250LXdlaWdodDogMTAwO1xyXG59XHJcblxyXG4ubW9kdWxlIC5oZWFkZXJzIGk6aG92ZXIge1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBjb2xvcjogI2ZiZDQzMTtcclxuICBhbmltYXRpb246IGZhLXNwaW4gM3M7XHJcbn1cclxuXHJcbkAtd2Via2l0LWtleWZyYW1lcyBmYS1zcGluIHtcclxuICAwJSB7XHJcbiAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZylcclxuICB9XHJcblxyXG4gIDEwMCUge1xyXG4gICAgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNTlkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKVxyXG4gIH1cclxufVxyXG5cclxuQGtleWZyYW1lcyBmYS1zcGluIHtcclxuICAwJSB7XHJcbiAgICAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZylcclxuICB9XHJcblxyXG4gIDEwMCUge1xyXG4gICAgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSgzNTlkZWcpO1xyXG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMzU5ZGVnKVxyXG4gIH1cclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCB7XHJcbiAgcGFkZGluZzogMjBweCA0MHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBhZGRpbmc6IDEwcHggMDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXY6Zmlyc3QtY2hpbGQge1xyXG4gIHBhZGRpbmctdG9wOiAwcHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2Omxhc3QtY2hpbGQge1xyXG4gIHBhZGRpbmctYm90dG9tOiAwcHg7XHJcbn1cclxuXHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLnRpdGxlIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBwYWRkaW5nOiA1cHggMHB4IDsgXHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IHRleHRhcmVhIHtcclxuICBoZWlnaHQ6IDgwcHg7XHJcbiAgcmVzaXplOiBub25lO1xyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuaW5wdXQge1xyXG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAyMHB4KTtcclxuICBoZWlnaHQ6IGF1dG87XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2U0ZTRlNDtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgYm94LXNoYWRvdzogbm9uZTtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgYm9yZGVyOiBub25lO1xyXG5cclxuICBtYXJnaW46IDBweDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgaW5wdXRbdHlwZT1cImVtYWlsXCJdIHtcclxuICB3aWR0aDogY2FsYygxMDAlIC0gMjBweCk7XHJcbiAgcGFkZGluZy1sZWZ0OiAxMHB4O1xyXG4gIGhlaWdodDogYXV0bztcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTRlNGU0O1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBib3gtc2hhZG93OiBub25lO1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBtYXJnaW46IDBweDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgaW5wdXRbdHlwZT1cInBhc3N3b3JkXCJdIHtcclxuICB3aWR0aDogY2FsYygxMDAlIC0gMjBweCk7XHJcbiAgcGFkZGluZy1sZWZ0OiAxMHB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNlNGU0ZTQ7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGJveC1zaGFkb3c6IG5vbmU7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIGhlaWdodDogYXV0bztcclxuICBtYXJnaW46IDBweDtcclxufVxyXG5cclxuXHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuaW5wdXQ6OnBsYWNlaG9sZGVyIHtcclxuICBjb2xvcjogIzljOWM5YztcclxuICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG4uY2hlY2hib3hEaXYgc3BhbiB7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmRhdGVEaXYge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmRhdGVEaXYgLm9uZURhdGUge1xyXG4gIHdpZHRoOiAyMi41JTtcclxuICBwYWRkaW5nOiAxMHB4O1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuZGF0ZURpdiAub25lRGF0ZTpmaXJzdC1jaGlsZCB7XHJcbiAgcGFkZGluZy1yaWdodDogMHB4O1xyXG59XHJcblxyXG5cclxuLm1vZHVsZSAuY29udGludCAuaW5wdXREaXYgLmRhdGVEaXYgLnRvRGl2IHtcclxuICB3aWR0aDogMTAlO1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuZGF0ZURpdiAudG9EaXYgaDQge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBwYWRkaW5nLXRvcDogMTdweDtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuc2VsZWN0IHtcclxuICBkaXNwbGF5OiBibG9jaztcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBjb2xvcjogIzljOWM5YztcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIGhlaWdodDogNDNweDtcclxuICB3aWR0aDogMTAwJTtcclxuICBib3JkZXI6IHRyYW5zcGFyZW50O1xyXG4gIG1heC13aWR0aDogMTAwJTtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIG1hcmdpbjogMDtcclxuICBib3JkZXItcmFkaXVzOiAuNWVtO1xyXG4gIC1tb3otYXBwZWFyYW5jZTogbm9uZTtcclxuICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XHJcbiAgYXBwZWFyYW5jZTogbm9uZTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTRlNGU0O1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuc2VsZWN0IHtcclxuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoNDVkZWcsIHRyYW5zcGFyZW50IDUwJSwgIzgyODI4MiA1MCUpLCBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjODI4MjgyIDUwJSwgdHJhbnNwYXJlbnQgNTAlKTtcclxuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjYWxjKDEwMCUgLSAyMHB4KSBjYWxjKDFlbSArIDVweCksIGNhbGMoMTAwJSAtIDEycHgpIGNhbGMoMWVtICsgNXB4KSwgMTAwJSAwcHg7XHJcbiAgYmFja2dyb3VuZC1zaXplOiA1cHggNXB4LCA1cHggNXB4LCAyLjVlbSAyLjVlbTtcclxuICBiYWNrZ3JvdW5kLXNpemU6IDEwcHggN3B4O1xyXG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbn1cclxuXHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuc2VsZWN0OjotbXMtZXhwYW5kIHtcclxuICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuc2VsZWN0OmhvdmVyIHtcclxuICBib3JkZXItY29sb3I6ICM4ODg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmNvbnRpbnQgLmlucHV0RGl2IC5zZWxlY3Q6Zm9jdXMge1xyXG4gIGJvcmRlci1jb2xvcjogI2FhYTtcclxuICBib3gtc2hhZG93OiAwIDAgNHB4IDJweCAjOWM5YzljO1xyXG4gIGNvbG9yOiAjOWM5YzljO1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbn1cclxuXHJcblxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuc2VsZWN0IG9wdGlvbjpjaGVja2VkLFxyXG4ubW9kdWxlIC5jb250aW50IC5pbnB1dERpdiAuc2VsZWN0IG9wdGlvbjpob3ZlciB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzljOWM5YztcclxuICBjb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmZvb3RlciB7XHJcbiAgcGFkZGluZzogMHB4IDIwcHg7XHJcbiAgY2xlYXI6IGJvdGg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmZvb3RlciAuYnV0dG9uIHtcclxuICBwYWRkaW5nOiAzcHg7XHJcbiAgd2lkdGg6IDgzJTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgY29sb3I6ICNGRkY7XHJcbiAgbWFyZ2luLWxlZnQ6IDIwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgYm9yZGVyOiAxcHggc29saWQ7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIC13ZWJraXQtYm94LXNoYWRvdzogMCAxcHggNHB4IHJnYmEoMCwgMCwgMCwgMC4zKSwgMCAwIDQwcHggcmdiYSgwLCAwLCAwLCAwLjEpIGluc2V0O1xyXG4gIC1tb3otYm94LXNoYWRvdzogMCAxcHggNHB4IHJnYmEoMCwgMCwgMCwgMC4zKSwgMCAwIDQwcHggcmdiYSgwLCAwLCAwLCAwLjEpIGluc2V0O1xyXG4gIGJveC1zaGFkb3c6IDAgMXB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMyksIDAgMCA0MHB4IHJnYmEoMCwgMCwgMCwgMC4xKSBpbnNldDtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIC5idXR0b246YmVmb3JlLFxyXG4ubW9kdWxlIC5mb290ZXIgLmJ1dHRvbjphZnRlciB7XHJcbiAgY29udGVudDogXCJcIjtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgei1pbmRleDogLTE7XHJcbiAgLXdlYmtpdC1ib3gtc2hhZG93OiAwIDAgMjBweCByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgLW1vei1ib3gtc2hhZG93OiAwIDAgMjBweCByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgYm94LXNoYWRvdzogMCAwIDIwcHggcmdiYSgwLCAwLCAwLCAwLjgpO1xyXG4gIHRvcDogMDtcclxuICBib3R0b206IDA7XHJcbiAgbGVmdDogMTBweDtcclxuICByaWdodDogMTBweDtcclxuICAtbW96LWJvcmRlci1yYWRpdXM6IDEwMHB4IC8gMTBweDtcclxuICBib3JkZXItcmFkaXVzOiAxMDBweCAvIDEwcHg7XHJcbn1cclxuXHJcbi5tb2R1bGUgLmZvb3RlciAuYnV0dG9uOmFmdGVyIHtcclxuICByaWdodDogMTBweDtcclxuICBsZWZ0OiBhdXRvO1xyXG4gIC13ZWJraXQtdHJhbnNmb3JtOiBza2V3KDhkZWcpIHJvdGF0ZSgzZGVnKTtcclxuICAtbW96LXRyYW5zZm9ybTogc2tldyg4ZGVnKSByb3RhdGUoM2RlZyk7XHJcbiAgLW1zLXRyYW5zZm9ybTogc2tldyg4ZGVnKSByb3RhdGUoM2RlZyk7XHJcbiAgLW8tdHJhbnNmb3JtOiBza2V3KDhkZWcpIHJvdGF0ZSgzZGVnKTtcclxuICB0cmFuc2Zvcm06IHNrZXcoOGRlZykgcm90YXRlKDNkZWcpO1xyXG59XHJcblxyXG4ubW9kdWxlIC5mb290ZXIgLmJ1dHRvbi5zYXZlIHtcclxuICBib3JkZXItY29sb3I6ICNmYmQ0MzE7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZiZDQzMTtcclxufVxyXG5cclxuLm1vZHVsZSAuZm9vdGVyIC5idXR0b24uZGVsZXRlIHtcclxuICBib3JkZXItY29sb3I6ICM5YzljOWM7XHJcbn1cclxuXHJcbi5idXR0b246aG92ZXIge1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLmVycm9yTWVzc2FnZSB7XHJcbiAgdG9wOiA1cHg7XHJcbiAgZm9udC1zaXplOiAxMnB4O1xyXG4gIGNvbG9yOiAjREMxNDNDO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBmb250LXdlaWdodDogNzAwO1xyXG59XHJcblxyXG4ubG9naW5CdG4ge1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlciAhaW1wb3J0YW50O1xyXG4gIG1hcmdpbjogMC4yZW07XHJcbiAgcGFkZGluZzogMCAxNXB4IDAgNDZweDtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgdGV4dC1hbGlnbjogbGVmdDtcclxuICBsaW5lLWhlaWdodDogMzRweDtcclxuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gIGJvcmRlci1yYWRpdXM6IDAuMmVtO1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBjb2xvcjogI0ZGRjtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5sb2dpbkJ0bjpiZWZvcmUge1xyXG4gIGNvbnRlbnQ6IFwiXCI7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiAwO1xyXG4gIGxlZnQ6IDA7XHJcbiAgd2lkdGg6IDM0cHg7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG59XHJcblxyXG4ubG9naW5CdG46Zm9jdXMge1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbn1cclxuXHJcbi5sb2dpbkJ0bjphY3RpdmUge1xyXG4gIGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDMycHggcmdiYSgwLCAwLCAwLCAwLjEpO1xyXG59XHJcblxyXG4ucmF0ZSB7XHJcbiAgZmxvYXQ6IGxlZnQ7IFxyXG59XHJcblxyXG4ucmF0ZTpub3QoOmNoZWNrZWQpPmlucHV0IHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiAtOTk5OXB4O1xyXG59XHJcblxyXG4ucmF0ZTpub3QoOmNoZWNrZWQpPmxhYmVsIHtcclxuICBmbG9hdDogcmlnaHQ7XHJcbiAgd2lkdGg6IDFlbTtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGZvbnQtc2l6ZTogMzBweDtcclxuICBjb2xvcjogI2NjYztcclxufVxyXG5cclxuLnJhdGU6bm90KDpjaGVja2VkKT5sYWJlbDpiZWZvcmUge1xyXG4gIGNvbnRlbnQ6ICfimIUgJztcclxufVxyXG5cclxuLnJhdGU+aW5wdXQ6Y2hlY2tlZH5sYWJlbCB7XHJcbiAgY29sb3I6ICNmZmM3MDA7XHJcbn1cclxuXHJcbi5yYXRlOm5vdCg6Y2hlY2tlZCk+bGFiZWw6aG92ZXIsXHJcbi5yYXRlOm5vdCg6Y2hlY2tlZCk+bGFiZWw6aG92ZXJ+bGFiZWwge1xyXG4gIGNvbG9yOiAjZGViMjE3O1xyXG59XHJcblxyXG4ucmF0ZT5pbnB1dDpjaGVja2VkK2xhYmVsOmhvdmVyLFxyXG4ucmF0ZT5pbnB1dDpjaGVja2VkK2xhYmVsOmhvdmVyfmxhYmVsLFxyXG4ucmF0ZT5pbnB1dDpjaGVja2VkfmxhYmVsOmhvdmVyLFxyXG4ucmF0ZT5pbnB1dDpjaGVja2VkfmxhYmVsOmhvdmVyfmxhYmVsLFxyXG4ucmF0ZT5sYWJlbDpob3Zlcn5pbnB1dDpjaGVja2VkfmxhYmVsIHtcclxuICBjb2xvcjogI2M1OWIwODtcclxufVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/modals/rate/add-rate/add-rate.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/modals/rate/add-rate/add-rate.component.ts ***!
+  \************************************************************/
+/*! exports provided: AddRateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddRateComponent", function() { return AddRateComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/requests.service */ "./src/app/requests.service.ts");
+
+
+
+
+var AddRateComponent = /** @class */ (function () {
+    function AddRateComponent(dialog, thisDialog, apiService, data) {
+        this.dialog = dialog;
+        this.thisDialog = thisDialog;
+        this.apiService = apiService;
+        this.data = data;
+        this.errorMessage = '';
+        this.rate = {};
+        this.id = '';
+        this.id = data['id'];
+    }
+    AddRateComponent.prototype.ngOnInit = function () {
+    };
+    AddRateComponent.prototype.checkForm = function () {
+        if (!this.rate.value || this.rate.value === '') {
+            return 'starIsRequired';
+        }
+        return true;
+    };
+    AddRateComponent.prototype.sendRate = function () {
+        var _this = this;
+        this.apiService.post('marketProducts/' + this.id + '/rateProduct', this.rate).subscribe(function (res) {
+            _this.thisDialog.close(res);
+        }, function (error) {
+            _this.thisDialog.close(error);
+        });
+    };
+    AddRateComponent.prototype.close = function () {
+        this.thisDialog.close();
+    };
+    AddRateComponent.ctorParameters = function () { return [
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+        { type: src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"] },
+        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+    ]; };
+    AddRateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-rate',
+            template: __webpack_require__(/*! raw-loader!./add-rate.component.html */ "./node_modules/raw-loader/index.js!./src/app/modals/rate/add-rate/add-rate.component.html"),
+            styles: [__webpack_require__(/*! ./add-rate.component.css */ "./src/app/modals/rate/add-rate/add-rate.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            src_app_requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"], Object])
+    ], AddRateComponent);
+    return AddRateComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/privacy/policy/policy.component.css":
 /*!*****************************************************!*\
   !*** ./src/app/privacy/policy/policy.component.css ***!
@@ -5729,7 +6861,7 @@ var CategorySelectorComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".mainHeader {\r\n  min-height: 250px;\r\n  padding: 25px;\r\n  direction: ltr;\r\n}\r\n\r\n.mainHeader .img {\r\n  width: 200px;\r\n  height: 200px;\r\n  border-radius: 50%;\r\n  background-size: cover;\r\n  margin: 0px auto;\r\n  background-position: center;\r\n}\r\n\r\n.containtCV {\r\n  padding-right: 5%;\r\n}\r\n\r\n@media only screen and (max-width: 991px) {\r\n  .mainHeader .img {\r\n    margin: 0px auto;\r\n  }\r\n\r\n  .similerProfile {\r\n    padding: 0px 6%;\r\n  }\r\n\r\n  .containtCV {\r\n\r\n    padding: 0px 5%;\r\n  }\r\n}\r\n\r\n.mainHeader .username {\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.mainHeader .username .edit {\r\n  position: absolute;\r\n  right: 8%;\r\n  top: 15px;\r\n  font-size: 14px;\r\n  color: black;\r\n}\r\n\r\n.mainHeader .username .edit.editCv {\r\n  top: 50px;\r\n}\r\n\r\n.mainHeader .username .edit.downloadCv {\r\n  bottom: 0px;\r\n}\r\n\r\n.mainHeader .username .edit:after {\r\n  content: '';\r\n  display: block;\r\n  width: 0;\r\n  height: 2px;\r\n  background: black;\r\n  transition: width .3s;\r\n}\r\n\r\n.mainHeader .username .edit:hover {\r\n  color: #ffd400;\r\n  cursor: pointer;\r\n}\r\n\r\n.mainHeader .username .edit:hover:after {\r\n  width: 100%;\r\n  background-color: #ffd400;\r\n\r\n}\r\n\r\n.mainHeader .identefire {\r\n  color: gray;\r\n  font-size: 13px;\r\n  margin: 8px 0px;\r\n}\r\n\r\n.mainHeader .city {\r\n  margin: 8px 0px;\r\n  font-size: 13px;\r\n}\r\n\r\n.mainHeader .bio {\r\n  margin-top: 8px;\r\n  max-width: 700px;\r\n}\r\n\r\n.mainHeader .icons .oneIcon {\r\n  float: left;\r\n  margin: 0px 10px;\r\n  font-size: 25px;\r\n}\r\n\r\n.mainHeader .icons .oneIcon.downloadCv {\r\n  position: absolute;\r\n  right: 8%;\r\n}\r\n\r\n.mainHeader .icons .oneIcon:first-child {\r\n  margin-left: 0px;\r\n}\r\n\r\n.mainContent {\r\n  margin: 10px 1%;\r\n  box-shadow: 0 3px 12px #ccc;\r\n  width: 100%;\r\n  background-color: #fff;\r\n  align-items: stretch;\r\n  min-height: 218px;\r\n  margin: 6px auto;\r\n  padding: 0;\r\n  border-radius: 7px;\r\n  box-shadow: 0 0 12px #aaa;\r\n  padding: 30px 45px;\r\n  direction: ltr;\r\n}\r\n\r\n.mainLabel {\r\n  border-bottom: 3px solid #fbd431;\r\n  padding-bottom: 0px;\r\n  display: inline;\r\n  font-weight: bold;\r\n  font-size: 22px;\r\n}\r\n\r\n.mainLabel .add {\r\n  position: absolute;\r\n  right: 0px;\r\n  top: 5px;\r\n  font-size: 12px;\r\n}\r\n\r\n.mainLabel .add:after {\r\n  content: '';\r\n  display: block;\r\n  width: 0;\r\n  height: 2px;\r\n  background: black;\r\n  transition: width .3s;\r\n}\r\n\r\n.mainLabel .add:hover {\r\n  color: #ffd400;\r\n  cursor: pointer;\r\n}\r\n\r\n.mainLabel .add:hover:after {\r\n  width: 100%;\r\n  background-color: #ffd400;\r\n\r\n}\r\n\r\n.listItems {\r\n  margin-top: 40px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.listItems .placeholder {\r\n  /* text-align: center; */\r\n  text-align: center;\r\n}\r\n\r\n.listItems .placeholder img {\r\n  width: 100px;\r\n  opacity: 0.7;\r\n}\r\n\r\n.placeholder h4 {\r\n  font-size: 20px;\r\n  padding-top: 10px;\r\n  color: #fac964;\r\n  text-shadow: 0px 0px 1px #717171;\r\n}\r\n\r\n.listItems .oneItem {\r\n  margin: 10px 15px;\r\n  position: relative;\r\n}\r\n\r\n.listItems .oneItem .circle {\r\n  width: 15px;\r\n  float: left;\r\n  height: 15px;\r\n  background-color: #fbd431;\r\n  border-radius: 50%;\r\n  margin-top: 5px;\r\n  margin-right: 20px;\r\n}\r\n\r\n.listItems .oneItem:hover .title .edit {\r\n  display: inline;\r\n}\r\n\r\n.listItems .oneItem .title {\r\n  padding-bottom: 0px;\r\n  display: inline;\r\n  font-weight: bold;\r\n  font-size: 22px;\r\n}\r\n\r\n.listItems .oneItem .title .edit {\r\n  position: absolute;\r\n  display: none;\r\n  right: 0px;\r\n  top: 5px;\r\n  font-size: 12px;\r\n}\r\n\r\n.listItems .oneItem .title .edit:after {\r\n  content: '';\r\n  display: block;\r\n  width: 0;\r\n  height: 2px;\r\n  background: black;\r\n  transition: width .3s;\r\n}\r\n\r\n.listItems .oneItem .title .edit:hover {\r\n  color: #ffd400;\r\n  cursor: pointer;\r\n}\r\n\r\n.listItems .oneItem .title .edit:hover:after {\r\n  width: 100%;\r\n  background-color: #ffd400;\r\n\r\n}\r\n\r\n.listItems .oneItem .subTitle {\r\n  padding-bottom: 0px;\r\n  font-size: 18px;\r\n  padding-left: 35px;\r\n}\r\n\r\n.listItems .oneItem .description {\r\n  padding-left: 35px;\r\n  color: black;\r\n}\r\n\r\n.listItems .oneItem .date {\r\n  padding-bottom: 0px;\r\n  font-size: 18px;\r\n  padding-left: 35px;\r\n  color: gray;\r\n}\r\n\r\n.listOfTags {\r\n  margin: 20px 15px;\r\n  display: table;\r\n  margin-top: 40px;\r\n}\r\n\r\n.listOfTags .tag {\r\n  width: -webkit-fit-content;\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n  border: 1px solid #fbd431;\r\n  background-color: #fbd431;\r\n  padding: 0px 5px;\r\n  border-radius: 15px;\r\n  float: left;\r\n  margin: 0px 5px;\r\n}\r\n\r\n.listOfTags .tag:first-child {\r\n  margin: 0px;\r\n}\r\n\r\n.listOfUsers {\r\n  padding-top: 30px;\r\n}\r\n\r\n.listOfUsers .oneUsers .card:hover {\r\n  cursor: pointer;\r\n}\r\n\r\n.listOfUsers .oneUsers .contint {\r\n  min-height: 60px;\r\n  display: table;\r\n  padding-left: 20px;\r\n}\r\n\r\n.listOfUsers .oneUsers .contint .username {\r\n  font-size: 16px;\r\n  font-weight: bold;\r\n  line-height: 18px;\r\n  display: block;\r\n}\r\n\r\n.listOfUsers .oneUsers .contint .identefire {\r\n  font-size: 13px;\r\n  font-weight: 600;\r\n  color: gray;\r\n  display: block;\r\n  line-height: 18px;\r\n}\r\n\r\n.listOfUsers .oneUsers .contint .city {\r\n  font-size: 13px;\r\n  font-weight: 600;\r\n\r\n  display: block;\r\n  color: #c3c3c3;\r\n  line-height: 18px;\r\n}\r\n\r\n.listOfUsers .oneUsers .imgDiv {\r\n  width: 60px;\r\n  float: left;\r\n}\r\n\r\n.listOfUsers .oneUsers .imgDiv .img {\r\n  width: 60px;\r\n  height: 60px;\r\n  border-radius: 50%;\r\n  background-size: cover;\r\n  background-position: center;\r\n}\r\n\r\n.spreater {\r\n  border: 0;\r\n  height: 0;\r\n  /* Firefox... */\r\n  margin: 15px 0px;\r\n  box-shadow: 0 0 1px 1px #00000008;\r\n}\r\n\r\n.spreater:after {\r\n  /* Not really supposed to work, but does */\r\n  content: \"\\00a0\";\r\n  /* Prevent margin collapse */\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZmlsZS9jdi12aWV3L2N2LXZpZXcuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGlCQUFpQjtFQUNqQixhQUFhO0VBQ2IsY0FBYztBQUNoQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLHNCQUFzQjtFQUN0QixnQkFBZ0I7RUFDaEIsMkJBQTJCO0FBQzdCOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0U7SUFDRSxnQkFBZ0I7RUFDbEI7O0VBRUE7SUFDRSxlQUFlO0VBQ2pCOztFQUVBOztJQUVFLGVBQWU7RUFDakI7QUFDRjs7QUFFQTtFQUNFLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxTQUFTO0VBQ1QsZUFBZTtFQUNmLFlBQVk7QUFDZDs7QUFFQTtFQUNFLFNBQVM7QUFDWDs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxjQUFjO0VBQ2QsUUFBUTtFQUNSLFdBQVc7RUFDWCxpQkFBaUI7RUFDakIscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsY0FBYztFQUNkLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gseUJBQXlCOztBQUUzQjs7QUFJQTtFQUNFLFdBQVc7RUFDWCxlQUFlO0VBQ2YsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7RUFDZixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxnQkFBZ0I7RUFDaEIsZUFBZTtBQUNqQjs7QUFHQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0FBQ1g7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBR0E7RUFDRSxlQUFlO0VBQ2YsMkJBQTJCO0VBQzNCLFdBQVc7RUFDWCxzQkFBc0I7RUFDdEIsb0JBQW9CO0VBQ3BCLGlCQUFpQjtFQUNqQixnQkFBZ0I7RUFDaEIsVUFBVTtFQUNWLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGNBQWM7QUFDaEI7O0FBR0E7RUFDRSxnQ0FBZ0M7RUFDaEMsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsUUFBUTtFQUNSLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsY0FBYztFQUNkLFFBQVE7RUFDUixXQUFXO0VBQ1gsaUJBQWlCO0VBQ2pCLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsV0FBVztFQUNYLHlCQUF5Qjs7QUFFM0I7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCxnQ0FBZ0M7QUFDbEM7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsV0FBVztFQUNYLFdBQVc7RUFDWCxZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLFVBQVU7RUFDVixRQUFRO0VBQ1IsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxjQUFjO0VBQ2QsUUFBUTtFQUNSLFdBQVc7RUFDWCxpQkFBaUI7RUFDakIscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsY0FBYztFQUNkLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gseUJBQXlCOztBQUUzQjs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLFdBQVc7QUFDYjs7QUFHQTtFQUNFLGlCQUFpQjtFQUNqQixjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsMEJBQWtCO0VBQWxCLHVCQUFrQjtFQUFsQixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLHlCQUF5QjtFQUN6QixnQkFBZ0I7RUFDaEIsbUJBQW1CO0VBQ25CLFdBQVc7RUFDWCxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixjQUFjO0VBQ2Qsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixpQkFBaUI7RUFDakIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLGNBQWM7RUFDZCxpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsZ0JBQWdCOztFQUVoQixjQUFjO0VBQ2QsY0FBYztFQUNkLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxXQUFXO0FBQ2I7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixzQkFBc0I7RUFDdEIsMkJBQTJCO0FBQzdCOztBQUVBO0VBQ0UsU0FBUztFQUNULFNBQVM7RUFDVCxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGlDQUFpQztBQUNuQzs7QUFFQTtFQUNFLDBDQUEwQztFQUMxQyxnQkFBZ0I7RUFDaEIsNEJBQTRCO0FBQzlCIiwiZmlsZSI6InNyYy9hcHAvcHJvZmlsZS9jdi12aWV3L2N2LXZpZXcuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYWluSGVhZGVyIHtcclxuICBtaW4taGVpZ2h0OiAyNTBweDtcclxuICBwYWRkaW5nOiAyNXB4O1xyXG4gIGRpcmVjdGlvbjogbHRyO1xyXG59XHJcblxyXG4ubWFpbkhlYWRlciAuaW1nIHtcclxuICB3aWR0aDogMjAwcHg7XHJcbiAgaGVpZ2h0OiAyMDBweDtcclxuICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcclxuICBtYXJnaW46IDBweCBhdXRvO1xyXG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcclxufVxyXG5cclxuLmNvbnRhaW50Q1Yge1xyXG4gIHBhZGRpbmctcmlnaHQ6IDUlO1xyXG59XHJcblxyXG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDk5MXB4KSB7XHJcbiAgLm1haW5IZWFkZXIgLmltZyB7XHJcbiAgICBtYXJnaW46IDBweCBhdXRvO1xyXG4gIH1cclxuXHJcbiAgLnNpbWlsZXJQcm9maWxlIHtcclxuICAgIHBhZGRpbmc6IDBweCA2JTtcclxuICB9XHJcblxyXG4gIC5jb250YWludENWIHtcclxuXHJcbiAgICBwYWRkaW5nOiAwcHggNSU7XHJcbiAgfVxyXG59XHJcblxyXG4ubWFpbkhlYWRlciAudXNlcm5hbWUge1xyXG4gIGZvbnQtc2l6ZTogMjhweDtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBtYXJnaW4tYm90dG9tOiA4cHg7XHJcbn1cclxuXHJcbi5tYWluSGVhZGVyIC51c2VybmFtZSAuZWRpdCB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHJpZ2h0OiA4JTtcclxuICB0b3A6IDE1cHg7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG4gIGNvbG9yOiBibGFjaztcclxufVxyXG5cclxuLm1haW5IZWFkZXIgLnVzZXJuYW1lIC5lZGl0LmVkaXRDdiB7XHJcbiAgdG9wOiA1MHB4O1xyXG59XHJcblxyXG4ubWFpbkhlYWRlciAudXNlcm5hbWUgLmVkaXQuZG93bmxvYWRDdiB7XHJcbiAgYm90dG9tOiAwcHg7XHJcbn1cclxuXHJcbi5tYWluSGVhZGVyIC51c2VybmFtZSAuZWRpdDphZnRlciB7XHJcbiAgY29udGVudDogJyc7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgd2lkdGg6IDA7XHJcbiAgaGVpZ2h0OiAycHg7XHJcbiAgYmFja2dyb3VuZDogYmxhY2s7XHJcbiAgdHJhbnNpdGlvbjogd2lkdGggLjNzO1xyXG59XHJcblxyXG4ubWFpbkhlYWRlciAudXNlcm5hbWUgLmVkaXQ6aG92ZXIge1xyXG4gIGNvbG9yOiAjZmZkNDAwO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLm1haW5IZWFkZXIgLnVzZXJuYW1lIC5lZGl0OmhvdmVyOmFmdGVyIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZkNDAwO1xyXG5cclxufVxyXG5cclxuXHJcblxyXG4ubWFpbkhlYWRlciAuaWRlbnRlZmlyZSB7XHJcbiAgY29sb3I6IGdyYXk7XHJcbiAgZm9udC1zaXplOiAxM3B4O1xyXG4gIG1hcmdpbjogOHB4IDBweDtcclxufVxyXG5cclxuLm1haW5IZWFkZXIgLmNpdHkge1xyXG4gIG1hcmdpbjogOHB4IDBweDtcclxuICBmb250LXNpemU6IDEzcHg7XHJcbn1cclxuXHJcbi5tYWluSGVhZGVyIC5iaW8ge1xyXG4gIG1hcmdpbi10b3A6IDhweDtcclxuICBtYXgtd2lkdGg6IDcwMHB4O1xyXG59XHJcblxyXG4ubWFpbkhlYWRlciAuaWNvbnMgLm9uZUljb24ge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIG1hcmdpbjogMHB4IDEwcHg7XHJcbiAgZm9udC1zaXplOiAyNXB4O1xyXG59XHJcblxyXG5cclxuLm1haW5IZWFkZXIgLmljb25zIC5vbmVJY29uLmRvd25sb2FkQ3Yge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICByaWdodDogOCU7XHJcbn1cclxuXHJcbi5tYWluSGVhZGVyIC5pY29ucyAub25lSWNvbjpmaXJzdC1jaGlsZCB7XHJcbiAgbWFyZ2luLWxlZnQ6IDBweDtcclxufVxyXG5cclxuXHJcbi5tYWluQ29udGVudCB7XHJcbiAgbWFyZ2luOiAxMHB4IDElO1xyXG4gIGJveC1zaGFkb3c6IDAgM3B4IDEycHggI2NjYztcclxuICB3aWR0aDogMTAwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gIGFsaWduLWl0ZW1zOiBzdHJldGNoO1xyXG4gIG1pbi1oZWlnaHQ6IDIxOHB4O1xyXG4gIG1hcmdpbjogNnB4IGF1dG87XHJcbiAgcGFkZGluZzogMDtcclxuICBib3JkZXItcmFkaXVzOiA3cHg7XHJcbiAgYm94LXNoYWRvdzogMCAwIDEycHggI2FhYTtcclxuICBwYWRkaW5nOiAzMHB4IDQ1cHg7XHJcbiAgZGlyZWN0aW9uOiBsdHI7XHJcbn1cclxuXHJcblxyXG4ubWFpbkxhYmVsIHtcclxuICBib3JkZXItYm90dG9tOiAzcHggc29saWQgI2ZiZDQzMTtcclxuICBwYWRkaW5nLWJvdHRvbTogMHB4O1xyXG4gIGRpc3BsYXk6IGlubGluZTtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBmb250LXNpemU6IDIycHg7XHJcbn1cclxuXHJcbi5tYWluTGFiZWwgLmFkZCB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHJpZ2h0OiAwcHg7XHJcbiAgdG9wOiA1cHg7XHJcbiAgZm9udC1zaXplOiAxMnB4O1xyXG59XHJcblxyXG4ubWFpbkxhYmVsIC5hZGQ6YWZ0ZXIge1xyXG4gIGNvbnRlbnQ6ICcnO1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIHdpZHRoOiAwO1xyXG4gIGhlaWdodDogMnB4O1xyXG4gIGJhY2tncm91bmQ6IGJsYWNrO1xyXG4gIHRyYW5zaXRpb246IHdpZHRoIC4zcztcclxufVxyXG5cclxuLm1haW5MYWJlbCAuYWRkOmhvdmVyIHtcclxuICBjb2xvcjogI2ZmZDQwMDtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5tYWluTGFiZWwgLmFkZDpob3ZlcjphZnRlciB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZDQwMDtcclxuXHJcbn1cclxuXHJcbi5saXN0SXRlbXMge1xyXG4gIG1hcmdpbi10b3A6IDQwcHg7XHJcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcclxufVxyXG5cclxuLmxpc3RJdGVtcyAucGxhY2Vob2xkZXIge1xyXG4gIC8qIHRleHQtYWxpZ246IGNlbnRlcjsgKi9cclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5saXN0SXRlbXMgLnBsYWNlaG9sZGVyIGltZyB7XHJcbiAgd2lkdGg6IDEwMHB4O1xyXG4gIG9wYWNpdHk6IDAuNztcclxufVxyXG5cclxuLnBsYWNlaG9sZGVyIGg0IHtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbiAgcGFkZGluZy10b3A6IDEwcHg7XHJcbiAgY29sb3I6ICNmYWM5NjQ7XHJcbiAgdGV4dC1zaGFkb3c6IDBweCAwcHggMXB4ICM3MTcxNzE7XHJcbn1cclxuXHJcbi5saXN0SXRlbXMgLm9uZUl0ZW0ge1xyXG4gIG1hcmdpbjogMTBweCAxNXB4O1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLmxpc3RJdGVtcyAub25lSXRlbSAuY2lyY2xlIHtcclxuICB3aWR0aDogMTVweDtcclxuICBmbG9hdDogbGVmdDtcclxuICBoZWlnaHQ6IDE1cHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZiZDQzMTtcclxuICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgbWFyZ2luLXRvcDogNXB4O1xyXG4gIG1hcmdpbi1yaWdodDogMjBweDtcclxufVxyXG5cclxuLmxpc3RJdGVtcyAub25lSXRlbTpob3ZlciAudGl0bGUgLmVkaXQge1xyXG4gIGRpc3BsYXk6IGlubGluZTtcclxufVxyXG5cclxuLmxpc3RJdGVtcyAub25lSXRlbSAudGl0bGUge1xyXG4gIHBhZGRpbmctYm90dG9tOiAwcHg7XHJcbiAgZGlzcGxheTogaW5saW5lO1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIGZvbnQtc2l6ZTogMjJweDtcclxufVxyXG5cclxuLmxpc3RJdGVtcyAub25lSXRlbSAudGl0bGUgLmVkaXQge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBkaXNwbGF5OiBub25lO1xyXG4gIHJpZ2h0OiAwcHg7XHJcbiAgdG9wOiA1cHg7XHJcbiAgZm9udC1zaXplOiAxMnB4O1xyXG59XHJcblxyXG4ubGlzdEl0ZW1zIC5vbmVJdGVtIC50aXRsZSAuZWRpdDphZnRlciB7XHJcbiAgY29udGVudDogJyc7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgd2lkdGg6IDA7XHJcbiAgaGVpZ2h0OiAycHg7XHJcbiAgYmFja2dyb3VuZDogYmxhY2s7XHJcbiAgdHJhbnNpdGlvbjogd2lkdGggLjNzO1xyXG59XHJcblxyXG4ubGlzdEl0ZW1zIC5vbmVJdGVtIC50aXRsZSAuZWRpdDpob3ZlciB7XHJcbiAgY29sb3I6ICNmZmQ0MDA7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4ubGlzdEl0ZW1zIC5vbmVJdGVtIC50aXRsZSAuZWRpdDpob3ZlcjphZnRlciB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZDQwMDtcclxuXHJcbn1cclxuXHJcbi5saXN0SXRlbXMgLm9uZUl0ZW0gLnN1YlRpdGxlIHtcclxuICBwYWRkaW5nLWJvdHRvbTogMHB4O1xyXG4gIGZvbnQtc2l6ZTogMThweDtcclxuICBwYWRkaW5nLWxlZnQ6IDM1cHg7XHJcbn1cclxuXHJcbi5saXN0SXRlbXMgLm9uZUl0ZW0gLmRlc2NyaXB0aW9uIHtcclxuICBwYWRkaW5nLWxlZnQ6IDM1cHg7XHJcbiAgY29sb3I6IGJsYWNrO1xyXG59XHJcblxyXG4ubGlzdEl0ZW1zIC5vbmVJdGVtIC5kYXRlIHtcclxuICBwYWRkaW5nLWJvdHRvbTogMHB4O1xyXG4gIGZvbnQtc2l6ZTogMThweDtcclxuICBwYWRkaW5nLWxlZnQ6IDM1cHg7XHJcbiAgY29sb3I6IGdyYXk7XHJcbn1cclxuXHJcblxyXG4ubGlzdE9mVGFncyB7XHJcbiAgbWFyZ2luOiAyMHB4IDE1cHg7XHJcbiAgZGlzcGxheTogdGFibGU7XHJcbiAgbWFyZ2luLXRvcDogNDBweDtcclxufVxyXG5cclxuLmxpc3RPZlRhZ3MgLnRhZyB7XHJcbiAgd2lkdGg6IGZpdC1jb250ZW50O1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICNmYmQ0MzE7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZiZDQzMTtcclxuICBwYWRkaW5nOiAwcHggNXB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDE1cHg7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgbWFyZ2luOiAwcHggNXB4O1xyXG59XHJcblxyXG4ubGlzdE9mVGFncyAudGFnOmZpcnN0LWNoaWxkIHtcclxuICBtYXJnaW46IDBweDtcclxufVxyXG5cclxuLmxpc3RPZlVzZXJzIHtcclxuICBwYWRkaW5nLXRvcDogMzBweDtcclxufVxyXG5cclxuLmxpc3RPZlVzZXJzIC5vbmVVc2VycyAuY2FyZDpob3ZlciB7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4ubGlzdE9mVXNlcnMgLm9uZVVzZXJzIC5jb250aW50IHtcclxuICBtaW4taGVpZ2h0OiA2MHB4O1xyXG4gIGRpc3BsYXk6IHRhYmxlO1xyXG4gIHBhZGRpbmctbGVmdDogMjBweDtcclxufVxyXG5cclxuLmxpc3RPZlVzZXJzIC5vbmVVc2VycyAuY29udGludCAudXNlcm5hbWUge1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBsaW5lLWhlaWdodDogMThweDtcclxuICBkaXNwbGF5OiBibG9jaztcclxufVxyXG5cclxuLmxpc3RPZlVzZXJzIC5vbmVVc2VycyAuY29udGludCAuaWRlbnRlZmlyZSB7XHJcbiAgZm9udC1zaXplOiAxM3B4O1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgY29sb3I6IGdyYXk7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgbGluZS1oZWlnaHQ6IDE4cHg7XHJcbn1cclxuXHJcbi5saXN0T2ZVc2VycyAub25lVXNlcnMgLmNvbnRpbnQgLmNpdHkge1xyXG4gIGZvbnQtc2l6ZTogMTNweDtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG5cclxuICBkaXNwbGF5OiBibG9jaztcclxuICBjb2xvcjogI2MzYzNjMztcclxuICBsaW5lLWhlaWdodDogMThweDtcclxufVxyXG5cclxuLmxpc3RPZlVzZXJzIC5vbmVVc2VycyAuaW1nRGl2IHtcclxuICB3aWR0aDogNjBweDtcclxuICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxuLmxpc3RPZlVzZXJzIC5vbmVVc2VycyAuaW1nRGl2IC5pbWcge1xyXG4gIHdpZHRoOiA2MHB4O1xyXG4gIGhlaWdodDogNjBweDtcclxuICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcclxuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5zcHJlYXRlciB7XHJcbiAgYm9yZGVyOiAwO1xyXG4gIGhlaWdodDogMDtcclxuICAvKiBGaXJlZm94Li4uICovXHJcbiAgbWFyZ2luOiAxNXB4IDBweDtcclxuICBib3gtc2hhZG93OiAwIDAgMXB4IDFweCAjMDAwMDAwMDg7XHJcbn1cclxuXHJcbi5zcHJlYXRlcjphZnRlciB7XHJcbiAgLyogTm90IHJlYWxseSBzdXBwb3NlZCB0byB3b3JrLCBidXQgZG9lcyAqL1xyXG4gIGNvbnRlbnQ6IFwiXFwwMGEwXCI7XHJcbiAgLyogUHJldmVudCBtYXJnaW4gY29sbGFwc2UgKi9cclxufVxyXG4iXX0= */"
+module.exports = ".mainHeader {\r\n  min-height: 250px;\r\n  padding: 25px;\r\n  direction: ltr;\r\n}\r\n\r\n.mainHeader .img {\r\n  width: 200px;\r\n  height: 200px;\r\n  border-radius: 50%;\r\n  background-size: cover;\r\n  margin: 0px auto;\r\n  background-position: center;\r\n}\r\n\r\n.containtCV {\r\n  padding-right: 5%;\r\n}\r\n\r\n@media only screen and (max-width: 991px) {\r\n  .mainHeader .img {\r\n    margin: 0px auto;\r\n  }\r\n\r\n  .similerProfile {\r\n    padding: 0px 6%;\r\n  }\r\n\r\n  .containtCV {\r\n\r\n    padding: 0px 5%;\r\n  }\r\n}\r\n\r\n.mainHeader .username {\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.mainHeader .username .edit {\r\n  position: absolute;\r\n  right: 8%;\r\n  top: 15px;\r\n  font-size: 14px;\r\n  color: black;\r\n}\r\n\r\n.mainHeader .username .edit.editCv {\r\n  top: 50px;\r\n}\r\n\r\n.mainHeader .username .edit.downloadCv {\r\n  bottom: 0px;\r\n}\r\n\r\n.mainHeader .username .edit:after {\r\n  content: '';\r\n  display: block;\r\n  width: 0;\r\n  height: 2px;\r\n  background: black;\r\n  transition: width .3s;\r\n}\r\n\r\n.mainHeader .username .edit:hover {\r\n  color: #ffd400;\r\n  cursor: pointer;\r\n}\r\n\r\n.mainHeader .username .edit:hover:after {\r\n  width: 100%;\r\n  background-color: #ffd400;\r\n\r\n}\r\n\r\n.mainHeader .identefire {\r\n  color: gray;\r\n  font-size: 13px;\r\n  margin: 8px 0px;\r\n}\r\n\r\n.mainHeader .city {\r\n  margin: 8px 0px;\r\n  font-size: 13px;\r\n}\r\n\r\n.mainHeader .bio {\r\n  margin-top: 8px;\r\n  max-width: 700px;\r\n}\r\n\r\n.mainHeader .icons .oneIcon {\r\n  float: left;\r\n  margin: 0px 10px;\r\n  font-size: 25px;\r\n}\r\n\r\n.mainHeader .icons .oneIcon.downloadCv {\r\n  position: absolute;\r\n  right: 8%;\r\n}\r\n\r\n.mainHeader .icons .oneIcon:first-child {\r\n  margin-left: 0px;\r\n}\r\n\r\n.mainContent {\r\n  margin: 10px 1%;\r\n  box-shadow: 0 3px 12px #ccc;\r\n  width: 100%;\r\n  background-color: #fff;\r\n  align-items: stretch;\r\n  min-height: 218px;\r\n  margin: 6px auto;\r\n  padding: 0;\r\n  border-radius: 7px;\r\n  box-shadow: 0 0 12px #aaa;\r\n  padding: 30px 45px;\r\n  direction: ltr;\r\n}\r\n\r\n.mainLabel {\r\n  border-bottom: 3px solid #fbd431;\r\n  padding-bottom: 0px;\r\n  display: inline;\r\n  font-weight: bold;\r\n  font-size: 22px;\r\n}\r\n\r\n.mainLabel .add {\r\n  position: absolute;\r\n  right: 0px;\r\n  top: 5px;\r\n  font-size: 12px;\r\n}\r\n\r\n.mainLabel .add:after {\r\n  content: '';\r\n  display: block;\r\n  width: 0;\r\n  height: 2px;\r\n  background: black;\r\n  transition: width .3s;\r\n}\r\n\r\n.mainLabel .add:hover {\r\n  color: #ffd400;\r\n  cursor: pointer;\r\n}\r\n\r\n.mainLabel .add:hover:after {\r\n  width: 100%;\r\n  background-color: #ffd400;\r\n\r\n}\r\n\r\n.listItems {\r\n  margin-top: 40px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.listItems .placeholder {\r\n  /* text-align: center; */\r\n  text-align: center;\r\n}\r\n\r\n.listItems .placeholder img {\r\n  width: 100px;\r\n  opacity: 0.7;\r\n}\r\n\r\n.placeholder h4 {\r\n  font-size: 20px;\r\n  padding-top: 10px;\r\n  color: #fac964;\r\n  text-shadow: 0px 0px 1px #717171;\r\n}\r\n\r\n.listItems .oneItem {\r\n  margin: 10px 15px;\r\n  position: relative;\r\n}\r\n\r\n.listItems .oneItem .circle {\r\n  width: 15px;\r\n  float: left;\r\n  height: 15px;\r\n  background-color: #fbd431;\r\n  border-radius: 50%;\r\n  margin-top: 5px;\r\n  margin-right: 20px;\r\n}\r\n\r\n.listItems .oneItem:hover .title .edit {\r\n  display: inline;\r\n}\r\n\r\n.listItems .oneItem .title {\r\n  padding-bottom: 0px;\r\n  display: inline;\r\n  font-weight: bold;\r\n  font-size: 22px;\r\n}\r\n\r\n.listItems .oneItem .title .edit {\r\n  position: absolute;\r\n  display: none;\r\n  right: 0px;\r\n  top: 5px;\r\n  font-size: 12px;\r\n}\r\n\r\n.listItems .oneItem .title .edit:after {\r\n  content: '';\r\n  display: block;\r\n  width: 0;\r\n  height: 2px;\r\n  background: black;\r\n  transition: width .3s;\r\n}\r\n\r\n.listItems .oneItem .title .edit:hover {\r\n  color: #ffd400;\r\n  cursor: pointer;\r\n}\r\n\r\n.listItems .oneItem .title .edit:hover:after {\r\n  width: 100%;\r\n  background-color: #ffd400;\r\n\r\n}\r\n\r\n.listItems .oneItem .subTitle {\r\n  padding-bottom: 0px;\r\n  font-size: 18px;\r\n  padding-left: 35px;\r\n}\r\n\r\n.listItems .oneItem .description {\r\n  padding-left: 35px;\r\n  color: black;\r\n}\r\n\r\n.listItems .oneItem .date {\r\n  padding-bottom: 0px;\r\n  font-size: 18px;\r\n  padding-left: 35px;\r\n  color: gray;\r\n}\r\n\r\n.listOfTags {\r\n  margin: 20px 15px;\r\n  display: table;\r\n  margin-top: 40px;\r\n}\r\n\r\n.listOfTags .tag {\r\n  width: -webkit-fit-content;\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n  border: 1px solid #fbd431;\r\n  background-color: #fbd431;\r\n  padding: 0px 5px;\r\n  border-radius: 15px;\r\n  float: left;\r\n  margin: 0px 5px;\r\n}\r\n\r\n.listOfTags .tag:first-child {\r\n  margin: 0px;\r\n}\r\n\r\n.listOfUsers {\r\n  padding-top: 30px;\r\n}\r\n\r\n.listOfUsers .oneUsers .card:hover {\r\n  cursor: pointer;\r\n}\r\n\r\n.listOfUsers .oneUsers .contint {\r\n  min-height: 60px;\r\n  display: table;\r\n  padding-left: 20px;\r\n}\r\n\r\n.listOfUsers .oneUsers .contint .username {\r\n  font-size: 16px;\r\n  font-weight: bold;\r\n  line-height: 18px;\r\n  display: block;\r\n}\r\n\r\n.listOfUsers .oneUsers .contint .identefire {\r\n  font-size: 13px;\r\n  font-weight: 600;\r\n  color: gray;\r\n  display: block;\r\n  line-height: 18px;\r\n}\r\n\r\n.listOfUsers .oneUsers .contint .city {\r\n  font-size: 13px;\r\n  font-weight: 600;\r\n\r\n  display: block;\r\n  color: #c3c3c3;\r\n  line-height: 18px;\r\n}\r\n\r\n.listOfUsers .oneUsers .imgDiv {\r\n  width: 60px;\r\n  float: left;\r\n}\r\n\r\n.listOfUsers .oneUsers .imgDiv .img {\r\n  width: 60px;\r\n  height: 60px;\r\n  border-radius: 50%;\r\n  background-size: cover;\r\n  background-position: center;\r\n}\r\n\r\n.spreater {\r\n  border: 0;\r\n  height: 0;\r\n  /* Firefox... */\r\n  margin: 15px 0px;\r\n  box-shadow: 0 0 1px 1px #00000008;\r\n}\r\n\r\n.spreater:after {\r\n  /* Not really supposed to work, but does */\r\n  content: \"\\00a0\";\r\n  /* Prevent margin collapse */\r\n}\r\n\r\n.follow {\r\n  margin-right: 20px;\r\n  margin-top: 5px;\r\n  clear: both;\r\n}\r\n\r\n.follow-icon { \r\n  width: 15px ; \r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZmlsZS9jdi12aWV3L2N2LXZpZXcuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGlCQUFpQjtFQUNqQixhQUFhO0VBQ2IsY0FBYztBQUNoQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLHNCQUFzQjtFQUN0QixnQkFBZ0I7RUFDaEIsMkJBQTJCO0FBQzdCOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0U7SUFDRSxnQkFBZ0I7RUFDbEI7O0VBRUE7SUFDRSxlQUFlO0VBQ2pCOztFQUVBOztJQUVFLGVBQWU7RUFDakI7QUFDRjs7QUFFQTtFQUNFLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxTQUFTO0VBQ1QsZUFBZTtFQUNmLFlBQVk7QUFDZDs7QUFFQTtFQUNFLFNBQVM7QUFDWDs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxjQUFjO0VBQ2QsUUFBUTtFQUNSLFdBQVc7RUFDWCxpQkFBaUI7RUFDakIscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsY0FBYztFQUNkLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gseUJBQXlCOztBQUUzQjs7QUFJQTtFQUNFLFdBQVc7RUFDWCxlQUFlO0VBQ2YsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7RUFDZixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxnQkFBZ0I7RUFDaEIsZUFBZTtBQUNqQjs7QUFHQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0FBQ1g7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBR0E7RUFDRSxlQUFlO0VBQ2YsMkJBQTJCO0VBQzNCLFdBQVc7RUFDWCxzQkFBc0I7RUFDdEIsb0JBQW9CO0VBQ3BCLGlCQUFpQjtFQUNqQixnQkFBZ0I7RUFDaEIsVUFBVTtFQUNWLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGNBQWM7QUFDaEI7O0FBR0E7RUFDRSxnQ0FBZ0M7RUFDaEMsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsUUFBUTtFQUNSLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsY0FBYztFQUNkLFFBQVE7RUFDUixXQUFXO0VBQ1gsaUJBQWlCO0VBQ2pCLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsV0FBVztFQUNYLHlCQUF5Qjs7QUFFM0I7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCxnQ0FBZ0M7QUFDbEM7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsV0FBVztFQUNYLFdBQVc7RUFDWCxZQUFZO0VBQ1oseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLFVBQVU7RUFDVixRQUFRO0VBQ1IsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxjQUFjO0VBQ2QsUUFBUTtFQUNSLFdBQVc7RUFDWCxpQkFBaUI7RUFDakIscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsY0FBYztFQUNkLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gseUJBQXlCOztBQUUzQjs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLFdBQVc7QUFDYjs7QUFHQTtFQUNFLGlCQUFpQjtFQUNqQixjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsMEJBQWtCO0VBQWxCLHVCQUFrQjtFQUFsQixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLHlCQUF5QjtFQUN6QixnQkFBZ0I7RUFDaEIsbUJBQW1CO0VBQ25CLFdBQVc7RUFDWCxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixjQUFjO0VBQ2Qsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixpQkFBaUI7RUFDakIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLGNBQWM7RUFDZCxpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsZ0JBQWdCOztFQUVoQixjQUFjO0VBQ2QsY0FBYztFQUNkLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxXQUFXO0FBQ2I7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixzQkFBc0I7RUFDdEIsMkJBQTJCO0FBQzdCOztBQUVBO0VBQ0UsU0FBUztFQUNULFNBQVM7RUFDVCxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGlDQUFpQztBQUNuQzs7QUFFQTtFQUNFLDBDQUEwQztFQUMxQyxnQkFBZ0I7RUFDaEIsNEJBQTRCO0FBQzlCOztBQUdBO0VBQ0Usa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxZQUFZO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9wcm9maWxlL2N2LXZpZXcvY3Ytdmlldy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1haW5IZWFkZXIge1xyXG4gIG1pbi1oZWlnaHQ6IDI1MHB4O1xyXG4gIHBhZGRpbmc6IDI1cHg7XHJcbiAgZGlyZWN0aW9uOiBsdHI7XHJcbn1cclxuXHJcbi5tYWluSGVhZGVyIC5pbWcge1xyXG4gIHdpZHRoOiAyMDBweDtcclxuICBoZWlnaHQ6IDIwMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xyXG4gIG1hcmdpbjogMHB4IGF1dG87XHJcbiAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xyXG59XHJcblxyXG4uY29udGFpbnRDViB7XHJcbiAgcGFkZGluZy1yaWdodDogNSU7XHJcbn1cclxuXHJcbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogOTkxcHgpIHtcclxuICAubWFpbkhlYWRlciAuaW1nIHtcclxuICAgIG1hcmdpbjogMHB4IGF1dG87XHJcbiAgfVxyXG5cclxuICAuc2ltaWxlclByb2ZpbGUge1xyXG4gICAgcGFkZGluZzogMHB4IDYlO1xyXG4gIH1cclxuXHJcbiAgLmNvbnRhaW50Q1Yge1xyXG5cclxuICAgIHBhZGRpbmc6IDBweCA1JTtcclxuICB9XHJcbn1cclxuXHJcbi5tYWluSGVhZGVyIC51c2VybmFtZSB7XHJcbiAgZm9udC1zaXplOiAyOHB4O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIG1hcmdpbi1ib3R0b206IDhweDtcclxufVxyXG5cclxuLm1haW5IZWFkZXIgLnVzZXJuYW1lIC5lZGl0IHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgcmlnaHQ6IDglO1xyXG4gIHRvcDogMTVweDtcclxuICBmb250LXNpemU6IDE0cHg7XHJcbiAgY29sb3I6IGJsYWNrO1xyXG59XHJcblxyXG4ubWFpbkhlYWRlciAudXNlcm5hbWUgLmVkaXQuZWRpdEN2IHtcclxuICB0b3A6IDUwcHg7XHJcbn1cclxuXHJcbi5tYWluSGVhZGVyIC51c2VybmFtZSAuZWRpdC5kb3dubG9hZEN2IHtcclxuICBib3R0b206IDBweDtcclxufVxyXG5cclxuLm1haW5IZWFkZXIgLnVzZXJuYW1lIC5lZGl0OmFmdGVyIHtcclxuICBjb250ZW50OiAnJztcclxuICBkaXNwbGF5OiBibG9jaztcclxuICB3aWR0aDogMDtcclxuICBoZWlnaHQ6IDJweDtcclxuICBiYWNrZ3JvdW5kOiBibGFjaztcclxuICB0cmFuc2l0aW9uOiB3aWR0aCAuM3M7XHJcbn1cclxuXHJcbi5tYWluSGVhZGVyIC51c2VybmFtZSAuZWRpdDpob3ZlciB7XHJcbiAgY29sb3I6ICNmZmQ0MDA7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4ubWFpbkhlYWRlciAudXNlcm5hbWUgLmVkaXQ6aG92ZXI6YWZ0ZXIge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmQ0MDA7XHJcblxyXG59XHJcblxyXG5cclxuXHJcbi5tYWluSGVhZGVyIC5pZGVudGVmaXJlIHtcclxuICBjb2xvcjogZ3JheTtcclxuICBmb250LXNpemU6IDEzcHg7XHJcbiAgbWFyZ2luOiA4cHggMHB4O1xyXG59XHJcblxyXG4ubWFpbkhlYWRlciAuY2l0eSB7XHJcbiAgbWFyZ2luOiA4cHggMHB4O1xyXG4gIGZvbnQtc2l6ZTogMTNweDtcclxufVxyXG5cclxuLm1haW5IZWFkZXIgLmJpbyB7XHJcbiAgbWFyZ2luLXRvcDogOHB4O1xyXG4gIG1heC13aWR0aDogNzAwcHg7XHJcbn1cclxuXHJcbi5tYWluSGVhZGVyIC5pY29ucyAub25lSWNvbiB7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgbWFyZ2luOiAwcHggMTBweDtcclxuICBmb250LXNpemU6IDI1cHg7XHJcbn1cclxuXHJcblxyXG4ubWFpbkhlYWRlciAuaWNvbnMgLm9uZUljb24uZG93bmxvYWRDdiB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHJpZ2h0OiA4JTtcclxufVxyXG5cclxuLm1haW5IZWFkZXIgLmljb25zIC5vbmVJY29uOmZpcnN0LWNoaWxkIHtcclxuICBtYXJnaW4tbGVmdDogMHB4O1xyXG59XHJcblxyXG5cclxuLm1haW5Db250ZW50IHtcclxuICBtYXJnaW46IDEwcHggMSU7XHJcbiAgYm94LXNoYWRvdzogMCAzcHggMTJweCAjY2NjO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbiAgYWxpZ24taXRlbXM6IHN0cmV0Y2g7XHJcbiAgbWluLWhlaWdodDogMjE4cHg7XHJcbiAgbWFyZ2luOiA2cHggYXV0bztcclxuICBwYWRkaW5nOiAwO1xyXG4gIGJvcmRlci1yYWRpdXM6IDdweDtcclxuICBib3gtc2hhZG93OiAwIDAgMTJweCAjYWFhO1xyXG4gIHBhZGRpbmc6IDMwcHggNDVweDtcclxuICBkaXJlY3Rpb246IGx0cjtcclxufVxyXG5cclxuXHJcbi5tYWluTGFiZWwge1xyXG4gIGJvcmRlci1ib3R0b206IDNweCBzb2xpZCAjZmJkNDMxO1xyXG4gIHBhZGRpbmctYm90dG9tOiAwcHg7XHJcbiAgZGlzcGxheTogaW5saW5lO1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIGZvbnQtc2l6ZTogMjJweDtcclxufVxyXG5cclxuLm1haW5MYWJlbCAuYWRkIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgcmlnaHQ6IDBweDtcclxuICB0b3A6IDVweDtcclxuICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuXHJcbi5tYWluTGFiZWwgLmFkZDphZnRlciB7XHJcbiAgY29udGVudDogJyc7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbiAgd2lkdGg6IDA7XHJcbiAgaGVpZ2h0OiAycHg7XHJcbiAgYmFja2dyb3VuZDogYmxhY2s7XHJcbiAgdHJhbnNpdGlvbjogd2lkdGggLjNzO1xyXG59XHJcblxyXG4ubWFpbkxhYmVsIC5hZGQ6aG92ZXIge1xyXG4gIGNvbG9yOiAjZmZkNDAwO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLm1haW5MYWJlbCAuYWRkOmhvdmVyOmFmdGVyIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZkNDAwO1xyXG5cclxufVxyXG5cclxuLmxpc3RJdGVtcyB7XHJcbiAgbWFyZ2luLXRvcDogNDBweDtcclxuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG59XHJcblxyXG4ubGlzdEl0ZW1zIC5wbGFjZWhvbGRlciB7XHJcbiAgLyogdGV4dC1hbGlnbjogY2VudGVyOyAqL1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLmxpc3RJdGVtcyAucGxhY2Vob2xkZXIgaW1nIHtcclxuICB3aWR0aDogMTAwcHg7XHJcbiAgb3BhY2l0eTogMC43O1xyXG59XHJcblxyXG4ucGxhY2Vob2xkZXIgaDQge1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICBwYWRkaW5nLXRvcDogMTBweDtcclxuICBjb2xvcjogI2ZhYzk2NDtcclxuICB0ZXh0LXNoYWRvdzogMHB4IDBweCAxcHggIzcxNzE3MTtcclxufVxyXG5cclxuLmxpc3RJdGVtcyAub25lSXRlbSB7XHJcbiAgbWFyZ2luOiAxMHB4IDE1cHg7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4ubGlzdEl0ZW1zIC5vbmVJdGVtIC5jaXJjbGUge1xyXG4gIHdpZHRoOiAxNXB4O1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGhlaWdodDogMTVweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmJkNDMxO1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG59XHJcblxyXG4ubGlzdEl0ZW1zIC5vbmVJdGVtOmhvdmVyIC50aXRsZSAuZWRpdCB7XHJcbiAgZGlzcGxheTogaW5saW5lO1xyXG59XHJcblxyXG4ubGlzdEl0ZW1zIC5vbmVJdGVtIC50aXRsZSB7XHJcbiAgcGFkZGluZy1ib3R0b206IDBweDtcclxuICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgZm9udC1zaXplOiAyMnB4O1xyXG59XHJcblxyXG4ubGlzdEl0ZW1zIC5vbmVJdGVtIC50aXRsZSAuZWRpdCB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGRpc3BsYXk6IG5vbmU7XHJcbiAgcmlnaHQ6IDBweDtcclxuICB0b3A6IDVweDtcclxuICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuXHJcbi5saXN0SXRlbXMgLm9uZUl0ZW0gLnRpdGxlIC5lZGl0OmFmdGVyIHtcclxuICBjb250ZW50OiAnJztcclxuICBkaXNwbGF5OiBibG9jaztcclxuICB3aWR0aDogMDtcclxuICBoZWlnaHQ6IDJweDtcclxuICBiYWNrZ3JvdW5kOiBibGFjaztcclxuICB0cmFuc2l0aW9uOiB3aWR0aCAuM3M7XHJcbn1cclxuXHJcbi5saXN0SXRlbXMgLm9uZUl0ZW0gLnRpdGxlIC5lZGl0OmhvdmVyIHtcclxuICBjb2xvcjogI2ZmZDQwMDtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5saXN0SXRlbXMgLm9uZUl0ZW0gLnRpdGxlIC5lZGl0OmhvdmVyOmFmdGVyIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZkNDAwO1xyXG5cclxufVxyXG5cclxuLmxpc3RJdGVtcyAub25lSXRlbSAuc3ViVGl0bGUge1xyXG4gIHBhZGRpbmctYm90dG9tOiAwcHg7XHJcbiAgZm9udC1zaXplOiAxOHB4O1xyXG4gIHBhZGRpbmctbGVmdDogMzVweDtcclxufVxyXG5cclxuLmxpc3RJdGVtcyAub25lSXRlbSAuZGVzY3JpcHRpb24ge1xyXG4gIHBhZGRpbmctbGVmdDogMzVweDtcclxuICBjb2xvcjogYmxhY2s7XHJcbn1cclxuXHJcbi5saXN0SXRlbXMgLm9uZUl0ZW0gLmRhdGUge1xyXG4gIHBhZGRpbmctYm90dG9tOiAwcHg7XHJcbiAgZm9udC1zaXplOiAxOHB4O1xyXG4gIHBhZGRpbmctbGVmdDogMzVweDtcclxuICBjb2xvcjogZ3JheTtcclxufVxyXG5cclxuXHJcbi5saXN0T2ZUYWdzIHtcclxuICBtYXJnaW46IDIwcHggMTVweDtcclxuICBkaXNwbGF5OiB0YWJsZTtcclxuICBtYXJnaW4tdG9wOiA0MHB4O1xyXG59XHJcblxyXG4ubGlzdE9mVGFncyAudGFnIHtcclxuICB3aWR0aDogZml0LWNvbnRlbnQ7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgI2ZiZDQzMTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmJkNDMxO1xyXG4gIHBhZGRpbmc6IDBweCA1cHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMTVweDtcclxuICBmbG9hdDogbGVmdDtcclxuICBtYXJnaW46IDBweCA1cHg7XHJcbn1cclxuXHJcbi5saXN0T2ZUYWdzIC50YWc6Zmlyc3QtY2hpbGQge1xyXG4gIG1hcmdpbjogMHB4O1xyXG59XHJcblxyXG4ubGlzdE9mVXNlcnMge1xyXG4gIHBhZGRpbmctdG9wOiAzMHB4O1xyXG59XHJcblxyXG4ubGlzdE9mVXNlcnMgLm9uZVVzZXJzIC5jYXJkOmhvdmVyIHtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5saXN0T2ZVc2VycyAub25lVXNlcnMgLmNvbnRpbnQge1xyXG4gIG1pbi1oZWlnaHQ6IDYwcHg7XHJcbiAgZGlzcGxheTogdGFibGU7XHJcbiAgcGFkZGluZy1sZWZ0OiAyMHB4O1xyXG59XHJcblxyXG4ubGlzdE9mVXNlcnMgLm9uZVVzZXJzIC5jb250aW50IC51c2VybmFtZSB7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIGxpbmUtaGVpZ2h0OiAxOHB4O1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG59XHJcblxyXG4ubGlzdE9mVXNlcnMgLm9uZVVzZXJzIC5jb250aW50IC5pZGVudGVmaXJlIHtcclxuICBmb250LXNpemU6IDEzcHg7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICBjb2xvcjogZ3JheTtcclxuICBkaXNwbGF5OiBibG9jaztcclxuICBsaW5lLWhlaWdodDogMThweDtcclxufVxyXG5cclxuLmxpc3RPZlVzZXJzIC5vbmVVc2VycyAuY29udGludCAuY2l0eSB7XHJcbiAgZm9udC1zaXplOiAxM3B4O1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcblxyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIGNvbG9yOiAjYzNjM2MzO1xyXG4gIGxpbmUtaGVpZ2h0OiAxOHB4O1xyXG59XHJcblxyXG4ubGlzdE9mVXNlcnMgLm9uZVVzZXJzIC5pbWdEaXYge1xyXG4gIHdpZHRoOiA2MHB4O1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG59XHJcblxyXG4ubGlzdE9mVXNlcnMgLm9uZVVzZXJzIC5pbWdEaXYgLmltZyB7XHJcbiAgd2lkdGg6IDYwcHg7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xyXG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcclxufVxyXG5cclxuLnNwcmVhdGVyIHtcclxuICBib3JkZXI6IDA7XHJcbiAgaGVpZ2h0OiAwO1xyXG4gIC8qIEZpcmVmb3guLi4gKi9cclxuICBtYXJnaW46IDE1cHggMHB4O1xyXG4gIGJveC1zaGFkb3c6IDAgMCAxcHggMXB4ICMwMDAwMDAwODtcclxufVxyXG5cclxuLnNwcmVhdGVyOmFmdGVyIHtcclxuICAvKiBOb3QgcmVhbGx5IHN1cHBvc2VkIHRvIHdvcmssIGJ1dCBkb2VzICovXHJcbiAgY29udGVudDogXCJcXDAwYTBcIjtcclxuICAvKiBQcmV2ZW50IG1hcmdpbiBjb2xsYXBzZSAqL1xyXG59XHJcblxyXG5cclxuLmZvbGxvdyB7XHJcbiAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gIG1hcmdpbi10b3A6IDVweDtcclxuICBjbGVhcjogYm90aDtcclxufVxyXG5cclxuLmZvbGxvdy1pY29uIHsgXHJcbiAgd2lkdGg6IDE1cHggOyBcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -5754,6 +6886,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _authentication_auth_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../authentication/auth.service */ "./src/app/authentication/auth.service.ts");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _edit_skill_edit_skill_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../edit-skill/edit-skill.component */ "./src/app/profile/edit-skill/edit-skill.component.ts");
+/* harmony import */ var src_app_services_follow_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/services/follow.service */ "./src/app/services/follow.service.ts");
+
 
 
 
@@ -5766,13 +6900,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CvViewComponent = /** @class */ (function () {
-    function CvViewComponent(dialog, api, router, route, translteService, auth) {
+    function CvViewComponent(dialog, api, router, route, translteService, auth, followService) {
         this.dialog = dialog;
         this.api = api;
         this.router = router;
         this.route = route;
         this.translteService = translteService;
         this.auth = auth;
+        this.followService = followService;
         this.similer = [];
         this.isMyCV = false;
     }
@@ -5795,6 +6930,7 @@ var CvViewComponent = /** @class */ (function () {
                     _this.similer = data;
                 });
             });
+            _this.isFollowing = _this.followService.checkFollowing(_this.id, "USER");
         });
     };
     CvViewComponent.prototype.updateCV = function (newCV) {
@@ -6024,13 +7160,27 @@ var CvViewComponent = /** @class */ (function () {
             _this.changeCvUrl(res[0].url);
         });
     };
+    CvViewComponent.prototype.toggleFollowing = function () {
+        var _this = this;
+        if (this.isFollowing) {
+            this.followService.makeUnfollow(this.id, "USER").then(function (res) {
+                (res ? _this.isFollowing = !_this.isFollowing : _this.isFollowing);
+            });
+        }
+        else {
+            this.followService.makeFollow(this.id, "USER").then(function (res) {
+                (res ? _this.isFollowing = !_this.isFollowing : _this.isFollowing);
+            });
+        }
+    };
     CvViewComponent.ctorParameters = function () { return [
         { type: _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDialog"] },
         { type: _requests_service__WEBPACK_IMPORTED_MODULE_5__["RequestsService"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] },
         { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateService"] },
-        { type: _authentication_auth_service__WEBPACK_IMPORTED_MODULE_8__["AuthService"] }
+        { type: _authentication_auth_service__WEBPACK_IMPORTED_MODULE_8__["AuthService"] },
+        { type: src_app_services_follow_service__WEBPACK_IMPORTED_MODULE_11__["FollowService"] }
     ]; };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"])('file', { static: false }),
@@ -6042,7 +7192,10 @@ var CvViewComponent = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./cv-view.component.html */ "./node_modules/raw-loader/index.js!./src/app/profile/cv-view/cv-view.component.html"),
             styles: [__webpack_require__(/*! ./cv-view.component.css */ "./src/app/profile/cv-view/cv-view.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDialog"], _requests_service__WEBPACK_IMPORTED_MODULE_5__["RequestsService"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateService"], _authentication_auth_service__WEBPACK_IMPORTED_MODULE_8__["AuthService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDialog"], _requests_service__WEBPACK_IMPORTED_MODULE_5__["RequestsService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"],
+            _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateService"], _authentication_auth_service__WEBPACK_IMPORTED_MODULE_8__["AuthService"],
+            src_app_services_follow_service__WEBPACK_IMPORTED_MODULE_11__["FollowService"]])
     ], CvViewComponent);
     return CvViewComponent;
 }());
@@ -6427,6 +7580,80 @@ var EditSkillComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/profile/follow-list/follow-list.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/profile/follow-list/follow-list.component.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".nav {\r\n  margin-bottom: 15px;\r\n  margin-top: 15px; \r\n}\r\n\r\n.nav-item {\r\n  font-size: 1.3rem;\r\n  padding: 10px;\r\n}\r\n\r\n.flat-row-title {\r\n  color: #2c3e50;\r\n}\r\n\r\n.nav-pills>li.active>a,\r\n.nav-pills>li.active>a:focus,\r\n.nav-pills>li.active>a:hover {\r\n  color: #fff;\r\n  background-color: #ffd400ff !important;\r\n}\r\n\r\n.follow-wrapper {\r\n  height: 500px;\r\n  overflow-y: scroll;\r\n  box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.09);\r\n}\r\n\r\n.user-wrapper {\r\n  margin-top: 24%;  \r\n  box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.09);\r\n}\r\n\r\n.follow-box {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: flex-start;\r\n  align-items: center;\r\n  margin-bottom: 15px;\r\n  position: relative;\r\n  box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.09);\r\n\r\n}\r\n\r\n.follow-image {\r\n  width: 100px;\r\n  height: 100px;\r\n  border-radius: 50%;\r\n  overflow: hidden;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  margin: 5px 0px 5px 15px;\r\n  cursor: pointer;\r\n}\r\n\r\n.follow-text {\r\n  margin-right: 10px;\r\n}\r\n\r\n.follow-button {\r\n  padding-top: 15px;\r\n  clear: both;\r\n  position: absolute;\r\n  left: 15px;\r\n}\r\n\r\n.follow-icon {\r\n  width: 15px;\r\n}\r\n\r\n.user-image {\r\n  display: flex;\r\n  justify-content: center;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  position: relative;\r\n  top: -57px;\r\n}\r\n\r\n.oneInfo {\r\n  margin: 15px 5px;\r\n}\r\n\r\n.oneInfo .head {\r\n  font-size: 0.8rem;\r\n}\r\n\r\n.oneInfo .body {\r\n  font-size: 0.8rem;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZmlsZS9mb2xsb3ctbGlzdC9mb2xsb3ctbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQW1CO0VBQ25CLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBOzs7RUFHRSxXQUFXO0VBQ1gsc0NBQXNDO0FBQ3hDOztBQUVBO0VBQ0UsYUFBYTtFQUNiLGtCQUFrQjtFQUNsQixnREFBZ0Q7QUFDbEQ7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsZ0RBQWdEO0FBQ2xEOztBQUdBO0VBQ0UsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQiwyQkFBMkI7RUFDM0IsbUJBQW1CO0VBQ25CLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsZ0RBQWdEOztBQUVsRDs7QUFFQTtFQUNFLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLG1CQUFtQjtFQUNuQix3QkFBd0I7RUFDeEIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGtCQUFrQjtBQUNwQjs7QUFHQTtFQUNFLGlCQUFpQjtFQUNqQixXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLFVBQVU7QUFDWjs7QUFHQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsc0JBQXNCO0VBQ3RCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsVUFBVTtBQUNaOztBQUVBO0VBQ0UsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25CIiwiZmlsZSI6InNyYy9hcHAvcHJvZmlsZS9mb2xsb3ctbGlzdC9mb2xsb3ctbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm5hdiB7XHJcbiAgbWFyZ2luLWJvdHRvbTogMTVweDtcclxuICBtYXJnaW4tdG9wOiAxNXB4OyBcclxufVxyXG5cclxuLm5hdi1pdGVtIHtcclxuICBmb250LXNpemU6IDEuM3JlbTtcclxuICBwYWRkaW5nOiAxMHB4O1xyXG59XHJcblxyXG4uZmxhdC1yb3ctdGl0bGUge1xyXG4gIGNvbG9yOiAjMmMzZTUwO1xyXG59XHJcblxyXG4ubmF2LXBpbGxzPmxpLmFjdGl2ZT5hLFxyXG4ubmF2LXBpbGxzPmxpLmFjdGl2ZT5hOmZvY3VzLFxyXG4ubmF2LXBpbGxzPmxpLmFjdGl2ZT5hOmhvdmVyIHtcclxuICBjb2xvcjogI2ZmZjtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZkNDAwZmYgIWltcG9ydGFudDtcclxufVxyXG5cclxuLmZvbGxvdy13cmFwcGVyIHtcclxuICBoZWlnaHQ6IDUwMHB4O1xyXG4gIG92ZXJmbG93LXk6IHNjcm9sbDtcclxuICBib3gtc2hhZG93OiAwcHggN3B4IDE2cHggMHB4IHJnYmEoMCwgMCwgMCwgMC4wOSk7XHJcbn1cclxuXHJcbi51c2VyLXdyYXBwZXIge1xyXG4gIG1hcmdpbi10b3A6IDI0JTsgIFxyXG4gIGJveC1zaGFkb3c6IDBweCA3cHggMTZweCAwcHggcmdiYSgwLCAwLCAwLCAwLjA5KTtcclxufVxyXG5cclxuXHJcbi5mb2xsb3ctYm94IHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgbWFyZ2luLWJvdHRvbTogMTVweDtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgYm94LXNoYWRvdzogMHB4IDdweCAxNnB4IDBweCByZ2JhKDAsIDAsIDAsIDAuMDkpO1xyXG5cclxufVxyXG5cclxuLmZvbGxvdy1pbWFnZSB7XHJcbiAgd2lkdGg6IDEwMHB4O1xyXG4gIGhlaWdodDogMTAwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgbWFyZ2luOiA1cHggMHB4IDVweCAxNXB4O1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLmZvbGxvdy10ZXh0IHtcclxuICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbn1cclxuXHJcblxyXG4uZm9sbG93LWJ1dHRvbiB7XHJcbiAgcGFkZGluZy10b3A6IDE1cHg7XHJcbiAgY2xlYXI6IGJvdGg7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGxlZnQ6IDE1cHg7XHJcbn1cclxuXHJcblxyXG4uZm9sbG93LWljb24ge1xyXG4gIHdpZHRoOiAxNXB4O1xyXG59XHJcblxyXG4udXNlci1pbWFnZSB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIHRvcDogLTU3cHg7XHJcbn1cclxuXHJcbi5vbmVJbmZvIHtcclxuICBtYXJnaW46IDE1cHggNXB4O1xyXG59XHJcblxyXG4ub25lSW5mbyAuaGVhZCB7XHJcbiAgZm9udC1zaXplOiAwLjhyZW07XHJcbn1cclxuXHJcbi5vbmVJbmZvIC5ib2R5IHtcclxuICBmb250LXNpemU6IDAuOHJlbTtcclxufVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/profile/follow-list/follow-list.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/profile/follow-list/follow-list.component.ts ***!
+  \**************************************************************/
+/*! exports provided: FollowListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FollowListComponent", function() { return FollowListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_follow_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/follow.service */ "./src/app/services/follow.service.ts");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+var FollowListComponent = /** @class */ (function () {
+    function FollowListComponent(followService) {
+        this.followService = followService;
+    }
+    FollowListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.user = JSON.parse(localStorage.getItem(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].userDetails));
+        this.userId = this.user['userId'];
+        this.followService.getUserFollower(this.userId).then(function (res) { return _this.userFollowers = res; });
+        this.followService.getUserFollowing(this.userId, "USER").then(function (res) { return _this.userFollowing = res; });
+        this.followService.getUserFollowing(this.userId, "BUSINESS").then(function (res) { return _this.businessFollowing = res; });
+    };
+    FollowListComponent.prototype.toggleFollowing = function (id, type) {
+        var isFollowing = this.isFollowing(id, type);
+        if (isFollowing) {
+            this.followService.makeUnfollow(id, type).then(function (res) {
+            });
+        }
+        else {
+            this.followService.makeFollow(id, type).then(function (res) {
+            });
+        }
+    };
+    FollowListComponent.prototype.isFollowing = function (id, type) {
+        return this.followService.checkFollowing(id, type);
+    };
+    FollowListComponent.ctorParameters = function () { return [
+        { type: src_app_services_follow_service__WEBPACK_IMPORTED_MODULE_2__["FollowService"] }
+    ]; };
+    FollowListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-follow-list',
+            template: __webpack_require__(/*! raw-loader!./follow-list.component.html */ "./node_modules/raw-loader/index.js!./src/app/profile/follow-list/follow-list.component.html"),
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
+            styles: [__webpack_require__(/*! ./follow-list.component.css */ "./src/app/profile/follow-list/follow-list.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_follow_service__WEBPACK_IMPORTED_MODULE_2__["FollowService"]])
+    ], FollowListComponent);
+    return FollowListComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/profile/profile-edit/profile-edit.component.css":
 /*!*****************************************************************!*\
   !*** ./src/app/profile/profile-edit/profile-edit.component.css ***!
@@ -6547,7 +7774,7 @@ var ProfileEditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".pretty .state label:before,.pretty .state label:after,.pretty input{\r\n  -webkit-transform: translateX(-20px) !important;\r\n          transform: translateX(-20px) !important;\r\n}\r\n.pretty\r\n{\r\n  float: left;\r\n  margin: 10px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZmlsZS9wcm9maWxlLXZpZXcvcHJvZmlsZS12aWV3LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwrQ0FBdUM7VUFBdkMsdUNBQXVDO0FBQ3pDO0FBQ0E7O0VBRUUsV0FBVztFQUNYLFlBQVk7QUFDZCIsImZpbGUiOiJzcmMvYXBwL3Byb2ZpbGUvcHJvZmlsZS12aWV3L3Byb2ZpbGUtdmlldy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByZXR0eSAuc3RhdGUgbGFiZWw6YmVmb3JlLC5wcmV0dHkgLnN0YXRlIGxhYmVsOmFmdGVyLC5wcmV0dHkgaW5wdXR7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC0yMHB4KSAhaW1wb3J0YW50O1xyXG59XHJcbi5wcmV0dHlcclxue1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIG1hcmdpbjogMTBweDtcclxufVxyXG4iXX0= */"
+module.exports = ".pretty .state label:before,\r\n.pretty .state label:after,\r\n.pretty input {\r\n  -webkit-transform: translateX(-20px) !important;\r\n          transform: translateX(-20px) !important;\r\n}\r\n\r\n.pretty {\r\n  float: left;\r\n  margin: 10px;\r\n}\r\n\r\n.profile-row {\r\n  position: relative;\r\n  top: -85px;\r\n}\r\n\r\n.info-row {\r\n  position: relative;\r\n  left: 40px;\r\n}\r\n\r\n.user-img-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.user-img {\r\n  border-radius: 50%;\r\n  width: 175px;\r\n  height: 175px;\r\n}\r\n\r\n.follow {\r\n  margin-right: 20px;\r\n  margin-top: 5px;\r\n  clear: both;\r\n}\r\n\r\n.follow-icon {\r\n  width: 15px;\r\n}\r\n\r\n.flex-row {\r\n  display: flex;\r\n  flex-direction: row;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.btn-more {\r\n  text-align: right;\r\n}\r\n\r\n@media (max-width: 988px) {\r\n  .info-row {\r\n    left: 0px;\r\n  }\r\n\r\n}\r\n\r\n@media (max-width: 576px) {\r\n  .info-row {\r\n    left: 0px;\r\n  }\r\n\r\n  h3 {\r\n    margin-top: 15px;\r\n  }\r\n\r\n  .follow {\r\n    margin-right: 0px;\r\n  }\r\n\r\n  .flex-row {\r\n    margin-top: 10px;\r\n    flex-direction: column;\r\n  }\r\n\r\n\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZmlsZS9wcm9maWxlLXZpZXcvcHJvZmlsZS12aWV3LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztFQUdFLCtDQUF1QztVQUF2Qyx1Q0FBdUM7QUFDekM7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsWUFBWTtBQUNkOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFVBQVU7QUFDWjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixVQUFVO0FBQ1o7O0FBRUE7RUFDRSxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLG1CQUFtQjtFQUNuQix1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLGFBQWE7QUFDZjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2YsV0FBVztBQUNiOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0UsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0U7SUFDRSxTQUFTO0VBQ1g7O0FBRUY7O0FBR0E7RUFDRTtJQUNFLFNBQVM7RUFDWDs7RUFFQTtJQUNFLGdCQUFnQjtFQUNsQjs7RUFFQTtJQUNFLGlCQUFpQjtFQUNuQjs7RUFFQTtJQUNFLGdCQUFnQjtJQUNoQixzQkFBc0I7RUFDeEI7OztBQUdGIiwiZmlsZSI6InNyYy9hcHAvcHJvZmlsZS9wcm9maWxlLXZpZXcvcHJvZmlsZS12aWV3LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJldHR5IC5zdGF0ZSBsYWJlbDpiZWZvcmUsXHJcbi5wcmV0dHkgLnN0YXRlIGxhYmVsOmFmdGVyLFxyXG4ucHJldHR5IGlucHV0IHtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTIwcHgpICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5wcmV0dHkge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIG1hcmdpbjogMTBweDtcclxufVxyXG5cclxuLnByb2ZpbGUtcm93IHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgdG9wOiAtODVweDtcclxufVxyXG5cclxuLmluZm8tcm93IHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgbGVmdDogNDBweDtcclxufVxyXG5cclxuLnVzZXItaW1nLWNvbnRhaW5lciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbi51c2VyLWltZyB7XHJcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gIHdpZHRoOiAxNzVweDtcclxuICBoZWlnaHQ6IDE3NXB4O1xyXG59XHJcblxyXG4uZm9sbG93IHtcclxuICBtYXJnaW4tcmlnaHQ6IDIwcHg7XHJcbiAgbWFyZ2luLXRvcDogNXB4O1xyXG4gIGNsZWFyOiBib3RoO1xyXG59XHJcblxyXG4uZm9sbG93LWljb24ge1xyXG4gIHdpZHRoOiAxNXB4O1xyXG59XHJcblxyXG4uZmxleC1yb3cge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBmbGV4LXdyYXA6IHdyYXA7XHJcbn1cclxuXHJcbi5idG4tbW9yZSB7XHJcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbn1cclxuXHJcbkBtZWRpYSAobWF4LXdpZHRoOiA5ODhweCkge1xyXG4gIC5pbmZvLXJvdyB7XHJcbiAgICBsZWZ0OiAwcHg7XHJcbiAgfVxyXG5cclxufVxyXG5cclxuXHJcbkBtZWRpYSAobWF4LXdpZHRoOiA1NzZweCkge1xyXG4gIC5pbmZvLXJvdyB7XHJcbiAgICBsZWZ0OiAwcHg7XHJcbiAgfVxyXG5cclxuICBoMyB7XHJcbiAgICBtYXJnaW4tdG9wOiAxNXB4O1xyXG4gIH1cclxuXHJcbiAgLmZvbGxvdyB7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDBweDtcclxuICB9XHJcblxyXG4gIC5mbGV4LXJvdyB7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICB9XHJcblxyXG5cclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -6588,15 +7815,15 @@ var ProfileViewComponent = /** @class */ (function () {
         this.categories = {};
         this.selectedSubCategory = [];
     }
+    // @ViewChild('myModal', { static: false }) modal
     ProfileViewComponent.prototype.ngAfterViewInit = function () {
-        var _this = this;
-        this.route.fragment.subscribe(function (f) {
-            console.log(f);
-            if (f == "chooseCategory")
-                setTimeout(function () {
-                    _this.modal.open();
-                });
-        });
+        // this.route.fragment.subscribe((f) => {
+        //   console.log(f)
+        //   if (f == "chooseCategory")
+        //     setTimeout(() => {
+        //       this.modal.open();
+        //     })
+        // })
     };
     ProfileViewComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -6671,10 +7898,6 @@ var ProfileViewComponent = /** @class */ (function () {
         { type: _authentication_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
     ]; };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('myModal', { static: false }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], ProfileViewComponent.prototype, "modal", void 0);
     ProfileViewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-profile-view',
@@ -6730,7 +7953,6 @@ var RequestsService = /** @class */ (function () {
     };
     RequestsService.prototype.get = function (name, params) {
         if (params) {
-            // console.warn(params)
             // Params are sent as a JSON Object
             return this.http.get(this.api + name, { params: params, headers: this.header });
         }
@@ -6738,17 +7960,17 @@ var RequestsService = /** @class */ (function () {
     };
     RequestsService.prototype.post = function (name, data, h) {
         var header = this.header;
-        if (h) {
+        if (h)
             header = Object.assign(this.header, h);
-        }
         return this.http.post(this.api + name, data, { headers: header });
     };
-    RequestsService.prototype.put = function (name, data) {
-        console.log(this.header);
-        return this.http.put(this.api + name, data, { headers: this.header });
+    RequestsService.prototype.put = function (name, data, h) {
+        var header = this.header;
+        if (h)
+            header = Object.assign(this.header, h);
+        return this.http.put(this.api + name, data, { headers: header });
     };
     RequestsService.prototype.patch = function (name, data) {
-        console.log(this.header);
         return this.http.patch(this.api + name, data, { headers: this.header });
     };
     RequestsService.prototype.delete = function (name, id) {
@@ -6766,6 +7988,154 @@ var RequestsService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]])
     ], RequestsService);
     return RequestsService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/follow.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/services/follow.service.ts ***!
+  \********************************************/
+/*! exports provided: FollowService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FollowService", function() { return FollowService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _requests_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../requests.service */ "./src/app/requests.service.ts");
+
+
+
+
+var FollowService = /** @class */ (function () {
+    function FollowService(api) {
+        this.api = api;
+        this.userFollowing = [];
+        this.userFollowers = [];
+        this.businessFollowing = [];
+        if (localStorage.getItem('userFollowing') !== null) {
+            this.userFollowing = JSON.parse(localStorage.getItem('userFollowing'));
+        }
+        if (localStorage.getItem('userFollowers') !== null) {
+            this.userFollowers = JSON.parse(localStorage.getItem('userFollowers'));
+        }
+        if (localStorage.getItem('businessFollowing') !== null) {
+            this.businessFollowing = JSON.parse(localStorage.getItem('businessFollowing'));
+        }
+    }
+    FollowService.prototype.getUserFollowing = function (ownerId, type) {
+        var _this = this;
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]();
+        params = params.set('filter', JSON.stringify({
+            "where": {
+                "ownerId": ownerId,
+                "type": type,
+            },
+        }));
+        return this.api.get("followers", params).toPromise().then(function (res) {
+            switch (type) {
+                case "USER":
+                    localStorage.setItem("userFollowing", JSON.stringify(res));
+                    _this.userFollowing = res;
+                    return _this.userFollowing;
+                case "BUSINESS":
+                    localStorage.setItem("businessFollowing", JSON.stringify(res));
+                    _this.businessFollowing = res;
+                    return _this.businessFollowing;
+                default:
+                    return;
+            }
+        });
+    };
+    FollowService.prototype.getUserFollower = function (objectId) {
+        var _this = this;
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]();
+        params = params.set('filter', JSON.stringify({
+            "where": {
+                "objectId": objectId,
+                "type": "USER",
+            },
+        }));
+        return this.api.get("followers", params).toPromise().then(function (res) {
+            localStorage.setItem("userFollowers", JSON.stringify(res));
+            _this.userFollowers = res;
+            return _this.userFollowers;
+        });
+    };
+    FollowService.prototype.makeFollow = function (id, type) {
+        var _this = this;
+        return this.api.post("followers/makeFollow", { id: id, type: type }).toPromise().then(function (res) {
+            switch (type) {
+                case "USER":
+                    _this.userFollowing.push(res);
+                    localStorage.setItem("userFollowing", JSON.stringify(_this.userFollowing));
+                    return true;
+                case "BUSINESS":
+                    _this.businessFollowing.push(res);
+                    localStorage.setItem("businessFollowing", JSON.stringify(_this.businessFollowing));
+                    return true;
+                default:
+                    return false;
+            }
+        }, function (error) {
+            return false;
+        });
+    };
+    FollowService.prototype.makeUnfollow = function (id, type) {
+        var _this = this;
+        return this.api.delete("followers/makeUnfollow?id=" + id).toPromise().then(function (res) {
+            switch (type) {
+                case "USER":
+                    _this.userFollowing = _this.userFollowing.filter(function (user) {
+                        return user.objectId !== id;
+                    });
+                    localStorage.setItem("userFollowing", JSON.stringify(_this.userFollowing));
+                    return true;
+                case "BUSINESS":
+                    _this.businessFollowing = _this.businessFollowing.filter(function (business) {
+                        return business.objectId !== id;
+                    });
+                    localStorage.setItem("businessFollowing", JSON.stringify(_this.businessFollowing));
+                    return true;
+                default:
+                    return false;
+            }
+        }, function (error) {
+            return false;
+        });
+    };
+    FollowService.prototype.checkFollowing = function (id, type) {
+        var index = -1;
+        switch (type) {
+            case "USER":
+                index = this.userFollowing.findIndex(function (user) {
+                    return user.objectId === id;
+                });
+                return index !== -1;
+            case "BUSINESS":
+                index = this.businessFollowing.findIndex(function (business) {
+                    return business.objectId === id;
+                });
+                return index !== -1;
+            default:
+                return false;
+        }
+    };
+    FollowService.ctorParameters = function () { return [
+        { type: _requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"] }
+    ]; };
+    FollowService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            'providedIn': 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_requests_service__WEBPACK_IMPORTED_MODULE_3__["RequestsService"]])
+    ], FollowService);
+    return FollowService;
 }());
 
 
@@ -7104,6 +8474,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _authentication_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../authentication/auth.service */ "./src/app/authentication/auth.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var src_app_authentication_modals_login_login_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/authentication/modals/login/login.component */ "./src/app/authentication/modals/login/login.component.ts");
+/* harmony import */ var src_app_authentication_modals_signup_signup_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/authentication/modals/signup/signup.component */ "./src/app/authentication/modals/signup/signup.component.ts");
+/* harmony import */ var src_app_authentication_modals_forget_password_forget_password_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/authentication/modals/forget-password/forget-password.component */ "./src/app/authentication/modals/forget-password/forget-password.component.ts");
+/* harmony import */ var src_app_authentication_modals_complete_information_complete_information_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/authentication/modals/complete-information/complete-information.component */ "./src/app/authentication/modals/complete-information/complete-information.component.ts");
+
+
+
+
+
 
 
 
@@ -7111,11 +8491,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var NavigationComponent = /** @class */ (function () {
-    function NavigationComponent(translate, auth, router, CD) {
+    function NavigationComponent(translate, auth, router, CD, dialog) {
         this.translate = translate;
         this.auth = auth;
         this.router = router;
         this.CD = CD;
+        this.dialog = dialog;
         this.english = false;
         this.logoAddress = '';
     }
@@ -7141,7 +8522,6 @@ var NavigationComponent = /** @class */ (function () {
             _this.user = null;
             setTimeout(function () {
                 _this.user = data;
-                //console.log(data)
                 _this.CD.markForCheck();
                 _this.CD.detectChanges();
             });
@@ -7151,17 +8531,59 @@ var NavigationComponent = /** @class */ (function () {
         if (lang != this.translate.currentLang) {
             localStorage.setItem(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].language, lang);
             location.reload();
-            // this.translate.use(lang)
         }
     };
     NavigationComponent.prototype.goToProfile = function () {
         this.router.navigate(['profile']);
     };
+    NavigationComponent.prototype.onLogin = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(src_app_authentication_modals_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"], {
+            panelClass: 'communictioDialogStyle',
+        });
+        dialogRef.afterClosed().subscribe(function (data) {
+            if (data) {
+                if (data.event && data.event === 'register') {
+                    _this.dialog.open(src_app_authentication_modals_signup_signup_component__WEBPACK_IMPORTED_MODULE_8__["SignupComponent"], {
+                        panelClass: 'communictioDialogStyle',
+                    });
+                }
+                if (data.event && data.event === 'forgot') {
+                    _this.dialog.open(src_app_authentication_modals_forget_password_forget_password_component__WEBPACK_IMPORTED_MODULE_9__["ForgetPasswordComponent"], {
+                        panelClass: 'communictioDialogStyle',
+                    });
+                }
+                if (data.event && data.event === 'complete') {
+                    _this.dialog.open(src_app_authentication_modals_complete_information_complete_information_component__WEBPACK_IMPORTED_MODULE_10__["CompleteInformationComponent"], {
+                        panelClass: 'communictioDialogStyle',
+                        data: data.data
+                    });
+                }
+            }
+        });
+    };
+    NavigationComponent.prototype.onSignup = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(src_app_authentication_modals_signup_signup_component__WEBPACK_IMPORTED_MODULE_8__["SignupComponent"], {
+            panelClass: 'communictioDialogStyle',
+        });
+        dialogRef.afterClosed().subscribe(function (data) {
+            if (data) {
+                if (data.event && data.event === 'complete') {
+                    _this.dialog.open(src_app_authentication_modals_complete_information_complete_information_component__WEBPACK_IMPORTED_MODULE_10__["CompleteInformationComponent"], {
+                        panelClass: 'communictioDialogStyle',
+                        data: data.data
+                    });
+                }
+            }
+        });
+    };
     NavigationComponent.ctorParameters = function () { return [
         { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"] },
         { type: _authentication_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialog"] }
     ]; };
     NavigationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -7169,7 +8591,8 @@ var NavigationComponent = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./navigation.component.html */ "./node_modules/raw-loader/index.js!./src/app/shared/navigation/navigation.component.html"),
             styles: [__webpack_require__(/*! ./navigation.component.css */ "./src/app/shared/navigation/navigation.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _authentication_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _authentication_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]])
     ], NavigationComponent);
     return NavigationComponent;
 }());
@@ -7449,7 +8872,7 @@ var ArabicTranslation = {
     myAds: 'اعلاناتي',
     myBusiness: 'أعمالي',
     myJobs: 'وظائفي',
-    forgetPassword: 'نسيت كلمة المرور',
+    forgetPassword: 'نسيت كلمة المرور؟',
     restorePassword: 'استعادة كلمة المرور',
     changePassword: 'تغيير كلمة المرور',
     sendVerificationCode: 'إرسال رمز التحقق',
@@ -7490,6 +8913,7 @@ var ArabicTranslation = {
     details: 'تفاصيل',
     writeYourAdDetails: 'اكتب التفاصيل الخاصة بالإعلان الخاص بك',
     yourBusinessImages: 'صور اعلانك',
+    yourBusinessVideos: 'فيديوهات اعلانك',
     browseFiles: 'استعرض الملفات',
     registerAd: 'إضافة الإعلان',
     registerBusiness: 'إضافة العمل',
@@ -7554,9 +8978,9 @@ var ArabicTranslation = {
     addedAds: 'الإعلانات المضافة',
     writeDetailsOfYourAd: 'اكتب التفاصيل الخاصة بالإعلان الخاص بك',
     language: 'اللغة',
-    homePage: 'الرئيسية',
-    businessGuidePage: 'دليل الأعمال',
-    businessJobPage: "الوظائف",
+    homePage: 'الجريدة',
+    businessGuidePage: 'الدليل',
+    businessJobPage: "وظائف",
     business: 'الأعمال',
     addBusinessPage: 'إضافة عمل',
     createAdPage: 'إضافة إعلان',
@@ -7570,12 +8994,13 @@ var ArabicTranslation = {
     faxNumber: 'رقم الفاكس',
     workingHours: 'أيام المناوبة',
     address: 'العنوان',
+    ACCOUNT_IS_LOCK: "تم قفل الحساب, الرجاء المحاولة لاحقا",
     contactInfo: 'معلومات الإتصال',
     privacyAndTerms: 'اتفاقية الخصوصية والشروط',
     requiredMessage: 'الرجاء ملئ {{name}}',
     LOGIN_FAILED: 'فشل تسجيل الدخول',
     discoverActivitiesAroundYou: 'دليل الأعمال',
-    jobsGuide: 'الوظائف',
+    jobsGuide: 'وظائف',
     logout: 'تسجيل الخروج',
     about: 'حول',
     openingDays: 'أيام الدوام',
@@ -7635,7 +9060,23 @@ var ArabicTranslation = {
     editProduct: "تعديل المنتج",
     myProducts: "منتجاتي",
     balance: "الرصيد",
-    supplierPage: "الموردون"
+    supplierPage: "موردون",
+    loginWithFacebook: 'تسجيل دخول من فيسبوك',
+    loginWithGoogle: 'تسجيل دخول من غوغل',
+    emailAlreadyExsit: "الايميل الاكتروني موجود مسبقا",
+    submit: "إرسال",
+    completeInformation: "إكمال معلومات المستخدم",
+    resetPassword: "إستعادة كلمة المرور",
+    isSupplier: "مورد",
+    follow: "متابعة",
+    unFollow: "إلغاء متابعة",
+    rate: "تقييم",
+    comment: "تعليق",
+    starIsRequired: "",
+    following: "المتابعون",
+    userFollowing: "المتابعة",
+    userFollowers: "المتابعون",
+    businessFollowing: "الأعمال المتابعة"
 };
 
 
@@ -7652,87 +9093,89 @@ var ArabicTranslation = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EnglishTranslation", function() { return EnglishTranslation; });
 var EnglishTranslation = {
-    username: 'username',
-    email: 'email',
-    password: 'password',
-    newPassword: 'new password',
-    gender: 'gender',
-    male: 'male',
-    female: 'female',
-    birth: 'birth',
+    username: 'Username',
+    email: 'Email',
+    password: 'Password',
+    newPassword: 'New Password',
+    gender: 'Gender',
+    male: 'Male',
+    female: 'Female',
+    birth: 'Birth',
     // confirmPassword:'confirm password',
     // confirmNewPassword:'confirmNew Password',
-    createAccount: 'create account',
-    login: 'login',
-    rememberMe: 'remember me',
-    mySubscription: 'my subscription',
-    myAds: 'my Ads',
-    myBusiness: 'my Business',
-    myJobs: 'my Jobs',
-    forgetPassword: 'forget password',
-    restorePassword: 'restore password',
-    changePassword: 'change password',
-    sendVerificationCode: 'send verification Code',
-    verificationCode: 'verification code',
-    enterCodeAndNewPassword: 'enter code and new password',
-    verificationCodeIsRequired: 'verification code is required',
-    usernameIsRequired: 'username is required',
-    emailIsRequired: 'email is required',
-    notAValidEmail: 'not a valid email',
-    passwordIsRequired: 'password is required',
-    confirmPasswordIsRequired: 'confirm password is required',
+    ACCOUNT_IS_LOCK: 'Your account has been locked, please try again later',
+    createAccount: 'Register Now',
+    login: 'Login',
+    rememberMe: 'Remember Me',
+    mySubscription: 'My Subscription',
+    myAds: 'My Ads',
+    myBusiness: 'My Business',
+    myJobs: 'My Jobs',
+    forgetPassword: 'Forgot Your Password?',
+    restorePassword: 'Restore Password',
+    changePassword: 'Change password',
+    sendVerificationCode: 'Send Verification Code',
+    verificationCode: 'Verification Code',
+    enterCodeAndNewPassword: 'Enter Code and New Password',
+    verificationCodeIsRequired: 'Verification Code is required',
+    usernameIsRequired: 'Username is Required',
+    emailIsRequired: 'Email is Required',
+    notAValidEmail: 'Not A Valid Email',
+    passwordIsRequired: 'Password is Required',
+    confirmPasswordIsRequired: 'Confirm Password is Required',
     // confirmPasswordAndPasswordNotSame:'confirm assword And Password Not Same',
-    genderIsRequired: 'gender is required',
-    birthIsRequired: 'birth is required',
-    phoneNumberIsRequired: 'phone number is required',
-    phoneNumber: 'phone number',
-    featuredAds: 'featured Ads',
-    homeTitle: 'The Journal',
+    genderIsRequired: 'Gender is Required',
+    birthIsRequired: 'Birth is required',
+    phoneNumberIsRequired: 'Phone Number is Required',
+    phoneNumber: 'Phone Number',
+    featuredAds: 'Featured Ads',
+    homeTitle: 'Newspaper',
     homeSubTitle: '',
     searchForWhat: 'Search keyword',
-    location: 'location',
-    chooseCategory: 'choose category',
-    search: 'search',
+    location: 'Location',
+    chooseCategory: 'Choose Category',
+    search: 'Search',
     searchFilter: 'Search',
-    keyword: 'keyword',
-    category: 'category',
-    subCategory: 'sub category',
-    chooseCity: 'choose city',
-    apply: 'apply',
+    keyword: 'Keyword',
+    category: 'Category',
+    subCategory: 'Sub Category',
+    chooseCity: 'Choose City',
+    apply: 'Apply',
     applyJob: "Apply",
-    loginToApply: "login to apply",
-    preview: 'preview',
-    createNewAd: 'create new Ad',
-    adName: 'ad Name',
-    yourAdTitle: 'your Ad title',
-    city: 'city',
-    area: 'area',
-    details: 'details',
-    writeYourAdDetails: 'write Your ad details',
-    yourBusinessImages: 'your business images',
-    browseFiles: 'browse files',
-    registerAd: 'register Ad',
-    registerBusiness: 'register Business',
-    business: 'business',
-    getInTouch: 'contact us',
-    editData: 'edit Data',
-    edit: 'edit',
+    loginToApply: "Login To Apply",
+    preview: 'Preview',
+    createNewAd: 'Create New Ad',
+    adName: 'Ad Name',
+    yourAdTitle: 'Your Ad Title',
+    city: 'City',
+    area: 'Area',
+    details: 'Details',
+    writeYourAdDetails: 'Write Your Ad Details',
+    yourBusinessImages: 'Your Business Images',
+    yourBusinessVideos: 'Your Business Videos',
+    browseFiles: 'Browse Files',
+    registerAd: 'Register Ad',
+    registerBusiness: 'Register Business',
+    business: 'Business',
+    getInTouch: 'Contact Us',
+    editData: 'Edit Data',
+    edit: 'Edit',
     CV: 'CV',
     skills: 'Skills',
     skill: 'Skill',
-    pending: 'pending',
-    interviewing: 'interviewing',
-    hire: 'hire',
-    noHire: 'no hire',
+    pending: 'Pending',
+    interviewing: 'Interviewing',
+    hire: 'Hire',
+    noHire: 'No Hire',
     similarProfile: "Similar Profiles",
     title: 'Title',
     companyName: 'Company Name',
     educationalEntity: 'Educational Entity',
     descriptionCV: 'Description',
-    rangeSalary: "range salary",
+    rangeSalary: "Range Salary",
     year: 'Year',
     month: 'Month',
-    primaryIdentifier: "professional title",
+    primaryIdentifier: "Professional Title",
     bio: "Bio",
     reference: "Reference",
     fullfrom: "Full From Date",
@@ -7743,76 +9186,76 @@ var EnglishTranslation = {
     present: "Present",
     experience: "Experience",
     education: "Education",
-    requiredMessageCV: "Please fill in ",
+    requiredMessageCV: "Please Fill In ",
     delete: 'Delete',
     saveCV: 'Save',
-    save: 'save',
-    addNew: 'add new',
-    new: 'new',
-    addedAds: 'added Ads',
-    writeDetailsOfYourAd: 'write details of your Ad',
-    language: 'language',
-    homePage: 'Home Page',
-    businessGuidePage: 'Business Guide',
+    save: 'Save',
+    addNew: 'Add New',
+    new: 'New',
+    addedAds: 'Added Ads',
+    writeDetailsOfYourAd: 'Write details of your Ad',
+    language: 'Language',
+    homePage: 'Newspaper',
+    businessGuidePage: 'Directory',
     businessJobPage: "Jobs",
     addBusinessPage: 'Add Business',
     createAdPage: 'Add Ad ',
-    minimumEducationLevel: "minimum education level",
-    jobType: "job type",
-    partTime: "Part time",
-    fullTime: "Full time",
-    projectBased: "Project based",
-    volunteer: "volunteer",
-    internship: "internship",
+    minimumEducationLevel: "Minimum Education Level",
+    jobType: "Job Type",
+    partTime: "Part Time",
+    fullTime: "Full Time",
+    projectBased: "Project Based",
+    volunteer: "Volunteer",
+    internship: "Internship",
     highSchoolDegree: "high school degree",
     associateDegree: "associate degree",
     universityDegree: "university degree",
     masterDegree: "master degree",
     doctoralDegree: "doctoral degree",
-    qualificationsEn: "english qualifications",
-    qualificationsAr: "arabic qualifications",
-    responsibilitiesEn: "english responsibilities",
-    responsibilitiesAr: "arabic responsibilities",
+    qualificationsEn: "English Qualifications",
+    qualificationsAr: "Arabic Qualifications",
+    responsibilitiesEn: "English Responsibilities",
+    responsibilitiesAr: "Arabic Responsibilities",
     responsibilities: "Responsibilities",
     jobInfo: "Job information",
     information: "Information",
-    employee: "applicants",
-    verificationMessage: "verification message",
+    employee: "Applicants",
+    verificationMessage: "Verification Message",
     qualifications: "Qualifications",
     rangeSalaryView: "Range Salary",
-    ServicesAndProducts: 'Services and products',
-    nameEn: 'english name',
-    nameAr: 'arabic name',
-    descriptionAr: "arabic description",
-    descriptionEn: "english description",
-    phoneNumber1: 'phone number 1',
-    phoneNumber2: 'phone number 2',
-    faxNumber: 'fax number',
-    workingHours: 'working hours',
-    address: 'address',
-    contactInfo: 'contact info',
-    privacyAndTerms: 'privacy and terms',
-    requiredMessage: '{{name}} is required',
-    LOGIN_FAILED: 'username or password are wrong',
-    discoverActivitiesAroundYou: 'The business guide',
-    jobsGuide: 'The Jobs',
+    ServicesAndProducts: 'Services And Products',
+    nameEn: 'English Name',
+    nameAr: 'Arabic Name',
+    descriptionAr: "Arabic Description",
+    descriptionEn: "English Description",
+    phoneNumber1: 'Phone Number 1',
+    phoneNumber2: 'Phone Number 2',
+    faxNumber: 'Fax Number',
+    workingHours: 'Working Hours',
+    address: 'Address',
+    contactInfo: 'Contact Info',
+    privacyAndTerms: 'Privacy And Terms',
+    requiredMessage: '{{name}} is Required',
+    LOGIN_FAILED: 'Username or Password are wrong',
+    discoverActivitiesAroundYou: 'Directory',
+    jobsGuide: 'Jobs',
     logout: 'Logout',
-    about: 'about',
-    openingDays: 'opening days',
+    about: 'About',
+    openingDays: 'Opening Days',
     checkYourEmailForLink: 'An email have been sent to this email address, check your inbox',
-    businessImages: "businessImages",
-    editProducts: "edit products",
+    businessImages: "Business Images",
+    editProducts: "Edit Products",
     addJobOpportunity: "Add Job Opportunity",
-    name: "name",
-    description: "description",
-    add: "add",
-    close: "close",
-    reset: "reset",
+    name: "Name",
+    description: "Description",
+    add: "Add",
+    close: "Close",
+    reset: "Reset",
     removeConfirmation: 'Are you sure to remove ?',
     notifications: 'Notifications',
     addNewBusiness: 'Add New Business',
     addNewJobOpportunity: "Add New Job Opportunity",
-    addNewVolume: 'check the new ads in this new volume',
+    addNewVolume: 'Check the new ads in this new volume',
     yes: "Yes",
     no: "No",
     applyMessage: "Are you sure you want apply to job ?",
@@ -7822,20 +9265,20 @@ var EnglishTranslation = {
     deactiveJob: "Are you sure you want deactive this job ?",
     userIsApplied: "You Already Applied",
     enter: "Enter",
-    noExperienceInCv: "No  Experience In CV",
-    noTagsInCv: "No  Tag In CV",
-    noEducationInCv: "No  Education In CV",
+    noExperienceInCv: "No Experience In CV",
+    noTagsInCv: "No Tag In CV",
+    noEducationInCv: "No Education In CV",
     noApplicants: "No Applicants To Job",
-    successChangeStaus: "change stautes success",
+    successChangeStaus: "Change Stautes Success",
     successMessage: "Success Message",
-    successAppliy: "succcess apply to this job",
-    successDeactive: "success deactive this job",
+    successAppliy: "Succcess Apply To This Job",
+    successDeactive: "Success Deactive This Job",
     done: "Done",
     deactive: "Deactive",
-    successUpdateCV: "success update CV",
-    editCVFile: "upload CV file",
-    productsPage: "Products",
-    productsTitle: "The Products Guide",
+    successUpdateCV: "Success Update CV",
+    editCVFile: "Upload CV File",
+    productsPage: "Market",
+    productsTitle: "Market",
     productCreate: "Add Product",
     createNewProduct: "Create New Product",
     productName: "Product Name",
@@ -7846,7 +9289,23 @@ var EnglishTranslation = {
     editProduct: "Edit Product",
     myProducts: "My Products",
     balance: "Balance",
-    supplierPage: "Suppliers"
+    supplierPage: "Suppliers",
+    loginWithFacebook: 'Login With Facebook',
+    loginWithGoogle: 'Login With Google',
+    emailAlreadyExsit: "Email Already Exsit",
+    submit: "Submit",
+    completeInformation: "Complete User Information",
+    resetPassword: "Reset Your Password",
+    isSupplier: "Supplier",
+    follow: "Follow",
+    unFollow: "Unfollow",
+    rate: "Rate",
+    commet: "Comment",
+    starIsRequired: "",
+    following: "Followings",
+    userFollowing: "User Followings",
+    userFollowers: "User Followers",
+    businessFollowing: "Business Followings"
 };
 
 
@@ -7995,8 +9454,9 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     api: 'https://almersal.co/api/',
+    // api: "http://192.168.1.10:3006/api/",
     // api: 'http://localhost:3000/api/',
-    server: 'https://almersal.co/',
+    server: 'https://almersal.co/api-valid/',
     userDetails: '_sxamekqdw',
     language: 'kacen_ae787'
 };

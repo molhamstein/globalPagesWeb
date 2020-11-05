@@ -122,24 +122,24 @@
             <div class="follow-wrapper">
               <div *ngFor="let follow of userFollowers;let i = index" class="follow-box">
                 <div class="follow-image">
-                  <a [routerLink]="['/cv/' + follow.user.id]">
-                    <img [src]="follow.user.imageProfile || 'assets/images/page/employee.png'" alt="user image">
+                  <a [routerLink]="['/cv/' + follow.owner.id]">
+                    <img [src]="follow.owner.imageProfile || 'assets/images/page/employee.png'" alt="user image">
                   </a>
                 </div>
                 <div class="follow-info">
-                  <p class="follow-text"> {{ follow.user.username }} </p>
-                  <p class="follow-text"> {{ follow.user.email }} </p>
+                  <p class="follow-text"> {{ follow.owner.username }} </p>
+                  <p class="follow-text"> {{ follow.owner.email }} </p>
                 </div>
 
                 <div class="follow-button">
                   <div class="btn-more" style="margin: 0px ;">
-                    <a (click)="toggleFollowing(follow.user.id, 'USER')" class="follow-button-text"
+                    <a (click)="toggleFollowing(follow.owner.id, 'USER')" class="follow-button-text"
                       style="padding: 0px 7px; font-size: 14px;" data-toggle="button">
-                      <ng-container *ngIf="isFollowing(follow.user.id, 'USER')">
+                      <ng-container *ngIf="isFollowing(follow.owner.id, 'USER')">
                         {{ 'unFollow' | translate}}
                         <img src="assets/images/page/unfollow.png" alt="follow icon" class="follow-icon">
                       </ng-container>
-                      <ng-container *ngIf="!isFollowing(follow.user.id, 'USER')">
+                      <ng-container *ngIf="!isFollowing(follow.owner.id, 'USER')">
                         {{ 'follow' | translate }}
                         <img src="assets/images/page/follow.png" alt="follow icon" class="follow-icon">
                       </ng-container>
