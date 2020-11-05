@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="col-md-12">
-          <div class="imageGallery1" style="display: flex;">
+          <div class="imageGallery1" style="display: flex; flex-wrap: wrap;">
 
             <div class="hoverMe" style="display: inline" *ngFor="let image of _albums; let i=index">
               <ng-container *ngIf="image.type == 'image'">
