@@ -1,0 +1,219 @@
+<section class="page-title parallax parallax1" style="padding: 40px 0 65px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <div class="page-title-heading">
+          {{user?.username}}
+        </div> -->
+
+      </div>
+      <!-- /.col-md-12 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+  <div class="overlay1"></div>
+</section>
+<!-- /.page-title -->
+
+<!-- <div class="container-fluid without-padding cloudy-bg">
+  <div class="col-md-12 without-padding">
+    <div class="profile-image-container">
+      <img class="profile-img" *ngIf="!user?.imageProfile" src="http://via.placeholder.com/150x150" />
+      <img class="profile-img" *ngIf="user?.imageProfile" [src]="user?.imageProfile" />
+    </div>
+    <div class="col-md-12 text-center">
+      <div class="">
+        {{'addedAds' | translate}}
+      </div>
+      <div class="ads-count">
+        {{ads?.length}}
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- /.container -->
+
+
+<div class="container-fluid cloudy-bg">
+  <div class="row profile-row">
+    <div class="col-md-3 user-img-container">
+      <img class="user-img" *ngIf="!user?.imageProfile" src="http://via.placeholder.com/150x150" />
+      <img class="user-img" *ngIf="user?.imageProfile" [src]="user?.imageProfile" />
+    </div>
+    <div class="col-md-9">
+      <div class="row info-row" style="top: 15px;">
+        <div class="col-xs-12">
+          <div class="flex-row">
+            <div style="flex-grow: 0.8;">
+              <h3 style="font-size:19px; font-weight: bold;">{{'username' | translate}}</h3>
+              <h2 style="padding-top: 10px; color: #fff;">{{user?.username}}</h2>
+            </div>
+            <div style="flex-grow: 0.1;">
+              <h3 style="font-size:19px; font-weight: bold;">{{'userFollowing' | translate}}
+              </h3>
+              <h2 style="padding-top: 10px; color: #fff;">{{user?.userFollowing}}</h2>
+            </div>
+            <div>
+              <h3 style="font-size:19px; font-weight: bold;">{{'userFollowers' | translate}}
+              </h3>
+              <h2 style="padding-top: 10px; color: #fff;">{{user?.follower}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row info-row" style="top: 20px; margin-top: 20px;">
+        <div class="col-xs-12">
+          <div class="flex-row">
+            <div style="flex-grow: 0.2;">
+              <h3 style="font-size:19px; color: rgb(140,140,140); font-weight: bold;">{{'email' | translate}}</h3>
+              <h2 style="padding-top: 10px; color: #000000; font-size: 24px;">{{user?.email}}</h2>
+            </div>
+
+
+            <div style="flex-grow: 0.2;">
+              <h3 style="font-size:19px; color: rgb(140,140,140); font-weight: bold;">{{'addedAds' | translate}}</h3>
+              <h2 style="padding-top: 10px; color: #000000; font-size: 24px;">{{ads?.length}}</h2>
+            </div>
+            <div style="flex-grow: 0.4;">
+              <h3 style="font-size:19px; color: rgb(140,140,140); font-weight: bold;">{{'balance' | translate}}</h3>
+              <h2 style="padding-top: 10px; color: #000000; font-size: 24px;">{{user?.balance}}</h2>
+            </div>
+
+            <div>
+              <div class="follow">
+                <div class="btn-more" style="margin: 20px 0px;">
+                  <a [routerLink]="['/cv/' + user?.id]" class="follow-button-text" data-toggle="button">
+                    <ng-container>
+                      {{ 'CV' | translate}}
+                    </ng-container>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="follow">
+                <div class="btn-more" style="margin: 20px 0px;">
+                  <a [routerLink]="['/following']" class="follow-button-text" data-toggle="button">
+                    <ng-container>
+                      {{ 'following' | translate}}
+                      <img src="assets/images/page/follow.png" alt="follow icon" class="follow-icon">
+                    </ng-container>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<section class="cloudy-bg">
+  <section class="flat-profile">
+    <div class="container">
+
+
+      <div class="row">
+
+
+        <div class="col-xs-12">
+          <div class="inner-box profile-business-list">
+
+            <div class="main-title">
+              <h3>{{'myAds' | translate}}</h3>
+              <button style="display: block; position: relative; right:0px; bottom:35px;" title="Add Ad"
+                class=" col-xs-pull-1 button-navigation" (click)="navigateTo('/ad/create')">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+
+
+
+            <div fxLayout="row-reverse" style="overflow-x: scroll;">
+              <ng-container *ngFor="let ad of ads;let i=index">
+                <app-ads-card style="min-width: 400px; max-width: 400px; margin:0px 15px 15px;" [ad]="ad"
+                  (onRemove)="removePost($event,i)" class="featured-box-flex guide-box">
+                </app-ads-card>
+              </ng-container>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="inner-box profile-business-list">
+            <div class="main-title">
+              <h3>{{'myBusiness' | translate}}</h3>
+              <button style="display: block; position: relative; right:0px; bottom:35px;" title="Add Business"
+                class=" col-xs-pull-1 button-navigation" (click)="navigateTo('/business/create')">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+
+            <div fxLayout="row-reverse" style="overflow-x: scroll;">
+              <ng-container *ngFor="let business of businesses;let i=index">
+                <app-business-card style="min-width: 400px; max-width: 400px; margin: 0px 15px 15px;"
+                  [business]="business" (onRemove)="removeBusiness(business,i)" class="featured-box-flex guide-box">
+                </app-business-card>
+              </ng-container>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="inner-box profile-jobs-list">
+            <div class="main-title text-center">
+              <h3>{{'myJobs' | translate}}</h3>
+              <button style="display: block; position: relative; right:0px; bottom:35px;" title="Add Job"
+                class=" col-xs-pull-1 button-navigation" (click)="navigateTo('/addJobOpportunity')">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+
+            <div fxLayout="row-reverse" style="overflow-x: scroll;">
+              <ng-container *ngFor="let job of jobs">
+                <app-job-card style="min-width: 400px; max-width: 400px; margin: 15px;" [post]="job"
+                  class="featured-box-flex guide-box"></app-job-card>
+              </ng-container>
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <div class="col-xs-12">
+          <div class="inner-box profile-jobs-list">
+            <div class="main-title text-center">
+              <h3>{{'myProducts' | translate}}</h3>
+              <button style="display: block; position: relative; right:0px; bottom:35px;" title="Add Product"
+                class=" col-xs-pull-1 button-navigation" (click)="navigateTo('/products/create')">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+
+            <div fxLayout="row-reverse" style="overflow-x: scroll;">
+              <ng-container *ngFor="let product of products">
+                <app-product-card style="min-width: 400px; max-width: 400px; margin: 15px;" [details]="product"
+                  class="featured-box-flex guide-box"></app-product-card>
+              </ng-container>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.flat-listing -->
+</section>

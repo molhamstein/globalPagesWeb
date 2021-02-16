@@ -1,15 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormValidationMessageComponent} from './form-validation-message/form-validation-message.component';
-import {TranslateModule} from '@ngx-translate/core';
-import { NotificationComponent } from './notification/notification.component';
+import { NgModule } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { FormValidationMessageComponent } from './components/form-validation-message/form-validation-message.component';
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule.forChild(),
   ],
-  declarations: [FormValidationMessageComponent, ],
-  exports:[FormValidationMessageComponent]
+  declarations: [FormValidationMessageComponent,],
+  exports: [FormValidationMessageComponent]
 })
 export class SharedModule { }

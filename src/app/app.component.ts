@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
-import {ArabicTranslation} from './translation/ar';
-import {EnglishTranslation} from './translation/en';
-import {RequestsService} from './requests.service';
+import { TranslateService } from '@ngx-translate/core';
+import { ArabicTranslation } from './shared/translation/ar';
+import { EnglishTranslation } from './shared/translation/en';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,16 +9,15 @@ import {RequestsService} from './requests.service';
 })
 export class AppComponent {
   // public categories: Object={};
-  constructor(private translate:TranslateService )
-  {
+  constructor(private translate: TranslateService) {
 
-    this.translate.setTranslation('ar',ArabicTranslation);
-    this.translate.setTranslation('en',EnglishTranslation);
+    this.translate.setTranslation('ar', ArabicTranslation);
+    this.translate.setTranslation('en', EnglishTranslation);
     this.translate.setDefaultLang('en');
     this.translate.use('ar');
   }
   title = 'globalPages';
-  addFooter(){
+  addFooter() {
     var path: string = window.location.pathname;
     return (!path.includes('auth'))
   }

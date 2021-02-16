@@ -1,8 +1,7 @@
 
 import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { RequestsService } from '../requests.service';
+import { RequestsService } from './requests.service';
 
 
 @Injectable({

@@ -1,92 +1,82 @@
-import { ViewJobComponent } from './business/view-job/view-job.component';
-import { JobCardComponent } from './business/job-card/job-card.component';
-import { JobsComponent } from './business/jobs/jobs.component';
-import { AddJobOpportunityComponent } from './business/add-job-opportunity/add-job-opportunity.component';
-import { EditBasicInformationComponent } from './profile/edit-basic-information/edit-basic-information.component';
-import { EditSkillComponent } from './profile/edit-skill/edit-skill.component';
-import { EditInfoComponent } from './profile/edit-info/edit-info.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
-import { OwlModule } from 'ngx-owl-carousel';
-import { NgSelectModule } from '@ng-select/ng-select';
-// import { FilterPipeModule } from 'ngx-filter-pipe';
-import { volumeFilter } from './volumeFilter';
-
-import { AppComponent } from './app.component';
-import { NavigationComponent } from './shared/navigation/navigation.component';
-import { FooterComponent } from "./shared/footer/footer.component";
-import { CardHComponent } from './shared/card-h/card-h.component';
-import { CardVComponent } from './shared/card-v/card-v.component';
-import { HeaderWithSearchComponent } from './home-screen/header-with-search/header-with-search.component';
-import { FeaturedAdsComponent } from './home-screen/featured-ads/featured-ads.component';
-import { VolumeComponent } from './home-screen/volume/volume.component';
-import { HomeScreenComponent } from './home-screen/home-screen/home-screen.component';
-import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
-import { ProfileViewComponent } from './profile/profile-view/profile-view.component';
-import { AdsCardComponent } from './profile/ads-card/ads-card.component';
-import { BusinessCardComponent } from './profile/business-card/business-card.component';
-import { AdCreateComponent } from './ad/ad-create/ad-create.component';
-import { AdViewComponent } from './ad/ad-view/ad-view.component';
-import { BusinessCreateComponent } from './business/business-create/business-create.component';
-import { BusinessViewComponent } from './business/business-view/business-view.component';
-import { GuideComponent } from './business/guide/guide.component';
-import { InvolveBoxComponent } from './business/involve-box/involve-box.component';
-import { GuideCardComponent } from './business/guide-card/guide-card.component';
-import { RequestsService } from './requests.service';
-import { CommonDataService } from './common-data.service';
-import { FormValidationMessageComponent } from './shared/form-validation-message/form-validation-message.component';
-import { SharedModule } from './shared/shared.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { MapMarkerComponent } from './business/map-marker/map-marker.component';
-import { WorkingHourInputComponent } from './business/working-hour-input/working-hour-input.component';
-
-import { InputFileModule } from 'ngx-input-file';
+import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LocationPickerComponent } from './business/location-picker/location-picker.component';
-
-// import { LightboxModule as lb } from 'ngx-lightbox';
-import { AvatarModule } from 'ngx-avatar';
-import { CategorySelectorComponent } from './profile/category-selector/category-selector.component';
-import { BusinessEditComponent } from './business/business-edit/business-edit.component';
-// import {ModalModule} from 'ngx-modal';
-import { BusinessProductsComponent } from './business/business-products/business-products.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { GalleryModule } from '@ngx-gallery/core';
 import { LightboxModule } from '@ngx-gallery/lightbox';
-import { VolumePageComponent } from './home-screen/volume-page/volume-page.component';
-import { NgxSmartModalModule } from 'ngx-smart-modal';
-import { NotificationComponent } from './shared/notification/notification.component';
-import { AdEditComponent } from './ad/ad-edit/ad-edit.component';
-import { PolicyComponent } from './privacy/policy/policy.component';
-import { CvViewComponent } from './profile/cv-view/cv-view.component';
-import { MatDialogModule } from '@angular/material';
-import { EditJobOpportunityComponent } from './business/edit-job-opportunity/edit-job-opportunity.component';
-import { VerificationMessageComponent } from './verification-message/verification-message.component';
-import { SuccessMessageComponent } from './success-message/success-message.component';
-import { NgxSpinnerModule } from "ngx-spinner";
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { ProductsComponent } from './business/products/products.component';
-import { AddProductComponent } from './business/products/add-product/add-product.component';
-import { ViewProductComponent } from './business/products/view-product/view-product.component';
-import { EditProductComponent } from './business/products/edit-product/edit-product.component';
-import { ProductCardComponent } from './business/products/product-card/product-card.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { AuthServiceConfig, FacebookLoginProvider, GoogleLoginProvider, SocialLoginModule } from "angularx-social-login";
+// import { LightboxModule as lb } from 'ngx-lightbox';
+import { AvatarModule } from 'ngx-avatar';
+import { InputFileModule } from 'ngx-input-file';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
-import { SuppliersComponent } from './business/suppliers/suppliers.component';
-import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
-import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
-import { LoginComponent } from './authentication/modals/login/login.component';
-import { SignupComponent } from './authentication/modals/signup/signup.component';
-import { ResetPasswordComponent } from './authentication/modals/reset-password/reset-password.component';
-import { ForgetPasswordComponent } from './authentication/modals/forget-password/forget-password.component';
-import { CompleteInformationComponent } from './authentication/modals/complete-information/complete-information.component';
-import { ResetComponent } from './authentication/reset/reset.component';
+import { OwlModule } from 'ngx-owl-carousel';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { TabsModule } from "ngx-tabs";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { CompleteInformationComponent } from './modals/auth/complete-information/complete-information.component';
+import { ForgetPasswordComponent } from './modals/auth/forget-password/forget-password.component';
+import { LoginComponent } from './modals/auth/login/login.component';
+import { ResetPasswordComponent } from './modals/auth/reset-password/reset-password.component';
+import { SignupComponent } from './modals/auth/signup/signup.component';
+import { SuccessMessageComponent } from './modals/messages/success-message/success-message.component';
+import { VerificationMessageComponent } from './modals/messages/verification-message/verification-message.component';
+import { EditBasicInformationComponent } from './modals/profile/edit-basic-information/edit-basic-information.component';
+import { EditInfoComponent } from './modals/profile/edit-info/edit-info.component';
+import { EditSkillComponent } from './modals/profile/edit-skill/edit-skill.component';
 import { AddRateComponent } from './modals/rate/add-rate/add-rate.component';
-import { FollowListComponent } from './profile/follow-list/follow-list.component';
-import {TabsModule} from "ngx-tabs";
+import { AdCreateComponent } from './pages/ad/ad-create/ad-create.component';
+import { AdEditComponent } from './pages/ad/ad-edit/ad-edit.component';
+import { AdViewComponent } from './pages/ad/ad-view/ad-view.component';
+import { FeaturedAdsComponent } from './pages/ad/featured-ads/featured-ads.component';
+import { ResetComponent } from './pages/authentication/reset/reset.component';
+import { BusinessCreateComponent } from './pages/business/business-create/business-create.component';
+import { BusinessEditComponent } from './pages/business/business-edit/business-edit.component';
+// import {ModalModule} from 'ngx-modal';
+import { BusinessProductsComponent } from './pages/business/business-products/business-products.component';
+import { InvolveBoxComponent } from './pages/business/business-products/involve-box/involve-box.component';
+import { BusinessViewComponent } from './pages/business/business-view/business-view.component';
+import { GuideComponent } from './pages/business/guide/guide.component';
+import { HomeScreenComponent } from './pages/home/home-screen/home-screen.component';
+import { VolumeComponent } from './pages/home/volume/volume.component';
+import { AddJobOpportunityComponent } from './pages/jobs/add-job-opportunity/add-job-opportunity.component';
+import { EditJobOpportunityComponent } from './pages/jobs/edit-job-opportunity/edit-job-opportunity.component';
+import { JobsComponent } from './pages/jobs/jobs.component';
+import { ViewJobComponent } from './pages/jobs/view-job/view-job.component';
+import { PolicyComponent } from './pages/privacy/policy/policy.component';
+import { AddProductComponent } from './pages/products/add-product/add-product.component';
+import { EditProductComponent } from './pages/products/edit-product/edit-product.component';
+import { ProductCardComponent } from './pages/products/product-card/product-card.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { ViewProductComponent } from './pages/products/view-product/view-product.component';
+import { CvViewComponent } from './pages/profile/cv-view/cv-view.component';
+import { FollowListComponent } from './pages/profile/follow-list/follow-list.component';
+import { ProfileEditComponent } from './pages/profile/profile-edit/profile-edit.component';
+import { ProfileViewComponent } from './pages/profile/profile-view/profile-view.component';
+import { SuppliersComponent } from './pages/suppliers/suppliers.component';
+import { CommonDataService } from './services/common-data.service';
+import { RequestsService } from './services/requests.service';
+import { AdsCardComponent } from './shared/cards/ads-card/ads-card.component';
+import { BusinessCardComponent } from './shared/cards/business-card/business-card.component';
+import { CardHComponent } from './shared/cards/card-h/card-h.component';
+import { CardVComponent } from './shared/cards/card-v/card-v.component';
+import { GuideCardComponent } from './shared/cards/guide-card/guide-card.component';
+import { JobCardComponent } from './shared/cards/job-card/job-card.component';
+import { FooterComponent } from "./shared/components/footer/footer.component";
+import { HeaderWithSearchComponent } from './shared/components/header-with-search/header-with-search.component';
+import { LocationPickerComponent } from './shared/components/location-picker/location-picker.component';
+import { NavigationComponent } from './shared/components/navigation/navigation.component';
+import { NotificationComponent } from './shared/components/notification/notification.component';
+// import { FilterPipeModule } from 'ngx-filter-pipe';
+import { volumeFilter } from './shared/pipes/volumeFilter.pipe';
+import { SharedModule } from './shared/shared.module';
 
 let config = new AuthServiceConfig([
   {
@@ -132,13 +122,9 @@ export function provideConfig() {
     JobCardComponent,
     ViewJobComponent,
     volumeFilter,
-    MapMarkerComponent,
-    WorkingHourInputComponent,
     LocationPickerComponent,
-    CategorySelectorComponent,
     BusinessEditComponent,
     BusinessProductsComponent,
-    VolumePageComponent,
     NotificationComponent,
     AdEditComponent,
     PolicyComponent,
@@ -186,7 +172,6 @@ export function provideConfig() {
     TabsModule
   ],
   entryComponents: [
-    MapMarkerComponent,
     EditInfoComponent,
     SuccessMessageComponent,
     VerificationMessageComponent,

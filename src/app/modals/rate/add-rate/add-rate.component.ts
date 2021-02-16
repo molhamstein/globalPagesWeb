@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { LoginComponent } from 'src/app/authentication/modals/login/login.component';
-import { RequestsService } from 'src/app/requests.service';
+import { RequestsService } from 'src/app/services/requests.service';
 
 @Component({
   selector: 'app-add-rate',
