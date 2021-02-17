@@ -33,6 +33,14 @@
             <div class="one-half">
               <div class="clearfix"></div>
               <div class="wrap-listing category">
+                <label>{{'country' | translate}}</label>
+                <span class="ti-angle-down"></span>
+                <select name="select-country" [(ngModel)]="country" (change)="onChoseCountry()">
+                  <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
+                </select>
+              </div>
+              <div class="clearfix"></div>
+              <div class="wrap-listing category">
                 <label>{{'city' | translate}}</label>
                 <span class="ti-angle-down"></span>
                 <select name="select-city" [(ngModel)]="city">
@@ -81,8 +89,8 @@
               <div class="wrap-listing half">
                 <label>{{'yourBusinessImages'| translate}}</label>
                 <div class="upload">
-                  <input-file fileAccept=".mp4,.jpg,.jpeg,.mpeg,.png" [fileLimit]="20"
-                    [(ngModel)]="filesToUpload" [ngModelOptions]="{standalone: true}"></input-file>
+                  <input-file fileAccept=".mp4,.jpg,.jpeg,.mpeg,.png" [fileLimit]="20" [(ngModel)]="filesToUpload"
+                    [ngModelOptions]="{standalone: true}"></input-file>
                 </div>
               </div>
             </div>

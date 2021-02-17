@@ -21,7 +21,9 @@ export class BusinessEditComponent implements OnInit {
   selectedCategory;
   lang;
   cities;
+  countries;
   selectedCity;
+  selectedCountry;
   locations;
   locationId;
   subCategoryId;
@@ -66,8 +68,8 @@ export class BusinessEditComponent implements OnInit {
       this.onCategoryChange();
     });
 
-    this.api.get('cities').toPromise().then(data => {
-      this.cities = data;
+    this.api.get('countries').toPromise().then(data => {
+      this.countries = data;
     });
   }
 
@@ -98,6 +100,19 @@ export class BusinessEditComponent implements OnInit {
     }));
     this.api.get('businessCategories', p).toPromise().then(data => {
       this.subCategories = data;
+    });
+  }
+
+  countryChanged() {
+    var p = new HttpParams();
+    p = p.set('filter', JSON.stringify({
+      where: {
+        countryId: this.selectedCountry
+      }
+    }));
+    this.cities = [];
+    this.api.get('cities', p).toPromise().then(data => {
+      this.cities = data;
     });
   }
 

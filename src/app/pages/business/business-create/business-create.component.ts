@@ -23,7 +23,9 @@ export class BusinessCreateComponent implements OnInit {
   selectedCategory;
   lang;
   cities;
+  countries;
   selectedCity;
+  selectedCountry;
   locations;
   locationId;
   subCategoryId;
@@ -47,8 +49,9 @@ export class BusinessCreateComponent implements OnInit {
       this.categories = data;
     });
 
-    this.api.get('cities').toPromise().then(data => {
-      this.cities = data;
+
+    this.api.get('countries').toPromise().then(data => {
+      this.countries = data;
     });
 
   }
@@ -78,6 +81,20 @@ export class BusinessCreateComponent implements OnInit {
     this.api.get('businessCategories', p).toPromise().then(data => {
       this.subCategories = data;
     });
+  }
+
+  countryChanged() {
+
+
+    let p = new HttpParams();
+    p = p.set('filter', JSON.stringify({
+      where: { countryId: this.selectedCountry }
+    }));
+
+    this.api.get('cities', p).toPromise().then(data => {
+      this.cities = data
+    });
+
   }
 
   cityChanged() {

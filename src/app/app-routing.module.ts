@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { AdCreateComponent } from './pages/ad/ad-create/ad-create.component';
+import { AdDataResolverService } from './pages/ad/ad-data-resolver.service';
 import { AdEditComponent } from './pages/ad/ad-edit/ad-edit.component';
 import { AdViewComponent } from './pages/ad/ad-view/ad-view.component';
+import { VolumeComponent } from './pages/ad/volume/volume.component';
 import { ResetComponent } from './pages/authentication/reset/reset.component';
 import { BusinessCreateComponent } from './pages/business/business-create/business-create.component';
 import { BusinessEditComponent } from './pages/business/business-edit/business-edit.component';
 import { BusinessViewComponent } from './pages/business/business-view/business-view.component';
 import { GuideComponent } from './pages/business/guide/guide.component';
 import { HomeScreenComponent } from './pages/home/home-screen/home-screen.component';
-import { VolumeComponent } from './pages/home/volume/volume.component';
 import { AddJobOpportunityComponent } from './pages/jobs/add-job-opportunity/add-job-opportunity.component';
 import { EditJobOpportunityComponent } from './pages/jobs/edit-job-opportunity/edit-job-opportunity.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
@@ -24,7 +25,6 @@ import { FollowListComponent } from './pages/profile/follow-list/follow-list.com
 import { ProfileEditComponent } from './pages/profile/profile-edit/profile-edit.component';
 import { ProfileViewComponent } from './pages/profile/profile-view/profile-view.component';
 import { SuppliersComponent } from './pages/suppliers/suppliers.component';
-import { AdDataResolverService } from './services/ad-data-resolver.service';
 import { AuthService } from './services/auth.service';
 
 

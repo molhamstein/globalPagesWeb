@@ -33,6 +33,14 @@
             <div class="one-half">
               <div class="clearfix"></div>
               <div class="wrap-listing category">
+                <label>{{'country' | translate}}</label>
+                <span class="ti-angle-down"></span>
+                <select name="select-country" [(ngModel)]="country" (change)="onChoseCountry()">
+                  <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
+                </select>
+              </div>
+              <div class="clearfix"></div>
+              <div class="wrap-listing category">
                 <label>{{'city' | translate}}</label>
                 <span class="ti-angle-down"></span>
                 <select name="select-city" [(ngModel)]="city">

@@ -37,7 +37,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     const filter = this.getQueryParams();
     this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
-    this.cds.productCategoryPromise.then(res => this.bCategories = <Object[]>res);
+    this.cds.productCategories.then(res => this.bCategories = <Object[]>res);
     this.getPostsData(filter);
   }
 

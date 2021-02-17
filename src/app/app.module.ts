@@ -35,17 +35,16 @@ import { AddRateComponent } from './modals/rate/add-rate/add-rate.component';
 import { AdCreateComponent } from './pages/ad/ad-create/ad-create.component';
 import { AdEditComponent } from './pages/ad/ad-edit/ad-edit.component';
 import { AdViewComponent } from './pages/ad/ad-view/ad-view.component';
-import { FeaturedAdsComponent } from './pages/ad/featured-ads/featured-ads.component';
+import { VolumeComponent } from './pages/ad/volume/volume.component';
 import { ResetComponent } from './pages/authentication/reset/reset.component';
 import { BusinessCreateComponent } from './pages/business/business-create/business-create.component';
 import { BusinessEditComponent } from './pages/business/business-edit/business-edit.component';
-// import {ModalModule} from 'ngx-modal';
 import { BusinessProductsComponent } from './pages/business/business-products/business-products.component';
 import { InvolveBoxComponent } from './pages/business/business-products/involve-box/involve-box.component';
 import { BusinessViewComponent } from './pages/business/business-view/business-view.component';
 import { GuideComponent } from './pages/business/guide/guide.component';
+import { FeaturedAdsComponent } from './pages/home/featured-ads/featured-ads.component';
 import { HomeScreenComponent } from './pages/home/home-screen/home-screen.component';
-import { VolumeComponent } from './pages/home/volume/volume.component';
 import { AddJobOpportunityComponent } from './pages/jobs/add-job-opportunity/add-job-opportunity.component';
 import { EditJobOpportunityComponent } from './pages/jobs/edit-job-opportunity/edit-job-opportunity.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
@@ -74,7 +73,6 @@ import { HeaderWithSearchComponent } from './shared/components/header-with-searc
 import { LocationPickerComponent } from './shared/components/location-picker/location-picker.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { NotificationComponent } from './shared/components/notification/notification.component';
-// import { FilterPipeModule } from 'ngx-filter-pipe';
 import { volumeFilter } from './shared/pipes/volumeFilter.pipe';
 import { SharedModule } from './shared/shared.module';
 
@@ -169,7 +167,7 @@ export function provideConfig() {
     FlexLayoutModule,
     NgxLinkifyjsModule.forRoot(),
     SocialLoginModule,
-    TabsModule
+    TabsModule,
   ],
   entryComponents: [
     EditInfoComponent,

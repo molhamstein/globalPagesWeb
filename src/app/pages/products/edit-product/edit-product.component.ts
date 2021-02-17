@@ -24,6 +24,8 @@ export class EditProductComponent implements OnInit {
   allBusiness: any;
   cities: any;
   locations: any;
+  countries: any;
+  selectedCountry;
   files;
 
   images: string[] = [];
@@ -51,8 +53,8 @@ export class EditProductComponent implements OnInit {
       this.categories = data;
     });
 
-    this.api.get('cities').toPromise().then(data => {
-      this.cities = data;
+    this.api.get('countries').toPromise().then(data => {
+      this.countries = data;
     });
 
     this.auth.userData.subscribe((data) => {
@@ -69,6 +71,7 @@ export class EditProductComponent implements OnInit {
         this.images = this.product.media;
         this.tags = this.product.tags;
         this.onCategoryChange();
+        this.countryChanged();
         this.cityChanged();
       });
     });
@@ -131,6 +134,20 @@ export class EditProductComponent implements OnInit {
       let cat = this.categories.find((v) => { if (v['id'] == this.product['categoryId']) return true })
       this.subCategories = cat['subCategories'];
     }
+  }
+
+  countryChanged() {
+
+
+    let p = new HttpParams();
+    p = p.set('filter', JSON.stringify({
+      where: { countryId: this.selectedCountry }
+    }));
+
+    this.api.get('cities', p).toPromise().then(data => {
+      this.cities = data
+    });
+
   }
 
   cityChanged() {

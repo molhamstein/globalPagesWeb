@@ -27,10 +27,13 @@ export class AddProductComponent implements OnInit {
   lang: string;
   cities: any;
   selectedCity: any;
+  selectedCountry: any;
+
   locations: any;
   locationId: string;
   subCategoryId: string;
   files;
+  countries: any[];
 
   tags: any = [];
   inputValue: string = "";
@@ -54,8 +57,8 @@ export class AddProductComponent implements OnInit {
     this.api.get('productCategories', params).toPromise().then(data => {
       this.categories = data;
     })
-    this.api.get('cities').toPromise().then(data => {
-      this.cities = data;
+    this.api.get('countries').toPromise().then((data: any) => {
+      this.countries = data;
     })
 
     this.auth.userData.subscribe((data) => {
@@ -65,6 +68,10 @@ export class AddProductComponent implements OnInit {
       })
     })
   }
+
+
+
+
 
   submit(data) {
 
@@ -127,6 +134,20 @@ export class AddProductComponent implements OnInit {
   onCategoryChange() {
     this.subCategoryId = null;
     this.subCategories = this.categories[this.selectedCategory]['subCategories'];
+  }
+
+  countryChanged() {
+
+
+    let p = new HttpParams();
+    p = p.set('filter', JSON.stringify({
+      where: { countryId: this.selectedCountry }
+    }));
+
+    this.api.get('cities', p).toPromise().then(data => {
+      this.cities = data
+    });
+
   }
 
   cityChanged() {

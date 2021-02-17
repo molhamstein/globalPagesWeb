@@ -52,7 +52,7 @@ export class SuppliersComponent implements OnInit {
   ngOnInit() {
     const filter = this.getQueryParams();
     this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
-    this.cds.bCategoryPromise.then(res => this.bCategories = <Object[]>res);
+    this.cds.businessCategories.then(res => this.bCategories = <Object[]>res);
     this.getPostsData(filter);
   }
 

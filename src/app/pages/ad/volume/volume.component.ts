@@ -34,7 +34,7 @@ export class VolumeComponent implements OnInit {
 
   async ngOnInit() {
 
-    this.categories = await this.cds.categoriesPromise;
+    this.categories = await this.cds.adCategories;
     this.cities = await this.cds.citiesPromise;
 
     this.route.queryParams.subscribe(params => {

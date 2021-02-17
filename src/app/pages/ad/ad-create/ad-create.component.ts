@@ -10,10 +10,12 @@ import { RequestsService } from '../../../services/requests.service';
   styleUrls: ['./ad-create.component.css']
 })
 export class AdCreateComponent implements OnInit {
-  categories: Object[];
-  cities: Object[];
+  categories: any[];
+  cities: any[];
+  countries: any[];
   name: any;
   city: any;
+  country: any;
   location: any;
   category: any;
   subCategory: any;
@@ -24,8 +26,13 @@ export class AdCreateComponent implements OnInit {
   constructor(private cds: CommonDataService, private rs: RequestsService, private router: Router) { }
 
   ngOnInit() {
-    this.cds.categoriesPromise.then(res => this.categories = <Object[]>res);
-    this.cds.citiesPromise.then(res => this.cities = <Object[]>res)
+    this.cds.adCategories.then(res => this.categories = res);
+    this.cds.countriesPromise.then(res => this.countries = res);
+  }
+
+
+  onChoseCountry() {
+    this.cds.getCities(this.country.id).then(res => this.cities = res);
   }
 
   registerAd() {
@@ -53,6 +60,7 @@ export class AdCreateComponent implements OnInit {
       "ownerId": user['userId'],
       "categoryId": this.category['id'],
       "subCategoryId": this.subCategory['id'],
+      "countryId": this.country['id'],
       "cityId": this.city['id'],
       "locationId": this.location['id'],
       "media": []

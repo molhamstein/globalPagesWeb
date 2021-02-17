@@ -61,6 +61,27 @@
 
                             <!-- city -->
 
+
+                            <div class="clearfix"></div>
+
+                            <div class="wrap-listing category-half">
+                              <label>{{'country' | translate}}</label>
+                              <span class="ti-angle-down"></span>
+                              <select name="countryId" [(ngModel)]="selectedCountry" (change)="countryChanged()" #countryId="ngModel" required>
+                                <option *ngFor="let country of countries" [value]="country.id">
+                                  <ng-container *ngIf="lang=='ar'">
+                                    {{country['nameAr']}}
+                                  </ng-container>
+                                  <ng-container *ngIf="lang!='ar'">
+                                    {{country['nameEn']}}
+                                  </ng-container>
+                                </option>
+                              </select>
+                              <app-form-validation-message [form]="form" [control]="countryId" [messages]="{required:'requiredMessage'}"
+                                [params]="{name:'country'}">
+                              </app-form-validation-message>
+                            </div>
+
                             <div class="clearfix"></div>
 
 

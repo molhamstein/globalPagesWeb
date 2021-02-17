@@ -15,8 +15,10 @@ export class AdEditComponent implements OnInit {
 
   categories: any[];
   cities: any[];
+  countries: any[];
   name: any;
   city: any;
+  country: any;
   location: any;
   category: any;
   subCategory: any;
@@ -27,21 +29,32 @@ export class AdEditComponent implements OnInit {
   constructor(private cds: CommonDataService, private rs: RequestsService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.cds.categoriesPromise.then(res => this.categories = <any[]>res);
-    this.cds.citiesPromise.then(res => this.cities = <any[]>res)
-    all([this.cds.categoriesPromise, this.cds.citiesPromise]).then((data) => {
+    this.cds.adCategories.then(res => this.categories = <any[]>res);
+    this.cds.countriesPromise.then(res => this.countries = <any[]>res);
+    this.cds.citiesPromise.then(res => this.cities = res);
+    all([this.cds.adCategories, this.cds.countriesPromise, this.cds.citiesPromise]).then((data) => {
       this.route.data.subscribe(({ adData }) => {
         this.adData = adData
         this.name = this.adData['title'];
         this.details = this.adData['description'];
-        this.category = this.categories.find((v) => v.id == this.adData['categoryId']);
+        this.country = this.countries.find((v) => v.id == this.adData['countryId']);
         this.city = this.cities.find((v) => v.id == this.adData['cityId']);
-        this.location = this.city.locations.find((v) => v.id == this.adData['locationId']);
+        this.location = this.city ? this.city.locations.find((v) => v.id == this.adData['locationId']) : {};
+
+        this.cds.getCities(this.country.id).then(res => {
+          this.cities = res;
+        });
+
+        this.category = this.categories.find((v) => v.id == this.adData['categoryId']);
         this.subCategory = this.category.subCategories.find((v) => v.id == this.adData['subCategoryId']);
         this.media = this.adData['media'];
 
       })
     })
+  }
+
+  onChoseCountry() {
+    this.cds.getCities(this.country.id).then(res => this.cities = res);
   }
 
   registerAd() {
@@ -67,6 +80,7 @@ export class AdEditComponent implements OnInit {
       "ownerId": user['userId'],
       "categoryId": this.category['id'],
       "subCategoryId": this.subCategory['id'],
+      "countryId": this.country['id'],
       "cityId": this.city['id'],
       "locationId": this.location['id'],
       "media": this.media
