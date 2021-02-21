@@ -11,111 +11,135 @@ import { RequestsService } from '../../../services/requests.service';
 })
 export class VolumeComponent implements OnInit {
 
-
-
-  id;
-  skip: number = 0;
-  data: any = {};
-  title: String = '';
+  id: string;
   categories: any[];
+  countries: any[];
   cities: any[];
-  city;
-  category;
-  cityId = '';
-  categoryId = '';
-  initialValue;
-  subCategory = "";
+  ads: any = {};
+
+  country: any;
+  countryId = "";
+  city: any;
+  cityId = "";
   location = "";
-  searchText: string = '';
-  count = 0;
 
-  constructor(private rs: RequestsService, private ts: TranslateService,
-    public cds: CommonDataService, private route: ActivatedRoute, private router: Router) { }
+  category: any;
+  categoryId = "";
+  subCategory = "";
 
-  async ngOnInit() {
+  title = "";
+  volumeTitle = "";
 
-    this.categories = await this.cds.adCategories;
-    this.cities = await this.cds.citiesPromise;
+  filterObject: any;
+  skip: number = 0;
+  count: number = 0;
+
+  constructor(
+    private ts: TranslateService,
+    private cds: CommonDataService,
+    private requests: RequestsService,
+    private route: ActivatedRoute,
+    private router: Router) { }
+
+  ngOnInit() {
+    this.getQueryParams();
+    this.cds.countriesPromise.then(res => this.countries = <Object[]>res);
+    this.cds.adCategories.then(res => this.categories = <Object[]>res);
 
     this.route.queryParams.subscribe(params => {
       this.id = params['id'];
       if (params['skip'])
         this.skip = +params['skip'];
-      this.setFilter(params);
-      this.applyFilter();
-      this.getVolumeData(0)
-    })
+      this.getPostsData(0);
+    });
   }
 
-
-
-  applyFilter() {
-    this.cds.filterItem['categoryId'] = this.categoryId;
-    this.cds.filterItem['subCatId'] = this.subCategory;
-    this.cds.filterItem['cityId'] = this.cityId;
-    this.cds.filterItem['locationId'] = this.location;
-    this.cds.filterItem['keywords'] = this.searchText;
+  addQueryParams(param: object) {
+    this.router.navigate([], {
+      queryParams: { ...param },
+    });
   }
 
-  volumeFilter() {
-    this.applyFilter();
+  getQueryParams() {
+    let params = this.route.snapshot.queryParams;
+    this.filterObject = {
+      title: params.title,
+      countryId: params.countryId,
+      cityId: params.cityId,
+      location: params.location,
+      categoryId: params.categoryId,
+      subCategory: params.subCategory
+    };
   }
 
-  setFilter(params) {
-    let { keywords, categoryId, subCatId, cityId, locationId } = params;
-    this.searchText = keywords;
+  reFilter() {
 
-    if (subCatId) {
-      this.subCategory = subCatId;
-    }
-    this.category = this.categories.find(e => e.id == categoryId);
-    this.setCategoryId(this.category);
-    if (locationId) {
-      this.location = locationId;
-    }
-    this.city = this.cities.find(e => e.id == cityId);
-    this.setCityId(this.city);
+    this.filterObject = {
+      title: this.title,
+      countryId: this.countryId,
+      cityId: this.cityId,
+      location: this.location,
+      categoryId: this.categoryId,
+      subCategory: this.subCategory
+    };
+
+    this.addQueryParams({ ...this.filterObject });
   }
 
+  getPostsData(num) {
 
-  getVolumeData(num: number) {
-
-    var params: any = {
-      "filter[limit]": "1",
-      "filter[skip]": (num + this.skip).toString(),
-      "filter[order]": "creationDate DESC",
-      "filter[where][status]": "activated"
-    }
+    let params: any = {};
+    params['filter[where][status]'] = "activated";
+    params['filter[limit]'] = "1";
+    params['filter[skip]'] = (num + this.skip).toString();
+    params['filter[order]'] = "creationDate DESC";
 
     if (this.id) {
-      params = { where: { id: this.id } };
+      params['filter[where][id]'] = this.id;
     }
-    this.rs.getWithHeaders('volumes', params)
+
+    this.requests.getWithHeaders('volumes', params)
       .subscribe(({ body: res, headers }) => {
 
-        let count = +headers.get('X-Total-Count');
+        const count = +headers.get('X-Total-Count');
         if (count) this.count = count;
 
         if (res[0] != undefined) {
-          this.data = res[0];
-          this.data.posts = this.data.posts.filter(e => { return e.status == 'activated' });
-          this.title = this.data['titleEn'];
-          if (this.ts.currentLang == 'ar') {
-            this.title = this.data['titleAr']
-          }
+          this.ads = res[0];
+          this.ads.posts = this.ads.posts.filter(e => { return e.status == 'activated' });
+          this.volumeTitle = this.ts.currentLang == 'ar' ? this.ads['titleAr'] : this.ads['titleEn'];
           this.skip = this.skip + num;
         }
       });
   }
 
+  setCountryId(c) {
+    if (c != undefined) {
+      this.countryId = c['id'];
+      this.cds.getCities(this.countryId).then(res => this.cities = <Object[]>res);
+    }
+  }
+
+  setCityId(c) {
+    if (c != undefined) {
+      this.cityId = c['id'];
+    }
+  }
+
+  setCategoryId(c) {
+    if (c != undefined) {
+      this.categoryId = c['id'];
+    }
+  }
+
   next() {
     if (this.nextDisabled) return;
-    this.getVolumeData(-1);
+    this.getPostsData(-1);
   }
 
   prev() {
     if (this.prevDisabled) return;
-    this.getVolumeData(1);
+    this.getPostsData(1);
   }
 
   get nextDisabled() {
@@ -125,25 +149,5 @@ export class VolumeComponent implements OnInit {
   get prevDisabled() {
     return this.skip + 1 == this.count;
   }
-
-  setCityId(c) {
-    if (c != undefined) {
-      this.cityId = c['id'];
-    } else {
-      this.cityId = '';
-      this.location = '';
-    }
-  }
-
-  setCategoryId(c) {
-    if (c != undefined) {
-      this.categoryId = c['id'];
-    } else {
-      this.categoryId = '';
-      this.subCategory = '';
-    }
-  }
-
-
 
 }

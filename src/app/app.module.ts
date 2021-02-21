@@ -52,7 +52,6 @@ import { ViewJobComponent } from './pages/jobs/view-job/view-job.component';
 import { PolicyComponent } from './pages/privacy/policy/policy.component';
 import { AddProductComponent } from './pages/products/add-product/add-product.component';
 import { EditProductComponent } from './pages/products/edit-product/edit-product.component';
-import { ProductCardComponent } from './pages/products/product-card/product-card.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ViewProductComponent } from './pages/products/view-product/view-product.component';
 import { CvViewComponent } from './pages/profile/cv-view/cv-view.component';
@@ -68,13 +67,14 @@ import { CardHComponent } from './shared/cards/card-h/card-h.component';
 import { CardVComponent } from './shared/cards/card-v/card-v.component';
 import { GuideCardComponent } from './shared/cards/guide-card/guide-card.component';
 import { JobCardComponent } from './shared/cards/job-card/job-card.component';
+import { ProductCardComponent } from './shared/cards/product-card/product-card.component';
 import { FooterComponent } from "./shared/components/footer/footer.component";
 import { HeaderWithSearchComponent } from './shared/components/header-with-search/header-with-search.component';
 import { LocationPickerComponent } from './shared/components/location-picker/location-picker.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { NotificationComponent } from './shared/components/notification/notification.component';
-import { volumeFilter } from './shared/pipes/volumeFilter.pipe';
 import { SharedModule } from './shared/shared.module';
+import { VolumeFilterPipe } from './pages/ad/volume-filter.pipe';
 
 let config = new AuthServiceConfig([
   {
@@ -119,7 +119,6 @@ export function provideConfig() {
     GuideCardComponent,
     JobCardComponent,
     ViewJobComponent,
-    volumeFilter,
     LocationPickerComponent,
     BusinessEditComponent,
     BusinessProductsComponent,
@@ -144,7 +143,8 @@ export function provideConfig() {
     ForgetPasswordComponent,
     CompleteInformationComponent,
     AddRateComponent,
-    FollowListComponent
+    FollowListComponent,
+    VolumeFilterPipe
   ],
   imports: [
     GalleryModule.withConfig({ loadingMode: 'indeterminate' }),

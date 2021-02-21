@@ -37,6 +37,7 @@ export const ArabicTranslation = {
   checkYourEmailForLink: "تم ارسال رسالةإلى هذا البريد الالكتروني, تفقد صندوق الرسائل خاصتك",
   chooseCategory: "اختر الفئة",
   chooseCity: "اختر المدينة",
+  chooseCountry: "اختر البلد",
   city: "المحافظة",
   close: "إغلاق",
   comment: "تعليق",

@@ -37,6 +37,7 @@ export const EnglishTranslation = {
   checkYourEmailForLink: "An email have been sent to this email address, check your inbox",
   chooseCategory: "Choose Category",
   chooseCity: "Choose City",
+  chooseCountry: "Choose Country",
   city: "City",
   close: "Close",
   commet: "Comment",

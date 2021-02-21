@@ -2,86 +2,76 @@
   <div class="container-fluid">
     <div class="row">
       <div class="filter-wrap">
-        <!-- <h2>{{'searchFilter' | translate}}</h2> -->
         <div class="wrap-filter-search">
           <form action="#" method="get" accept-charset="utf-8">
             <span class="keyword">
-              <input [(ngModel)]="searchText" type="text" placeholder="{{'keyword'| translate}}" name="search">
+              <input [(ngModel)]="title" type="text" placeholder="{{'searchForWhat' | translate}}" name="search">
             </span>
             <span class="categories">
               <span class="ti-angle-down"></span>
-              <select name="categories" [(ngModel)]="category" (change)="setCategoryId(category)">
-                <option [ngValue]="initialValue">{{'category' | translate }}</option>
+              <select [(ngModel)]="category" name="categories" (change)="setCategoryId(category)">
+                <option value="undefined">{{'chooseCategory' | translate }}</option>
                 <option *ngFor="let c of categories" [ngValue]="c">{{c.title}}</option>
               </select>
             </span>
             <span *ngIf="category!=undefined" class="subCategories">
               <span class="ti-angle-down"></span>
-              <select [disabled]="category=='0'" name="subCategories" [(ngModel)]="subCategory">
-                <option value="" [selected]="isSelected" hidden>{{'subCategory' | translate}}</option>
+              <select name="subCategories" [(ngModel)]="subCategory">
+                <option value="">{{'subCategory' | translate}}</option>
                 <option *ngFor="let sc of category?.subCategories" [ngValue]="sc.id">{{sc.title}}</option>
               </select>
             </span>
             <span class="categories">
               <span class="ti-angle-down"></span>
-              <select name="categories" [(ngModel)]="city" (change)="setCityId(city)">
-                <option [ngValue]="initialValue">{{'chooseCity'| translate}}</option>
+              <select [(ngModel)]="country" name="countryId" (change)="setCountryId(country)">
+                <option value="undefined">{{'chooseCountry' | translate}}</option>
+                <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
+              </select>
+            </span>
+            <span *ngIf="country!=undefined" class="location">
+              <span class="ti-angle-down"></span>
+              <select [(ngModel)]="city" name="cityID" (change)="setCityId(city)">
+                <option value="undefined">{{'chooseCity' | translate}}</option>
                 <option *ngFor="let c of cities" [ngValue]="c">{{c.name}}</option>
               </select>
             </span>
             <span *ngIf="city!=undefined" class="location">
-              <!-- <span class="ti-location-pin"></span> -->
               <span class="ti-angle-down"></span>
-
-              <!-- <input [(ngModel)]="location" type="text" placeholder="{{'location'| translate}}" name="location"> -->
               <select name="location" [(ngModel)]="location">
-                <option hidden value="" [selected]="isSelected">{{'location'| translate}}</option>
+                <option value="">{{'location'| translate}}</option>
                 <option *ngFor="let l of city?.locations" [ngValue]="l.id">{{l.name}}</option>
               </select>
             </span>
-            <button (click)="volumeFilter()" class="search-btn">{{'apply'| translate}}</button>
-
+            <button (click)="reFilter()" class="search-btn">{{'apply'| translate}}</button>
           </form>
-          <!-- /form -->
         </div>
         <div class="col-md-12 version-arrow" *ngIf="!id">
-
           <div class="left-arrow">
-            <i title="Previous"  [ngClass]="{disabled:prevDisabled}"  (click)="prev()" class="fa fa-angle-right fa-4x pointerHover" aria-hidden="true"></i>
+            <i title="Previous" [ngClass]="{disabled:prevDisabled}" (click)="prev()"
+              class="fa fa-angle-right fa-4x pointerHover" aria-hidden="true"></i>
           </div>
           <div class="title">
-            <h2>{{title}}</h2>
+            <h2>{{volumeTitle}}</h2>
           </div>
           <div class="right-arrow">
             <i title="Next" (click)="next()" [ngClass]="{disabled:nextDisabled}"
               class="fa fa-angle-left fa-4x pointerHover" aria-hidden="true"></i>
           </div>
-
         </div>
         <div class="col-md-12 version-arrow" *ngIf="id">
           <div class="title " style="width: 100%">
-            <h2>{{title}}</h2>
+            <h2>{{volumeTitle}}</h2>
           </div>
         </div>
         <div class="clearfix"></div>
-        <!-- /.wrap-box-search -->
         <div class="container p-t-60">
-
-          <div class="row featured-box-flex-container" *ngIf="data.posts">
-
-
-            <app-card-h  *ngFor="let item of data.posts| volumeFilter:cds.filterItem " [details]="item"
-              class="col-md-5  col-xs-12 featured-box-flex"></app-card-h>
-
+          <div class="row featured-box-flex-container" *ngIf="ads?.posts">
+            <app-card-h *ngFor="let item of ads?.posts | volumeFilter:filterObject" [details]="item"
+              class="col-md-5  col-xs-12 featured-box-flex">
+            </app-card-h>
           </div>
-          <!-- /.row -->
         </div>
-        <!-- /.container -->
       </div>
-      <!-- /.highlights -->
     </div>
-    <!-- /.row -->
   </div>
-  <!-- /.container-fluid -->
 </section>
-<!-- /.flat-highlights -->

@@ -1,6 +1,5 @@
-import { Component, ComponentFactoryResolver, Injector, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { CommonDataService } from 'src/app/services/common-data.service';
 import { RequestsService } from 'src/app/services/requests.service';
 
@@ -11,44 +10,58 @@ import { RequestsService } from 'src/app/services/requests.service';
 })
 export class ProductsComponent implements OnInit {
 
-  bCategories: Object[];
-  cities: Object[];
-  posts: Object[];
-  menuPosts: Object[];
+  categories: any[];
+  countries: any[];
+  cities: any[];
+  products: any[];
 
-  skip: number = 0;
-  city;
-  isSelected;
-  initialValue;
-  category;
+  country: any;
+  countryId = "";
+  city: any;
   cityId = "";
   location = "";
+
+  category: any;
   categoryId = "";
   subCategory = "";
+
   title = "";
   params: Object = {};
+
+  skip: number = 0;
   nextDisabled = true;
   prevDisabled = false;
 
-  constructor(private ts: TranslateService, private cds: CommonDataService,
-    private requests: RequestsService, private resolver: ComponentFactoryResolver,
-    private injector: Injector, private route: ActivatedRoute, private router: Router) { }
+  constructor(
+    private cds: CommonDataService,
+    private requests: RequestsService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     const filter = this.getQueryParams();
-    this.cds.citiesPromise.then(res => this.cities = <Object[]>res);
-    this.cds.productCategories.then(res => this.bCategories = <Object[]>res);
+    this.cds.countriesPromise.then(res => this.countries = <Object[]>res);
+    this.cds.productCategories.then(res => this.categories = <Object[]>res);
     this.getPostsData(filter);
+  }
+
+  addQueryParams(param: object) {
+    this.router.navigate([], {
+      queryParams: { ...param },
+    });
   }
 
   getQueryParams() {
     let params = this.route.snapshot.queryParams;
     let filter: Object = {};
     if (params.title && params.title.trim().length != 0) {
-      filter['filter[where][or][0][titleEn][like]'] = params.title;
-      filter['filter[where][or][1][titleAr][like]'] = params.title;
-      filter['filter[where][or][0][titleEn][options]'] = "i";
-      filter['filter[where][or][1][titleAr][options]'] = "i";
+      filter['filter[where][or][0][nameEn][like]'] = params.title;
+      filter['filter[where][or][1][nameAr][like]'] = params.title;
+      filter['filter[where][or][0][nameEn][options]'] = "i";
+      filter['filter[where][or][1][nameAr][options]'] = "i";
+    }
+    if (params.countryId) {
+      filter["filter[where][countryId]"] = params.countryId;
     }
     if (params.cityId) {
       filter["filter[where][cityId]"] = params.cityId;
@@ -65,16 +78,11 @@ export class ProductsComponent implements OnInit {
     return filter;
   }
 
-  addQueryParams(param: object) {
-    this.router.navigate([], {
-      queryParams: { ...param },
-    });
-  }
-
   reFilter() {
 
     this.addQueryParams({
       title: this.title,
+      countryId: this.countryId,
       cityId: this.cityId,
       location: this.location,
       categoryId: this.categoryId,
@@ -82,18 +90,23 @@ export class ProductsComponent implements OnInit {
     });
 
     if (this.title == "" || this.title.trim().length == 0) {
-      delete this.params['filter[where][or][0][titleEn][like]'];
-      delete this.params['filter[where][or][1][titleAr][like]'];
-      delete this.params['filter[where][or][0][titleEn][options]'];
-      delete this.params['filter[where][or][1][titleAr][options]'];
+      delete this.params['filter[where][or][0][nameEn][like]'];
+      delete this.params['filter[where][or][1][nameAr][like]'];
+      delete this.params['filter[where][or][0][nameEn][options]'];
+      delete this.params['filter[where][or][1][nameAr][options]'];
     } else {
-      this.params['filter[where][or][0][titleEn][like]'] = this.title;
-      this.params['filter[where][or][1][titleAr][like]'] = this.title;
-      this.params['filter[where][or][0][titleEn][options]'] = "i";
-      this.params['filter[where][or][1][titleAr][options]'] = "i";
+      this.params['filter[where][or][0][nameEn][like]'] = this.title;
+      this.params['filter[where][or][1][nameAr][like]'] = this.title;
+      this.params['filter[where][or][0][nameEn][options]'] = "i";
+      this.params['filter[where][or][1][nameAr][options]'] = "i";
     }
 
-    if (this.cityId == "") {
+    if (this.countryId == undefined) {
+      delete this.params["filter[where][countryId]"]
+    } else {
+      this.params["filter[where][countryId]"] = this.countryId;
+    }
+    if (this.cityId == undefined) {
       delete this.params["filter[where][cityId]"]
     } else {
       this.params["filter[where][cityId]"] = this.cityId;
@@ -118,22 +131,28 @@ export class ProductsComponent implements OnInit {
   }
 
   getPostsData(params) {
+
     params['filter[where][status]'] = "activated";
     params['filter[limit]'] = "20";
-
     params['filter[skip]'] = (20 * this.skip).toString();
-    params['filter[order]'] = "creationDate DESC"
-    this.requests.get('marketProducts', params).subscribe(res => {
-      this.posts = <Object[]>res;
+    params['filter[order]'] = "creationDate DESC";
 
-      this.menuPosts = this.posts;
-      if (this.posts.length == 0) {
+    this.requests.get('marketProducts', params).subscribe(res => {
+      this.products = <Object[]>res;
+      if (this.products.length == 0) {
         this.prevDisabled = true;
         if (this.skip == 0) {
           this.nextDisabled = true;
         }
       }
-    })
+    });
+  }
+
+  setCountryId(c) {
+    if (c != undefined) {
+      this.countryId = c['id'];
+      this.cds.getCities(this.countryId).then(res => this.cities = <Object[]>res);
+    }
   }
 
   setCityId(c) {
