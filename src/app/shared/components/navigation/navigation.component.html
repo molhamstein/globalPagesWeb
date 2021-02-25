@@ -8,11 +8,12 @@
               <img src="{{logoAddress}}" />
             </a>
           </div>
-          <div style="display: inline-flex;margin-top: 30px;margin-right: 10px; cursor: pointer;"
+          <div style="display: inline-flex;margin-top: 30px;margin-right: 10px; cursor: pointer; width: 50px;"
             *ngIf="isLogin && user">
             <ngx-avatar [name]="user['username']" [src]="user['imageProfile']" (clickOnAvatar)="goToProfile()">
             </ngx-avatar>
             <app-notification style="z-index: 1000;"></app-notification>
+            <!-- <app-cart style="z-index: 1000; margin-right: 10px;"></app-cart> -->
           </div>
           <div class="auth-menu" style="display: inline-flex;margin-top: 30px;margin-right: 10px" *ngIf="!isLogin">
             <a class="nav-button" (click)="onLogin()">{{'login' | translate}}</a>

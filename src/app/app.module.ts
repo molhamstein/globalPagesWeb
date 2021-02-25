@@ -28,6 +28,7 @@ import { ResetPasswordComponent } from './modals/auth/reset-password/reset-passw
 import { SignupComponent } from './modals/auth/signup/signup.component';
 import { SuccessMessageComponent } from './modals/messages/success-message/success-message.component';
 import { VerificationMessageComponent } from './modals/messages/verification-message/verification-message.component';
+import { MakeOrderComponent } from './modals/order/make-order/make-order.component';
 import { EditBasicInformationComponent } from './modals/profile/edit-basic-information/edit-basic-information.component';
 import { EditInfoComponent } from './modals/profile/edit-info/edit-info.component';
 import { EditSkillComponent } from './modals/profile/edit-skill/edit-skill.component';
@@ -35,6 +36,7 @@ import { AddRateComponent } from './modals/rate/add-rate/add-rate.component';
 import { AdCreateComponent } from './pages/ad/ad-create/ad-create.component';
 import { AdEditComponent } from './pages/ad/ad-edit/ad-edit.component';
 import { AdViewComponent } from './pages/ad/ad-view/ad-view.component';
+import { VolumeFilterPipe } from './pages/ad/volume-filter.pipe';
 import { VolumeComponent } from './pages/ad/volume/volume.component';
 import { ResetComponent } from './pages/authentication/reset/reset.component';
 import { BusinessCreateComponent } from './pages/business/business-create/business-create.component';
@@ -68,13 +70,13 @@ import { CardVComponent } from './shared/cards/card-v/card-v.component';
 import { GuideCardComponent } from './shared/cards/guide-card/guide-card.component';
 import { JobCardComponent } from './shared/cards/job-card/job-card.component';
 import { ProductCardComponent } from './shared/cards/product-card/product-card.component';
+import { CartComponent } from './shared/components/cart/cart.component';
 import { FooterComponent } from "./shared/components/footer/footer.component";
 import { HeaderWithSearchComponent } from './shared/components/header-with-search/header-with-search.component';
 import { LocationPickerComponent } from './shared/components/location-picker/location-picker.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { NotificationComponent } from './shared/components/notification/notification.component';
 import { SharedModule } from './shared/shared.module';
-import { VolumeFilterPipe } from './pages/ad/volume-filter.pipe';
 
 let config = new AuthServiceConfig([
   {
@@ -144,7 +146,9 @@ export function provideConfig() {
     CompleteInformationComponent,
     AddRateComponent,
     FollowListComponent,
-    VolumeFilterPipe
+    VolumeFilterPipe,
+    CartComponent,
+    MakeOrderComponent
   ],
   imports: [
     GalleryModule.withConfig({ loadingMode: 'indeterminate' }),
@@ -180,7 +184,8 @@ export function provideConfig() {
     ResetPasswordComponent,
     ForgetPasswordComponent,
     CompleteInformationComponent,
-    AddRateComponent
+    AddRateComponent,
+    MakeOrderComponent
   ],
   providers: [
     RequestsService,

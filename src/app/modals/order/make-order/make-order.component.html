@@ -1,0 +1,51 @@
+<div class="module">
+  <div class="headers">
+    <h4 class="mainLabel">
+      {{'makeOrder' | translate}}
+    </h4>
+    <i class="fa fa-times close" (click)="close()" aria-hidden="true"></i>
+  </div>
+  <div class="contint">
+
+    <span class="errorMessage" *ngIf="errorMessage!=''">{{errorMessage|translate}}</span>
+
+    <div style="display: flex; flex-direction: row; justify-content: center; align-items: baseline;">
+      <div class="inputDiv">
+        <h4 class="title">{{'count'|translate}}</h4>
+        <input type="number" name="count" class="input" placeholder="{{'enter'|translate}} {{'count' | translate}}"
+          [(ngModel)]="order.count">
+      </div>
+
+      <div class="inputDiv">
+        <h4 class="title">{{'phoneNumber'|translate}}</h4>
+        <input type="tel" name="phoneNumber" class="input"
+          placeholder="{{'enter'|translate}} {{'phoneNumber' | translate}}" [(ngModel)]="order.phone">
+      </div>
+
+    </div>
+
+    <div style="display: flex; flex-direction: row; justify-content: center; align-items: baseline;">
+
+      <div class="inputDiv">
+        <h4 class="title">{{'address'|translate}}</h4>
+        <input type="text" name="address" class="input" placeholder="{{'enter'|translate}} {{'address' | translate}}"
+          [(ngModel)]="order.address">
+      </div>
+
+      <div class="inputDiv">
+        <h4 class="title">{{'note'|translate}}</h4>
+        <input type="text" name="note" class="input" placeholder="{{'enter'|translate}} {{'note' | translate}}"
+          [(ngModel)]="order.note">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div type="submit" class="button save" (click)="submit()">
+      {{'submit' | translate}}
+    </div>
+    <div style="clear:both"></div>
+  </div>
+
+</div>

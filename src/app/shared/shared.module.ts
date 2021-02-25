@@ -8,7 +8,7 @@ import { FormValidationMessageComponent } from './components/form-validation-mes
     CommonModule,
     TranslateModule.forChild(),
   ],
-  declarations: [FormValidationMessageComponent,],
+  declarations: [FormValidationMessageComponent],
   exports: [FormValidationMessageComponent]
 })
 export class SharedModule { }

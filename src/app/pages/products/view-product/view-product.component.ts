@@ -6,14 +6,10 @@ import { Gallery, ImageItem } from '@ngx-gallery/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SuccessMessageComponent } from 'src/app/modals/messages/success-message/success-message.component';
 import { VerificationMessageComponent } from 'src/app/modals/messages/verification-message/verification-message.component';
+import { MakeOrderComponent } from 'src/app/modals/order/make-order/make-order.component';
 import { AddRateComponent } from 'src/app/modals/rate/add-rate/add-rate.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { RequestsService } from 'src/app/services/requests.service';
-// import * as _swal from 'sweetalert';
-// import { SweetAlert } from 'sweetalert/typings/core';
-
-// const swal: SweetAlert = _swal as any;
-
 
 @Component({
   selector: 'app-view-product',
@@ -125,6 +121,23 @@ export class ViewProductComponent implements OnInit {
     this.router.navigate(["products/" + this.data['id'] + "/edit"]);
   }
 
+  order() {
+    let dialogRef = this.dialog.open(MakeOrderComponent, {
+      panelClass: 'communictioDialogStyle',
+      data: { "id": this.data['id'] },
+    });
+    dialogRef.afterClosed().subscribe(res => {
+      if (res) {
+        if (res.status) {
+          console.error(res);
+        }
+        else {
+
+        }
+      }
+    });
+  }
+
   rate() {
     let dialogRef = this.dialog.open(AddRateComponent, {
       panelClass: 'communictioDialogStyle',
@@ -133,11 +146,7 @@ export class ViewProductComponent implements OnInit {
     dialogRef.afterClosed().subscribe(res => {
       if (res) {
         if (res.status && res.status === 601) {
-          // swal({
-          //   title: "Error",
-          //   text: "User Has Already Rated",
-          //   icon: "error",
-          // });
+
         }
         else {
           this.getRatings();

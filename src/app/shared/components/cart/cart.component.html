@@ -1,0 +1,15 @@
+<div class="cart-button">
+  <i class="fa fa-shopping-cart" (click)="open()"></i>
+  <div [hidden]="!showCart" class="cart-list">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of [1,2,3]" (click)="goToProduct(item.productId)">
+        <div style="display: flex">
+          <div style="width: 90%;text-overflow: ellipsis">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, sit esse. Ut incidunt deleniti,
+            possimus vero culpa quisquam, mollitia sint accusantium asperiores
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
