@@ -43,9 +43,10 @@
             </div>
           </div>
         </div>
-        <!-- <div style="flex-grow: 0.15" *ngIf="order.note !== null">
-          {{order?.note}}
-        </div> -->
+        <div style="flex-grow: 1; margin: 5px 15px 5px 5px;" *ngIf="order?.note != null">
+          <b> {{"note" | translate}} : </b>
+          {{ order?.note }}
+        </div>
       </div>
     </ng-container>
   </div>

@@ -2,7 +2,7 @@ export const ArabicTranslation = {
   ACCOUNT_IS_LOCK: "تم قفل الحساب, الرجاء المحاولة لاحقا",
   CV: "السيرة الذاتية",
   LOGIN_FAILED: "فشل تسجيل الدخول",
-  ProductImages: "صور المنتج",
+  ProductImages: "صور وفيديوهات المنتج",
   ServicesAndProducts: "خدمات و منتجات",
   Tags: "علامات",
   about: "حول",
@@ -31,7 +31,7 @@ export const ArabicTranslation = {
   business: "الأعمال",
   businessFollowing: "الأعمال المتابعة",
   businessGuidePage: "الدليل",
-  businessImages: "صور النشاط التجاري",
+  businessImages: "صور وفيديوهات النشاط التجاري",
   businessJobPage: "وظائف",
   category: "الفئة الرئيسية",
   changeEmployeeStatus: "هل انت متاكد تريد تغيير حالة الموظف ؟",
@@ -226,6 +226,5 @@ export const ArabicTranslation = {
   year: "السنة",
   yes: "نعم",
   yourAdTitle: "اسم الإعلان الخاص بك",
-  yourBusinessImages: "صور اعلانك",
-  yourBusinessVideos: "فيديوهات اعلانك"
+  yourBusinessImages: "قم بتحميل صور وفيديوهات",
 }

@@ -2,7 +2,7 @@ export const EnglishTranslation = {
   ACCOUNT_IS_LOCK: "Your account has been locked, please try again later",
   CV: "CV",
   LOGIN_FAILED: "Username or Password are wrong",
-  ProductImages: "Product Images",
+  ProductImages: "Product Images & Videos",
   ServicesAndProducts: "Services And Products",
   Tags: "Tags",
   about: "About",
@@ -31,7 +31,7 @@ export const EnglishTranslation = {
   business: "Business",
   businessFollowing: "Business Followings",
   businessGuidePage: "Directory",
-  businessImages: "Business Images",
+  businessImages: "Business Images & Videos",
   businessJobPage: "Jobs",
   category: "Category",
   changeEmployeeStatus: "Are you sure you want change employee status ?",
@@ -214,6 +214,5 @@ export const EnglishTranslation = {
   year: "Year",
   yes: "Yes",
   yourAdTitle: "Your Ad Title",
-  yourBusinessImages: "Your Business Images",
-  yourBusinessVideos: "Your Business Videos"
+  yourBusinessImages: "Upload Images And Videos",
 }
