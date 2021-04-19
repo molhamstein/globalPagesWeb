@@ -101,7 +101,13 @@ export class NavigationComponent implements OnInit {
             data: data.data
           });
         }
+
+        if (data.event && data.event == 'sendCode') {
+          this.router.navigate(['/verification']);
+        }
       }
+
+
     });
   }
 

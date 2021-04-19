@@ -55,10 +55,10 @@ export class ProductsComponent implements OnInit {
     let params = this.route.snapshot.queryParams;
     let filter: Object = {};
     if (params.title && params.title.trim().length != 0) {
-      filter['filter[where][or][0][nameEn][like]'] = params.title;
-      filter['filter[where][or][1][nameAr][like]'] = params.title;
-      filter['filter[where][or][0][nameEn][options]'] = "i";
-      filter['filter[where][or][1][nameAr][options]'] = "i";
+      filter['filter[where][or][0][titleEn][like]'] = params.title;
+      filter['filter[where][or][1][titleAr][like]'] = params.title;
+      filter['filter[where][or][0][titleEn][options]'] = "i";
+      filter['filter[where][or][1][titleAr][options]'] = "i";
     }
     if (params.countryId) {
       filter["filter[where][countryId]"] = params.countryId;
@@ -90,23 +90,23 @@ export class ProductsComponent implements OnInit {
     });
 
     if (this.title == "" || this.title.trim().length == 0) {
-      delete this.params['filter[where][or][0][nameEn][like]'];
-      delete this.params['filter[where][or][1][nameAr][like]'];
-      delete this.params['filter[where][or][0][nameEn][options]'];
-      delete this.params['filter[where][or][1][nameAr][options]'];
+      delete this.params['filter[where][or][0][titleEn][like]'];
+      delete this.params['filter[where][or][1][titleAr][like]'];
+      delete this.params['filter[where][or][0][titleEn][options]'];
+      delete this.params['filter[where][or][1][titleAr][options]'];
     } else {
-      this.params['filter[where][or][0][nameEn][like]'] = this.title;
-      this.params['filter[where][or][1][nameAr][like]'] = this.title;
-      this.params['filter[where][or][0][nameEn][options]'] = "i";
-      this.params['filter[where][or][1][nameAr][options]'] = "i";
+      this.params['filter[where][or][0][titleEn][like]'] = this.title;
+      this.params['filter[where][or][1][titleAr][like]'] = this.title;
+      this.params['filter[where][or][0][titleEn][options]'] = "i";
+      this.params['filter[where][or][1][titleAr][options]'] = "i";
     }
 
-    if (this.countryId == undefined) {
+    if (this.countryId == undefined || this.countryId == "") {
       delete this.params["filter[where][countryId]"]
     } else {
       this.params["filter[where][countryId]"] = this.countryId;
     }
-    if (this.cityId == undefined) {
+    if (this.cityId == undefined || this.cityId == "") {
       delete this.params["filter[where][cityId]"]
     } else {
       this.params["filter[where][cityId]"] = this.cityId;

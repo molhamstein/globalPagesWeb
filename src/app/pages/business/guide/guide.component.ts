@@ -100,12 +100,12 @@ export class GuideComponent implements OnInit {
       this.params['filter[where][or][1][nameAr][options]'] = "i";
     }
 
-    if (this.countryId == undefined) {
+    if (this.countryId == undefined || this.countryId == "") {
       delete this.params["filter[where][countryId]"]
     } else {
       this.params["filter[where][countryId]"] = this.countryId;
     }
-    if (this.cityId == undefined) {
+    if (this.cityId == undefined || this.cityId == "") {
       delete this.params["filter[where][cityId]"]
     } else {
       this.params["filter[where][cityId]"] = this.cityId;

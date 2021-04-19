@@ -1,0 +1,32 @@
+<div class="module">
+    <div class="headers">
+        <h4 class="mainLabel">
+            {{'verificationMessage' | translate}}
+        </h4>
+        <i class="fa fa-times close" (click)="close()" aria-hidden="true"></i>
+    </div>
+    <div class="contint">
+
+        <span class="errorMessage" *ngIf="errorMessage!=''">{{errorMessage|translate}}</span>
+
+        <div style="display: flex; flex-direction: row; justify-content: center">
+            <div class="inputDiv">
+                <h4 class="title">{{'verificationCode'|translate}}</h4>
+                <input type="text" name="code" class="input"
+                    placeholder="{{'enter'|translate}} {{'verificationCode' | translate}}" [(ngModel)]="data.code">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="button save" (click)="sendNewCode()" *ngIf="showSendButton" style="margin-bottom: 10px">
+            {{'resendVerificationCode' | translate}}
+        </div>
+        <div type="submit" class="button save" (click)="submit()">
+            {{'sendVerificationCode' | translate}}
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+</div>

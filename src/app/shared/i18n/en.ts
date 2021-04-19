@@ -183,6 +183,7 @@ export const EnglishTranslation = {
   searchFilter: "Search",
   searchForWhat: "Search keyword",
   sendVerificationCode: "Send Verification Code",
+  resendVerificationCode: "Resend Verification Code",
   similarProfile: "Similar Profiles",
   skill: "Skill",
   skills: "Skills",
@@ -215,4 +216,5 @@ export const EnglishTranslation = {
   yes: "Yes",
   yourAdTitle: "Your Ad Title",
   yourBusinessImages: "Upload Images And Videos",
+
 }

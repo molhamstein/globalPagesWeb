@@ -33,6 +33,7 @@ import { EditBasicInformationComponent } from './modals/profile/edit-basic-infor
 import { EditInfoComponent } from './modals/profile/edit-info/edit-info.component';
 import { EditSkillComponent } from './modals/profile/edit-skill/edit-skill.component';
 import { AddRateComponent } from './modals/rate/add-rate/add-rate.component';
+import { SendVerificationCodeComponent } from './modals/sms/send-verification-code/send-verification-code.component';
 import { AdCreateComponent } from './pages/ad/ad-create/ad-create.component';
 import { AdEditComponent } from './pages/ad/ad-edit/ad-edit.component';
 import { AdViewComponent } from './pages/ad/ad-view/ad-view.component';
@@ -77,6 +78,7 @@ import { LocationPickerComponent } from './shared/components/location-picker/loc
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { NotificationComponent } from './shared/components/notification/notification.component';
 import { SharedModule } from './shared/shared.module';
+import { VerificationComponent } from './pages/authentication/verification/verification.component';
 
 let config = new AuthServiceConfig([
   {
@@ -148,7 +150,9 @@ export function provideConfig() {
     FollowListComponent,
     VolumeFilterPipe,
     CartComponent,
-    MakeOrderComponent
+    MakeOrderComponent,
+    SendVerificationCodeComponent,
+    VerificationComponent,
   ],
   imports: [
     GalleryModule.withConfig({ loadingMode: 'indeterminate' }),
@@ -185,7 +189,8 @@ export function provideConfig() {
     ForgetPasswordComponent,
     CompleteInformationComponent,
     AddRateComponent,
-    MakeOrderComponent
+    MakeOrderComponent,
+    SendVerificationCodeComponent,
   ],
   providers: [
     RequestsService,

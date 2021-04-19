@@ -14,7 +14,7 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class SignupComponent implements OnInit {
 
-  user: any = { gender: '' };
+  user: any = { gender: '', phoneNumber: '' };
   errorMessage: string = '';
 
   constructor(private dialog: MatDialog, public thisDialog: MatDialogRef<SignupComponent>,
@@ -106,6 +106,8 @@ export class SignupComponent implements OnInit {
       return;
     }
 
+    this.user.phoneNumber = this.user.phoneNumber.replace(/^09|^\+963/, '009639');
+
     this.apiService.post('users', this.user).subscribe(
       (data) => {
         this.apiService.post('users/login', { email: this.user.email, password: this.user.password }).subscribe(
@@ -114,7 +116,7 @@ export class SignupComponent implements OnInit {
             localStorage.setItem(environment.userDetails, JSON.stringify(res));
             this.auth.logIn(res);
             this.router.navigate(['profile'], { fragment: 'chooseCategory' });
-            this.thisDialog.close();
+            this.thisDialog.close({ event: 'sendCode' });
           },
           (error) => {
             this.errorMessage = error['error']['error']['code'];

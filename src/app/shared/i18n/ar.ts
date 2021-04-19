@@ -191,6 +191,7 @@ export const ArabicTranslation = {
   searchFilter: "فلتر البحث",
   searchForWhat: "عن ماذا تبحث ؟",
   sendVerificationCode: "إرسال رمز التحقق",
+  resendVerificationCode: "إعادة إرسال رمز التحقق",
   similarProfile: "الأشخاص المتشابهين",
   skill: "مهارة",
   skills: "مهارات",
